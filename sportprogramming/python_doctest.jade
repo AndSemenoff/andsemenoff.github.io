@@ -1,0 +1,84 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h1: Работа с модулем <strong>doctest</strong>
+	div.row: div.large-12.columns
+		p.text-justify Модуль <strong>doctest</strong> позволяет писать тесты прямо в комментариях. Строчки комментариев, начинающиеся с '>>>' будут выполняются и возвращаемый результат будет сравниваться со значением, написанным в следующей строчке. Обратите внимание, что после '>>>' должен следовать ровно один пробел.  Для вызова непосредственно из программы мы должны импортировать библиотеку <strong>doctest</strong> и вызвать метод <strong>doctest.testmod()</strong>. Рекомендуется указывать в параметрах <strong>verbose=True</strong>, чтобы получить развернутый вывод в консоль информации о прошедшем тестировании.
+		pre.python: code
+			|# -*- coding: utf-8 -*-
+			|# файл doctest_example_1.py
+			|def simple(a):
+			|&nbsp;&nbsp;&nbsp;&nbsp;'''
+			|&nbsp;&nbsp;&nbsp;&nbsp;>>> simple(4)
+			|&nbsp;&nbsp;&nbsp;&nbsp;15
+			|&nbsp;&nbsp;&nbsp;&nbsp;'''
+			|&nbsp;&nbsp;&nbsp;&nbsp;return a*a-1
+			|    
+			|if __name__ == "__main__":
+			|&nbsp;&nbsp;&nbsp;&nbsp;import doctest
+			|&nbsp;&nbsp;&nbsp;&nbsp;doctest.testmod(verbose=True)
+
+		p.text-justify Возможно помещать тесты в отдельный файл. Тогда для его вызова нужно использовать метод <strong>doctest.testfile("doctest.txt")</strong>, которому в параметре передать имя файла с тестами. В самом файле тестов нужно импортировать модуль(и) к которым у нас относятся тесты.
+		pre.python: code
+			|# -*- coding: utf-8 -*-
+			|# файл doctest_example_2.py
+			|def simple(a):
+			|&nbsp;&nbsp;&nbsp;&nbsp;return a*a-1
+			|&nbsp;
+			|if __name__ == "__main__":
+			|&nbsp;&nbsp;&nbsp;&nbsp;import doctest
+			|&nbsp;&nbsp;&nbsp;&nbsp;doctest.testfile("doctest.txt")
+
+		p Для файла doctest_example_2.py файл с тестами может быть такой
+
+		pre.python: code
+			|&nbsp;&nbsp;&nbsp;&nbsp;'''
+			|&nbsp;&nbsp;&nbsp;&nbsp;файл doctest.txt
+			|&nbsp;&nbsp;&nbsp;&nbsp;>>> from doctest_example1 import simple
+			|&nbsp;&nbsp;&nbsp;&nbsp;>>> simple(4)
+			|&nbsp;&nbsp;&nbsp;&nbsp;15
+			|&nbsp;
+			|&nbsp;&nbsp;&nbsp;&nbsp;'''
+
+		p Небольшие сложности возникают, когда мы используем:
+		ol
+			li Словари (dict)
+			li Числа с плавающей точкой (float)
+			li Идентификаторы (id)
+			li Вывод об ошибках ()          
+
+		p Если совсем кратко описать решение выше перечисленных проблем, то это:
+		ol
+			li сортировка словаря перед выводом
+			li округления числа с фиксированной точностью перед выводом
+			li не использовать в тестах вывод идентификаторов (id)
+			li использовать директиву #doctest: ELLIPSYS         
+
+		//
+			<p>Еще есть возможность написать отдельный модуль для тестирования. Например, для файла doctest_example_1.py назовем модуль doctest.py, вот его вид:</p>
+
+			<pre class = "python">
+			<code>
+			# -*- coding: utf-8 -*-
+			# файл doctest.py
+			import doctest
+			import doctest_example_1
+
+			doctest.testmod(simple)
+			</code>
+			</pre>
+
+		p Ссылки по данной теме:
+			ol
+				li
+					a(href="http://docs.python.org/3.3/library/doctest.html") Оригинальная документация по модулю
+				li
+					a(href="http://python-lab.ru/documentation/27/stdlib/doctest.html") Перевод 
+					| оригинальной документация по модулю для версии 2.7 на русский  
+				li
+					a(href="http://rutracker.org/forum/viewtopic.php?t=4582652") Обучающее видео 
+					| от pluralsight.com
+				li
+					a(href="http://pluralsight.com/training/courses/TableOfContents?courseName=unit-testing-python") Обучающее видео 
+					| от pluralsight.com
+				li Д.Бизли. Питон. Подробный справочник. 4 издание. 2010 г. стр.236-239

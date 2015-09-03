@@ -1,0 +1,99 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://localhost:8000/sportprogramming/index.html">Спортивное программирование</a></li>
+          <li><a href="http://localhost:8000/bigdata/index.html">Анализ данных   </a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Работа с регулярными выражениями</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p class="text-justify">Регулярные выражения — формальный язык поиска и осуществления манипуляций с подстроками в тексте, основанный на использовании метасимволов. Это шаблон, состоящий из символов и метасимволов и задающий правило поиска. Язык регулярных выражений имеет специальный синтаксис и команды.</p>
+        <p class="text-justify">Метасимволы - специальные символы, которые не соотвествуют себе, а влияют на суть шаблона исходя из своего специального значения. Всего метасимволов 12.</p>
+        <ul>
+          <li>$ -  Соотвествует позиции конца строки</li>
+          <li>(</li>
+          <li>)</li>
+          <li>* - Ноль или более повторение предшествующего выражения</li>
+          <li>+ - Одно или более повторение предшествующего выражения</li>
+          <li>. - Любой символ, кроме переноса строки</li>
+          <li>? - Ноль или одно повторение предшествующего выражения</li>
+          <li>[ - Начало символьного класса</li>
+          <li>\ - Символ экранирования или начала предопределенных последовательностей</li>
+          <li>^ - Соотвествует позиции начала строки</li>
+          <li>{</li>
+          <li>|</li>
+        </ul>
+        <p class="text-justify">Символ <kbd>]</kbd> становится метасимволом, если идет после соотвествующей открывающей скобки. Тоже справедливо и для <kbd>}</kbd>. Дефис <kbd>-</kbd>, является метасимволом только внутри скобок <kbd>[]</kbd>. Если мы хотим, чтобы указанные матасимволы соотвествовали своему буквальному смыслу их нужно экранировать, т.е. помещать перед ними символ обратного слэша <kbd>\</kbd>.</p>
+        <p class="text-justify">Символьный класс - последовательность символов заключенная в скобки <kbd>[]</kbd>. Внутри данного класса четыре символа имеют специальное значение. </p>
+        <ul>
+          <li><kbd>-</kbd> - если он находится между двумя символами, тогда обозначает диапазон, т.е. <kbd>[a-d]</kbd> это тоже, что и <kbd>[abcd]</kbd>. В другом случае, обозначает символ дефиса, наприм при <kbd>[abcd-]</kbd></li>
+          <li><kbd>^</kbd> - символ отрицания, используется для указания класса "все кроме"</li>
+          <li><kbd>\</kbd> - символ экранирования</li>
+          <li><kbd>]</kbd> - становится метасимволом и обозначает конец символьного класса</li>
+        </ul>
+        <p class="text-justify">Все другие метасимволы имеют свое обычное символьное значение.</p>
+        <p>Ссылки по данной теме:
+          <ol>
+            <li><a href="http://docs.python.org/3.4/library/re.html">Оригинальная документация по модулю</a></li>
+            <li>Регулярные выражения, пособие для новичков. <a href="http://habrahabr.ru/post/115825/">Часть 1, </a><a href="http://habrahabr.ru/post/115436/">Часть 2 </a>на хабре.</li>
+            <li><a href="http://www.regexr.com">Редактор регулярных выражений онлайн</a></li>
+            <li><a href="http://informatics.mccme.ru/mod/statements/view.php?id=3163">Примеры задач на регулярные выражения</a></li>
+            <li><a href="http://upload.wikimedia.org/wikipedia/ru/e/ee/RegExp_tutorial.png">Шпаргалка ро регулярным выражениям</a></li>
+            <li><a href="http://regexcrossword.com/">Regex Crossword </a> - кросворд на тему регулярных выражений.</li>
+            <li><a href="http://uzer.com.ua/cross/">Crossword </a>- кросворд на тему регулярных выражений. Сверстан на CSS3. <a href="http://habrahabr.ru/post/175847/">Статья на хабре</a></li>
+            <li><a href="http://rutracker.org/forum/viewtopic.php?t=3927441">Regular Expressions: Up and Running </a>- видеоурок от Envato. 2011. [ENG]</li>
+            <li><a href="http://rutracker.org/forum/viewtopic.php?t=3865164">Using Regular Expressions with Kevin Skoglund </a>- видеоурок от Lynda.com. 2011. [ENG] </li>
+            <li><a href="https://developers.google.com/edu/python/regular-expressions?hl=ru">Регулярные выражения в Питоне </a>на сайте Google.</li>
+          </ol>
+        </p>
+        <p>Литература:
+          <ol>
+            <li>стр. 354-362. Бизли Д. Python. Подробный справочник, 4-е издание. Перевод с английского. Спб.: Символ-Плюс, 2010. [RUS]</li>
+            <li><a href="http://rutracker.org/forum/viewtopic.php?t=2931893">Джеффри Фридл. Регулярные выражения, 3-е издание. 2008. [RUS]        </a></li>
+            <li><a href="http://rutracker.org/forum/viewtopic.php?t=4299097">
+                Гойвертс Я., Левитан С. Регулярные выражения. Сборник рецептов. 2009. [RUS] 
+                 | <a href="http://rutracker.org/forum/viewtopic.php?t=4200078">второе издание, на английском языке. 2012.</a></a></li>
+            <li><a href="http://rutracker.org/forum/viewtopic.php?t=3828631">Бен Форта. Регулярные выражения. 2005.</a></li>
+          </ol>
+        </p>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

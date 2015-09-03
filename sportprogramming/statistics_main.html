@@ -1,0 +1,119 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://localhost:8000/sportprogramming/index.html">Спортивное программирование</a></li>
+          <li><a href="http://localhost:8000/bigdata/index.html">Анализ данных   </a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Статистика на python</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Основные понятия</h2>
+        <h3>Среднее арифметическое | mean</h3><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mover accent="false">
+        <mi>x</mi>
+        <mo>&OverBar;</mo>
+        </mover>
+        <mo>=</mo>
+        <mrow>
+        <mfrac>
+        <mn>1</mn>
+        <mi>n</mi>
+        </mfrac>
+        <munderover>
+        <mo>&sum;</mo>
+        <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+        <mi>n</mi>
+        </munderover>
+        <msub><mi>x</mi><mi>i</mi></msub>
+        </mrow>
+        </math>
+        <pre class="python"><code>import statistics
+data = [1, 2, 3, 4, 6, 7, 8, 9]
+print(statistics.mean(data))
+>>> 5.0</code></pre>
+        <h3>Среднеквадратическое отклонение | Standard Deviation</h3>\[ \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \overline{x})^2} \]
+        <pre class="python"><code>import statistics
+data = [1, 2, 1, 1, 1, 1, 1, 1]
+print(statistics.stdev(data))
+>>> 0.3535533905932738</code></pre>
+        <h3>Ковариация</h3>\[ \mathrm{cov}_{xy} = \mathbb{M} \left[(X - \mathbb{M}X) (Y - \mathbb{M}Y)\right] \]
+        <math display="block">
+        <msub>
+        <mi>&sigma;</mi>
+        <mrow>
+        <mi>x</mi>
+        <mi>y</mi>
+        </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo>E</mo>
+        <mo>&ApplyFunction;</mo>
+        <mfenced open="[" close="]">
+        <mrow>
+        <mfenced>
+        <mrow>
+        <mi>x</mi>
+        <mo>-</mo>
+        <mo>E</mo>
+        <mo>&ApplyFunction;</mo>
+        <mfenced>
+        <mi>x</mi>
+        </mfenced>
+        </mrow>
+        </mfenced>
+        <mfenced>
+        <mrow>
+        <mi>y</mi>
+        <mo>-</mo>
+        <mo>E</mo>
+        <mo>&ApplyFunction;</mo>
+        <mfenced>
+        <mi>y</mi>
+        </mfenced>
+        </mrow>
+        </mfenced>
+        </mrow>
+        </mfenced>
+        </math>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

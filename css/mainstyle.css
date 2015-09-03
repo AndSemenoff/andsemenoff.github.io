@@ -1,0 +1,23 @@
+/* CSS Document */
+body{
+	font-family: 'Roboto Condensed', sans-serif;
+/*	width: 100%;*/
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAJv3rz5zwjjgzgiIiKMYAEYB8RmROaABAARVA/IbgZ16QAAAABJRU5ErkJggg==) 
+	repeat;
+}
+
+footer{
+	margin-top: 2em;
+}
+
+ol>li{
+display:block;
+}
+
+ol>li:before{
+content:counters(item,".") ". ";
+counter-increment:item
+}
+ol{
+counter-reset:item
+}

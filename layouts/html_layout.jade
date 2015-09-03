@@ -1,0 +1,35 @@
+- var site_title = "ABSOLEM.INFO";
+- var site_url = "http://absolem.info";
+- var site_url = "http://localhost:8000";
+html
+	head
+		title= site_title
+		meta( charset="utf-8" )
+		meta( name="description" content="Семенова Андрей Вячеславович. Личный сайт" )
+		meta( name="author" content="Семенова Андрей Вячеславович" )
+		meta( name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python" )
+		meta( name="copyright" content="Семенова Андрей Вячеславович" )
+		link( rel="shortcut icon" href="/favicon.ico" )
+		link( rel="stylesheet" href="../css/reset.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		
+		block scripts
+	body
+		nav.top-bar.data-topbar 
+			ul.title-area: li.name: h1: a(href="/")= site_title
+			section.top-bar-section
+				//  Left Nav Section
+				ul.left
+					li: a(href= site_url+"/sportprogramming/index.html") Спортивное программирование
+					li: a(href= site_url+"/bigdata/index.html") Анализ данных   
+
+		block navigation
+		block content
+		footer
+			div.row
+				div.large-12.columns
+					block footer_scripts
+					div#logo5HTML
+					a(href="http://validator.w3.org/check?uri=referer")
+					img(src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+			block footer
