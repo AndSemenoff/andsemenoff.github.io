@@ -1,0 +1,46 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h3 Вычислительная геометрия
+	div.row: div.large-12.columns
+		h4 Ссылки
+		p.
+			<ul>
+				<li><a href="http://informatics.mccme.ru/course/view.php?id=22">Геометрия</a> на сайте Дистанционной подготовки по информатике</li>
+				<li><a href="http://habrahabr.ru/post/147691/">Статья на Хабре. Часть 1.</a></li>
+				<li><a href="http://habrahabr.ru/post/148325/">Статья на Хабре. Часть 2.</a></li>
+				<li><a href="http://algolist.ru/olimp/geo_prb.php">Решения олимпиадных задач на algolist</a></li>  
+				<li><a href="http://www.toptal.com/python/computational-geometry-in-python-from-theory-to-implementation">[ENG]Сложные вопросы</a></li>
+				<li><a href="https://github.com/sympy/sympy/blob/master/sympy/geometry/line.py">Код</a> модуля Geometry.Line из библиотеки SymPy</li>
+			   	<li><a href="http://www.pygame.org/wiki/2DVectorClass">Код</a> библиотеки 2DVectorClass из PyGame</li>
+			   	<li><a href="http://rutracker.org/forum/viewtopic.php?t=2382822">Книга</a> Майкл Ласло - Вычислительная геометрия и компьютерная графика на C++</li>
+			   	<li><a href="http://onzi.narod.ru/modules.html">Модуль</a> на языке паскаль</li>
+			   	<li><a href="http://e-maxx.ru/algo/">Геометрия</a> на сайте e-maxx.ru</li>
+			   	<li><a href="http://hardfire.ru/geom">Геометрия</a> на сайте hardfire..ru</li>    
+			    
+				<li>Статьи Е. В. Андреевой и Ю. Е. Егорова в журнале «Информатика»
+			        <ul>
+			        <li><a href="http://informatics.mccme.ru/file.php/22/part1.pdf">Статья.</a> Векторы. Уравнения линий</li>
+			        <li><a href="http://informatics.mccme.ru/file.php/22/part2.pdf">Статья.</a> Взаимное расположение точек и фигур</li>
+			        <li><a href="http://informatics.mccme.ru/file.php/22/part3.pdf">Статья.</a> Особые точки многоугольников и множеств N точек плоскости</li>
+			        <li><a href="http://informatics.mccme.ru/file.php/22/part4.pdf">Статья.</a> Многоугольники</li>                
+			        </ul>
+			    </li>
+			</ul>
+
+			<h4>Обозначения</h4>
+			<p></p>
+			<ul>Будем придерживаться следующих обозначений:
+			<li>Точки на плоскости: A, B, C, ...</li>
+			<li>Вектора: <span class="math">\( \vec{a}, \vec{b}, \vec{AB}\)</span></li>
+			<li>Координаты вектора: <span class="math">\( |\vec{a}|:(a_x ,a_y )\)</span></li>
+			<li>Углы: <span class="math">\( \angle AOB\)</span></li>
+
+			</ul>
+			<h4>Вектора</h4>
+			<p>Точки и вектора на плоскости задаются парой координат <span class="math">\( (a_x, a_y )\)</span>
+			</p>
+			<p>Расстояние от начала координат до точки <span class="math">\( P(x,y) \)</span> легко найти по теореме Пифагора: <span class="math">\( \sqrt {x^{2} + y^{2}} \)</span></p>
+			<p>Соответственно длина вектора: <span class="math">\( |\vec{a}|= \sqrt{(a_x^{2} + a_y^{2}} )\)</span></p>
+			<p>Расстояние между двумя точками <span class="math">\( A_0(x_0,y_0) \)</span> и <span class="math">\( A_1(x_1,y_1) \)</span> вычисляется, как длина вектора <span class="math">\( \vec{A_0A_1} : \sqrt {(x_1 - x_0)^{2} + (y_1 - y_0)^{2} } \)</span></p>
+			<p>Нормализованным вектором называется вектор единичной длины, соноправленный данному. Его координаты: <span class="math">\( \left( \frac{a_x}{|a|} , \frac{a_y}{|a|} \right)  \)</span> </p>		

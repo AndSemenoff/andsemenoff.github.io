@@ -1,0 +1,99 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://andsemenoff.github.io//sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://andsemenoff.github.io//traiding/index.html">Инвестирование   </a></li>
+          <li><a href="http://andsemenoff.github.io//bigdata/index.html">Анализ данных</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4>Собственная функция сравнения для стандартного sort().</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p>
+          <p>
+          По умолчанию сортировка производится лексикографически, т.е. от меньшего к большему и по алфавиту.
+          Метод .sort() производит действия с исходным списком, переставляя элементы внутри него самого, и НЕ возвращает отсортированную копию исходного списка. Для получения отсортированной копии нужно использовать функцию sorted:
+          </p>
+          <pre class = "python">
+          <code>
+          unsortedList = ['cba', 'aa', 'baba',  'ccccc']
+          sortedList = sorted(unsortedList)
+          # не правильно sortedList = unsortedList.sort() вернет None
+          print (sortedList)
+          
+          >>> ['aa', 'aba', 'caccc', 'daba']
+          </code>
+          </pre>
+          <p>Однако, у функции sorted есть не обязательный параметр <strong>key</strong> - это функция (на самом деле любой callable объект), которая принимает элемент списка и возвращает объект, который будет использоваться при сравнения во время сортировки вместо оригинального элемента списка. Таким образом если мы хотим произвести сортировку исходного списка по алфавиту, но начиная со второго символа, то мы можем написать собственную функцию и передать ее имя в параметре key. Название функции пишется без скобок.
+          </p>
+          <pre class = "python">
+          <code>
+          unsortedList = ['aba', 'aa', 'daba',  'caccc']
+          
+          # Создаем собственную функцию, которая будет сортировать список:
+          def sortByAlphabet(inputItem):
+                  return inputItem[1] # Ключом является второй символ в каждом элементе, сортируем по нему
+          
+          sortedList = sorted(unsortedList, key = sortByAlphabet)
+          print (sortedList)
+          
+          >>> ['aa', 'daba', 'caccc', 'aba']
+          </code>
+          </pre>
+          
+          <p>
+          Для сортировки в обратном порядке НЕ используем ключевое слово <strong>reverse</strong> присваивая ему значение True, т.к. по умолчанию оно работает не так мы ожидаем.
+          </p>
+          
+          <pre class = "python">
+          <code>
+          unsortedList = ['aba', 'aa', 'daba',  'caccc']
+          def sortByAlphabet(inputItem):
+                  return inputItem[0]
+          sortedList = sorted(unsortedList, key = sortByAlphabet, reverse = True)
+          print (sortedList)
+          >>> ['daba', 'caccc', 'aba', 'aa']
+          </code>
+          </pre>			
+        </p>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

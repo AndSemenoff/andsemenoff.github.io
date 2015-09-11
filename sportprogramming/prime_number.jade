@@ -1,0 +1,68 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h4: strong Простые числа
+	div.row: div.large-12.columns
+		p Простое число — это натуральное число, которое имеет ровно два различных натуральных делителя: единицу и самого себя.
+		p Для проверки является ли конкретное число простым проверим это перебрав все его делители. Данный алгоритм называется проверкой на простоту перебором делителей.</p>
+		pre.python: code
+			|def isprime(n):
+			|&nbsp;&nbsp;&nbsp;&nbsp;if n == 1:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False   
+			|&nbsp;&nbsp;&nbsp;&nbsp;d = 2
+			|&nbsp;&nbsp;&nbsp;&nbsp;while d * d <= n:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if n % d == 0:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d += 1
+			|&nbsp;&nbsp;&nbsp;&nbsp;return True
+
+		p Если нам нужно найти простые числа в каком-то диапозоне, то существуют алгоритмы нахождения списка простых чисел от 2 до некоторого значения:</p>
+		ol
+			li Решето Эратосфена
+			li Решето Сундарама
+			li Решето Аткина
+
+
+
+		h4 Задача 1. Простые числа. |Теория чисел|
+		p Выведите все простые чила от M до N включительно. Если между ними нет простых чисел выведите "Absent".
+
+		p Решение:
+		pre.python: code
+			|import math
+			|m = int(input()) # первое число
+			|n = int(input()) # второе число
+			|k = math.ceil(math.sqrt(n))
+			|x = m
+			|isAbsent = True
+			|isPrime = True
+			|while x <= n:
+			|&nbsp;&nbsp;&nbsp;&nbsp;count = 2
+			|&nbsp;&nbsp;&nbsp;&nbsp;while count <= k and isPrime:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if x % count == 0: 
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPrime = False
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1
+			|&nbsp;&nbsp;&nbsp;&nbsp;if isPrime: 
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(x)
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAbsent = False
+			|&nbsp;&nbsp;&nbsp;&nbsp;isPrime = True
+			|&nbsp;&nbsp;&nbsp;&nbsp;x = x + 1
+			|if isAbsent: print('Absent')
+
+		p Алгоритм нахождения всех простых чисел от 2 до N при помощи множеств</p>
+		pre.python: code
+
+			|def primes(N):
+			|&nbsp;&nbsp;&nbsp;&nbsp;"""Возвращает все простые числа от 2 до N"""
+			|&nbsp;&nbsp;&nbsp;&nbsp;sieve = set(range(2, N))
+			|&nbsp;&nbsp;&nbsp;&nbsp;for i in range(2, int(math.sqrt(N)) + 1):
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if i in sieve:    
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sieve -= set(range(2 * i, N, i))
+			|&nbsp;&nbsp;&nbsp;&nbsp;return sieve
+
+
+		h4 Задача 2. Разложение на простые множители. |Теория чисел|
+		p Вывести представление целого числа N в виде произведения простых чисел. Выводить список чисел в порядке неубывания, разделенных знаком *
+
+		h4 Задача 3. Совершенные числа. |Теория чисел|
+		h4 Задача 4. Дружественные числа. |Теория чисел|

@@ -1,0 +1,48 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h4 Бинарный поиск
+	div.row: div.large-12.columns
+
+		pre.python: code
+			|def binarySearch(alist, item):
+			|&nbsp;&nbsp;&nbsp;&nbsp;first = 0
+			|&nbsp;&nbsp;&nbsp;&nbsp;last = len(alist) - 1
+			|&nbsp;&nbsp;&nbsp;&nbsp;found = False
+			|&nbsp;&nbsp;&nbsp;&nbsp;index = None
+			|&nbsp;&nbsp;&nbsp;&nbsp;while first <= last and not found:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midpoint = (first + last) // 2
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if alist[midpoint] == item:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;found = True
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = midpoint
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if item < alist[midpoint]:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last = midpoint - 1
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first = midpoint + 1
+			|&nbsp;&nbsp;&nbsp;&nbsp;return (found, index)
+			|&nbsp;
+			|testlist = [0, 1, 2, 8, 13, 13, 13, 17, 19, 32, 42,]
+			|print(binarySearch(testlist, 3))
+			|print(binarySearch(testlist, 13))
+		p
+		pre.python: code
+			|def binarySearchLeft(alist, item):
+			|&nbsp;&nbsp;&nbsp;&nbsp;left = 0
+			|&nbsp;&nbsp;&nbsp;&nbsp;right = len(alist) - 1
+			|&nbsp;&nbsp;&nbsp;&nbsp;found = False
+			|&nbsp;&nbsp;&nbsp;&nbsp;while right - left > 1:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midpoint = (right + left) // 2
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if alist[midpoint] >= item:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right = midpoint
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left = midpoint
+			|&nbsp;&nbsp;&nbsp;&nbsp;if alist[right] == item:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;found = True
+			|&nbsp;&nbsp;&nbsp;&nbsp;else:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right = None
+			|&nbsp;&nbsp;&nbsp;&nbsp;return (found, right)
+			|&nbsp;
+			|testlist = [0, 1, 2, 8, 13, 13, 13, 17, 19, 32, 42,]
+			|print(binarySearchLeft(testlist, 3))
+			|print(binarySearchLeft(testlist, 13))

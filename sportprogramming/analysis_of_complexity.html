@@ -1,0 +1,198 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://andsemenoff.github.io//sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://andsemenoff.github.io//traiding/index.html">Инвестирование   </a></li>
+          <li><a href="http://andsemenoff.github.io//bigdata/index.html">Анализ данных</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4><strong>Анализ сложности алгоритмов</strong></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p>
+          <p>Сначала научимся считать элементарные инструкции, для этого сделаем несколько предположений.
+          Предположим, что наш процессор способен выполнять, за один такт следующие операции:</p>
+          <ol>
+              <li>Присваивать значение переменной</li>
+              <li>Находить значение конкретного элемента в массиве</li>
+              <li>Сравнивать два значения</li>
+              <li>Инкрементировать значение</li>
+              <li>Основные арифметические операции (например, сложение и умножение)</li>
+              <li>Ветвление в операторt if происходит мгновенно</li>
+          </ol>
+          <p>
+          Рассмотрим следующий код и подсчитаем необходимое процессору число тактов для получения результата
+          </p>
+          <pre class = "python">
+          <code>
+          M = A[0]
+          for i in range(n):
+          &nbsp;&nbsp;&nbsp;&nbsp;if (A[i] >= M):
+          &nbsp;&nbsp;&nbsp;&nbsp;M = A[i]
+          </code>
+          </pre>
+          
+          
+          <table>
+          <caption><strong>Таблица 1: Специальные названия для функций</strong></caption>
+          <thead>
+          	<tr>
+              	<th width="200"><strong>f(n)</strong></th>
+          		<th width="200"><strong>Название</strong></th>
+          	</tr>
+          </thead>
+          <tbody>
+          	<tr>
+              	<td><span class="math">\(1\)</span></td>
+          		<td>За константу</td>
+          	</tr>
+          	<tr>
+              	<td><span class="math">\(\log n\)</span></td>
+          		<td>Логарифмический</td>
+          	</tr>
+          	<tr>
+              	<td><span class="math">\(n\)</span></td>
+          		<td>Линейный</td>
+          	</tr>
+          	<tr class="row-odd"><td><span class="math">\(n\log n\)</span></td>
+          	<td>? Log Linear</td>
+          	</tr>
+              <tr>
+              	<td><span class="math">\(n^{2}\)</span></td>
+              	<td>Квадратичный</td>
+              </tr>
+              <tr>
+              	<td><span class="math">\(n^{3}\)</span></td>
+              	<td>Кубический</td>
+              </tr>
+              <tr>
+              	<td><span class="math">\(2^{n}\)</span></td>
+              	<td>Экcпоненциальный</td>
+              </tr>
+          </tbody>
+          </table>
+          
+          
+          <pre class = "python">
+          <code>
+          test = 0
+          for i in range(n):
+             for j in range(n):
+                test = test + i * j
+          </code>
+          </pre>
+          <p>Варианты ответов:</p>
+          <span class="math">1. \(O(2^{n})\) &nbsp;&nbsp;&nbsp;</span>
+          <span class="math">2. \(O(n)\) &nbsp;&nbsp;&nbsp;</span>
+          <span class="math">3. \(O(n^{2})\) &nbsp;&nbsp;&nbsp;</span>
+          \[ 1.&nbsp;O(n)&nbsp;&nbsp;&nbsp;2.&nbsp;O(n^2)&nbsp;&nbsp;&nbsp;3.&nbsp;O(log(n))&nbsp;&nbsp;&nbsp;4.&nbsp;O(n^3) \
+          
+          <br>
+          
+          <p class="answer">Проверить себя:</p>
+          <div class="toggleShow">Правильный ответ 2</div>
+          
+          
+          <pre class = "python">
+          <code>
+          test = 0
+          for i in range(n):
+             test = test + 1
+          
+          for j in range(n):
+             test = test - 1
+          
+          </code>
+          </pre>
+          <p>Варианты ответов:</p>
+          \[ 1.&nbsp;O(n)&nbsp;&nbsp;&nbsp;2.&nbsp;O(n^2)&nbsp;&nbsp;&nbsp;3.&nbsp;O(log(n))&nbsp;&nbsp;&nbsp;4.&nbsp;O(n^3) \]
+          <br>
+          <p class="answer">Проверить себя:</p>
+          <div class="toggleShow">Правильный ответ </div>
+          
+          
+          <pre class = "python">
+          <code>
+          i = n
+          while i > 0:
+             k = 2 + 2
+             i = i // 2
+          
+          </code>
+          </pre>
+          
+          <p>Варианты ответов:</p>
+          \[ 1.&nbsp;O(n)&nbsp;&nbsp;&nbsp;2.&nbsp;O(n^2)&nbsp;&nbsp;&nbsp;3.&nbsp;O(log(n))&nbsp;&nbsp;&nbsp;4.&nbsp;O(n^3) \]
+          <br>
+          
+          <p class="answer">Проверить себя:</p>
+          <div class="toggleShow">Правильный ответ </div>
+          
+          <ul>
+          <li>Итераторы</li>
+          <li>Генераторы списков</li>
+          <li>Выражения-генераторы</li>
+          <li>Функции-генераторы</li>
+          <li>Сопрограммы</li>
+          <li>Замыкания</li>
+          </ul>
+          
+        </p>
+        <h4>Итераторы</h4>
+        <p>Считается, что объект s поддерживает итерации, если он может использоваться в следующем программном коде, который является отражением реализации инструкции for:</p>
+          <pre class="python"><code>it = s.__iter__() 			# Получить итератор для объекта s
+while 1:
+&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = it.__next__() 	# Получить следующий элемент
+&nbsp;&nbsp;&nbsp;&nbsp;except StopIteration:
+&nbsp;&nbsp;&nbsp;&nbsp;break
+&nbsp;&nbsp;&nbsp;&nbsp;...						# выполнить операции над i</code></pre>
+        </p>
+        <h4>Полиморфизм</h4>
+        <p>Полиморфизм - механизм динамического связывания методов. Вызвать версию метода базового класса внутри одноименного метода подкласса можно с помощью встроенной функции <strong>super()</strong>.</p></p>
+        <p>В Питоне отсутствует перегрузка - т.е. возможность иметь в одном классе несколько методов с одинаковыми именами, но с различными списками входных параметров. Отсутствует - управление доступом.</p></p>
+        <p>Экземпляры класса создаются посредством обращения к имени класса, как к функции, которой передаются все необходимые аргументы.</p></p>
+        <p>По умолчанию все эземпляры классов являются хешируемыми. Но если будет реализован метод __eq__(), экзепляры перестают быть хешируемыми.</p></p>
+        <p>Декоратор - это функция, которая в качестве аргумента принимает функцию или метод и возвращает измененную(декорированную) версию.</p></p>
+        <p>Статические методы - это методы, которые не получают аргумент self(первый аргумент). Для статических методов используется декоратор <strong>staticmethod</strong>. Вместо статических методов лучше создавать функции модуля или методы класса.</p>		</p>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

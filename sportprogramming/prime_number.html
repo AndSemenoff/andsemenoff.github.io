@@ -1,0 +1,103 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://andsemenoff.github.io//sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://andsemenoff.github.io//traiding/index.html">Инвестирование   </a></li>
+          <li><a href="http://andsemenoff.github.io//bigdata/index.html">Анализ данных</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4><strong>Простые числа</strong></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p>Простое число — это натуральное число, которое имеет ровно два различных натуральных делителя: единицу и самого себя.</p>
+        <p>Для проверки является ли конкретное число простым проверим это перебрав все его делители. Данный алгоритм называется проверкой на простоту перебором делителей.</p></p>
+        <pre class="python"><code>def isprime(n):
+&nbsp;&nbsp;&nbsp;&nbsp;if n == 1:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False   
+&nbsp;&nbsp;&nbsp;&nbsp;d = 2
+&nbsp;&nbsp;&nbsp;&nbsp;while d * d <= n:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if n % d == 0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d += 1
+&nbsp;&nbsp;&nbsp;&nbsp;return True</code></pre>
+        <p>Если нам нужно найти простые числа в каком-то диапозоне, то существуют алгоритмы нахождения списка простых чисел от 2 до некоторого значения:</p></p>
+        <ol>
+          <li>Решето Эратосфена</li>
+          <li>Решето Сундарама</li>
+          <li>Решето Аткина</li>
+        </ol>
+        <h4>Задача 1. Простые числа. |Теория чисел|</h4>
+        <p>Выведите все простые чила от M до N включительно. Если между ними нет простых чисел выведите "Absent".</p>
+        <p>Решение:</p>
+        <pre class="python"><code>import math
+m = int(input()) # первое число
+n = int(input()) # второе число
+k = math.ceil(math.sqrt(n))
+x = m
+isAbsent = True
+isPrime = True
+while x <= n:
+&nbsp;&nbsp;&nbsp;&nbsp;count = 2
+&nbsp;&nbsp;&nbsp;&nbsp;while count <= k and isPrime:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if x % count == 0: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPrime = False
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1
+&nbsp;&nbsp;&nbsp;&nbsp;if isPrime: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAbsent = False
+&nbsp;&nbsp;&nbsp;&nbsp;isPrime = True
+&nbsp;&nbsp;&nbsp;&nbsp;x = x + 1
+if isAbsent: print('Absent')</code></pre>
+        <p>Алгоритм нахождения всех простых чисел от 2 до N при помощи множеств</p></p>
+        <pre class="python"><code>def primes(N):
+&nbsp;&nbsp;&nbsp;&nbsp;"""Возвращает все простые числа от 2 до N"""
+&nbsp;&nbsp;&nbsp;&nbsp;sieve = set(range(2, N))
+&nbsp;&nbsp;&nbsp;&nbsp;for i in range(2, int(math.sqrt(N)) + 1):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if i in sieve:    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sieve -= set(range(2 * i, N, i))
+&nbsp;&nbsp;&nbsp;&nbsp;return sieve</code></pre>
+        <h4>Задача 2. Разложение на простые множители. |Теория чисел|</h4>
+        <p>Вывести представление целого числа N в виде произведения простых чисел. Выводить список чисел в порядке неубывания, разделенных знаком *</p>
+        <h4>Задача 3. Совершенные числа. |Теория чисел|</h4>
+        <h4>Задача 4. Дружественные числа. |Теория чисел|</h4>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

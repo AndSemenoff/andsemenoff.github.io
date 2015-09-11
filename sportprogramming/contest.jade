@@ -1,0 +1,417 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h4 Решение турнирных задач на языке Python
+	div.row: div.large-12.columns
+		p.
+
+			<h5>Соревнование 2. Задача A. Числа | <a href="http://codeforces.ru/contest/2/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/2/status/A">решившие</a></h4>
+			<h6>Условие кратко</h6>
+			<p></p>
+
+			<pre class="python">
+			<code>
+			n = input()
+			result = [raw_input().split() for row in range(n)]
+			count1 = {}
+			for name, score in result:
+			&nbsp;&nbsp;&nbsp;&nbsp;count1[name] = count1.get(name, 0) + int(score)
+			w = max(count1.values())
+			count2 = {}
+			for name, score in result:
+			&nbsp;&nbsp;&nbsp;&nbsp;count2[name] = count2.get(name, 0) + int(score)
+			&nbsp;&nbsp;&nbsp;&nbsp;if count2[name] >= w and count1[name] == w:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print name
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+			</code>
+			</pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 3. Задача A. Кратчайший путь короля | <a href="http://codeforces.ru/contest/3/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/3/status/A">решившие</a> </h5>
+			<h6>Условие кратко</h5>
+			<p>
+			Одинокий король остался совсем один на шахматной доске. Несмотря на одиночество, он вовсе не унывает — ведь ему еще надо сделать так много дел государственной важности. Например, ему надо совершить официальный визит в клетку t. Так как король не привык терять попусту время, он хочет добраться от своего местоположения s до клетки t за наименьшее число ходов. Помогите ему это сделать. <br/>
+			В первую строку выведите n — минимальное число ходов короля. Далее в n строк выведите сами ходы. Каждый ход описывается одной из восьми строк: L, R, U, D, LU, LD, RU или RD.
+
+			L, R, U, D, соответственно, означают ходы влево, вправо, вверх и вниз (согласно рисунку), двухбуквенные обозначения соответствуют диагональным ходам. Если решений несколько, выведите любое.
+			</p>
+			<pre>
+
+			</pre>
+			<p>
+
+			</p>
+
+			<h5>Соревнование 4. Задача A. Числа | <a href="http://codeforces.ru/contest/4/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/4/status/A">решившие</a> </h5>
+			<h6>Условие кратко</h6>
+			<p></p>
+			<pre class="python">
+			<code>
+			w = input()
+			print 'YES' if w > 2 and not w & 1 else 'NO'
+			</code>
+			</pre>
+			<script src="https://gist.github.com/AndSemenoff/f338a146ea69872b6a42.js"></script>
+			<p>
+			Операция x & y битовое and возвращает 1 если соответствующие биты x и y равны 1, иначе возвращает 0. Выражением w & 1 проверяем на нечетность и соотвественно not w & 1 на четность.
+			</p>
+			<h5>Соревнование 12. Задача A. Числа | <a href="http://codeforces.ru/contest/12/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/12/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre>
+
+			</pre>
+			<p>
+			</p>
+			<h5>Соревнование 13. Задача A. Числа | <a href="http://codeforces.ru/contest/13/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/13/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre>
+
+			</pre>
+			<p>
+			</p>
+			<h5>Соревнование 14. Задача A. Письмо | <a href="http://codeforces.ru/contest/14/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/14/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python">
+			<code>
+			n, m = map(int, raw_input().split())
+			s = [raw_input() for i in xrange(n)]
+			#  n — количество строк, а m — количество столбцов
+			x1, y1, x2, y2 = n, m, 0, 0
+			for i in xrange(n):
+			&nbsp;&nbsp;&nbsp;&nbsp;for j in xrange(m):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if s[i][j] == '*':
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x1 = min(x1, i)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y1 = min(y1, j)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2 = max(x2, i)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y2 = max(y2, j)
+						
+			for i in xrange(x1, x2 + 1):
+				print s[i][y1: y2 + 1]
+			</code>
+			</pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 16. Задача A. Флаг | <a href="http://codeforces.ru/contest/16/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/16/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			n, m = map(int, raw_input().split())
+			b = [raw_input() for row in range(n)]
+			row = all(b[i - 1] != b[i] for i in range(1, n))
+			column = all(len(set(r)) < 2 for r in b)
+			print ['NO', 'YES'][row and column]
+			</pre>
+			<p>Функция map принимает в качестве аргументов функцию и список и применяет функцию к каждому элементу списка. n - кол-во строк, m - кол-во столбцов.
+			Встроенная функция <strong>set</strong> возвращает объект множества, который содержит все элементы объекта переданного функции. Следовательно если длина множества будет меньше 2 значит цвет в столбцах удовлетворяет условию задачи.
+			Функция <strong>all</strong> возвращает True если все элементы итерируемого объекта имеют истинное значение.
+			</p>
+			<h5>Соревнование 16. Задача B. Вор и спички | <a href="http://codeforces.ru/contest/16/problem/B">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/16/status/B">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p>
+			На складе m контейнеров, в контенере номер i находится ai коробок спичек, а в каждой коробке bi спичек. Унести можем n коробок. Выбрать не более n коробок так, чтобы количество спичек было максимально.
+			</p>
+			<pre class="python">
+			<code>
+			total_box, m = map(int, raw_input().split()) 	# total_box коробок можем унести; m контейнеров на складе
+			container = [0] * 11 					# так как спичек в коробке может быть максимум 10
+			for _ in range(m):
+			&nbsp;&nbsp;&nbsp;&nbsp;box, matches = map(int, raw_input().split())  # box коробок, matches спичек в коробке
+			&nbsp;&nbsp;&nbsp;&nbsp;container[matches] += box
+
+			ans = 0
+			for i, box in enumerate(container[ : : -1]):
+			&nbsp;&nbsp;&nbsp;&nbsp;ans += (10 - i) * min(box, total_box)
+			&nbsp;&nbsp;&nbsp;&nbsp;total_box -= min(box, total_box)
+			&nbsp;&nbsp;&nbsp;&nbsp;if total_box == 0: break
+			  
+			print ans    
+			</code>
+			</pre>
+			<p>
+			Создадим одиннацать контейнеров порядковый номер контейнера это кол-во спичек в коробке, а значение это кол-во коробок. Для получения ответа ...
+			</p>
+			<h5>Соревнование 20. Задача A. Файловая система BerOS | <a href="http://codeforces.ru/contest/20/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/20/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python">
+			<code>
+			input_path = raw_input().split('/')
+			path = [i for i in input_path if i is not '']
+			print '/' + "/".join(path)
+			</code>
+			</pre>
+			<p>В первой строке вводим путь и разбиваем его на части. Разделителем служит слэш. Результат это список с именами директорий и пустыми символами на месте повторяющихся слэшей. Во второй строчке выбрасываем из списка элементы со значением ''. У нас остаются только название самих директорий. В третьей строчке выводим список path с помощью функции joint, использую в качестве разделителя "/"</p>
+
+			<h5>Соревнование 104. Задача A. Блэкджек | <a href="http://codeforces.ru/contest/104/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/104/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python">
+			<code>
+			print ([0] * 11 + [4] * 9 + [15, 4] + [0] * 4)[input()]
+			</code>
+			</pre>
+			<pre class="python">
+			<code>
+			x = input()
+			if x < 11 or x > 21: 
+			&nbsp;&nbsp;&nbsp;&nbsp;print 0
+			elif x == 20: 
+			&nbsp;&nbsp;&nbsp;&nbsp;print 15
+			else: 
+			&nbsp;&nbsp;&nbsp;&nbsp;print 4
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 106. Задача A. Дурак | <a href="http://codeforces.ru/contest/106/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/106/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			trump = raw_input()
+			first, second = raw_input().split()
+			cards = '6789TJQKA'
+			print ['NO', 'YES'][first[1] == trump and second[1] != trump or first[1] == second[1] and cards.find(first[0]) > cards.find(second[0])]
+			</code></pre>
+			<p>
+			Первая карта бьет вторую, если: первая козырная вторая нет или масти карт равны и первая старше второй. Во всех остальных случаях не бьет.
+			</p>
+
+			<h5>Соревнование 108. Задача A. Время-палиндром
+			 | <a href="http://codeforces.ru/contest/108/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/108/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			h, m = map(int, raw_input().split(':'))
+			while True:
+			&nbsp;&nbsp;&nbsp;&nbsp;m += 1
+			&nbsp;&nbsp;&nbsp;&nbsp;h += m / 60
+			&nbsp;&nbsp;&nbsp;&nbsp;m %= 60
+			&nbsp;&nbsp;&nbsp;&nbsp;h %= 24
+			&nbsp;&nbsp;&nbsp;&nbsp;print '%02d:%02d' % (h, m)
+			&nbsp;&nbsp;&nbsp;&nbsp;if h == m % 10 * 10 + m / 10:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print '%02d:%02d' % (h, m)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+			</code></pre>
+			<p>
+			Получаем единицы m % 10
+			Получаем десятки m / 10
+			Переставляем цифры местами m % 10 * 10 + m / 10
+			</p>
+
+			<h5>Соревнование 109. Задача A. Счастливая сумма цифр
+			 | <a href="http://codeforces.ru/contest/109/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/109/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre>
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 110. Задача A. Почти счастливое число
+			 | <a href="http://codeforces.ru/contest/110/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/110/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			n = raw_input()
+			print 'YES' if n.count('4') + n.count('7') in [4, 7] else 'NO'
+			</code></pre>
+			<p>
+			С помощью метода count подсчитываем количество цифр '4' и '7' в числе и если полученное кол-во принадлежит к множеству чисел 4 и 7 выводим 'YES', а если нет, то 'NO'
+			</p>
+
+			<h5>Соревнование 112. Задача A. Петя и строки | <a href="http://codeforces.ru/contest/112/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/112/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			print cmp(*[raw_input().lower() for x in ' ' * 2])
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 114. Задача A. Cifera
+			 | <a href="http://codeforces.ru/contest/114/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/114/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p>Дано целое число K и целое число L. Вывести в первой строчке 'YES' если L можно представить как K в какой-либо степени и во второй степень - 1. Если нельзя, то просто вывести 'NO'. 2 ≤ K, L ≤ 2<sup>31</sup>-1</p>
+			<pre class="python"><code>
+			k = int(input())
+			l = int(input())
+			p = [k ** x for x in range(1, 32)]
+			print 'YES\n' + str(p.index(l)) if l in p else 'NO'
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 115. Задача A. Праздник
+			 | <a href="http://codeforces.ru/contest/115/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/115/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 118. Задача A. Упражнение на строки
+			 | <a href="http://codeforces.ru/contest/118/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/118/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			print '.'+ '.'.join(raw_input().lower().translate(None, 'ayoeui'))
+			</code></pre>
+			<p>Используются следующие функции:
+			<ul>
+				<li>lower() - преобразует все символы в нижний регистр</li>
+			    <li>translate(None, a) - в данной конструкции удаляет все символы, кот. передаем в a из исходной строки.</li>
+			    <li>join() - </li>
+			</ul>
+			</p>
+
+			<h5>Соревнование 119. Задача A. Эпическая игра
+			 | <a href="http://codeforces.ru/contest/119/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/119/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 120. Задача A. Лифт
+			 | <a href="http://codeforces.ru/contest/120/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/120/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			print ['L', 'R'][(raw_input() == 'front') ^ (raw_input() == '1')]
+			</code></pre>
+			<p>
+			<ul>
+			<li>front и 1 = L</li>
+			<li>front и 2 = R</li>
+			<li>back и 1 = R</li>
+			<li>back и 2 = L</li>
+			</ul>
+			Если использовать двоичный XOR "^", то получим краткую запись решения.
+			</p>
+
+			<h5>Соревнование 120. Задача B. Что? Где? Когда?
+			 | <a href="http://codeforces.ru/contest/120/problem/B">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/120/status/B">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			import sys
+			sys.stdin = open('input.txt', 'r')
+			sys.stdout = open('output.txt', 'w')
+			n, k = map(int, raw_input().split())
+			l = [0]*n
+			l = map(int,raw_input().split())
+			while l[k - 1] == 0:
+			&nbsp;&nbsp;&nbsp;&nbsp;k = (k + 1) % (n + 1)
+			print str(k)
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 312. Задача A. Чье это предложение?
+			 | <a href="http://codeforces.ru/contest/312/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/312/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 313. Задача A. Илья и банковский счет
+			 | <a href="http://codeforces.ru/contest/313/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/313/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python">
+			<code>
+			n = int(raw_input())
+			if n < 0:
+			&nbsp;&nbsp;&nbsp;&nbsp;n = str(n)
+			&nbsp;&nbsp;&nbsp;&nbsp;ans = max (int (n[:-1]), int (n[:-2] + n[-1:]))
+			&nbsp;&nbsp;&nbsp;&nbsp;print ans
+			else:
+			&nbsp;&nbsp;&nbsp;&nbsp;print n    
+			</code>
+			</pre>
+			<p>
+			Если число положительное или ноль, то сразу выводим его, как ответ. Для отрицательных чисел
+			Преобразуем число в строку. 
+			Сформируем с помощью слайсов два числа. Первое, когда удалена цифра единиц <strong>n[:-1]</strong>. Второе, когда удалена цифра десятков <strong>n[:-2] + n[-1:]</strong>. Преобразуем полученные строки к целым числам.
+			Далее с помощью стандартной функции <strong>max</strong> выберем из двух чисел наибольшее. Полученное число будет ответом на задачу.
+			</p>
+
+			<h5>Соревнование 315. Задача A. Сережа и бутылки
+			 | <a href="http://codeforces.ru/contest/315/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/315/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 317. Задача A. Превосходная пара
+			 | <a href="http://codeforces.ru/contest/317/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/317/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python"><code>
+			</code></pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 318. Задача A. Чет и нечет
+			 | <a href="http://codeforces.ru/contest/318/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/318/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python">
+			<code>
+			n, k = map(long, raw_input().split())
+			m = (n + 1) / 2
+			print 2 * k - 1 if k <= m else 2 * (k - m)
+			</code>
+			</pre>
+			<p>
+			</p>
+
+			<h5>Соревнование 320. Задача A. Волшебные числа
+			 | <a href="http://codeforces.ru/contest/320/problem/A">Задача на Codeforces</a> | <a href="http://codeforces.ru/contest/320/status/A">решившие</a> </h5>
+			<h5>Условие кратко</h5>
+			<p></p>
+			<pre class="python">
+			<code>
+			import re
+			exp = re.compile("(1|14|144)+$")
+			print 'YES' if re.match(exp, raw_input()) else 'NO'
+			</code>
+			</pre>
+			<p>
+			Будем использовать стандартный модуль питона для работы с регулярными выражениями <strong> re</strong>. Основное в задаче правильно составить регулярное выражение:
+			<ul>
+				<li>(...) - группа</li>
+				<li>| - логический оператор или, позволят объединять несколько групп, т.е мы будем искать 1 или 14 или 144</li>
+				<li>+ - метасимвол повторения один или более раз</li>
+			    <li>$ - обозначение конца строки</li>       
+			</ul>
+			</p>
+
+		h5 
+			| Соревнование 332. Задача B. Максимальная абсурдность. 
+			a(href="http://codeforces.ru/contest/332/problem/B") Задача на Codeforces | 
+			a(href="http://codeforces.ru/contest/332/status/B") решившие
+
+		h6 Условие кратко
+		p Сокращенная запись if
+		pre.python: code
+			|'''
+			|X = A if условие else B
+			|&nbsp;
+			|if условие:
+			|&nbsp;&nbsp;&nbsp;&nbsp;X = A
+			|else:
+			|&nbsp;&nbsp;&nbsp;&nbsp;X = B
+			|'''	

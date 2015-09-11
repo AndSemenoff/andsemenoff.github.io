@@ -1,0 +1,133 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h4 Алгоритмы сортировки
+	div.row: div.large-12.columns
+		p.
+			  <ul>
+			  	<li><a href="#bubble">Сортировка пузырьком. The Bubble Sort.</a></li>
+			    <li><a href="#short_bubble">Сокращенная сортировка пузырьком. The short bubble sort.</a></li>
+			    <li><a href="#">Сортировка прямым выбором. The Selection Sort.</a></li>
+				<li><a href="#">Сортировка вставкой. The Insertion Sort.</a></li>
+				<li><a href="#">Пирамидальная сортировка</a></li>
+				<li><a href="#">Быстрая сортировка</a></li>
+				<li><a href="#merge">Сортировка слияниями. The Merge Sort.</a></li>
+				<li><a href="#">Сортировка подсчетом</a></li>
+				<li><a href="#">Поразрядная сортировка</a></li>    
+			  </ul>
+			<h3 id="bubble">Сортировка пузырьком. The Bubble Sort.</h3>
+			<p>Проходим последовательно по всем элементам списка и попарно сравниваем их между собой, если выбранный порядок в паре нарушен, то мы меняем элементы местами. Таким образом за один проход один элемент занимает свое место, всплывает, как пузырек. А за N - 1 (где N - кол-во элементов списка) проходов мы точно отсортируем весь список.</p>
+			<pre class = "python">
+			<code>
+			def bubbleSort(source):
+			&nbsp;&nbsp;&nbsp;&nbsp;work_list = source[:]
+			&nbsp;&nbsp;&nbsp;&nbsp;for passnum in range(len(work_list) - 1, 0, -1):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in range(passnum):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if work_list[i] > work_list[i + 1]:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(work_list[i + 1], work_list[i]) = (work_list[i], work_list[i + 1])
+			&nbsp;&nbsp;&nbsp;&nbsp;return work_list
+			</code>                
+			</pre>
+
+			<p>Т.к. в ситуации когда сравнив все значения в списке нам не прешлось переставлять (менять местами) элементы - это значит, что список уже отсортирован. Используя этот факт мы можем сократить время работы алгоритма.</p>
+			<h3 id="short_bubble">Сокращенная сортировка пузырьком. The short bubble sort.</h3>
+			<pre>
+			<code>
+			def shortBubbleSort(source):
+			&nbsp;&nbsp;&nbsp;&nbsp;work_list = source[:]
+			&nbsp;&nbsp;&nbsp;&nbsp;exchanges = True
+			&nbsp;&nbsp;&nbsp;&nbsp;passnum = len(work_list) - 1
+			&nbsp;&nbsp;&nbsp;&nbsp;while passnum > 0 and exchanges:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exchanges = False
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in range(passnum):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if work_list[i] > work_list[i + 1]:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exchanges = True
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(work_list[i + 1], work_list[i]) = (work_list[i], work_list[i + 1])
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;passnum = passnum - 1
+			&nbsp;&nbsp;&nbsp;&nbsp;return work_list
+			</code>        
+			</pre>
+
+			<h3>Сортировка прямым выбором. The Selection Sort.</h3>
+			<pre>
+			<code>
+			def selectionSort(work_list):
+			&nbsp;&nbsp;&nbsp;&nbsp;for fillslot in range(len(work_list) - 1, 0, -1):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positionOfMax = 0
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for location in range(1, fillslot + 1):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if work_list[location] > work_list[positionOfMax]:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;positionOfMax = location
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(work_list[fillslot], work_list[positionOfMax]) = (work_list[positionOfMax], work_list[fillslot] ) 
+			</code>
+			</pre>
+
+
+
+			<h3>Сортировка вставкой. The Insertion Sort.</h3>
+			Сортировка вставкой — <strong>устойчивый</strong> алгоритм сортировки, использующий O(1) дополнительной памяти и работающий за O(n^2).
+			<pre>
+			</pre>
+			<h3>Пирамидальная сортировка</h3>
+			<pre>
+			</pre>
+			<h3>Быстрая сортировка</h3>
+			<pre>
+			</pre>
+			<h3 id="merge">Сортировка слияниями. The Merge Sort.</h3>
+			<p class="text-justify">Сортировка слияниями — <strong>устойчивый</strong> алгоритм сортировки, использующий O(n) дополнительной памяти и работающий за O(nlog(n)). Исходный массив разбивается пополам на два и для каждой части решается задача сортировки, а затем две части сливаются в одну. Сортировка частей происходит также разбиванием пополам и так до тех пор пока часть не окажется состоящей из одного элемента, который по определению является отсортированным. Примерно по шагам алгоритм можно описать как:</p>
+			<ol>
+				<li>Если в рассматриваемом массиве один элемент, то он уже отсортирован — алгоритм завершает работу.</li>
+			    <li>Иначе массив разбивается на две части, которые сортируются рекурсивно.</li>
+			    <li>После сортировки двух частей массива к ним применяется процедура слияния, которая по двум отсортированным частям получает исходный отсортированный массив.</li>
+			</ol>
+			<p class="text-justify">Основное значение в этом алгоритме играет функция слияния двух <strong>отсортированных</strong> массивов. Рассмотрим ее. Мы последовательно сравниваем элементы массивов, начиная с начала, и наименьший записываем в результирующий массив, а в том массиве откуда был взят элемент берем для сравнения следующий элемент и так выполняем данные действия пока один массив не окажется пуст, тогда оставшиеся элементы, из второго массива, мы просто дописываем "как есть" в результирующий.</p>
+			<pre>
+			<code>
+			# -*- coding: utf-8 -*-
+			# file: merge.py
+			def merge(arr_a, arr_b):
+			&nbsp;&nbsp;&nbsp;&nbsp;'''
+			&nbsp;&nbsp;&nbsp;&nbsp;Слияние двух неубывающих массивов
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;>>> merge([1,2,3],[4,5,6])
+			&nbsp;&nbsp;&nbsp;&nbsp;[1, 2, 3, 4, 5, 6]
+			&nbsp;&nbsp;&nbsp;&nbsp;>>> merge([4,5,6],[1,2,3])
+			&nbsp;&nbsp;&nbsp;&nbsp;[1, 2, 3, 4, 5, 6]
+			&nbsp;&nbsp;&nbsp;&nbsp;'''
+			&nbsp;&nbsp;&nbsp;&nbsp;arr_c = []
+			&nbsp;&nbsp;&nbsp;&nbsp;i, j = 0, 0
+			&nbsp;&nbsp;&nbsp;&nbsp;while i < len(arr_a) and j < len(arr_b):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if arr_a[i] <= arr_b[j]:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr_c.append(arr_a[i])
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i += 1
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr_c.append(arr_b[j])
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j += 1
+			&nbsp;&nbsp;&nbsp;&nbsp;if arr_a[i:]: arr_c += arr_a[i:]
+			&nbsp;&nbsp;&nbsp;&nbsp;if arr_b[j:]: arr_c += arr_b[j:]
+			&nbsp;&nbsp;&nbsp;&nbsp;return arr_c
+
+			if __name__ == "__main__":
+			&nbsp;&nbsp;&nbsp;&nbsp;import doctest
+			&nbsp;&nbsp;&nbsp;&nbsp;doctest.testmod(verbose=True)
+			</code>
+			</pre>
+			<p><a href="https://gist.github.com/ddrone/2919790">Классическая реализация</a></p>
+			<p>Томас Х. Кормен, Чарльз И. Лейзерсон, Рональд Л. Ривест, К. Штайн. Алгоритмы: построение и анализ, 3-е издание = Introduction to Algorithms, Third Edition. — М.: «Вильямс», 2013. — 1328 с. — ISBN 978-5-8459-1794-2. Стр. 52</p>
+			<h3>Сортировка подсчетом</h3>
+			<pre>
+			</pre>
+			<h3>Поразрядная сортировка</h3>
+			<pre>
+			</pre>
+			</p>
+			<p>Различные визулизаторы алгоритмов сортировки:
+				<ul>
+					<li><a href="http://sorting.at/">Sorting.at</a></li>
+					<li><a href="http://sortvis.org/">Sortvis.org</a> +  код алгоритмов на питоне</li>
+					<li><a href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html">cs.usfca.edu</a> визулизация различных алгоритмов +  код некоторых алгоритмов на питоне</li>
+			    </ul>
+			</p>
+			</div>
+			</div>
+			</main>		

@@ -1,0 +1,401 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h4: strong Заметки по betfair.comт
+	div.row: div.large-12.columns
+		p.
+
+			<h3><strong>Общие положения</strong></h3>
+
+			<p>API-NG включает в себя три API:</p>
+			<ol>	
+			<li>API управления счетом - Betting API.</li>
+			<li>API управления ставками - Accounts API.</li>
+			<li>API для партнеров и вендоров - Vendor API.</li>
+
+			</ol>
+
+			<p>Можно поэкспериментировать с онлайн визуализаторами следующих api:</p>
+			<ol>
+			<li>API управления счетом - <a href="https://developer.betfair.com/visualisers/api-ng-sports-operations/">Betting API</a>.</li>
+			<li>API управления ставками - <a href="https://developer.betfair.com/visualisers/api-ng-account-operations/">Accounts API</a>.</li>
+			<li>API Heartbeat - <a href="https://developer.betfair.com//visualisers/api-ng-heartbeat-operations/">Heartbeat API</a>.</li>
+			</ol>
+			</div>
+			</div>
+			<div class="row">
+			<div class="large-12 columns">
+			<h3><strong>Структура проекта</strong></h3>
+
+			<p>Основное:</p>
+			<ol>
+			<li>Созданные SSL сертификаты <strong>должны</strong> лежать в подкаталоге "certs"</li>
+			</ol>
+			<p></p>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="large-12 columns">
+			<h3><strong>Авторизация на сайте Betfair</strong></h3>
+			<p>Для ручной интерактивной авторизации у нас должны быть:</p>
+			<ol>
+			<li>Наш логин (в коде будет, как login)</li>
+			<li>Наш пароль (в коде будет, как password)</li>
+			</ol>
+			<p>Для использования API у каждого приложения должно быть два ключа, по которым идентифицируется приложение. Один "live App Key", другой "delayed App Key".
+			В каждом HHTP запросе в заголовке мы должны передавать один ключ. Вот так:</p>
+			<kbd>X-Application: APP_KEY_ASSIGNED</kbd>
+			<p>
+			Создать необходимые ключи можно следуя <a href="https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Application+Keys">инструкции</a>.</p>
+
+			<p>Для автономной авторизации у нас должны быть:</p>
+			<ol>
+			<li>Наш логин (в коде будет, как LOGIN)</li>
+			<li>Наш пароль (в коде будет, как PASSWORD)</li>
+			<li>Ключ-идентификатор нашего приложения (в коде будет, как APP_KEY_LIVE)</li>
+			<li>Созданные SSL сертификаты, которые <strong>должны</strong> лежать в подкаталоге "certs"</li>
+			</ol>
+			Простой пример авторизации
+			<pre class = "python">
+			<code>&nbsp;&nbsp;&nbsp;&nbsp;
+			# -*- coding: utf-8 -*-
+			import requests
+			import json
+
+			APP_KEY_LIVE = ""
+			LOGIN = ""
+			PASSWORD = ""
+
+			def login(username, password):
+			&nbsp;&nbsp;# returns session token or -1 if fails
+			&nbsp;&nbsp;# возвращает идентификатор сессии или при неудаче -1
+
+			&nbsp;&nbsp;login_url = 'https://identitysso.betfair.com/api/certlogin'
+			&nbsp;&nbsp;mydata = 'username=%s&password=%s' % (username, password)
+			&nbsp;&nbsp;cert_files = ('certs/client-2048.crt', 'certs/client-2048.key')
+			&nbsp;&nbsp;headers = {
+			&nbsp;&nbsp;'X-Application': APP_KEY_LIVE,
+			&nbsp;&nbsp;'Content-Type': 'application/x-www-form-urlencoded'
+			}
+
+			&nbsp;&nbsp;resp = requests.post(login_url, data=mydata, cert=cert_files, headers=headers)
+			&nbsp;&nbsp;resp_json = resp.json()
+			&nbsp;&nbsp;if resp_json['loginStatus'] == 'SUCCESS':
+			&nbsp;&nbsp;&nbsp;&nbsp;return resp_json['sessionToken']
+			&nbsp;&nbsp;else:
+			&nbsp;&nbsp;&nbsp;&nbsp;return -1
+
+			SESSION_TOKEN = login(LOGIN, PASSWORD)
+			print(SESSION_TOKEN)
+			</code>
+			</pre>
+
+			<p>Дополнительная <a href="https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Interactive+Login+-+API+Endpoint">информация</a> по теме авторизации</p>
+
+			Пример функции выхода:
+			<pre class = "python">
+			<code>&nbsp;&nbsp;&nbsp;&nbsp;
+			# -*- coding: utf-8 -*-
+			def logout():
+			&nbsp;&nbsp;&nbsp;&nbsp;#logout from betfair api-ng. returns string.
+			&nbsp;&nbsp;&nbsp;&nbsp;logout_url = 'https://identitysso.betfair.com/api/logout'
+			&nbsp;&nbsp;&nbsp;&nbsp;headers = {
+			&nbsp;&nbsp;&nbsp;&nbsp;'Accept': 'application/json',
+			&nbsp;&nbsp;&nbsp;&nbsp;'X-Application': APP_KEY_LIVE,
+			&nbsp;&nbsp;&nbsp;&nbsp;'X-Authentication': SESSION_TOKEN
+			}
+			&nbsp;&nbsp;&nbsp;&nbsp;resp = requests.post(logout_url, headers=headers)
+			&nbsp;&nbsp;&nbsp;&nbsp;resp_json = resp.json()
+			&nbsp;&nbsp;&nbsp;&nbsp;if resp_json['status'] == 'SUCCESS':
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "SUCCESS LOGOUT"
+			&nbsp;&nbsp;&nbsp;&nbsp;else:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(str(resp))
+			</code>
+			</pre>
+
+			<p>Дополнительная <a href="https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Logout">информация</a> по теме выхода.</p>
+			<p>В итоге получилась такая небольшая библиотека.</p>
+			<pre class = "python">
+			<code>
+			# -*- coding: utf-8 -*-
+			import requests
+			import json
+			import urllib
+
+			class APINGLib(object):
+			&nbsp;&nbsp;&nbsp;&nbsp;APP_KEY_LIVE = ""
+
+			&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, login, password):
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.LOGIN = login
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.PASSWORD = password
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.SESSION_TOKEN = self.login()
+
+			&nbsp;&nbsp;&nbsp;&nbsp;def login(self):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# returns session token or -1 if fails
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# возвращает идентификатор сессии или при неудаче -1
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login_url = 'https://identitysso.betfair.com/api/certlogin'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mydata = 'username=%s&password=%s' % (self.LOGIN, self.PASSWORD)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cert_files = ('certs/client-2048.crt', 'certs/client-2048.key')
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers = {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'X-Application': self.APP_KEY_LIVE,
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Content-Type': 'application/x-www-form-urlencoded'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp = requests.post(login_url, data=mydata, cert=cert_files, headers=headers)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp_json = resp.json()
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if resp_json['loginStatus'] == 'SUCCESS':
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return resp_json['sessionToken']
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1
+
+			&nbsp;&nbsp;&nbsp;&nbsp;def logout(self):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# logout from betfair api-ng. returns string.
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logout_url = 'https://identitysso.betfair.com/api/logout'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers = {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Accept": "application/json",
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"X-Application": self.APP_KEY_LIVE,
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"X-Authentication": self.SESSION_TOKEN
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp = requests.post(logout_url, headers=headers)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp_json = resp.json()
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if resp_json['status'] == 'SUCCESS':
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "SUCCESS LOGOUT"
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(str(resp))
+
+			&nbsp;&nbsp;&nbsp;&nbsp;def send_http_request(self, request):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url = "https://api.betfair.com/exchange/betting/json-rpc/v1 "
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers = {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Accept': 'application/json',
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Content-Type': 'application/json',
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'X-Application': self.APP_KEY_LIVE,
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'X-Authentication': self.SESSION_TOKEN
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if type(request) == type(dict()):
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request = json.dumps(request) # convert dict to json format
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request1 = urllib.request.Request(url, request.encode('utf-8'), headers=headers)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp = urllib.request.urlopen(request1)
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp_json = json.loads(resp.read().decode('utf-8'))['result']
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return resp_json
+			</code>
+			</pre>
+
+			<p>Теперь с помощью нее можно уже получать доступ к актуальной информации. Выведем все события на которые можно ставить.</p>
+			<pre class = "python">
+			<code>
+			# -*- coding: utf-8 -*-
+			# file: listEventTypes.py
+			import APINGLib
+
+			LOGIN = ""
+			PASSWORD = ""
+
+			api = APINGLib.APINGLib(LOGIN, PASSWORD)
+
+			dict_event_req = {
+			&nbsp;&nbsp;&nbsp;&nbsp;"jsonrpc": "2.0",
+			&nbsp;&nbsp;&nbsp;&nbsp;"method": "SportsAPING/v1.0/listEventTypes",
+			&nbsp;&nbsp;&nbsp;&nbsp;"params": {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"filter": {}
+			&nbsp;&nbsp;&nbsp;&nbsp;},
+			&nbsp;&nbsp;&nbsp;&nbsp;"id": 1
+			}
+
+			eventTypesResponse = api.send_http_request(dict_event_req)
+
+			for event in eventTypesResponse:
+			&nbsp;&nbsp;&nbsp;&nbsp;print(event)
+			</code>
+			</pre>
+
+			<p>Результат должен быть примерно такой:</p>
+			<pre>
+			{'marketCount': 18, 'eventType': {'id': '468328', 'name': 'Handball'}}
+			{'marketCount': 9051, 'eventType': {'id': '1', 'name': 'Soccer'}}
+			{'marketCount': 522, 'eventType': {'id': '2', 'name': 'Tennis'}}
+			{'marketCount': 74, 'eventType': {'id': '3', 'name': 'Golf'}}
+			{'marketCount': 272, 'eventType': {'id': '4', 'name': 'Cricket'}}
+			{'marketCount': 12, 'eventType': {'id': '5', 'name': 'Rugby Union'}}
+			{'marketCount': 60, 'eventType': {'id': '6', 'name': 'Boxing'}}
+			{'marketCount': 387, 'eventType': {'id': '7', 'name': 'Horse Racing'}}
+			{'marketCount': 60, 'eventType': {'id': '8', 'name': 'Motor Sport'}}
+			{'marketCount': 1, 'eventType': {'id': '7524', 'name': 'Ice Hockey'}}
+			{'marketCount': 8, 'eventType': {'id': '10', 'name': 'Special Bets'}}
+			{'marketCount': 23, 'eventType': {'id': '11', 'name': 'Cycling'}}
+			{'marketCount': 176, 'eventType': {'id': '7522', 'name': 'Basketball'}}
+			{'marketCount': 57, 'eventType': {'id': '1477', 'name': 'Rugby League'}}
+			{'marketCount': 187, 'eventType': {'id': '4339', 'name': 'Greyhound Racing'}}
+			{'marketCount': 1, 'eventType': {'id': '3088925', 'name': 'Fishing'}}
+			{'marketCount': 24, 'eventType': {'id': '2378961', 'name': 'Politics'}}
+			{'marketCount': 66, 'eventType': {'id': '6231', 'name': 'Financial Bets'}}
+			{'marketCount': 9, 'eventType': {'id': '998917', 'name': 'Volleyball'}}
+			{'marketCount': 55, 'eventType': {'id': '998918', 'name': 'Bowls'}}
+			{'marketCount': 43, 'eventType': {'id': '26420387', 'name': 'Mixed Martial Arts'}}
+			{'marketCount': 181, 'eventType': {'id': '3503', 'name': 'Darts'}}
+			{'marketCount': 1, 'eventType': {'id': '72382', 'name': 'Pool'}}
+			{'marketCount': 60, 'eventType': {'id': '2152880', 'name': 'Gaelic Games'}}
+			{'marketCount': 2, 'eventType': {'id': '300000', 'name': 'Commonwealth Games'}}
+			{'marketCount': 1, 'eventType': {'id': '6422', 'name': 'Snooker'}}
+			{'marketCount': 23, 'eventType': {'id': '6423', 'name': 'American Football'}}
+			{'marketCount': 2, 'eventType': {'id': '315220', 'name': 'Poker'}}
+			{'marketCount': 132, 'eventType': {'id': '7511', 'name': 'Baseball'}}
+			</pre>
+			<br>
+			<p>Теперь выведем все события из раздела "Special Bets". Из предыдущего запроса мы знаем, что eventTypeIds его равен 10, а всего событий должно быть marketCount, т.е. 8.</p>
+			<pre class = "python">
+			<code>
+			# -*- coding: utf-8 -*-
+			# file: listMarketCatalogue.py
+			import APINGLib
+
+			LOGIN = ""
+			PASSWORD = ""
+
+			api = APINGLib.APINGLib(LOGIN, PASSWORD)
+
+			listMarket_req = {
+			&nbsp;&nbsp;&nbsp;&nbsp;"jsonrpc": "2.0",
+			&nbsp;&nbsp;&nbsp;&nbsp;"method": "SportsAPING/v1.0/listMarketCatalogue",
+			&nbsp;&nbsp;&nbsp;&nbsp;"params": {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"filter": {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"eventTypeIds": [10]
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"maxResults": "100"
+			&nbsp;&nbsp;&nbsp;&nbsp;},
+			}
+
+			listMarketResponse = api.send_http_request(listMarket_req)
+
+			for event in listMarketResponse:
+			&nbsp;&nbsp;&nbsp;&nbsp;print(event)
+			</code>
+			</pre>
+			<p>У меня результат был такой:</p>
+			<pre>
+			{'totalMatched': 165520.98557999998, 'marketName': 'Winner', 'marketId': '1.114265488'}
+			{'totalMatched': 646.6966239999999, 'marketName': 'Male or Female', 'marketId': '1.114265484'}
+			{'totalMatched': 280.47312, 'marketName': 'Top 3', 'marketId': '1.114283805'}
+			{'totalMatched': 850.039636, 'marketName': 'Top Female', 'marketId': '1.114283806'}
+			{'totalMatched': 138.226, 'marketName': 'Top Male', 'marketId': '1.114283807'}
+			{'totalMatched': 343.1020639999999, 'marketName': 'Top UK Summer Temperature 2014', 'marketId': '1.114169447'}
+			{'totalMatched': 80758.716424, 'marketName': 'Winner', 'marketId': '1.112244045'}
+			{'totalMatched': 8279.963588, 'marketName': 'Top 3', 'marketId': '1.112243909'}
+			</pre>
+			<br>
+
+			<h3>Типы действия ордеров (PersistenceType)</h3>
+			<ol>	
+			<li>LAPSE - Действие прекращается, когда рынок переходит в стадию "во время игры". (Lapse the order when the market is turned in-play).</li>
+			<li>PERSIST - Продолжает существовать в стадии "во время игры". Заявка автоматически размещается во время начала события. (Persist the order to in-play. The bet will be place automatically into the in-play market at the start of the event).</li>
+			<li>MARKET_ON_CLOSE - Put the order into the auction (SP) at turn-in-play.</li>
+			</ol>
+
+			<p>Когда мы знаем идентификатор рынка мы можем легко получит по нему всю информацию с помощью listMarketCatalogue</p>
+
+			<pre class = "python">
+			<code>
+			# -*- coding: utf-8 -*-
+			# file: listMarketCatalogueAddition_example.py
+			import APINGLib
+
+			LOGIN = ""
+			PASSWORD = ""
+
+			api = APINGLib.APINGLib(LOGIN, PASSWORD)
+
+			listMarket_req = {
+			&nbsp;&nbsp;&nbsp;&nbsp;"jsonrpc": "2.0",
+			&nbsp;&nbsp;&nbsp;&nbsp;"method": "SportsAPING/v1.0/listMarketCatalogue",
+			&nbsp;&nbsp;&nbsp;&nbsp;"params": {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"filter": {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"marketIds": ["1.114549032"]
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"maxResults": "10",
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"marketProjection": ["COMPETITION", "EVENT", "EVENT_TYPE", "MARKET_DESCRIPTION", "RUNNER_DESCRIPTION"]
+			&nbsp;&nbsp;&nbsp;&nbsp;},
+			&nbsp;&nbsp;&nbsp;&nbsp;"id": 1
+			}
+
+			listMarketResponse = api.send_http_request(listMarket_req)
+			print("Competition: " + str(listMarketResponse[0]['competition']['name']))
+			print("Market Name: " + str(listMarketResponse[0]['marketName']))
+			print("Event: " + str(listMarketResponse[0]['event']['name']))
+			print("Event Type: " + str(listMarketResponse[0]['eventType']['name']))
+			print(listMarketResponse[0]['runners'])
+			</code>
+			</pre>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="large-12 columns">
+			<h3><strong>Создание SSL сертификата</strong></h3>
+			<p>Для взаимодействия нашей программы на питоне и сайта нам нужно создать сертификат SSL и ключи загрузить в наш аккаунт на betfair.</p>
+			<ol>	
+			<li>Заходим на <a href="https://slproweb.com/products/Win32OpenSSL.html">страницу</a>.</li>
+			<li>Из таблицы выбираем для Вашей операционки и компьютера вариант загрузки программы. Я для своего win64 выбрал: Win64 OpenSSL v1.0.1i. Скачиваем. Запускаем установку.
+			Для правильной установки может потребоваться "Visual C++ 2008 redistributable". Его можно скачать со <a href="http://www.microsoft.com/en-gb/download/details.aspx?id=29">страницы</a>
+			</li>
+			<li>После правильной установки у Вас должна быть папка с пакетом программ. При установке по умолчанию у меня это папка C:\OpenSSL-Win64.</li>
+			<li>Открываем в текстовом редакторе  файл из папки c:\openSSL-Win64\bin с именем openssl.cfg</li>
+			<li>И вставляем в него следующий текст:
+			<pre>
+			<code>
+			[ ssl_client ]
+			basicConstraints = CA:FALSE
+			nsCertType = client
+			keyUsage = digitalSignature, keyEncipherment
+			extendedKeyUsage = clientAuth
+			</code>
+			</pre>
+			</li>
+			<li>Сохраняем файл. Выходим. Переименовываем файл в openssl.cnf</li>
+			<li>Открываем C:\Windows\system32\cmd.exe. Там набираем <kbd>c:\openssl-Win64\bin\openssl</kbd>. Должна открыться программа OpenSSL приглашение к вводу которой выглядит, как
+			'OpenSSL>'
+			</li>
+			<li>Вводим команду <kbd>genrsa -out client-2048.key 2048</kbd></li>
+			<li>Затем команду <kbd>req -new -config c:\openSSL-Win64\bin\openssl.cnf -key client-2048.key -out client-2048.csr</kbd></li>
+			<li>Запуститься процесс создания Вашего сертификата. Отвечайте на вопросы по смыслу. Вот пример:
+			<code>
+			<pre>
+			Country Name (2 letter code) [AU]:GB
+			State or Province Name (full name) [Some-State]:London
+			Locality Name (eg, city) []:London
+			Organization Name (eg, company) [Internet Widgits Pty Ltd]:yourcompany.com
+			Organizational Unit Name (eg, section) []:Security Team
+			Common Name (e.g. server FQDN or YOUR name) []:Test API-NG Certificate
+			Email Address []:my.name@mydomain.com
+			Please enter the following ‘extra’ attributes
+			to be sent with your certificate request
+			A challenge password []:
+			An optional company name []:
+			</pre>
+			</code>
+			</li>
+			<li>Теперь введите команду: 
+			<kbd>x509 -req -days 365 -in client-2048.csr -signkey client-2048.key -out client-2048.crt -extfile c:\openSSL-Win64\bin\openssl.cnf -extensions ssl_client</kbd>
+			</li>
+
+			<li>Теперь осталось загрузить ключ на betfair в Ваш аккаунт. Это можно сделать на <a href="https://myaccount.betfair.com/account/authentication?showAPI=1">странице</a></li>
+			<li></li>    
+			</ol>
+			<p></p>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="large-12 columns">
+			<h3><strong>Ссылки по темам</strong></h3>
+			<ol>
+
+			<li>Цифровые идентификаторы видов спорта - <a href="http://data.betfair.com/sportids.htm">Официально</a></li>       
+			<li>Изменение шага цены - <a href="https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Betfair+Price+Increments">Официально</a></li>
+			<li>Механизм виртуальных ставок - <a href="https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Virtual+Bets">Официально</a></li>
+			</ol>
+			<p>http://forum.bdp.betfair.com/showthread.php?t=1224</p>
+			<p>http://forum.bdp.betfair.com/showthread.php?t=472</p>
+			</div>
+</div>			

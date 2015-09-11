@@ -1,0 +1,71 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://andsemenoff.github.io//sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://andsemenoff.github.io//traiding/index.html">Инвестирование   </a></li>
+          <li><a href="http://andsemenoff.github.io//bigdata/index.html">Анализ данных</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4><strong>Стек. Очередь. Куча.</strong></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4>Стек</h4>
+        <p>Стеком называется структура данных, в которой данные, записанные в первую очередь, извлекаются в последнюю очередь, или по другому, когда последний добавленный элемент извлекается в первую очередь (LIFO, last-in, first-out). В питоне можно использовать список для представления стека. Тогда для извлечения элемента с вершины стека нужно использовать метод pop(), для добавления в стек метод append(). Для определение количества элементов в стеке можно использовать функцию len(). Пример:</p></p>
+        <pre class="python"><code>stack = [1, 2, 3, 4, 5]		# создали стек из пети элементов
+stack.append(6)				# поместили в стек элемент
+stack.append(7)				# поместили в стек элемент
+x = stack.pop()				# x = 7 извлекли элемент из стека
+print (len(stack))				# 6 кол-во элементов в стеке выводим </code></pre>
+        <h4>Очередь</h4>
+        <p>Очередь - структура данных, в которой элементы извлекаются в том же порядке, в котором они добавлялись, т.е. по принципу первый добавленный элемент извлекается первым (FIFO, first-in, first-out). В питоне списки можно использовать для представления очереди. Для извлечения элемента нужно использовать метод pop(0) с индексом 0. Для добавления элемента используем метод append(). Для определения количества элементов в очереди функцию len(). Пример:</p>
+        <pre class="python"><code>queue = [1, 2, 3, 4, 5]  		# создали очередь из пети элементов
+queue.append(6)				# поместили в очередь элемент
+queue.append(7)				# поместили в очередь элемент
+x = queue.pop(0)				# извлекли элемент из очереди
+print (x)						# 1
+print (len(queue))				# 6 кол-во элементов в очереди выводим</code></pre>
+        <h4>Куча</h4>
+        <p>Python имеет модуль heapq, который реализует очереди с приоритетами с помощью бинарной кучи.</p>
+        <h4>Алгоритмы на графах</h4>
+        <h5>Определения</h5><a href="http://habrahabr.ru/post/65367/">Базовые понятия</a>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

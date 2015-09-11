@@ -1,0 +1,97 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h4 Поиск подстроки. Алгоритм Кнута–Морриса-Пратта.
+	div.row: div.large-12.columns
+		h4 Определения
+		p Префикс строки A[..i] — это строка из i первых символов строки A.
+		p Суффикс строки A[j..] — это строка из |A|-j+1 последних символов.
+		p.
+			<p>Не учитывая совпадение с самим собой.</p>
+
+			<table>
+			<caption><strong>Таблица 1: Префикс функция для 'abcdabscabcdabia'</strong></caption>
+			<thead>
+				<tr>
+			    	<th width="200"><strong>подстрока</strong></th>
+			    	<th width="200"><strong>префикс</strong></th>
+					<th width="200"><strong>суффикс</strong></th>
+					<th width="150"><strong>совпадение</strong></th>        
+					<th width="50"><strong>префикс <br/> функция</strong></th>        
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+			       	<td>a</td>
+			    	<td>a</td>
+					<td>a</td>
+					<td>-</td>        
+					<td>0</td>        
+				</tr>
+				<tr>
+			    	<td>ab</td>    
+			    	<td>ab</td>
+					<td>ab</td>
+					<td>-</td>
+					<td>0</td>                
+				</tr>
+				<tr>
+			    	<td>abc</td>    
+			    	<td>abc</td>
+					<td>abc</td>
+					<td>-</td>
+					<td>0</td>                
+				</tr>
+				<tr>
+			    	<td>abcd</td>
+			    	<td>abcd</td>
+					<td>abcd</td>
+					<td>-</td>
+					<td>0</td>
+				</tr>
+				<tr>
+			    	<td>abcda</td>
+			    	<td>abcda</td>
+					<td><mark>a</mark>bcd<mark>a</mark></td>
+					<td>a</td>
+					<td>1</td>
+				</tr>
+				<tr>
+			    	<td>abcdab</td>
+			    	<td>abcdab</td>
+					<td>abcdab</td>
+					<td>ab</td>
+					<td>2</td>
+				</tr>
+				<tr>
+			    	<td>abcdabs</td>
+			    	<td>abcdabs</td>
+					<td>abcdabs</td>
+					<td>-</td>
+					<td>0</td>
+				</tr>
+				<tr>
+			    	<td></td>
+			    	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+			</tbody>
+			</table>
+
+			<p>Ссылки по данной теме:
+			    <ol>
+			    
+			        <li><a href="http://habrahabr.ru/post/113266/">Статья на Хабре.</a> Поиск подстроки и смежные вопросы. 07.02.2011</li>
+			    	<li><a href="http://habrahabr.ru/post/191454">Статья на Хабре</a></li>
+			    	<li><a href="http://py-algorithm.blogspot.ru/2013/04/blog-post_19.html">Статья и реализация на Питоне</a></li>        
+			        
+			    	<li><a href="http://e-maxx.ru/algo/prefix_function">Алгоритм на e-maxx.ru</a></li>
+			        <li><a href="http://algolist.manual.ru/search/esearch/kmp.php">Алгоритм </a></li>
+			        <li><a href="http://informatics.mccme.ru//mod/statements/view3.php?id=241&chapterid=1323">Задача №1323. Префикс-функция </a></li>        
+			        <li><a href="http://informatics.mccme.ru//mod/statements/view3.php?id=241&chapterid=1324">Задача №1324. Z-функция </a></li>       
+
+			    </ol>
+			</p>    		
