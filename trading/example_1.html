@@ -1,0 +1,75 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://localhost:8000/sportprogramming/index.html">Спортивное программирование</a></li>
+          <li><a href="http://localhost:8000/bigdata/index.html">Анализ данных   </a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Пример 1. Простейший пример.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div>Условие покупки/продажи: если текущая цена больше пятидневного скользящего среднего плюс один процент и есть деньги для покупки - покупаем.</div>Если текущая цена меньше скользящего среднего и у нас есть акции, то продаем все акции.
+        <pre class="python"><code>def initialize(context):
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;context.security = symbol('AAPL')
+&nbsp;
+def handle_data(context, data):
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;average_price = data[context.security].mavg(5)
+&nbsp;&nbsp;&nbsp;&nbsp;current_price = data[context.security].price
+&nbsp;&nbsp;&nbsp;&nbsp;amount = context.portfolio.positions[symbol('AAPL')].amount
+&nbsp;&nbsp;&nbsp;&nbsp;cash = context.portfolio.cash
+&nbsp;&nbsp;&nbsp;&nbsp;# Need to calculate how many shares we can buy
+&nbsp;&nbsp;&nbsp;&nbsp;number_of_shares_buy = int(cash/current_price)
+&nbsp;&nbsp;&nbsp;&nbsp;number_of_shares_sell = amount    
+&nbsp;&nbsp;&nbsp;&nbsp;if current_price > 1.01*average_price and cash > current_price:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Place the buy order (positive means buy, negative means sell)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(context.security, +number_of_shares_buy)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info("Buying %s, amount: %d, cash: %d, price: %s" % (context.security.symbol, number_of_shares_buy, cash, current_price))
+&nbsp;      
+&nbsp;&nbsp;&nbsp;&nbsp;elif current_price < average_price and amount>0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Sell all of our shares by setting the target position to zero
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(context.security, -number_of_shares_sell)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info("Selling %s %d" % (context.security.symbol, number_of_shares_sell))
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;record(stock_sum=amount)		</code></pre>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();		</script>
+    </footer>
+  </body>
+</html>

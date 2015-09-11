@@ -1,0 +1,261 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://localhost:8000/sportprogramming/index.html">Спортивное программирование</a></li>
+          <li><a href="http://localhost:8000/bigdata/index.html">Анализ данных   </a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Динамическое программирование</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Задача о рюкзаке</h3>
+        <p class="text-justify">
+           
+          Дано N предметов массой m<sub>1</sub>, …, m<sub>N</sub> и стоимостью c<sub>1</sub>, …, c<sub>N</sub> соответственно.
+          Ими наполняют рюкзак, который выдерживает вес не более M. Какую наибольшую стоимость могут иметь предметы в рюкзаке?    
+        </p>
+        <p class="text-justify">
+           
+          Эта задача является частным случаем задачи об укладке рюкзака, которая в общем случае формулируется, как:<br/>Дано n предметов, i-й предмет имеет массу weight<sub>i</sub> > 0 и стоимость cost<sub>i</sub> > 0. Необходимо выбрать из этих предметов такой набор, чтобы суммарная масса не превосходила заданной величины M (вместимость рюкзака), а суммарная стоимость была максимальна. Другими словами, нужно определить набор бинарных величин (b<sub>1</sub>, b<sub>2</sub>,..., b<sub>n</sub>), при котором выполняется соотношение:
+          <p>
+            \[\begin{aligned}
+            b_1 \cdot weight_1 & + b_2 \cdot weight_2 + \cdots + b_n \cdot weight_n \le M \\
+            \text{и сумма } b_1 \cdot cost_1 & + b_2 \cdot cost_2 + \cdots + b_n \cdot cost_n \text{ максимальна}
+            \end{aligned} \]
+          </p><br/>
+        </p>
+        <p>
+          Введем функцию A. A(n, m) - максимальная стоимость предметов, которые можно уложить в рюкзак максимальной вместимости m, если можно использовать только первые n предметов из заданных N.
+          <br>Зададим краевые значения для A(n, m)
+          <br>Если ни один предмет брать нельзя, т.е. n = 0, то A(0, m) = 0, для любого m.
+          <br>Если вместимость рюкзака равна 0, т.е. m = 0 , то A(n, 0) = 0, для любого n.
+          \[\begin{aligned}
+          n=0, \text{тогда } \forall m \quad & \Rightarrow A(0, m) = 0 \\
+          m = 0, \text{тогда } \forall n \quad & \Rightarrow A(n, 0) = 0
+          \end{aligned} \]
+          <p class="text-justify"> Теперь составим рекуррентное соотношение. Необходимо из предметов с номерами 1, ..., n составить рюкзак максимальной стоимости, чей вес не превышает m. При этом возможно два случая: когда в максимальный рюкзак включен предмет с номером n и когда предмет n не попал в максимальный рюкзак.</p>
+          <p class="text-justify">
+          Если предмет n не попал в максимальный рюкзак массы m, то максимальный рюкзак будет составлен только из предметов с номерами 1, ..., n - 1, следовательно, A(n, m) = A(n - 1, m).
+          </p>
+          
+          <p class="text-justify">Если же в максимальный рюкзак включен предмет n, то масса оставшихся предметов не превышает m - weight<sub>n</sub>, а от добавления предмета n общая стоимость рюкзака увеличивается на cost<sub>n</sub>. Значит, A(n, m) = A(n - 1, m - weight<sub>n</sub>) + cost<sub>n</sub>. Теперь из двух возможных вариантов составить рюкзак массы, не превосходящей m, из предметов 1, ..., n нужно выбрать наилучший, т.е.
+          \[
+          max(A(n - 1, m),\quad A(n - 1, m - weight_n) + cost_n)
+           \]
+          <br>В программе веса предметов считаем в список weight, а стоимости в список cost. Т.к. принято индексировать массивы начиная с индекса 0, то чтобы у нас weight[1] и cost[1] соответствовали предмету с номером 1, то после считывания добавим фиктивный предмет с весом 0 и стоимостью 0. Значения функции A(n,m) будем хранить в списке A[n][m]. Ответ на задачу будет находится в элементе A[N][M].
+          </p>
+          <p> Примерный код программы:
+          <pre class = "python">
+          <code>
+          N, M = map(int, input().split()) # N - количество предметов
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # M - предельная масса
+          weight = [int(i) for i in input().split()] # веса
+          cost = [int(i) for i in input().split()]   # стоимости
+          weight.insert(0, 0)
+          cost.insert(0, 0)
+          A = []
+          for i in range(N+1):
+          &nbsp;&nbsp;&nbsp;&nbsp;A.append([0]*(M+1))
+          
+          for n in range(1, N+1):
+          &nbsp;&nbsp;&nbsp;&nbsp;for m in range(M+1):
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A[n][m] = A[n-1][m]
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (m >= weight[n] and A[n-1][m-weight[n]] + cost[n] > A[n][m]):
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A[n][m] =  A[n-1][m-weight[n]] + cost[n]
+          
+          print(A[N][M])
+          </code>
+          </pre>
+          <p>Рассмотрим пример:</p>
+          <pre>
+          <code>
+          4&nbsp;6
+          2&nbsp;4&nbsp;1&nbsp;2
+          7&nbsp;2&nbsp;5&nbsp;1
+          </code>
+          </pre>
+          
+          <table class="bordered">
+          <tr>
+          <th></th>
+          <th colspan=8>Предельный вес (m)</th>
+          </tr>
+          <tr>
+          <th colspan=2>Кол-во предметов</th>
+          <th >0</th>
+          <th >1</th>
+          <th >2</th>
+          <th >3</th>
+          <th >4</th>
+          <th >5</th>
+          <th >6</th>
+          </tr>
+          <tr>
+          <td>weight = 0 cost = 0</td>
+          <td>n = 0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          </tr>
+          
+          <tr>
+          <td>weight = 2 cost = 7</td>
+          <td>n = 1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>7</td>
+          <td>7</td>
+          <td>7</td>
+          <td>7</td>
+          <td>7</td>
+          </tr>
+          
+          <tr>
+          <td>weight = 4 cost = 2</td>
+          <td>n = 2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>7</td>
+          <td>7</td>
+          <td>7</td>
+          <td>7</td>
+          <td>9</td>
+          </tr>
+          
+          <tr>
+          <td>weight = 1 cost = 5</td>
+          <td>n = 3</td>
+          <td>0</td>
+          <td>5</td>
+          <td>7</td>
+          <td>12</td>
+          <td>12</td>
+          <td>12</td>
+          <td>12</td>
+          </tr>
+          
+          <tr>
+          <td>weight = 2 cost = 1</td>
+          <td>n = 4</td>
+          <td>0</td>
+          <td>5</td>
+          <td>7</td>
+          <td>12</td>
+          <td>12</td>
+          <td>13</td>
+          <td>13</td>
+          </tr>
+          </table>
+          <p class="text-justify">Теперь нам нужно вывести список номеров предметов, которые будут входить в максимальный рюкзак.
+          </p>
+          
+          <pre class = "python">
+          <code>
+          def print_answer(n, m):
+          &nbsp;&nbsp;&nbsp;&nbsp;# n предметов
+          &nbsp;&nbsp;&nbsp;&nbsp;# m предельная масса
+          &nbsp;&nbsp;&nbsp;&nbsp;if A[n][m] == 0:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          &nbsp;&nbsp;&nbsp;&nbsp;elif A[n-1][m] == A[n][m]:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print_answer(n-1, m)
+          &nbsp;&nbsp;&nbsp;&nbsp;else:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print_answer(n-1, m - weight[n])
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(n, end = " ")
+          </code>
+          </pre>
+          
+          
+          <h2>Банкомат</h2>
+          <p class="text-justify">В обороте находятся банкноты k различных номиналов: a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>k</sub> рублей. Банкомат должен выдать сумму в N рублей при помощи минимального количества банкнот или сообщить, что запрашиваемую сумму выдать нельзя. Будем считать, что запасы банкнот каждого номинала неограничены.
+          </p>
+          <p class="text-justify">
+          Пусть F(n) -- минимальное количество банкнот, которым можно заплатить сумму в n рублей. Очевидно, что F(0) = 0, F(a<sub>1</sub>) = F(a<sub>2</sub>) =...= F(a<sub>k</sub>) = 1. Если некоторую сумму n невозможно выдать, будем считать, что F(n) = (бесконечность).
+          <br>
+          Выведем рекуррентную формулу для F(n), считая, что значения F(0), F(1), ..., F(n - 1) уже вычислены. Как можно выдать сумму n? Мы можем выдать сумму n - a<sub>1</sub>, а потом добавить одну банкноту номиналом a<sub>1</sub>. Тогда нам понадобится F(n - a<sub>1</sub>) + 1 банкнота. Можем выдать сумму n - a<sub>2</sub> и добавить одну банкноту номиналом a<sub>2</sub>, для такого способа понадобится F(n - a<sub>2</sub>) + 1 банкнота и т. д. Из всевозможных способов выберем наилучший, то есть: </p>
+          \[
+          F(n) = min(F(n - a_1), F(n - a_2),\cdots, F(n - a_k)) + 1
+          \]
+          <p class="text-justify">В итоге в элементе F[S] - будет ответ, т.е. минимальное количество банкнот, которыми можно выдать номинал S.</p>
+          <p class="text-justify">Запишем код программы:</p>
+          <pre class = "python">
+          <code>
+          N = int(input()) # количество номиналов банкнот в обращении
+          nominal = [int(i) for i in input().split()] # номиналы банкнот
+          S = int(input()) # сумма, которую нужно выдать
+          
+          F = []
+          F.append(0)
+          for m in range(1, S+1):
+          &nbsp;&nbsp;&nbsp;&nbsp;F.insert(m, float("+inf"))
+          &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(nominal)):
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if m >= nominal[i] and F[m-nominal[i]] + 1 < F[m]:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F[m] = F[m - nominal[i]] + 1
+          print(F[S])
+          </code>
+          </pre>
+          <p class="text-justify">Если нам нужно вывести еще и сами номиналы банкнот, как это можно сделать? Рассмотрим все номиналы банкнот и значения n - a<sub>1</sub>, n - a<sub>2</sub>, ..., n - a<sub>k</sub>. Если для какого-то i окажется, что F(n - a<sub>i</sub>) = F(n) - 1, значит, мы можем выдать банкноту в a<sub>i</sub> рублей и после этого свести задачу к выдаче суммы n - a<sub>i</sub>, и так будем продолжать этот процесс, пока величина выдаваемой суммы не станет равна 0.</p>
+        </p>
+        <h3>Ссылки на материалы по теме
+          <ul>
+            <li><a href="http://comp-science.narod.ru/WebPage/lesson2.htm">Динамическое программирование</a></li>
+            <li>Codeforces тег dp. <a href="http://codeforces.ru/problemset/tags/dp">дп</a></li>
+            <li><a href="http://habrahabr.ru/post/191498/">Статья на Хабре</a></li>
+            <li>informatics.mccme.ru Тема: <a href="http://informatics.mccme.ru/course/view.php?id=9">динамическое программирование</a></li>
+          </ul></ul>   
+        </h3>
+        <h3>Задачи
+          <ul>
+            <li> <small>informatics.mccme.ru Задача №3086. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=3086#">Разложение в сумму кубов</a></li>
+            <li><small>informatics.mccme.ru Задача №3087. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=3087#1">Банкомат</a></li>
+            <li> <small>informatics.mccme.ru Задача №1120. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=1120#1">Рюкзак. Точный вес</a></li>
+            <li><small>informatics.mccme.ru Задача №1119. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=1119#1">Рюкзак. Наибольший вес</a></li>
+            <li><small>informatics.mccme.ru Задача №3089. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=3089#1">Рюкзак</a></li>
+            <li><small>informatics.mccme.ru Задача №3090. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=3090#1">Рюкзак с восстановлением ответа</a></li>
+            <li><small>informatics.mccme.ru Задача №3091. </small><a href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&amp;chapterid=3091#1">Рюкзак. Минимум предметов</a></li>
+          </ul>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

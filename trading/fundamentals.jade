@@ -1,0 +1,18 @@
+extends ../layouts/html_layout.jade
+
+block scripts
+	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
+
+block content
+	div.row: div.large-12.columns: h3 Работа с фундаментальными показателями
+	div.row: div.large-12.columns
+		div: kbd basic_eps
+		div Прибыль на акцию (Earnings Per Share, EPS) - финансовый показатель, равный отношению чистой прибыли компании, доступной для распределения, к среднегодовому числу обыкновенных акций. 
+		div: kbd dividend_per_share
+		div Дивиденды на акцию (DPS) - дивиденды на акцию (Dividends Per Share, DPS) - финансовый показатель, 
+		| равный отношению чистой прибыли компании, доступной для распределения, к среднегодовому числу обыкновенных акций.
+		| DPS = D / K
+		| где D - Дивиденды к выплате K - среднегодовое число обыкновенных акций в обращении
+
+		div: kbd total_employee_number
+		div: kbd shares_outstanding

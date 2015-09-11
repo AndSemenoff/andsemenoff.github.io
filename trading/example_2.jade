@@ -1,0 +1,50 @@
+extends ../layouts/html_layout.jade
+
+block scripts
+	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
+
+block content
+	div.row: div.large-12.columns: h3 Пример 2. Работа с фиксированным списком акций.
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Важное примечание. Все акции, указанные в списке должны торговаться на периоде на котором будет проводиться тестирование алгоритма.
+		pre.python: code
+			|def initialize(context):
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Указываем список акций, которыми будем торговать
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Они храняться в специальном объекте Security
+			|&nbsp;&nbsp;&nbsp;&nbsp;context.stocks = symbols('AAPL', 'IBM', 'CSCO') # Акции: Apple, IBM, Cisco
+			|&nbsp;
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Устанавливаем минимальный и максимальный размер открытой позиции
+			|&nbsp;&nbsp;&nbsp;&nbsp;# в денежном выражении			
+			|&nbsp;&nbsp;&nbsp;&nbsp;context.max_notional = 1000000.1
+			|&nbsp;&nbsp;&nbsp;&nbsp;context.min_notional = -1000000.0
+			|&nbsp;   
+			|def handle_data(context, data):
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Инициализируем позицию в ноль в начале каждого фрейма
+			|&nbsp;&nbsp;&nbsp;&nbsp;pos = 0
+			|    
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Пробегаем по всем акциям и вычисляем нашу суммарную позицию по всем акциям
+			|&nbsp;&nbsp;&nbsp;&nbsp;for stock in context.stocks:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price = data[stock].price 
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos = pos + context.portfolio.positions[stock].amount * price
+			|        
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Пробегаем по всем акциям и если текущая цена меньше средневзвешенной минус 0.5% и лимит
+			|&nbsp;&nbsp;&nbsp;&nbsp;# по открытой позиции на продажу не достигнут, то продаем.
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Если текущая цена больше средневзвешенной плюс 0.5% и лимит
+			|&nbsp;&nbsp;&nbsp;&nbsp;# по открытой позиции на куплю не достигнут, то покупаем.
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Обновляем открытую позицию
+			|&nbsp;&nbsp;&nbsp;&nbsp;for stock in context.stocks:   
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vwap = data[stock].vwap(3) # Volume-Weighted Average Price средняя цена взвещенная по объему
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price = data[stock].price  
+			|&nbsp;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if price < vwap * 0.995 and pos > context.min_notional:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(stock,-100) # Продаем 100 штук акций
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos = pos - price*100
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif price > vwap * 1.005 and pos < context.max_notional:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(stock,+100) # Покупаем 100 штук акций
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos = pos + price*100
+			|&nbsp;
+
+block footer
+	script(src="http://yandex.st/highlightjs/7.3/highlight.min.js")
+	script hljs.initHighlightingOnLoad();

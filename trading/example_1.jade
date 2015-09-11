@@ -1,0 +1,39 @@
+extends ../layouts/html_layout.jade
+
+block scripts
+	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
+
+block content
+	div.row: div.large-12.columns: h3 Пример 1. Простейший пример.
+	div.row: div.large-12.columns
+		div Условие покупки/продажи: если текущая цена больше пятидневного скользящего среднего плюс один процент и есть деньги для покупки - покупаем.
+		| Если текущая цена меньше скользящего среднего и у нас есть акции, то продаем все акции.
+		pre.python: code
+			|def initialize(context):
+			|&nbsp;
+			|&nbsp;&nbsp;&nbsp;&nbsp;context.security = symbol('AAPL')
+			|&nbsp;
+			|def handle_data(context, data):
+			|&nbsp;
+			|&nbsp;&nbsp;&nbsp;&nbsp;average_price = data[context.security].mavg(5)
+			|&nbsp;&nbsp;&nbsp;&nbsp;current_price = data[context.security].price
+			|&nbsp;&nbsp;&nbsp;&nbsp;amount = context.portfolio.positions[symbol('AAPL')].amount
+			|&nbsp;&nbsp;&nbsp;&nbsp;cash = context.portfolio.cash
+			|&nbsp;&nbsp;&nbsp;&nbsp;# Need to calculate how many shares we can buy
+			|&nbsp;&nbsp;&nbsp;&nbsp;number_of_shares_buy = int(cash/current_price)
+			|&nbsp;&nbsp;&nbsp;&nbsp;number_of_shares_sell = amount    
+			|&nbsp;&nbsp;&nbsp;&nbsp;if current_price > 1.01*average_price and cash > current_price:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Place the buy order (positive means buy, negative means sell)
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(context.security, +number_of_shares_buy)
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info("Buying %s, amount: %d, cash: %d, price: %s" % (context.security.symbol, number_of_shares_buy, cash, current_price))
+			|&nbsp;      
+			|&nbsp;&nbsp;&nbsp;&nbsp;elif current_price < average_price and amount>0:
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Sell all of our shares by setting the target position to zero
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(context.security, -number_of_shares_sell)
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info("Selling %s %d" % (context.security.symbol, number_of_shares_sell))
+			|&nbsp;
+			|&nbsp;&nbsp;&nbsp;&nbsp;record(stock_sum=amount)		
+
+block footer
+	script(src="http://yandex.st/highlightjs/7.3/highlight.min.js")
+	script hljs.initHighlightingOnLoad();		

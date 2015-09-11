@@ -1,0 +1,27 @@
+extends ../layouts/html_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2 Python для финансовых вычислений
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Для финансовых вычислений на питоне я использую пакет <a href="http://continuum.io/downloads#py34">anaconda для питона версии 3</a>
+
+		div Модуль для финансовых вычислений на питоне <a href="http://matplotlib.org/api/finance_api.html#module-matplotlib.finance">matplotlib.finance</a>
+
+
+
+		h3 Библиотеки по трэйдингу для питона
+			ol
+				li: a(href="http://www.tradingwithpython.com") TradingWithPython	
+				li: a(href="https://github.com/quantopian/zipline") ZipLine
+				li: a(href="https://github.com/ematvey/pybacktest") PyBacktest	
+				li
+					a(href="http://mrjbq7.github.io/ta-lib/") TA-Lib
+					a(href="http://ta-lib.org/index.html") TA-Lib.org
+				li: a(href="http://gbeced.github.io/pyalgotrade/") PyAlgoTrade
+				li: a(href="https://github.com/quantopian/pyfolio") PyFolio
+				li: a(href="https://github.com/yhilpisch/dx") DX библиотека для анализа деривативов				
+		h3 Книги
+			ol
+				li: a(href="http://rutracker.org/forum/viewtopic.php?t=4969145") Yves Hilpisch - Python for Finance: Analyze Big Financial Data [2014, PDF, ENG]	
+				li: a(href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119037999.html") Derivatives Analytics with Python			

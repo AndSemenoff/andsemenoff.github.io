@@ -1,0 +1,87 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://localhost:8000/sportprogramming/index.html">Спортивное программирование</a></li>
+          <li><a href="http://localhost:8000/bigdata/index.html">Анализ данных   </a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Пример 2. Работа с фиксированным списком акций.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Общие вопросы</h3>
+        <div>Важное примечание. Все акции, указанные в списке должны торговаться на периоде на котором будет проводиться тестирование алгоритма.</div>
+        <pre class="python"><code>def initialize(context):
+&nbsp;&nbsp;&nbsp;&nbsp;# Указываем список акций, которыми будем торговать
+&nbsp;&nbsp;&nbsp;&nbsp;# Они храняться в специальном объекте Security
+&nbsp;&nbsp;&nbsp;&nbsp;context.stocks = symbols('AAPL', 'IBM', 'CSCO') # Акции: Apple, IBM, Cisco
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;# Устанавливаем минимальный и максимальный размер открытой позиции
+&nbsp;&nbsp;&nbsp;&nbsp;# в денежном выражении			
+&nbsp;&nbsp;&nbsp;&nbsp;context.max_notional = 1000000.1
+&nbsp;&nbsp;&nbsp;&nbsp;context.min_notional = -1000000.0
+&nbsp;   
+def handle_data(context, data):
+&nbsp;&nbsp;&nbsp;&nbsp;# Инициализируем позицию в ноль в начале каждого фрейма
+&nbsp;&nbsp;&nbsp;&nbsp;pos = 0
+   
+&nbsp;&nbsp;&nbsp;&nbsp;# Пробегаем по всем акциям и вычисляем нашу суммарную позицию по всем акциям
+&nbsp;&nbsp;&nbsp;&nbsp;for stock in context.stocks:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price = data[stock].price 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos = pos + context.portfolio.positions[stock].amount * price
+       
+&nbsp;&nbsp;&nbsp;&nbsp;# Пробегаем по всем акциям и если текущая цена меньше средневзвешенной минус 0.5% и лимит
+&nbsp;&nbsp;&nbsp;&nbsp;# по открытой позиции на продажу не достигнут, то продаем.
+&nbsp;&nbsp;&nbsp;&nbsp;# Если текущая цена больше средневзвешенной плюс 0.5% и лимит
+&nbsp;&nbsp;&nbsp;&nbsp;# по открытой позиции на куплю не достигнут, то покупаем.
+&nbsp;&nbsp;&nbsp;&nbsp;# Обновляем открытую позицию
+&nbsp;&nbsp;&nbsp;&nbsp;for stock in context.stocks:   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vwap = data[stock].vwap(3) # Volume-Weighted Average Price средняя цена взвещенная по объему
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price = data[stock].price  
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if price < vwap * 0.995 and pos > context.min_notional:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(stock,-100) # Продаем 100 штук акций
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos = pos - price*100
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif price > vwap * 1.005 and pos < context.max_notional:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order(stock,+100) # Покупаем 100 штук акций
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos = pos + price*100
+&nbsp;</code></pre>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>
