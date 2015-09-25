@@ -1,0 +1,21 @@
+extends layouts/html_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2: strong Ошибка 404. Страница не найдена
+	div.row: div.large-12.columns
+		h3 Оглавление сайта (сокращенное)
+			ul
+				li: a(href= site_url) Начало				
+				li: a(href= site_url+"/programming_index.html") Программирование
+				li: a(href= site_url+"/robots/index.html") Роботы
+				li: a(href= site_url+"/cooking/index.html") Информация по кулинарии												
+				li: a(href= site_url+"/diving/diving.html") Дайвинг
+				li: a(href= site_url+"/resistance/index.html") Игра Resistance
+				//li: div.callout.panel: a(href="userscripts/userscripts.html") Userscripts
+				li: a(href= site_url+"/astronomy/index.html") Astronomy
+				li: a(href= site_url+"/trading/index.html") Инвестирование 
+				li: a(href= site_url+"/photo/index.html") Информация по фотографии
+				li: a(href= site_url+"/ipsc/index.html") Практическая стрельба
+				li: a(href= site_url+"/useful_index.html") Полезно
+				li: a(href= site_url+"/interest/interest.html") Интересно
+				li: a(href= site_url+"/betting/index.html") Ставки на спорт		
