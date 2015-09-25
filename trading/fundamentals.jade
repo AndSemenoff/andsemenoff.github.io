@@ -1,11 +1,10 @@
-extends ../layouts/html_layout.jade
-
-block scripts
-	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
+extends ../layouts/code_layout.jade
 
 block content
 	div.row: div.large-12.columns: h3 Работа с фундаментальными показателями
 	div.row: div.large-12.columns
+		div: a(href="https://www.quantopian.com/help/fundamentals") Основной официальный help
+		p Показатели, которые я использую в своих алгоритмах.
 		div: kbd basic_eps
 		div Прибыль на акцию (Earnings Per Share, EPS) - финансовый показатель, равный отношению чистой прибыли компании, доступной для распределения, к среднегодовому числу обыкновенных акций. 
 		div: kbd dividend_per_share
@@ -15,4 +14,32 @@ block content
 		| где D - Дивиденды к выплате K - среднегодовое число обыкновенных акций в обращении
 
 		div: kbd total_employee_number
-		div: kbd shares_outstanding
+		div: kbd valuation.shares_outstanding
+		| Последнее сообщенное компанией общее количество акций в обращении.
+
+		h5: strong valuation.market_cap
+		div
+		| Рыночная капитализация компании. Т.е. текущая цена(чаще цена закрытия) умноженная на общее количество акций. 
+		| For ADR share classes, market cap is price * (ordinary shares outstanding / adr ratio).
+			
+		h5: strong valuation_ratios.pe_ratio или P/E ratio (Price-Earnings Ratio)
+		div Финансовый показатель, равный отношению рыночной капитализации компании к её годовой прибыли.
+		h5: strong valuation_ratios.ev_to_ebitda
+		div Прибыль до налогов, процентов и амортизации (Earnings Before Interest, Tax, Depreciation and Amortization; EBITDA) - показатель прибыли компании до вычета налога на прибыль, начисленных процентов по кредитам и амортизации.
+		h5: strong asset_classification.morningstar_sector_code
+		div Отраслевые группы сведены в 11 секторов.
+		pre.python: code
+			|# Сектора по группам
+			|context.sector_mappings = {
+			|&nbsp;&nbsp;&nbsp;&nbsp;101.0: "Basic Materials",
+			|&nbsp;&nbsp;&nbsp;&nbsp;102.0: "Consumer Cyclical",
+			|&nbsp;&nbsp;&nbsp;&nbsp;103.0: "Financial Services",
+			|&nbsp;&nbsp;&nbsp;&nbsp;104.0: "Real Estate",
+			|&nbsp;&nbsp;&nbsp;&nbsp;205.0: "Consumer Defensive",
+			|&nbsp;&nbsp;&nbsp;&nbsp;206.0: "Healthcare",
+			|&nbsp;&nbsp;&nbsp;&nbsp;207.0: "Utilites",
+			|&nbsp;&nbsp;&nbsp;&nbsp;308.0: "Communication Services",
+			|&nbsp;&nbsp;&nbsp;&nbsp;309.0: "Energy",
+			|&nbsp;&nbsp;&nbsp;&nbsp;310.0: "Industrials",
+			|&nbsp;&nbsp;&nbsp;&nbsp;311.0: "Technology"
+			|}

@@ -1,0 +1,23 @@
+extends ../layouts/html_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2: strong Python
+	div.row: div.large-12.columns
+		ol
+			li
+				| Конспект теории по питону
+				ol
+					li: strong: a(href='python_doctest.html') Работа с библиотекой doctest
+					li: strong: a(href='python_re.html') Работа с регулярными выражениями
+					li: strong: a(href='python_venv.html') Работа с виртуальным окружением в питоне с версии 3.4
+					li: strong: a(href='kivy_main.html') Работа с библиотекой Kivy
+					li: strong: a(href='statistics_main.html') Статистика на python
+					li: strong: a(href='brython_test.html') Работа питона в браузере - ТЕСТ
+
+			li Бесплатные среды разработки
+				ol
+					li Spyder https://pythonhosted.org/spyder/ https://github.com/spyder-ide/spyder
+					li PyCharm
+					li Winq IDE 101
+					//li
+						a(href='matrix_main.html') Работа с матрицами на python

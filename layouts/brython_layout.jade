@@ -1,4 +1,7 @@
 - var site_title = "ABSOLEM.INFO";
+- var site_url = "http://absolem.info";
+- var site_url = "http://andsemenoff.github.io";
+- var site_url = "http://localhost:8000";
 html
 	head
 		title= site_title
@@ -12,15 +15,16 @@ html
 		link( rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all" )
 		link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		
 		block scripts
-	body
+			script(src="../js/brython_dist.js")
+	body(onload="brython()")
 		nav.top-bar.data-topbar 
 			ul.title-area: li.name: h1: a(href="/")= site_title
 			section.top-bar-section
 				//  Left Nav Section
 				ul.left
-					li: a(href="sportprogramming/index.html") Спортивное программирование
-					li: a(href="bigdata/index.html") Анализ данных   
-
+					li: a(href= site_url+"/sportprogramming/index.html") Спорт программ
+					li: a(href= site_url+"/trading/index.html") Инвестирование   
+					li: a(href= site_url+"/bigdata/index.html") Анализ данных
 		block navigation
 		block content
 		footer

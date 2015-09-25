@@ -1,0 +1,37 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2: strong Пример 0. Как все работает.
+	div.row: div.large-12.columns
+		h5 Начало
+		p Напишем простой алгоритм. Чтобы понять какие методы в какой последовательности вызываются
+		pre.python: code
+			|def initialize(context):
+			|&nbsp;&nbsp;&nbsp;&nbsp;log.info("initialize run")
+			|&nbsp;&nbsp;&nbsp;&nbsp;schedule_function(rebalance,
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_rule=date_rules.month_start(),
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time_rule=time_rules.market_open())
+			|&nbsp;
+			|def rebalance(context, data):
+			|&nbsp;&nbsp;&nbsp;&nbsp;log.info("rebalance run")
+			|&nbsp;
+			|def before_trading_start(context, data):
+			|&nbsp;&nbsp;&nbsp;&nbsp;log.info("before_trading_start run")
+			|&nbsp;
+			|def handle_data(context, data):
+			|&nbsp;&nbsp;&nbsp;&nbsp;log.info("handle_data run")
+			|&nbsp;&nbsp;&nbsp;&nbsp;order(sid(24), 5)
+		p &nbsp;
+		div Итак, один раз в начале вызовется метод <strong>initialize</strong>. Затем, каждый рабочий(торговый) день будут вызываться
+		ol
+			li before_trading_start
+			li handle_data
+		p.text-justify 
+			|А благодаря тому, что в методе <strong>initialize</strong>, мы специальной функцией <strong>schedule_function</strong> указали, 
+			|что метод <strong>rebalance</strong> должен вызываться
+			| раз в месяц в начале месяца и в начале торгового дня. Поэтому в каждый первый торговый день месяца последовательность
+			| вызовов методов будет следующей:
+		ol
+			li before_trading_start
+			li handle_data
+			li rebalance		

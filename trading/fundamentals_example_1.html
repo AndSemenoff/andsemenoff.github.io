@@ -1,0 +1,146 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- link( rel="stylesheet" href="../css/reset.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://absolem.info/sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование   </a></li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное					</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4><strong>Фундаментальные финансовые показатели</strong></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h4>Простейший пример</h4>
+        <p>Кратко опишем алгоритм
+          <ol>
+            <li>Отфильтровываем лучшие 50 компаний по показателю капитализации.</li>
+            <li>Отбираем две отрасли с максимальным средним коэффициентом цена/прибыль (P/E ratio).</li>
+            <li>Каждый месяц закрываем всю нашу позицию перед тем, как открывать новую.</li>
+            <li>Выводим в лог требуемую позицию.</li>
+            <pre class="python"><code>import pandas as pd
+import numpy as np
+&nbsp;
+def initialize(context):
+&nbsp;&nbsp;&nbsp;&nbsp;# Словарь акций с их весами
+&nbsp;&nbsp;&nbsp;&nbsp;context.stock_weights = {}
+&nbsp;&nbsp;&nbsp;&nbsp;# Счетчик дней до ребалансировки портфеля
+&nbsp;&nbsp;&nbsp;&nbsp;context.days = 0
+&nbsp;&nbsp;&nbsp;&nbsp;# Количество секторов с которыми будем работать (покупать)
+&nbsp;&nbsp;&nbsp;&nbsp;context.sect_numb = 2
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;# Превязка секторов
+&nbsp;&nbsp;&nbsp;&nbsp;context.sector_mappings = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101.0: "Basic Materials",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;102.0: "Consumer Cyclical",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;103.0: "Financial Services",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;104.0: "Real Estate",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;205.0: "Consumer Defensive",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;206.0: "Healthcare",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;207.0: "Utilites",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;308.0: "Communication Services",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;309.0: "Energy",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;310.0: "Industrials",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;311.0: "Technology"
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;    
+&nbsp;&nbsp;&nbsp;&nbsp;# Ребалансировка портфеля ежемесячно в первый день в момент открытия торгов
+&nbsp;&nbsp;&nbsp;&nbsp;schedule_function(rebalance,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_rule=date_rules.month_start(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time_rule=time_rules.market_open())</code></pre>
+            <div>Теперь рассмотрим основной метод, который вызывается каждый раз перед началом торгового дня. В нашем случае это</div>означает, что он запускается ежемесячно в первый день месяца. Метод обновляет множество акций и соотвествующие фундаментальные
+            экономические показатели.
+            <pre class="python"><code>def before_trading_start(context, data): 
+&nbsp;&nbsp;&nbsp;&nbsp;# Количество анализируемых акций    
+&nbsp;&nbsp;&nbsp;&nbsp;num_stocks = 50
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;# Формируем запрос SQLAlchemy на основе pe_ratio
+&nbsp;&nbsp;&nbsp;&nbsp;# и принадлежности к секторам
+&nbsp;&nbsp;&nbsp;&nbsp;# Мы отфильтровываем результат, чтобы обязательно были значения
+&nbsp;&nbsp;&nbsp;&nbsp;# по капитализации и количеству акции.
+&nbsp;&nbsp;&nbsp;&nbsp;# Мы ограничиваем вывод количеством num_stocks и возвращаем данные
+&nbsp;&nbsp;&nbsp;&nbsp;# в порядке убывания
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;fundamental_df = get_fundamentals(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fundamentals.valuation_ratios.pe_ratio,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fundamentals.asset_classification.morningstar_sector_code
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.filter(fundamentals.valuation.market_cap != None)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.filter(fundamentals.valuation.shares_outstanding != None)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.order_by(fundamentals.valuation.market_cap.desc())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.limit(num_stocks)
+&nbsp;&nbsp;&nbsp;&nbsp;)
+&nbsp;&nbsp;&nbsp;&nbsp;# Находим сектора с наибольшим средним коэффициентом цена/прибыль (pe_ratio)
+&nbsp;&nbsp;&nbsp;&nbsp;sector_pe_dict = {}
+&nbsp;&nbsp;&nbsp;&nbsp;for stock in fundamental_df:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sector = fundamental_df[stock]['morningstar_sector_code']
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pe = fundamental_df[stock]['pe_ratio']
+&nbsp;&nbsp;&nbsp;&nbsp;    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# If it exists add our pe to the existing list. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Otherwise don't add it.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if sector in sector_pe_dict:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sector_pe_dict[sector].append(pe)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sector_pe_dict[sector] = []
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;# Находим среднее PE для кажного сектора
+&nbsp;&nbsp;&nbsp;&nbsp;sector_pe_dict = dict([(sectors, np.average(sector_pe_dict[sectors])) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for sectors in sector_pe_dict if len(sector_pe_dict[sectors]) > 0])
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;# Сортируем в низходящем порядке и берем первых sect_numb
+&nbsp;&nbsp;&nbsp;&nbsp;sectors = sorted(sector_pe_dict, key=lambda x: sector_pe_dict[x], reverse=True)[:context.sect_numb]
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;# Отфильтровываем акции только выбранных секторов
+&nbsp;&nbsp;&nbsp;&nbsp;context.stocks = [stock for stock in fundamental_df
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if fundamental_df[stock]['morningstar_sector_code'] in sectors]
+&nbsp;&nbsp;&nbsp;&nbsp;# Инициализируем
+&nbsp;&nbsp;&nbsp;&nbsp;# Initialize a context.sectors variable
+&nbsp;&nbsp;&nbsp;&nbsp;context.sectors = [context.sector_mappings[sect] for sect in sectors]
+&nbsp;&nbsp;&nbsp;&nbsp;# Обновляем
+&nbsp;&nbsp;&nbsp;&nbsp;# Update context.fundamental_df with the securities (and pe_ratio) that we need
+&nbsp;&nbsp;&nbsp;&nbsp;context.fundamental_df = fundamental_df[context.stocks]
+&nbsp;&nbsp;&nbsp;&nbsp;    
+&nbsp;&nbsp;&nbsp;&nbsp;update_universe(context.fundamental_df.columns.values)				</code></pre>
+          </ol>
+        </p>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

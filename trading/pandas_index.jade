@@ -1,0 +1,18 @@
+extends ../layouts/html_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2: strong Библиотека Pandas
+	div.row: div.large-12.columns
+		h3 Ссылки на материалы по Pandas
+			ol
+				li http://habrahabr.ru/post/196980/
+				li https://github.com/fonnesbeck/statistical-analysis-python-tutorial
+				li https://github.com/fonnesbeck/statistical-analysis-python-tutorial/blob/master/1.%20Introduction%20to%20Pandas.ipynb
+
+				li https://bitbucket.org/hrojas/learn-pandas
+				li https://github.com/jvns/pandas-cookbook/tree/v0.1
+
+		p.text-justify
+		| Для начала, скажем, пару слов о конструкциях хранения данных в Pandas. Основными являются Series и DataFrame.
+		| Series – это проиндексированный одномерный массив значений. Он схож на примитивный словарь типа dict, где имя элемента будет соответствовать индексу, а значение – значению записи.
+		| DataFrame — это проиндексированный многомерный массив значений, соответственно всякий столбец DataFrame, является конструкцией Series.

@@ -1,0 +1,71 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- link( rel="stylesheet" href="../css/reset.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://absolem.info/sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование   </a></li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное					</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Вычисление риск параметров</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Волатильность (Volatility)</h3>
+        <p class="text-justify"></p>Волатильность цены актива \( \sigma \) представляет собой меру неопределенности его доходности.
+        Волатильность можно определить как стандартное отклонение доходности актива за один год,
+        когда доходность расчитывается непрерывно.
+        \[ \sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum^N_{i=1} (r_i - \mu)^2},&nbsp; где&nbsp; \mu = \frac{1}{N} \sum^N_{i=1} r_i \]
+        <p class="text-justify"> </p>При стандартных расчетах время обычно измеряется годами, а волатильность
+        актива считается годовой. Но в некоторых случаях нам потребуется суточная
+        волотильность. Считая, что в году 252 рабочих дня можем записать, что 
+        \[ \sigma_{yr} = \sigma_{day} \sqrt{252} \]
+        или
+        \[ \sigma_{day} = \frac{\sigma_{yr}}{\sqrt{252}} \]
+        <h3>Коэффициент Бета (β)</h3>
+        <p class="text-justify">Коэффициент Бета является отношением ковариации рассматриваемых доходностей к дисперсии доходности эталонного портфеля или рынка соответственно.</p>\[ \beta = \frac{COV(r_S, r_M)}{VAR(r_M)} \]
+        <p class="text-justify"></p>где 
+        \(r_S\) — оцениваемая величина, для которой вычисляется коэффициент Бета: доходность оцениваемого актива или портфеля.
+        \(r_M\) — эталонная величина, с которой происходит сравнение: доходность портфеля ценных бумаг или рынка.
+        \( \mathrm{COV} \) — ковариация оцениваемой и эталонной величины, 
+        \( \mathrm{VAR} \) — дисперсия эталонной величины.
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

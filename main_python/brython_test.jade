@@ -1,0 +1,18 @@
+extends ../layouts/brython_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2: strong Brython тест
+	div.row: div.large-12.columns
+
+		div: a(href="http://brython.info/index.html") Brython
+
+		script(type="text/python").
+			from browser import document, alert
+
+			def echo(ev):
+				alert(document["zone"].value)
+
+			document['mybutton'].bind('click',echo)
+
+		
+		<input id="zone"><button id="mybutton">click !</button>

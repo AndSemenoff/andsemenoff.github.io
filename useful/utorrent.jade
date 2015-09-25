@@ -1,0 +1,22 @@
+extends ../layouts/html_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2 Работа с utorrent
+	div.row: div.large-12.columns
+		h3 Убираем рекламу в utorrent
+
+		p Заходим в Настройки -> Настройки программы -> Дополнительно и изменяем значения следующих параметров на
+			ul
+				li 
+					| <strong>offers.sponsored_torrent_offer_enabled</strong> - false;
+					| убирает верхний рекламный баннер
+				li 
+					| <strong>gui.show_plus_upsell</strong> - false; 
+					| убирает предложение купить про-версию utorrent снизу слева.
+
+				li 
+					| <strong>offers.left_rail_offer_enabled</strong> - false; убирает баннер снизу слева.
+				//
+					li bt.enable_pulse - false
+					li gui.show_notorrents_node
+					li offers.content_offer_autoexec

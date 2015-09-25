@@ -1,0 +1,79 @@
+
+<html>
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
+    <meta name="author" content="Семенова Андрей Вячеславович"/>
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
+    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- link( rel="stylesheet" href="../css/reset.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li><a href="http://absolem.info/sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование   </a></li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное					</a></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2><strong>Формула Блэка-Шоулза.</strong></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        \[ C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \]	
+        \[ d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \]
+        \[ d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} \]
+        <ul>
+          <li>\(C(S,T)\) - премия европейского опциона колл;</li>
+          <li>\(S\) - курс спот актива;</li>
+          <li>\(T\) - время до истечения контракта (как часть года) <small>(time to expiration)</small>;</li>
+          <li>\(K\) - цена исполнения опциона (цена страйк) <small>(strike price/exercise price)</small>;</li>
+          <li>\(r\) - непрерывно начисляемая ставка без риска <small>(risk-free interest rate)</small>;</li>
+          <li>\(\sigma \) - мгновенное стандартное отклонение актива волатильность (как часть года);</li>
+          <li>\(N(d_i)\) - функция нормального распределения.</li>
+        </ul>
+        <h3>Дельта (Delta) \( \delta \)</h3>
+        <p> </p>\( \delta = \frac{\partial C}{\partial S} \)
+        Дельта это скорость изменения цены опциона от изменения цены базового актива.
+        Для опциона колл: \( \delta_{call} = N(d_1) \); для опциона пут: \( \delta_{put} = -N(-d_1) = N(d_1) - 1 \)
+        <h3>Гамма (Gamma) \( \gamma \)</h3>\[ \gamma = \frac{\partial^2 C}{\partial S^2} =  \frac{N'(d1)}{S \sigma \sqrt{T}} \]
+        <p></p>скорость изменения цены опциона от изменения Дельты (или ускорение от изменения цены базового актива)
+        <h3>Вега (Vega) \(  \)</h3>\[ Vega = \frac{\partial C}{\partial \sigma} = SN(d_1) \sqrt{T} \]
+        <p></p>— описывает зависимость цены опциона от изменения волатильности базового актива. 
+        Вега отражает число пунктов изменения стоимости опциона на каждый процентный пункт (1%) изменения волатильности.
+        <h3>Тета (Theta) \( \theta \)</h3>
+        <p>описывает снижение цены опциона в зависимости от времени до экспирации</p>\[ \theta = \frac{\partial C}{\partial T} \]
+        \[ {для&nbsp;кола&nbsp;}\theta = - \frac{ CN(d_1) \sigma}{2\sqrt{T}} - rKe^{-rT}N(d_2) \]
+        \[ {для&nbsp;пута&nbsp;}\theta = - \frac{ CN(d_1) \sigma}{2\sqrt{T}} + rKe^{-rT}N(-d_2) \]
+        <h3>Ро (Rho)</h3><a href="http://habrahabr.ru/post/248949/">Хабр</a>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+        </div>
+      </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+  </body>
+</html>

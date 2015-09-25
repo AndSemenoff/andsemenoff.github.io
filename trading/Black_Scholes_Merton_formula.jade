@@ -1,0 +1,45 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2: strong Формула Блэка-Шоулза.
+	div.row: div.large-12.columns
+
+		\[ C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \]	
+
+		\[ d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \]
+
+		\[ d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} \]
+
+		ul
+			li \(C(S,T)\) - премия европейского опциона колл;
+			li \(S\) - курс спот актива;
+			li \(T\) - время до истечения контракта (как часть года) <small>(time to expiration)</small>;
+			li \(K\) - цена исполнения опциона (цена страйк) <small>(strike price/exercise price)</small>;
+			li \(r\) - непрерывно начисляемая ставка без риска <small>(risk-free interest rate)</small>;
+			li \(\sigma \) - мгновенное стандартное отклонение актива волатильность (как часть года);
+			li \(N(d_i)\) - функция нормального распределения.
+
+		h3 Дельта (Delta) \( \delta \)
+		p 
+		| \( \delta = \frac{\partial C}{\partial S} \)
+		| Дельта это скорость изменения цены опциона от изменения цены базового актива.
+		| Для опциона колл: \( \delta_{call} = N(d_1) \); для опциона пут: \( \delta_{put} = -N(-d_1) = N(d_1) - 1 \)
+
+		h3 Гамма (Gamma) \( \gamma \)
+		\[ \gamma = \frac{\partial^2 C}{\partial S^2} =  \frac{N'(d1)}{S \sigma \sqrt{T}} \]
+		p
+		| скорость изменения цены опциона от изменения Дельты (или ускорение от изменения цены базового актива)
+		h3 Вега (Vega) \(  \)
+		\[ Vega = \frac{\partial C}{\partial \sigma} = SN(d_1) \sqrt{T} \]
+		p
+		| — описывает зависимость цены опциона от изменения волатильности базового актива. 
+		| Вега отражает число пунктов изменения стоимости опциона на каждый процентный пункт (1%) изменения волатильности.
+
+		h3 Тета (Theta) \( \theta \)
+		p описывает снижение цены опциона в зависимости от времени до экспирации
+		\[ \theta = \frac{\partial C}{\partial T} \]
+		\[ {для&nbsp;кола&nbsp;}\theta = - \frac{ CN(d_1) \sigma}{2\sqrt{T}} - rKe^{-rT}N(d_2) \]
+		\[ {для&nbsp;пута&nbsp;}\theta = - \frac{ CN(d_1) \sigma}{2\sqrt{T}} + rKe^{-rT}N(-d_2) \]
+		h3 Ро (Rho)
+
+		a(href="http://habrahabr.ru/post/248949/") Хабр

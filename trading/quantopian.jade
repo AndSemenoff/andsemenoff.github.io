@@ -1,21 +1,35 @@
 extends ../layouts/html_layout.jade
 
 block content
-	div.row: div.large-12.columns: h2 Quantopian
+	div.row: div.large-12.columns: h2: strong Quantopian
 	div.row: div.large-12.columns
+		h5 Начало
+		div В Quantopian постоянно используются такие библиотеки и технологии:
+			ol
+				li pandas
+				li numpy
+				li SQLAlchemy 
+		div Поэтому очень желательно, если вы с ними не знакомы, паралельно с Quantopian осваивать и их.
+
 		h3 Общие вопросы
 			ol
-				li: [ENG] 
-					a(href="https://www.quantopian.com/posts/quantopian-tutorial-with-sample-momentum-algorithm-lesson-1-the-basics-of-the-ide") Серия базовых уроков
-				li: [RU] 
-					a(href="basic_lesson_1.html") Начало работы в Quantopian
-				li: [ENG] 
-					a(href="https://www.quantopian.com/posts/quantopian-lecture-series-kalman-filters") Quantopian lecture: series Kalman filters
+				li Серия базовых уроков [RU]
+					ol
+						li: a(href="basic_lesson_1.html") Начало работы в Quantopian
+						li: a(href="example_0.html") Пример 0. Как все работает.
+						li: a(href="example_1.html") Пример 1. Простейший пример.					
+						li: a(href="example_2.html") Пример 2. Работа с фиксированным списком акций.
+				li Серия базовых уроков [ENG]
+					ol
+						li: a(href="https://www.quantopian.com/posts/quantopian-tutorial-with-sample-momentum-algorithm-lesson-1-the-basics-of-the-ide") Урок 1. Основы среды разработки.
+				
 
-					
-				li: a(href="example_1.html") Пример 1. Простейший пример.					
-				li: a(href="example_2.html") Пример 2. Работа с фиксированным списком акций.
-				li: a(href="fundamentals.html") Работа с фундаментальными финансовыми показателями.				
+				li: a(href="https://www.quantopian.com/posts/quantopian-lecture-series-kalman-filters") Quantopian lecture: series Kalman filters
+
+				li Работа с фундаментальными финансовыми показателями.
+					ol
+						li: a(href="fundamentals.html") Описание показателей
+						li: a(href="fundamentals_example_1.html") Простейший пример			
 				li 
 					a(href="https://www.quantopian.com/posts/when-a-company-gets-acquired-my-portfolio-still-owns-shares-of-the-original-company-is-that-right") форум-пост 
 					| Как поступать с акциями, которые перестали торговаться?

@@ -8,10 +8,11 @@
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
     <meta name="copyright" content="Семенова Андрей Вячеславович"/>
     <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <!-- link( rel="stylesheet" href="../css/reset.css" type="text/css" media="all" )-->
     <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css"/>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <nav class="top-bar data-topbar"> 
@@ -23,9 +24,10 @@
       <section class="top-bar-section">
         <!--  Left Nav Section-->
         <ul class="left">
-          <li><a href="http://andsemenoff.github.io/sportprogramming/index.html">Спорт программ</a></li>
-          <li><a href="http://andsemenoff.github.io/trading/index.html">Инвестирование   </a></li>
-          <li><a href="http://andsemenoff.github.io/bigdata/index.html">Анализ данных</a></li>
+          <li><a href="http://absolem.info/sportprogramming/index.html">Спорт программ</a></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование   </a></li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное					</a></li>
         </ul>
       </section>
     </nav>
@@ -36,6 +38,8 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
+        <div><a href="https://www.quantopian.com/help/fundamentals">Основной официальный help</a></div>
+        <p>Показатели, которые я использую в своих алгоритмах.</p>
         <div><kbd>basic_eps</kbd></div>
         <div>Прибыль на акцию (Earnings Per Share, EPS) - финансовый показатель, равный отношению чистой прибыли компании, доступной для распределения, к среднегодовому числу обыкновенных акций. </div>
         <div><kbd>dividend_per_share</kbd></div>
@@ -43,7 +47,30 @@
         DPS = D / K
         где D - Дивиденды к выплате K - среднегодовое число обыкновенных акций в обращении
         <div><kbd>total_employee_number</kbd></div>
-        <div><kbd>shares_outstanding</kbd></div>
+        <div><kbd>valuation.shares_outstanding</kbd></div>Последнее сообщенное компанией общее количество акций в обращении.
+        <h5><strong>valuation.market_cap</strong></h5>
+        <div></div>Рыночная капитализация компании. Т.е. текущая цена(чаще цена закрытия) умноженная на общее количество акций. 
+        For ADR share classes, market cap is price * (ordinary shares outstanding / adr ratio).
+        <h5><strong>valuation_ratios.pe_ratio или P/E ratio (Price-Earnings Ratio)</strong></h5>
+        <div>Финансовый показатель, равный отношению рыночной капитализации компании к её годовой прибыли.</div>
+        <h5><strong>valuation_ratios.ev_to_ebitda</strong></h5>
+        <div>Прибыль до налогов, процентов и амортизации (Earnings Before Interest, Tax, Depreciation and Amortization; EBITDA) - показатель прибыли компании до вычета налога на прибыль, начисленных процентов по кредитам и амортизации.</div>
+        <h5><strong>asset_classification.morningstar_sector_code</strong></h5>
+        <div>Отраслевые группы сведены в 11 секторов.</div>
+        <pre class="python"><code># Сектора по группам
+context.sector_mappings = {
+&nbsp;&nbsp;&nbsp;&nbsp;101.0: "Basic Materials",
+&nbsp;&nbsp;&nbsp;&nbsp;102.0: "Consumer Cyclical",
+&nbsp;&nbsp;&nbsp;&nbsp;103.0: "Financial Services",
+&nbsp;&nbsp;&nbsp;&nbsp;104.0: "Real Estate",
+&nbsp;&nbsp;&nbsp;&nbsp;205.0: "Consumer Defensive",
+&nbsp;&nbsp;&nbsp;&nbsp;206.0: "Healthcare",
+&nbsp;&nbsp;&nbsp;&nbsp;207.0: "Utilites",
+&nbsp;&nbsp;&nbsp;&nbsp;308.0: "Communication Services",
+&nbsp;&nbsp;&nbsp;&nbsp;309.0: "Energy",
+&nbsp;&nbsp;&nbsp;&nbsp;310.0: "Industrials",
+&nbsp;&nbsp;&nbsp;&nbsp;311.0: "Technology"
+}</code></pre>
       </div>
     </div>
     <footer>
@@ -52,6 +79,8 @@
           <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
         </div>
       </div>
+      <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     </footer>
   </body>
 </html>

@@ -1,14 +1,22 @@
 /* CSS Document */
+html{
+
+}
+
 body{
-	font-family: 'Roboto Condensed', sans-serif;
+/*	font-family: 'Roboto Condensed', sans-serif; */
 /*	width: 100%;*/
 	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAJv3rz5zwjjgzgiIiKMYAEYB8RmROaABAARVA/IbgZ16QAAAABJRU5ErkJggg==) 
 	repeat;
+    color: #545454;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
+/*
 footer{
 	margin-top: 2em;
 }
+*/
 
 ol>li{
 display:block;
