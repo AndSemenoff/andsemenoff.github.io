@@ -29,3 +29,25 @@ counter-increment:item
 ol{
 counter-reset:item
 }
+
+input[type="checkbox"]{
+	margin: 0px;
+}
+
+.action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 0.5rem;
+  }
+
+.explanation{
+	margin-bottom: 1rem;
+}
+.content-hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.content-show {
+	visibility: visible;
+	display: block;
+}

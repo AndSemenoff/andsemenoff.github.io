@@ -1,0 +1,52 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h1: strong Quiz тест
+	div.row: div.large-12.columns
+		div(class="large-10 columns")
+			div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?
+			//Вопрос: Что будет выведено в результате выполнения следующего кода?
+			//pre.python: code
+			div.action
+			div: small Выберите все правильные ответы:
+			div.answer.wrong
+				input(id="checkbox1" type="checkbox" value="")
+				label(for="checkbox1") Hello
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Строка всегда должна быть заключена в кавычки.
+			div.answer.correct
+				input(id="checkbox2" type="checkbox" value="true")
+				label(for="checkbox2") "Hello, world."
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Это абсолютно правильная строка в двойных кавычках.
+
+			div.answer.correct
+				input(id="checkbox3" type="checkbox" value="true")
+				label(for="checkbox3") 'Hello, world.'
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Это абсолютно правильная строка в одинарных кавычках.
+
+			div.answer.wrong
+				input(id="checkbox4" type="checkbox" value="")
+				label(for="checkbox4") [Hello]
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Строка всегда должна быть заключена в кавычки.
+
+			div.answer.correct
+				input(id="checkbox5" type="checkbox" value="true")
+				label(for="checkbox5") 'She shouted "Hello!" very loudly.'
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> В строке возможно использование и двойных и одинарных кавычек при правильном соблюдении их вложенности.
+			div.result.content-hidden
+				| <strong> Всё верно! </strong>
+				| <a href="quiz_n_0002.html"> Следующий вопрос >> </a>
+
+			div.action
+				a(class="button success" role="button" id = "answer") Ответить
+				|  
+				a(class="button" role="button" id = "clear") Очистить
+				|  
+				a(class="button info" role="button" id = "info") Разъяснить всё				
+
+block footer
+	script(src="quiz.js")							

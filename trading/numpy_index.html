@@ -1,16 +1,20 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="ru">
   <head>
     <title>ABSOLEM.INFO</title>
-    <meta charset="utf-8"/>
-    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт"/>
-    <meta name="author" content="Семенова Андрей Вячеславович"/>
-    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python"/>
-    <meta name="copyright" content="Семенова Андрей Вячеславович"/>
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <!-- link( rel="stylesheet" href="../css/reset.css" type="text/css" media="all" )-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <nav class="top-bar data-topbar"> 
@@ -22,10 +26,15 @@
       <section class="top-bar-section">
         <!--  Left Nav Section-->
         <ul class="left">
-          <li><a href="http://absolem.info/sportprogramming/index.html">Спорт программ</a></li>
-          <li><a href="http://absolem.info/trading/index.html">Инвестирование   </a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
           <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
-          <li><a href="http://absolem.info/useful_index.html">Полезное					</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
         </ul>
       </section>
     </nav>
@@ -37,14 +46,52 @@
     <div class="row">
       <div class="large-12 columns">
         <div><a href="http://habrahabr.ru/post/121031/">NumPy, пособие для новичков. Часть 1</a></div>
+        <h2>NPV - Чистый дисконтированный доход</h2>
+        <div>Чистый дисконтированный доход (NPV, Net Present Value, чистая текущая стоимость, чистая дисконтированная стоимость)</div>\[ NPV  = \sum \limits_{t=1}^{M} \frac{cashflow_t}{(1 + rate)^t} - IC \]
+        <ul>
+          <li>\( cashflow_t \) - денежный поток в момент времени t;</li>
+          <li>\( rate  \) - ставка дисконтирования;</li>
+          <li>\( M \) - количество периодов;</li>
+          <li>\( IC \) - первоначальные инвестиции;</li>
+        </ul>
+        <pre class="python"><code>import numpy as np
+cashflows = [-45.45,50]
+npv = np.npv(0.1,cashflows)
+print(round(50/(1+0.1),2))
+print(round(npv,2))
+>> 45.45
+>> 0.0</code></pre>
+        <div> </div>Первый параметр это ставка процента(ставка дисконтирования). Ставка дисконтирования указывается в том же временном измерении, что
+        и денежный поток. Т.е. если у нас платежи раз в год, то и ставка в годовых, если раз в квартал, то и ставка квартальная. Второй параметр - 
+        это массив представляющий денежный поток в момент времени t.
+        Первое значение в массиве по умолчанию - это первоначальные инвестиции, поэтому они идут с отрицательным знаком.
+        <a href="docs.scipy.org/doc/numpy/reference/generated/numpy.npv.html"> Документация.</a>
+        <h2>Платеж по кредиту</h2>
+        <div> </div>Мы взяли кредит в банке в размере 2000000 рублей на 5 лет под 11% годовых. Сколько нам нужно выплачивать ежемесячно? Можно подсчитать
+        воспользовавшись функцией <kbd>pmt</kbd>.
+        <pre class="python"><code>import numpy as np
+kredit = 2000000
+rate = 0.11/12 # приводим к месячным процентам
+period = 5*12 # срок приводим к месяцам
+payment = np.pmt(rate, period, kredit)
+print(round(payment,2))
+>> -43484.85</code></pre>
+        <div>Получилось, что нужно будет выплачивать по 43484 рубля и 85 копеек ежемесячно.</div>
       </div>
     </div>
     <footer>
       <div class="row">
         <div class="large-12 columns">
-          <div id="logo5HTML"></div><a href="http://validator.w3.org/check?uri=referer"></a><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"/>
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
         </div>
       </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
   </body>
 </html>
