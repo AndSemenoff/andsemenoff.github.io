@@ -1,5 +1,8 @@
 extends ../layouts/html_layout.jade
 
+block title
+	title= site_title + " Инвестирование"
+
 block content
 	div.row: div.large-12.columns: h2 Ссылки по теме: "Инвестирование и спекуляции"
 	div.row: div.large-12.columns
@@ -67,7 +70,7 @@ block content
 					li: strong: a(href="moex_futures_go.html") Расчет ГО для фьючерсного контракта
 					li: a(href="http://fs.moex.com/files/4266") Сбор за транзакции на ММВБ
 					li: a(href="http://fs.moex.com/files/5329") Коэффициенты для расчета сбора за транзакции на ММВБ
-
+					li: strong: a(href="moex_rule_forts_04.08.2015.pdf") Правила срочного рынка (ред. 04.08.2015) pdf
 
 			li Программирование
 				ol
