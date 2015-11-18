@@ -9,11 +9,17 @@
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <!-- script(src="../js/modernizr.js")-->
     <!-- default.min.css"-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
@@ -40,11 +46,34 @@
     </nav>
     <div class="row">
       <div class="large-12 columns">
-        <h3>Разбор задач</h3>
+        <h1>Разбор избранных задач</h1>
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns"></div>
+      <div class="large-12 columns">
+        <h2>Тестирующая система </h2>
+        <p>
+          Юный программист Саша написал свою первую тестирующую систему. Он так обрадовался тому, что она скомпилировалась, что решил пригласить школьных друзей на свой
+          собственный контест.
+          Но в конце тура выяснилось, что система не умеет сортировать команды в таблице
+          результатов. Помогите Саше реализовать эту сортировку.
+          Команды упорядочиваются по правилам ACM:
+          <ul>
+            <li>по количеству решенных задач в порядке убывания;</li>
+            <li>при равенстве количества решенных задач  по штрафному времени в порядке возрастания;</li>
+            <li>при прочих равных  по номеру команды в порядке возрастания.</li>
+          </ul>
+        </p>
+        <pre class="python"><code>Ввод:
+5
+3 50
+5 720
+1 7
+0 0
+8 500
+Вывод:
+5 2 1 3 4</code></pre>
+      </div>
     </div>
     <footer>
       <div class="row">

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Алгоритмы на лабиринтах</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Постановка задачи</h2>
+        <div class="text-justify">У лабиринта нет стен, но он окружен кустами по внешним краям. Если игрок зашел в куст, то он проиграл. Лабиринт представлен как матрица (список (list) списков): 1 - это куст и 0 - это дорожка. Размер лабиринта N на N клеток и внешние клетки всегда кусты. Игрок начинает в клетке (1, 1). Выход в клетке (N-2, N-2). Вам нужно найти маршрут через Лабиринт. Игрок может двигатся только в четырех направлениях -- Юг (вниз [1,0]), Север (вверх [-1,0]), Восток (вправо [0,1]), Запад (влево [0, -1]). Маршрут описывается строкой состоящей из следующих символов: "S"=Юг, "N"=Север, "E"=Восток, and "W"=Запад.</div>
+        <div>Пример:</div>
+        <pre class="python"><code>maze = [
+	[1, 1, 1, 1, 1],
+	[1, 0, 1, 0, 1],
+	[1, 0, 1, 0, 1],
+	[1, 0, 0, 0, 1],
+	[1, 1, 1, 1, 1]
+]
+solve = "SSEE"</code></pre>
+        <div>В общем виде в такого рода задачах лабиринт можно представить в виде графа. Где пустые клетки - это вершины, а ребрами соединены те клетки- вершины, которые прилегают друг к другу, т.е. те на которые можно пойти. Реализуем граф, как словарь. Координаты клеток будем представлять кортежем. В словаре ключами будут координаты клетки-вершины, а значениями будет список кортежей из координат соседних клеток и направлении по которым можно добраться до клетки-вершины. Например, для лабиринта выше. Возьмем клетку с координатами (1, 1). В эту клетку можно попасть только из клетки (2, 1) двигаясь на Юг. Должны получить: {(1, 1): [('S', (2, 1))]} Имеем, что каждая вершина имеет уникальное имя - это координаты клетки. А направление мы будет использовать для восстановления пути. Функция преобразования лабиринта в граф будет выглядеть:</div>
+        <pre class="python"><code>def maze2graph(maze):
+    height = len(maze)
+    width = len(maze[0]) if height else 0
+    graph = {(i, j): [] for j in range(width) for i in range(height) if not maze[i][j]}
+    for row, col in graph.keys():
+        if row < height - 1 and not maze[row + 1][col]:
+            graph[(row, col)].append(("S", (row + 1, col)))
+            graph[(row + 1, col)].append(("N", (row, col)))
+        if col < width - 1 and not maze[row][col + 1]:
+            graph[(row, col)].append(("E", (row, col + 1)))
+            graph[(row, col + 1)].append(("W", (row, col)))
+    return graph</code></pre>
+        <pre class="python"><code>{(1, 1): [('S', (2, 1))],
+(1, 3): [('S', (2, 3))],
+(2, 1): [('N', (1, 1)), ('S', (3, 1))],
+(2, 3): [('N', (1, 3)), ('S', (3, 3))],
+(3, 1): [('E', (3, 2)), ('N', (2, 1))],
+(3, 2): [('E', (3, 3)), ('W', (3, 1))],
+(3, 3): [('W', (3, 2)), ('N', (2, 3))]}</code></pre>
+        <h2>Ссылки по теме
+          <ol>
+            <li><a href="http://habrahabr.ru/post/181265/">Необыкновенный способ генерации лабиринтов</a></li>
+            <li><a href="http://bryukh.com/labyrinth-algorithms/">Алгоритмы на лабиринтах</a></li>
+          </ol>
+        </h2>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

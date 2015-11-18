@@ -9,11 +9,17 @@
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <!-- script(src="../js/modernizr.js")-->
     <!-- default.min.css"-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
@@ -45,40 +51,49 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <div class="large-10 columns">
-          <div><strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?</div>
-          <!--Вопрос: Что будет выведено в результате выполнения следующего кода?-->
-          <!--pre.python: code-->
-          <div class="action"></div>
+        <div class="large-12 columns">
+          <!--div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?-->
+          <div><strong>Вопрос:</strong> Что будет выведено в результате выполнения следующего кода?</div>
+        </div>
+        <div class="large-2 right"><a href="../python_source/test_0003.py">test_0003.py</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code>info = ['David', 'Pythonista', '+7-495-123-4567']
+people = [info, ['Guido', 'BDFL', 'unlisted']]
+david, (gname, gtitle, gphone) = people
+print(david)</code></pre>
           <div><small>Выберите все правильные ответы:</small></div>
           <div class="answer wrong">
             <input id="checkbox1" type="checkbox" value="">
-            <label for="checkbox1">Hello</label>
-            <div class="explanation content-hidden"><strong>Неверно.</strong> Строка всегда должна быть заключена в кавычки.</div>
+            <label for="checkbox1">Syntax Error</label>
+            <div class="explanation content-hidden"><strong>Неверно.</strong> Данный код работает без ошибок.</div>
           </div>
           <div class="answer correct">
-            <input id="checkbox2" type="checkbox" value="true">
-            <label for="checkbox2">"Hello, world."</label>
-            <div class="explanation content-hidden"><strong>Неверно.</strong> Это абсолютно правильная строка в двойных кавычках.</div>
+            <input id="checkbox2" type="checkbox" value="">
+            <label for="checkbox2">"David"</label>
+            <div class="explanation content-hidden"><strong>Неверно.</strong></div>
           </div>
           <div class="answer correct">
             <input id="checkbox3" type="checkbox" value="true">
-            <label for="checkbox3">'Hello, world.'</label>
-            <div class="explanation content-hidden"><strong>Неверно.</strong> Это абсолютно правильная строка в одинарных кавычках.</div>
+            <label for="checkbox3">['David', 'Pythonista', '+7-495-123-4567']</label>
+            <div class="explanation content-hidden">
+              <strong>Неверно.</strong> Происходит распаковка списка в правой части выражения и присвоение соотвествующих значений в левой части.
+              people будет иметь значение [['David', 'Pythonista', '+7-495-123-4567'],['Guido', 'BDFL', 'unlisted']] и поэтому david получит
+              значение ['David', 'Pythonista', '+7-495-123-4567']
+            </div>
           </div>
           <div class="answer wrong">
             <input id="checkbox4" type="checkbox" value="">
-            <label for="checkbox4">[Hello]</label>
-            <div class="explanation content-hidden"><strong>Неверно.</strong> Строка всегда должна быть заключена в кавычки.</div>
+            <label for="checkbox4">[info]</label>
+            <div class="explanation content-hidden"><strong>Неверно.</strong></div>
           </div>
           <div class="answer correct">
-            <input id="checkbox5" type="checkbox" value="true">
-            <label for="checkbox5">'She shouted "Hello!" very loudly.'</label>
-            <div class="explanation content-hidden"><strong>Неверно.</strong> В строке возможно использование и двойных и одинарных кавычек при правильном соблюдении их вложенности.</div>
+            <input id="checkbox5" type="checkbox" value="">
+            <label for="checkbox5">'Guido'</label>
+            <div class="explanation content-hidden"><strong>Неверно.</strong></div>
           </div>
           <div class="result content-hidden">
             <strong> Всё верно! </strong>
-            <a href="quiz_n_0002.html"> Следующий вопрос >> </a>
+            <a href="quiz_n_0003.html"> Следующий вопрос >> </a>
           </div>
           <div class="action"><a role="button" id="answer" class="button success">Ответить</a> <a role="button" id="clear" class="button">Очистить</a> <a role="button" id="info" class="button info">Разъяснить всё				</a></div>
         </div>
@@ -87,10 +102,12 @@
     <footer>
       <div class="row">
         <div class="large-12 columns">
+          <script src="quiz.js">							</script>
           <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
         </div>
       </div>
-      <script src="quiz.js">							</script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     </footer>
     <!-- script(src="../js/jquary.js")-->
     <!-- script(src="../js/foundation.min.js")-->

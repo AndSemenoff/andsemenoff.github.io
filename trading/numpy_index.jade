@@ -1,27 +1,31 @@
 extends ../layouts/code_layout.jade
 
 block content
-	div.row: div.large-12.columns: h3 Работа с NumPy
+	div.row: div.large-12.columns: h2 Работа с NumPy
 	div.row: div.large-12.columns
 
 		div: a(href="http://habrahabr.ru/post/121031/") NumPy, пособие для новичков. Часть 1
 
-		h2 NPV - Чистый дисконтированный доход
+		h3 NPV - Чистый дисконтированный доход
 		div Чистый дисконтированный доход (NPV, Net Present Value, чистая текущая стоимость, чистая дисконтированная стоимость)
 
-		\[ NPV  = \sum \limits_{t=1}^{M} \frac{cashflow_t}{(1 + rate)^t} - IC \]
-		ul
-			li \( cashflow_t \) - денежный поток в момент времени t;
+		|\begin{equation}
+		|	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + rate)^t} - IC
+		|	\label{eq:npv}
+		|\end{equation}
+
+		ul где
+			li \( cashflow_t \) - денежный поток (платеж) в момент времени t (t=1,..., N);
 			li \( rate  \) - ставка дисконтирования;
-			li \( M \) - количество периодов;
+			li \( N \) - количество периодов;
 			li \( IC \) - первоначальные инвестиции;
 
 		pre.python: code
 			|import numpy as np
-			|cashflows = [-45.45,50]
-			|npv = np.npv(0.1,cashflows)
-			|print(round(50/(1+0.1),2))
-			|print(round(npv,2))
+			|cashflows = [-45.45, 50]
+			|npv = np.npv(0.1, cashflows)
+			|print(round(50/(1+0.1), 2))
+			|print(round(npv, 2))
 			| >> 45.45
 			| >> 0.0
 
@@ -32,7 +36,31 @@ block content
 		| Первое значение в массиве по умолчанию - это первоначальные инвестиции, поэтому они идут с отрицательным знаком.
 		| <a href="docs.scipy.org/doc/numpy/reference/generated/numpy.npv.html"> Документация.</a>
 
-		h2 Платеж по кредиту
+		h3 IRR (internal rate of return) Внутренняя норма доходности
+		div
+			| Это процентная ставка, при которой чистая приведённая стоимость (чистый дисконтированный доход — NPV) равна 0. 
+			| NPV рассчитывается на основании потока платежей, дисконтированного к сегодняшнему дню. Перепишем формулу \eqref{eq:npv} в следующем виде:
+
+		|\begin{equation}
+		|	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t} - IC = 0 \\
+		| или \\
+		| IC = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t}
+		|	\label{eq:irr}
+		|\end{equation}
+		ul где
+			li \( IRR \) - внутренняя норма доходности;
+
+			| <a href="http://web.archive.org/web/20121013034311/http://letscount.ru/2011-10/investicionnaya-privlekatelnost-npv-vs-irr"> Ссылка</a>
+			| <br>
+			| Для вычисления внутренней нормы доходности существует функция <kbd>irr</kbd>.
+		pre.python: code
+			|import numpy as np
+			|cashflows = [-45.45, 50]
+			|irr = round(np.irr(cashflows), 2)
+			|print(irr)
+			| >> 0.1
+
+		h3 Платеж по кредиту
 		div 
 		| Мы взяли кредит в банке в размере 2000000 рублей на 5 лет под 11% годовых. Сколько нам нужно выплачивать ежемесячно? Можно подсчитать
 		| воспользовавшись функцией <kbd>pmt</kbd>.

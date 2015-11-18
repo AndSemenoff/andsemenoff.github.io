@@ -1,0 +1,57 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h1: strong Quiz тест
+	div.row: div.large-12.columns
+		div(class="large-10 columns")
+			//div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?
+			div <strong>Вопрос:</strong> Что будет выведено в результате выполнения следующего кода?
+				pre.python: code
+					| value = 1,
+					| print(value)
+
+			div.action
+			div: small Выберите все правильные ответы:
+			div.answer.wrong
+				input(id="checkbox1" type="checkbox" value="")
+				label(for="checkbox1") Syntax Error
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Данный код работает без ошибок.
+			div.answer.correct
+				input(id="checkbox2" type="checkbox" value="")
+				label(for="checkbox2") 1
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> 
+
+			div.answer.correct
+				input(id="checkbox3" type="checkbox" value="")
+				label(for="checkbox3") 1,
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> 
+
+			div.answer.wrong
+				input(id="checkbox4" type="checkbox" value="true")
+				label(for="checkbox4") (1,)
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Запятая является конструктором кортежа, без круглых скобок. Таким образом в данном случае value - это кортеж
+					| и будет напечатано (1,)
+
+			div.answer.correct
+				input(id="checkbox5" type="checkbox" value="")
+				label(for="checkbox5") [1]
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> 
+
+			div.result.content-hidden
+				| <strong> Всё верно! </strong>
+				| <a href="quiz_n_0004.html"> Следующий вопрос >> </a>
+
+			div.action
+				a(class="button success" role="button" id = "answer") Ответить
+				|  
+				a(class="button" role="button" id = "clear") Очистить
+				|  
+				a(class="button info" role="button" id = "info") Разъяснить всё				
+
+block footer_scripts
+	script(src="quiz.js")

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1><strong>Quiz тест</strong></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="large-10 columns">
+          <!--div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?-->
+          <div><strong>Вопрос:</strong> Данные фрагменты кода выведут одно и тоже?</div>
+          <div class="large-6 columns">
+            <pre class="python"><code>colors = ['red', 'blue', 'green', 'yellow']
+result = ''
+for s in colors:
+&nbsp;&nbsp;&nbsp;&nbsp;result += s
+print(result)</code></pre>
+          </div>
+          <div class="large-6 columns">
+            <pre class="python"><code>colors = ['red', 'blue', 'green', 'yellow']
+result = ''.join(colors)
+print(result)</code></pre>
+          </div>
+          <div class="clearfix"></div>
+          <!--row.action-->
+          <div><small>Выберите все правильные ответы:</small></div>
+          <div class="answer wrong">
+            <input id="radio1" name="radio" type="radio" value="true">
+            <label for="checkbox1">Да.</label>
+            <div class="explanation content-hidden">
+              <strong>Неверно.</strong> Результат одинаков, но метод строк join() делает все копирования в один проход.
+              В такой ситуации рекомендуется всегда использовать его.
+            </div>
+          </div>
+          <div class="answer correct">
+            <input id="radio2" name="radio" type="radio" value="">
+            <label for="checkbox2">Нет.</label>
+            <div class="explanation content-hidden"><strong>Неверно.</strong> </div>
+          </div>
+          <div class="result content-hidden">
+            <strong> Всё верно! </strong>
+            <a href="quiz_n_0005.html"> Следующий вопрос >> </a>
+          </div>
+          <div class="action"><a role="button" id="answer" class="button success">Ответить</a> <a role="button" id="clear" class="button">Очистить</a> <a role="button" id="info" class="button info">Разъяснить всё				</a></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <script src="quiz.js"></script>
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

@@ -3,13 +3,13 @@ extends ../layouts/code_layout.jade
 block content
 	div.row: div.large-12.columns: h2: strong Формула Блэка-Шоулза.
 	div.row: div.large-12.columns
+		|\begin{equation}
+		| C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \\	
 
-		\[ C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \]	
+		| d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \\
 
-		\[ d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \]
-
-		\[ d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} \]
-
+		| d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} 
+		|\end{equation}
 		ul
 			li \(C(S,T)\) - премия европейского опциона колл;
 			li \(S\) - курс спот актива;
@@ -19,11 +19,51 @@ block content
 			li \(\sigma \) - мгновенное стандартное отклонение актива волатильность (как часть года);
 			li \(N(d_i)\) - функция нормального распределения.
 
-		h3 Дельта (Delta) \( \delta \)
+		h2 Реализация на python
+		div.large-2.columns.right
+			a(href="../python_source/bsm_call_value.py") bsm_call_value.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/bsm_call_value.py
+
+		p Теперь попробуем найти волатильность, зная все параметры в том числе и цену опциона на бирже.
+
+		h3 Дельта (Delta) \( \Delta \)
 		p 
-		| \( \delta = \frac{\partial C}{\partial S} \)
+		| \( \Delta = \frac{\partial C}{\partial S} \)
 		| Дельта это скорость изменения цены опциона от изменения цены базового актива.
-		| Для опциона колл: \( \delta_{call} = N(d_1) \); для опциона пут: \( \delta_{put} = -N(-d_1) = N(d_1) - 1 \)
+		|\begin{equation}
+		|\text{Для опциона колл: } \Delta_{call} = N(d_1) \\ 
+		|\text{Для опциона пут: }  \Delta_{put} = -N(-d_1) = N(d_1) - 1
+		|\end{equation}
+
+		div.text-justify Построим график зависимости дельты от цены базового актива. Для этого зафиксируем страйк(K), время
+			| до окончания контракта(T), безрисковую ставку(r) и волотильность(\(\sigma\)). Будем менять только цену базового
+			| актива. Полученный график представлен на рисунке 1.
+
+		div.clearfix
+		//div.large-6.columns
+		//div.large-12.columns
+		div.large-2.columns
+			p &nbsp;
+		div.large-6.columns
+			div.card
+				div.image
+					img(src="../images/figure_delta.png")
+
+				div.content
+					<p>Рис. 1</p>
+
+				div.action
+					a(href='../python_source/delta_spot_draw_image.py') Python код 
+					| с помощью которого построен график
+
+		div.clearfix
+
+		div.text-justify Теперь построим график типичных зависимостей дельты от времени до конца контракта. Для этого зафиксируем три типичных страйка(K), 
+			| в деньгах, на деньгах и вне денег. Также зафиксируем
+			| безрисковую ставку(r) и волотильность(\(\sigma\)). Будем менять только время до окончания опционного контракта. 
+			| Полученный график представлен на рисунке 2.
 
 		h3 Гамма (Gamma) \( \gamma \)
 		\[ \gamma = \frac{\partial^2 C}{\partial S^2} =  \frac{N'(d1)}{S \sigma \sqrt{T}} \]

@@ -3,43 +3,50 @@ extends ../layouts/code_layout.jade
 block content
 	div.row: div.large-12.columns: h1: strong Quiz тест
 	div.row: div.large-12.columns
-		div(class="large-10 columns")
-			div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?
-			//Вопрос: Что будет выведено в результате выполнения следующего кода?
-			//pre.python: code
-			div.action
+		div.large-12.columns
+			//div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?
+			div <strong>Вопрос:</strong> Что будет выведено в результате выполнения следующего кода?
+		div.large-2.right
+			a(href="../python_source/test_0003.py") test_0003.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/test_0003.py
+
 			div: small Выберите все правильные ответы:
 			div.answer.wrong
 				input(id="checkbox1" type="checkbox" value="")
-				label(for="checkbox1") Hello
+				label(for="checkbox1") Syntax Error
 				div.explanation.content-hidden
-					| <strong>Неверно.</strong> Строка всегда должна быть заключена в кавычки.
+					| <strong>Неверно.</strong> Данный код работает без ошибок.
 			div.answer.correct
-				input(id="checkbox2" type="checkbox" value="true")
-				label(for="checkbox2") "Hello, world."
+				input(id="checkbox2" type="checkbox" value="")
+				label(for="checkbox2") "David"
 				div.explanation.content-hidden
-					| <strong>Неверно.</strong> Это абсолютно правильная строка в двойных кавычках.
+					| <strong>Неверно.</strong>
 
 			div.answer.correct
 				input(id="checkbox3" type="checkbox" value="true")
-				label(for="checkbox3") 'Hello, world.'
+				label(for="checkbox3") ['David', 'Pythonista', '+7-495-123-4567']
 				div.explanation.content-hidden
-					| <strong>Неверно.</strong> Это абсолютно правильная строка в одинарных кавычках.
+					| <strong>Неверно.</strong> Происходит распаковка списка в правой части выражения и присвоение соотвествующих значений в левой части.
+					| people будет иметь значение [['David', 'Pythonista', '+7-495-123-4567'],['Guido', 'BDFL', 'unlisted']] и поэтому david получит
+					| значение ['David', 'Pythonista', '+7-495-123-4567']
 
 			div.answer.wrong
 				input(id="checkbox4" type="checkbox" value="")
-				label(for="checkbox4") [Hello]
+				label(for="checkbox4") [info]
 				div.explanation.content-hidden
-					| <strong>Неверно.</strong> Строка всегда должна быть заключена в кавычки.
+					| <strong>Неверно.</strong>
 
 			div.answer.correct
-				input(id="checkbox5" type="checkbox" value="true")
-				label(for="checkbox5") 'She shouted "Hello!" very loudly.'
+				input(id="checkbox5" type="checkbox" value="")
+				label(for="checkbox5") 'Guido'
 				div.explanation.content-hidden
-					| <strong>Неверно.</strong> В строке возможно использование и двойных и одинарных кавычек при правильном соблюдении их вложенности.
+					| <strong>Неверно.</strong>
+
 			div.result.content-hidden
 				| <strong> Всё верно! </strong>
-				| <a href="quiz_n_0002.html"> Следующий вопрос >> </a>
+				| <a href="quiz_n_0003.html"> Следующий вопрос >> </a>
 
 			div.action
 				a(class="button success" role="button" id = "answer") Ответить
@@ -48,5 +55,5 @@ block content
 				|  
 				a(class="button info" role="button" id = "info") Разъяснить всё				
 
-block footer
+block footer_scripts
 	script(src="quiz.js")							

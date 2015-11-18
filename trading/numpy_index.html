@@ -9,11 +9,17 @@
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <!-- script(src="../js/modernizr.js")-->
     <!-- default.min.css"-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
@@ -40,25 +46,28 @@
     </nav>
     <div class="row">
       <div class="large-12 columns">
-        <h3>Работа с NumPy</h3>
+        <h2>Работа с NumPy</h2>
       </div>
     </div>
     <div class="row">
       <div class="large-12 columns">
         <div><a href="http://habrahabr.ru/post/121031/">NumPy, пособие для новичков. Часть 1</a></div>
-        <h2>NPV - Чистый дисконтированный доход</h2>
-        <div>Чистый дисконтированный доход (NPV, Net Present Value, чистая текущая стоимость, чистая дисконтированная стоимость)</div>\[ NPV  = \sum \limits_{t=1}^{M} \frac{cashflow_t}{(1 + rate)^t} - IC \]
-        <ul>
-          <li>\( cashflow_t \) - денежный поток в момент времени t;</li>
+        <h3>NPV - Чистый дисконтированный доход</h3>
+        <div>Чистый дисконтированный доход (NPV, Net Present Value, чистая текущая стоимость, чистая дисконтированная стоимость)</div>\begin{equation}
+        	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + rate)^t} - IC
+        	\label{eq:npv}
+        \end{equation}
+        <ul>где
+          <li>\( cashflow_t \) - денежный поток (платеж) в момент времени t (t=1,..., N);</li>
           <li>\( rate  \) - ставка дисконтирования;</li>
-          <li>\( M \) - количество периодов;</li>
+          <li>\( N \) - количество периодов;</li>
           <li>\( IC \) - первоначальные инвестиции;</li>
         </ul>
         <pre class="python"><code>import numpy as np
-cashflows = [-45.45,50]
-npv = np.npv(0.1,cashflows)
-print(round(50/(1+0.1),2))
-print(round(npv,2))
+cashflows = [-45.45, 50]
+npv = np.npv(0.1, cashflows)
+print(round(50/(1+0.1), 2))
+print(round(npv, 2))
 >> 45.45
 >> 0.0</code></pre>
         <div> </div>Первый параметр это ставка процента(ставка дисконтирования). Ставка дисконтирования указывается в том же временном измерении, что
@@ -66,7 +75,27 @@ print(round(npv,2))
         это массив представляющий денежный поток в момент времени t.
         Первое значение в массиве по умолчанию - это первоначальные инвестиции, поэтому они идут с отрицательным знаком.
         <a href="docs.scipy.org/doc/numpy/reference/generated/numpy.npv.html"> Документация.</a>
-        <h2>Платеж по кредиту</h2>
+        <h3>IRR (internal rate of return) Внутренняя норма доходности</h3>
+        <div>
+          Это процентная ставка, при которой чистая приведённая стоимость (чистый дисконтированный доход — NPV) равна 0. 
+          NPV рассчитывается на основании потока платежей, дисконтированного к сегодняшнему дню. Перепишем формулу \eqref{eq:npv} в следующем виде:
+        </div>\begin{equation}
+        	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t} - IC = 0 \\
+        или \\
+        IC = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t}
+        	\label{eq:irr}
+        \end{equation}
+        <ul>где
+          <li>\( IRR \) - внутренняя норма доходности;</li><a href="http://web.archive.org/web/20121013034311/http://letscount.ru/2011-10/investicionnaya-privlekatelnost-npv-vs-irr"> Ссылка</a>
+          <br>
+          Для вычисления внутренней нормы доходности существует функция <kbd>irr</kbd>.
+        </ul>
+        <pre class="python"><code>import numpy as np
+cashflows = [-45.45, 50]
+irr = round(np.irr(cashflows), 2)
+print(irr)
+>> 0.1</code></pre>
+        <h3>Платеж по кредиту</h3>
         <div> </div>Мы взяли кредит в банке в размере 2000000 рублей на 5 лет под 11% годовых. Сколько нам нужно выплачивать ежемесячно? Можно подсчитать
         воспользовавшись функцией <kbd>pmt</kbd>.
         <pre class="python"><code>import numpy as np

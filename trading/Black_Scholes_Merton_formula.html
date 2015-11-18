@@ -9,11 +9,17 @@
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <!-- script(src="../js/modernizr.js")-->
     <!-- default.min.css"-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
@@ -45,9 +51,11 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        \[ C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \]	
-        \[ d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \]
-        \[ d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} \]
+        \begin{equation}
+        C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \\	
+        d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \\
+        d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} 
+        \end{equation}
         <ul>
           <li>\(C(S,T)\) - премия европейского опциона колл;</li>
           <li>\(S\) - курс спот актива;</li>
@@ -57,10 +65,80 @@
           <li>\(\sigma \) - мгновенное стандартное отклонение актива волатильность (как часть года);</li>
           <li>\(N(d_i)\) - функция нормального распределения.</li>
         </ul>
-        <h3>Дельта (Delta) \( \delta \)</h3>
-        <p> </p>\( \delta = \frac{\partial C}{\partial S} \)
+        <h2>Реализация на python</h2>
+        <div class="large-2 columns right"><a href="../python_source/bsm_call_value.py">bsm_call_value.py</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code># -*- coding: utf-8 -*-
+# файл bsm_call_value.py
+def bsm_call_value(S0, K, T, r, sigma):
+    """ Стоимость Европейского опциона call по модели BSM.
+    Аналитическая формула.
+    Параметры
+    ==========
+    S0 : float
+        текущая цена актива
+    K : float
+        цена страйка
+    T : float
+        время до истечения (в частях года)
+    r : float
+        ставка без риска
+    sigma : float
+        фактор волатильности
+    Возвращает
+    =======
+    value : float
+        Текущая оценка стоимости Европейского call опциона
+    """
+    from math import log, sqrt, exp
+    from scipy import stats
+    S0 = float(S0)
+    d1 = (log(S0 / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * sqrt(T))
+    d2 = (log(S0 / K) + (r - 0.5 * sigma ** 2) * T) / (sigma * sqrt(T))
+    value = (S0 * stats.norm.cdf(d1, 0.0, 1.0) - K * exp(-r * T) * stats.norm.cdf(d2, 0.0, 1.0))
+    return value
+
+if __name__ == "__main__":
+    S0 = 79790
+    K = 80000
+    T = 1.0/252*2
+    r = 0.0
+    sigma = 0.4
+    print(bsm_call_value(S0, K, T, r, sigma))</code></pre>
+        </div>
+        <p>Теперь попробуем найти волатильность, зная все параметры в том числе и цену опциона на бирже.</p>
+        <h3>Дельта (Delta) \( \Delta \)</h3>
+        <p> </p>\( \Delta = \frac{\partial C}{\partial S} \)
         Дельта это скорость изменения цены опциона от изменения цены базового актива.
-        Для опциона колл: \( \delta_{call} = N(d_1) \); для опциона пут: \( \delta_{put} = -N(-d_1) = N(d_1) - 1 \)
+        \begin{equation}
+        \text{Для опциона колл: } \Delta_{call} = N(d_1) \\ 
+        \text{Для опциона пут: }  \Delta_{put} = -N(-d_1) = N(d_1) - 1
+        \end{equation}
+        <div class="text-justify">
+          Построим график зависимости дельты от цены базового актива. Для этого зафиксируем страйк(K), время
+          до окончания контракта(T), безрисковую ставку(r) и волотильность(\(\sigma\)). Будем менять только цену базового
+          актива. Полученный график представлен на рисунке 1.
+        </div>
+        <div class="clearfix"></div>
+        <!--div.large-6.columns-->
+        <!--div.large-12.columns-->
+        <div class="large-2 columns">
+          <p>&nbsp;</p>
+        </div>
+        <div class="large-6 columns">
+          <div class="card">
+            <div class="image"><img src="../images/figure_delta.png"></div>
+            <div class="content"><p>Рис. 1</p></div>
+            <div class="action"><a href="../python_source/delta_spot_draw_image.py">Python код </a>с помощью которого построен график</div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="text-justify">
+          Теперь построим график типичных зависимостей дельты от времени до конца контракта. Для этого зафиксируем три типичных страйка(K), 
+          в деньгах, на деньгах и вне денег. Также зафиксируем
+          безрисковую ставку(r) и волотильность(\(\sigma\)). Будем менять только время до окончания опционного контракта. 
+          Полученный график представлен на рисунке 2.
+        </div>
         <h3>Гамма (Gamma) \( \gamma \)</h3>\[ \gamma = \frac{\partial^2 C}{\partial S^2} =  \frac{N'(d1)}{S \sigma \sqrt{T}} \]
         <p></p>скорость изменения цены опциона от изменения Дельты (или ускорение от изменения цены базового актива)
         <h3>Вега (Vega) \(  \)</h3>\[ Vega = \frac{\partial C}{\partial \sigma} = SN(d_1) \sqrt{T} \]

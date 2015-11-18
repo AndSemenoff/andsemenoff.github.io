@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Питонистический код</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Крутой код</h2>
+        <p class="text-justify">
+          У питонистов считается красиво писать короткий код, для которого в языке есть специальные конструкции. Без знания этих
+          простых конструкции у Вас не получится написать короткий питонистический код. Я попытался на этой странице собрать консрукции языка, 
+          которые помогут писать коротко и в питонистическом стиле.
+        </p>
+        <h2>Выражение if/else</h2>
+        <pre class="pyton"><code>A = Y if X else Z</code></pre>
+        <div>Эквивалентно следующей классической записи:</div>
+        <pre class="pyton"><code>if X:
+&nbsp;&nbsp;&nbsp;&nbsp;A = Y
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;A = Z</code></pre>
+        <h2>Лямбда-функции или анонимные функции</h2>
+        <div>
+          Синтаксис лямбда-фукции: <strong>lambda</strong> <i>переменные</i><strong>:</strong> <i>выражение</i>
+          <br > <i>переменные</i> — список аргументов, разделенных запятой. Нельзя использовать ключевые слова. Аргументы не надо заключать в скобки.
+          <br > <i>выражение</i> — инлайновое выражение Python. Область видимости включает локальные переменные и аргументы. 
+          Функция возвращает результат 
+          этого выражения.
+        </div>
+        <p>
+          Лямбда-функция является выражением и может быть использована внутри другого выражения. Лямбда-функции не требуется инструкция return она всегда
+          возвращает результат выражения.
+        </p>
+        <div>Пример:</div>
+        <pre class="python"><code>add = lambda a, b: a + b</code></pre>
+        <div>Эквивалентно:</div>
+        <pre class="python"><code>def add(a, b): 
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b</code></pre>
+        <h2>Генераторы списков</h2>
+        <h3>Отображение списка</h3>
+        <pre class="python"><code>>>> a_list = [1, 9, 8, 4]
+>>> [elem * 2 for elem in a_list]
+[2, 18, 16, 8]</code></pre>
+        <div class="text-justify">
+          Чтобы понять, что здесь происходит, прочитайте генератор справа налево. a_list — отображаемый список. Python последовательно перебирает элементы 
+          списка a_list, временно присваивая значение каждого элемента переменной elem. Затем применяет функцию elem * 2 и добавляет результат в 
+          возвращаемый список.
+        </div>
+        <div>Генератор создаёт новый список, не изменяя исходный.</div>
+        <div>В генераторах списков можно использовать любые выражения Python.</div>
+        <h3>Фильтрация списка</h3>
+        <div>При генерировании списков можно также фильтровать элементы, чтобы отбросить некоторые значения.</div>
+        <h2>Генераторы словарей</h2>
+        <h2>Генераторы множеств	</h2>
+        <h2>Выражения-генераторы</h2>
+        <p>
+          Выражения-генераторы имеют такой же синтаксис, как генераторы списков, но вместо квадратных скобок используются круглые.
+          Выражения-генераторы не загружают в память список целиком, а создают 'generator object', и в каждый момент загружен только один 
+          элемент списка.
+        </p>
+        <!--http://habrahabr.ru/post/85238/-->
+        <!--http://pep8.ru/doc/dive-into-python-3/5.html-->
+        <!-- http://blog.swlogic.eu/2012/06/14/python-generators-cheatsheet/-->
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

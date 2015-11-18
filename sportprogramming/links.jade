@@ -1,12 +1,28 @@
 extends ../layouts/html_layout.jade
 
+block footer
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js")
+	script.
+		$(document).foundation();	
+
 block content
 	div.row: div.large-12.columns: h1: strong Ссылки
 	div.row: div.large-12.columns
-		ol
-			li
-				| Новости
-				ol
+
+		ul.tabs.vertical(data-tab)
+			li.tab-title.active: a(href="#panel11") Новости
+			li.tab-title: a(href="#panel21") Соревнования
+			li.tab-title: a(href="#panel31") Обучение
+			li.tab-title: a(href="#panel41") Хостинг
+			li.tab-title: a(href="#panel51") IDE
+			li.tab-title: a(href="#panel61") LaTex				
+		
+		div.tabs-content
+			div#panel11.content.active
+				| <strong>Новости</strong>
+				ul
+					li: a(href="http://www.clist.by/") Общий календарь всех контестов с разных площадок.
 					li
 						a(href='http://snarknews.info/index.cgi?data=newstape&announce=a') Новости, анонсы соревнований
 					li
@@ -17,13 +33,13 @@ block content
 						| популярных новостей с ключевым словом Python на reddit.com.
 					li
 						a(href='http://pyvideo.org') pyvideo.org 
-						| видио с различных конференций по питону.						
-			li
-				| Сайты для соревнования
-				ol
+						| видио с различных конференций по питону.
+			div#panel21.content
+				| Сайты на которых можно соревноваться
+				ul
 					li
-						a(href='http://codeforces.ru') Codeforces.ru
-					li
+						a(href='http://codeforces.ru') Codeforces.ru 
+						| | 
 						a(href='http://codeforces.com') Codeforces.com
 					li 
 						a(href="http://ww2.codechef.com") CodeChef.com
@@ -42,6 +58,9 @@ block content
 					li
 						a(href="https://www.codeeval.com") CodeEval.com
 					li
+						a(href="https://codefights.com") CodeFights 
+						| Соревнование один на один по нахождению ошибок в коде.
+					li
 						a(href="https://www.hackerrank.com/") HackerRank.com
 					li
 						a(href="http://www.checkio.org/") checkio.org
@@ -50,12 +69,149 @@ block content
 					li
 						a(href="https://pyweek.org") PyWeek 
 						| не частые соревнования по написанию игр
+					li: a(href="http://www.mysterytwisterc3.org/en/") Соревнования по криптографии
 					li 
 						a(href="http://theaigames.com") theAIGames 
 						| Написание ботов для игры в покер и тетрис 
 					li 
 						a(href="http://haskell98.blogspot.ru") Фонд Поддержки Функционального Программирования. 
 						| Соревнования проходят раз в два месяца по функциональному программированию.
+				| Ежегодные соревнования
+				ul
+					li 
+						a(href="http://algorithm.contest.yandex.ru/") Яндекс.Алгоритм
+					li 
+						a(href="https://code.google.com/codejam") Google Code Jam 
+					li 
+						a(href="https://www.facebook.com/hackercup") Facebook Hacker Cup 
+					li 
+						a(href="http://russiancodecup.ru/") Russian Code Cup 																		
+
+			div#panel31.content
+				| Курсы и обучающие сайты
+				ul
+					li
+						| Edx.org. 
+						a(href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0") MITx 6.00.1x 
+						| Introduction to Computer Science and Programming Using Python
+					li
+						| Edx.org. 
+						a(href="https://www.edx.org/course/introduction-computational-thinking-data-mitx-6-00-2x-0") MITx 6.00.2x 
+						| Introduction to Computational Thinking and Data Science
+					li
+						a(href="http://www.python-course.eu") Курс 
+						| по питону. Есть очень продвинутые темы.
+					li
+						a(href="http://cscircles.cemc.uwaterloo.ca") Онлайн обучение Питону  
+					li
+						a(href="http://www-inst.eecs.berkeley.edu/~cs61a/") Курс Беркли
+					li
+						a(href="http://www.learnpython.org") learnpython.org
+					li
+						a(href="http://ru.wikiversity.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B0_%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5_Python") Курс "Программирование и научные вычисления на языке Python"
+						| автор Лёва Матюшкин.
+					li
+						a(href="http://www.math.utah.edu/~carlson/notes/python.pdf") utah.edu 
+						| pdf-формат. Computations in Number Theory Using Python: A Brief Introduction</li>
+					li
+						a(href="http://userpages.umbc.edu/~rcampbel/Computers/Python/index.html") umbc.edu 
+						| Introduction to Python for Math at UMBC
+					li
+						a(href="https://www.udemy.com/courses/search/?q=python") Курсы по питону. 
+						| На Udemy.com, как платные, так и бесплатные.
+					li
+						a(href="http://pythonprogramming.net/") PythonProgramming.net 
+						| Обучение с видео и примерами кода.
+					li
+						a(href="http://zetcode.com/") ZetCode - Различные уроки по питону: GUI, SQLite.	
+			div#panel41.content
+				| Облачные бесплатные хостинги для питона и не только
+				ul
+					li
+						a(href="https://www.pythonanywhere.com") pythonanywhere   
+					li
+						a(href="http://aws.amazon.com/free/") Amazon AWS
+					li
+						a(href="https://www.heroku.com/") Heroku        
+					li
+						a(href="https://gondor.io") Gondor
+					li
+						a(href="https://www.openshift.com") OpenShift
+					li
+						a(href="https://wakari.io/") Wakari          
+					li
+						a(href="http://www.picloud.com/") PiCloud
+					li
+						a(href="http://star.mit.edu/cluster/") StarCluster
+			div#panel51.content
+				| Онлайн среды разработки(IDE) для питонистов и не только
+				ul
+					li
+						a(href="https://c9.io/") Cloud9 IDE
+					li
+						a(href="http://ideone.com") ideone.com            
+					li
+						a(href="http://pythonfiddle.com/") Python Fiddle
+					li
+						a(href="https://codio.com/") Codio   
+					li
+						a(href="http://koding.com") koding.com
+						|  | 
+						a(href="http://learn.koding.com/") Обучение работе с koding.com
+					li
+						a(href="https://codenvy.com/") Сodenvy.com
+					li
+						a(href="https://www.codebox.io") CodeBox            
+					li
+						a(href="https://www.nitrous.io") nitrous.io
+					li
+						a(href="https://kobra.io") kobra.io
+
+			div#panel61.content
+				| LaTeX
+				ul
+					li Онлайн сервисы LaTeX
+						ol
+							li
+								a(href="https://www.writelatex.com/") WriteLatex.com
+							li
+								a(href="http://www.sharelatex.com") ShareLatex.com   	
+							li
+								a(href="http://papeeria.com/") papeeria.com    
+
+					li Разное по LaTex
+						ol
+							li
+								a(href="http://www.texample.net") TeXample.net 
+								| Примеры графических возможностей LaTeX   
+							li
+								a(href="http://www.ntg.nl/doc/biemesderfer/ltxcrib.pdf") Команды LaTex 
+								| pdf файл
+							li
+								a(href="http://habrahabr.ru/post/187496/") статья на habr 
+								| Создаем резюме
+							li
+								a(href="http://cremeronline.com/LaTeX/minimaltikz.pdf") Минимальное введение в tikz 
+								| pdf файл                
+							li
+								a(href="http://habrahabr.ru/post/207364/") статья на habr 
+								| Чекбоксы и подчеркивания для бланков и т.п.                      
+							li
+								a(href="http://mydebianblog.blogspot.ru/2013/02/latex-editors-and-integrated-latex.html") Обзор редакторов
+							li
+								a(href="http://ru.wikibooks.org/wiki/LaTeX/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5") Викиучебник
+
+					li Литература на русском по LaTex
+						ol
+							li
+								a(href="http://rutracker.org/forum/viewtopic.php?t=3634263") Искусство верстки в LaTeX   
+							li
+								a(href="http://rutracker.org/forum/viewtopic.php?t=1522339") Набор и вестка в LaTeX
+							li
+								a(href="http://rutracker.org/forum/viewtopic.php?t=4380917") Компьютерная типография LaTeX
+							li
+								a(href="http://rutracker.org/forum/viewtopic.php?t=3208435") Тех для всех
+		ol
 			li
 				| Теория. Ссылки
 				ol
@@ -68,6 +224,8 @@ block content
 						a(href="http://uneex.ru/LecturesVMSH/Python") Лекции 
 						| по решению олимпиадных задач на Питоне. Мне показались очень полезными. 
 						strong NB!
+					li: a(href="http://uneex.ru/LecturesCMC/PythonDevelopment2015") Еще лекции для студентов с сайта uneex.ru
+					li: a(href="http://kpolyakov.spb.ru/school/probook/python.htm") К.Ю. Поляков. Язык Python: избранные алгоритмы.
 					li
 						a(href="http://ru.wikibooks.org/wiki/%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA_Python_3.1") Учебник 
 						| перевод учебника по pyton 3.1 с официального сайта
@@ -129,43 +287,7 @@ block content
 						a(href="http://www.drdobbs.com/testing/unit-testing-with-python/240165163") Основы unit тестирования.
 					li
 						a(href="homework.html") тесты					
-			li
-				| Курсы и обучающие сайты
-				ol
-					li
-						| Edx.org. 
-						a(href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0") MITx 6.00.1x 
-						| Introduction to Computer Science and Programming Using Python
-					li
-						| Edx.org. 
-						a(href="https://www.edx.org/course/introduction-computational-thinking-data-mitx-6-00-2x-0") MITx 6.00.2x 
-						| Introduction to Computational Thinking and Data Science
-					li
-						a(href="http://www.python-course.eu") Курс 
-						| по питону. Есть очень продвинутые темы.
-					li
-						a(href="http://cscircles.cemc.uwaterloo.ca") Онлайн обучение Питону  
-					li
-						a(href="http://www-inst.eecs.berkeley.edu/~cs61a/") Курс Беркли
-					li
-						a(href="http://www.learnpython.org") learnpython.org
-					li
-						a(href="http://ru.wikiversity.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B0_%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5_Python") Курс "Программирование и научные вычисления на языке Python"
-						| автор Лёва Матюшкин.
-					li
-						a(href="http://www.math.utah.edu/~carlson/notes/python.pdf") utah.edu 
-						| pdf-формат. Computations in Number Theory Using Python: A Brief Introduction</li>
-					li
-						a(href="http://userpages.umbc.edu/~rcampbel/Computers/Python/index.html") umbc.edu 
-						| Introduction to Python for Math at UMBC
-					li
-						a(href="https://www.udemy.com/courses/search/?q=python") Курсы по питону. 
-						| На Udemy.com, как платные, так и бесплатные.
-					li
-						a(href="http://pythonprogramming.net/") PythonProgramming.net 
-						| Обучение с видео и примерами кода.
-					li
-						a(href="http://zetcode.com/") ZetCode - Различные уроки по питону: GUI, SQLite.				
+			
 			li
 				| Разбор задач
 				ol
@@ -186,48 +308,7 @@ block content
 						a(href="http://chasolimp.de/practic_oder_unterricht.htm") Разборы олимпиадных задач от А.Чигиринского</li>
 					li
 						a(href="http://rutracker.org/forum/viewtopic.php?t=1456250") Книга Гуровица В.М. с решениями
-			li
-				| Облачные бесплатные хостинги для питона и не только
-				ol
-					li
-						a(href="https://www.pythonanywhere.com") pythonanywhere   
-					li
-						a(href="http://aws.amazon.com/free/") Amazon AWS
-					li
-						a(href="https://www.heroku.com/") Heroku        
-					li
-						a(href="https://gondor.io") Gondor
-					li
-						a(href="https://www.openshift.com") OpenShift
-					li
-						a(href="https://wakari.io/") Wakari          
-					li
-						a(href="http://www.picloud.com/") PiCloud
-					li
-						a(href="http://star.mit.edu/cluster/") StarCluster					
-			li
-				| Онлайн среды разработки(IDE) для питонистов и не только
-				ol
-					li
-						a(href="https://c9.io/") Cloud9 IDE
-					li
-						a(href="http://ideone.com") ideone.com            
-					li
-						a(href="http://pythonfiddle.com/") Python Fiddle
-					li
-						a(href="https://codio.com/") Codio   
-					li
-						a(href="http://koding.com") koding.com
-						|  | 
-						a(href="http://learn.koding.com/") Обучение работе с koding.com
-					li
-						a(href="https://codenvy.com/") Сodenvy.com
-					li
-						a(href="https://www.codebox.io") CodeBox            
-					li
-						a(href="https://www.nitrous.io") nitrous.io
-					li
-						a(href="https://kobra.io") kobra.io	
+					
 			li
 				| Блоги на русском
 				ol
@@ -298,50 +379,4 @@ block content
 						| мытищинской школы программистов.
 					li
 						a(href="http://мшп.рф/") МШП 
-						| - московская школа программистов.					
-			li
-				| LaTeX
-				ol
-					li Онлайн сервисы LaTeX
-						ol
-							li
-								a(href="https://www.writelatex.com/") WriteLatex.com
-							li
-								a(href="http://www.sharelatex.com") ShareLatex.com   	
-							li
-								a(href="http://papeeria.com/") papeeria.com    
-
-					li Разное по LaTex
-						ol
-							li
-								a(href="http://www.texample.net") TeXample.net 
-								| Примеры графических возможностей LaTeX   
-							li
-								a(href="http://www.ntg.nl/doc/biemesderfer/ltxcrib.pdf") Команды LaTex 
-								| pdf файл
-							li
-								a(href="http://habrahabr.ru/post/187496/") статья на habr 
-								| Создаем резюме
-							li
-								a(href="http://cremeronline.com/LaTeX/minimaltikz.pdf") Минимальное введение в tikz 
-								| pdf файл                
-							li
-								a(href="http://habrahabr.ru/post/207364/") статья на habr 
-								| Чекбоксы и подчеркивания для бланков и т.п.                      
-							li
-								a(href="http://mydebianblog.blogspot.ru/2013/02/latex-editors-and-integrated-latex.html") Обзор редакторов
-							li
-								a(href="http://ru.wikibooks.org/wiki/LaTeX/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5") Викиучебник
-
-					li Литература на русском по LaTex
-						ol
-							li
-								a(href="http://rutracker.org/forum/viewtopic.php?t=3634263") Искусство верстки в LaTeX   
-							li
-								a(href="http://rutracker.org/forum/viewtopic.php?t=1522339") Набор и вестка в LaTeX
-							li
-								a(href="http://rutracker.org/forum/viewtopic.php?t=4380917") Компьютерная типография LaTeX
-							li
-								a(href="http://rutracker.org/forum/viewtopic.php?t=3208435") Тех для всех	
-
-															
+						| - московская школа программистов.													

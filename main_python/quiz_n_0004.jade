@@ -1,0 +1,48 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h1: strong Quiz тест
+	div.row: div.large-12.columns
+		div(class="large-10 columns")
+			//div <strong>Вопрос:</strong> Какая из следующих строк синтаксически правильная?
+			div <strong>Вопрос:</strong> Данные фрагменты кода выведут одно и тоже?
+			div.large-6.columns
+				pre.python: code
+					| colors = ['red', 'blue', 'green', 'yellow']
+					| result = ''
+					| for s in colors:
+					| &nbsp;&nbsp;&nbsp;&nbsp;result += s
+					| print(result)
+			div.large-6.columns
+				pre.python: code
+					| colors = ['red', 'blue', 'green', 'yellow']
+					| result = ''.join(colors)
+					| print(result)
+			div.clearfix
+			//row.action
+			div: small Выберите все правильные ответы:
+			div.answer.wrong
+				input(id="radio1" name="radio" type="radio" value="true")
+				label(for="checkbox1") Да.
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> Результат одинаков, но метод строк join() делает все копирования в один проход.
+					| В такой ситуации рекомендуется всегда использовать его.
+			div.answer.correct
+				input(id="radio2" name="radio" type="radio" value="")
+				label(for="checkbox2") Нет.
+				div.explanation.content-hidden
+					| <strong>Неверно.</strong> 
+
+			div.result.content-hidden
+				| <strong> Всё верно! </strong>
+				| <a href="quiz_n_0005.html"> Следующий вопрос >> </a>
+
+			div.action
+				a(class="button success" role="button" id = "answer") Ответить
+				|  
+				a(class="button" role="button" id = "clear") Очистить
+				|  
+				a(class="button info" role="button" id = "info") Разъяснить всё				
+
+block footer_scripts
+	script(src="quiz.js")
