@@ -1,0 +1,15 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Математика"
+
+block content
+	div.row: div.large-12.columns: h2 Математика
+	div.row: div.large-12.columns
+		ol
+			li Теория вероятности
+				ol
+					li: a(href="morgans_laws.html") Операции над событиями. Формулы двойственности (правила де Моргана, De Morgan's laws).	
+					li: a(href="") Свойства вероятностей
+
+		a(href="math_links.html") Ссылки на математические ресурсы	 	

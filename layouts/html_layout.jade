@@ -1,11 +1,12 @@
-- var site_title = "ABSOLEM.INFO";
+- var site_title_name = "ABSOLEM.INFO";
+- var site_title = "ABSOLEM.INFO |";
 - var site_url = "http://absolem.info";
-//- var site_url = "http://andsemenoff.github.io";
+//- "http://andsemenoff.github.io";
 //- var site_url = "http://localhost:8000";
 doctype html
 html(lang="ru")
 	head
-		title= site_title
+		block title
 		meta( charset="utf-8" )
 		meta( name="viewport" content="width=device-width, initial-scale=1.0")
 		meta( name="description" content="Семенова Андрей Вячеславович. Личный сайт" )
@@ -21,7 +22,7 @@ html(lang="ru")
 		block scripts
 	body
 		nav.top-bar.data-topbar 
-			ul.title-area: li.name: h1: a(href="/")= site_title
+			ul.title-area: li.name: h1: a(href="/")= site_title_name
 			section.top-bar-section
 				//  Left Nav Section
 				ul.left

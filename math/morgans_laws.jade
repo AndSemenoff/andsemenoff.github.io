@@ -1,0 +1,34 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Операции над событиями. Формулы двойственности (правила де Моргана, De Morgan's laws)."
+
+block content
+	div.row: div.large-12.columns: h2 Операции над событиями.
+	div.row: div.large-12.columns
+		div Объединение (union) \( A \cup B \) "A или B или оба"
+		|\begin{equation}
+		| \bigcup_{i=1}^{n}  A_i = A_1 \cup A_2 \cup \dots \cup A_n \\
+		| 
+		|\end{equation}				
+		div Пересечение (intersection) \( A \cap B \) "A и B"
+		|\begin{equation}
+		| \bigcap_{i=1}^{n} A_i = A_1 \cap A_2 \cap \dots \cap A_n \\
+		| 
+		|\end{equation}		
+		div \( \varnothing \) пустое множество (empty set), невозможное событие (impossible event);
+		div \( A \cap B = \varnothing \): A и B - несовместные события (mutually exclusive events);
+		div \( \Omega \) - достоверное событие (certain or sure event)
+		div Коммутативность: \( A \cap B = B \cap A,\\ A \cup B = B \cup A \)
+		div Ассоциативность: \( A \cup (B \cup C) = (A \cup B) \cup C,\\ A \cap (B \cap C) = (A \cap B) \cap C  \)
+		div Дистрибутивность: \( A \cap (B \cup C) = (A \cap B) \cup (A \cap C),\\ A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)
+		div Разность A и B (difference of A and B) \( A	\setminus B \) "A без B"
+		div Дополнение (complement) \( \overline{A} = A^c \) "не A" \( A^c = \Omega\setminus A \)
+		div \( \overline{A}, A^c \) - противоположное к A событие
+		div \( A \cup A^c = \Omega, A \cap A^c = \varnothing, (A^c)^c = A \)
+
+		div Правила де Моргана
+		div \( \forall A,B: \overline{A \cup B} = \overline{A} \cap \overline{B} \)
+		div \( \forall A,B: \overline{A \cap B} = \overline{A} \cup \overline{B}\)
+		div \( \overline{\mathop{\cap}_{i=1}^{n} A_i} = \mathop{\cup}_{i=1}^{n} \overline{A_i}\)
+		div \( \overline{\mathop{\cup}_{i=1}^{n} A_i} = \mathop{\cap}_{i=1}^{n} \overline{A_i}\)

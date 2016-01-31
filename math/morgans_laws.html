@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Операции над событиями. Формулы двойственности (правила де Моргана, De Morgan's laws).</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Операции над событиями.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div>Объединение (union) \( A \cup B \) "A или B или оба"</div>\begin{equation}
+        \bigcup_{i=1}^{n}  A_i = A_1 \cup A_2 \cup \dots \cup A_n \\
+         
+        \end{equation}				
+        <div>Пересечение (intersection) \( A \cap B \) "A и B"</div>\begin{equation}
+        \bigcap_{i=1}^{n} A_i = A_1 \cap A_2 \cap \dots \cap A_n \\
+         
+        \end{equation}		
+        <div>\( \varnothing \) пустое множество (empty set), невозможное событие (impossible event);</div>
+        <div>\( A \cap B = \varnothing \): A и B - несовместные события (mutually exclusive events);</div>
+        <div>\( \Omega \) - достоверное событие (certain or sure event)</div>
+        <div>Коммутативность: \( A \cap B = B \cap A,\\ A \cup B = B \cup A \)</div>
+        <div>Ассоциативность: \( A \cup (B \cup C) = (A \cup B) \cup C,\\ A \cap (B \cap C) = (A \cap B) \cap C  \)</div>
+        <div>Дистрибутивность: \( A \cap (B \cup C) = (A \cap B) \cup (A \cap C),\\ A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</div>
+        <div>Разность A и B (difference of A and B) \( A	\setminus B \) "A без B"</div>
+        <div>Дополнение (complement) \( \overline{A} = A^c \) "не A" \( A^c = \Omega\setminus A \)</div>
+        <div>\( \overline{A}, A^c \) - противоположное к A событие</div>
+        <div>\( A \cup A^c = \Omega, A \cap A^c = \varnothing, (A^c)^c = A \)</div>
+        <div>Правила де Моргана</div>
+        <div>\( \forall A,B: \overline{A \cup B} = \overline{A} \cap \overline{B} \)</div>
+        <div>\( \forall A,B: \overline{A \cap B} = \overline{A} \cup \overline{B}\)</div>
+        <div>\( \overline{\mathop{\cap}_{i=1}^{n} A_i} = \mathop{\cup}_{i=1}^{n} \overline{A_i}\)</div>
+        <div>\( \overline{\mathop{\cup}_{i=1}^{n} A_i} = \mathop{\cap}_{i=1}^{n} \overline{A_i}\)</div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

@@ -1,5 +1,8 @@
 extends ../layouts/html_layout.jade
 
+block title
+	title= site_title + " Трекер помошник"
+
 block content
 	div.row: div.large-12.columns: h1: strong Трекер помошник
 	div.row: div.large-12.columns
@@ -7,13 +10,13 @@ block content
 			li: a(href="http://rutracker.org") Rutracker
 			li Кино, Видео и ТВ
 			li Зарубежное кино
-			li: a(href="http://rutracker.org/forum/tracker.php?f[]=2093&tm=3&o=1") Фильмы 2011 - 2014 
+			li: a(href="http://rutracker.org/forum/tracker.php?f[]=2093&tm=3&o=1") Фильмы 2011 - 2015 
 				small за последние три дня, сначала новые
 		ul.breadcrumbs
 			li: a(href="http://rutracker.org") Rutracker
 			li Кино, Видео и ТВ
 			li Зарубежное кино
-			li: a(href="http://rutracker.org/forum/tracker.php?f[]=2200&tm=7&o=1") Фильмы 2015 
+			li: a(href="http://rutracker.org/forum/tracker.php?f[]=2200&tm=7&o=1") Фильмы 2016 
 				small за последнюю неделю, сначала новые
 		ul.breadcrumbs
 			li: a(href="http://rutracker.org") Rutracker
