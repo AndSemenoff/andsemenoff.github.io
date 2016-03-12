@@ -4,6 +4,14 @@ block title
 	title= site_title + " Monster Castle"
 
 block content
+
+	- var members= [{name:"Absolem.info", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"bdsm", present: ['?', 'X', 'O', 'O', 'X', 'X', 'X']},{name:"TechnoStix", present: ['?', 'X', 'X', 'O', 'X', 'X', 'O']},{name:"Тверь2015", present: ['?', 'X', 'X', 'O', 'O', 'X', 'X']},{name:"ПЕТЕРГОФ", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"Ромка", present: ['?', 'X', 'O', 'O', 'О', 'О', 'О']},{name:"символ", present: ['?', 'X', 'Х', 'Х', 'Х', 'О', 'X']},{name:"atas2", present: ['?', 'O', 'X', 'O', 'X', 'O', 'X']},{name:"byqspirit", present: ['X', 'O', 'X', 'O', 'X', 'X', 'O']},{name:"Aliskandar", present: ['X', 'O', 'X', 'X', 'X', 'O', 'X']},{name:"Shved_K", present: ['X', 'X', 'O', 'O', 'O', 'O', 'O']},{name:"Фифти", present: ['?', 'O', 'О', 'О', 'О', 'O', 'X']},{name:"Фрунзе773", present: ['?', 'O', 'О', 'О', 'О', 'O', 'X']}, {name:"Нерюнгри", present: ['?', 'O', 'О', 'О', 'О', 'Х', 'X']},{name:"арти21...", present: ['?', 'O', 'O', 'O', 'X', 'O', 'O']},{name:"WhiteShadow", present: ['?', 'O', 'O', 'O', 'X', 'O', 'O']},{name:"Paintient", present: ['?', 'O', 'O', 'O', 'X', 'O', 'O']}];
+	//-{"members": ["A", "B", "C"]}
+	mixin table_row(member)
+		<tr><td>div= member.name</td>
+		each count in member.present
+			<td>count</td>
+
 	div.row: div.large-12.columns: h1 Monster Castle
 	div.row: div.large-12.columns
 		h3 Страничка гильдии <b>"RussiaChamp"</b>
@@ -11,16 +19,38 @@ block content
 		ol
 			li <b>О гильдии</b>
 				div.text-justify
-					| Уровень гильдии: <b>13</b>.
-					| <br>Количество побед в клановых войнах: <b>2</b>.
+					| Уровень гильдии: <b>14</b>.
+					| <br>Количество побед в клановых войнах: <b>5+</b>.
 					| <br>Русскоязычная гильдия <b>"RussiaChamp"</b> основной целью преследует получение удовольствия от игры.
 					| В гильдию принимаются игроки постоянно играющие в Monster Castle и готовые соблюдать правила гильдии.
 					| <br><b><u>Время клановой войны: ежедневно начало около 15.15 МСК. Продолжительность 8 часов.</u></b>
 			li 
 				strong Текущие критерии приема в гильдию
 				div
-					| Уровень от 25.
+					| Уровень от 30.
 					| <br>Желание и возможность участвовать в клановых войнах.
+			li
+				<strong> Активность игроков</strong> (за последние 7 дней)
+				<table>
+				<thead><tr><td>Ник</td><td>12.03.2016</td><td>11.03.2016</td><td>10.03.2016</td><td>09.03.2016</td><td>08.03.2016</td><td>07.03.2016</td><td>06.03.2016</td></tr>
+				</thead>
+				<tbody>
+
+				for member in members
+					<tr><td><strong>
+					div= member.name
+					</strong></td>
+					for day in member.present
+						<td>
+						div= day
+						</td>
+					</tr>
+				</tbody>
+				</table>
+				p Активных участников клановых войн: 
+					span= members.length
+					| <br>обозначения: "X" - участвовал(а) "O" - отсутствовал(а)			
+
 			li
 				strong Кому дается звание "Хозяин"
 				div.text-justify
