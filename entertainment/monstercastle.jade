@@ -5,9 +5,9 @@ block title
 
 block content
 
-	- var members= [{name:"Absolem.info", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"bdsm", present: ['O','Х', 'X', 'O', 'O', 'X', 'X']},{name:"TechnoStix", present: ['X','Х', 'X', 'X', 'O', 'X', 'X']},{name:"Тверь2015", present: ['O','Х', 'X', 'X', 'O', 'O', 'X']},{name:"ПЕТЕРГОФ", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"Ромка", present: ['O','О', 'X', 'O', 'O', 'О', 'О']},{name:"символ", present: ['X','О', 'X', 'Х', 'Х', 'Х', 'О']},{name:"atas2", present: ['O','Х', 'O', 'X', 'O', 'X', 'O']},{name:"byqspirit", present: ['O','X', 'O', 'X', 'O', 'X', 'X']},{name:"Aliskandar", present: ['X','X', 'O', 'X', 'X', 'X', 'O']},{name:"Shved_K", present: ['O','X', 'X', 'O', 'O', 'O', 'O']},{name:"Фифти", present: ['O','О', 'O', 'О', 'О', 'О', 'O']},{name:"Фрунзе773", present: ['O','О', 'O', 'О', 'О', 'О', 'O']}, {name:"Нерюнгри", present: ['O','О', 'O', 'О', 'О', 'О', 'Х']},{name:"арти21...", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"WhiteShadow", present: ['O','О', 'O', 'O', 'O', 'X', 'O']},{name:"Paintient", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"Торадор", present: ['X','О', 'O', 'O', 'O', 'O', 'O']}];
+	//- var members= [{name:"Absolem.info", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"bdsm", present: ['O','Х', 'X', 'O', 'O', 'X', 'X']},{name:"TechnoStix", present: ['X','Х', 'X', 'X', 'O', 'X', 'X']},{name:"Тверь2015", present: ['O','Х', 'X', 'X', 'O', 'O', 'X']},{name:"ПЕТЕРГОФ", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"Ромка", present: ['O','О', 'X', 'O', 'O', 'О', 'О']},{name:"символ", present: ['X','О', 'X', 'Х', 'Х', 'Х', 'О']},{name:"atas2", present: ['O','Х', 'O', 'X', 'O', 'X', 'O']},{name:"byqspirit", present: ['O','X', 'O', 'X', 'O', 'X', 'X']},{name:"Aliskandar", present: ['X','X', 'O', 'X', 'X', 'X', 'O']},{name:"Shved_K", present: ['X','X', 'X', 'O', 'O', 'O', 'O']},{name:"Фифти", present: ['O','О', 'O', 'О', 'О', 'О', 'O']},{name:"Фрунзе773", present: ['O','О', 'O', 'О', 'О', 'О', 'O']}, {name:"Нерюнгри", present: ['O','О', 'O', 'О', 'О', 'О', 'Х']},{name:"арти21...", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"WhiteShadow", present: ['O','О', 'O', 'O', 'O', 'X', 'O']},{name:"Paintient", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"Торадор", present: ['X','О', 'O', 'O', 'O', 'O', 'O']}];
 	//-{"members": ["A", "B", "C"]}
-	mixin table_row(member)
+	//-mixin table_row(member)
 		<tr><td>div= member.name</td>
 		each count in member.present
 			<td>count</td>
@@ -19,8 +19,8 @@ block content
 		ol
 			li <b>О гильдии</b>
 				div.text-justify
-					| Уровень гильдии: <b>14</b>.
-					| <br>Количество побед в клановых войнах: <b>5+</b>.
+					| Уровень гильдии: <b>15</b>.
+					| <br>Количество побед в клановых войнах: <b>8+</b>.
 					| <br>Русскоязычная гильдия <b>"RussiaChamp"</b> основной целью преследует получение удовольствия от игры.
 					| В гильдию принимаются игроки постоянно играющие в Monster Castle и готовые соблюдать правила гильдии.
 					| <br><b><u>Время клановой войны: ежедневно начало около 15.15 МСК. Продолжительность 8 часов.</u></b>
@@ -32,11 +32,11 @@ block content
 			li
 				<strong> Активность игроков</strong> (за последние 7 дней)
 				<table>
-				<thead><tr><td>Ник</td><td>13.03.2016</td><td>12.03.2016</td><td>11.03.2016</td><td>10.03.2016</td><td>09.03.2016</td><td>08.03.2016</td><td>07.03.2016</td></tr>
+				<thead><tr><td>Ник</td><td>16.03.2016</td><td>15.03.2016</td><td>14.03.2016</td><td>13.03.2016</td><td>12.03.2016</td><td>11.03.2016</td><td>10.03.2016</td></tr>
 				</thead>
 				<tbody>
 
-				for member in members
+				//for member in members
 					<tr><td><strong>
 					div= member.name
 					</strong></td>
@@ -45,9 +45,10 @@ block content
 						div= day
 						</td>
 					</tr>
+				<tr><td><strong>wialeeier</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>символ</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>О</td><td>X</td><td>Х</td></tr><tr><td><strong>TechnoStix</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>Х</td><td>X</td><td>X</td></tr><tr><td><strong>ПЕТЕРГОФ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>atas2</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>Х</td><td>O</td><td>X</td></tr><tr><td><strong>Твердыня</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Absolem.info</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Нерюнгри</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>О</td></tr><tr><td><strong>bdsm</strong></td><td>X</td><td>X</td><td>X</td><td>O</td><td>Х</td><td>X</td><td>O</td></tr><tr><td><strong>Shved_K</strong></td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td><strong>арти21...</strong></td><td>X</td><td>O</td><td>O</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Ромка</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>X</td><td>O</td></tr><tr><td><strong>byqspirit</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>тверь2015</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>Х</td><td>X</td><td>X</td></tr><tr><td><strong>Торадор</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Paintient</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Норильск</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Aliskandar</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td></tr>
 				</tbody>
 				</table>
-				p Активных участников клановых войн: 
+				//p Активных участников клановых войн: 
 					span= members.length
 					| <br>обозначения: "X" - участвовал(а) "O" - отсутствовал(а)			
 
@@ -115,6 +116,7 @@ block content
 			li: a(href="#Sam") Когда появляется Сэм и как его победить?
 			li: a(href="#def") Как лучше распологать войска для защиты замка?
 			li: a(href="#war") Ежедневные клановые войны
+			li: a(href="#black") Какие товары бывают на черном рынке?
 		ol
 			li(id="chat")
 				strong Как писать в чат цветом?
@@ -184,16 +186,30 @@ block content
 				| чтобы атакующий как можно дольше находился под ней;
 				| <br>3) как можно сильнее осложнить доступ бомб к изгородям; 
 				| <br>4) Пружину стараться ставить под ведьм, это за две клетки до атакуемого объекта;
+			li(id="black")
+				strong Какие товары бывают на черном рынке?
+				div
+					| Эпические герои за 720 фрагментов.<br>
+					| Редкие герои за 180 фрагментов.<br>
+					| Король обезьян за 360 фрагментов.<br>
+					| Ключ продвинутого портала за 450 кристаллов. <br>
+
+					img( src="../images/black_market_samurai.png" alt="Самурай на черном рынке" width="140" height="200") 
+					img( src="../images/black_market_hero_1.png" alt="Цены на черном рынке" width="140" height="200")
+					img( src="../images/black_market_gelio.png" alt="Цены на черном рынке" width="140" height="200")
+					img( src="../images/black_market_mid_exp_potion.png" alt="Цены на черном рынке" width="140" height="200")
+					img( src="../images/black_market_green.png" alt="Цены на черном рынке" width="140" height="200")
 			li(id="war")
 				strong Ежедневные клановые войны
 				div
-					| Клановые войны объявляет Король или любой Хозяин. Война длится 4 часа. Когда война идет, то справа появляется баннер, см. скриншот.
+					| Клановые войны объявляет Король или любой Хозяин. Война длится 8 часов. Когда война идет, то справа появляется баннер, см. скриншот.
 				div.large-2.columns
 					p &nbsp;					
 				div.large-6.columns
 					div.card
 						div.image
 							img( src="../images/mc_screen_1.jpg" alt="Скриншот MonsterCastle")
+							
 				div.clearfix
 				div					
 					| Если кто-то из соклановцев уже захватил замок данного игрока, то Вы можете просмотреть игру. Это бывает очень полезно. Для этого просто нажмите на кнопку "Видео союзника".
