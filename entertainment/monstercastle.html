@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>ABSOLEM.INFO | Monster Castle</title>
+    <title>ABSOLEM.INFO | Monster Castle</title><script src="table_sort.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -64,7 +65,7 @@
           <li>
             <strong> Активность игроков</strong> (за последние 7 дней)
             <table>
-            <thead><tr><td>Ник</td><td>16.03.2016</td><td>15.03.2016</td><td>14.03.2016</td><td>13.03.2016</td><td>12.03.2016</td><td>11.03.2016</td><td>10.03.2016</td></tr>
+            <thead><tr><td>Ник</td><td>19.03.2016</td><td>18.03.2016</td><td>17.03.2016</td><td>16.03.2016</td><td>15.03.2016</td><td>14.03.2016</td><td>13.03.2016</td></tr>
             </thead>
             <tbody>
             <!--for member in members
@@ -73,10 +74,10 @@
             </strong></td>
             for day in member.present
             	<td>
-            	div= day
+            	div= day 
             	</td>
             </tr>
-            --><tr><td><strong>wialeeier</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>символ</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>О</td><td>X</td><td>Х</td></tr><tr><td><strong>TechnoStix</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>Х</td><td>X</td><td>X</td></tr><tr><td><strong>ПЕТЕРГОФ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>atas2</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>Х</td><td>O</td><td>X</td></tr><tr><td><strong>Твердыня</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Absolem.info</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Нерюнгри</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>О</td></tr><tr><td><strong>bdsm</strong></td><td>X</td><td>X</td><td>X</td><td>O</td><td>Х</td><td>X</td><td>O</td></tr><tr><td><strong>Shved_K</strong></td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td><strong>арти21...</strong></td><td>X</td><td>O</td><td>O</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Ромка</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>X</td><td>O</td></tr><tr><td><strong>byqspirit</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>тверь2015</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>Х</td><td>X</td><td>X</td></tr><tr><td><strong>Торадор</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Paintient</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Норильск</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Aliskandar</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td></tr>
+            --><tr><td><strong>atas2</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Shved_K</strong></td><td>X</td><td>O</td><td>O</td><td>X</td><td>O</td><td>X</td><td>X</td></tr><tr><td><strong>Absolem.info</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>символ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>Торадор</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>bdsm</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td><strong>ЛЕГИОН</strong></td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>byqspirit</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>TechnoStix</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>тверь2015</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Paintient</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Нерюнгри</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Твердыня</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>ПЕТЕРГОФ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>арти21...</strong></td><td>O</td><td>O</td><td>X</td><td>X</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Dima_Oyo</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Aliskandar</strong></td><td>O</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Ромка</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>wialeeier</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
             </tbody>
             </table>
             <!--p Активных участников клановых войн: 
@@ -85,6 +86,33 @@
             
             -->
           </li>
+          <!--li
+          <div id="users">
+          <input class="search" placeholder="Искать" />
+          <button class="sort" data-sort="name">Сортировать по Нику</button>
+          <button class="sort" data-sort="born">Сортировать по дате</button>				
+          <table>
+          <tbody class="list">
+          <tr>
+          <td class="name">Jonny Stromberg</td>
+          <td class="born">1986</td>
+          </tr>
+          <tr>
+          <td class="name">Jonas Arnklint</td>
+          <td class="born">1985</td>
+          </tr>
+          <tr>
+          <td class="name">Martina Elm</td>
+          <td class="born">1986</td>
+          </tr>
+          <tr>
+          <td class="name">Gustaf Lindqvist</td>
+          <td class="born">1983</td>
+          </tr>
+          </tbody>
+          </table>
+          </div>				
+          -->
           <li><strong>Кому дается звание "Хозяин"</strong>
             <div class="text-justify">
               Звание "Хозяин" присваивается "Королем".
@@ -284,7 +312,8 @@
           </li>
         </ol>
       </div>
-    </div>
+    </div><script src="table_sort.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
     <footer>
       <div class="row">
         <div class="large-12 columns">

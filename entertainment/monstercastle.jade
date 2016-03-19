@@ -2,7 +2,8 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Monster Castle"
-
+	<script src="table_sort.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
 block content
 
 	//- var members= [{name:"Absolem.info", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"bdsm", present: ['O','Х', 'X', 'O', 'O', 'X', 'X']},{name:"TechnoStix", present: ['X','Х', 'X', 'X', 'O', 'X', 'X']},{name:"Тверь2015", present: ['O','Х', 'X', 'X', 'O', 'O', 'X']},{name:"ПЕТЕРГОФ", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"Ромка", present: ['O','О', 'X', 'O', 'O', 'О', 'О']},{name:"символ", present: ['X','О', 'X', 'Х', 'Х', 'Х', 'О']},{name:"atas2", present: ['O','Х', 'O', 'X', 'O', 'X', 'O']},{name:"byqspirit", present: ['O','X', 'O', 'X', 'O', 'X', 'X']},{name:"Aliskandar", present: ['X','X', 'O', 'X', 'X', 'X', 'O']},{name:"Shved_K", present: ['X','X', 'X', 'O', 'O', 'O', 'O']},{name:"Фифти", present: ['O','О', 'O', 'О', 'О', 'О', 'O']},{name:"Фрунзе773", present: ['O','О', 'O', 'О', 'О', 'О', 'O']}, {name:"Нерюнгри", present: ['O','О', 'O', 'О', 'О', 'О', 'Х']},{name:"арти21...", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"WhiteShadow", present: ['O','О', 'O', 'O', 'O', 'X', 'O']},{name:"Paintient", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"Торадор", present: ['X','О', 'O', 'O', 'O', 'O', 'O']}];
@@ -32,7 +33,7 @@ block content
 			li
 				<strong> Активность игроков</strong> (за последние 7 дней)
 				<table>
-				<thead><tr><td>Ник</td><td>16.03.2016</td><td>15.03.2016</td><td>14.03.2016</td><td>13.03.2016</td><td>12.03.2016</td><td>11.03.2016</td><td>10.03.2016</td></tr>
+				<thead><tr><td>Ник</td><td>19.03.2016</td><td>18.03.2016</td><td>17.03.2016</td><td>16.03.2016</td><td>15.03.2016</td><td>14.03.2016</td><td>13.03.2016</td></tr>
 				</thead>
 				<tbody>
 
@@ -42,16 +43,42 @@ block content
 					</strong></td>
 					for day in member.present
 						<td>
-						div= day
+						div= day 
 						</td>
 					</tr>
-				<tr><td><strong>wialeeier</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>символ</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>О</td><td>X</td><td>Х</td></tr><tr><td><strong>TechnoStix</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>Х</td><td>X</td><td>X</td></tr><tr><td><strong>ПЕТЕРГОФ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>atas2</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>Х</td><td>O</td><td>X</td></tr><tr><td><strong>Твердыня</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Absolem.info</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Нерюнгри</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>О</td></tr><tr><td><strong>bdsm</strong></td><td>X</td><td>X</td><td>X</td><td>O</td><td>Х</td><td>X</td><td>O</td></tr><tr><td><strong>Shved_K</strong></td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td><strong>арти21...</strong></td><td>X</td><td>O</td><td>O</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Ромка</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>X</td><td>O</td></tr><tr><td><strong>byqspirit</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>тверь2015</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>Х</td><td>X</td><td>X</td></tr><tr><td><strong>Торадор</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Paintient</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Норильск</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>О</td><td>O</td><td>O</td></tr><tr><td><strong>Aliskandar</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td></tr>
+				<tr><td><strong>atas2</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Shved_K</strong></td><td>X</td><td>O</td><td>O</td><td>X</td><td>O</td><td>X</td><td>X</td></tr><tr><td><strong>Absolem.info</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>символ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>Торадор</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>bdsm</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td><strong>ЛЕГИОН</strong></td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>byqspirit</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>TechnoStix</strong></td><td>X</td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>тверь2015</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Paintient</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Нерюнгри</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Твердыня</strong></td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>ПЕТЕРГОФ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>арти21...</strong></td><td>O</td><td>O</td><td>X</td><td>X</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Dima_Oyo</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Aliskandar</strong></td><td>O</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Ромка</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>wialeeier</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr>
 				</tbody>
 				</table>
 				//p Активных участников клановых войн: 
 					span= members.length
 					| <br>обозначения: "X" - участвовал(а) "O" - отсутствовал(а)			
 
+			//li
+				<div id="users">
+				<input class="search" placeholder="Искать" />
+				<button class="sort" data-sort="name">Сортировать по Нику</button>
+				<button class="sort" data-sort="born">Сортировать по дате</button>				
+				<table>
+				<tbody class="list">
+				<tr>
+				<td class="name">Jonny Stromberg</td>
+				<td class="born">1986</td>
+				</tr>
+				<tr>
+				<td class="name">Jonas Arnklint</td>
+				<td class="born">1985</td>
+				</tr>
+				<tr>
+				<td class="name">Martina Elm</td>
+				<td class="born">1986</td>
+				</tr>
+				<tr>
+				<td class="name">Gustaf Lindqvist</td>
+				<td class="born">1983</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>				
 			li
 				strong Кому дается звание "Хозяин"
 				div.text-justify
@@ -242,3 +269,5 @@ block content
 				div
 					| Как начисляются очки?
 					| <br>... продолжение следует ...
+	<script src="table_sort.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
