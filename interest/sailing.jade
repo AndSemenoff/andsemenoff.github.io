@@ -1,0 +1,30 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Яхтинг"
+
+block content
+	div.row: div.large-12.columns: h1 Яхтинг
+	div.row: div.large-12.columns
+		ol
+			li Ассоциации
+				ol
+					li RYA
+					li ISSA
+					li IYT
+			li Школы
+				ol
+					li
+					li: a(href='http://www.go-og.ru') Яхтенная школа Олега Гончаренко
+					li: a(href='http://www.7winds.school') Семь ветров
+					li: a(href='http://skippers.ru/') Skippers.ru - Все в одном
+					
+			li Регаты
+			li Магазины, аренда и т.п.
+				ol
+					li: a(href='http://www.spartak.ws') Яхт клуб Спартак (Москва)
+					li: a(href='http://www.gaetana-marine.com') Gaetana marine
+					li: a(href='http://sailband.com') Аренда. Черногория (Бар).
+		p.
+			Важно знать "Международные Правила Предупреждения Столкновений Судов в море", 1972 г.	
+			
