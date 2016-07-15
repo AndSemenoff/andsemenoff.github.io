@@ -1,0 +1,22 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Алгоритмическая торговля"
+
+block content
+	div.row: div.large-12.columns: h2 "Алгоритмическая торговля"
+	div.row: div.large-12.columns
+		h3 Алгоритмическая торговля ссылки
+		ol
+			li: strong: a(href="quantopian.html") Работа с сервисом Quantopian
+			li: strong: a(href="quantiacs.html") Работа с сервисом Quantiacs
+			li: a(href="http://www.quantatrisk.com/") Quant at Risk
+			li: a(href="http://www.turingfinance.com") TuringFinance
+			li: a(href="http://www.quantnews.com/") Quant news					
+			li QuantStart - Сайт-блог по алгоритмической торговле
+				ol
+					li: a(href="https://www.quantstart.com/articles/Money-Management-via-the-Kelly-Criterion") Критерий Келли
+					li: a(href="https://www.quantstart.com/articles/Sharpe-Ratio-for-Algorithmic-Trading-Performance-Measurement") Коэффициент Шарпа
+		div 
+			a(href="https://github.com/pydata") Библиотеки 
+			| на github для работы с финансовыми данными, такие как pandas, pandas-datareader 		
