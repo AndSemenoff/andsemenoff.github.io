@@ -4,6 +4,7 @@ block title
 	title= site_title + " Monster Castle"
 	<script src="table_sort.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">	
 block content
 
 	//- var members= [{name:"Absolem.info", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"bdsm", present: ['O','Х', 'X', 'O', 'O', 'X', 'X']},{name:"TechnoStix", present: ['X','Х', 'X', 'X', 'O', 'X', 'X']},{name:"Тверь2015", present: ['O','Х', 'X', 'X', 'O', 'O', 'X']},{name:"ПЕТЕРГОФ", present: ['X', 'X', 'X', 'X', 'X', 'X', 'X']},{name:"Ромка", present: ['O','О', 'X', 'O', 'O', 'О', 'О']},{name:"символ", present: ['X','О', 'X', 'Х', 'Х', 'Х', 'О']},{name:"atas2", present: ['O','Х', 'O', 'X', 'O', 'X', 'O']},{name:"byqspirit", present: ['O','X', 'O', 'X', 'O', 'X', 'X']},{name:"Aliskandar", present: ['X','X', 'O', 'X', 'X', 'X', 'O']},{name:"Shved_K", present: ['X','X', 'X', 'O', 'O', 'O', 'O']},{name:"Фифти", present: ['O','О', 'O', 'О', 'О', 'О', 'O']},{name:"Фрунзе773", present: ['O','О', 'O', 'О', 'О', 'О', 'O']}, {name:"Нерюнгри", present: ['O','О', 'O', 'О', 'О', 'О', 'Х']},{name:"арти21...", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"WhiteShadow", present: ['O','О', 'O', 'O', 'O', 'X', 'O']},{name:"Paintient", present: ['X','О', 'O', 'O', 'O', 'X', 'O']},{name:"Торадор", present: ['X','О', 'O', 'O', 'O', 'O', 'O']}];
@@ -39,7 +40,66 @@ block content
 					| <br>или любой другой текст, по которому к нам в гильдию придут новички.				
 			li
 				<strong> Активность игроков</strong>
-				<iframe width=100% height=900px src="https://docs.google.com/spreadsheets/d/16qHUNMSBClTSQ4cTCF-A9fAEqQZcqSNsU1bG-QmqGuM/pubhtml?widget=true&amp;headers=false"></iframe>
+				<iframe width=100% height=1000px src="https://docs.google.com/spreadsheets/d/16qHUNMSBClTSQ4cTCF-A9fAEqQZcqSNsU1bG-QmqGuM/pubhtml?widget=true&amp;headers=false"></iframe>
+			li
+				strong Внутригильдейские титулы и звания
+				div
+					| С 1 августа 2016 вводятся следующие внитригильдейские титулы и звания за
+					| время членства в гильдии(от высшего к низжему):
+					ul
+						li Великий Князь
+						li Князь
+						li Герцог
+						li Граф
+						li Барон
+						li Новобранец (7 дней)
+					| Новобранец дается на 7 дней при вступлении в гильдию.
+					br
+					| Далее структура всех званий однотипна.
+					| 
+					| Каждое звание разделяется на 3 ранга(от высшего к низжему):
+					ul
+						li.colorgreen Зеленый(герой)
+						li.colorred Красный(гелиотроп)
+						li.colorblue Синий(кристал)
+					| Таким образом самое низжее звание после испытательного срока(звание Новобранец): 
+					span.colorblue Барон-Кристал или Синий Барон; 
+					| высшее
+					| звание 
+					span.colorgreen Зеленый Великий Князь или Великий Князь-Герой
+					br
+					| Звания даются за время членства в гильдии. Новое звание каждый месяц.
+			li
+				strong Внутригильдейские знаки отличия
+				div
+					| С 1 августа 2016 года за первые три места в рейтинге достижений за неделю игрок
+					| будет получать знак отличия по следующему принципу.
+					ul
+						li 1 место - три звезды <i class="fa fa-star fa-2x coloryellow" aria-hidden="true"></i><i class="fa fa-star fa-2x coloryellow" aria-hidden="true"></i><i class="fa fa-star fa-2x coloryellow" aria-hidden="true"></i>
+						li 2 место - две звезды <i class="fa fa-star fa-2x coloryellow" aria-hidden="true"></i>
+							|<i class="fa fa-star fa-2x coloryellow" aria-hidden="true"></i>
+						li 3 место - одна звезда <i class="fa fa-star fa-2x coloryellow" aria-hidden="true"></i>
+					br
+					|Пять звезд заменяются на один кристал. <i class="fa fa-gitlab fa-2x colorblue" aria-hidden="true"></i>
+					//-<div class="image"><img width=30px height=30px src="../images/crystals.png" alt="Фрагмент героя"></div>
+					br
+					|Пять кристаллов заменяются на один гелиотроп. <i class="fa fa-certificate fa-2x colorred" aria-hidden="true"></i>
+					//-<div class="image"><img width=30px height=30px src="../images/geliotrop.png" alt="Фрагмент героя"></div>
+					br
+					|Пять гелиотропов заменяются на один фрагмент героя. <i class="fa fa-gg fa-2x colorgreen" aria-hidden="true"></i>
+					//-<div class="image"><img width=30px height=30px src="../images/g.png" alt="Фрагмент героя"></div>
+					br
+					|Фрагменты не заменяются.
+			li
+				strong Таблица званий и знаков отличий
+				br
+				| Примерно так будет выглядеть таблица
+				<table>
+				<thead><tr><td>Ник</td><td>Звание</td><td>Знаки отличия</td></tr></thead>
+				<tbody>
+				<tr><td>Absolem</td><td>Новичок</td><td><i class="fa fa-gitlab fa-2x colorblue" aria-hidden="true"></i> </td></tr>
+				</tbody>
+				</table>								
 			//--li
 				<strong> Активность игроков</strong> (за последние 7 дней)
 				<table>
