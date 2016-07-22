@@ -96,3 +96,17 @@ input[type="checkbox"]{
 .tabs-content > .content{
   padding-left: 13rem;
 }
+.colorred{
+  color: red;
+}
+.colorblue{
+  color: blue;
+}
+
+.coloryellow{
+  color: yellow;
+}
+
+.colorgreen{
+  color: green;
+}
