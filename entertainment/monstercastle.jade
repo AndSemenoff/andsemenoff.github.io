@@ -57,9 +57,9 @@ block content
 					| <br>или любой другой текст, по которому к нам в гильдию придут новички.
 			li
 				strong Таблица званий и знаков отличий
-				ol на 15.10.2016
-					li ПЕТЕРГОФ
+				ol на 22.10.2016
 					li ВЕЛЬЗЕВУЛ
+					li ПЕТЕРГОФ					
 					li Adastra
 
 				h3 Общая таблица
@@ -70,10 +70,10 @@ block content
 							td Звание
 							td Знаки отличия
 					tbody
-						+diamond("ВЕЛЬЗЕВУЛ", "Барон-Герой", 1, 0, 1)
-						+diamond("ПЕТЕРГОФ", "Барон-Герой", 0, 3, 1)
+						+diamond("ВЕЛЬЗЕВУЛ", "Барон-Герой", 1, 0, 4)
+						+diamond("ПЕТЕРГОФ", "Барон-Герой", 0, 3, 3)
 						+diamond("Absolem.info", "Барон-Герой", 0, 1, 2)
-						+diamond("Adastra", "Барон-Герой", 0, 0, 4)						
+						+diamond("Adastra", "Барон-Герой", 0, 1, 0)						
 						+diamond("екетоя", "Барон-Герой", 0, 0, 3)
 						+diamond("SHEF", "Барон-Кристалл", 0, 0, 3)												
 						+diamond("snezheg", "Барон-Герой", 0, 0, 3)
@@ -137,56 +137,7 @@ block content
 					| Фрагменты не заменяются.
 					br
 					| Таблица со званиями и знаками отличия распологается на этой странице.
-								
-			//--li
-				<strong> Активность игроков</strong> (за последние 7 дней)
-				<table>
-				<thead><tr><td>Ник</td><td>23.03.2016</td><td>22.03.2016</td><td>21.03.2016</td><td>20.03.2016</td><td>19.03.2016</td><td>18.03.2016</td><td>17.03.2016</td></tr>
-				</thead>
-				<tbody>
-
-				//for member in members
-					<tr><td><strong>
-					div= member.name
-					</strong></td>
-					for day in member.present
-						<td>
-						div= day 
-						</td>
-					</tr>
-				<tr><td><strong>тверь2015</strong></td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>аллаявбар</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>atas2</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Aliskandar</strong></td><td>X</td><td>O</td><td>X</td><td>X</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>ЛЕГИОН</strong></td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td><td>X</td><td>O</td></tr><tr><td><strong>арти21...</strong></td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>byqspirit</strong></td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>Dima_Oyo</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td><td>O</td></tr><tr><td><strong>ПЕТЕРГОФ</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Торадор</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Твердыня</strong></td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td></tr><tr><td><strong>bdsm</strong></td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td><td>X</td><td>O</td></tr><tr><td><strong>символ</strong></td><td>X</td><td>X</td><td>X</td><td>O</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Absolem.info</strong></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Shved-K</strong></td><td>X</td><td>O</td><td>O</td><td>O</td><td>X</td><td>O</td><td>O</td></tr><tr><td><strong>TechnoStix</strong></td><td>O</td><td>O</td><td>X</td><td>O</td><td>X</td><td>X</td><td>O</td></tr>
-				</tbody>
-				</table>
-				//p Активных участников клановых войн: 
-					span= members.length
-					| <br>обозначения: "X" - участвовал(а) "O" - отсутствовал(а)			
-			//
-			//li
-				<div id="users">
-				<input class="search" placeholder="Искать" />
-				<button class="sort" data-sort="name">Сортировать по Нику</button>
-				<button class="sort" data-sort="born">Сортировать по дате</button>				
-				<table>
-				<tbody class="list">
-				<tr>
-				<td class="name">Jonny Stromberg</td>
-				<td class="born">1986</td>
-				</tr>
-				<tr>
-				<td class="name">Jonas Arnklint</td>
-				<td class="born">1985</td>
-				</tr>
-				<tr>
-				<td class="name">Martina Elm</td>
-				<td class="born">1986</td>
-				</tr>
-				<tr>
-				<td class="name">Gustaf Lindqvist</td>
-				<td class="born">1983</td>
-				</tr>
-				</tbody>
-				</table>
-				</div>				
+												
 			li
 				strong Кому дается звание "Хозяин"
 				div.text-justify
