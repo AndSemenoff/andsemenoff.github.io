@@ -1,0 +1,126 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Информационная безопасность"
+
+block content
+	div.row: div.large-12.columns: h1 Информационная безопасность
+	div.row: div.large-12.columns
+		ol
+			li
+				| CTF - Capture The Flag
+				ol
+					li
+						a(href='https://ctftime.org/') CTFtime.org
+						|  - Соревнования. Разборы. Рейтинги.
+					li
+						a(href='http://ctfnews.ru/') Всё о CTF в России
+					li
+						a(href='http://www.wechall.net/') WeChall
+						|  - Агрегатор сайтов с заданиями типа CTF. Разборы. Глобальный и региональный рейтинги.						 
+					li Сайты конкретных соревнований
+						ol
+							li: a(href='https://school-ctf.org/') School CTF
+							li: a(href='http://BaltCTF.ru') BaltCTF.ru
+							li: a(href='https://hackforces.com/') hackforces - разбор Free Hack Quest
+
+					li Инструментарий онлайн
+						ol
+							li: a(href='http://md5decrypt.net/en/') Md5 Free Online Encrypt & Decrypt
+							li: a(href='https://www.branah.com/ascii-converter') ASCII Converter
+							li: a(href='http://decodeit.ru/') decodeit.ru - Расшифровать QR код online						
+							
+					li Книги
+						ol
+							li: a(href='http://kmb.ufoctf.ru/index.html') Книга для начинающих по CTF на русском.
+					li Команды
+						ol
+							li: a(href='https://ctfcrew.org/') Balalaika Cr3w | Russian CTF team
+							li: a(href='http://www.suslopas.pw/') SUSlo.PAS CTF Team
+							li: a(href='http://h0n3yp0t.ru/') Honeypot CTF TeamHoneypot CTF Team
+							li: a(href='http://baltctf.ru/') BaltCTF.ru														
+					li Разное
+						ol
+							li: a(href='https://github.com/ctfs') Репозиторий с разборами по CTF.
+							li
+								a(href='http://freehackquest.com/') freehackquest
+								|  - Это платформа с открытым исходным кодом для проведения соревнований по компьютерной безопасности
+								
+		
+							li: a(href='http://itsecwiki.org/index.php?title=%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0') Wiki  по CTF на русском.
+																
+			li
+				| Сообщества					
+				ol
+					li
+						a(href='http://www.securitylab.ru/') SecurityLab.ru 
+						|  - Новости. Блоги. Сообщество.					
+					li
+						a(href='https://defcon.ru/') DefconRU 
+						|  - Сообщество специалистов в области информационной безопасности.
+					li
+						a(href='https://n0where.net/') CyberPunk 
+						|  - Open Source CyberSecurity.
+					li
+						a(href='http://www.darkreading.com/') DarkReading 
+						|  - News. Articles.
+					li
+						a(href='https://security.googleblog.com/') Security Google Blog 				
+					li
+						a(href='https://raz0r.name/') Raz0r.name  
+						|  - блог о web-безопасности на русском.					
+			li Обучение
+				ol
+					li
+						a(href='https://www.cybrary.it/') Cybrary 
+						| - Online Cyber Security Training, Free, Forever					
+					li: a(href='http://mitrecyberacademy.org/learn/') MITRE Cyber Academy	
+						
+			li Инструментарий
+				ol
+					li: a(href='http://www.volatilityfoundation.org/') The Volatility Foundation - Open Source Memory Forensics
+			
+			li Steganography - Стеганография
+				ol
+					li Инструментарий
+						ol
+							li: a(href='') 					
+
+			li Reverse - Обратная разработка
+				ol
+					li: a(href='http://beginners.re/') Бесплатная книга "Reverse Engineering for Beginners" на русском языке.
+			li
+				| Криптография
+				ol
+					li Обучение
+						ol
+							li: a(href='http://maintracker.org/forum/viewtopic.php?t=3915900') [lektorium.tv] Криптографические протоколы [2009, RUS] :: RuTracker.org
+							li: a(href='https://www.coursera.org/learn/crypto') Cryptography I. Stanford University. Dan Boneh, Professor. Coursera
+							li: a(href='https://www.coursera.org/learn/crypto2') Cryptography II. Stanford University. Dan Boneh, Professor. Coursera
+					li Книги
+						ol
+							li: a(href='http://nnmclub.to/forum/viewtopic.php?t=1047460') Иван Ефишов | Таинственные страницы. Занимательная криптография (2016) [FB2] :: NNM-Club							
+					li Разное
+						ol
+							li: a(href='http://practicalcryptography.com/') practicalcryptography
+							li: a(href='http://www.cs.mtu.edu/~shene/NSF-4/Tutorial/index.html') Cryptography Visualization Tools: A Tutorial			
+							li: a(href='http://kriptografea.narod.ru/') Криптография по русски					
+							li: a(href='http://cryptoclub.org/') CryptoClub.org
+							li: a(href='http://cryptogram.org/') American Cryptogram Association
+							li: a(href='http://cryptopals.com/') the cryptopals crypto challenges
+			li Награды
+				ol
+					li
+						a(href='http://cybersecurityawards.com/') Cyber Security Awards
+						|  - Cyber Security Awards
+					li
+						a(href='http://cybersecurity-excellence-awards.com/') Cybersecurity Excellence Awards
+						|  - Cybersecurity Excellence Awards									
+			li Разное
+				ol
+					li
+						a(href='http://seclists.org/') seclists
+						|  - Архив рассылок по безопасности					
+					li: a(href='https://rdot.org/forum/') RDot - форум по безопасности на русском					
+
+													
