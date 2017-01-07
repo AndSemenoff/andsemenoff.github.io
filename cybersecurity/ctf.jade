@@ -1,0 +1,76 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " CTF - Capture The Flag"
+
+block content
+	mixin images(githab, youtube, habr)
+		if habr
+			<img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr">
+		else if github
+			<img src="../images/github.ico" alt="Иконка github" width="16">
+		else if youtube
+			<img src="../images/youtube.ico" alt="Иконка youtube" width="16">			
+	mixin li_link(url, title_text, text)
+		li 
+			<a href = #{url}> #{title_text}</a>
+			|&nbsp;-&nbsp;#{text}
+	mixin info_link(url, title_text, text)
+		<a href = #{url}> #{title_text}</a> 
+		if text
+			| - #{text}
+	div.row: div.large-12.columns: h1 CTF - Capture The Flag 
+	div.row: div.large-12.columns
+		ol
+			+li_link('https://ctftime.org/', 'CTFtime.org', 'Соревнования. Разборы. Рейтинги.')
+			+li_link('http://ctfnews.ru/', 'CTFnews.ru', 'Всё о CTF в России.')
+			+li_link('http://www.wechall.net/', 'WeChall', 'Агрегатор сайтов с заданиями типа CTF. Разборы. Глобальный и региональный рейтинги.')
+			li Сайты конкретных соревнований
+				ol
+					li: a(href='https://school-ctf.org/') School CTF
+					li: a(href='http://BaltCTF.ru') BaltCTF.ru
+					li: a(href='https://hackforces.com/') hackforces - разбор Free Hack Quest
+			li Сайты испытаний (challenge, wargame)
+				ol
+					li
+						a('http://overthewire.org/wargames/') OverTheWire: Wargames 
+						|| разбор <a href="https://blogcompsci.wordpress.com/2014/10/13/bandit-level-12-%E2%86%92-level-13/">Bandit</a>
+						|| разбор <a href="https://infamoussyn.com/2013/11/08/overthewire-bandit-level-0-25-writeup-completed/">Bandit</a>
+			li Инструментарий онлайн
+				ol
+					li: a(href='http://md5decrypt.net/en/') Md5 Free Online Encrypt & Decrypt
+					li: a(href='https://www.branah.com/ascii-converter') ASCII Converter
+					li: a(href='http://decodeit.ru/') decodeit.ru - Расшифровать QR код online						
+			li Книги
+				ol
+					li: a(href='http://kmb.ufoctf.ru/index.html') Книга для начинающих по CTF на русском.
+			li Команды
+				ol
+					li: a(href='https://ctfcrew.org/') Balalaika Cr3w | Russian CTF team
+					li: a(href='http://www.suslopas.pw/') SUSlo.PAS CTF Team
+					li: a(href='http://h0n3yp0t.ru/') Honeypot CTF TeamHoneypot CTF Team
+					li: a(href='http://baltctf.ru/') BaltCTF.ru
+					li
+						a(href='https://github.com/VulnHub/ctf-writeups') VulnHub Git 
+						a(href='https://www.vulnhub.com/') VulnHub Site 
+			li Решения. Разборы.
+				ol
+					li: a(href='https://ctftime.org/writeups') Разбры на сайте CTFTime
+					li: a(href='https://ehsandev.com/pico2014/index.html') Introduction | PicoCTF 2014 Write-ups							
+					li: a(href='http://devpsc.blogspot.ru/') Старые разборы до 2014.
+					li: a(href='https://github.com/ctfs') Репозиторий с разборами по CTF.
+			li Онлайн курсы
+				ol
+					li: a(href='https://github.com/xairy/mipt-ctf') CTF на Физтехе. Уроки. Видео.
+					+li_link('https://ulearn.me/Course/Hackerdom/','Курс ulearn.me','Основы компьютерной безопасности от Hackerdom')
+
+			li Разное
+				ol
+					li <img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> 
+						a(href='https://github.com/apsdehal/awesome-ctf') Сборник ссылок
+						|  - по CTF и для CTF							
+
+					li
+						a(href='http://freehackquest.com/') freehackquest
+						|  - Это платформа с открытым исходным кодом для проведения соревнований по компьютерной безопасности
+					li: a(href='http://itsecwiki.org/index.php?title=%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0') Wiki  по CTF на русском.
