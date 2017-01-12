@@ -1,0 +1,54 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Сайты испытаний. Практика."
+
+block content
+	mixin images(githab, youtube, habr)
+		if habr
+			<img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr">
+		else if github
+			<img src="../images/github.ico" alt="Иконка github" width="16">
+		else if youtube
+			<img src="../images/youtube.ico" alt="Иконка youtube" width="16">			
+	mixin li_link(url, title_text, text)
+		li 
+			<a href = #{url}> #{title_text}</a>
+			|&nbsp;-&nbsp;#{text}
+	mixin info_link(url, title_text, text)
+		<a href = #{url}> #{title_text}</a> 
+		if text
+			| - #{text}
+	div.row: div.large-12.columns: h3 Сайты испытаний. Практика. (challenge, wargame)
+	div.row: div.large-12.columns
+		ol
+			+li_link('http://www.wechall.net/', 'WeChall', 'Агрегатор сайтов с заданиями типа CTF. Разборы. Глобальный и региональный рейтинги.')
+			+li_link('https://xss-game.appspot.com/','Разбор XSS уязвимостей','В игровой форме(wargame) от Google.')
+			a('http://blog.dornea.nu/2014/06/02/googles-xss-game-solutions/') Разбор
+						
+			li
+				a('http://overthewire.org/wargames/') OverTheWire: Wargames 
+				|| разбор <a href="https://blogcompsci.wordpress.com/2014/10/13/bandit-level-12-%E2%86%92-level-13/">Bandit</a>
+				|| разбор <a href="https://infamoussyn.com/2013/11/08/overthewire-bandit-level-0-25-writeup-completed/">Bandit</a>
+			li geohot решает CTF
+				ol
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/watch?v=aZJM-iIpbqc','geohot','')
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/watch?v=Zi-CCXh-0ck','geohot','')
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/watch?v=Xf5q6wCyD_A','geohot','')
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/watch?v=td1KEUhlSuk','geohot','')
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/watch?v=eteFhzEkcxY','geohot','')
+						
+	div.row: div.large-12.columns: h3 Сайты с разбором испытаний.
+	div.row: div.large-12.columns
+		ol
+			+li_link('http://blog.dornea.nu/','Блог Victor Dorneanu','Много разборов.')			

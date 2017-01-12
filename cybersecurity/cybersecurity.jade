@@ -22,20 +22,15 @@ block content
 	div.row: div.large-12.columns: h1 Информационная безопасность
 	div.row: div.large-12.columns
 		ol
-			+li_link('ctf.html', 'CFT', 'Все о соревнованиях CTF.')
+			li: strong: a(href='ctf.html') Все о соревнованиях CTF.			
+			li: strong: a(href='wargame.html') Сайты испытаний (challenge, wargame)
 			li
 				| Сообщества					
 				ol
-					li
-						a(href='http://www.securitylab.ru/') SecurityLab.ru 
-						|  - Новости. Блоги. Сообщество.					
-					li
-						a(href='https://defcon.ru/') DefconRU 
-						|  - Сообщество специалистов в области информационной безопасности.
-					li
-						a(href='https://threatpost.ru/') threatpost 
-						|  - Новости информационной безопасности. Лаборатория Касперского.
-						
+					+li_link('http://www.securitylab.ru/','SecurityLab.ru','Новости. Блоги. Сообщество.')					
+					+li_link('https://defcon.ru/','DefconRU','Сообщество специалистов в области информационной безопасности.')
+					+li_link('https://threatpost.ru/','threatpost','Новости информационной безопасности. Лаборатория Касперского.')
+					+li_link('https://www.anti-malware.ru/','Anti-Malware.ru','независимый информационно-аналитический центр.')						
 					li
 						a(href='https://n0where.net/') CyberPunk 
 						|  - Open Source CyberSecurity.
@@ -65,6 +60,14 @@ block content
 					li
 						+images(0,1,0)
 						+info_link('https://www.youtube.com/user/JackkTutorials/videos','JackkTutorials','')
+						ol
+							li
+								+images(0,1,0)
+								+info_link('https://www.youtube.com/watch?v=Y3j-rlA0CbE','JackkTutorials','How to DNS Spoof (Kali Linux 2.0)')
+							li
+								+images(0,1,0)
+								+info_link('https://www.youtube.com/watch?v=wdQnM1qdhwE','JackkTutorials','Create your own private VPN!')
+
 					li 
 						+images(0,1,0)
 						+info_link('https://www.youtube.com/user/Hak5Darren/videos','Hak5','') 
@@ -75,12 +78,36 @@ block content
 						+images(0,1,0)
 						+info_link('https://www.youtube.com/channel/UCuCF2EVLLTWx_GOmvKg5FnQ','Физтех CTF','Лекции Андрея Коновалова.')
 					+li_link('http://yadi.sk/d/64iYID6f0Wy-d','Скачать видео','Подробный разбор самых популярных угроз и методов защиты безопасности веб-приложений (OWASP Top 10)')
+
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/user/kalinuxx/videos','Kali Linux Tutorials','')						
+			li Web
+				ol
+					li Injection
+					li XSS (Cross-site scripting)
+						ol
+							+li_link('https://xss-game.appspot.com/','Разбор XSS уязвимостей','В игровой форме(wargame) от Google.')
+							li
+								+images(0,1,0)
+								+info_link('https://www.youtube.com/watch?v=ufYlQTpDmA8','Разбор предыдущего испытания от Google','')
+							+li_link('http://excess-xss.com/','excess-xss','Отличный разбор темы XSS')
+							+li_link('http://www.xssed.com','xssed','Старый сайт с новостями об уязвимостях XSS')							
+														
+									
+					li
+					li
+					li											
 			li Инструментарий
 				ol
 					li: a(href='http://www.volatilityfoundation.org/') The Volatility Foundation - Open Source Memory Forensics
 			
 			li Steganography(Stegano) - Стеганография
 				ol
+					li Общие вопросы
+						ol
+							+li_link('https://en.wikipedia.org/wiki/Steganalysis','wiki Стегоанализ','Обзорная статья.')
+							+li_link('http://xain.hackerdom.ru/zine/online/issue0/Steganography.html','Статья','Стеганография. Скрытие информации в изображениях')
 					li Инструментарий
 						ol
 							li: a(href='http://exif.regex.info/exif.cgi') Online Jeffrey's Image Metadata Viewer
@@ -146,15 +173,17 @@ block content
 								|  - Cybersecurity Excellence Awards
 					li За поиск и описание уязвимостей
 						ol
-							li
-								a(href='https://hackerone.com/') HackerOne 
-								|  - Vulnerability Coordination and Bug Bounty Platform
+							+li_link('https://hackerone.com/','HackerOne','Vulnerability Coordination and Bug Bounty Platform.')
 							li <img src="../images/bugcrowd.ico" alt="Иконка bugcrowd"> 
 								a(href='https://bugcrowd.com/') Bugcrowd 
 								|  - Bug Bounty Solutions & Hackers On-Demand
-							li
-								a(href='https://www.synack.com') Synack 
-								|  - Crowd Security Intelligence
+							+li_link('https://www.synack.com','Synack','Crowd Security Intelligence.')
+							+li_link('https://zerodium.com/','zerodium','Программы поощрения не только за веб.')							
+							+li_link('https://www.google.com/about/appsecurity/reward-program/index.html','Google','Программа поощрения от google')
+							+li_link('https://yandex.ru/bugbounty/','Yandex','Программа поощрения от Yandex')
+							+li_link('https://bugbounty.mail.ru/','mail.ru','Программа поощрения от mail.ru')
+							+li_link('http://bugsheet.com','BugSheet','Список программ поощрении от разных компаний')
+							+li_link('https://www.openbugbounty.org','openbugbounty','Публикуют уязвимости')											
 			li Статьи
 				ol
 					li <img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr"> 
@@ -164,6 +193,8 @@ block content
 					li <img src="../images/bugcrowd.ico" alt="Иконка bugcrowd"> 
 						a(href='https://forum.bugcrowd.com/t/researcher-resources-how-to-become-a-bug-bounty-hunter/1102')  Как стать профессиональным исследователем уязвимостей
 					+li_link('http://www.vestnik.vsu.ru/pdf/analiz/2007/01/2007-01-04.pdf','АЛГОРИТМЫ ВЫЯВЛЕНИЯ СТЕГАНОГРАФИЧЕСКОГО СКРЫТИЯ ИНФОРМАЦИИ В JPEG-ФАЙЛАХ','')
+
+					
 			li Разное
 				ol
 					li
