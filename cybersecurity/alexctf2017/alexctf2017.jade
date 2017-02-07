@@ -1,0 +1,45 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " AlexCTF2017. Разборы."
+
+block content
+	mixin info_link(url, title_text, text)
+		li
+			<a href = #{url}> #{title_text}</a> 
+			if text
+				| (#{text})	
+
+	div.row: div.large-12.columns: h1 AlexCTF2017. Разборы.
+	div.row: div.large-12.columns
+		ol 
+			li Реверсинг (Reverse Engineering)
+				ol
+					+info_link('1_1_Gifted.html', 'Gifted', '50')
+					+info_link('1_2_CPP.html', 'C++ is awesome', '100')
+					+info_link('1_3_Catalist.html', 'Catalyst system', '150')
+					+info_link('1_4_unvm.html', 'unVM me', '250')
+					+info_link('1_5_movement.html', 'packed movement', '350')
+			li Криптография (Cryptography)
+				ol
+					li Ultracoded (50)
+					li Many times secrets (100)
+					li What is this encryption? (150)
+					li Poor RSA (200)
+					li Bring weakness (300)
+			li Расследование (Forensics)
+				ol
+					li Hit the core (50)
+					li Mail client (100)
+					li USB probing (150)
+					li Unknown format(200)
+			li Программирование (Scripting)
+				ol
+					li Math bot (100)
+					li Cutie cat (150)
+			li Разное. Простое. (Trivia)
+				ol
+					li Hello there (10)
+					li SSL 0day (20)
+					li CA (20)
+					li Doesn't our logo look cool? (40)

@@ -4,6 +4,7 @@ block title
 	title= site_title + " Информационная безопасность"
 
 block content
+	- var tracker = "rutracker.net";	
 	mixin images(githab, youtube, habr)
 		if habr
 			<img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr">
@@ -11,14 +12,23 @@ block content
 			<img src="../images/github.ico" alt="Иконка github" width="16">
 		else if youtube
 			<img src="../images/youtube.ico" alt="Иконка youtube" width="16">			
-	mixin li_link(url, title_text, text)
-		li 
+	mixin li_link(lang, url, title_text, text)
+		li
+			<span class= 'flag_#{lang}'></span>
 			<a href = #{url}> #{title_text}</a>
 			|&nbsp;-&nbsp;#{text}
 	mixin info_link(url, title_text, text)
 		<a href = #{url}> #{title_text}</a> 
 		if text
 			| - #{text}
+
+	mixin rutracker_link(lang, topic_id, link_text, text)
+		li
+			<span class= 'flag_#{lang}'></span>
+			<a href="http://rutracker.net/forum/viewtopic.php?t=#{topic_id}"> #{link_text}</a>
+			if text
+				|&nbsp;- #{text}
+
 	div.row: div.large-12.columns: h1 Информационная безопасность
 	div.row: div.large-12.columns
 		ol
@@ -27,10 +37,13 @@ block content
 			li
 				| Сообщества					
 				ol
-					+li_link('http://www.securitylab.ru/','SecurityLab.ru','Новости. Блоги. Сообщество.')					
-					+li_link('https://defcon.ru/','DefconRU','Сообщество специалистов в области информационной безопасности.')
-					+li_link('https://threatpost.ru/','threatpost','Новости информационной безопасности. Лаборатория Касперского.')
-					+li_link('https://www.anti-malware.ru/','Anti-Malware.ru','независимый информационно-аналитический центр.')						
+					+li_link('ru','http://www.securitylab.ru/','SecurityLab.ru','Новости. Блоги. Сообщество.')					
+					+li_link('ru','ru','https://defcon.ru/','DefconRU','Сообщество специалистов в области информационной безопасности.')
+					+li_link('ru','https://threatpost.ru/','threatpost','Новости информационной безопасности. Лаборатория Касперского.')
+					+li_link('ru','https://www.opennet.ru/','Проект OpenNet','всё, что связано с открытым ПО, открытыми технологиями, Linux, BSD и Unix.')
+					+li_link('ru','https://damagelab.in/index.php','DaMaGeLaB.IN','информационная безопасность.')										
+					+li_link('ru','https://www.anti-malware.ru/','Anti-Malware.ru','независимый информационно-аналитический центр.')
+					+li_link('ru','https://rdot.org/forum/','RDot','форум по безопасности на русском')										
 					li
 						a(href='https://n0where.net/') CyberPunk 
 						|  - Open Source CyberSecurity.
@@ -49,6 +62,7 @@ block content
 						| - Online Cyber Security Training, Free, Forever					
 					li: a(href='http://mitrecyberacademy.org/learn/') MITRE Cyber Academy
 					li: a(href='http://opensecuritytraining.info/Welcome.html') open security training
+					+li_link('en','https://www.cybertraining365.com','cybertraining365','Обучение. Есть бесплатные уроки.')					
 
 					li: a(href='https://www.computersecuritystudent.com/') ComputerSecurityStudent	
 					li: a(href='http://www.securitytube.net/') SecurityTube	
@@ -77,7 +91,7 @@ block content
 					li
 						+images(0,1,0)
 						+info_link('https://www.youtube.com/channel/UCuCF2EVLLTWx_GOmvKg5FnQ','Физтех CTF','Лекции Андрея Коновалова.')
-					+li_link('http://yadi.sk/d/64iYID6f0Wy-d','Скачать видео','Подробный разбор самых популярных угроз и методов защиты безопасности веб-приложений (OWASP Top 10)')
+					+li_link('ru','ru','http://yadi.sk/d/64iYID6f0Wy-d','Скачать видео','Подробный разбор самых популярных угроз и методов защиты безопасности веб-приложений (OWASP Top 10)')
 
 					li
 						+images(0,1,0)
@@ -87,12 +101,12 @@ block content
 					li Injection
 					li XSS (Cross-site scripting)
 						ol
-							+li_link('https://xss-game.appspot.com/','Разбор XSS уязвимостей','В игровой форме(wargame) от Google.')
+							+li_link('en','https://xss-game.appspot.com/','Разбор XSS уязвимостей','В игровой форме(wargame) от Google.')
 							li
 								+images(0,1,0)
 								+info_link('https://www.youtube.com/watch?v=ufYlQTpDmA8','Разбор предыдущего испытания от Google','')
-							+li_link('http://excess-xss.com/','excess-xss','Отличный разбор темы XSS')
-							+li_link('http://www.xssed.com','xssed','Старый сайт с новостями об уязвимостях XSS')							
+							+li_link('en','http://excess-xss.com/','excess-xss','Отличный разбор темы XSS')
+							+li_link('en','http://www.xssed.com','xssed','Старый сайт с новостями об уязвимостях XSS')							
 														
 									
 					li
@@ -106,8 +120,8 @@ block content
 				ol
 					li Общие вопросы
 						ol
-							+li_link('https://en.wikipedia.org/wiki/Steganalysis','wiki Стегоанализ','Обзорная статья.')
-							+li_link('http://xain.hackerdom.ru/zine/online/issue0/Steganography.html','Статья','Стеганография. Скрытие информации в изображениях')
+							+li_link('ru','https://en.wikipedia.org/wiki/Steganalysis','wiki Стегоанализ','Обзорная статья.')
+							+li_link('ru','http://xain.hackerdom.ru/zine/online/issue0/Steganography.html','Статья','Стеганография. Скрытие информации в изображениях')
 					li Инструментарий
 						ol
 							li: a(href='http://exif.regex.info/exif.cgi') Online Jeffrey's Image Metadata Viewer
@@ -138,6 +152,7 @@ block content
 								
 					li Инструментарий
 						ol
+							li: a(href='http://x64dbg.com') x64dbg
 							li: a(href='http://www.ollydbg.de/') ollydbg
 							li: a(href='https://www.hex-rays.com/products/ida/index.shtml') IDA
 							li: a(href='http://www.sweetscape.com/products/') 010 Editor							
@@ -152,7 +167,11 @@ block content
 							li: a(href='https://www.coursera.org/learn/crypto2') Cryptography II. Stanford University. Dan Boneh, Professor. Coursera
 					li Книги
 						ol
-							li: a(href='http://nnmclub.to/forum/viewtopic.php?t=1047460') Иван Ефишов | Таинственные страницы. Занимательная криптография (2016) [FB2] :: NNM-Club							
+							li: a(href='http://nnmclub.to/forum/viewtopic.php?t=1047460') Иван Ефишов | Таинственные страницы. Занимательная криптография (2016) [FB2] :: NNM-Club
+					li Практика
+						ol
+							+li_link('en','https://www.mysterytwisterc3.org/en/','mysterytwisterc3','mysterytwisterc3 Crypto Challenges')		
+							+li_link('en','http://cryptopals.com/','cryptopals.com','The Cryptopals Crypto Challenges')					
 					li Разное
 						ol
 							li: a(href='http://practicalcryptography.com/') practicalcryptography
@@ -165,50 +184,60 @@ block content
 				ol
 					li В области информационной безопасности
 						ol
-							li
-								a(href='http://cybersecurityawards.com/') Cyber Security Awards
-								|  - Cyber Security Awards
-							li
-								a(href='http://cybersecurity-excellence-awards.com/') Cybersecurity Excellence Awards
-								|  - Cybersecurity Excellence Awards
+							+li_link('en','http://cybersecurityawards.com/','Cyber Security Awards','Cyber Security Awards')
+							+li_link('en','http://cybersecurity-excellence-awards.com/','Cybersecurity Excellence Awards','Cybersecurity Excellence Awards')
 					li За поиск и описание уязвимостей
 						ol
-							+li_link('https://hackerone.com/','HackerOne','Vulnerability Coordination and Bug Bounty Platform.')
+							+li_link('en','https://hackerone.com/','HackerOne','Vulnerability Coordination and Bug Bounty Platform.')
 							li <img src="../images/bugcrowd.ico" alt="Иконка bugcrowd"> 
 								a(href='https://bugcrowd.com/') Bugcrowd 
 								|  - Bug Bounty Solutions & Hackers On-Demand
-							+li_link('https://www.synack.com','Synack','Crowd Security Intelligence.')
-							+li_link('https://zerodium.com/','zerodium','Программы поощрения не только за веб.')							
-							+li_link('https://www.google.com/about/appsecurity/reward-program/index.html','Google','Программа поощрения от google')
-							+li_link('https://yandex.ru/bugbounty/','Yandex','Программа поощрения от Yandex')
-							+li_link('https://bugbounty.mail.ru/','mail.ru','Программа поощрения от mail.ru')
-							+li_link('http://bugsheet.com','BugSheet','Список программ поощрении от разных компаний')
-							+li_link('https://www.openbugbounty.org','openbugbounty','Публикуют уязвимости')											
+							+li_link('en','https://www.synack.com','Synack','Crowd Security Intelligence.')
+							+li_link('en','https://zerodium.com/','zerodium','Программы поощрения не только за веб.')
+							+li_link('en','http://zerodayinitiative.com/','ZeroDayInitiative','Так же ежегодная конференция Pwn2Own с большими призами.')
+														
+							+li_link('ru','https://www.google.com/about/appsecurity/reward-program/index.html','Google','Программа поощрения от google')
+							+li_link('ru','https://yandex.ru/bugbounty/','Yandex','Программа поощрения от Yandex')
+							+li_link('ru','https://bugbounty.mail.ru/','mail.ru','Программа поощрения от mail.ru')
+							+li_link('en','http://bugsheet.com','BugSheet','Список программ поощрении от разных компаний')
+							+li_link('en','https://www.openbugbounty.org','openbugbounty','Публикуют уязвимости')											
 			li Статьи
 				ol
-					li <img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr"> 
+					li
+						span.flag_ru
+						<img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr"> 
 						a(href='https://habrahabr.ru/company/odnoklassniki/blog/307438/')  Об охоте на «насекомых»: программа bug bounty в Одноклассниках
 					li <img src="../images/habrahabr-16x16.png" alt="Иконка habrahabr"> 
 						a(href='https://habrahabr.ru/post/318748/')  Методы защиты от CSRF-атаки
 					li <img src="../images/bugcrowd.ico" alt="Иконка bugcrowd"> 
 						a(href='https://forum.bugcrowd.com/t/researcher-resources-how-to-become-a-bug-bounty-hunter/1102')  Как стать профессиональным исследователем уязвимостей
-					+li_link('http://www.vestnik.vsu.ru/pdf/analiz/2007/01/2007-01-04.pdf','АЛГОРИТМЫ ВЫЯВЛЕНИЯ СТЕГАНОГРАФИЧЕСКОГО СКРЫТИЯ ИНФОРМАЦИИ В JPEG-ФАЙЛАХ','')
+					+li_link('ru','http://www.vestnik.vsu.ru/pdf/analiz/2007/01/2007-01-04.pdf','АЛГОРИТМЫ ВЫЯВЛЕНИЯ СТЕГАНОГРАФИЧЕСКОГО СКРЫТИЯ ИНФОРМАЦИИ В JPEG-ФАЙЛАХ','')
 
 					
 			li Разное
 				ol
-					li
-						a(href='http://seclists.org/') seclists
-						|  - Архив рассылок по безопасности					
-					li: a(href='https://rdot.org/forum/') RDot - форум по безопасности на русском
+					+li_link('en','http://seclists.org/','seclists','Архив рассылок по безопасности')					
 					li <img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> 
 						a(href='https://github.com/sindresorhus/awesome#security') Сборник ссылок
 						|  - по безопасности
 					li <img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> 
 						a(href='https://github.com/onlurking/awesome-infosec') Сборник ссылок
 						|  - по безопасности. Много обучающих ресурсов с описанием.						
-										
-					li: a(href='http://bis-expert.ru/') BISA - ассоциация по вопросам защиты информации
-
-
-													
+					+li_link('ru','http://bis-expert.ru/','BISA','ассоциация по вопросам защиты информации')					
+					+li_link('en','https://threatmap.checkpoint.com/ThreatPortal/livemap.html','Checkpoint - livemap','Интерактивная карта кибератак')
+					+li_link('ru','https://cybermap.kaspersky.com/','Kaspersky - cybermap','Карта киберугроз в режиме реального времени Лаборатории Касперского')
+					+li_link('en','http://map.norsecorp.com/#/','Norse','Attack Map')
+			li Анонимность
+				ol
+					li TOR
+						ol
+							+li_link('en','https://trac.torproject.org/projects/tor/wiki/doc/GoodBadISPs','Список хостеров','для серверов tor')
+							+li_link('en','http://torstatus.blutmagie.de/','blutmagie','статусы и статистика tor серверов')
+							+li_link('ru','https://geektimes.ru/post/277578/','TOR','как работает сеть тор.')
+							+li_link('en','http://motherboard.vice.com/read/how-you-can-help-make-tor-faster-for-10-a-month','статья','как поднять тор сервер')
+			li Книги
+				ol
+					+rutracker_link('en','5348075','Blockmon R.','CEH v9: Certified Ethical Hacker Version 9 Practice Tests [2016, EPUB/MOBI/AZW3]')
+			li Видео
+				ol
+					+rutracker_link('ru','5315217','CEH.v9',' Этичный хакинг и тестирование на проникновение')			

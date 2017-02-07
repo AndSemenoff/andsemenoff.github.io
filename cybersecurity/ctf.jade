@@ -14,7 +14,8 @@ block content
 	mixin li_link(url, title_text, text)
 		li 
 			<a href = #{url}> #{title_text}</a>
-			|&nbsp;-&nbsp;#{text}
+			if text
+				|&nbsp;-&nbsp;#{text}
 	mixin info_link(url, title_text, text)
 		<a href = #{url}> #{title_text}</a> 
 		if text
@@ -55,9 +56,13 @@ block content
 						a(href='https://www.vulnhub.com/') VulnHub Site 
 			li Решения. Разборы.
 				ol
-					li: a(href='https://ctftime.org/writeups') Разбры на сайте CTFTime
-					li: a(href='https://ehsandev.com/pico2014/index.html') Introduction | PicoCTF 2014 Write-ups							
-					li: a(href='http://devpsc.blogspot.ru/') Старые разборы до 2014.
+					li: strong: a(href='alexctf2017/alexctf2017.html') AlexCTF2017 - разбор cоревнования
+					+li_link('http://devpsc.blogspot.ru/', 'Старые разборы до 2014.', '')
+					+li_link('https://ctftime.org/writeups', 'CtfTime', 'разборы cоревнований')
+					+li_link('https://ehsandev.com/pico2014/index.html', 'Introduction | PicoCTF 2014 Write-ups', '')
+						
+					li: a(href='') 
+					li: a(href='https://www.defcon.org/html/links/dc-ctf.html') defcon.org разборы.
 					li: a(href='https://github.com/ctfs') Репозиторий с разборами по CTF.
 			li Онлайн курсы
 				ol

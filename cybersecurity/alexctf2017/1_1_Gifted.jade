@@ -1,0 +1,15 @@
+extends ../../layouts/html_layout.jade
+
+block title
+	title= site_title + " AlexCTF2017. Разборы."
+
+block content
+	div.row: div.large-12.columns: h1 AlexCTF2017. Gifted.
+	div.row: div.large-12.columns
+		p Задание. (50)
+		p.text-justify Дан просто файл <a href="gifted">gifted</a>
+		p Решение.
+		p.text-justify 
+		| В Linux с помощью команды <kbd>file gifted</kbd> получаем информацию о файле. Потом,
+		| с помощью команды <kbd>strings gifted</kbd> выводим все читаемые строки из файла и видим 
+		| среди них ключ.

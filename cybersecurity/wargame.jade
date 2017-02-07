@@ -2,6 +2,7 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Сайты испытаний. Практика."
+	link( rel="stylesheet" href="../css/test.css" type="text/css" media="all" )
 
 block content
 	mixin images(githab, youtube, habr)
@@ -19,7 +20,7 @@ block content
 		<a href = #{url}> #{title_text}</a> 
 		if text
 			| - #{text}
-	div.row: div.large-12.columns: h3 Сайты испытаний. Практика. (challenge, wargame)
+	div.row: div.large-12.columns: h2 Сайты испытаний. Практика. (challenge, wargame)
 	div.row: div.large-12.columns
 		ol
 			+li_link('http://www.wechall.net/', 'WeChall', 'Агрегатор сайтов с заданиями типа CTF. Разборы. Глобальный и региональный рейтинги.')
@@ -30,6 +31,20 @@ block content
 				a('http://overthewire.org/wargames/') OverTheWire: Wargames 
 				|| разбор <a href="https://blogcompsci.wordpress.com/2014/10/13/bandit-level-12-%E2%86%92-level-13/">Bandit</a>
 				|| разбор <a href="https://infamoussyn.com/2013/11/08/overthewire-bandit-level-0-25-writeup-completed/">Bandit</a>
+
+			li Специалные уязвимые сайты для исследования
+					+li_link('http://testphp.vulnweb.com/index.php', 'testphp.vulnweb.com', 'Специально созданный уязвимый сайт.')
+					+li_link('http://google-gruyere.appspot.com/', 'google-gruyere', 'Сайт от гугл с подсказками и объяснениями.')					
+							
+			li bWAPP
+				ol
+					+li_link('http://www.itsecgames.com/', 'bWAPP', 'Специально созданный уязвимый сервер bWAPP.')
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/watch?v=XDCZ8FC856s','видео','Как установить bWAPP на Kali Linux')
+					li
+						+images(0,1,0)
+						+info_link('https://www.youtube.com/playlist?list=PLujk17ZsSdsp8Zotw9rH2H7NbVLVPB255','видео','bWAPP Lessons')
 			li geohot решает CTF
 				ol
 					li
@@ -48,7 +63,8 @@ block content
 						+images(0,1,0)
 						+info_link('https://www.youtube.com/watch?v=eteFhzEkcxY','geohot','')
 						
-	div.row: div.large-12.columns: h3 Сайты с разбором испытаний.
-	div.row: div.large-12.columns
-		ol
-			+li_link('http://blog.dornea.nu/','Блог Victor Dorneanu','Много разборов.')			
+	div.row 
+		div.large-1.columns: h3: strong Сайты с разборами
+		div.large-11.columns
+			ol
+				+li_link('http://blog.dornea.nu/','Блог Victor Dorneanu','Много разборов.')			
