@@ -1,0 +1,23 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Финансовая статистика по РФ"
+
+block content
+	div.row: div.large-12.columns: h1 Финансовая статистика по РФ
+	div.row: div.large-12.columns
+		div.
+			Открытые данные по экономически значимым показателям РФ
+		ol
+			li
+				a(href='http://minfin.ru/ru/statistics/fonds/') Минфин. Суверенные фонды. 
+				| Данные о движении средств и результатах управления средствами суверенных фондов.
+			li 
+				a(href='http://minfin.ru/ru/statistics/docs/auction/') Минфин. Аукционы. 
+				| Графики аукционов по размещению облигаций федеральных займов.
+			li 
+				a(href='https://fedstat.ru/') ЕМИСС. 
+				| Государственная статистика.
+			li 
+				a(href='http://budgetapps.ru') BudgetApps. 
+				| Ежегодный конкурс по открытым государственным финансовым данным.

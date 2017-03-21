@@ -1,0 +1,17 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Пример. Получение данных с сайта. EIA."
+
+block content
+	div.row: div.large-12.columns: h2 Пример. Получение данных с сайта. EIA.
+	div.row: div.large-12.columns
+		div.text-justify Напишем простой пример получение данных с сайта EIA - независимого статистического агентства США. Подробнее можно почитать на 
+				a(href="https://ru.wikipedia.org/wiki/Energy_Information_Administration") WiKi. 
+				| Для работы с сайтом EIA через API нужно зарегистрироваться и получить ключ.
+		div.large-2.columns.right
+			a(href="../python_source/EIAgov_read_API.py") EIAgov_read_API.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/EIAgov_read_API.py
+	

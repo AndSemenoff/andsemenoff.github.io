@@ -80,6 +80,50 @@
 data = bt.get('RUB=X', start='2016-01-01', end='2016-08-01')
 print(data.head())</code></pre>
         </div>
+        <div class="clearfix"></div>
+        <div>
+          Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
+          Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
+        </div>
+        <pre class="python"><code>s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.SelectAll(),    # выбираем все бумаги;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.WeighEqually(), # в равной пропорции;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции</code></pre>
+        <div>Теперь можем протестировать нашу стратегию. Напишем код.</div>
+        <pre class="python"><code># тестируем нашу стратегию
+test = bt.Backtest(s, data)
+res = bt.run(test)</code></pre>
+        <div>Можем вывести график результата и статистические параметры работы стратегии.</div>
+        <pre class="python"><code># выводим график средств
+res.plot()
+# выводим статистические коэффициенты
+res.display()</code></pre>
+        <div>В итоге все вместе у нас будет выглядеть так.</div>
+        <div class="large-2 columns right"><a href="../python_source/bt_example_2.p">bt_example_2.py			</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code>import bt
+data = bt.get('OGZPY, SBRCY', start='2016-01-01', end='2016-08-01')
+print(data.tail())
+s = bt.Strategy('s1', [bt.algos.RunMonthly(),
+                       bt.algos.SelectAll(),
+                       bt.algos.WeighEqually(),
+                       bt.algos.Rebalance()])
+# тестируем нашу стратегию
+test = bt.Backtest(s, data)
+#print(test)
+res = bt.run(test)
+# выводим график средств
+print(res)
+res.plot()
+# выводим статистические коэффициенты
+res.display()
+# выводим гистограмму прибылей и убытков
+res.plot_histogram()
+# выводим график весов акций в портфеле
+res.plot_security_weights()</code></pre>
+        </div>
+        <div class="clearfix"></div>
+        <div>Теперь попробуем модифицировать стратегию.</div>
       </div>
     </div>
     <footer>

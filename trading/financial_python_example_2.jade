@@ -1,0 +1,24 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Пример 2. Различные стандартные отклонения для курса рубля."
+
+block content
+	div.row: div.large-12.columns: h2 Пример 2. Различные стандартные отклонения для курса рубля.
+	div.row: div.large-12.columns
+		div.text-justify Напишем простой пример построения графиков стандартного отклонения курса рубля для
+		| временных промежутков в 10, 30 , 50 дней.
+		div.large-2.columns.right
+			a(href="../python_source/pandas_standard_deviation.py") pandas_standard_deviation.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/pandas_standard_deviation.py
+		div.clearfix
+		div.large-2.columns
+			p &nbsp;
+		div.large-6.columns
+			div.card
+				div.image
+					img(src="../images/pandas_standart_deviation_figure_1.png")
+				div.content
+					<p>Рис. 1</p>			

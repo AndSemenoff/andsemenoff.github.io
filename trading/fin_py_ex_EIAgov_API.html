@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Пример. Получение данных с сайта. EIA.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Пример. Получение данных с сайта. EIA.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="text-justify">Напишем простой пример получение данных с сайта EIA - независимого статистического агентства США. Подробнее можно почитать на <a href="https://ru.wikipedia.org/wiki/Energy_Information_Administration">WiKi. </a>Для работы с сайтом EIA через API нужно зарегистрироваться и получить ключ.</div>
+        <div class="large-2 columns right"><a href="../python_source/EIAgov_read_API.py">EIAgov_read_API.py</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code># -*- coding: utf-8 -*-
+# python 3
+# https://quantcorner.wordpress.com/2014/11/18/downloading-eias-data-with-python/
+import json
+import numpy as np
+import pandas as pd
+from urllib.error import URLError, HTTPError
+from urllib.request import urlopen
+
+class EIAgov(object):
+    def __init__(self, token, series):
+        '''
+        Класс для получения информации с сайта EIAgov.
+        Входные аргументы:
+        token - EIA токен
+        series - идентификатор набора данных
+
+        Parameters:
+        - token: string
+        - series: string or list of strings
+        '''
+        self.token = token
+        self.series = series
+
+    '''
+    def __repr__(self):
+        return str(self.series)
+    '''
+
+    def Raw(self, ser):
+        # Собираем URL запроса
+        url = 'http://api.eia.gov/series/?api_key=' + self.token + '&series_id=' + ser.upper()
+
+        try:
+            # URL request, URL opener, read content
+            response = urlopen(url);
+            raw_byte = response.read()
+            raw_string = str(raw_byte, 'utf-8-sig')
+            jso = json.loads(raw_string)
+            return jso
+
+        except HTTPError as e:
+            print('Ошибка HTTP.')
+            print('Код ошибки: ', e.code)
+
+        except URLError as e:
+            print('Ошибка типа URL.')
+            print('Основание: ', e.reason)
+
+    def GetData(self):
+        # Deal with the date series                       
+        date_ = self.Raw(self.series[0])        
+        date_series = date_['series'][0]['data']
+        endi = len(date_series) # or len(date_['series'][0]['data'])
+        date = []
+        for i in range (endi):
+            date.append(date_series[i][0])
+
+        # Создаем dataframe
+        df = pd.DataFrame(data=date)
+        df.columns = ['Date']
+
+        # Обрабатываем данные
+        lenj = len(self.series)
+        for j in range (lenj):
+            data_ = self.Raw(self.series[j])
+            data_series = data_['series'][0]['data']
+            data = []
+            endk = len(date_series)         
+            for k in range (endk):
+                data.append(data_series[k][1])
+            df[self.series[j]] = data
+        
+        return df
+
+if __name__ == '__main__':
+    tok = 'ВАШ_TOKEN_API'
+        
+    # Природный газ - дневные данные о ценах
+    # http://www.eia.gov/beta/api/qb.cfm?category=462457&sdid=NG.RNGC1.D
+    ng = ['NG.RNGC1.D']  # w/ several series at a time ['ELEC.REV.AL-ALL.M', 'ELEC.REV.AK-ALL.M', 'ELEC.REV.CA-ALL.M']
+    data = EIAgov(tok, ng)
+    print(data.GetData())</code></pre>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

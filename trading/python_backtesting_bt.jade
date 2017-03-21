@@ -32,3 +32,37 @@ block content
 		div.large-12.columns
 			pre.python: code
 				include ../python_source/bt_example_1.py
+		div.clearfix
+		div.
+			Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
+			Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
+		pre.python: code
+			|s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.SelectAll(),    # выбираем все бумаги;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.WeighEqually(), # в равной пропорции;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции
+
+		div
+			Теперь можем протестировать нашу стратегию. Напишем код.
+		pre.python: code
+			|# тестируем нашу стратегию
+			|test = bt.Backtest(s, data)
+			|res = bt.run(test)
+		div
+			Можем вывести график результата и статистические параметры работы стратегии.
+		pre.python: code
+			|# выводим график средств
+			|res.plot()
+			|# выводим статистические коэффициенты
+			|res.display()
+		div
+			В итоге все вместе у нас будет выглядеть так.
+		div.large-2.columns.right
+			a(href="../python_source/bt_example_2.p") bt_example_2.py			
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/bt_example_2.py
+		div.clearfix
+
+		div
+			Теперь попробуем модифицировать стратегию.

@@ -1,0 +1,37 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Анализ тарифов брокеров"
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">	
+block content
+	div.row: div.large-12.columns: h1 Анализ тарифов брокеров
+	div.row: div.large-12.columns
+		div.text-justify
+			Тарифы различаются по территории охвата и характеру инструментов и деляться на
+			ol
+				li Российский (локальный)
+					ol
+						li Фондовый
+						li Срочный (Производных финансовых инструментов)
+						li Денежный
+						li Валютный
+				li Международный (мировой)
+					ol
+						li Фондовый
+						li Срочный
+						li Валютный
+
+			На фондовом рынке коммиссии состоят из брокерских, биржевых и депозитарных. Условно они состоят
+			ol
+				li Минимальная фиксированная часть.
+				li Фиксированная часть - информационное обеспечение, консалтинг, ведение счета депо и т.п.
+				li % от оборота сделки в денежном выражении
+				li Фиксированная на одну акцию
+		
+		h2 Биржевые услуги
+		h2 Брокерские услуги
+
+		h2 Депозитарные услуги
+		ol
+			li: a(href="http://www.itinvest.ru/pricing-n-docs/tariffs/depo/") ITinvest
+			li: a(href="") Открытие

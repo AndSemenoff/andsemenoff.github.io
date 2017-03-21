@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Пример 2. Различные стандартные отклонения для курса рубля.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider">				</li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Пример 2. Различные стандартные отклонения для курса рубля.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="text-justify">Напишем простой пример построения графиков стандартного отклонения курса рубля для</div>временных промежутков в 10, 30 , 50 дней.
+        <div class="large-2 columns right"><a href="../python_source/pandas_standard_deviation.py">pandas_standard_deviation.py</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code># -*- coding: utf-8 -*-
+import pandas as pd
+import matplotlib as mpl
+from matplotlib import pyplot as plt
+import pandas_datareader.data as web
+import datetime
+
+# Утилита для записи графика в файл
+def save(name='', fmt='png'):
+    pwd = os.getcwd()
+    os.chdir('./pictures/%s' % fmt)
+    plt.savefig('%s.%s' % (name, fmt), fmt='png')
+    os.chdir(pwd)
+
+# Параметры для надписей на кирилице
+mpl.rcParams['font.family'] = 'fantasy'
+mpl.rcParams['font.fantasy'] = 'Times New Roman', 'Ubuntu','Arial','Tahoma','Calibri'
+
+start = datetime.datetime(2015, 1, 1)
+end = datetime.datetime(2016, 7, 21)
+df = web.DataReader("RUB=X", 'yahoo', start, end)
+df['STD50'] = df['Close'].rolling(center=False, window = 50, min_periods=1).std()
+df['STD30'] = df['Close'].rolling(center=False, window = 30, min_periods=1).std()
+df['STD10'] = df['Close'].rolling(center=False, window = 10, min_periods=1).std()
+
+fig = plt.figure()
+ax1 = fig.add_subplot(2, 1, 1)
+
+ax1.set_ylabel("Значения", size=14, color='black')
+ax1.set_title("Курс рубля", size=20, color='black')
+ax1.plot(df['Close'])
+ax1.grid(True)
+
+
+ax2 = fig.add_subplot(2, 1, 2, sharex = ax1)
+ax2.set_title("Стандартные отклонения", size=20, color='black')
+ax2.set_xlabel("Дата", size=14, color='black')
+ax2.set_ylabel("Значения", size=14, color='black')
+ax2.grid(True)
+ax2.plot(df['STD50'], label = "отклонение за 50 дн.")
+ax2.plot(df.STD30, label = "отклонение за 30 дн.")
+ax2.plot(df['STD10'], label = "отклонение за 10 дн.")
+ax2.legend(frameon=True, loc = 2)
+plt.tight_layout() 
+plt.show()
+
+#save('pic_1', fmt='png')</code></pre>
+        </div>
+        <div class="clearfix"></div>
+        <div class="large-2 columns">
+          <p>&nbsp;</p>
+        </div>
+        <div class="large-6 columns">
+          <div class="card">
+            <div class="image"><img src="../images/pandas_standart_deviation_figure_1.png"></div>
+            <div class="content"><p>Рис. 1</p>			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

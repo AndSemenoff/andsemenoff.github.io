@@ -1,5 +1,7 @@
 extends ../layouts/html_layout.jade
-
+/- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
+/- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
+/- http://www.financetoys.com/indexrus.htm Примеры рассчетов.
 block title
 	title= site_title + " Python для финансовых вычислений."
 
@@ -15,10 +17,20 @@ block content
 
 		div: a(href="http://skillachie.github.io/finsymbols/") Библиотека для вывода символов акций входящих в S&P500 и другие
 
-		ol 
+		ol
+			li: strong: a(href="../pandas/pandas_1.html") Работа с Pandas
 			li
-				a(href="financial_python_example_1.html") Пример 1. 
+				a(href="financial_python_example_1.html") Пример. 
 				| Линейный график курса рубля.
+			li
+				a(href="financial_python_example_2.html") Пример. 
+				| Различные стандартные отклонения для курса рубля.
+			li
+				a(href="fin_py_ex_EIAgov_API.html") Пример. 
+				| Получение данных с сайта EIA - независимого статистического агентства США.
+				a(href="https://ru.wikipedia.org/wiki/Energy_Information_Administration") WiKi. 							
+			li
+				a(href="python_backtesting_bt.html") Работа с библиотекой BT.
 
 		div 
 			| Супер интересный сайт. И есть супер статья 
@@ -56,7 +68,14 @@ block content
 
 		h3 Статьи [Финансовые вычисления + python]				
 			ol
-				li: a(href="https://mktstk.wordpress.com/2015/10/07/how-to-look-up-a-stocks-short-interest-with-python/") how to look up a stocks short interest with python								
+				li: a(href="https://mktstk.wordpress.com/2015/10/07/how-to-look-up-a-stocks-short-interest-with-python/") how to look up a stocks short interest with python.
+				li 
+					a(href="http://robusttechhouse.com/bitcoin-trading-strategies-backtest-with-pyalgotrade/") Алгоритм 
+					| торговли биткоинами с использованием библиотеки PyAlgoTrade.
+
+				li 
+					a(href="http://robusttechhouse.com/python-backtesting-libraries-for-quant-trading-strategies/") Питон библиотеки 
+					| для исторического тестирования алгоритмов торговли. 								
 
 		div: strong: a(href="risk.html") Вычисление риск параметров
 
