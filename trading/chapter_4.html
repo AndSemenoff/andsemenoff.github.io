@@ -14,6 +14,13 @@
     <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <nav class="top-bar data-topbar"> 
@@ -37,6 +44,7 @@
         </ul>
       </section>
     </nav>
+    <div>C</div>
     <!-- div.row: div.large-12.columns: h2 Глава 1-->
     <div class="row">
       <div class="large-12 columns">
@@ -113,66 +121,12 @@
         <div>[69]</div>
         <div>[70]</div>
         <div>[71]</div>
-        <div>[72]</div>
-        <div>[73]</div>
-        <div>[74]</div>
-        <div>[75]</div>
-        <div>[76]</div>
-        <div>[77]</div>
-        <div>[78]</div>
-        <div>[79]</div>
-        <div>[80]</div>
-        <div>[81]</div>
-        <div>[82]</div>
-        <div>[83]</div>
-        <div>[84]</div>
-        <div>[85]</div>
-        <div>[86]</div>
-        <div>[87]</div>
-        <div>[88]</div>
-        <div>[89]</div>
-        <div>[90]</div>
-        <div>[91]</div>
-        <div>[92]</div>
-        <div>[93]</div>
-        <div>[94]</div>
-        <div>[95]</div>
-        <div>[96]</div>
-        <div>[97]</div>
-        <div>[98]</div>
-        <div>[99]</div>
-        <div>[100]</div>
-        <div>[101]</div>
-        <div>[102]</div>
-        <div>[103]</div>
-        <div>[104]</div>
-        <div>[105]</div>
-        <div>[106]</div>
-        <div>[107]</div>
-        <div>[108]</div>
-        <div>[109]</div>
-        <div>[110]</div>
-        <div>[111]</div>
-        <div>[112]</div>
-        <div>[113]</div>
-        <div>[114]</div>
-        <div>[115]</div>
-        <div>[116]</div>
-        <div>[117]</div>
-        <div>[118]</div>
-        <div>[119]</div>
-        <div>[120]</div>
-        <div>[121]</div>
-        <div>[122]</div>
-        <div>[123]</div>
-        <div>[124]</div>
-        <div>[125]</div>
-        <div>[126]</div>
-        <div>[127]</div>
-        <div>[128]</div>
-        <div>[129]</div>
-        <div>[130]</div>
-        <div>[131]</div>
+        <div>[72]Рассчитайте рыночную стоимость облигации номиналом 18000р, ставкой выплачиваемого ежегодно купонного дохода 12% и сроком погашения 3 года, если ставка процента по вкладу в банке составляет 14% годовых.</div><br>Решение:
+        <br>Покупая облигацию, вы покупаете право получать купоны каждый год до погашения, и номинальную стоимость вместе с последним купоном в момент погашения. Значит, для определения рыночной цены облигации необходимо сложить эти денежные потоки, предварительно дисконтировав их на сегодняшний день. Ставкой дисконтирования при этом принимают равной ставке по кладу в банке. Эта же ставка называется так же «альтернативной годовой доходностью», и «доходностью к погашению облигации».
+        <br>Определим стоимость облигации через современную стоимость будущих доходов (выплат) по облигации, исходя из ставки банковского процента
+        \[ \text{купон} = 18000 \times 0.12 = 2160 \]		
+        \[ P = \frac{2160}{(1+0.14)} + \frac{2160}{(1+0.14)^2} + \frac{18000+2160}{(1+0.14)^3} \]
+        \[ P = 1894.73 + 1662.05 + 13607.42 \approx 17164.2\]
       </div>
     </div>
     <footer>
@@ -181,6 +135,8 @@
           <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
         </div>
       </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     </footer>
     <!-- script(src="../js/jquary.js")-->
     <!-- script(src="../js/foundation.min.js")-->
