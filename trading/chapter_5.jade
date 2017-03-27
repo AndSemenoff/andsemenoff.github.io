@@ -8,6 +8,31 @@ block content
 	div.row: div.large-12.columns
 		div.row
 		h3 Глава 5. Срочный рынок
+		div Формулы используемые в этом разделе:
+		div Нижняя граница премии европейского опциона колл на акции, по которым в последний день действия контракта выплачиваются дивиденды, определяется по формуле:
+		\[ \begin{equation} \label{call_price_div_at_end} I_{call} = Spot - \frac{Strike+div}{1 + r\cdot(\frac{T}{\text{база}})} \end{equation} \]
+		div Нижняя граница премии европейского опциона пут на акции, по которым в последний день действия контракта выплачиваются дивиденды, определяется по формуле:
+		\[ \begin{equation} \label{put_price_div_at_end} I_{put} = \frac{Strike+div}{1 + r\cdot(\frac{T}{\text{база}})} - Spot \end{equation} \]		
+		div Нижняя граница премии европейского опциона колл на акции, по которым в течение действия контракта выплачиваются дивиденды, определяется по формуле:
+		\[ \begin{equation} \label{call_price_div} I_{call} = Spot - \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} - D \end{equation} \]
+		<br>D - привиденная стоимость дивидендов на момент заключения контракта. См. ( \ref{div} )
+		div Нижняя граница премии европейского опциона пут на акции, по которым в течение действия контракта выплачиваются дивиденды, определяется по формуле:
+		\[ \begin{equation} \label{put_price_div} I_{put} = \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} + D - Spot \end{equation} \]
+		<br>D - привиденная стоимость дивидендов на момент заключения контракта. См. ( \ref{div} )
+
+		div Между премиями европейских опционов колл (\( P_{call} \)) и пут (\(P_{put}\)) на одни и те же акции с одинаковой ценой исполнения (Strike) и сроком истечения контрактов (T) существует паритет, который имеет следующий вид:
+		\[ \begin{equation} \label{paritet} P_{call} + \frac {Strike} {1+r \cdot (\frac{T}{\text{база}})} = P_{put} + Spot \end{equation} \]	
+		\[ \begin{equation} \label{put_price} I_{put} = \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} - Spot \end{equation} \]
+		\[ \begin{equation}  \text{верхняя граница премии } P_{call} = Spot - D;  \end{equation} \]
+		\[ \begin{equation} \label{div} D = \frac{div}{1+r\cdot(\frac{T}{\text{база}})} \end{equation} \]	
+		\[ \text{где&nbsp} I_{put} - \text{минимальная премия опциона put;} \]
+		\[ I_{call} - \text{минимальная премия опциона call;} \]
+		\[ r - \text{ставка без риска;} \]		
+		\[ Strike - \text{цена исполнения;} \]
+		\[ Spot - \text{спот цена.}\]
+		\[ Т - \text{период действия контракта;}\]	
+		\[ div - \text{выплачиваемый дивиденд;}\]
+		\[ \begin{equation} \label{call_price} I_{call} = Spot - \frac{Strike} {1 + r \cdot (\frac{T}{\text{база}}) } \end{equation} \]
 		div [1]
 		div [2]
 		div [3]
@@ -91,10 +116,15 @@ block content
 		div [80]
 		div [81]
 		div [82]
+		\[ \text{По формуле } ( \ref{put_price} ) I_p = \frac{100}{(1 + 0,10 \cdot \frac{30}{365})} - 95 = 4.1847 \approx 4.18 \]
+
 		div [83]
+		\[ \text{верхняя граница премии } P_{call} = Spot - D; D = \frac{div}{1+r\cdot(\frac{T}{\text{база}})} \]
 		div [84]
 		div [85]
-		div [86]
+		div [86] Чистая цена спот акции (т.е. за вычетом дисконтированного выплачиваемого по ней в течение периода дивиденда)
+		\[ S = 105 - \frac{3}{1+0.1 \cdot \frac {60}{365}} = 105 - 2.95 = 102.05 \]
+		\[ \text{нижняя граница премии опциона колл } P_{call} = 102.05 - \frac{100}{1+0.1 \cdot \frac{90}{365}} = 4.46 \]
 		div [87]
 		div [88]
 		div [89]
@@ -102,41 +132,11 @@ block content
 		div [91]
 		div [92]
 		div [93]
-		div [94]
+		div [94] Из условия паритета опционов пут и колл
+		<br> ip = iс + X/(1+r) - S = 5 + 100 / (1 + 0,10 * 5/12) - 100 = 1 руб. 
 		div [95]
 		div [96]
 		div [97]
 		div [98]
 		div [99]
 		div [100]
-		div [101]
-		div [102]
-		div [103]
-		div [104]
-		div [105]
-		div [106]
-		div [107]
-		div [108]
-		div [109]
-		div [110]
-		div [111]
-		div [112]
-		div [113]
-		div [114]
-		div [115]
-		div [116]
-		div [117]
-		div [118]
-		div [119]
-		div [120]
-		div [121]
-		div [122]
-		div [123]
-		div [124]
-		div [125]
-		div [126]
-		div [127]
-		div [128]
-		div [129]
-		div [130]
-		div [131]

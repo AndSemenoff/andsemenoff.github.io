@@ -32,6 +32,11 @@ footer{
     background-repeat: no-repeat;
 }
 
+mark {
+  background-color: cyan;
+  color: black;
+}
+
 ol>li{
 display:block;
 }
@@ -123,4 +128,7 @@ input[type="checkbox"]{
 
 .colorgreen{
   color: green;
+}
+dd {
+    margin-left: 1em; /* Отступ слева */
 }
