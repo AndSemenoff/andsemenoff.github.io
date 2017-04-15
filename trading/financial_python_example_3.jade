@@ -1,0 +1,27 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Пример 3. Определение стоимости облигаций с фиксированным купоном ."
+
+block content
+	div.row: div.large-12.columns: h2 Пример 3. Определение стоимости облигаций с фиксированным купоном.
+	div.row: div.large-12.columns
+		div.text-justify Нетрудно заметить, что денежный поток, генерируемый подобными ценными бумагами представляет собой аннуитет, к которому в конце срока операции прибавляется дисконтированная номинальная стоимость облигации.
+
+		div Определим современную (текущую) стоимость такого потока:
+		\[ \begin{equation} \label{bond_price} PV = \sum_{t=1}^{mn} \frac {\frac {(N \times k)} {m}} {(1 + \frac{r}{m})^{t}} + \frac{F} {(1+r)^{nm}} \end{equation} \]
+		
+		div где F – сумма погашения (как правило – номинал, т.е. F = N); k – годовая ставка купона; r – рыночная ставка (норма дисконта); n – срок облигации; N – номинал; m – число купонных выплат в году. 
+		div Напишем программу, которая вычисляет стоимость по формуле ( \ref{bond_price} ). Будем использовать библиотеку SymPy для символьных вычислений.
+
+		div.large-2.columns.right
+			a(href="../python_source/sympy_1.py") sympy_1.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/sympy_1.py
+		div.clearfix
+	div.row: div.large-12.columns
+		div Ссылки по теме:
+		ul
+			li 
+				a(href="http://www.cfin.ru/finanalysis/inexcel/2-2-2.shtml") Анализ операций с ценными бумагами с Microsoft Excel	
