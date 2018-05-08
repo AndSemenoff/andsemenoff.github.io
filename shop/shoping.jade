@@ -1,0 +1,39 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Информация по покупкам"
+
+
+block content
+	mixin ali_link_2(lang, url, title_text, text)
+		// - lang - [ru, en]
+		// - url - ссылка
+		// - title_text - текст ссылки
+		// - text - текст описания
+		li
+			<span class= 'flag_#{lang}'></span>
+			<a href = 'http://shopeasy.by/redirect/cpa/o/ow8nd24wncnp0q3pk784vltu4rg1fyj9/?to=https://ru.aliexpress.com/#{url}' target="_blank"> #{title_text}</a>
+			|&nbsp;-&nbsp;#{text}
+			
+	div.row: div.large-12.columns: h1: strong Информация по покупкам
+	div.row: div.large-12.columns
+	div(class="row medium-8 large-7 columns center")
+		p Список некоторых товаров, которые были куплены и могут быть рекомендованы.
+		h3 Aliexpress
+		ol
+			+ali_link_2("ru", "item/2016-6-Newest-Original-Xiaomi-Mi-Band-2-OLED-Screen-Touch-Operation-New-Bracelet-Better-Algorithm/32675506919.html","Фитнесс браслет Mi Band 2", "Dtop Store")
+			+ali_link_2("ru", "item/Mi-A1-4-64-Snapdragon-625-Octa/32828561621.html","Смартфон Mi A1 4ГБ - 64 ГБ", "Xiaomi Online Store")
+			+ali_link_2("ru", "store/product/12pcs-lot-happy-birthday-balloons-letters-printed-balloon-abusive-rude-balloon-birthday-party-decorations/2985007_32816876424.html", "Шарики и флажки ко дню рождения", "paiduixiong happyparty Store")
+			+ali_link_2("ru", "store/product/Ugreen-c-5V2A-USB-c/301635_32834078736.html","Провод Type-C. Нейлон 2 м. Тип c 5V2A USB", "Ugreen Official Store")
+			+ali_link_2("ru", "item/Vention-USB-3-0-Type-C-USB-C-cable-USB-Data-Sync-Charge-Cable-0-5m/32479018376.html","Провод Type-C. USB3.0", "VEnTIOn Official Store")
+			+ali_link_2("ru", "item/Power-Cord-with-US-EURO-PLUG-For-Adapter-Power-Charger/1902253032.html","EURO PLUG For Adapter Power Charger", "Firstmax Accessories Inc.")
+			+ali_link_2("ru", "item/19V-2-37A-laptop-charger-A13-045N2A-ADP-45HE-BB-AC-power-adapter-for-Acer-Aspire/32813972735.html","adapter for Acer Aspire 19V 2.37A", "Firstmax Accessories Inc.")
+			+ali_link_2("ru", "item/YI-1080p-Home-Camera-Wireless-IP-Security-Surveillance-System-US-EU-Edition/32815525549.html","камера", "Yi 1080 P дома Камера Беспроводной IP")
+			p Камера работает только через свое фирменное приложение. Подключить к сторонним приложениям не удалось. Для использования облачного сервиса, нужно иметь платную подписку.
+			+ali_link_2("ru", "item/Earphone-QKZ-DM9-Zinc-Alloy-HiFi-Earphone-In-Ear-Earphones-fone-de-ouvido-BASS-Metal-DJ/32791036237.html","наушники", "+ микрофон")
+			+ali_link_2("ru", "item/Mini-Squishy-toy-Cute-cat-antistress-ball-Squeeze-Fun-Joke-Rising-Toys-Abreact-Soft-Sticky-squishi/32822204352.html","котики", "антистресс")
+			+ali_link_2("ru", "item/Frvsimem-For-Samsung-Galaxy-S7-edge-S8-S9-Plus-Note-8-Luxury-Shockproof-Cases-Case-Metal/32832462456.html", "чехол", "Frvsimem")
+			+ali_link_2("ru", "item/-/32843938290.html", "чехол тонкий", "USLION")
+			+ali_link_2("ru", "store/product/Newest-QKZ-KD8-Double-Unit-Drive-In-Ear-Earphone-Bass-Subwoofer-Earphone-HIFI-DJ-Monito-Running/1268484_32828551856.html", "наушники", "QKZ KD8 можно без микрофона")
+			<a href="http://alipromo.com/redirect/cpa/o/ow8nd24wncnp0q3pk784vltu4rg1fyj9/?material=coupon_65&to=http%3A%2F%2Fru.aliexpress.com%2Fpremium%2Fcategory%2F202000540.html%3FshipCountry%3DRU%26shipFromCountry%3D%26shipCompanies%3D%26SearchText%3D%26minPrice%3D%26maxPrice%3D%26minQuantity%3D%26maxQuantity%3D%26isFreeShip%3Dn%26isFavorite%3Dn%26isRtl%3Dn%26isOnSale%3Dyes%26isBigSale%3Dn%26similar_style%3Dn%26similar_style_id%3D%26isAtmOnline%3Dn%26CatId%3D202000540%26SortType%3Dtotal_tranpro_desc%26isPremium%3Dy%26needQuery%3Dy%26isrefine%3Dy">наушники скидки</a>
+				
