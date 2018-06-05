@@ -1,7 +1,7 @@
 extends ../layouts/html_layout.jade
-/- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
-/- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
-/- http://www.financetoys.com/indexrus.htm Примеры рассчетов.
+//- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
+//- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
+
 block title
 	title= site_title + " Python для финансовых вычислений."
 
@@ -13,26 +13,26 @@ block content
 
 		div Модуль для финансовых вычислений на питоне <a href="http://matplotlib.org/api/finance_api.html#module-matplotlib.finance">matplotlib.finance</a>
 
-		div Загрузку исторических данных по российскому рынку легко можно сделать на сайте <a href="http://mfd.ru/export">МФД</a> или на сайте <a href="http://www.finam.ru/profile/moex-akcii/gazprom/?market=1">Финам</a>
+		div Загрузку исторических данных по российскому рынку легко можно сделать на сайте <a href="http://mfd.ru/export">МФД</a> или на сайте <a href="https://www.finam.ru/profile/moex-akcii/sberbank/export/">Финам</a>
 
 		div: a(href="http://skillachie.github.io/finsymbols/") Библиотека для вывода символов акций входящих в S&P500 и другие
 
 		ol
 			li: strong: a(href="../pandas/pandas_1.html") Работа с Pandas
-			li
+			li: strong
 				a(href="financial_python_example_1.html") Пример. 
 				| Линейный график курса рубля.
-			li
+			li: strong
 				a(href="financial_python_example_2.html") Пример. 
 				| Различные стандартные отклонения для курса рубля.
-			li
+			li: strong
 				a(href="financial_python_example_3.html") Пример. 
 				| Определение стоимости облигаций с фиксированным купоном.				
-			li
+			li: strong
 				a(href="fin_py_ex_EIAgov_API.html") Пример. 
 				| Получение данных с сайта EIA - независимого статистического агентства США.
 				a(href="https://ru.wikipedia.org/wiki/Energy_Information_Administration") WiKi. 							
-			li
+			li: strong
 				a(href="python_backtesting_bt.html") Работа с библиотекой BT.
 
 		div 
@@ -79,6 +79,9 @@ block content
 				li 
 					a(href="http://robusttechhouse.com/python-backtesting-libraries-for-quant-trading-strategies/") Питон библиотеки 
 					| для исторического тестирования алгоритмов торговли. 								
+				li 
+					a(href="http://www.financetoys.com/indexrus.htm") Теория и вычисления на Exel 
+					| русская и английская версия сайта.
 
 		div: strong: a(href="risk.html") Вычисление риск параметров
 
@@ -124,5 +127,5 @@ block content
 				li: a(href="http://www.youtube.com/user/roshanRush/playlists") Научные вычисления			
 		h3 Книги
 			ol
-				li: a(href="http://rutracker.org/forum/viewtopic.php?t=4969145") Yves Hilpisch - Python for Finance: Analyze Big Financial Data [2014, PDF, ENG]	
+				li: a(href="http://rutracker.org/forum/viewtopic.php?t=4969145") [rutracker] Yves Hilpisch - Python for Finance: Analyze Big Financial Data [2014, PDF, ENG]	
 				li: a(href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119037999.html") Derivatives Analytics with Python			
