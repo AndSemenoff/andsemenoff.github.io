@@ -21,7 +21,8 @@
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
       
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
   </head>
   <body>
     <nav class="top-bar data-topbar"> 
@@ -56,7 +57,7 @@
         <p class="text-justify"></p>Волатильность цены актива \( \sigma \) представляет собой меру неопределенности его доходности.
         Волатильность можно определить как стандартное отклонение доходности актива за один год,
         когда доходность расчитывается непрерывно.
-        \[ \sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum^N_{i=1} (r_i - \mu)^2},&nbsp; где&nbsp; \mu = \frac{1}{N} \sum^N_{i=1} r_i \]
+        \[	\sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum^N_{i=1} (r_i - \mu)^2},&nbsp; где&nbsp; \mu = \frac{1}{N} \sum^N_{i=1} r_i \]
         <p class="text-justify"> </p>При стандартных расчетах время обычно измеряется годами, а волатильность
         актива считается годовой. Но в некоторых случаях нам потребуется суточная
         волотильность. Считая, что в году 252 рабочих дня можем записать, что 
@@ -70,6 +71,7 @@
         \(r_M\) — эталонная величина, с которой происходит сравнение: доходность портфеля ценных бумаг или рынка.
         \( \mathrm{COV} \) — ковариация оцениваемой и эталонной величины, 
         \( \mathrm{VAR} \) — дисперсия эталонной величины.
+        <p></p>
       </div>
     </div>
     <footer>
