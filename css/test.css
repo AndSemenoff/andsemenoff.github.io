@@ -1,0 +1,10 @@
+h3 {
+/*writing-mode: vertical-rl;*/
+writing-mode: sideways-rl;
+text-transform: uppercase;
+font-size: 1.5rem;
+font-weight: 500;  
+transform: rotate(180deg);
+  text-align: center;
+  letter-spacing: -0.05rem;  
+}	

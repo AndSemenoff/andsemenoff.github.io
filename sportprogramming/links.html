@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
-    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
     <!-- script(src="../js/modernizr.js")-->
   </head>
   <body>
@@ -32,7 +33,7 @@
           <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
           <li class="divider"></li>
           <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
-          <li class="divider">				</li>
+          <li class="divider"></li>
         </ul>
       </section>
     </nav>
@@ -43,7 +44,7 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <ul data-tab class="tabs vertical">
+        <ul class="tabs vertical" data-tab>
           <li class="tab-title active"><a href="#panel11">Новости</a></li>
           <li class="tab-title"><a href="#panel21">Соревнования</a></li>
           <li class="tab-title"><a href="#panel31">Обучение</a></li>
@@ -52,7 +53,7 @@
           <li class="tab-title"><a href="#panel61">LaTex				</a></li>
         </ul>
         <div class="tabs-content">
-          <div id="panel11" class="content active"><strong>Новости</strong>
+          <div class="content active" id="panel11"><strong>Новости</strong>
             <ul>
               <li><a href="http://www.clist.by/">Общий календарь всех контестов с разных площадок.</a></li>
               <li><a href="http://snarknews.info/index.cgi?data=newstape&amp;announce=a">Новости, анонсы соревнований</a></li>
@@ -61,7 +62,7 @@
               <li><a href="http://pyvideo.org">pyvideo.org </a>видио с различных конференций по питону.</li>
             </ul>
           </div>
-          <div id="panel21" class="content">Сайты на которых можно соревноваться
+          <div class="content" id="panel21">Сайты на которых можно соревноваться
             <ul>
               <li><a href="http://codeforces.ru">Codeforces.ru </a>| <a href="http://codeforces.com">Codeforces.com</a></li>
               <li> <a href="http://ww2.codechef.com">CodeChef.com</a></li>
@@ -88,10 +89,14 @@
               <li> <a href="http://russiancodecup.ru/">Russian Code Cup 																		</a></li>
             </ul>
           </div>
-          <div id="panel31" class="content">Курсы и обучающие сайты
+          <div class="content" id="panel31">Курсы и обучающие сайты
             <ul>
-              <li>Edx.org. <a href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0">MITx 6.00.1x </a>Introduction to Computer Science and Programming Using Python</li>
-              <li>Edx.org. <a href="https://www.edx.org/course/introduction-computational-thinking-data-mitx-6-00-2x-0">MITx 6.00.2x </a>Introduction to Computational Thinking and Data Science</li>
+              <li><strong>Edx.org</strong>
+                <ul>
+                  <li><a href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0">MITx 6.00.1x </a>Introduction to Computer Science and Programming Using Python</li>
+                  <li><a href="https://www.edx.org/course/introduction-computational-thinking-data-mitx-6-00-2x-0">MITx 6.00.2x </a>Introduction to Computational Thinking and Data Science</li>
+                </ul>
+              </li>
               <li><a href="http://www.python-course.eu">Курс </a>по питону. Есть очень продвинутые темы.</li>
               <li><a href="http://cscircles.cemc.uwaterloo.ca">Онлайн обучение Питону  </a></li>
               <li><a href="http://www-inst.eecs.berkeley.edu/~cs61a/">Курс Беркли</a></li>
@@ -101,10 +106,17 @@
               <li><a href="http://userpages.umbc.edu/~rcampbel/Computers/Python/index.html">umbc.edu </a>Introduction to Python for Math at UMBC</li>
               <li><a href="https://www.udemy.com/courses/search/?q=python">Курсы по питону. </a>На Udemy.com, как платные, так и бесплатные.</li>
               <li><a href="http://pythonprogramming.net/">PythonProgramming.net </a>Обучение с видео и примерами кода.</li>
-              <li><a href="http://zetcode.com/">ZetCode - Различные уроки по питону: GUI, SQLite.	</a></li>
+              <li><a href="http://zetcode.com/">ZetCode - Различные уроки по питону: GUI, SQLite.</a></li>
+              <li><a href="https://www.codeschool.com/courses/try-python">CodeSchool.com </a>- Try Python</li>
+              <li><strong>Stepic.org</strong> [Русский язык]
+                <ul>
+                  <li><a href="https://stepic.org/course/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-Python-67/"> Программирование на Python</a></li>
+                  <li><a href="https://stepic.org/course/Python-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B8-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-512">Python: основы и применение.</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
-          <div id="panel41" class="content">Облачные бесплатные хостинги для питона и не только
+          <div class="content" id="panel41">Облачные бесплатные хостинги для питона и не только
             <ul>
               <li><a href="https://www.pythonanywhere.com">pythonanywhere   </a></li>
               <li><a href="http://aws.amazon.com/free/">Amazon AWS</a></li>
@@ -116,7 +128,7 @@
               <li><a href="http://star.mit.edu/cluster/">StarCluster</a></li>
             </ul>
           </div>
-          <div id="panel51" class="content">Онлайн среды разработки(IDE) для питонистов и не только
+          <div class="content" id="panel51">Онлайн среды разработки(IDE) для питонистов и не только
             <ul>
               <li><a href="https://c9.io/">Cloud9 IDE</a></li>
               <li><a href="http://ideone.com">ideone.com            </a></li>
@@ -129,7 +141,7 @@
               <li><a href="https://kobra.io">kobra.io</a></li>
             </ul>
           </div>
-          <div id="panel61" class="content">LaTeX
+          <div class="content" id="panel61">LaTeX
             <ul>
               <li>Онлайн сервисы LaTeX
                 <ol>
@@ -197,13 +209,9 @@
           <li>Разбор задач
             <ol>
               <li>
-                 
-                Russian Code Cup 2013 <a href="http://habrahabr.ru/company/mailru/blog/183924/">– разбор задач отборочного раунда</a>
-              </li>
+                 Russian Code Cup 2013 <a href="http://habrahabr.ru/company/mailru/blog/183924/">– разбор задач отборочного раунда</a></li>
               <li>
-                 
-                Russian Code Cup 2013 – разбор задач <a href="http://habrahabr.ru/company/mailru/blog/182256/">3-го | </a><a href="http://habrahabr.ru/company/mailru/blog/179807/">2-го | </a><a href="http://habrahabr.ru/company/mailru/blog/177171/">1-го | </a>квалификационного раунда
-              </li>
+                 Russian Code Cup 2013 – разбор задач <a href="http://habrahabr.ru/company/mailru/blog/182256/">3-го | </a><a href="http://habrahabr.ru/company/mailru/blog/179807/">2-го | </a><a href="http://habrahabr.ru/company/mailru/blog/177171/">1-го | </a>квалификационного раунда</li>
               <li> <a href="http://habrahabr.ru/company/abbyy/blog/155831/">Разбор задачи с IOI2012</a></li>
               <li><a href="http://habrahabr.ru/post/155015/">Разбор задач 1 тура школы программистов HeadHunter</a></li>
               <li><a href="http://chasolimp.de/practic_oder_unterricht.htm">Разборы олимпиадных задач от А.Чигиринского</li></a></li>
@@ -257,7 +265,7 @@
     <footer>
       <div class="row">
         <div class="large-12 columns">
-          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div id="logo5HTML"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
         </div>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

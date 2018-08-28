@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
-    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )		-->
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
     <!-- script(src="../js/modernizr.js")-->
     <!-- default.min.css"-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
@@ -19,7 +20,8 @@
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
       
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
   </head>
   <body>
     <nav class="top-bar data-topbar"> 
@@ -39,7 +41,7 @@
           <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
           <li class="divider"></li>
           <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
-          <li class="divider">				</li>
+          <li class="divider"></li>
         </ul>
       </section>
     </nav>
@@ -52,8 +54,7 @@
       <div class="large-12 columns">
         <h2>Крутой код</h2>
         <p class="text-justify">
-          У питонистов считается красиво писать короткий код, для которого в языке есть специальные конструкции. Без знания этих
-          простых конструкции у Вас не получится написать короткий питонистический код. Я попытался на этой странице собрать консрукции языка, 
+          У питонистов считается красиво писать короткий код, для которого в языке есть специальные конструкции. Без знания этихпростых конструкции у Вас не получится написать короткий питонистический код. Я попытался на этой странице собрать консрукции языка, 
           которые помогут писать коротко и в питонистическом стиле.
         </p>
         <h2>Выражение if/else</h2>
@@ -65,16 +66,13 @@ else:
 &nbsp;&nbsp;&nbsp;&nbsp;A = Z</code></pre>
         <h2>Лямбда-функции или анонимные функции</h2>
         <div>
-          Синтаксис лямбда-фукции: <strong>lambda</strong> <i>переменные</i><strong>:</strong> <i>выражение</i>
-          <br > <i>переменные</i> — список аргументов, разделенных запятой. Нельзя использовать ключевые слова. Аргументы не надо заключать в скобки.
+          Синтаксис лямбда-фукции: <strong>lambda</strong> <i>переменные</i><strong>:</strong> <i>выражение</i><br > <i>переменные</i> — список аргументов, разделенных запятой. Нельзя использовать ключевые слова. Аргументы не надо заключать в скобки.
           <br > <i>выражение</i> — инлайновое выражение Python. Область видимости включает локальные переменные и аргументы. 
           Функция возвращает результат 
           этого выражения.
         </div>
         <p>
-          Лямбда-функция является выражением и может быть использована внутри другого выражения. Лямбда-функции не требуется инструкция return она всегда
-          возвращает результат выражения.
-        </p>
+          Лямбда-функция является выражением и может быть использована внутри другого выражения. Лямбда-функции не требуется инструкция return она всегдавозвращает результат выражения.</p>
         <div>Пример:</div>
         <pre class="python"><code>add = lambda a, b: a + b</code></pre>
         <div>Эквивалентно:</div>
@@ -86,8 +84,7 @@ else:
 >>> [elem * 2 for elem in a_list]
 [2, 18, 16, 8]</code></pre>
         <div class="text-justify">
-          Чтобы понять, что здесь происходит, прочитайте генератор справа налево. a_list — отображаемый список. Python последовательно перебирает элементы 
-          списка a_list, временно присваивая значение каждого элемента переменной elem. Затем применяет функцию elem * 2 и добавляет результат в 
+          Чтобы понять, что здесь происходит, прочитайте генератор справа налево. a_list — отображаемый список. Python последовательно перебирает элементы списка a_list, временно присваивая значение каждого элемента переменной elem. Затем применяет функцию elem * 2 и добавляет результат в 
           возвращаемый список.
         </div>
         <div>Генератор создаёт новый список, не изменяя исходный.</div>
@@ -98,8 +95,7 @@ else:
         <h2>Генераторы множеств	</h2>
         <h2>Выражения-генераторы</h2>
         <p>
-          Выражения-генераторы имеют такой же синтаксис, как генераторы списков, но вместо квадратных скобок используются круглые.
-          Выражения-генераторы не загружают в память список целиком, а создают 'generator object', и в каждый момент загружен только один 
+          Выражения-генераторы имеют такой же синтаксис, как генераторы списков, но вместо квадратных скобок используются круглые.Выражения-генераторы не загружают в память список целиком, а создают 'generator object', и в каждый момент загружен только один 
           элемент списка.
         </p>
         <!--http://habrahabr.ru/post/85238/-->
@@ -110,7 +106,7 @@ else:
     <footer>
       <div class="row">
         <div class="large-12 columns">
-          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div id="logo5HTML"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
         </div>
       </div>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>

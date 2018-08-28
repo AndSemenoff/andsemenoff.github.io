@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | AlexCTF2017. Разборы.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider"></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>AlexCTF2017. Ultracoded.</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div>Задание. (50)</div>
+        <div class="text-justify">Fady didn't understand well the difference between encryption and encoding, so instead of encrypting some secret message to pass to his friend, he encoded it!</div>Hint: Fady's encoding doens't handly any special character. File: <a href="zero_one">zero_one</a>
+        <div>Перевод.</div>
+        <div class="text-justify">Федя не понимает разницу между шифрованием и кодированием. Поэтому, вместо шифрования секретного сообщения для своего друга он его закодировал!</div>
+        <div>Подсказка. Федя не кодировал специальные символы.</div>
+        <div>Решение.</div>
+        <div class="text-justify">Файл содержит слова ONE и ZERO, понятно, что их нужно перекодировать соотвественно в 1 и 0. Полученный бинарный код, скорее всего нужно перекодировать в ASCII. Т.к. получившийся ASCII код кончается на ==, что указывает, что он закодирован в base64. Дальше мы видим точки и тире и это азбука морзе. Для работы с азбукой морзе буду использовать библиотеку <a href="https://github.com/morse-talk/morse-talk">morze-talk</a>. Раскодируем азбуку морзе и получаем строку похожую на ключ. Так, как в азбуке морзе нет возможности кодировать специальные символы, такие, как подчеркивание, то заменяем "O" на "_", добавляем скобки"{}" и получаем флаг ALEXCTF{TH15_1S_5UP3R_5ECR3T_TXT}.</div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Подготовка данных.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
+    <!-- script(src="../js/modernizr.js")-->
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  </head>
+  <body>
+    <nav class="top-bar data-topbar"> 
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">ABSOLEM.INFO</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <!--  Left Nav Section-->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
+          <li class="divider">  </li>
+          <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
+          <li class="divider"></li>
+          <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
+          <li class="divider"></li>
+        </ul>
+      </section>
+    </nav>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Подготовка данных</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Начало</h3>
+        <div>Я скачал <a href="GAZP_day.csv">данные</a> по акциям Газпром с сайта <a href="http://www.finam.ru/profile/moex-akcii/gazprom/?market=1">Финам</a>. Важно посмотреть какой знак используется, как разделитель. В моем файле разделитель - это запятая ",".</div>
+        <div class="large-12 columns">
+          <pre class="python"><code># -*- coding: utf-8 -*- 
+# file: read_csv_1.py
+import pandas as pd
+
+def example_run():
+    df = pd.read_csv("GAZP_day.csv", index_col=2, sep=',', parse_dates=True)
+    print(df.head())  
+
+if __name__=="__main__":
+    example_run()</code></pre>
+        </div><img src="../python_source/read_csv_1.png">
+        <div>Параметр "index_col" указывает какой столбец использовать, как индекс. Параметр "sep" - указывает, какой символ используется, как разделитель, в нашем варианте - это запятая. Параметр "parse_dates = True" указывает, что нужно преобразовывать дату. Метод head выводит первые пять строк таблицы.</div>
+        <p>Для удобства работы возьмем и будем работать только с ценой закрытия</p>
+        <div class="large-12 columns">
+          <pre class="python"><code>df = pd.DataFrame(df, columns=["CLOSE"])</code></pre>
+        </div>
+        <p class="text-justify"> </p>С помощью встроенной функции pct_change(), мы можем легко посчитать суточную, месячную и годовую доходности по соотвествующим 
+        формулам: 
+        <pre class="python"><code>daily_return = df.pct_change(1) # 1 for ONE DAY lookback
+monthly_return = df.pct_change(21) # 21 for ONE MONTH lookback
+annual_return = df.pct_change(252) # 252 for ONE YEAR lookback</code></pre>
+        <p>Традиционным в финансах является построение свечного графика. Поэтому дам ссылки на несколько примеров построения таких на питоне</p><a href="http://matplotlib.org/examples/pylab_examples/finance_demo.html">пример 1</a> из документации на http://matplotlib.org, <a href="https://pythonprogramming.net/candlestick-ohlc-graph-matplotlib-tutorial/">пример 2</a>, <a href="https://plot.ly/python/candlestick-charts/">пример 3</a> 
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="logo5HTML"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+        </div>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>		-->
+  </body>
+</html>
