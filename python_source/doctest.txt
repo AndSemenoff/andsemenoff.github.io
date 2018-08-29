@@ -1,0 +1,7 @@
+'''
+файл doctest.txt
+>>> from doctest_example1 import simple
+>>> simple(4)
+15
+
+'''

@@ -7,43 +7,38 @@
     <meta name="author" content="Семенова Андрей Вячеславович">
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
-    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
-    <!-- script(src="../js/modernizr.js")-->
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="../js/foundation.6.4.3.min.js"></script>
     <!-- default.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <link rel="stylesheet" href="../css/highlight.default.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
       
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
   </head>
   <body>
-    <nav class="top-bar data-topbar"> 
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">ABSOLEM.INFO</a></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <!--  Left Nav Section-->
-        <ul class="left">
-          <li class="divider"></li>
-          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
-          <li class="divider"></li>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><strong><a href="/">ABSOLEM.INFO</a></strong></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html">Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
-          <li class="divider">  </li>
           <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
-          <li class="divider"></li>
           <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
-          <li class="divider"></li>
         </ul>
-      </section>
-    </nav>
+      </div>
+    </div>
     <div class="row">
       <div class="large-12 columns">
         <h4><strong>Стек. Очередь. Куча.</strong></h4>
@@ -72,19 +67,38 @@ print (len(queue))				# 6 кол-во элементов в очереди вы�
         <h5>Определения</h5><a href="http://habrahabr.ru/post/65367/">Базовые понятия</a>
       </div>
     </div>
+    <!----><h2>Представление матрицы в виде графа</h2>
+<p>Дана матрица MxN ходить можно по диагонали и по вертикали. Для решения различного рода задач представим матрицу в виде графа. Итак, количество вершин будет MxN, количество ребер</p>
     <footer>
-      <div class="row">
-        <div class="large-12 columns">
-          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p>© 2001 - 2018</p>
+            <div><small>Это произведение, автор которого — <a href="aboutabout_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
         </div>
       </div>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
+      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
+      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
+      <script>$(document).foundation();</script>
     </footer>
     <!-- script(src="../js/jquary.js")-->
     <!-- script(src="../js/foundation.min.js")-->
     <!-- <script>-->
     <!-- $(document).foundation();-->
-    <!-- </script>		-->
+    <!-- </script>-->
   </body>
 </html>

@@ -8,58 +8,53 @@
     <meta name="author" content="Семенова Андрей Вячеславович">
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
-    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
-    <!-- script(src="../js/modernizr.js")-->
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="../js/foundation.6.4.3.min.js"></script>
     <!-- default.min.css"-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+    <link rel="stylesheet" href="../css/highlight.default.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
       
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
   </head>
   <body>
-    <nav class="top-bar data-topbar"> 
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">ABSOLEM.INFO</a></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <!--  Left Nav Section-->
-        <ul class="left">
-          <li class="divider"></li>
-          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
-          <li class="divider"></li>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><strong><a href="/">ABSOLEM.INFO</a></strong></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html">Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
-          <li class="divider">  </li>
           <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
-          <li class="divider"></li>
           <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
-          <li class="divider"></li>
         </ul>
-      </section>
-    </nav>
+      </div>
+    </div>
     <!-- div.row: div.large-12.columns: h2 Глава 1-->
     <div class="row">
       <div class="large-12 columns">
         <div class="row"></div>
         <h3>Глава 4. Финансовая математика и статистика</h3><br>1 – 22 Простой процент 
-        <br>23 — 29 Определения
-        <br>30 — 39 Вычисление будущей стоимости при начислении сложного процента
-        <br>40 - 49 Вычисление настоящей стоимости при начислении сложного процента
-        <br>50 — 53 На какой период нужно положить деньги. Решаем подбором. Ответ всегда целон число.
-        <br>54,55,56,57,58,59 Какую ставку начислял банк
-        <br>60 - 70
-        <br>71 – 85 Однотипные задачи на облигации
-        <br>86,87,88,89 Бескупонные облигации
-        <br>90 Теория вероятности 
-        <br>4.2.113 НЕТ ВЕРНОГО ОТВЕТА
+<br>23 — 29 Определения
+<br>30 — 39 Вычисление будущей стоимости при начислении сложного процента
+<br>40 - 49 Вычисление настоящей стоимости при начислении сложного процента
+<br>50 — 53 На какой период нужно положить деньги. Решаем подбором. Ответ всегда целон число.
+<br>54,55,56,57,58,59 Какую ставку начислял банк
+<br>60 - 70
+<br>71 – 85 Однотипные задачи на облигации
+<br>86,87,88,89 Бескупонные облигации
+<br>90 Теория вероятности 
+<br>4.2.113 НЕТ ВЕРНОГО ОТВЕТА
         <div>[1]</div>
         <div>[2]</div>
         <div>[3]</div>
@@ -84,22 +79,15 @@
         <div>[22]</div>
         <div>[23]</div>\[ FV = PV \times (1+r)^n \]
         \[ \text{выражение} (1+r)^n - \text{называется коэффициентом наращения} \]
-        \[ FV - \text{будущая стоимость}; PV - \text{настоящая стоимость}; r - \text{процентная ставка} \]
-        <br>Где r – это процентная ставка за период начисления процента, выраженная в долях единицы, под которую размещается текущая стоимость (если начисление происходит раз в полгода, то она в два раза меньше годовой);
-        <br>n – это общее количество начислений процентов (если начисление происходит раз в полгода, то это количество полугодий, которое вклад лежит в банке).
-        <div>[24] Формула </div>\[ FV = PV \times (1+r)^n \]
-        <br>используется при вычислении будущей стоимости при начислении сложного процента.
-        <div>[25] В формуле </div>\[ FV = PV \times (1+r)^n \]
-        <br> PV - это настоящая стоимость.
-        <div>[26] В формуле </div>\[ FV = PV \times (1+r)^n \]
-        <br> FV - это будущая стоимость.
+        \[ FV - \text{будущая стоимость}; PV - \text{настоящая стоимость}; r - \text{процентная ставка} \]<br>Где r – это процентная ставка за период начисления процента, выраженная в долях единицы, под которую размещается текущая стоимость (если начисление происходит раз в полгода, то она в два раза меньше годовой);
+<br>n – это общее количество начислений процентов (если начисление происходит раз в полгода, то это количество полугодий, которое вклад лежит в банке).
+        <div>[24] Формула </div>\[ FV = PV \times (1+r)^n \]<br>используется при вычислении будущей стоимости при начислении сложного процента.
+        <div>[25] В формуле </div>\[ FV = PV \times (1+r)^n \]<br> PV - это настоящая стоимость.
+        <div>[26] В формуле </div>\[ FV = PV \times (1+r)^n \]<br> FV - это будущая стоимость.
         <div>[27] В формуле </div>\[ PV = \frac{FV} {(1+r)^n} \]
-        \[ \text{величина} \frac{1}{(1+r)^n} - \text{называется коэффициентом дисконтирования} \]
-        <br>
-        <div>[28] В формуле </div>\[ FV = PV \times (1+r)^n \]
-        <br> r - это cтавка процента, выраженная в долях единицы, под которую размещается текущая стоимость.
-        <div>[29] В формуле </div>\[ FV = PV \times (1+r)^n \]
-        <br> n - число периодов начисления процентов по ставке r.
+        \[ \text{величина} \frac{1}{(1+r)^n} - \text{называется коэффициентом дисконтирования} \]<br>
+        <div>[28] В формуле </div>\[ FV = PV \times (1+r)^n \]<br> r - это cтавка процента, выраженная в долях единицы, под которую размещается текущая стоимость.
+        <div>[29] В формуле </div>\[ FV = PV \times (1+r)^n \]<br> n - число периодов начисления процентов по ставке r.
         <div>[30] 		</div>\[ FV = PV \times (1+r)^n \]
         \[ FV = 20000 \times (1 + 0.09)^2 = 23762 \]		
         <div>[31]</div>\[ FV = PV \times (1+r)^n \]
@@ -137,19 +125,17 @@
         <div>[47] PV = 12 000 / [(1 + 0,12) * (1 + 0,12*0,9)] = 9 670 руб</div>
         <div>[48]</div>
         <div>[49]</div>
-        <div>[50]Решаем подбором. Ответ всегда целое число.</div>15000*1.2 = 18000
-        <br>18000*1.2 =  21600
-        <br>Ответ: 2 года.
-        <div>[51] Решаем подбором. Ответ всегда целое число.</div>15000*1.4 = 21000
-        <br>21000*1.4 =  29400
-        <br>29400*1.4 = 41160
-        <br>Ответ: 3 года.		
+        <div>[50]Решаем подбором. Ответ всегда целое число.</div>15000*1.2 = 18000<br>18000*1.2 =  21600
+<br>Ответ: 2 года.
+        <div>[51] Решаем подбором. Ответ всегда целое число.</div>15000*1.4 = 21000<br>21000*1.4 =  29400
+<br>29400*1.4 = 41160
+<br>Ответ: 3 года.		
         <div>[52]</div><br>10000*1.09 = 10900
-        <br>10900*1.09 = 11881
-        <br>Ответ: 2 года.
+<br>10900*1.09 = 11881
+<br>Ответ: 2 года.
         <div>[53]</div><br>1000000*1.045 = 1045000
-        <br>1045000*1.045 = 1092025
-        <br>Ответ: 1 год.
+<br>1045000*1.045 = 1092025
+<br>Ответ: 1 год.
         <div>[54]</div>\[ FV = PV \times (1+r)^n \]
         \[ 4 \times PV = PV \times (1+r)^8 \]
         \[ 4  =  (1+r)^8 \Rightarrow r = \sqrt[8]{4}-1 = 0.1892 \]					
@@ -187,9 +173,8 @@
         <div>[70]</div>
         <div>[71]</div>
         <div>[72]Рассчитайте рыночную стоимость облигации номиналом 18000р, ставкой выплачиваемого ежегодно купонного дохода 12% и сроком погашения 3 года, если ставка процента по вкладу в банке составляет 14% годовых.</div><br>Решение:
-        <br>Покупая облигацию, вы покупаете право получать купоны каждый год до погашения, и номинальную стоимость вместе с последним купоном в момент погашения. Значит, для определения рыночной цены облигации необходимо сложить эти денежные потоки, предварительно дисконтировав их на сегодняшний день. Ставкой дисконтирования при этом принимают равной ставке по кладу в банке. Эта же ставка называется так же «альтернативной годовой доходностью», и «доходностью к погашению облигации».
-        <br>Определим стоимость облигации через современную стоимость будущих доходов (выплат) по облигации, исходя из ставки банковского процента
-        \[ \text{купон} = 18000 \times 0.12 = 2160 \]		
+<br>Покупая облигацию, вы покупаете право получать купоны каждый год до погашения, и номинальную стоимость вместе с последним купоном в момент погашения. Значит, для определения рыночной цены облигации необходимо сложить эти денежные потоки, предварительно дисконтировав их на сегодняшний день. Ставкой дисконтирования при этом принимают равной ставке по кладу в банке. Эта же ставка называется так же «альтернативной годовой доходностью», и «доходностью к погашению облигации».
+<br>Определим стоимость облигации через современную стоимость будущих доходов (выплат) по облигации, исходя из ставки банковского процента\[ \text{купон} = 18000 \times 0.12 = 2160 \]		
         \[ P = \frac{2160}{(1+0.14)} + \frac{2160}{(1+0.14)^2} + \frac{18000+2160}{(1+0.14)^3} \]
         \[ P = 1894.73 + 1662.05 + 13607.42 \approx 17164.2\]
         <div>[73,74,75,76,77,78,79,80,81,82,83,84,85] см [72]</div>
@@ -232,29 +217,26 @@
         \[ r - \text{коэффициент корреляции}; \sigma - \text{стандартное отклонение}; K - \text{ковариация} \]
         \[ r = \frac{ 120}{ 30 \times 20} = 0.2 \]
         <div>[124] Риск портфеля обычно выражается через дисперсию, которую здесь и потребуется найти.</div><br>Дисперсия портфеля, состоящего из двух активов определяется по формуле:
-        <br>Риск = (уд.вес А)^2*стан.откл.А)^2+уд.вес В)^2 * стан.откл.В)^2 + 2 * уд.вес А * уд.вес В * коэф.корр. 
-        \[ \text{Риск } = \theta_A^2 \sigma_A^2 +  \theta_B^2 \sigma_B^2 + 2 \cdot \theta_A \theta_B \cdot r(A,B) \]
-        <br>0.4^2*20^2 + 0.6^2*30^2+2*0.4*0.6*120 = 445.6
+<br>Риск = (уд.вес А)^2*стан.откл.А)^2+уд.вес В)^2 * стан.откл.В)^2 + 2 * уд.вес А * уд.вес В * коэф.корр. \[ \text{Риск } = \theta_A^2 \sigma_A^2 +  \theta_B^2 \sigma_B^2 + 2 \cdot \theta_A \theta_B \cdot r(A,B) \]<br>0.4^2*20^2 + 0.6^2*30^2+2*0.4*0.6*120 = 445.6
         <div>[125] С=n!/(k!*(n-k)!), где n- общее множество значений, k - количество элементов</div>
         <div>[126] Через год цена акции может иметь следующее распределение:</div><table>
-        <tbody>
-        <tr><td>Цена акции</td><td>30 руб</td><td>40 руб</td><td>50 руб</td></tr>
-        <tr><td>Вероятность</td><td>30%</td><td>60%</td><td>10%</td></tr>
-        </tbody>
-        </table>
-        <br>Определить математическое ожидание цены акции через год.
-        <br>Решение: M(X) = 30*0.3+40*0.6+50*0.1 = 9+24+5 = 38	
+<tbody>
+<tr><td>Цена акции</td><td>30 руб</td><td>40 руб</td><td>50 руб</td></tr>
+<tr><td>Вероятность</td><td>30%</td><td>60%</td><td>10%</td></tr>
+</tbody>
+</table>
+<br>Определить математическое ожидание цены акции через год.
+<br>Решение: M(X) = 30*0.3+40*0.6+50*0.1 = 9+24+5 = 38	
         <div>[127]</div>
         <div>[128]</div>
         <div>[129,145,146,147] Доходность актива за 3 года представлена в таблице:</div><table>
-        <tbody>
-        <tr><td>Годы</td><td>1</td><td>2</td><td>3</td></tr>
-        <tr><td>Доходность</td><td>10</td><td>14</td><td>18</td></tr>
-        </tbody>
-        </table>
-        <br>Определить риск актива, представленный показателями выборочной дисперсии и стандартного отклонения доходности.
-        <br>Решение:
-        \[ E(\text{среднее}) = \frac{10+14+18}{3} = 14 \]
+<tbody>
+<tr><td>Годы</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>Доходность</td><td>10</td><td>14</td><td>18</td></tr>
+</tbody>
+</table>
+<br>Определить риск актива, представленный показателями выборочной дисперсии и стандартного отклонения доходности.
+<br>Решение:\[ E(\text{среднее}) = \frac{10+14+18}{3} = 14 \]
         \[ D(\text{дисперсия}) = \frac{(10-14)^2+(14-14)^2+(18-14)^2)}{3} = 10.67 \]
         \[ \sigma = \sqrt{D} = \sqrt{10.67} = 3.27% \]
         <div>[130] <img src="../images/3_sigma.png" alt="Закон трех сигм"></div>
@@ -266,36 +248,36 @@
         <div>[137] P(A)*P(B)*P(C) = 0,8*0,7*0,9 = 0.504</div>
         <div>[138] P = (1 - 0,8 ) * 0,7 * (1 - 0,9) = 0,014</div>
         <div>[139] </div><br>«Вырастет доходность акций хотя бы одной компании» = все исходы, кроме такого, где все доходности не вырастут.
-        <br>P(все доходности одновременно не вырастут) = (1-0,8)*(1-0,7)*(1-0,9) = 0,006
-        <br>Вероятность всех исходов, кроме такого, где все доходности не вырастут = 1-0,006 = 0,994
+<br>P(все доходности одновременно не вырастут) = (1-0,8)*(1-0,7)*(1-0,9) = 0,006
+<br>Вероятность всех исходов, кроме такого, где все доходности не вырастут = 1-0,006 = 0,994
         <div>[140] Даны 3 актива. Известно, что ожидаемая доходность первого актива X = 30%, ожидаемая доходность второго актива Y = 20%. Определить ожидаемую доходность актива Z, если известно, что Z=9X-6Y+80.</div><br>Решение: Z = 9*30 - 6*20 + 80 = 230
         <div>[141] Найти дисперсию случайной величины Z=6Х-3Y+5, если известно, что случайные величины X и Y независимы и D(X)=2,5, D(Y)=2.</div><br>Решение: Независимы -> корреляции нет. Z = 36*D(X) <mark>+</mark> 9*D(Y) + 0 = 90 - 18 = 108
         <div>[142,143,144] Доходность портфеля</div><br>Прогноз инвестора относительно возможных сценариев доходности акций компаний А и В с учетом их вероятностей в следующем периоде представлен в таблице:
-        <table>
-        <tbody>
-        <tr><td></td><td>r_b=10%</td><td>r_b=20%</td></tr>
-        <tr><td>r_a=10%</td><td>p1=10%</td><td>p1=40%</td></tr>
-        <tr><td>r_a=40%</td><td>p1=30%</td><td>p1=20%</td></tr>
-        </tbody>
-        </table>
-        <br>Определить ожидаемую доходность портфеля, если уд. веса акций А и В в портфеле составляют соответственно 40% и 60%.
-        <br>Добавляем веса акций в таблицу
-        <table>
-        <tbody>
-        <tr><td></td><td>r_b=10%*0.6=6%</td><td>r_b=20%*0.6=12%</td></tr>
-        <tr><td>r_a=10%*0.4=4%</td><td>p1=10%</td><td>p1=40%</td></tr>
-        <tr><td>r_a=40%*0.4=16%</td><td>p1=30%</td><td>p1=20%</td></tr>
-        </tbody>
-        </table>
-        <br>Пересчитываем вероятности с учетом весов акций.
-        <table>
-        <tbody>
-        <tr><td></td><td>r_b=10%*0.6=6%</td><td>r_b=20%*0.6=12%</td></tr>
-        <tr><td>r_a=10%*0.4=4%</td><td>p1=(4+6)*10%</td><td>p1=(4+12)*40%</td></tr>
-        <tr><td>r_a=40%*0.4=16%</td><td>p1=(16+6)*30%</td><td>p1=(16+12)*20%</td></tr>
-        </tbody>
-        </table>
-        <br>Итого: 10*0.1+16*0.4+22*0.3+28*0.2= 1 + 6.4 + 6.6 + 5.6 = 19.6%	
+<table>
+<tbody>
+<tr><td></td><td>r_b=10%</td><td>r_b=20%</td></tr>
+<tr><td>r_a=10%</td><td>p1=10%</td><td>p1=40%</td></tr>
+<tr><td>r_a=40%</td><td>p1=30%</td><td>p1=20%</td></tr>
+</tbody>
+</table>
+<br>Определить ожидаемую доходность портфеля, если уд. веса акций А и В в портфеле составляют соответственно 40% и 60%.
+<br>Добавляем веса акций в таблицу
+<table>
+<tbody>
+<tr><td></td><td>r_b=10%*0.6=6%</td><td>r_b=20%*0.6=12%</td></tr>
+<tr><td>r_a=10%*0.4=4%</td><td>p1=10%</td><td>p1=40%</td></tr>
+<tr><td>r_a=40%*0.4=16%</td><td>p1=30%</td><td>p1=20%</td></tr>
+</tbody>
+</table>
+<br>Пересчитываем вероятности с учетом весов акций.
+<table>
+<tbody>
+<tr><td></td><td>r_b=10%*0.6=6%</td><td>r_b=20%*0.6=12%</td></tr>
+<tr><td>r_a=10%*0.4=4%</td><td>p1=(4+6)*10%</td><td>p1=(4+12)*40%</td></tr>
+<tr><td>r_a=40%*0.4=16%</td><td>p1=(16+6)*30%</td><td>p1=(16+12)*20%</td></tr>
+</tbody>
+</table>
+<br>Итого: 10*0.1+16*0.4+22*0.3+28*0.2= 1 + 6.4 + 6.6 + 5.6 = 19.6%	
         <div>[145, 146, 147] см. [129]</div>
         <div>[148,149] см. [132]</div>
         <div>[150] Показатель Р/Е может использоваться для предоставления возможности сравнивать рыночные стоимости акций компаний одной отрасли.</div>
@@ -307,8 +289,8 @@
         <div>[156] Дивидендная доходность показывает текущую доходность акций. Дивидендная доходность= дивиденд на акцию/ текущая рыночная цена акции. 50/3000 * 4 = 6.66%	</div>
         <div>[157] Доходность к погашению для бескупонной облигации:</div>\[ r(\text{доходность к погашению}) = (\frac{N}{P})^{\frac{1}{T}} - 1\]
         \[ 0.11 = (\frac{1000}{X})^{\frac{1}{5}} - 1\]
-        \[ 1.11^5 = \frac{1000}{X}\]
-        \[ X = \frac{1000}{1.11^5} = 593.45 \approx 593.5 \]
+        $$ 1.11^5 = \frac{1000}{X} $$
+        $$ X = \frac{1000}{1.11^5} = 593.45 \approx 593.5 $$
         <div>[158] см. 157</div>
         <div></div><script>
         <var>N = 18000;</var>
@@ -319,22 +301,38 @@
         <var>P = C/(1+Bank) + C/(1+Bank)^2 + (C+N)/(1+Bank)^3;</var>
         <!--document.alert("P");-->
         <!--document.write(P);--></script>
-        <div>Конец</div>
       </div>
     </div>
     <footer>
-      <div class="row">
-        <div class="large-12 columns">
-          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p>© 2001 - 2018</p>
+            <div><small>Это произведение, автор которого — <a href="aboutabout_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
         </div>
       </div>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
+      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
+      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
+      <script>$(document).foundation();</script>
     </footer>
     <!-- script(src="../js/jquary.js")-->
     <!-- script(src="../js/foundation.min.js")-->
     <!-- <script>-->
     <!-- $(document).foundation();-->
-    <!-- </script>		-->
+    <!-- </script>-->
   </body>
 </html>

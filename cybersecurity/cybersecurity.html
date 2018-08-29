@@ -8,36 +8,28 @@
     <meta name="author" content="Семенова Андрей Вячеславович">
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" media="all">
-    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all">
-    <!-- script(src="../js/modernizr.js")-->
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="../js/foundation.6.4.3.min.js"></script>
   </head>
   <body>
-    <nav class="top-bar data-topbar"> 
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">ABSOLEM.INFO</a></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <!--  Left Nav Section-->
-        <ul class="left">
-          <li class="divider"></li>
-          <li><a href="http://absolem.info/programming_index.html">Программирование</a></li>
-          <li class="divider"></li>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><strong><a href="/">ABSOLEM.INFO</a></strong></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html">Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html">Инвестирование</a></li>
-          <li class="divider">  </li>
           <li><a href="http://absolem.info/bigdata/index.html">Анализ данных</a></li>
-          <li class="divider"></li>
           <li><a href="http://absolem.info/useful_index.html">Полезное</a></li>
-          <li class="divider"></li>
         </ul>
-      </section>
-    </nav>
+      </div>
+    </div>
     <div class="row">
       <div class="large-12 columns">
         <h1>Информационная безопасность</h1>
@@ -48,75 +40,61 @@
         <ol>
           <li><strong><a href="ctf.html">Все о соревнованиях CTF.			</a></strong></li>
           <li><strong><a href="wargame.html">Сайты испытаний (challenge, wargame)</a></strong></li>
-          <li>Сообщества					
+          <li>Сообщества
             <ol>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = http://www.securitylab.ru/> SecurityLab.ru</a>
-                    &nbsp;-&nbsp;Новости. Блоги. Сообщество.
+                  <li><span class= 'flag_ru'></span>
+<a href = http://www.securitylab.ru/> SecurityLab.ru</a>&nbsp;-&nbsp;Новости. Блоги. Сообщество.
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = ru> https://defcon.ru/</a>
-                    &nbsp;-&nbsp;DefconRU
+                  <li><span class= 'flag_ru'></span>
+<a href = ru> https://defcon.ru/</a>&nbsp;-&nbsp;DefconRU
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = https://threatpost.ru/> threatpost</a>
-                    &nbsp;-&nbsp;Новости информационной безопасности. Лаборатория Касперского.
+                  <li><span class= 'flag_ru'></span>
+<a href = https://threatpost.ru/> threatpost</a>&nbsp;-&nbsp;Новости информационной безопасности. Лаборатория Касперского.
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = https://www.opennet.ru/> Проект OpenNet</a>
-                    &nbsp;-&nbsp;всё, что связано с открытым ПО, открытыми технологиями, Linux, BSD и Unix.
+                  <li><span class= 'flag_ru'></span>
+<a href = https://www.opennet.ru/> Проект OpenNet</a>&nbsp;-&nbsp;всё, что связано с открытым ПО, открытыми технологиями, Linux, BSD и Unix.
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = https://damagelab.in/index.php> DaMaGeLaB.IN</a>
-                    &nbsp;-&nbsp;информационная безопасность.
+                  <li><span class= 'flag_ru'></span>
+<a href = https://damagelab.in/index.php> DaMaGeLaB.IN</a>&nbsp;-&nbsp;информационная безопасность.
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = https://www.anti-malware.ru/> Anti-Malware.ru</a>
-                    &nbsp;-&nbsp;независимый информационно-аналитический центр.
+                  <li><span class= 'flag_ru'></span>
+<a href = https://www.anti-malware.ru/> Anti-Malware.ru</a>&nbsp;-&nbsp;независимый информационно-аналитический центр.
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = https://rdot.org/forum/> RDot</a>
-                    &nbsp;-&nbsp;форум по безопасности на русском
+                  <li><span class= 'flag_ru'></span>
+<a href = https://rdot.org/forum/> RDot</a>&nbsp;-&nbsp;форум по безопасности на русском
                   </li>
               <li><a href="https://n0where.net/">CyberPunk </a> - Open Source CyberSecurity.</li>
               <li><a href="http://www.darkreading.com/">DarkReading </a> - News. Articles.</li>
-              <li><a href="https://security.googleblog.com/">Security Google Blog 				</a></li>
-              <li><a href="https://raz0r.name/">Raz0r.name  </a> - блог о web-безопасности на русском.					</li>
+              <li><a href="https://security.googleblog.com/">Security Google Blog</a></li>
+              <li><a href="https://raz0r.name/">Raz0r.name  </a> - блог о web-безопасности на русском.</li>
             </ol>
           </li>
           <li>Обучение
@@ -128,15 +106,13 @@
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_en'></span>
-                    <a href = https://www.cybertraining365.com> cybertraining365</a>
-                    &nbsp;-&nbsp;Обучение. Есть бесплатные уроки.
+                  <li><span class= 'flag_en'></span>
+<a href = https://www.cybertraining365.com> cybertraining365</a>&nbsp;-&nbsp;Обучение. Есть бесплатные уроки.
                   </li>
               <li><a href="https://www.computersecuritystudent.com/">ComputerSecurityStudent	</a></li>
               <li><a href="http://www.securitytube.net/">SecurityTube	</a></li>
               <li><b>NB! </b><a href="http://www.amanhardikar.com/mindmaps/Practice.html">Сборник ссылок для практики</a></li>
-              <li><a href="http://www.cis.syr.edu/~wedu/seed/">SEEDlabs </a>- Hands-on Labs for Security Education						</li>
+              <li><a href="http://www.cis.syr.edu/~wedu/seed/">SEEDlabs </a>- Hands-on Labs for Security Education</li>
               <li><img src="../images/youtube.ico" alt="Иконка youtube" width="16">			<a href = https://www.youtube.com/user/JackkTutorials/videos> JackkTutorials</a> 
                 <ol>
                   <li><img src="../images/youtube.ico" alt="Иконка youtube" width="16">			<a href = https://www.youtube.com/watch?v=Y3j-rlA0CbE> JackkTutorials</a> - How to DNS Spoof (Kali Linux 2.0)
@@ -155,10 +131,8 @@
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = ru> http://yadi.sk/d/64iYID6f0Wy-d</a>
-                    &nbsp;-&nbsp;Скачать видео
+                  <li><span class= 'flag_ru'></span>
+<a href = ru> http://yadi.sk/d/64iYID6f0Wy-d</a>&nbsp;-&nbsp;Скачать видео
                   </li>
               <li><img src="../images/youtube.ico" alt="Иконка youtube" width="16">			<a href = https://www.youtube.com/user/kalinuxx/videos> Kali Linux Tutorials</a> 
               </li>
@@ -173,10 +147,8 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://xss-game.appspot.com/> Разбор XSS уязвимостей</a>
-                        &nbsp;-&nbsp;В игровой форме(wargame) от Google.
+                      <li><span class= 'flag_en'></span>
+<a href = https://xss-game.appspot.com/> Разбор XSS уязвимостей</a>&nbsp;-&nbsp;В игровой форме(wargame) от Google.
                       </li>
                   <li><img src="../images/youtube.ico" alt="Иконка youtube" width="16">			<a href = https://www.youtube.com/watch?v=ufYlQTpDmA8> Разбор предыдущего испытания от Google</a> 
                   </li>
@@ -184,25 +156,21 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://excess-xss.com/> excess-xss</a>
-                        &nbsp;-&nbsp;Отличный разбор темы XSS
+                      <li><span class= 'flag_en'></span>
+<a href = http://excess-xss.com/> excess-xss</a>&nbsp;-&nbsp;Отличный разбор темы XSS
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://www.xssed.com> xssed</a>
-                        &nbsp;-&nbsp;Старый сайт с новостями об уязвимостях XSS
+                      <li><span class= 'flag_en'></span>
+<a href = http://www.xssed.com> xssed</a>&nbsp;-&nbsp;Старый сайт с новостями об уязвимостях XSS
                       </li>
                 </ol>
               </li>
               <li></li>
               <li></li>
-              <li>											</li>
+              <li></li>
             </ol>
           </li>
           <li>Инструментарий
@@ -218,19 +186,15 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_ru'></span>
-                        <a href = https://en.wikipedia.org/wiki/Steganalysis> wiki Стегоанализ</a>
-                        &nbsp;-&nbsp;Обзорная статья.
+                      <li><span class= 'flag_ru'></span>
+<a href = https://en.wikipedia.org/wiki/Steganalysis> wiki Стегоанализ</a>&nbsp;-&nbsp;Обзорная статья.
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_ru'></span>
-                        <a href = http://xain.hackerdom.ru/zine/online/issue0/Steganography.html> Статья</a>
-                        &nbsp;-&nbsp;Стеганография. Скрытие информации в изображениях
+                      <li><span class= 'flag_ru'></span>
+<a href = http://xain.hackerdom.ru/zine/online/issue0/Steganography.html> Статья</a>&nbsp;-&nbsp;Стеганография. Скрытие информации в изображениях
                       </li>
                 </ol>
               </li>
@@ -285,27 +249,23 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://www.mysterytwisterc3.org/en/> mysterytwisterc3</a>
-                        &nbsp;-&nbsp;mysterytwisterc3 Crypto Challenges
+                      <li><span class= 'flag_en'></span>
+<a href = https://www.mysterytwisterc3.org/en/> mysterytwisterc3</a>&nbsp;-&nbsp;mysterytwisterc3 Crypto Challenges
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://cryptopals.com/> cryptopals.com</a>
-                        &nbsp;-&nbsp;The Cryptopals Crypto Challenges
+                      <li><span class= 'flag_en'></span>
+<a href = http://cryptopals.com/> cryptopals.com</a>&nbsp;-&nbsp;The Cryptopals Crypto Challenges
                       </li>
                 </ol>
               </li>
               <li>Разное
                 <ol>
                   <li><a href="http://practicalcryptography.com/">practicalcryptography</a></li>
-                  <li><a href="http://www.cs.mtu.edu/~shene/NSF-4/Tutorial/index.html">Cryptography Visualization Tools: A Tutorial			</a></li>
-                  <li><a href="http://kriptografea.narod.ru/">Криптография по русски					</a></li>
+                  <li><a href="http://www.cs.mtu.edu/~shene/NSF-4/Tutorial/index.html">Cryptography Visualization Tools: A Tutorial</a></li>
+                  <li><a href="http://kriptografea.narod.ru/">Криптография по русски</a></li>
                   <li><a href="http://cryptoclub.org/">CryptoClub.org</a></li>
                   <li><a href="http://cryptogram.org/">American Cryptogram Association</a></li>
                   <li><a href="http://cryptopals.com/">the cryptopals crypto challenges</a></li>
@@ -321,19 +281,15 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://cybersecurityawards.com/> Cyber Security Awards</a>
-                        &nbsp;-&nbsp;Cyber Security Awards
+                      <li><span class= 'flag_en'></span>
+<a href = http://cybersecurityawards.com/> Cyber Security Awards</a>&nbsp;-&nbsp;Cyber Security Awards
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://cybersecurity-excellence-awards.com/> Cybersecurity Excellence Awards</a>
-                        &nbsp;-&nbsp;Cybersecurity Excellence Awards
+                      <li><span class= 'flag_en'></span>
+<a href = http://cybersecurity-excellence-awards.com/> Cybersecurity Excellence Awards</a>&nbsp;-&nbsp;Cybersecurity Excellence Awards
                       </li>
                 </ol>
               </li>
@@ -343,83 +299,65 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://hackerone.com/> HackerOne</a>
-                        &nbsp;-&nbsp;Vulnerability Coordination and Bug Bounty Platform.
+                      <li><span class= 'flag_en'></span>
+<a href = https://hackerone.com/> HackerOne</a>&nbsp;-&nbsp;Vulnerability Coordination and Bug Bounty Platform.
                       </li>
                   <li><img src="../images/bugcrowd.ico" alt="Иконка bugcrowd"> <a href="https://bugcrowd.com/">Bugcrowd </a> - Bug Bounty Solutions & Hackers On-Demand</li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://www.synack.com> Synack</a>
-                        &nbsp;-&nbsp;Crowd Security Intelligence.
+                      <li><span class= 'flag_en'></span>
+<a href = https://www.synack.com> Synack</a>&nbsp;-&nbsp;Crowd Security Intelligence.
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://zerodium.com/> zerodium</a>
-                        &nbsp;-&nbsp;Программы поощрения не только за веб.
+                      <li><span class= 'flag_en'></span>
+<a href = https://zerodium.com/> zerodium</a>&nbsp;-&nbsp;Программы поощрения не только за веб.
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://zerodayinitiative.com/> ZeroDayInitiative</a>
-                        &nbsp;-&nbsp;Так же ежегодная конференция Pwn2Own с большими призами.
+                      <li><span class= 'flag_en'></span>
+<a href = http://zerodayinitiative.com/> ZeroDayInitiative</a>&nbsp;-&nbsp;Так же ежегодная конференция Pwn2Own с большими призами.
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_ru'></span>
-                        <a href = https://www.google.com/about/appsecurity/reward-program/index.html> Google</a>
-                        &nbsp;-&nbsp;Программа поощрения от google
+                      <li><span class= 'flag_ru'></span>
+<a href = https://www.google.com/about/appsecurity/reward-program/index.html> Google</a>&nbsp;-&nbsp;Программа поощрения от google
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_ru'></span>
-                        <a href = https://yandex.ru/bugbounty/> Yandex</a>
-                        &nbsp;-&nbsp;Программа поощрения от Yandex
+                      <li><span class= 'flag_ru'></span>
+<a href = https://yandex.ru/bugbounty/> Yandex</a>&nbsp;-&nbsp;Программа поощрения от Yandex
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_ru'></span>
-                        <a href = https://bugbounty.mail.ru/> mail.ru</a>
-                        &nbsp;-&nbsp;Программа поощрения от mail.ru
+                      <li><span class= 'flag_ru'></span>
+<a href = https://bugbounty.mail.ru/> mail.ru</a>&nbsp;-&nbsp;Программа поощрения от mail.ru
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://bugsheet.com> BugSheet</a>
-                        &nbsp;-&nbsp;Список программ поощрении от разных компаний
+                      <li><span class= 'flag_en'></span>
+<a href = http://bugsheet.com> BugSheet</a>&nbsp;-&nbsp;Список программ поощрении от разных компаний
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://www.openbugbounty.org> openbugbounty</a>
-                        &nbsp;-&nbsp;Публикуют уязвимости
+                      <li><span class= 'flag_en'></span>
+<a href = https://www.openbugbounty.org> openbugbounty</a>&nbsp;-&nbsp;Публикуют уязвимости
                       </li>
                 </ol>
               </li>
@@ -434,10 +372,8 @@
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = http://www.vestnik.vsu.ru/pdf/analiz/2007/01/2007-01-04.pdf> АЛГОРИТМЫ ВЫЯВЛЕНИЯ СТЕГАНОГРАФИЧЕСКОГО СКРЫТИЯ ИНФОРМАЦИИ В JPEG-ФАЙЛАХ</a>
-                    &nbsp;-&nbsp;
+                  <li><span class= 'flag_ru'></span>
+<a href = http://www.vestnik.vsu.ru/pdf/analiz/2007/01/2007-01-04.pdf> АЛГОРИТМЫ ВЫЯВЛЕНИЯ СТЕГАНОГРАФИЧЕСКОГО СКРЫТИЯ ИНФОРМАЦИИ В JPEG-ФАЙЛАХ</a>&nbsp;-&nbsp;
                   </li>
             </ol>
           </li>
@@ -447,48 +383,38 @@
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_en'></span>
-                    <a href = http://seclists.org/> seclists</a>
-                    &nbsp;-&nbsp;Архив рассылок по безопасности
+                  <li><span class= 'flag_en'></span>
+<a href = http://seclists.org/> seclists</a>&nbsp;-&nbsp;Архив рассылок по безопасности
                   </li>
               <li><img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> <a href="https://github.com/sindresorhus/awesome#security">Сборник ссылок</a> - по безопасности</li>
-              <li><img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> <a href="https://github.com/onlurking/awesome-infosec">Сборник ссылок</a> - по безопасности. Много обучающих ресурсов с описанием.						</li>
+              <li><img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> <a href="https://github.com/onlurking/awesome-infosec">Сборник ссылок</a> - по безопасности. Много обучающих ресурсов с описанием.</li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = http://bis-expert.ru/> BISA</a>
-                    &nbsp;-&nbsp;ассоциация по вопросам защиты информации
+                  <li><span class= 'flag_ru'></span>
+<a href = http://bis-expert.ru/> BISA</a>&nbsp;-&nbsp;ассоциация по вопросам защиты информации
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_en'></span>
-                    <a href = https://threatmap.checkpoint.com/ThreatPortal/livemap.html> Checkpoint - livemap</a>
-                    &nbsp;-&nbsp;Интерактивная карта кибератак
+                  <li><span class= 'flag_en'></span>
+<a href = https://threatmap.checkpoint.com/ThreatPortal/livemap.html> Checkpoint - livemap</a>&nbsp;-&nbsp;Интерактивная карта кибератак
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href = https://cybermap.kaspersky.com/> Kaspersky - cybermap</a>
-                    &nbsp;-&nbsp;Карта киберугроз в режиме реального времени Лаборатории Касперского
+                  <li><span class= 'flag_ru'></span>
+<a href = https://cybermap.kaspersky.com/> Kaspersky - cybermap</a>&nbsp;-&nbsp;Карта киберугроз в режиме реального времени Лаборатории Касперского
                   </li>
                   <!-- - lang - [ru, en]-->
                   <!-- - url - ссылка-->
                   <!-- - title_text - текст ссылки-->
                   <!-- - text - текст описания-->
-                  <li>
-                    <span class= 'flag_en'></span>
-                    <a href = http://map.norsecorp.com/#/> Norse</a>
-                    &nbsp;-&nbsp;Attack Map
+                  <li><span class= 'flag_en'></span>
+<a href = http://map.norsecorp.com/#/> Norse</a>&nbsp;-&nbsp;Attack Map
                   </li>
             </ol>
           </li>
@@ -500,37 +426,29 @@
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = https://trac.torproject.org/projects/tor/wiki/doc/GoodBadISPs> Список хостеров</a>
-                        &nbsp;-&nbsp;для серверов tor
+                      <li><span class= 'flag_en'></span>
+<a href = https://trac.torproject.org/projects/tor/wiki/doc/GoodBadISPs> Список хостеров</a>&nbsp;-&nbsp;для серверов tor
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://torstatus.blutmagie.de/> blutmagie</a>
-                        &nbsp;-&nbsp;статусы и статистика tor серверов
+                      <li><span class= 'flag_en'></span>
+<a href = http://torstatus.blutmagie.de/> blutmagie</a>&nbsp;-&nbsp;статусы и статистика tor серверов
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_ru'></span>
-                        <a href = https://geektimes.ru/post/277578/> TOR</a>
-                        &nbsp;-&nbsp;как работает сеть тор.
+                      <li><span class= 'flag_ru'></span>
+<a href = https://geektimes.ru/post/277578/> TOR</a>&nbsp;-&nbsp;как работает сеть тор.
                       </li>
                       <!-- - lang - [ru, en]-->
                       <!-- - url - ссылка-->
                       <!-- - title_text - текст ссылки-->
                       <!-- - text - текст описания-->
-                      <li>
-                        <span class= 'flag_en'></span>
-                        <a href = http://motherboard.vice.com/read/how-you-can-help-make-tor-faster-for-10-a-month> статья</a>
-                        &nbsp;-&nbsp;как поднять тор сервер
+                      <li><span class= 'flag_en'></span>
+<a href = http://motherboard.vice.com/read/how-you-can-help-make-tor-faster-for-10-a-month> статья</a>&nbsp;-&nbsp;как поднять тор сервер
                       </li>
                 </ol>
               </li>
@@ -538,17 +456,15 @@
           </li>
           <li>Книги
             <ol>
-                  <li>
-                    <span class= 'flag_en'></span>
-                    <a href="http://rutracker.net/forum/viewtopic.php?t=5348075"> Blockmon R.</a>&nbsp;- CEH v9: Certified Ethical Hacker Version 9 Practice Tests [2016, EPUB/MOBI/AZW3]
+                  <li><span class= 'flag_en'></span>
+<a href="http://rutracker.net/forum/viewtopic.php?t=5348075"> Blockmon R.</a>&nbsp;- CEH v9: Certified Ethical Hacker Version 9 Practice Tests [2016, EPUB/MOBI/AZW3]
                   </li>
             </ol>
           </li>
           <li>Видео
             <ol>
-                  <li>
-                    <span class= 'flag_ru'></span>
-                    <a href="http://rutracker.net/forum/viewtopic.php?t=5315217"> CEH.v9</a>&nbsp;-  Этичный хакинг и тестирование на проникновение
+                  <li><span class= 'flag_ru'></span>
+<a href="http://rutracker.net/forum/viewtopic.php?t=5315217"> CEH.v9</a>&nbsp;-  Этичный хакинг и тестирование на проникновение
                   </li>
             </ol>
           </li>
@@ -556,16 +472,33 @@
       </div>
     </div>
     <footer>
-      <div class="row">
-        <div class="large-12 columns">
-          <div id="logo5HTML"><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p>© 2001 - 2018</p>
+            <div><small>Это произведение, автор которого — <a href="aboutabout_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
         </div>
       </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
+      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
+      <script>$(document).foundation();</script>
     </footer>
     <!-- script(src="../js/jquary.js")-->
     <!-- script(src="../js/foundation.min.js")-->
     <!-- <script>-->
     <!-- $(document).foundation();-->
-    <!-- </script>		-->
+    <!-- </script>-->
   </body>
 </html>
