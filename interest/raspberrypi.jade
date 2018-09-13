@@ -1,0 +1,52 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Все о Raspberry Pi"
+
+block content
+	mixin li_link(lang, url, title_text, text)
+		// - lang - [ru, en]
+		// - url - ссылка
+		// - title_text - текст ссылки
+		// - text - текст описания
+		li
+			<span class= 'flag_#{lang}'></span>
+			<a href = #{url}> #{title_text}</a>
+			|&nbsp;-&nbsp;#{text}	
+	div.row: div.large-12.columns: h1 Все о Raspberry Pi
+	div.row: div.large-12.columns
+		ol
+			li Магазины
+				ol
+					+li_link('ru','http://shopeasy.by/cashback/view/ow4xs2cw8j3jwksyy4twq6hulsy5k66f/?to=https://landzoelectronic.ru.aliexpress.com/store/428351','LANDZO Electronic Technology Co.,Ltd.','и другая электроника.')
+					+li_link('ru','http://shopeasy.by/cashback/view/ow8nd24wncnp0q3pk784vltu4rg1fyj9/?to=https://ru.aliexpress.com/store/1389925','Ruiye Electronics.','и другая электроника.')
+			li Youtube каналы
+				ol
+					+li_link('en','https://www.youtube.com/channel/UCbiGcwDWZjz05njNPrJU7jA','ExplainingComputers','есть видео и про другие микрокомпьютеры')
+					+li_link('en','https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ', 'sentdex','видеоблог')
+			+li_link('en','https://www.raspberrypi.org/', 'raspberrypi.org', 'официальный сайт')
+			+li_link('en','https://www.element14.com/community/community/raspberry-pi', 'element14', '')
+			+li_link('ru','https://geektimes.ru/hub/raspberrypi/', 'geektimes', 'все публикации подряд')
+			li 
+				|Статьи на <a href="http://wiki.amperka.ru">wiki.amperka.ru</a>
+				ol
+					+li_link('ru','http://wiki.amperka.ru/rpi:installation', 'Установка и настройка микрокомпьютера Raspberry Pi 3', '')
+					+li_link('ru','http://wiki.amperka.ru/rpi:vnc-server', 'Настройка удалённого рабочего стола (VNC)', '')
+					+li_link('ru','http://wiki.amperka.ru/%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D1%8B:tft-touch-color-display-800x480-raspberry-pi', 'Подключение сенсорного экрана', '')
+					+li_link('ru','http://wiki.amperka.ru/rpi:camera', 'Подключение и примеры работы с камерой', '')
+					+li_link('ru','http://wiki.amperka.ru/rpi:noir-camera', 'ИК-камера для Raspberry', '')
+			li Сайты и блоги
+				ol
+					+li_link('en','https://www.hackster.io/raspberry-pi', 'hackster.io', 'проекты на Rpi')
+					+li_link('ru','http://dmitrysnotes.ru/arduino-rpi', 'dmitrysnotes.ru', 'Рубрика: Raspberry Pi & Arduino')
+			li
+				a(href='http://fritzing.org/home/') Fritzing [ENG]
+			li
+				a(href='http://suptronics.com/') SupTronics
+				| - фирма производящая платы расширения для RPi
+			li
+				a(href='http://www.piface.org.uk/') PiFace
+				| - фирма производящая платы расширения для RPi
+			li
+				a(href='http://got.by/1tq6l2') плата расширения X820
+				| aliexpress

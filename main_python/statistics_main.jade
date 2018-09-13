@@ -1,11 +1,10 @@
-extends ../layouts/html_layout.jade
+extends ../layouts/code_layout.jade
 
-block scripts
-	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
-	script(type="text/javascript"  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+block title
+	title= site_title + " Статистика на python"
 
 block content
-	div.row: div.large-12.columns: h1: Статистика на python
+	div.row: div.large-12.columns: h1 Статистика на python
 	div.row: div.large-12.columns
 		h2 Основные понятия
 		h3 Среднее арифметическое | mean
@@ -36,8 +35,8 @@ block content
 			|>>> 5.0
 
 		h3 Среднеквадратическое отклонение | Standard Deviation
-
-		\[ \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \overline{x})^2} \]
+		div
+		|\[ \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \overline{x})^2} \]
 
 		pre.python: code
 			|import statistics
@@ -47,7 +46,7 @@ block content
 
 		h3 Ковариация
 
-		\[ \mathrm{cov}_{xy} = \mathbb{M} \left[(X - \mathbb{M}X) (Y - \mathbb{M}Y)\right] \]
+		|\[ \mathrm{cov}_{xy} = \mathbb{M} \left[(X - \mathbb{M}X) (Y - \mathbb{M}Y)\right] \]
 
 		<math display="block">
 		<msub>
@@ -91,5 +90,5 @@ block content
 		</math>
 
 block footer
-	script(src="http://yandex.st/highlightjs/7.3/highlight.min.js")
-	script hljs.initHighlightingOnLoad();
+	//script(src="http://yandex.st/highlightjs/7.3/highlight.min.js")
+	//script hljs.initHighlightingOnLoad();

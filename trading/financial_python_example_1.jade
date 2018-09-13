@@ -4,35 +4,37 @@ block title
 	title= site_title + " Пример 1. График курса рубля."
 
 block content
-	div.row: div.large-12.columns: h2 Пример 1. График курса рубля.
-	div.row: div.large-12.columns
-		div.text-justify Напишем простой пример считывание данных о курсе рубля с сервиса yahoo finance и построим простой линейный график.
-			| Используем библиотеку <a href="https://github.com/pydata/pandas-datareader"> pandas-datareader</a>. Данная библиотека позволяет
-			| читать данные из следующих источников:
-			ol
-				li Yahoo! Finance
-				li Google Finance http://www.google.com/finance/info
-				li FRED St. Louis FED (FRED) http://research.stlouisfed.org/fred2/series/
-				| Еще библиотеки, которые позволяют работать с этими данными https://github.com/avelkoski/FRB; https://github.com/mortada/fredapi; 
-				| https://github.com/zachwill/fred
-				li Fama/French
-				li World Bank
-				li OECD (Organisation for Economic Co-operation and Development) http://stats.oecd.org/SDMX-JSON/data
-				li Eurostat http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest
-				li EDGAR Index https://www.sec.gov/edgar/indices/fullindex.htm
-			| Результат представлен на рис.1		
-		div.large-2.columns.right
-			a(href="../python_source/financial_example_1.py") financial_example_1.py		
-		div.large-12.columns
-			pre.python: code
-				include ../python_source/financial_example_1.py
-		div.clearfix
-		div.large-2.columns
-			p &nbsp;
-		div.large-6.columns
-			div.card
-				div.image
-					img(src="../images/pic_1.png")
+	div.row
+		div.column.text-center
+			h3 Пример 1. График курса рубля.
+	div.row
+		div.columns.large-2 &nbsp;
+		div.columns.large-8
+			div.callout
+				div.text-justify Напишем простой пример считывание данных о курсе рубля с сервиса yahoo finance и построим простой линейный график.
+					| Используем библиотеку <a href="https://github.com/pydata/pandas-datareader"> pandas-datareader</a>. Данная библиотека позволяет
+					| читать данные из следующих источников:
+					ol
+						li Yahoo! Finance
+						li Google Finance http://www.google.com/finance/info
+						li FRED St. Louis FED (FRED) http://research.stlouisfed.org/fred2/series/
+						| Еще библиотеки, которые позволяют работать с этими данными https://github.com/avelkoski/FRB; https://github.com/mortada/fredapi; 
+						| https://github.com/zachwill/fred
+						li Fama/French
+						li World Bank
+						li OECD (Organisation for Economic Co-operation and Development) http://stats.oecd.org/SDMX-JSON/data
+						li Eurostat http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest
+						li EDGAR Index https://www.sec.gov/edgar/indices/fullindex.htm
+					| Результат представлен на рис.1
+				div.right
+					a(href="../python_source/financial_example_1.py") financial_example_1.py
+				pre.python: code
+					include ../python_source/financial_example_1.py
+				//div.clearfix
+				div.card
+					div.image
+						img(src="../images/pic_1.png")
 
-				div.content
-					<p>Рис. 1</p>
+					div.content
+						<p>Рис. 1</p>
+		div.columns.large-2 &nbsp;

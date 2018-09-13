@@ -1,24 +1,52 @@
-extends layouts/html_layout.jade
+- var site_title = "ABSOLEM.INFO";
+- var site_url = "https://ABSOLEM.INFO";
+doctype
+html(lang="ru")
+	head
+		title= site_title + " Ошибка 404"
+		meta( charset="utf-8" )
+		meta( name="viewport" content="width=device-width, initial-scale=1.0")
+		meta( name="description" content="Семенова Андрей Вячеславович. Личный сайт" )
+		meta( name="author" content="Семенова Андрей Вячеславович" )
+		meta( name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python,Трейдинг" )
+		meta( name="copyright" content="Семенова Андрей Вячеславович" )
+		link( rel="shortcut icon" href="/caterpillar.png" )
+		link( rel="stylesheet" href="css/mainstyle.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="css/foundation.css" type="text/css" media="all" )
+		//script( src="../js/prefixfree.min.js" )
+		//script( src="../js/modernizr-2.7.0.dev.js" )
+		//script( src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" )
+		//script( src="../js/functions.js" )
+		//link( rel="stylesheet" href="../css/googlecode.css" )
+		//link( href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&amp;subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'" )
+	body
+	
 
-block title
-	title= site_title + " Ошибка 404"
+	block content
+		div.row
+			div.column.text-center
+				div.callout.alert
+					h2: strong Ошибка 404. Страница не найдена
 
-block content
-	div.row: div.large-12.columns: h2: strong Ошибка 404. Страница не найдена
-	div.row: div.large-12.columns
-		h3 Оглавление сайта (сокращенное)
-			ul
-				li: a(href= site_url) Начало				
-				li: a(href= site_url+"/programming_index.html") Программирование
-				li: a(href= site_url+"/robots/index.html") Роботы
-				li: a(href= site_url+"/cooking/index.html") Информация по кулинарии												
-				li: a(href= site_url+"/diving/diving.html") Дайвинг
-				li: a(href= site_url+"/resistance/index.html") Игра Resistance
-				//li: div.callout.panel: a(href="userscripts/userscripts.html") Userscripts
-				li: a(href= site_url+"/astronomy/index.html") Астрономия
-				li: a(href= site_url+"/trading/index.html") Инвестирование 
-				li: a(href= site_url+"/photo/index.html") Информация по фотографии
-				li: a(href= site_url+"/ipsc/index.html") Практическая стрельба
-				li: a(href= site_url+"/useful_index.html") Полезно
-				li: a(href= site_url+"/interest/interest.html") Интересно
-				li: a(href= site_url+"/betting/index.html") Ставки на спорт		
+		div.grid-container.fluid.center
+			div.grid-x.grid-margin-x.small-up-1.medium-up-2.large-up-2
+				div.cell.small-6
+					h3 Оглавление сайта (сокращенное)
+					ul
+						li: a(href= site_url) Начало
+						li: a(href= site_url+"/programming_index.html") Программирование
+						li: a(href= site_url+"/robots/index.html") Роботы
+						li: a(href= site_url+"/cooking/index.html") Информация по кулинарии
+						li: a(href= site_url+"/diving/diving.html") Дайвинг
+						li: a(href= site_url+"/resistance/index.html") Игра Resistance
+						//li: div.callout.panel: a(href="userscripts/userscripts.html") Userscripts
+						li: a(href= site_url+"/astronomy/index.html") Астрономия
+						li: a(href= site_url+"/trading/index.html") Инвестирование 
+						li: a(href= site_url+"/photo/index.html") Информация по фотографии
+						li: a(href= site_url+"/ipsc/index.html") Практическая стрельба
+						li: a(href= site_url+"/useful/useful_index.html") Полезно
+						li: a(href= site_url+"/interest/interest.html") Интересно
+						li: a(href= site_url+"/betting/index.html") Ставки на спорт
+		div.row 
+			div.column
+				div.callout.primary

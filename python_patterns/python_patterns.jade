@@ -1,0 +1,128 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Шаблоны проектирования на python"
+	
+
+block content
+	div.row
+		div.columns.large-1 &nbsp;
+		div.columns.large-8
+			h3 Что такое шаблоны проектирования
+			div
+			| В общем случае будем описывать петтерн четырьмя главными частями:
+			ol
+				li Имя и тип
+				li Проблема
+				li Решение
+				li Реализация (код)
+			h3 Классификация шаблонов проектирования
+			div
+			| Мы будем делить шаблоны на три группы:
+			ol
+				li Порождающие
+				li Структурные
+				li Поведенческие
+			p
+			| <strong> Порождающие </strong> - 
+			p
+			| <strong> Структурные </strong> - 
+			p
+			| <strong> Поведенческие </strong> - 
+			p Исходя из предложенного деления мы изучим
+			ol
+				li Порождающие
+					ol
+						li Абстрактная фабрика (Abstract Factory)
+						li Фабричный метод (Factory Method)
+				li Структурные
+					ol
+						li Адаптер (Adapter)
+						li Компоновщик (Composite)
+						li Декоратор (Decorator)
+				li Поведенческие
+					ol
+						li Стратегия (Strategy)
+						li Шаблонный метод (Template Method)
+						li Наблюдатель (Observer)
+
+		div.columns.large-3 &nbsp;
+	div.row
+		div.columns.large-1 &nbsp;
+		div.columns.large-8
+			div.callout(data-closable)
+				h4 Шаблоны проектирования, которые мы изучим в первую очередь:
+				ol
+					li 
+						a(href="pattern_abstract_factory.html") <i class="far fa-eye"></i> 
+						| Абстрактная фабрика (Abstract Factory)
+					li 
+						a(href="pattern_adapter.html") <i class="far fa-eye"></i> 
+						| Адаптер (Adapter)
+					li 
+						a(href="pattern_composite.html") <i class="far fa-eye"></i> 
+						| Компоновщик (Composite)
+					li 
+						a(href="pattern_decorator.html") <i class="far fa-eye"></i> 
+						| Декоратор (Decorator)
+					li 
+						a(href="pattern_factory_method.html") <i class="far fa-eye"></i> 
+						| Фабричный метод (Factory Method)
+					li 
+						a(href="pattern_observer.html") <i class="far fa-eye"></i> 
+						| Наблюдатель (Observer)
+					li 
+						a(href="pattern_strategy.html") <i class="far fa-eye"></i> 
+						| Стратегия (Strategy)
+					li 
+						a(href="pattern_template_method.html") <i class="far fa-eye"></i> 
+						| Шаблонный метод (Template Method)
+				button.close-button(aria-label="Dismiss alert" type="button" data-close): i.fas.fa-times
+		div.columns.large-3 &nbsp;
+
+	div.row
+		div.columns.large-3 &nbsp;
+		div.columns.large-6
+			div.callout(data-closable)
+				h4 <i class="fas fa-book"></i> Литература:
+				ol
+					li: a(href="") 
+				button.close-button(aria-label="Dismiss alert" type="button" data-close): i.fas.fa-times
+		div.columns.large-3 &nbsp;
+
+	div.row
+		div.columns.large-3 &nbsp;
+		div.columns.large-6
+			div.callout(data-closable)
+				h4 <i class="fas fa-link"></i> Ссылки:
+				ol
+					li Общие вопросы
+						ol
+							li: a(href="https://refactoring.guru/ru") <span class='flag_ru'></span> Рефакторинг и Паттерны проектирования
+							li: a(href="https://sourcemaking.com") Design Patterns & Refactoring
+							li: a(href="https://www.oodesign.com") Design Patterns | Object Oriented Design
+							li: a(href="") 
+					li Реализация на <i class="fab fa-python"></i> питоне
+						ol 
+							li 
+								a(href="https://github.com/pkolt/design_patterns"): i.fas.fa-external-link-alt(aria-hidden="true")
+								|&nbsp; <span class='flag_ru'></span> <i class="fab fa-github"></i> pkolt/design_patterns: Паттерны проектирования
+							li
+								a(href="https://github.com/faif/python-patterns"): i.fas.fa-external-link-alt(aria-hidden="true")
+								|&nbsp;  <span class='flag_en'></span> <i class="fab fa-github"></i> A collection of design patterns/idioms in Python
+							li 
+								a(href="https://py.checkio.org/blog/design-patterns-part-1/"): i.fas.fa-external-link-alt(aria-hidden="true")
+								|&nbsp; <span class='flag_en'></span> Design Patterns. Part 1 - Abstract Factory и Strategy
+							li 
+								a(href="https://py.checkio.org/blog/design-patterns-part-2/"): i.fas.fa-external-link-alt(aria-hidden="true") 
+								|&nbsp; <span class='flag_en'></span> Design Patterns. Part 2 - Observer and Mediator
+							li 
+								a(href="https://py.checkio.org/blog/design-patterns-part-3/"): i.fas.fa-external-link-alt(aria-hidden="true") 
+								|&nbsp; <span class='flag_en'></span> Design Patterns. Part 3 - Memento and Bridge
+							li 
+								a(href="https://py.checkio.org/blog/design-patterns-part-4/"): i.fas.fa-external-link-alt(aria-hidden="true") 
+								|&nbsp; <span class='flag_en'></span> Design Patterns. Part 4 - State and Interpreter
+
+							li: a(href="") 
+				button.close-button(aria-label="Dismiss alert" type="button" data-close): i.fas.fa-times
+		div.columns.large-3 &nbsp;

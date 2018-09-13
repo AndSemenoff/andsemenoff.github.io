@@ -11,7 +11,7 @@ block content
 		else if github
 			<img src="../images/github.ico" alt="Иконка github" width="16">
 		else if youtube
-			<img src="../images/youtube.ico" alt="Иконка youtube" width="16">			
+			<img src="../images/youtube.ico" alt="Иконка youtube" width="16">
 	mixin li_link(url, title_text, text)
 		li 
 			<a href = #{url}> #{title_text}</a>
@@ -34,7 +34,7 @@ block content
 
 			li Специалные уязвимые сайты для исследования
 					+li_link('http://testphp.vulnweb.com/index.php', 'testphp.vulnweb.com', 'Специально созданный уязвимый сайт.')
-					+li_link('http://google-gruyere.appspot.com/', 'google-gruyere', 'Сайт от гугл с подсказками и объяснениями.')					
+					+li_link('http://google-gruyere.appspot.com/', 'google-gruyere', 'Сайт от гугл с подсказками и объяснениями.')
 							
 			li bWAPP
 				ol
@@ -67,4 +67,4 @@ block content
 		div.large-1.columns: h3: strong Сайты с разборами
 		div.large-11.columns
 			ol
-				+li_link('http://blog.dornea.nu/','Блог Victor Dorneanu','Много разборов.')			
+				+li_link('http://blog.dornea.nu/','Блог Victor Dorneanu','Много разборов.')

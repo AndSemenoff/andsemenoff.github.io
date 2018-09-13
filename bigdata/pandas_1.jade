@@ -3,13 +3,10 @@ extends ../layouts/html_layout.jade
 block title
 	title= site_title + " Работа с Pandas"
 
-block scripts
-	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
-
-
 block content
-	div.row: div.large-12.columns: h1: Работа с Pandas
+	div.row: div.large-12.columns: h1 Работа с Pandas
 	div.row: div.large-12.columns
+		p Основной <a href="http://pandas.pydata.org/"> официальный сайт pandas</a>. Официальная <a href="http://pandas.pydata.org/pandas-docs/stable/"> документация</a>. 
 		p Основными структурами данных в pandas являются Series и DataFrame.
 		h3 Полезные функции
 		p Как правило нам нужно импортировать:
@@ -17,9 +14,46 @@ block content
 				| import pandas as pd
 				| import numpy as np
 				| import matplotlib.pyplot as plt
+ 
+		p.
+			| For the Series object (let's call it s), pandas offers three types of addressing.
+		ol
+			li
+			|s.iloc[] -- for integer position addressing;
+			| s.loc[] -- for index label addressing; and
+			br
+			| s.ix[] -- for a hybrid of integer position and label addressing.
+		p.
+			The pandas object also performs ix addressing directly.
 
-block footer
-	script(src="http://yandex.st/highlightjs/7.3/highlight.min.js")
-	script hljs.initHighlightingOnLoad();
+			# play data ...
+			import string
+			idx = [i for i in string.uppercase] # A, B, C .. Z
+			t = pd.Series(range(26), index=idx) # 0, 1, 2 .. 25
 
-		
+			# examples ...
+			t[0]              # --> 0
+			t['A']            # --> 0
+			t[['A','M']]      # --> [0, 12]
+			t['A':'D']        # --> [0, 1, 2, 3]
+			t.iloc[25]        # --> 25
+			t.loc['Z']        # --> 25
+			t.loc[['A','Z']]  # --> [0, 25]
+			t.ix['A':'C']     # --> [0, 1, 2]
+			t.ix[0:2]         # --> [0, 1]			
+
+		li Ссылки по теме pandas
+			ol
+				li
+					a(href="http://pandas.pydata.org/") Официальный сайт 
+					| pandas и страничка 
+					a(href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html") уроков
+				li Habr. 
+					a(href="http://habrahabr.ru/post/196980/") Введение в анализ данных с помощью Pandas
+				li
+					a(href="http://vimeo.com/channels/pydata/videos") PyData video
+				li Youtube.com 
+					a(href="http://www.youtube.com/watch?v=eRpFC2CKvao&list=PLyBBc46Y6aAz54aOUgKXXyTcEmpMisAq3") Python Pandas Cookbook 
+					| Alfred Essa 
+				li ENG. 
+					a(href="http://nbviewer.jupyter.org/github/twiecki/financial-analysis-python-tutorial/tree/master/") Финансовый анализ с pandas.

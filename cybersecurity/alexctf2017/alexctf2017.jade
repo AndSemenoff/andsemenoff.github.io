@@ -1,4 +1,4 @@
-extends ../layouts/html_layout.jade
+extends ../../layouts/html_layout.jade
 
 block title
 	title= site_title + " AlexCTF2017. Разборы."
@@ -22,8 +22,8 @@ block content
 					+info_link('1_5_movement.html', 'packed movement', '350')
 			li Криптография (Cryptography)
 				ol
-					li Ultracoded (50)
-					li Many times secrets (100)
+					+info_link('2_1_Ultracoded.html', 'Ultracoded', '50')
+					+info_link('2_2_Many_times.html', 'Many times secrets', '100')
 					li What is this encryption? (150)
 					li Poor RSA (200)
 					li Bring weakness (300)

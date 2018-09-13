@@ -1,0 +1,34 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Подготовка данных."
+
+block content
+	div.row: div.large-12.columns: h2 Подготовка данных
+	div.row: div.large-12.columns
+		h3 Начало
+
+		div Я скачал <a href="GAZP_day.csv">данные</a> по акциям Газпром с сайта <a href="http://www.finam.ru/profile/moex-akcii/gazprom/?market=1">Финам</a>. Важно посмотреть какой знак используется, как разделитель. В моем файле разделитель - это запятая ",".
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/read_csv_1.py
+
+		<img src="../python_source/read_csv_1.png">
+
+		div Параметр "index_col" указывает какой столбец использовать, как индекс. Параметр "sep" - указывает, какой символ используется, как разделитель, в нашем варианте - это запятая. Параметр "parse_dates = True" указывает, что нужно преобразовывать дату. Метод head выводит первые пять строк таблицы.
+
+		p Для удобства работы возьмем и будем работать только с ценой закрытия
+		div.large-12.columns
+			pre.python: code
+				| df = pd.DataFrame(df, columns=["CLOSE"])
+
+		p.text-justify 
+		| С помощью встроенной функции pct_change(), мы можем легко посчитать суточную, месячную и годовую доходности по соотвествующим 
+		| формулам: 
+		pre.python: code
+			| daily_return = df.pct_change(1) # 1 for ONE DAY lookback
+			| monthly_return = df.pct_change(21) # 21 for ONE MONTH lookback
+			| annual_return = df.pct_change(252) # 252 for ONE YEAR lookback
+
+		p Традиционным в финансах является построение свечного графика. Поэтому дам ссылки на несколько примеров построения таких на питоне
+		<a href="http://matplotlib.org/examples/pylab_examples/finance_demo.html">пример 1</a> из документации на http://matplotlib.org, <a href="https://pythonprogramming.net/candlestick-ohlc-graph-matplotlib-tutorial/">пример 2</a>, <a href="https://plot.ly/python/candlestick-charts/">пример 3</a> 

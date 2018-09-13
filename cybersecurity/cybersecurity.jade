@@ -13,6 +13,10 @@ block content
 		else if youtube
 			<img src="../images/youtube.ico" alt="Иконка youtube" width="16">			
 	mixin li_link(lang, url, title_text, text)
+		// - lang - [ru, en]
+		// - url - ссылка
+		// - title_text - текст ссылки
+		// - text - текст описания
 		li
 			<span class= 'flag_#{lang}'></span>
 			<a href = #{url}> #{title_text}</a>
@@ -35,15 +39,15 @@ block content
 			li: strong: a(href='ctf.html') Все о соревнованиях CTF.			
 			li: strong: a(href='wargame.html') Сайты испытаний (challenge, wargame)
 			li
-				| Сообщества					
+				| Сообщества
 				ol
-					+li_link('ru','http://www.securitylab.ru/','SecurityLab.ru','Новости. Блоги. Сообщество.')					
+					+li_link('ru','http://www.securitylab.ru/','SecurityLab.ru','Новости. Блоги. Сообщество.')
 					+li_link('ru','ru','https://defcon.ru/','DefconRU','Сообщество специалистов в области информационной безопасности.')
 					+li_link('ru','https://threatpost.ru/','threatpost','Новости информационной безопасности. Лаборатория Касперского.')
 					+li_link('ru','https://www.opennet.ru/','Проект OpenNet','всё, что связано с открытым ПО, открытыми технологиями, Linux, BSD и Unix.')
-					+li_link('ru','https://damagelab.in/index.php','DaMaGeLaB.IN','информационная безопасность.')										
+					+li_link('ru','https://damagelab.in/index.php','DaMaGeLaB.IN','информационная безопасность.')
 					+li_link('ru','https://www.anti-malware.ru/','Anti-Malware.ru','независимый информационно-аналитический центр.')
-					+li_link('ru','https://rdot.org/forum/','RDot','форум по безопасности на русском')										
+					+li_link('ru','https://rdot.org/forum/','RDot','форум по безопасности на русском')
 					li
 						a(href='https://n0where.net/') CyberPunk 
 						|  - Open Source CyberSecurity.
@@ -51,10 +55,10 @@ block content
 						a(href='http://www.darkreading.com/') DarkReading 
 						|  - News. Articles.
 					li
-						a(href='https://security.googleblog.com/') Security Google Blog 				
+						a(href='https://security.googleblog.com/') Security Google Blog
 					li
 						a(href='https://raz0r.name/') Raz0r.name  
-						|  - блог о web-безопасности на русском.					
+						|  - блог о web-безопасности на русском.
 			li Обучение
 				ol
 					li
@@ -62,7 +66,7 @@ block content
 						| - Online Cyber Security Training, Free, Forever					
 					li: a(href='http://mitrecyberacademy.org/learn/') MITRE Cyber Academy
 					li: a(href='http://opensecuritytraining.info/Welcome.html') open security training
-					+li_link('en','https://www.cybertraining365.com','cybertraining365','Обучение. Есть бесплатные уроки.')					
+					+li_link('en','https://www.cybertraining365.com','cybertraining365','Обучение. Есть бесплатные уроки.')
 
 					li: a(href='https://www.computersecuritystudent.com/') ComputerSecurityStudent	
 					li: a(href='http://www.securitytube.net/') SecurityTube	
@@ -70,7 +74,7 @@ block content
 						a(href='http://www.amanhardikar.com/mindmaps/Practice.html') Сборник ссылок для практики
 					li
 						a(href='http://www.cis.syr.edu/~wedu/seed/') SEEDlabs 
-						| - Hands-on Labs for Security Education						
+						| - Hands-on Labs for Security Education
 					li
 						+images(0,1,0)
 						+info_link('https://www.youtube.com/user/JackkTutorials/videos','JackkTutorials','')
@@ -95,7 +99,7 @@ block content
 
 					li
 						+images(0,1,0)
-						+info_link('https://www.youtube.com/user/kalinuxx/videos','Kali Linux Tutorials','')						
+						+info_link('https://www.youtube.com/user/kalinuxx/videos','Kali Linux Tutorials','')
 			li Web
 				ol
 					li Injection
@@ -106,12 +110,12 @@ block content
 								+images(0,1,0)
 								+info_link('https://www.youtube.com/watch?v=ufYlQTpDmA8','Разбор предыдущего испытания от Google','')
 							+li_link('en','http://excess-xss.com/','excess-xss','Отличный разбор темы XSS')
-							+li_link('en','http://www.xssed.com','xssed','Старый сайт с новостями об уязвимостях XSS')							
+							+li_link('en','http://www.xssed.com','xssed','Старый сайт с новостями об уязвимостях XSS')
 														
 									
 					li
 					li
-					li											
+					li
 			li Инструментарий
 				ol
 					li: a(href='http://www.volatilityfoundation.org/') The Volatility Foundation - Open Source Memory Forensics
@@ -170,13 +174,13 @@ block content
 							li: a(href='http://nnmclub.to/forum/viewtopic.php?t=1047460') Иван Ефишов | Таинственные страницы. Занимательная криптография (2016) [FB2] :: NNM-Club
 					li Практика
 						ol
-							+li_link('en','https://www.mysterytwisterc3.org/en/','mysterytwisterc3','mysterytwisterc3 Crypto Challenges')		
-							+li_link('en','http://cryptopals.com/','cryptopals.com','The Cryptopals Crypto Challenges')					
+							+li_link('en','https://www.mysterytwisterc3.org/en/','mysterytwisterc3','mysterytwisterc3 Crypto Challenges')
+							+li_link('en','http://cryptopals.com/','cryptopals.com','The Cryptopals Crypto Challenges')
 					li Разное
 						ol
 							li: a(href='http://practicalcryptography.com/') practicalcryptography
-							li: a(href='http://www.cs.mtu.edu/~shene/NSF-4/Tutorial/index.html') Cryptography Visualization Tools: A Tutorial			
-							li: a(href='http://kriptografea.narod.ru/') Криптография по русски					
+							li: a(href='http://www.cs.mtu.edu/~shene/NSF-4/Tutorial/index.html') Cryptography Visualization Tools: A Tutorial
+							li: a(href='http://kriptografea.narod.ru/') Криптография по русски
 							li: a(href='http://cryptoclub.org/') CryptoClub.org
 							li: a(href='http://cryptogram.org/') American Cryptogram Association
 							li: a(href='http://cryptopals.com/') the cryptopals crypto challenges
@@ -200,7 +204,7 @@ block content
 							+li_link('ru','https://yandex.ru/bugbounty/','Yandex','Программа поощрения от Yandex')
 							+li_link('ru','https://bugbounty.mail.ru/','mail.ru','Программа поощрения от mail.ru')
 							+li_link('en','http://bugsheet.com','BugSheet','Список программ поощрении от разных компаний')
-							+li_link('en','https://www.openbugbounty.org','openbugbounty','Публикуют уязвимости')											
+							+li_link('en','https://www.openbugbounty.org','openbugbounty','Публикуют уязвимости')
 			li Статьи
 				ol
 					li
@@ -216,14 +220,14 @@ block content
 					
 			li Разное
 				ol
-					+li_link('en','http://seclists.org/','seclists','Архив рассылок по безопасности')					
+					+li_link('en','http://seclists.org/','seclists','Архив рассылок по безопасности')
 					li <img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> 
 						a(href='https://github.com/sindresorhus/awesome#security') Сборник ссылок
 						|  - по безопасности
 					li <img src="../images/github.ico" alt="Иконка github" width="16"> <img src="../images/awesome.svg" alt="Иконка awesome"> 
 						a(href='https://github.com/onlurking/awesome-infosec') Сборник ссылок
-						|  - по безопасности. Много обучающих ресурсов с описанием.						
-					+li_link('ru','http://bis-expert.ru/','BISA','ассоциация по вопросам защиты информации')					
+						|  - по безопасности. Много обучающих ресурсов с описанием.
+					+li_link('ru','http://bis-expert.ru/','BISA','ассоциация по вопросам защиты информации')
 					+li_link('en','https://threatmap.checkpoint.com/ThreatPortal/livemap.html','Checkpoint - livemap','Интерактивная карта кибератак')
 					+li_link('ru','https://cybermap.kaspersky.com/','Kaspersky - cybermap','Карта киберугроз в режиме реального времени Лаборатории Касперского')
 					+li_link('en','http://map.norsecorp.com/#/','Norse','Attack Map')
@@ -240,4 +244,4 @@ block content
 					+rutracker_link('en','5348075','Blockmon R.','CEH v9: Certified Ethical Hacker Version 9 Practice Tests [2016, EPUB/MOBI/AZW3]')
 			li Видео
 				ol
-					+rutracker_link('ru','5315217','CEH.v9',' Этичный хакинг и тестирование на проникновение')			
+					+rutracker_link('ru','5315217','CEH.v9',' Этичный хакинг и тестирование на проникновение')

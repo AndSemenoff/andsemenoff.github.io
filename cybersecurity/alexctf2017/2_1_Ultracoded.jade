@@ -1,0 +1,30 @@
+extends ../../layouts/html_layout.jade
+
+block title
+	title= site_title + " AlexCTF2017. Разборы."
+
+block content
+	div.row: div.large-12.columns: h1 AlexCTF2017. Ultracoded.
+	div.row: div.large-12.columns
+		div Задание. (50)
+		div.text-justify Fady didn't understand well the difference between encryption and encoding, so instead of encrypting some secret message to pass to his friend, he encoded it!
+		| Hint: Fady's encoding doens't handly any special character. File: <a href="zero_one">zero_one</a>
+		div Перевод.
+		div.text-justify Федя не понимает разницу между шифрованием и кодированием. Поэтому, вместо шифрования секретного сообщения для своего друга он его закодировал!
+		div Подсказка. Федя не кодировал специальные символы.
+		div Решение.
+		div.text-justify Файл содержит слова ONE и ZERO, понятно, что их нужно перекодировать соотвественно в 1 и 0. Полученный бинарный код, скорее всего нужно перекодировать в ASCII. Т.к. получившийся ASCII код кончается на ==, что указывает, что он закодирован в base64. Дальше мы видим точки и тире и это азбука морзе. Для работы с азбукой морзе буду использовать библиотеку <a href="https://github.com/morse-talk/morse-talk">morze-talk</a>. Раскодируем азбуку морзе и получаем строку похожую на ключ. Так, как в азбуке морзе нет возможности кодировать специальные символы, такие, как подчеркивание, то заменяем "O" на "_", добавляем скобки"{}" и получаем флаг ALEXCTF{TH15_1S_5UP3R_5ECR3T_TXT}.
+		pre
+		|from pwn import *
+		|import morse_talk as mtalk
+
+		|with open('zero_one', 'r') as f:
+		|	data = f.read().translate(None, ' \n')
+
+		|data = data.replace("ZERO","0").replace("ONE","1")
+		|data = b64d(''.join(chr(int(data[i:i+8], 2)) for i in xrange(0, len(data), 8)))
+
+		|data = mtalk.decode(data)
+
+		|print data
+

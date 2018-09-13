@@ -26,7 +26,7 @@ block content
 			| пакет <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"> Visual CPP Build Tools </a>. При установке ставил галочку только для Windows 8.1 SDK.
 		h3 Загрузка котировок
 		div
-			Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
+		| Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
 		div.large-2.columns.right
 			a(href="../python_source/bt_example_1.p") bt_example_1.py			
 		div.large-12.columns
@@ -43,20 +43,20 @@ block content
 			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции
 
 		div
-			Теперь можем протестировать нашу стратегию. Напишем код.
+		| Теперь можем протестировать нашу стратегию. Напишем код.
 		pre.python: code
 			|# тестируем нашу стратегию
 			|test = bt.Backtest(s, data)
 			|res = bt.run(test)
 		div
-			Можем вывести график результата и статистические параметры работы стратегии.
+		| Можем вывести график результата и статистические параметры работы стратегии.
 		pre.python: code
 			|# выводим график средств
 			|res.plot()
 			|# выводим статистические коэффициенты
 			|res.display()
 		div
-			В итоге все вместе у нас будет выглядеть так.
+		|В итоге все вместе у нас будет выглядеть так.
 		div.large-2.columns.right
 			a(href="../python_source/bt_example_2.p") bt_example_2.py			
 		div.large-12.columns
@@ -65,4 +65,4 @@ block content
 		div.clearfix
 
 		div
-			Теперь попробуем модифицировать стратегию.
+		|Теперь попробуем модифицировать стратегию.

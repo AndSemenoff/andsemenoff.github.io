@@ -11,14 +11,15 @@ mixin seach(number, time, text1, text2, text3)
 		if text2 != ""
 			li #{text2}
 		li 
-			a(href= "http://" + tracker + "/forum/tracker.php?f=#{number}&tm=#{time}&o=1") #{text3} 
+			<a href='http://#{tracker}/forum/tracker.php?f=#{number}&tm=#{time}&o=1'>#{text3}</a>
 			if time==3
-				small за последние три дня, сначала новые
+				<small> за последние три дня, сначала новые</small>
 			if time==7
-				small за последнюю неделю, сначала новые
+				<small> за последнюю неделю, сначала новые</small>
 
 mixin one_line_seach(number, text)
-	li: a(href="http://" + tracker + "/forum/tracker.php?f=#{number}&tm=7&o=1") #{text}
+	li 
+		<a href="http://#{tracker}/forum/tracker.php?f=#{number}&tm=7&o=1">#{text}
 
 //- mixin testtitle(name, num1, num2, num3, text)
 	tr
@@ -31,7 +32,7 @@ mixin one_line_seach(number, text)
 				while n < num1
 					n += 1 
 					i (class="fa fa-gitlab fa-2x colorblue" aria-hidden="true")
--//
+
 mixin test(num)
 	- var n = 0;
 	ul
@@ -40,31 +41,33 @@ mixin test(num)
 
 block content
 	- var tracker = "maintracker.org";
-	- var tracker = "rutracker.net";	
-	div.row: div.large-12.columns: h1: strong Трекер помощник
+	- var tracker = "rutracker.net";
+	div.row
+		div.column.text-center
+			h3 Трекер помощник
 		<p>Официальные зеркала rutracker.org: rutracker.cr, rutracker.net
 	div.row: div.large-12.columns
 		+seach(2093, 3, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2011-2015")
-		+seach(2200, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2016")		
+		+seach(2200, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2016-2017")
 		+seach(2459, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Короткий метр")
-		+seach(635, 7, "Игры", "Игры для Windows", "Горячие новинки")		
+		+seach(635, 7, "Игры", "Игры для Windows", "Горячие новинки")
 		+seach(1565, 7, "Видеоуроки и обучающие интерактивные DVD", "", "Программирование")
 		+seach(1654, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Фотошоп-Уроки")
 		+seach(1552, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Видео- и фотосъёмка")
 		+seach(1568, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Кулинария")
 		+seach(1260, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Психология")
-		+seach(2210, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Пикап")				
+		+seach(2210, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Пикап")
 		+seach(1426, 7, "Книги и журналы", "Компьютерная литература", "Программирование")
-		+seach(2149, 7, "", "Мобильные устройства", "Игры для Android")		
+		+seach(2149, 7, "", "Мобильные устройства", "Игры для Android")
 		+seach(2154, 7, "", "Мобильные устройства", "Приложения для Android")
 
 		ul.breadcrumbs
 			li: a(href="http://booktracker.org/") BookTracker.org
 			li Мобильные устройства
 			li: a(href="http://booktracker.org/viewforum.php?f=341&tm=7&o=1") Программирование и алгоритмистика 
-				small за последнюю неделю, сначала новые																							
+				small за последнюю неделю, сначала новые
 
-		ul: li: Книги и журналы » Компьютерная литература » 
+		ul: li Книги и журналы » Компьютерная литература » 
 			ul
 				+one_line_seach(1422, "Программы от Microsoft")
 				+one_line_seach(1423, "Другие программы")
@@ -77,6 +80,6 @@ block content
 				+one_line_seach(1430, "Хакинг и безопасность")
 				+one_line_seach(1431, "Железо")
 				+one_line_seach(1433, "Инженерные и научные программы")
-				+one_line_seach(1432, "Журналы")		
+				+one_line_seach(1432, "Журналы")
 				li: strong: a(href="http://" + tracker + "/forum/tracker.php?&f=1422,1423,1424,1425,1426,1428,1429,1430,1431,1432,1433,1445&tm=7&o=1")  Всё вместе
 											

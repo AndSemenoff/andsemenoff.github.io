@@ -4,34 +4,22 @@ block title
 	title= site_title + " Работа с модулем doctest"
 
 block content
-	div.row: div.large-12.columns: h1: Работа с модулем <strong>doctest</strong>
+	div.row: div.large-12.columns: h1 Работа с модулем <strong>doctest</strong>
 	div.row: div.large-12.columns
 		p.text-justify Модуль <strong>doctest</strong> позволяет писать тесты прямо в комментариях. Строчки комментариев, начинающиеся с '>>>' будут выполняются и возвращаемый результат будет сравниваться со значением, написанным в следующей строчке. Обратите внимание, что после '>>>' должен следовать ровно один пробел.  Для вызова непосредственно из программы мы должны импортировать библиотеку <strong>doctest</strong> и вызвать метод <strong>doctest.testmod()</strong>. Рекомендуется указывать в параметрах <strong>verbose=True</strong>, чтобы получить развернутый вывод в консоль информации о прошедшем тестировании.
-		pre.python: code
-			|# -*- coding: utf-8 -*-
-			|# файл doctest_example_1.py
-			|def simple(a):
-			|&nbsp;&nbsp;&nbsp;&nbsp;'''
-			|&nbsp;&nbsp;&nbsp;&nbsp;>>> simple(4)
-			|&nbsp;&nbsp;&nbsp;&nbsp;15
-			|&nbsp;&nbsp;&nbsp;&nbsp;'''
-			|&nbsp;&nbsp;&nbsp;&nbsp;return a*a-1
-			|    
-			|if __name__ == "__main__":
-			|&nbsp;&nbsp;&nbsp;&nbsp;import doctest
-			|&nbsp;&nbsp;&nbsp;&nbsp;doctest.testmod(verbose=True)
+		div.large-2.columns.right
+			a(href="../python_source/doctest_example_1.py") doctest_example_1.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/doctest_example_1.py
 
 		p.text-justify Возможно помещать тесты в отдельный файл. Тогда для его вызова нужно использовать метод <strong>doctest.testfile("doctest.txt")</strong>, которому в параметре передать имя файла с тестами. В самом файле тестов нужно импортировать модуль(и) к которым у нас относятся тесты.
-		pre.python: code
-			|# -*- coding: utf-8 -*-
-			|# файл doctest_example_2.py
-			|def simple(a):
-			|&nbsp;&nbsp;&nbsp;&nbsp;return a*a-1
-			|&nbsp;
-			|if __name__ == "__main__":
-			|&nbsp;&nbsp;&nbsp;&nbsp;import doctest
-			|&nbsp;&nbsp;&nbsp;&nbsp;doctest.testfile("doctest.txt")
-
+		div.large-2.columns.right
+			a(href="../python_source/doctest_example_2.py") doctest_example_2.py
+		div.large-12.columns
+			pre.python: code
+				include ../python_source/doctest_example_2.py
+				
 		p Для файла doctest_example_2.py файл с тестами может быть такой
 
 		pre.python: code
@@ -74,7 +62,7 @@ block content
 		p Ссылки по данной теме:
 			ol
 				li
-					a(href="http://docs.python.org/3.3/library/doctest.html") Оригинальная документация по модулю
+					a(href="http://docs.python.org/3.7/library/doctest.html") Оригинальная документация по модулю
 				li
 					a(href="http://python-lab.ru/documentation/27/stdlib/doctest.html") Перевод 
 					| оригинальной документация по модулю для версии 2.7 на русский  

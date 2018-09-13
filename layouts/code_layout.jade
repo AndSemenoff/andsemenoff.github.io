@@ -2,12 +2,14 @@ extends ../layouts/html_layout.jade
 
 block scripts
 	// default.min.css"
-	link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css")
+	link(rel="stylesheet" href="../css/highlight.default.css")
+	// https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js
+	// https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css
 	script(type="text/x-mathjax-config").
 		MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
 
 	//script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")
 block footer
-	script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js")
+	script(src="../js/highlight.pack.js")
 	script hljs.initHighlightingOnLoad();

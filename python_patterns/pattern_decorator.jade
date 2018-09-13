@@ -1,0 +1,16 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Шаблон: Декоратор (Decorator)"
+	
+
+block content
+	div.row
+		div.columns.large-1 &nbsp;
+		div.columns.large-8
+			h3 Декоратор (Decorator)
+			p Файл:&nbsp;
+				a(href="decorator_example_1.py") decorator_example_1.py
+			pre.python: code
+				include decorator_example_1.py
+		div.columns.large-3 &nbsp;
