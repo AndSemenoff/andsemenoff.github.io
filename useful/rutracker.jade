@@ -2,7 +2,7 @@ extends ../layouts/html_layout.jade
 block title
 	title= site_title + " Трекер помошник"
 
-mixin seach(number, time, text1, text2, text3)
+mixin seach(tracker, number, time, text1, text2, text3)
 	ul.breadcrumbs
 		li 
 			a(href="http://" + tracker) #{tracker}
@@ -17,13 +17,13 @@ mixin seach(number, time, text1, text2, text3)
 			if time==7
 				<small> за последнюю неделю, сначала новые</small>
 
-mixin one_line_seach(number, text)
+mixin one_line_seach(tracker, number, text)
 	li 
-		<a href="http://#{tracker}/forum/tracker.php?f=#{number}&tm=7&o=1">#{text}
+		<span>#{tracker}</span> <a href="https://#{tracker}/forum/tracker.php?f=#{number}&tm=7&o=1"> #{text}</a><span><small> за последнюю неделю, сначала новые</small></span>
 
 //- mixin testtitle(name, num1, num2, num3, text)
 	tr
-		td #{name}
+		td #{tracker}
 		td 
 			span.colorgreen #{text}
 		td
@@ -47,19 +47,20 @@ block content
 			h3 Трекер помощник
 		<p>Официальные зеркала rutracker.org: rutracker.cr, rutracker.net
 	div.row: div.large-12.columns
-		+seach(2093, 3, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2011-2015")
-		+seach(2200, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2016-2017")
-		+seach(2459, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Короткий метр")
-		+seach(635, 7, "Игры", "Игры для Windows", "Горячие новинки")
-		+seach(1565, 7, "Видеоуроки и обучающие интерактивные DVD", "", "Программирование")
-		+seach(1654, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Фотошоп-Уроки")
-		+seach(1552, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Видео- и фотосъёмка")
-		+seach(1568, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Кулинария")
-		+seach(1260, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Психология")
-		+seach(2210, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Пикап")
-		+seach(1426, 7, "Книги и журналы", "Компьютерная литература", "Программирование")
-		+seach(2149, 7, "", "Мобильные устройства", "Игры для Android")
-		+seach(2154, 7, "", "Мобильные устройства", "Приложения для Android")
+		+seach("rutracker.net", 1950, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2018")
+		+seach("rutracker.net", 2200, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2016-2017")
+		+seach("rutracker.net", 2093, 3, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2011-2015")
+		+seach("rutracker.net", 2459, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Короткий метр")
+		+seach("rutracker.net", 635, 7, "Игры", "Игры для Windows", "Горячие новинки")
+		+seach("rutracker.net", 1565, 7, "Видеоуроки и обучающие интерактивные DVD", "", "Программирование")
+		+seach("rutracker.net", 1654, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Фотошоп-Уроки")
+		+seach("rutracker.net", 1552, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Видео- и фотосъёмка")
+		+seach("rutracker.net", 1568, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Кулинария")
+		+seach("rutracker.net", 1260, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Психология")
+		+seach("rutracker.net", 2210, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Пикап")
+		+seach("rutracker.net", 1426, 7, "Книги и журналы", "Компьютерная литература", "Программирование")
+		+seach("rutracker.net", 2149, 7, "", "Мобильные устройства", "Игры для Android")
+		+seach("rutracker.net", 2154, 7, "", "Мобильные устройства", "Приложения для Android")
 
 		ul.breadcrumbs
 			li: a(href="http://booktracker.org/") BookTracker.org
@@ -67,19 +68,35 @@ block content
 			li: a(href="http://booktracker.org/viewforum.php?f=341&tm=7&o=1") Программирование и алгоритмистика 
 				small за последнюю неделю, сначала новые
 
+		p поиск: 
+		a(href="https://nnmclub.to/forum/tracker.php?nm=python") python
+		ul: li Видео »
+			ul
+				+one_line_seach("nnmclub.to", 954, "Новинки (HD, UHD, UHD-LQ)")
+			li  Торрент-трекер NNM-Club » Трекер: Книги и Обучающие материалы » Комиксы »
+			ul
+				+one_line_seach("nnmclub.to", 483, "Комиксы на русском языке")
+			li Торрент-трекер NNM-Club » Научная и техническая литература »
+			ul
+				+one_line_seach("nnmclub.to", 444, "Научно-популярная литература")
+
+			li Торрент-трекер NNM-Club » Трекер: Книги и Обучающие материалы » Научная и техническая литература »
+			ul
+				+one_line_seach("nnmclub.to", 558, "Бизнес")
+
 		ul: li Книги и журналы » Компьютерная литература » 
 			ul
-				+one_line_seach(1422, "Программы от Microsoft")
-				+one_line_seach(1423, "Другие программы")
-				+one_line_seach(1424, "* NIX")
-				+one_line_seach(1445, "СУБД")
-				+one_line_seach(1425, "Веб-дизайн и программирование")
-				+one_line_seach(1426, "Программирование")
-				+one_line_seach(1428, "Графика и обработка видео")
-				+one_line_seach(1429, "Сети")
-				+one_line_seach(1430, "Хакинг и безопасность")
-				+one_line_seach(1431, "Железо")
-				+one_line_seach(1433, "Инженерные и научные программы")
-				+one_line_seach(1432, "Журналы")
+				+one_line_seach("rutracker.net", 1422, "Программы от Microsoft")
+				+one_line_seach("rutracker.net", 1423, "Другие программы")
+				+one_line_seach("rutracker.net", 1424, "* NIX")
+				+one_line_seach("rutracker.net", 1445, "СУБД")
+				+one_line_seach("rutracker.net", 1425, "Веб-дизайн и программирование")
+				+one_line_seach("rutracker.net", 1426, "Программирование")
+				+one_line_seach("rutracker.net", 1428, "Графика и обработка видео")
+				+one_line_seach("rutracker.net", 1429, "Сети")
+				+one_line_seach("rutracker.net", 1430, "Хакинг и безопасность")
+				+one_line_seach("rutracker.net", 1431, "Железо")
+				+one_line_seach("rutracker.net", 1433, "Инженерные и научные программы")
+				+one_line_seach("rutracker.net", 1432, "Журналы")
 				li: strong: a(href="http://" + tracker + "/forum/tracker.php?&f=1422,1423,1424,1425,1426,1428,1429,1430,1431,1432,1433,1445&tm=7&o=1")  Всё вместе
 											
