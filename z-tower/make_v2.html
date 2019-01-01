@@ -1,0 +1,358 @@
+ <!doctype html>
+ <html lang='en'>
+ <head>
+ 	<meta charset='utf-8'>
+ 	<title>Обращение в Роспотребнадзор</title>
+ 	<script src='js/pdfmake.min.js'></script>
+ 	<script src='js/vfs_fonts.js'></script>
+	 <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+ 	<link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+ </head>
+ <body>
+ 	<div id="app">
+ 		<v-app>
+      		<v-content>
+						<v-container grid-list-xl>
+								<v-layout row wrap>
+								<v-flex xs10 offset-xs1>
+									<v-card class="elevation-6">
+										<v-card-text>
+											<p>Данная страница позволяет быстро настроить, создать и сохранить в формате pdf обращение в Роспотребнадзор. Пример результата вы можете посмотреть по 
+												<a href="file1.pdf">ссылке</a>. Все данные сохраняются только в вашем браузере. <strong>Мы не собираем и не храним данные.</strong> Заполните представленную ниже форму вашими данными. Для скачивания готового обращения нажмите на зеленую кнопку "Скачать".
+											Если кнопка не зеленая, значит не все поля заполнены правильно. Обязательные для заполнения поля отмечены *.
+										<br>Мини документация:
+										<br>кнопка "Скачать" - скачивает файл в формате pdf на ваше устройство
+										<br>кнопка "Сохранить" - сохраняет данные из формы в браузере
+										<br>кнопка "Очистить" - <b>удаляет введенные данные из локального хранилища браузера</b> и заполняет форму, как образец
+										</p>
+										</v-card-text>
+									</v-card>
+								</v-flex>
+
+
+									<v-flex xs6 offset-xs3>
+
+
+							<v-card-text>
+    <v-form ref="form" v-model="valid" lazy-validation>
+				<v-text-field
+        v-model="last_name"
+        :rules="last_nameRules"
+        :counter="100"
+		label="Фамилия *"
+				required
+				prepend-icon="person"
+      ></v-text-field>
+      <v-text-field
+        v-model="first_name"
+        :rules="first_nameRules"
+        :counter="100"
+        label="Имя *"
+				required
+				prepend-icon="person"
+			></v-text-field>
+      <v-text-field
+        v-model="second_name"
+        :rules="second_nameRules"
+        :counter="100"
+        label="Отчество *"
+				required
+				prepend-icon="person"
+			></v-text-field>
+      <v-text-field
+        v-model="address"
+        :rules="addressRules"
+        label="Адрес *"
+				required
+				prepend-icon="home"
+      ></v-text-field>
+      <v-text-field
+        v-model="email"
+        :rules="emailRules"
+        label="E-mail *"
+				required
+				prepend-icon="email"
+      ></v-text-field>
+      <v-text-field
+        v-model="mobile"
+        :rules="mobileRules"
+        label="Телефон *"
+				required
+				prepend-icon="phone"
+      ></v-text-field>
+      <v-select
+        v-model="select"
+        :items="items"
+        :rules="[v => !!v || 'Обязательное поле']"
+        label="Выберите форму обращения:"
+				required
+				prepend-icon="subject"
+			></v-select>
+			<v-textarea
+			outline
+						name="input-7-4"
+						v-model="myText"
+						label="Ваш дополнительный абзац текста(если нужно)"
+						prepend-icon="textsms"
+					>
+				</v-textarea>
+      <v-text-field
+        v-model="filename"
+        :rules="filenameRules"
+        label="Название файла *"
+				required
+				prepend-icon="attach_file"
+      ></v-text-field>
+
+    </v-form>
+		</v-card-text>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-btn
+			:disabled="!valid"
+				 color="success"
+				 @click="download(last_name,first_name, second_name, address, email, mobile, select, myText )"
+				 >
+				 Скачать
+				 <span slot="loader">Скачивание...</span>
+			 </v-btn>
+			 <v-btn color="primary" @click="persist">Сохранить</v-btn>
+	 		<v-btn color="primary" @click="clear">Очистить</v-btn>
+	 </v-card-actions>
+
+ 		<!--<ul>
+ 			<li>Фамилия Имя Отчество (полностью):<input v-model="name1"></li>
+ 			<li>Адрес: <input v-model="address"></li>
+ 			<li>E-mail:<input v-model="email"></li>
+ 			<li>Телефон:<input v-model="mobile"></li>
+ 			<li>Название файла:<input v-model="filename"></li>
+ 			
+ 		</ul>-->
+</v-flex>
+
+</v-layout>
+<!--
+<v-spacer></v-spacer>
+<v-footer color="primary lighten-1">
+        		<v-flex
+          			primary
+          			lighten-2
+          			py-3
+          			text-xs-center
+          			white--text
+          			xs12
+        		>
+        			&copy; 2019 — <strong>Absolem.info</strong>
+        		</v-flex>
+					</v-footer>
+				-->
+				</v-container>
+			</v-content>
+    	</v-app>
+
+ 	</div>
+	 <script type="text/javascript">
+	var date = new Date();
+	var monthA = 'января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря'.split(',');
+	var month = monthA[date.getMonth()]
+	var app = new Vue({
+		el: '#app',
+		data:  {
+			valid: true,
+			filename : "Обращение.pdf",
+			first_name : "Иван",
+			last_name : "Иванов",
+			second_name : "Иванович",
+			email: "mail@mail.ru",
+			mobile: "+7(963)123-45-67",
+			address: "Москва, Михневская улица, д. 8, кв. 00",
+			myText: "У меня появилась головная боль. Странный вкус во рту.",
+			select: "Обращение",
+			items: [
+		      'Обращение',
+		      'Заявление',
+		      'Жалоба',
+		      'Предложение',
+		    ],
+			mobileRules:[
+			v => !!v || 'Номер телефона вводить обязательно',
+			],
+			addressRules: [
+			v => !!v || 'Адрес вводить обязательно',
+			],
+			emailRules: [
+			v => !!v || 'E-mail вводить обязательно',
+			v => /.+@.+/.test(v) || 'E-mail должен быть корректным'
+			],
+			last_nameRules: [
+				v => !!v || 'Фамилию вводить обязательно',
+				v => v.length <= 100 || 'Фамилия должна быть меньше 200 символов'
+			],
+			first_nameRules: [
+				v => !!v || 'Имя вводить обязательно',
+				v => v.length <= 100 || 'Имя должно быть меньше 200 символов'
+			],
+			second_nameRules: [
+				v => !!v || 'Отчество вводить обязательно',
+				v => v.length <= 100 || 'Отчество должно быть меньше 200 символов'
+			],
+			filenameRules: [
+			v => !!v || 'Имя файла вводить обязательно',
+			]
+		},
+		mounted() {
+			console.log(localStorage)
+		    if (localStorage.first_name) {
+		      this.first_name = localStorage.first_name
+			  console.log('Загрузили')
+		    }
+		    if (localStorage.last_name) {
+		      this.last_name = localStorage.last_name;
+		    }
+			if (localStorage.second_name) {
+		      this.second_name = localStorage.second_name;
+		    }
+			if (localStorage.email) {
+		      this.email = localStorage.email;
+		    }
+			if (localStorage.mobile) {
+		      this.mobile = localStorage.mobile;
+		    }
+			if (localStorage.address) {
+		      this.address = localStorage.address;
+		    }
+			if (localStorage.filename) {
+		      this.filename = localStorage.filename;
+		    }
+			if (localStorage.myText) {
+		      this.myText = localStorage.myText;
+		    }
+			if (localStorage.select) {
+		      this.select = localStorage.select;
+		    }
+		},
+		filters: {
+		},
+/* 		watch: {
+			first_name(newName) {
+				localStorage.first_name = newName;
+			},
+			last_name(newName) {
+				localStorage.last_name = newName;
+			},
+			second_name(newName) {
+				localStorage.second_name = newName;
+			},
+			email(newName) {
+				localStorage.email = newName;
+			},
+			mobile(newName) {
+				localStorage.mobile = newName;
+			},
+			address(newName) {
+				localStorage.address = newName;
+			},
+			filename(newName) {
+				localStorage.filename = newName;
+			},
+			myText(newName) {
+				localStorage.myText = newName;
+			},			
+		}, */
+		methods: {
+		    clear () {
+		      //this.$refs.form.reset()
+				localStorage.removeItem('first_name');
+				localStorage.removeItem('last_name');
+				localStorage.removeItem('second_name');
+				localStorage.removeItem('mobile');
+				localStorage.removeItem('address');
+				localStorage.removeItem('email');
+				localStorage.removeItem('filename');
+				localStorage.removeItem('myText');
+				localStorage.removeItem('select');
+				this.valid = true
+				this.filename = "Обращение.pdf"
+				this.first_name = "Иван"
+				this.last_name = "Иванов"
+				this.second_name = "Иванович"
+				this.email = "mail@mail.ru"
+				this.mobile = "+7(963)123-45-67"
+				this.address = "Москва, Михневская улица, д. 8, кв. 00"
+				this.myText = "У меня появилась головная боль. Странный вкус во рту."
+				this.select = "Обращение"
+
+		    },
+			persist() {
+				localStorage.first_name = this.first_name;
+				localStorage.last_name = this.last_name;
+				localStorage.second_name = this.second_name;
+				localStorage.mobile = this.mobile;
+				localStorage.address = this.address;
+				localStorage.email = this.email;
+				localStorage.filename = this.filename;
+				localStorage.myText = this.myText;
+				localStorage.select = this.select;
+				console.log("Сохранено")
+			},
+			download: function(name1, name2, name3, address, email, mobile, select, myText) {
+				if (this.$refs.form.validate()) {
+					pdfMake.vfs = pdfMake.vfs;
+				var docDefinition1 = { 
+					pageSize: 'A4',
+					// by default we use portrait, you can change it to landscape if you wish
+					pageOrientation: 'portrait',
+					// [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
+					pageMargins: [ 60, 60, 60, 40 ],
+					info: {
+							title: select + ' в Роскомнадзор',
+							author: name1 + ' ' + name2,
+							subject: select + ' в Роскомнадзор',
+							keywords: 'Роскомнадзор',
+						},
+						watermark: '',//{ text: ' пример ', color: 'blue', opacity: 0.2, bold: true, italics: false },
+						background: '',
+						content: 
+							[ 
+							{text: "В Управление Роспотребнадзора по городу Москве", style: 'from'},
+							{text: "от: " + name1 + " " + name2 + " " + name3, style: 'from'},
+							{text: "адрес: " + address, style: 'from'},
+							{text: "телефон: " + mobile, style: 'from'},
+							{text: "электронная почта: " + email, style: 'from'},
+							{text: select, style: 'title', margin: [ 0, 20, 0, 20 ]},
+							{text: "      Я, " + name1 + " " + name2 + " " + name3 + " , " + date.getDate() + " " + month + " " + date.getFullYear() + " на протяжении длительного времени чувствую неприятный запах.", 
+							margin: [ 0, 0, 0, 0 ], fontSize: 12, alignment: 'justify', preserveLeadingSpaces: true},
+							{text: "       " + myText, fontSize: 12, alignment: 'justify', preserveLeadingSpaces: true},
+							{text: "      На основании вышеизложенного и руководствуясь п. 1 ст.18 Закона Российской Федерации от от 07.02.1992 N 2300-1 'О защите прав потребителей', п. 5.9 Положения о Федеральной службе по надзору в сфере защиты прав потребителей и благополучия человека, утвержденного Постановлением Правительства Российской Федерации от 30.06.2004 №322, просьба провести проверку указанного факта.", 
+							fontSize: 12, alignment: 'justify', preserveLeadingSpaces: true },
+							{text: "Москва, " + date.getDate() + " " + month + " " + date.getFullYear() + " года", margin: [ 0, 40, 0, 0 ]},
+							{ text: " Заявитель:   _____________________ (" + name1 + " "+ name2[0]+ "." + name3[0] + "." + ")" , style: 'from', margin: [ 0, 40, 0, 0 ]},
+							],
+						styles: {
+							title: {
+								fontSize: 22,
+								bold: true,
+								alignment: 'center'
+							},
+							from: {
+								fontSize: 12,
+								alignment: 'right'  
+							}
+						}
+					}			
+				//console.log(value)
+				pdfMake.createPdf(docDefinition1).download(this.filename);
+			}
+		},
+
+
+		}
+	})
+ 		
+ 		// pdfMake.createPdf(docDefinition1).download('optionalName.pdf');
+ </script>
+ </body>
+ </html>
