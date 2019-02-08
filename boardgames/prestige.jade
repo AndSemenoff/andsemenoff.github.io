@@ -1,0 +1,36 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " boardgamearena. Престиж"
+
+block content
+	div.row: div.large-12.columns: h1 BoardGameArena начисление престижа
+	div.row: div.large-12.columns
+		div За вхождения в top по определенной игре
+		ul
+			li
+				| 1 место: 50 000 
+			li
+				| 2 место: 25 000
+			li
+				| 3 место: 12 500
+			li
+				| Top 5: 6000
+			li
+				| Top 10: 3000
+			li
+				| Top 20: 1500
+		div За рейтинг по конкретной игре
+		ul
+			li
+				| > 700: 1000
+			li
+				| > 600: 500
+			li
+				| > 500: 250
+			li
+				| > 300: 100
+			li 
+				| > 200: 50
+
+		div За участие в турнирах
