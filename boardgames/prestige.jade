@@ -2,35 +2,89 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " boardgamearena. Престиж"
+	<link rel="stylesheet" href="boardgames_style.css">
 
 block content
 	div.row: div.large-12.columns: h1 BoardGameArena начисление престижа
 	div.row: div.large-12.columns
-		div За вхождения в top по определенной игре
+		div За вхождения в top по определенной игре:
 		ul
 			li
+				span.trophyimg(style="background-position: -1650px 0px;margin-right:5px")
 				| 1 место: 50 000 
+			<br>
 			li
+				span.trophyimg(style="background-position: -1600px 0px;margin-right:5px")
 				| 2 место: 25 000
+			<br>
 			li
+				span.trophyimg(style="background-position: -1550px 0px;margin-right:5px")
 				| 3 место: 12 500
+			<br>
 			li
+				span.trophyimg(style="background-position: -1500px 0px;margin-right:5px")
 				| Top 5: 6000
+			<br>
 			li
+				span.trophyimg(style="background-position: -1450px 0px;margin-right:5px")
 				| Top 10: 3000
+			<br>
 			li
+				div.trophyimg(style="background-position: -1400px 0px;margin-right:5px")
 				| Top 20: 1500
-		div За рейтинг по конкретной игре
+		<br>
+		div За вхождения в top по количеству побед по определенной игре:
 		ul
 			li
-				| > 700: 1000
+				span.trophyimg(style="background-position: -1200px 0px;margin-right:5px")
+				| 1 место:
+			br 
 			li
-				| > 600: 500
+				span.trophyimg(style="background-position: -1150px 0px;margin-right:5px")
+				| 2 место: 
+			br
 			li
-				| > 500: 250
+				span.trophyimg(style="background-position: -1100px 0px;margin-right:5px")
+				| 3 место: 
+			br
 			li
-				| > 300: 100
-			li 
-				| > 200: 50
+				span.trophyimg(style="background-position: -1050px 0px;margin-right:5px")
+				| Top 5: 
+			br
+			li
+				span.trophyimg(style="background-position: -1000px 0px;margin-right:5px")
+				| Top 10: 
+			br
+			li
+				span.trophyimg(style="background-position: -950px 0px;margin-right:5px")
+				| Top 20: 300
+			br
 
+		div За рейтинг по конкретной игре:
+		ul
+			li
+				span.trophyimg(style="background-position: -1350px 0px;margin-right:5px")
+				| > 700: 1000
+			br
+			li
+				span.trophyimg(style="background-position: -1300px 0px;margin-right:5px")
+				| > 500: 250
+			br
+			li
+				span.trophyimg(style="background-position: -1250px 0px;margin-right:5px")
+				| > 300: 100
+			br
+			li
+				span.trophyimg(style="background-position: -1800px 0px;margin-right:5px")
+				| > 200: 50
+			br
+			li
+				span.trophyimg(style="background-position: -1750px 0px;margin-right:5px")
+				| > 100: 
+			br
+			li
+				span.trophyimg(style="background-position: -1700px 0px;margin-right:5px")
+				| > 0
+			br
+		div За количество сыгранных игр по конкретной игре
 		div За участие в турнирах

@@ -2,6 +2,7 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Настольные игры"
+	<link rel="stylesheet" href="boardgames_style.css">
 
 block content
 	div.row: div.large-12.columns: h1 Настольные игры
@@ -19,6 +20,18 @@ block content
 			li
 				a(href="Cinco_rules_ru.pdf") <i class="far fa-file-pdf"></i> Правила игры 
 				| 'Синко(Cinco)' 
+			li
+				a(href="Hypnosia_rules_ru.pdf") <i class="far fa-file-pdf"></i> Правила игры 
+				| 'Гипнозия(Hypnosia)'
+			li
+				a(href="Senet_rules_ru.pdf") <i class="far fa-file-pdf"></i> Правила игры 
+				| 'Сенет(Senet)'
 		div Если вы хотите поделиться информацией по какой либо из представленных выше игре пишите мне на почту.
 		a(href="prestige.html") Правила расчета престижа на сайте boardgamearena
+		div
+			| Обозначения:
+			ul
+				li <i class="far fa-file-pdf"></i> - файл в формате pdf
+
+
 

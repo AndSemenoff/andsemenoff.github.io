@@ -1,0 +1,8 @@
+.trophyimg {
+    background-image: url(awards.png);
+    background-position: 0px 0px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    position: relative;
+}
