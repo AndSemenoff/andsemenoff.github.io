@@ -1,0 +1,62 @@
+
+.avatar img {
+	height: 30px; 
+	width: 30px;
+}
+.list__tile__content
+{
+	/*background-color: blue;*/
+	height: 42px;
+}
+
+.list__tile a{
+	/*background-color: red;*/
+	height: 42px;	
+}
+.list__tile--link {
+	/*background-color: green;*/
+	height: 42px;	
+}
+.list__tile--avatar {
+	/*background-color: grey;*/
+	height: 42px;
+}
+
+.list--two-line .list__tile {
+	height: 42px;
+}
+
+.example{
+	display: none;
+}
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+ul { 
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+.pcard{
+	width: 40px;
+}
+/*
+<a class="list__tile list__tile--link list__tile--avatar">
+<div class="list__tile__avatar">
+<div class="avatar" style="height: 40px; width: 40px;"><img src="images/rutracker.ico"></div></div> <div class="list__tile__content"><div class="list__tile__title">rutracker</div> <div class="list__tile__sub-title caption"><span class="text--primary">rutracker.org</span></div></div></a>

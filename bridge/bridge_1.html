@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
+  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/absolem.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".example_button").click(function(){
+    $(".example").toggle();
+  });
+});
+</script>
+  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Спортивный бридж. Березка</title>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-system-bar status color="primary" lights-out>
+        <v-spacer></v-spacer>
+        <span>&nbsp;всё работает&nbsp;</span>
+        <span>&nbsp;{{ clock }}&nbsp;</span>
+      </v-system-bar>
+      <v-toolbar dark color="primary">
+        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>            
+      <v-container fluid grid-list-sm>
+        <v-content>
+        	<v-flex xs12>
+        		<v-card-text>
+        			<h1 class="font-effect-shadow-multiple">Березка</h1>
+
+        			<div class="text-xs-left">Очки туз - 4 очка, король - 3, дама - 2 и валет - 1.</div>
+        			<div class="text-xs-left">Cуществуют два вида равномерного расклада(РР): 4-4-3-2 и 4-3-3-3.</div>
+        			<div>Трехцветом называется расклад карт: 4-4-4-1 или 5-4-4-0.</div>
+        			<div>Конвенционная заявка "Блэквуд" - вопрос о тузах и королях при шлемовой торговле.</div>
+        			<div>Мажорные масти: черви, пики. Минорные масти: трефы, буби. Старшинство мастей от младшей: трефа, бубна, черва, пика.</div>
+        			<div>Фит - </div>
+        			<div>Сокращения: 
+        				<ul>
+        					<li>ФК (форсирует на круг)</li>
+        					<li>ФГ (форсирует до гейма)</li>
+        					<li>ИЗ (искусственная заявка) т.е. не отражает длину или силу заявленной масти</li>
+        					<li>БК (без козыря)</li>
+        					<li>НСР</li>
+        					<li></li>
+        				</ul>
+        			</div>
+
+        			<h3 class="font-effect-shadow-multiple">Общие правила натуральной торговли.</h3>
+	        		<ol>
+	        			<li>"Подъем" масти партнера означает наличие фита. Cначала согласовывается мажорный фит. <small>Поскольку открытие "одна черва" предполагает у открывающего не менее пятерки карт червонной масти, ответ "две червы" будет означать, что у партнера не менее трех карт червовой масти, то есть всего на линии не менее восьми карт, что составляет желанный фит.</small></li>
+	        			<li>Если партнер открывающего не показал фит в мажоре, это означает, что на линии (если у открывающего ровно пять мажорных карт) может быть в лучшем случае "полуфит" - семь карт мажорной масти.</li>
+	        			<li>Каждое повторное заявление масти удлиняет ее на одну карту.</li>
+	        			<li>При двух разных по длине мастях сначала показывают более длинную.</li>
+	        			<li>В отсутствие фита на первом круге отвечающий показывает свою масть от четверки.</li>
+	        			<li>Любая новая масть показывается, начиная с четырех карт в данной масти.</li>
+	        			<li>Заявление новой масти на первом уровне форсирует партнера на круг. </li>
+	        			<li>Заявление новой масти на втором и следующих уровнях не форсирует партнера на круг.</li>
+	        			<li>Показ минорной пятерки и вообще любой ответ в миноре (даже фит) отрицает наличие мажорной четверки.</li>
+	        			<li>При двух четырехкарточных мастях сначала показывают младшую. В случае, когда одна масть минорная, а другая мажорная, предпочтение необходимо отдавать мажорной масти.</li>
+	        			<li>При двух пятикарточных мастях сначала называют старшую.</li>
+	        			<li>Если в торговле мы перешли уровень "без козыря", то новая масть показывается от пятерки карт.</li>
+	        			<li>Если в процессе торговли вы уже показали все свои масти и их длины, а очков на линии достаточно, покажите "без козыря", отдавая при этом инициативу партнеру.</li>
+	        			<li>В торговле показывают только те масти, в которых может быть фит. Если анализ торговли показывает, что в некоторой масти фита на линии быть не может, то и показывать ее не следует.</li>
+	        			<li>Если известно, что у партнера не более, например, трех карт в некоторой масти, то предлагать новую масть можно только от пятерки карт.</li>
+	        			<li><b>Не считайте эти правила догмой.</b></li>
+	        		</ol>
+
+	        		<h3 class="font-effect-shadow-multiple">Открытия</h3>
+	        		<div><b>1C 1<img src="images/c.gif"/> "Одна трефа". </b> <i class="material-icons">warning</i></div>
+	        		<div>Искусственная заявка</div>
+	        		<div>Назначаем данное открытие в трех случаях:</div>
+	        		<div>- при 12-15 очках равномерного расклада;</div>
+	     			<div>- при 12-15 очках расклада 5-3-3-2 с минорной пятеркой;</div>
+					<div>- при наличии 17 и большего числа очков при произвольном раскладе;</div>
+	     			<div>Исключение! При 17-18 очках равномерного расклада или при раскладе 5-3-3-2 с любой минорной пятеркой мы всегда открываемся через "один без козыря".</div>
+	     			<v-expansion-panel>
+	     				<v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Примеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+									<div>2-4-4-3: <img src="images/s.gif"/> 10 9 <img src="images/h.gif"/> Д В 9 2 <img src="images/d.gif"/> Т Д В 5 <img src="images/c.gif"/> К 10 6	</div>
+									<div>2-3-5-3: <img src="images/s.gif"/> 10 9	 <img src="images/h.gif"/> Д В 9	<img src="images/d.gif"/> Т Д В 8 5 <img src="images/c.gif"/> К 10 6 </div>
+									<div>2-3-3-5: <img src="images/s.gif"/> 10 9	 <img src="images/h.gif"/> Д В 9	<img src="images/d.gif"/> Т Д В <img src="images/c.gif"/> К 10 8 6 3 </div>
+									<div>3-3-3-4: <img src="images/s.gif"/> 10 9 5	<img src="images/h.gif"/> Д В 9 	<img src="images/d.gif"/> Т Д В <img src="images/c.gif"/> К 6 4 2 </div>
+									<div>3-0-6-4: <img src="images/s.gif"/> 10 9 5 <img src="images/h.gif"/> - <img src="images/d.gif"/> Т К Д В 6 4 <img src="images/c.gif"/> Т К 8 6 </div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+	     				<v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div>5-2-3-3: <img src="images/s.gif"/>Т В 10 9 5 <img src="images/h.gif"/> Д В <img src="images/d.gif"/> К 6 4 <img src="images/c.gif"/> К 8 6 (мажорная пятерка при 14 очках) нужно играть "Одна пика".</div>
+     								<div>3-2-5-3: <img src="images/s.gif"/>В 10 9 <img src="images/h.gif"/> Д В <img src="images/d.gif"/> Т К Д 6 4 <img src="images/c.gif"/> К 8 6 (16 очков расклада 5-3-3-2 с минорной пятеркой) нужно играть "Одна бубна".</div>
+     								<div>4-2-5-2: <img src="images/s.gif"/>В 10 9 5 <img src="images/h.gif"/> Д В <img src="images/d.gif"/> Т Д 6 5 4 <img src="images/c.gif"/> К 6 (два дублета при 13 очках) нужно играть "Одна бубна".</div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					</v-expansion-panel>
+	        		<div><b>1D 1<img src="images/d.gif"/> "Одна бубна". </b></div>
+	        		<div>Это натуральная заявка, показывающая, что у открывающего нерегулярный расклад, нет мажорных пятерок, от 12 до 16 очков и не менее четырех карт бубновой масти.
+	        		</div>
+
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div>2-2-5-4: <img src="images/s.gif"/> 10 9 <img src="images/h.gif"/> Д В <img src="images/d.gif"/> Т Д В 5 4 <img src="images/c.gif"/> К 8 6 3 </div>
+					        		
+					        		<div>
+					        			<img class="pcard" src="images/cards/10_of_spades.png" />
+					        			<img class="pcard" src="images/cards/9_of_spades.png"  />
+					        			<img class="pcard" src="images/cards/queen_of_hearts2.png"  />
+					        			<img class="pcard" src="images/cards/jack_of_hearts2.png"  />
+					        			<img class="pcard" src="images/cards/ace_of_diamonds.png"  />
+					        			<img class="pcard" src="images/cards/queen_of_diamonds2.png"  />
+					        			<img class="pcard" src="images/cards/jack_of_diamonds2.png"  />
+					        			<img class="pcard" src="images/cards/5_of_diamonds.png"  />
+					        			<img class="pcard" src="images/cards/4_of_diamonds.png"  />
+					        			<img class="pcard" src="images/cards/king_of_clubs2.png"  />
+					        			<img class="pcard" src="images/cards/8_of_clubs.png"  />
+					        			<img class="pcard" src="images/cards/6_of_clubs.png"  />
+					        			<img class="pcard" src="images/cards/3_of_clubs.png"  />
+					        		</div>
+					        		<div> 4-4-4-1: <img src="images/s.gif"/> В 10 9 5 <img src="images/h.gif"/> Д В 9 2 <img src="images/d.gif"/> Т Д В 4 <img src="images/c.gif"/> К </div>
+					        		<div>
+					        			<img class="pcard" src="images/cards/jack_of_spades2.png" />
+					        			<img class="pcard" src="images/cards/10_of_spades.png"  />
+					        			<img class="pcard" src="images/cards/9_of_spades.png" />
+					        			<img class="pcard" src="images/cards/5_of_spades.png"  />
+					        			<img class="pcard" src="images/cards/queen_of_hearts2.png"  />
+					        			<img class="pcard" src="images/cards/jack_of_hearts2.png"  />
+					        			<img class="pcard" src="images/cards/9_of_hearts.png"  />
+					        			<img class="pcard" src="images/cards/2_of_hearts.png"  />
+					        			<img class="pcard" src="images/cards/ace_of_diamonds.png"  />
+					        			<img class="pcard" src="images/cards/queen_of_diamonds2.png"  />
+					        			<img class="pcard" src="images/cards/jack_of_diamonds2.png"  />
+					        			<img class="pcard" src="images/cards/4_of_diamonds.png"  />
+					        			<img class="pcard" src="images/cards/king_of_clubs2.png"  />
+					        		</div>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+
+					<!--
+	        		<v-flex xs12>
+	        			<v-btn-toggle v-model="toggle_exclusive" class="transparent">
+        					<v-btn @click="show1 = !show1">Примеры</v-btn>
+        					<v-btn @click="show2 = !show2">Антипримеры</v-btn>
+        				</v-btn-toggle>
+      				</v-flex>
+	        		<v-layout row wrap>
+	        			<v-flex xs12 sm3>
+	        				<v-btn class="example_button" flat small depressed icon color="primary">Примеры <v-icon dark>add</v-icon></v-btn>
+	        			</v-flex>
+	        			<v-flex xs12 sm3>
+	        				<v-btn class="example_button" flat small depressed icon color="primary">Антипримеры <v-icon dark>add</v-icon></v-btn>
+						</v-flex>
+	        			</v-layout>
+					-->
+        		<div><b> 1 <img src="images/h.gif"/> "Одна черва". </b></div>
+        		<div>Натуральная заявка, свидетельствующая о том, что у открывающего от 12 до 16 очков и не менее пяти карт червей.</div>
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div><img src="images/s.gif"/>Т В 9 <img src="images/h.gif"/> К Д В 9 8 <img src="images/d.gif"/> Д 4 <img src="images/c.gif"/> К 8 2</div>
+     								<div><img src="images/s.gif"/>Т В 9 <img src="images/h.gif"/> Т Д В 9 8 2 <img src="images/d.gif"/> 6 <img src="images/c.gif"/> 10 8 6</div>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div><img src="images/s.gif"/>Т К Д <img src="images/h.gif"/> Т К Д В 8 6 <img src="images/d.gif"/> Д 5 <img src="images/c.gif"/> Т Д (с такими сильными картами надо было открываться "одной трефой")</div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+     
+				<div><b> 1 <img src="images/s.gif"/> "Одна пика". </b></div>
+        		<div>Натуральная заявка, свидетельствующая о том, что у открывающего от 12 до 16 очков и не менее пяти карт пик.</div>
+        		<div>А что если у нас 12-16 очков и две мажорные пятерки - пиковая и червонная одновременно? Правило натуральной торговли гласит, что в этом случае сначала показывается старшая - пиковая масть. При двух мажорных мастях разной длины сначала показывают более длинную.</div>
+        			<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div>5-5-0-3: <img src="images/s.gif"/>Т К В 9 7 <img src="images/h.gif"/>Т В 9 8 2 <img src="images/d.gif"/>-  <img src="images/c.gif"/>10 8 6</div>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div>5-6-1-1: <img src="images/s.gif"/>Т К В 9 7 <img src="images/h.gif"/> Т В 9 8 4 2 <img src="images/d.gif"/> 7 <img src="images/c.gif"/>10 (черва длиннее - открытие "одна черва")</div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					</v-expansion-panel>
+     
+				<div><b> 1 БК "Одна без козыря". </b></div>
+				<div>Натуральная заявка и назначается при 16-18 в очках в двух случаях:</div>
+     			<div> - при равномерном раскладе;</div>
+     			<div>- при раскладе 5-3-3-2 с минорной пятеркой. Наличие 17 или 18 очков является тем самым исключением, которое упоминалось в открытии "одна трефа". Таким образом, при 17-18 очках равномерного расклада или при раскладе 5-3-3-2 с любой минорной пятеркой мы всегда открываемся через "один без козыря".</div>
+     			<div>Заметим, что при 16 очках и раскладе 5-3-3-2 с бубновой пятеркой мы имеем право также открыться "одной бубной". В этом случае самая простая рекомендация - полагаться на здравый смысл. Если сильная бубновая масть - так и открывайтесь спокойно "одной бубной". Если очки разбросаны по мастям - нет смысла информировать партнера о слабой минорной масти.</div>
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+									<div><img src="images/s.gif"/> Т К В 7 <img src="images/h.gif"/> Т Д В <img src="images/d.gif"/> 8 7 3 <img src="images/c.gif"/>Д 10 8</div>
+									<div><img src="images/s.gif"/> Т К В <img src="images/h.gif"/> Т Д В <img src="images/d.gif"/> 8 7 <img src="images/c.gif"/>Д 10 8 6 4</div>
+
+
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+									<div>3-3-2-5(25): <img src="images/s.gif"/> Т К В <img src="images/h.gif"/> Т Д В <img src="images/d.gif"/> Т 8 <img src="images/c.gif"/> К Д 10 8 6 (с такими картами надо было открываться сильным вариантом)</div>
+									<div>4-3-1-5(18): <img src="images/s.gif"/> Т К В 7 <img src="images/h.gif"/> Т В 10 <img src="images/d.gif"/> 8 <img src="images/c.gif"/> К Д 10 8 6 (18 очков, но неравномерный расклад и не 5-3-3-2).</div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+
+     			<div><b> 2 <img src="images/c.gif"/> "Две трефы". </b></div>
+     			<div>Натуральная заявка, которая при 12-16 очках назначается при наличии: 
+     				<br> - не менее шести карт трефовой масти в отсутствие мажорных пятерок; 
+     				<br> - пятерки треф и любой мажорной четверки.
+     			</div>
+     				<v-expansion-panel>
+	     				<v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Примеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+     								<div> 3-3-1-6: <img src="images/s.gif"/> 10 6 3 <img src="images/h.gif"/> Т В 10 <img src="images/d.gif"/> 8 <img src="images/c.gif"/> Т К Д 10 8 б (шесть треф и нет мажорных пятерок)</div>
+     								<div> 4-1-3-5: <img src="images/s.gif"/> К В 9 5 <img src="images/h.gif"/> 2 <img src="images/d.gif"/> Д 6 3 <img src="images/c.gif"/> Т К В 8 4 (пять треф и четыре пики)</div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+	     				<v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<img src="images/s.gif"/> К В 9 7 5 <img src="images/h.gif"/>-  <img src="images/d.gif"/> Д 6 <img src="images/c.gif"/> Т К В 8 4 3 (имея мажорную пятерку, следовало открыться "одной пикой")
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					</v-expansion-panel>
+
+				<div><b> 2 <img src="images/d.gif"/> "Две бубны". </b> <i class="material-icons">warning</i></div>
+				<div>Это искусственная заявка, которая назначается при наличии от 12 до 16 очков в случае "трехцвета без бубновой масти".
+					<v-tooltip bottom>
+      					<template v-slot:activator="{ on }">
+        					<v-icon color="primary" dark v-on="on">info</v-icon>
+      					</template>
+      					<span>Трехцветом называется расклад карт 4-4-4-1 или 5-4-4-0.</span>
+    				</v-tooltip>
+				  Для данного открытия расклад 5-4-4-0 используется только при трефовой пятерке.</div>
+				<div>Заметим, что при раскладе 5-4-4-0 с бубновым ренонсом, трефовой пятеркой и мажорной четверкой можно открыться и "двумя трефами", однако делать это следует лишь при сильной трефовой масти. В этом случае вы ничего не скажете партнеру о раскладе карт, зато сообщите о длине трефовой масти.</div>
+
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div>4-4-1-4: <img src="images/s.gif"/> К В 9 5 <img src="images/h.gif"/>К 6 5 3 <img src="images/d.gif"/> Д <img src="images/c.gif"/> Т В 4 3</div>
+     								<div>4-4-0-5: <img src="images/s.gif"/> К В 9 5 <img src="images/h.gif"/>К 6 8 3 <img src="images/d.gif"/>-  <img src="images/c.gif"/> Т В 8 4 3</div>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div><img src="images/s.gif"/> К В 9 <img src="images/h.gif"/>К 6 5 3 <img src="images/d.gif"/>- <img src="images/c.gif"/> Т В 9 7 4 3 (с трефовой шестеркой надо было открыться "двумя трефами").</div>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+
+        		<div><b> 2 <img src="images/h.gif"/> "Две червы". </b></div>
+        		<div>Натуральная заявка, которая назначается при наличии от 9 до 11 очков при длине червонной масти не менее шести карт.</div>		
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div> 4-6-2-1(9): <img src="images/s.gif"/> К 6 5 3 <img src="images/h.gif"/> К В 9 5 4 3 <img src="images/d.gif"/> Д 3 <img src="images/c.gif"/> 4</div>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+				<div><b> 2 <img src="images/s.gif"/> "Две пики". </b></div>
+				<div>Натуральная заявка, которая назначается при наличии от 9 до 11 очков при длине пиковой масти не менее шести карт. А если удача послала вам две мажорные шестерки и 9-11 очков? Как быть? Давайте вспомним случай двух мажорных пятерок при 12-16 очках. В обеих ситуациях при равенстве длин мастей сначала показывается старшая масть - пиковая. При раскладе 7-6-0-0 сначала показывается более длинная масть.</div>
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+
+				<div><b> 2 БК "Две без козыря". </b></div>
+				<div>Натуральная заявка, которая назначается при силе руки от 9 до 11 очков при наличии двух пятерок. Пятерки могут быть в разных мастях, не обязательно в мажорных.
+     </div>
+					<v-expansion-panel>
+					    <v-expansion-panel-content>
+					        <template v-slot:header>
+        						<div>Примеры</div>
+      						</template>
+					      	<v-card>
+					        	<v-card-text>
+					        		<div>2-1-5-5(10):<img src="images/s.gif"/> 6 5 <img src="images/h.gif"/> 4 <img src="images/d.gif"/> К В 9 5 2 <img src="images/c.gif"/> Т Д 10 7 4</div>
+								</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					    <v-expansion-panel-content>
+					      	<template v-slot:header>
+        						<div>Антипримеры</div>
+        					</template>
+					      	<v-card>
+					        	<v-card-text>
+					        	</v-card-text>
+					        </v-card>
+					    </v-expansion-panel-content>
+					  </v-expansion-panel>
+
+
+
+				<hr>
+     			<h3 class="font-effect-shadow-multiple">Ответы</h3>
+
+        		<h3>Ответы на <b> 1 <img src="images/h.gif"/> "Одна черва". </b></h3>
+        		<div>"Пас" - при 0-7 очках.</div>
+     			<div>"Одна пика"-при 7-10 очках и при наличии не менее 4 карт пиковой масти, ФК (форсирует открывающего на круг).</div>
+     			<div>"Один без козыря" - РР при 7-10 очках. Не забудьте, что в РР входит теперь расклад 5-3-3-2 с минорной пятеркой.</div>
+     			<div>"Две трефы" - искусственная заявка, свидетельствующая, что у вас не менее 11 очков. Данная заявка является вопросом партнеру о силе и раскладе его карт.</div>
+     			<div>"Две бубны" - при 8-12 очках и наличии не менее пятерки карт бубновой масти.</div>
+     			<div>"Две червы" - при 6-9 очках, наличии не менее 3 карт червонной масти (фит, поскольку партнер своим открытием показал не менее 5 карт в данной масти).</div>
+     			<div>"Две пики"-при 12 и большем числе очков и наличии не менее пяти карт пиковой масти, ФГ (форсирует, заставляя партнера не заканчивать торговлю, пока не будет заказан гейм).</div>
+
+
+     			<h3>Ответы на <b> 1 <img src="images/h.gif"/> "Одна черва". </b> ->  2 <img src="images/c.gif"/>"Две трефы"</h3>
+
+     			<div>  "Две бубны"-12-14 очков и ровно 5 карт в червонной масти, ИЗ (партнер должен ударить пальцем по столу!)</div>
+  				<div>"Две червы" - 12-14 очков и не менее 6 карт червонной масти.</div>
+  				<div>"Две пики"-14-16 очков, ровно 4 карты пиковой масти и не менее 5 карт червонной масти, ФГ.</div>
+  				<div>"Два без козыря"- 14-16 очков и расклад 5-3-3-2, ФГ.</div>
+  				<div>"Три трефы" - 14-16 очков и не менее четверки трефовых карт, ФГ.</div>
+  				<div>"Три бубны" - 14-16 очков и не менее четверки бубновых карт, ФГ.</div>
+  				<div>"Три червы"- 14-16 очков и не менее 6 карт червонной масти, ФГ.</div>
+
+
+  				<h3>Ответы на <b> 1 <img src="images/s.gif"/> "Одна пика". </b></h3>
+
+  				<div>"Пас" - при 0-7 очках.</div>
+     <div>"Две пики" - при 6-9 очках и наличии не менее трех карт пиковой масти (фит).</div>
+     <div>"Две червы" - при не менее 12 очков и от пятерки червей, ФГ (форсирует до гейма).</div>
+     <div>"Две трефы" - как и в открытии "одна черва", это - искусственная заявка - вопрос партнеру о силе и раскладе его карт. Назначить "две трефы" можно, лишь имея на руках, по крайней мере, 11 очков.</div>
+    <div>"Две бубны" - при 8-12 очках и наличии не менее пятерки карт бубновой масти.</div>
+     <div>"Один без козыря" - равномерный расклад (можно с минорной пятеркой расклад 5-3-3-2) при 7-10 очках. Легко убедиться, данное открытие очень близко к "одной черве". Сказывается это и при ответах открывающего на искусственную заявку-вопрос "две трефы".</div>
+     <div>"Две бубны" - 12-14 очков, ровно пять пиковых карт, искусственная заявка.</div>
+     <div>"Две червы" означают, что у открывающего: либо 12-14 очков и не менее пятерки червей, либо 14-16 очков и ровно четыре червы.</div>
+     <div>"Две пики" - 12-14 очков и не менее шести карт пиковой масти.</div>
+     <div>"Три трефы" - 14-16 очков и не менее четверки трефовых карт, ФГ (форсирует до гейма).</div>
+     <div>"Три бубны" - 14-16 очков и не менее четырех бубновых карт, ФГ.</div>
+     <div>"Три червы" - 14-16 очков и не менее пяти червей, ФГ.</div>
+     <div>"Два без козыря" - 14-16 очков и расклад 5-3-3-2, ФГ.</div>
+
+				<h3>Ответы на <b> 2 <img src="images/c.gif"/>"Две трефы"</b></h3>
+
+				<div>"Пас" - при 0-7 очках.</div>
+     <div>"Две бубны" - искусственная заявка - вопрос партнеру о силе и раскладе его карт. Заявляют "две бубны" только в том случае, если на руках у вас не менее 11 очков. Естественно, что данная заявка, как и все искусственные, форсирует вашего партнера на круг: если последуют три паса, то вам придется играть совершенно ненужный вам бубновый контракт!</div>
+     <div>"Две червы" - на руках не менее пяти червей и от 8 до 10 очков.</div>
+     <div>"Две пики" - на руках не менее пятерки пик и от 8 до 10 очков.</div>
+     <div>"Три трефы" - 9-10 очков и не менее трех карт в трефовой масти.</div>
+     <div>"Два без козыря" - "неинтересный" расклад (возможно - равномерный, но не обязательно) и 11-12 очков.</div>
+
+
+			<h3>Ответы на <b> 2 <img src="images/d.gif"/>"Две бубны"</b></h3>
+
+     		<div>"Две червы" - 12-14 очков и ровно четверка червонных карт.</div>
+     		<div>"Две пики" - 12-14 очков и ровно четыре пиковые карты.</div>
+     		<div>"Три трефы" - 12-14 очков, не менее шести трефовых карт и нет мажорной четверки.</div>
+     		<div>"Три червы" - 14-16 очков и ровно четыре карты в червовой масти.</div>
+     		<div>"Три пики" - 14-16 очков и ровно четверка пиковых карт.</div>
+     		<div>"Два без козыря" - 14-16 очков, не менее шести трефовых карт и нет мажорной четверки.</div>
+
+     		<div>Данные основаны на следующих источниках:</div>
+     		<ul>
+     			<li><a href="http://www.bridgeclub.ru/system/berezka09.htm">Торговля березка на Gambler</a></li>
+     			<li><a href="http://www.bridgeclub.ru/system/berezka.htm">Торговля березка</a></li>
+     		</ul>
+     	</v-card-text>
+     	</v-flex>
+		</v-content>      
+      </v-container>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer> 
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <!--<script src="distr/vue.js"></script>
+  <script src="distr/vuetify.js"></script>  
+  <script src="distr/axios.js"></script>
+-->
+  <script src="scripts/boardgames.js"></script>
+  <script>
+    //let clock = '';
+    new Vue({ 
+      el: '#app', 
+      data() {
+        return games
+      },
+      computed: {
+      },
+      methods: {
+        timeNow: function() {
+          let hours = new Date().getHours();
+          let minutes = new Date().getMinutes();
+          let seconds = new Date().getSeconds();
+          if (hours   < 10) {hours   = "0"+hours;}
+          if (minutes < 10) {minutes = "0"+minutes;}
+          if (seconds < 10) {seconds = "0"+seconds;}        
+          return hours + ':' + minutes + ':' + seconds
+        },
+        getData: function() {
+          axios.get(this.apiURL)
+          .then(function (response) {
+              console.log(response.data)
+              //let info = JSON.parse(response.data);
+              console.log(response.data)        
+          })
+          .catch(function (error) {
+              console.log("An error has occurred.");
+          })
+        },
+        gotoLink: function(link) {
+          window.open(link, "_blank");
+        }       
+      },
+      mounted: function() {
+        setInterval(()=>{
+            this.clock = this.timeNow()
+        }, 100)
+      },
+      created: function() {
+        // console.log(collections)
+      }
+  }) 
+  </script>
+</body>
