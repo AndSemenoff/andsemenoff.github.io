@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
+  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/absolem.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".example_button").click(function(){
+    $(".example").toggle();
+  });
+});
+</script>
+  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>ABSOLEM.INFO|Спортивный бридж. Березка</title>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-system-bar status color="primary" lights-out>
+        <v-spacer></v-spacer>
+        <span>&nbsp;всё работает&nbsp;</span>
+        <span>&nbsp;{{ clock }}&nbsp;</span>
+      </v-system-bar>
+      <v-toolbar dark color="primary">
+        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>            
+      <v-container fluid grid-list-sm>
+        <v-content>
+        	<v-flex xs12>
+        		<v-card-text>
+        			<h1 class="font-effect-shadow-multiple">Блэквуд 1430</h1>
+					<div>Искусственная заявка 4 NT "Четыре без козыря". Вопрос не о тузах, а о ценностях. Ценностями являются Тузы и Король в козырной масти. Таким образом
+					ценностей всего пять.
+					 В качестве козырной масти принимается либо согласованная масть, либо
+последняя  из заявленных мастей (если масть не согласовывалась).</div>
+<table class="auction"> 
+<tbody>
+	<tr>
+		<th>Круг</th><th>S</th><th>W</th><th>N</th><th>E</th><th>Примечания</th>
+	</tr>
+
+	<tr><td>1</td><td>1<span class="red_card">♦</span></td><td>Pass</td><td>1<span class="red_card">♥</span></td><td>Pass</td><td>&nbsp;</td></tr>
+	<tr><td>2</td><td>3<span class="red_card">♥</span></td><td>Pass</td><td>4 NT</td><td>Pass</td><td>согласованной мастью является черва</td></tr>
+	<tr><td>3</td><td>Pass</td><td>Pass</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</tbody>
+</table>
+
+<table class="auction"> 
+<tbody>
+	<tr>
+		<th>Круг</th><th>S</th><th>W</th><th>N</th><th>E</th><th>Примечания</th>
+	</tr>
+
+	<tr><td>1</td><td>1 ♠</td><td>Pass</td><td>4 NT</td><td>Pass</td><td>пика единственная заявленная масть</td></tr>
+	<tr><td>2</td><td>Pass</td><td>Pass</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</tbody>
+</table>
+
+<table class="auction"> 
+<tbody>
+	<tr>
+		<th>Круг</th><th>S</th><th>W</th><th>N</th><th>E</th><th>Примечания</th>
+	</tr>
+
+	<tr><td>1</td><td>1<span class="red_card">♥</span></td><td>Pass</td><td>1 ♠</td><td>Pass</td><td>&nbsp;</td></tr>
+	<tr><td>2</td><td>3<span class="red_card">♦</span></td><td>Pass</td><td>4 NT</td><td>Pass</td><td>бубна последняя из названных мастей</td></tr>
+	<tr><td>3</td><td>Pass</td><td>Pass</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</tbody>
+</table>
+<div>
+<ul>Ответы:
+	<li>5 ♣ - первая ступень 1 или 4 ценности</li>
+	<li>5 <span class="red_card">♦</span> - вторая ступень 3 или 0 ценности</li>
+	<li>5 <span class="red_card">♥</span>- третья ступень 5 или 2 ценности без мастевой дамы </li>
+	<li>5 ♠ - четвертая ступень 5 или 2 ценности с мастевой дамой</li>
+</ul>
+<div>При ответе 5 ♣ и 5 <span class="red_card">♦</span> нет информации о даме. Вопрос о даме задем следующей не казырной мастью.</div>
+</div>
+
+<div>Когда 4NT не являются Блэквудом ?</div>
+<h4>Противник  вмешивается  в  нашу  шлемовую  торговлю.</h4>
+<div>Если после нашей заявки  4NT  противник вступает в торговлю, то ступенчатый показ ценностей остается в силе с той  разницей, что ответы однозначны: 
+<ul>
+	<li> пас = 1 ценность;</li>
+	<li> контра = 0 ценностей;</li>
+	<li> 1 ступень = 2 ценности;</li>  
+	<li> 2 ступень = 3 ценности. </li>
+	<li> 3 ступень = 4 ценности. </li>
+	<li> 4 ступень = 5 ценностей. </li>
+</ul>
+То есть, если, например, после Блэквуда противник вмешался  5 бубнами, то  5<span class="red_card">♥</span> покажут две  ценности, 5♠ - 3 ценности,  5БК – 4 ценности.
+</div>
+					<ul>Данные основаны на следующих источниках:
+						<li><a href="http://www.bridgewebs.com/lincolnhills/Blackwood%20RKC%201430.pdf">bridgewebs </a>pdf</li>
+						<li><a href=""></a></li>
+					</ul>
+				</v-card-text>
+			</v-flex>
+		</v-content>      
+      </v-container>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer> 
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <!--<script src="distr/vue.js"></script>
+  <script src="distr/vuetify.js"></script>  
+  <script src="distr/axios.js"></script>
+-->
+  <script src="scripts/boardgames.js"></script>
+  <script>
+    //let clock = '';
+    new Vue({ 
+      el: '#app', 
+      data() {
+        return games
+      },
+      computed: {
+      },
+      methods: {
+        timeNow: function() {
+          let hours = new Date().getHours();
+          let minutes = new Date().getMinutes();
+          let seconds = new Date().getSeconds();
+          if (hours   < 10) {hours   = "0"+hours;}
+          if (minutes < 10) {minutes = "0"+minutes;}
+          if (seconds < 10) {seconds = "0"+seconds;}        
+          return hours + ':' + minutes + ':' + seconds
+        },
+        getData: function() {
+          axios.get(this.apiURL)
+          .then(function (response) {
+              console.log(response.data)
+              //let info = JSON.parse(response.data);
+              console.log(response.data)        
+          })
+          .catch(function (error) {
+              console.log("An error has occurred.");
+          })
+        },
+        gotoLink: function(link) {
+          window.open(link, "_blank");
+        }       
+      },
+      mounted: function() {
+        setInterval(()=>{
+            this.clock = this.timeNow()
+        }, 100)
+      },
+      created: function() {
+        // console.log(collections)
+      }
+  }) 
+  </script>
+</body>
