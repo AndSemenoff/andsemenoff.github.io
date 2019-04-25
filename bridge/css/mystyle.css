@@ -1,3 +1,19 @@
+.auction{
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	border:2px solid black;
+	margin-top: 5px;
+}
+
+.auction td{
+	border: 1px solid black;
+}
+
+.red_card{
+	color: #e11;
+}
+
 
 .avatar img {
 	height: 30px; 
@@ -47,6 +63,18 @@ ul {
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+}
+
+ol>li{
+display:block;
+}
+
+ol>li:before{
+content:counters(item,".") ". ";
+counter-increment:item
+}
+ol{
+counter-reset:item
 }
 
 h1, h2, h3 {
