@@ -29,6 +29,9 @@ $(document).ready(function(){
         <span>&nbsp;{{ clock }}&nbsp;</span>
       </v-system-bar>
       <v-toolbar dark color="primary">
+	  		<v-toolbar-title class="white--text"><v-btn icon><a href="bridge.html" class="white--text">
+			<v-icon>home</v-icon>
+			</a></v-btn></v-toolbar-title>
         <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>            
@@ -44,6 +47,7 @@ $(document).ready(function(){
         			<div>Конвенционная заявка "Блэквуд" - вопрос о тузах и королях при шлемовой торговле.</div>
         			<div>Мажорные масти: черви, пики. Минорные масти: трефы, буби. Старшинство мастей от младшей: трефа, бубна, черва, пика.</div>
         			<div>Фит - 8 карт в некоторой масти.</div>
+					<div>Реверс - когда масть первой значащей заявки младше масти второй значащей заявки этого же игрока.</div>
         			<div>"Полуфит" - 7 карт в некоторой масти.</div>
         			<div>Сокращения и обозначения: 
         				<ul>
@@ -62,7 +66,7 @@ $(document).ready(function(){
         					<v-icon color="primary" dark v-on="on">info</v-icon>
       					</template>
 						<table cellspacing=0 cellpadding=4 border=1>
-						<tr><td colspan=2> Уровень контракта</td><td rowspan=2> Необходимые очки</td></tr>
+						<tr><td colspan=2> Уровень контракта</td><td rowspan=2>Необходимые очки</td></tr>
 						<tr><td>с козырем</td><td>без козыря</td></tr>
 						<tr><td>1-2</td><td>1</td><td>19-23</td></tr>
 						<tr><td>3</td><td>2</td><td>22-24</td></tr>
@@ -479,7 +483,7 @@ $(document).ready(function(){
   				<div>"Три червы"- 14-16 очков и не менее 6 карт червонной масти, ФГ.</div>
 
 
-  				<h3 id="attr-1S">Ответы на <b> 1 <img src="images/s.gif"/> "Одна пика". </b></h3>
+  				<h3 id="attr-1S">Ответы на <b> 1 ♠︎ <img src="images/s.gif"/> "Одна пика". </b></h3>
 
   				<div>"Пас" - при 0-7 очках.</div>
 				<div>"Две пики" - при 6-9 очках и наличии не менее трех карт пиковой масти (фит).</div>
