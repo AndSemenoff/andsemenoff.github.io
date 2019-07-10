@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
+  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/absolem.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".example_button").click(function(){
+    $(".example").toggle();
+  });
+});
+</script>
+  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>ABSOLEM.INFO|Спортивный бридж. SAYC 1NT-3 Suit</title>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-system-bar status color="primary" lights-out>
+        <v-spacer></v-spacer>
+        <span>&nbsp;всё работает&nbsp;</span>
+        <span>&nbsp;{{ clock }}&nbsp;</span>
+      </v-system-bar>
+      <v-toolbar dark color="primary">
+		<v-btn icon>
+			<a href="bridge.html" class="white--text">
+				<v-icon>home</v-icon>
+			</a>
+		</v-btn>
+        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>            
+      <v-container fluid grid-list-sm>
+        <v-content>
+        	<v-flex xs12>
+        		<v-card-text>
+        			<h1 class="font-effect-shadow-multiple">SAYC 1NT - 3 в масть</h1>
+					<div>Натуральная заявка 
+					</div>
+					<div>натурально, от 5-ки, карта со шлемовыми интенциями (т.е.
+                      при найденном фите примерно 33 балансных пунктов, так
+                      что если рука Отв имеет только одну 5-картную масть, то
+                      его сила должна составлять около 15-ти пунктов); далее
+                      Откр, имея фит в масти Отв, назначает масть, наиболее богатую старшими фигурами (это - начало шлемовой торговли)
+                      или просто дает фит на 4-ом уровне, а Отв решает судьбу
+                      окончательного контракта или переходит к шлемовой торговле; если же Откр не имеет фита в масти Отв, то он назначает 3 б/к, после чего если Отв назначит новую масть, то
+                      она также 5-картная, такое назначение Отв является шлемовой торговлей, так как в этой масти Откр наверняка имеет
+                      фит (ведь открытие 1 б/к обещает не более одного дублета), так что Откр не должен пасовать: на минимуме Откр
+                      просто поддерживает вторую масть Отв, а на максимуме назначает масть, в которой сконцентрированы фигуры; далее
+                      Отв принимает решение об окончательном контракте; кроме
+                      того, если Откр не даст фита в масти Отв, то он (Отв)
+                      может не иметь второй масти; в этом случае Отв может
+                      назначить в качестве окончательного контракта гейм или
+                      шлем в своей масти или в б/к (например, пасуя на заявку
+                      Откр) или может перейти к шлемовой торговле на согласованной своей масти (если она у него минимум 6-картная);
+					</div>
+
+
+				</v-card-text>
+			</v-flex>
+		</v-content>      
+      </v-container>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer> 
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <!--<script src="distr/vue.js"></script>
+  <script src="distr/vuetify.js"></script>  
+  <script src="distr/axios.js"></script>
+-->
+  <script src="scripts/boardgames.js"></script>
+  <script>
+    //let clock = '';
+    new Vue({ 
+      el: '#app', 
+      data() {
+        return games
+      },
+      computed: {
+      },
+      methods: {
+        timeNow: function() {
+          let hours = new Date().getHours();
+          let minutes = new Date().getMinutes();
+          let seconds = new Date().getSeconds();
+          if (hours   < 10) {hours   = "0"+hours;}
+          if (minutes < 10) {minutes = "0"+minutes;}
+          if (seconds < 10) {seconds = "0"+seconds;}        
+          return hours + ':' + minutes + ':' + seconds
+        },
+        getData: function() {
+          axios.get(this.apiURL)
+          .then(function (response) {
+              console.log(response.data)
+              //let info = JSON.parse(response.data);
+              console.log(response.data)        
+          })
+          .catch(function (error) {
+              console.log("An error has occurred.");
+          })
+        },
+        gotoLink: function(link) {
+          window.open(link, "_blank");
+        }       
+      },
+      mounted: function() {
+        setInterval(()=>{
+            this.clock = this.timeNow()
+        }, 100)
+      },
+      created: function() {
+        // console.log(collections)
+      }
+  }) 
+  </script>
+</body>

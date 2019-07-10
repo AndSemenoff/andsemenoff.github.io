@@ -6,12 +6,62 @@
 	margin-top: 5px;
 }
 
+.hand{
+	border: 0px;
+}
+
+.hand tr{
+	height: 35px;
+}
+
+.hand td{
+	width: 20px;
+}
+
 .auction td{
 	border: 1px solid black;
 }
 
 .red_card{
 	color: #e11;
+}
+
+.hcp{
+	color: white;
+	background-color: blue;
+	border:1px solid black;
+}
+
+.span1{
+	color: white;
+	background-color: #e11;
+	border:1px solid black;
+}
+
+.span2{
+	color: black;
+	/*background-color: grey;*/
+	border:1px solid black;
+}
+
+.span3{
+	color: white;
+	background-color: grey;
+	border:1px solid black;
+}
+
+.cards_small {
+	position: absolute;
+	width:90px;
+	height:135px;
+	clip: rect(0px,20px,35px,0px); /* rect (top, right, bottom, left) */
+}
+
+.cards_big {
+	position: absolute;
+	width:90px;
+	height:135px;
+	clip: rect(0px,90px,35px,0px); /* rect (top, right, bottom, left) */
 }
 
 

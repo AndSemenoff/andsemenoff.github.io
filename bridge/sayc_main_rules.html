@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
+  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/absolem.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".example_button").click(function(){
+    $(".example").toggle();
+  });
+});
+</script>
+  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>ABSOLEM.INFO|Спортивный бридж. SAYC</title>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-system-bar status color="primary" lights-out>
+        <v-spacer></v-spacer>
+        <span>&nbsp;всё работает&nbsp;</span>
+        <span>&nbsp;{{ clock }}&nbsp;</span>
+      </v-system-bar>
+      <v-toolbar dark color="primary">
+		<v-btn icon>
+			<a href="bridge.html" class="white--text">
+				<v-icon>home</v-icon>
+			</a>
+		</v-btn>
+        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>            
+      <v-container fluid grid-list-sm>
+        <v-content>
+        	<v-flex xs12>
+        		<v-card-text>
+        			<h1 class="font-effect-shadow-multiple">SAYC. Общие правила</h1>
+					<div>Общие принципы: 
+					<ul><b>В односторонней торговле</b>:
+<li>новая масть у Отв форсирует на один круг (F1);</li>
+<li>новая масть с одинарным прыжком форсирует до гейма (FG);</li>
+<li>4-я масть всегда FG и формально является вопросом о задержке;</li>
+<li>если достаточно силы, то вначале показывается более длинная масть, а при равной длине: если 4-ки, то ближняя, если 5-ки (и длиннее), то дальняя, однако при силе от 13-ти пунктов и 4-4 в миноре и мажоре, то после открытия 1 в масть лучше ответить 2 в новый минор (без прыжка)</li>
+<li>реверс откр. – после ответа one-over-one – от 15-ти О.П.</li>
+<li>отсроченный фит с прыжком  (а после два-на-один и без прыжка) – FG;</li>
+<li>б/к – всегда балансные;</li>
+<li>минимальная рука открывшего торговлю – ближайшее из б/к, повторение первой масти или фит в масти Отв без прыжка (кроме торговли Откр 1пика, Отв 2червы, теперь минимум Откр с фитом – 4червы).</li>
+					</ul>
+<ul><b>В конкурентной торговле:</b>
+<li>согласование с прыжком делает Отв – инвит, а если это делает партнер интервирующего, то: если это мажор, то инвит, а если минор – то блок;</li>
+<li>негативная контра до 2пик – F1;</li>
+<li>новая масть Отв без прыжка не форспрует;</li>
+<li>новая масть от игрока, который давал негативную контру – FG;</li>
+<li>простое согласование  не фоосирует;</li>
+<li>заявка в свободной позиции обещает некоторое усиление;</li>
+<li>б/к – всегда балансные с задержкой в масти оппонента. </li>
+</ul>
+<ul><b>Используемые конвенции:</b>
+	<li><A HREF="JacobyTransfersM.html">Трансфер Джакоби</A> в мажоры</li>
+	<li><A HREF="JacobyTransfersminor.html">Трансфер Джакоби</A> в миноры</li>
+	<li><A HREF="blackwood.html">Конвенция «Римский Блэквуд» 1430</A></li>
+	<li><A HREF="Stayman.html">Стейман</A></li>
+	<li>кью-бид Майклса</li>
+	<li>Каппеллетти</li>
+	<li>Друри</li>
+	<li>Смолен</li>
+	<li>Гербер</li>
+	<li><A HREF="splinter.html">Сплитнер</A></li>
+	<li></li>
+</ul>
+
+					</div>
+
+				</v-card-text>
+			</v-flex>
+		</v-content>      
+      </v-container>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer> 
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <!--<script src="distr/vue.js"></script>
+  <script src="distr/vuetify.js"></script>  
+  <script src="distr/axios.js"></script>
+-->
+  <script src="scripts/boardgames.js"></script>
+  <script>
+    //let clock = '';
+    new Vue({ 
+      el: '#app', 
+      data() {
+        return games
+      },
+      computed: {
+      },
+      methods: {
+        timeNow: function() {
+          let hours = new Date().getHours();
+          let minutes = new Date().getMinutes();
+          let seconds = new Date().getSeconds();
+          if (hours   < 10) {hours   = "0"+hours;}
+          if (minutes < 10) {minutes = "0"+minutes;}
+          if (seconds < 10) {seconds = "0"+seconds;}        
+          return hours + ':' + minutes + ':' + seconds
+        },
+        getData: function() {
+          axios.get(this.apiURL)
+          .then(function (response) {
+              console.log(response.data)
+              //let info = JSON.parse(response.data);
+              console.log(response.data)        
+          })
+          .catch(function (error) {
+              console.log("An error has occurred.");
+          })
+        },
+        gotoLink: function(link) {
+          window.open(link, "_blank");
+        }       
+      },
+      mounted: function() {
+        setInterval(()=>{
+            this.clock = this.timeNow()
+        }, 100)
+      },
+      created: function() {
+        // console.log(collections)
+      }
+  }) 
+  </script>
+</body>

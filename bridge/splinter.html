@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
+  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/absolem.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".example_button").click(function(){
+    $(".example").toggle();
+  });
+});
+</script>
+  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>ABSOLEM.INFO|Спортивный бридж. Сплинтер (Splinters)</title>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-system-bar status color="primary" lights-out>
+        <v-spacer></v-spacer>
+        <span>&nbsp;всё работает&nbsp;</span>
+        <span>&nbsp;{{ clock }}&nbsp;</span>
+      </v-system-bar>
+      <v-toolbar dark color="primary">
+		<v-btn icon>
+			<a href="bridge.html" class="white--text">
+				<v-icon>home</v-icon>
+			</a>
+		</v-btn>
+        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>            
+      <v-container fluid grid-list-sm>
+        <v-content>
+        	<v-flex xs12>
+        		<v-card-text>
+        			<h1 class="font-effect-shadow-multiple">Сплинтер (Splinters)</h1>
+					<div>Искусственная заявка 
+					</div>
+
+					<ul>Данные основаны на следующих источниках:
+						<li><a href="http://web2.acbl.org/documentLibrary/play/Commonly_Used_Conventions/splinters.pdf">ACBL | splinters.pdf </a></li>
+						<li><img src="images/favicon_youtube.png"/><a href="https://www.youtube.com/watch?v=xK7YGbwxXkM">Splinter Bids </a> AndrewRobsonBridge</li>
+					</ul>
+				</v-card-text>
+			</v-flex>
+		</v-content>      
+      </v-container>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer> 
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <!--<script src="distr/vue.js"></script>
+  <script src="distr/vuetify.js"></script>  
+  <script src="distr/axios.js"></script>
+-->
+  <script src="scripts/boardgames.js"></script>
+  <script>
+    //let clock = '';
+    new Vue({ 
+      el: '#app', 
+      data() {
+        return games
+      },
+      computed: {
+      },
+      methods: {
+        timeNow: function() {
+          let hours = new Date().getHours();
+          let minutes = new Date().getMinutes();
+          let seconds = new Date().getSeconds();
+          if (hours   < 10) {hours   = "0"+hours;}
+          if (minutes < 10) {minutes = "0"+minutes;}
+          if (seconds < 10) {seconds = "0"+seconds;}        
+          return hours + ':' + minutes + ':' + seconds
+        },
+        getData: function() {
+          axios.get(this.apiURL)
+          .then(function (response) {
+              console.log(response.data)
+              //let info = JSON.parse(response.data);
+              console.log(response.data)        
+          })
+          .catch(function (error) {
+              console.log("An error has occurred.");
+          })
+        },
+        gotoLink: function(link) {
+          window.open(link, "_blank");
+        }       
+      },
+      mounted: function() {
+        setInterval(()=>{
+            this.clock = this.timeNow()
+        }, 100)
+      },
+      created: function() {
+        // console.log(collections)
+      }
+  }) 
+  </script>
+</body>
