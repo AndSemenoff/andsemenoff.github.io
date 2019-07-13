@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
+  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/absolem.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".example_button").click(function(){
+    $(".example").toggle();
+  });
+});
+</script>
+  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>ABSOLEM.INFO|Спортивный бридж. Гербер (Gerber)</title>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-system-bar status color="primary" lights-out>
+        <v-spacer></v-spacer>
+        <span>&nbsp;всё работает&nbsp;</span>
+        <span>&nbsp;{{ clock }}&nbsp;</span>
+      </v-system-bar>
+      <v-toolbar dark color="primary">
+		<v-btn icon>
+			<a href="bridge.html" class="white--text">
+				<v-icon>home</v-icon>
+			</a>
+		</v-btn>
+        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>            
+      <v-container fluid grid-list-sm>
+        <v-content>
+        	<v-flex xs12>
+        		<v-card-text>
+        			<h1 class="font-effect-shadow-multiple">Гербер (Gerber)</h1>
+					<div>Искусственная заявка 4♣ "Четыре трефы" при открытии 1NT или 2NT. Вопрос о тузах и королях. 
+					</div>
+
+<div>
+<table class="minitable"> 
+<tbody>
+	<tr><td colspan=3>Ответы на Гербер</td></tr>
+	<tr><th>Ступень</th><th>Отв</th><th>Прим</th></tr>
+	<tr><td>1</td><td>4<span class="red_card">♦</span></td><td>0 <b>или</b> 3 Туза</td></tr>
+	<tr><td>2</td><td>4<span class="red_card">♥</span></td><td>1 <b>или</b> 4 Туза</td></tr>
+	<tr><td>3</td><td>4♠</td><td>2 Туза <b>и</b> 0 Королей</td></tr>
+	<tr><td>4</td><td>4NT</td><td>2 Туза <b>и</b> 1 Король</td></tr>
+	<tr><td>5</td><td>5♣</td><td>2 Туза <b>и</b> 2 Короля</td></tr>
+	<tr><td>6</td><td>5<span class="red_card">♦</span></td><td>2 Туза <b>и</b> 3 Короля</td></tr>
+	<tr><td>7</td><td>5<span class="red_card">♥</span></td><td>2 Туза <b>и</b> 4 Короля</td></tr>
+</tbody>
+</table>
+</div>
+<br>
+<div>Ближайшее назначение NT после ответа, показавшего только тузов(1 и 2 ступень) – вопрос о королях. 
+Все остальные назначения окончательный контракт.</div>
+
+<ul>Ответы на вопрос о королях:
+	<li>5♣ - первая ступень 0 королей</li>
+	<li>5<span class="red_card">♦</span> - вторая ступень 1 король</li>
+	<li>5<span class="red_card">♥</span>- третья ступень 2 короля</li>
+	<li>5♠ - четвертая ступень 3 короля</li>
+</ul>
+<div>После такого ответа любое назначение Отвечающего – контракт.</div>
+</div>
+
+
+				</v-card-text>
+			</v-flex>
+		</v-content>      
+      </v-container>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer> 
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <!--<script src="distr/vue.js"></script>
+  <script src="distr/vuetify.js"></script>  
+  <script src="distr/axios.js"></script>
+-->
+  <script src="scripts/boardgames.js"></script>
+  <script>
+    //let clock = '';
+    new Vue({ 
+      el: '#app', 
+      data() {
+        return games
+      },
+      computed: {
+      },
+      methods: {
+        timeNow: function() {
+          let hours = new Date().getHours();
+          let minutes = new Date().getMinutes();
+          let seconds = new Date().getSeconds();
+          if (hours   < 10) {hours   = "0"+hours;}
+          if (minutes < 10) {minutes = "0"+minutes;}
+          if (seconds < 10) {seconds = "0"+seconds;}        
+          return hours + ':' + minutes + ':' + seconds
+        },
+        getData: function() {
+          axios.get(this.apiURL)
+          .then(function (response) {
+              console.log(response.data)
+              //let info = JSON.parse(response.data);
+              console.log(response.data)        
+          })
+          .catch(function (error) {
+              console.log("An error has occurred.");
+          })
+        },
+        gotoLink: function(link) {
+          window.open(link, "_blank");
+        }       
+      },
+      mounted: function() {
+        setInterval(()=>{
+            this.clock = this.timeNow()
+        }, 100)
+      },
+      created: function() {
+        // console.log(collections)
+      }
+  }) 
+  </script>
+</body>
