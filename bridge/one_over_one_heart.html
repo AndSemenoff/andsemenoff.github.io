@@ -42,130 +42,75 @@ $(document).ready(function(){
         <v-content>
         	<v-flex xs12>
         		<v-card-text>
-        			<h1 class="font-effect-shadow-multiple">Торговля после "1 после 1" ("one-over-one")</h1>
+        			<h1 class="font-effect-shadow-multiple">SAYC. Торговля после "1 после 1" ("one-over-one")</h1>
 					
-<h2>1<span class="red_card">♥</span> - 1♠</h2>
-<table class="auction"> 
+<!--<h2>1<span class="red_card">♥</span> <small><span class="hcp">12—21</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span></small> — 1♠ <small><span class="hcp">6+</span> <span class="span2">&nbsp;4+♠&nbsp;</span></small></h2>-->
+<table class="minitable"> 
 <tbody>
 	<tr>
-		<th>Отв</th><th>Откр</th><th>Прим</th><th>Отв</th>
+		<th colspan=4>1<span class="red_card">♥</span> <small><span class="hcp">12—21</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span></small> — 1♠ <small><span class="hcp">6+</span> <span class="span2">&nbsp;4+♠&nbsp;</span></small></th>
 	</tr>
-	<tr><td rowspan=10><br>2♣ <br><br><span class="hcp">10+</span> <span class="span2">&nbsp;4+♣&nbsp;</span> F1</td>
-		<td>2♠</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;6+♠&nbsp;</span></td><td><a href="#attr-level2"><i class="far fa-eye"> </i></a></td></tr>
-	<tr><td>3♠</td><td><span class="hcp">15—17</span> <span class="span2">&nbsp;6+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>2<span class="red_card">♦</span></td><td><span class="hcp">12—21</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td><a href="#attr-level2"><i class="far fa-eye"> </i></a></td></tr>
-	<tr><td>2<span class="red_card">♥</span></td><td><span class="hcp">12—21</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td><a href="#attr-level2"><i class="far fa-eye"> </i></a></td></tr>
-	<tr><td>3♣</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;4+♣&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span> </td><td>-</td></tr>
-	<tr><td>3<span class="red_card">♦</span></td><td><span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span> FG</td><td>-</td></tr>
-	<tr><td>3<span class="red_card">♥</span></td><td><span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span> FG</td><td>-</td></tr>
-	<tr><td>2NT</td><td><span class="hcp">12—14</span> примерно <span class="span2">&nbsp;5♠&nbsp;</span>-3-3-2</td><td>-</td></tr>
-	<tr><td>3NT</td><td><span class="hcp">15—18</span> примерно <span class="span2">&nbsp;5♠&nbsp;</span>-3-3-2</td><td>-</td></tr>
-	<tr><td>4NT</td><td>Блэквуд</td><td>-</td></tr>
-	
-	<tr><td rowspan=9><br>2<span class="red_card">♦</span><br><br><span class="hcp">10+</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> F1</td>
-		<td>2♠</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;6+♠&nbsp;</span></td><td><a href="#attr-level2"><i class="far fa-eye"> </i></a></td></tr>
-	<tr><td>3♠</td><td><span class="hcp">15—17</span> <span class="span2">&nbsp;6+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>2<span class="red_card">♥</span></td><td><span class="hcp">12—21</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td><a href="#attr-level2"><i class="far fa-eye"> </i></a></td></tr>
-	<tr><td>3♣</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;4+♣&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>3<span class="red_card">♦</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>3<span class="red_card">♥</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td>-</td></tr>
+	<tr>
+		<th>Откр</th><th>Прим</th><th colspan=2>Отв</th>
+	</tr>
+	<tr>
+		<td rowspan=3>1NT</td><td rowspan=3><span class="hcp">12—14</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2</td><td>2♠</td><td><span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
+			<tr><td>3♠</td><td>инвит G(♠)</td></tr>
+			<tr><td>3<span class="red_card">♥</span></td><td>инвит G(<span class="red_card">♥</span>)</td>
+	</tr>
+	<tr><td rowspan=3>2♣</td><td rowspan=3><span class="hcp">12—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♣&nbsp;</span> иногда <span class="span2">&nbsp;3+♣&nbsp;</span></td><td>2♠</td><td><span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
+		<tr><td>3♠</td><td>инвит G(♠)</td></tr>
+		<tr><td>3<span class="red_card">♥</span></td><td>инвит G(<span class="red_card">♥</span>)</td></tr>
+	</tr>
+	<tr><td>2<span class="red_card">♦</span></td><td><span class="hcp">12—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> иногда <span class="span2">&nbsp;3+<span class="red_card">♦</span>&nbsp;</span></td><td colspan=2>2♠ — <span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span><br>3♠ — инвит G(♠)<br>3<span class="red_card">♥</span> — инвит G(<span class="red_card">♥</span>)</td></tr>
+	<tr><td>2<span class="red_card">♥</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>2♠ — <span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span><br>3♠ — инвит G(♠)<br>3<span class="red_card">♥</span> — инвит G(<span class="red_card">♥</span>)</td></tr>
+	<tr><td>2♠</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
+	<tr><td>3♣</td><td><span class="hcp">18+</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♣&nbsp;</span> FG </td><td colspan=2>-</td></tr>
+	<tr><td>3<span class="red_card">♦</span></td><td> <span class="hcp">18+</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> FG</td><td colspan=2>-</td></tr>
+	<tr><td>3<span class="red_card">♥</span></td><td> <span class="hcp">15—17</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>-</td></tr>
+	<tr><td>3♠</td><td> <span class="hcp">15—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
+	<tr><td>4<span class="red_card">♥</span></td><td> <span class="hcp">18—21</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>-</td></tr>
+	<tr><td>4♠</td><td> <span class="hcp">18—21</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
 
-	<tr><td>2NT</td><td><span class="hcp">12—14</span> примерно <span class="span2">&nbsp;5♠&nbsp;</span>-3-3-2</td><td>-</td></tr>
-	<tr><td>3NT</td><td><span class="hcp">15—18</span> примерно <span class="span2">&nbsp;5♠&nbsp;</span>-3-3-2</td><td>-</td></tr>
-	<tr><td>4NT</td><td>Блэквуд</td><td>-</td></tr>
-	<tr><td rowspan=9><br>2<span class="red_card">♥</span><br><br><span class="hcp">10+</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span> F1</td>
-		<td>2♠</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;6+♠&nbsp;</span></td><td><a href="#attr-level2"><i class="far fa-eye"> </i></a></td></tr>
-	<tr><td>3♠</td><td><span class="hcp">15—17</span> <span class="span2">&nbsp;6+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>3♣</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;4+♣&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>3<span class="red_card">♦</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>3<span class="red_card">♥</span>!</td><td><span class="hcp">15+</span> <span class="span2">&nbsp;?<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span> инвит к шлемовой торговле</td><td>-</td></tr>
-	<tr><td>4<span class="red_card">♥</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;3+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td><td>-</td></tr>
-	<tr><td>2NT</td><td><span class="hcp">12—14</span> примерно <span class="span2">&nbsp;5♠&nbsp;</span>-3-3-2</td><td>—</td></tr>
-	<tr><td>3NT</td><td><span class="hcp">15—18</span> примерно <span class="span2">&nbsp;5♠&nbsp;</span>-3-3-2</td><td>—</td></tr>
-	<tr><td>4NT</td><td>Блэквуд</td><td>-</td></tr>
+	<tr><td>2NT</td><td><span class="hcp">15—17</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2  с держками в <b>м</b></td><td colspan=2>-</td></tr>
+	<tr><td>3NT</td><td><span class="hcp">18—21</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2</td><td colspan=2>-</td></tr>
+	<tr><td>4NT</td><td><A HREF="blackwood.html"><i class="far fa-eye"> </i></A> «Римский Блэквуд» 1430 </td><td colspan=2>-</td></tr>
+	
+
 </tbody>
 </table>
 <br>
-<div>1♠ - 2(♣/<span class="red_card">♦</span>/<span class="red_card">♥</span>). Натуральная заявка. Форсирует до 2NT.</div>
+<div>1<span class="red_card">♥</span> - 1♠. Натуральная заявка. Форсирует до 1NT.</div>
 <br>
 <div>
-					Для решения проблемы неопределенности в силе открытия американский великий мастер Лайтнер предложил, чтобы назначение новой масти без прыжка форсировало открывающего. После этого он может уточнить описание своей руки (силы и расклада), а отвечающий сможет принять решение на основе баланса. Поэтому возникла необходимость в новых заяках смешанного типа: "полупозитивный позитив", - которые могут скрывать за собой как позитив, так и полупозитив, но при этом передавать Откр некоторую информацию о раскладе Отв. Такими заявками после открытия 1 пика является назначения в новую масть на 2-ом уровне ("2 после 1" или по-английски "two-over-one"). Это нелимитированные натуральные назначения, показывающие силу от 10-ти пунктов и от 4-х карт в назначенной масти. Эти назначения форсируют Откр как минимум до 2-х б/к (легко проверить балансом, что если партнеры не найдут никакого фита, то при минимуме силы у обоих контракт 2 б/к должен быть выигран). После ответа "two-over-one" Откр обязан уточнить описание своей руки, так что мы переходим к рассмотрению вторых назначений Откр:
-</div>
-<div class="bidding">
-
-<ul>
-<li> 2 пики (т.е. повторение масти Откр) - минимум силы (12-14), от
-                6 карт в пике,</li>
-<li> 2 в новую масть - натурально, от 4-ки, сила пока не уточнена,</li>
-<li> 3 в новую масть без прыжка (например, после ответа 2 червы Откр
-                назначил 3 трефы) - натурально, от 4-ки, минимум силы (12-14),</li>
-<li> 3 в новую масть с прыжком (например, после ответа 2 трефы Откр
-                назначил 3 бубны) - натурально, от 4-ки, форсинг до гейма, от 15</li>
-<li> 3 в масть Отв (например, после ответа 2 бубны Откр назначил 3 бубны) натурально, 
-от 4-ки, 12-14, кроме ответа 2 червы и назначения Откр 3 червы – это назначение показывает силу от 15 и является инвитом к шлему</li>
-<li> 3 пики – 15-17, от 6-ки,</li>
-<li> 3 б/к - 15-18, примерно 5-3-3-2,</li>
-<li> 4 червы после того, как Отв назначил 2 червы - натурально, от 3-ки,
-                минимум силы (12-14),</li>
-<li> 2 б/к - минимум силы (12-14), примерно 5-3-3-2.</li>
-</ul>
-После вторых назначений Откр, которые достаточно описывают его руку (а такими являются те назначения, которые уточняют одновременно и расклад, и зону силы, например - 3 пики - от 6-ки, 15-17), Отв принимает решение об окончательном контракте или переходит к шлемовой торговле. В этом случае окончательным контрактом будет назначение Отв любого гейма, малого или большого шлема. Если Отв повторяет свою масть на 3-м уровне, то показывает от 5-ки (часто – от 6-ки) и 10-11 пунктов, после чего Откр принимает решение об окончательном контракте (в том числе он может спасовать. Если Отв поддерживает вторую масть Откр, и это минор, то это инвит к гейму. Если это мажор, то назначение Отв в этот мажор на 3-м уровне – форсирует до гейма и приглашает к шлему, а назначение гейма – контракт. Если Отв назначит новую масть, то это натуральное и форсирующее до 2 бк (если это третья масть) или до гейма (если это четвертая масть – тогда это в первую очередь вопрос о держке).
- <br>Поясним это на примере: пусть торговля партнеров (Севера и Юга) шла, как это приведено ниже:
-                <br>Север           Юг
-                <br>1 пика          2 бубны
-                <br>2 червы         3 червы,- 
-<br>в этот момент о каждом из партнеров известно следующее:
-<br>Север - 12-17, от 5-ки пик, от 4-ки червей,
-<br>Юг - от 10, от 4-ки бубен, от 4-ки червей.
-<br>Черва является согласованной мастью, попробуем провести баланс:
-<br>в руке Севера - 12 пунктов (за онеры) плюс 2 пункта (за четвертую карту в согласованной масти - черве) 
-плюс 2 пункта (зачетвертую и пятую карты в лучшей несогласованной масти - пике)
-<br>в руке Юга - 10 пунктов (за онеры) плюс  2 пункта (за дублет при согласовании 4-кой, так как Юг показал, 
-что его рука содержит две 4-картные масти, то у него должен быть хотя бы один дублет) плюс 1 пункт за согласование четверкой и лучше 
-итого: 16+13( пунктов (при точном минимуме у обоих партнеров).
-Балансный итог составит 29 пунктов, а разделив его на три, Вы получите, что в таком случае следует назначить концовку (4 червы). Юг вместо этого ограничился назначением 3-х червей, что же такая заявка значит?
-
-<br>Всякий раз, когда обоим партнерам известно, что следует назначить гейм
- (как это имеет место в нашем примере), а партнер назначает частную запись, то
- такое назначение является приглашением к малому шлему!  Так что пасовать на
- него нельзя!
-</div>
-<br>
-<h3 id="attr-level2">Торговля на 2-ом уровне</h3>
-<div class="bidding">В распоряжении Отв могут быть заявки:
-
-<br>- 2NT - <span class="hcp">10—11</span>, нечего добавить в описании своего расклада (так что по сути его рука является полупозитивной),
-<br>- 2 в новую масть (например, после 1♠—2♣—2<span class="red_card">♦</span>, Отв — 2<span class="red_card">♥</span>) - натурально, от 4-ки,
-и хотя формально сила осталась той же (т.е. от 10-ти), это      назначение форсирует до 2бк (если это третья масть) и до гейма (если это четвертая масть и тогда в первую является вопросом о держке),
-<br>- 2♠ - от 3-ки, FG (легко проверить балансом, что гейм должен быть назначен!), приглашение к малому шлему в пике.
-
-<br>После того, как Отв ограничил свою силу (назначив 2 б/к), Откр с минимальной
- рукой (12-13) должен пасовать. Если же Откр имеет большую силу, то ему следует назначить по балансу какой-либо гейм или повторить свою масть (удлиняя
- ее) в поисках фита и выбора правильного гейма, например:
- <table> 
+<table class="minitable"> 
 <tbody>
 	<tr>
-		<th>Север</th><th>Юг</th>
+		<th>Север</th><th>Юг</th><th>Примечание</th>
 	</tr>
-	<tr><td>1♠</td><td>2♣</td></tr>
-	<tr><td>2<span class="red_card">♥</span></td><td>2NT</td></tr>
-	<tr><td>3♠</td><td></td></tr>
+	<tr><td>1<span class="red_card">♥</span></td><td>1♠</td><td>-</td></tr>
+	<tr><td>1NT</td><td>2♣<sup>1</sup></td><td>(1)<span class="hcp">10+</span>, <span class="span2">&nbsp;4+♣&nbsp;</span></td></tr>
 </tbody>
 </table>
-3♠ - от 6-ки, 14 и более пунктов, далее Отв выбирает между 3-мя б/к и 4-мя пиками в зависимости от наличия или отсутствия фита в пике.
+<br> Приведем после этого значения различных заявок Откр, причем эти значения не основываются на предварительных договоренностях партнеров, а вытекают из логики торговли:
+<table class="minitable"> 
+<tbody>
+	<tr>
+		<th>Север</th><th>Примечание</th>
+	</tr>
+	<tr><td>2♠</td><td>3-ка в пике (то, что у Откр нет 4-ки, он уже показал, так как не дал немедленного фита)</td></tr>
+	<tr><td>2<span class="red_card">♥</span></td><td>5-3-3-2 с дублетом в пике, без держки в бубне и без фигурного фита в трефе</td></tr>
+	<tr><td>2NT</td><td>минимум (12-13 пунктов) с держкой в бубне, возможна 3-ка в пике</td></tr>
+	<tr><td>3♣</td><td>5-3-3-2 с дублетом в пике без держки в бубне, но с фигурным фитом в трефе</td></tr>
+	<tr><td>3NT</td><td>максимум (14) уже показанной силы с хорошей держкой в бубне и без 3-ки в пике</td></tr>
+	<tr><td>-</td><td>-</td></tr>
+	<tr><td>-</td><td>-</td></tr>
+</tbody>
+</table>
 </div>
-<br>
-<div>После того, как Отв назначит новую масть на 2-ом уровне, Откр обязан уточнить свою силу и расклад. 
-Для описания минимума Откр имеет в своем распоряжении следующие возможности:
-<ul>
-<li>        - 2 пики - от 6-ки,</li>
-<li>        - 4 червы - натурально, от 4-ки (только если Отв назначал 2 червы!),</li>
-<li>	  -  3 в масть Отв (если отв назначил 2 в минор),</li>
-<li>2 б/к - все остальные расклады,</li>
-<li>любая другая заявка Откр (в третьем туре торговли) покажет максимум его силы.</li>
-</ul>
-<br> Далее Отв назначает практически окончательный контракт или переходит к шлемовой торговле.
-					</div>
+<div>
+Каждое назначение отвечающим новой масти всегда форсирует Откр по крайней мере  до ближайшего б/к! Это один из основных принципов почти любой натуральной системы торговли, разве что партнеры заранее оговаривают какие-то особые случаи.
+</div>
 
 				</v-card-text>
 			</v-flex>
