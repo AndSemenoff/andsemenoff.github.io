@@ -1,176 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
-  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-  <link href="css/mystyle.css" rel="stylesheet">
-  <link href="css/cards.css" rel="stylesheet">
-  <link rel="shortcut icon" href="images/absolem.ico">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-$(document).ready(function(){
-  $(".example_button").click(function(){
-    $(".example").toggle();
-  });
-});
-</script>
-  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
-  <meta charset='utf-8' />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>ABSOLEM.INFO|Спортивный бридж. "1 после 1"</title>
-</head>
-<body>
-  <div id="app">
-    <v-app>
-      <v-system-bar status color="primary" lights-out>
-        <v-spacer></v-spacer>
-        <span>&nbsp;всё работает&nbsp;</span>
-        <span>&nbsp;{{ clock }}&nbsp;</span>
-      </v-system-bar>
-      <v-toolbar dark color="primary">
-		<v-btn icon>
-			<a href="bridge.html" class="white--text">
-				<v-icon>home</v-icon>
-			</a>
-		</v-btn>
-        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>            
-      <v-container fluid grid-list-sm>
-        <v-content>
-        	<v-flex xs12>
-        		<v-card-text>
-        			<h1 class="font-effect-shadow-multiple">SAYC. Торговля после "1 после 1" ("one-over-one")</h1>
-					
-<!--<h2>1<span class="red_card">♥</span> <small><span class="hcp">12—21</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span></small> — 1♠ <small><span class="hcp">6+</span> <span class="span2">&nbsp;4+♠&nbsp;</span></small></h2>-->
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Бридж</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem, Бридж, Спортивный, игра, система, торговля">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="images/absolem.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
+    <link rel="stylesheet" href="css/mystyle.css" type="text/css" media="all">
+  </head>
+  <body><h1 class="font-effect-shadow-multiple">Спортивный бридж</h1><h3 class="font-effect-shadow-multiple">SAYC. Торговля после "1 после 1" ("one-over-one")</h3>
 <table class="minitable"> 
 <tbody>
-	<tr>
-		<th colspan=4>1<span class="red_card">♥</span> <small><span class="hcp">12—21</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span></small> — 1♠ <small><span class="hcp">6+</span> <span class="span2">&nbsp;4+♠&nbsp;</span></small></th>
-	</tr>
-	<tr>
-		<th>Откр</th><th>Прим</th><th colspan=2>Отв</th>
-	</tr>
-	<tr>
-		<td rowspan=3>1NT</td><td rowspan=3><span class="hcp">12—14</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2</td><td>2♠</td><td><span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
-			<tr><td>3♠</td><td>инвит G(♠)</td></tr>
-			<tr><td>3<span class="red_card">♥</span></td><td>инвит G(<span class="red_card">♥</span>)</td>
-	</tr>
-	<tr><td rowspan=3>2♣</td><td rowspan=3><span class="hcp">12—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♣&nbsp;</span> иногда <span class="span2">&nbsp;3+♣&nbsp;</span></td><td>2♠</td><td><span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
-		<tr><td>3♠</td><td>инвит G(♠)</td></tr>
-		<tr><td>3<span class="red_card">♥</span></td><td>инвит G(<span class="red_card">♥</span>)</td></tr>
-	</tr>
-	<tr><td>2<span class="red_card">♦</span></td><td><span class="hcp">12—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> иногда <span class="span2">&nbsp;3+<span class="red_card">♦</span>&nbsp;</span></td><td colspan=2>2♠ — <span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span><br>3♠ — инвит G(♠)<br>3<span class="red_card">♥</span> — инвит G(<span class="red_card">♥</span>)</td></tr>
-	<tr><td>2<span class="red_card">♥</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>2♠ — <span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span><br>3♠ — инвит G(♠)<br>3<span class="red_card">♥</span> — инвит G(<span class="red_card">♥</span>)</td></tr>
-	<tr><td>2♠</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
-	<tr><td>3♣</td><td><span class="hcp">18+</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♣&nbsp;</span> FG </td><td colspan=2>-</td></tr>
-	<tr><td>3<span class="red_card">♦</span></td><td> <span class="hcp">18+</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> FG</td><td colspan=2>-</td></tr>
-	<tr><td>3<span class="red_card">♥</span></td><td> <span class="hcp">15—17</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>-</td></tr>
-	<tr><td>3♠</td><td> <span class="hcp">15—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
-	<tr><td>4<span class="red_card">♥</span></td><td> <span class="hcp">18—21</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>-</td></tr>
-	<tr><td>4♠</td><td> <span class="hcp">18—21</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
-
-	<tr><td>2NT</td><td><span class="hcp">15—17</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2  с держками в <b>м</b></td><td colspan=2>-</td></tr>
-	<tr><td>3NT</td><td><span class="hcp">18—21</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2</td><td colspan=2>-</td></tr>
-	<tr><td>4NT</td><td><A HREF="blackwood.html"><i class="far fa-eye"> </i></A> «Римский Блэквуд» 1430 </td><td colspan=2>-</td></tr>
-	
-
+<tr>
+<th colspan=4>1<span class="red_card">♥</span> <small><span class="hcp">12—21</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span></small> — 1♠ <small><span class="hcp">6+</span> <span class="span2">&nbsp;4+♠&nbsp;</span></small></th>
+</tr>
+<tr>
+<th>Откр</th><th>Прим</th><th colspan=2>Отв</th>
+</tr>
+<tr>
+<td rowspan=3>1NT</td><td rowspan=3><span class="hcp">12—14</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2</td><td>2♠</td><td><span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
+<tr><td>3♠</td><td>инвит G(♠)</td></tr>
+<tr><td>3<span class="red_card">♥</span></td><td>инвит G(<span class="red_card">♥</span>)</td>
+</tr>
+<tr><td rowspan=3>2♣</td><td rowspan=3><span class="hcp">12—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♣&nbsp;</span> иногда <span class="span2">&nbsp;3+♣&nbsp;</span></td><td>2♠</td><td><span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
+<tr><td>3♠</td><td>инвит G(♠)</td></tr>
+<tr><td>3<span class="red_card">♥</span></td><td>инвит G(<span class="red_card">♥</span>)</td></tr>
+</tr>
+<tr><td>2<span class="red_card">♦</span></td><td><span class="hcp">12—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> иногда <span class="span2">&nbsp;3+<span class="red_card">♦</span>&nbsp;</span></td><td colspan=2>2♠ — <span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span><br>3♠ — инвит G(♠)<br>3<span class="red_card">♥</span> — инвит G(<span class="red_card">♥</span>)</td></tr>
+<tr><td>2<span class="red_card">♥</span></td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>2♠ — <span class="hcp">6—9</span> <span class="span2">&nbsp;5+♠&nbsp;</span><br>3♠ — инвит G(♠)<br>3<span class="red_card">♥</span> — инвит G(<span class="red_card">♥</span>)</td></tr>
+<tr><td>2♠</td><td><span class="hcp">12—14</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
+<tr><td>3♣</td><td><span class="hcp">18+</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♣&nbsp;</span> FG </td><td colspan=2>-</td></tr>
+<tr><td>3<span class="red_card">♦</span></td><td> <span class="hcp">18+</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span> FG</td><td colspan=2>-</td></tr>
+<tr><td>3<span class="red_card">♥</span></td><td> <span class="hcp">15—17</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>-</td></tr>
+<tr><td>3♠</td><td> <span class="hcp">15—17</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
+<tr><td>4<span class="red_card">♥</span></td><td> <span class="hcp">18—21</span> <span class="span2">&nbsp;6+<span class="red_card">♥</span>&nbsp;</span> </td><td colspan=2>-</td></tr>
+<tr><td>4♠</td><td> <span class="hcp">18—21</span> <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span> </td><td colspan=2>-</td></tr>
+<tr><td>2NT</td><td><span class="hcp">15—17</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2  с держками в <b>м</b></td><td colspan=2>-</td></tr>
+<tr><td>3NT</td><td><span class="hcp">18—21</span> примерно <span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span>—3—3—2</td><td colspan=2>-</td></tr>
+<tr><td>4NT</td><td><A HREF="blackwood.html"><i class="far fa-eye"> </i></A> «Римский Блэквуд» 1430 </td><td colspan=2>-</td></tr>
 </tbody>
 </table>
-<br>
 <div>1<span class="red_card">♥</span> - 1♠. Натуральная заявка. Форсирует до 1NT.</div>
 <br>
-<div>
 <table class="minitable"> 
 <tbody>
-	<tr>
-		<th>Север</th><th>Юг</th><th>Примечание</th>
-	</tr>
-	<tr><td>1<span class="red_card">♥</span></td><td>1♠</td><td>-</td></tr>
-	<tr><td>1NT</td><td>2♣<sup>1</sup></td><td>(1)<span class="hcp">10+</span>, <span class="span2">&nbsp;4+♣&nbsp;</span></td></tr>
+<tr>
+<th>Север</th><th>Юг</th><th>Примечание</th>
+</tr>
+<tr><td>1<span class="red_card">♥</span></td><td>1♠</td><td>-</td></tr>
+<tr><td>1NT</td><td>2♣<sup>1</sup></td><td>(1)<span class="hcp">10+</span>, <span class="span2">&nbsp;4+♣&nbsp;</span></td></tr>
 </tbody>
 </table>
 <br> Приведем после этого значения различных заявок Откр, причем эти значения не основываются на предварительных договоренностях партнеров, а вытекают из логики торговли:
 <table class="minitable"> 
 <tbody>
-	<tr>
-		<th>Север</th><th>Примечание</th>
-	</tr>
-	<tr><td>2♠</td><td>3-ка в пике (то, что у Откр нет 4-ки, он уже показал, так как не дал немедленного фита)</td></tr>
-	<tr><td>2<span class="red_card">♥</span></td><td>5-3-3-2 с дублетом в пике, без держки в бубне и без фигурного фита в трефе</td></tr>
-	<tr><td>2NT</td><td>минимум (12-13 пунктов) с держкой в бубне, возможна 3-ка в пике</td></tr>
-	<tr><td>3♣</td><td>5-3-3-2 с дублетом в пике без держки в бубне, но с фигурным фитом в трефе</td></tr>
-	<tr><td>3NT</td><td>максимум (14) уже показанной силы с хорошей держкой в бубне и без 3-ки в пике</td></tr>
-	<tr><td>-</td><td>-</td></tr>
-	<tr><td>-</td><td>-</td></tr>
+<tr>
+<th>Север</th><th>Примечание</th>
+</tr>
+<tr><td>2♠</td><td>3-ка в пике (то, что у Откр нет 4-ки, он уже показал, так как не дал немедленного фита)</td></tr>
+<tr><td>2<span class="red_card">♥</span></td><td>5-3-3-2 с дублетом в пике, без держки в бубне и без фигурного фита в трефе</td></tr>
+<tr><td>2NT</td><td>минимум (12-13 пунктов) с держкой в бубне, возможна 3-ка в пике</td></tr>
+<tr><td>3♣</td><td>5-3-3-2 с дублетом в пике без держки в бубне, но с фигурным фитом в трефе</td></tr>
+<tr><td>3NT</td><td>максимум (14) уже показанной силы с хорошей держкой в бубне и без 3-ки в пике</td></tr>
+<tr><td>-</td><td>-</td></tr>
+<tr><td>-</td><td>-</td></tr>
 </tbody>
 </table>
-</div>
-<div>
-Каждое назначение отвечающим новой масти всегда форсирует Откр по крайней мере  до ближайшего б/к! Это один из основных принципов почти любой натуральной системы торговли, разве что партнеры заранее оговаривают какие-то особые случаи.
-</div>
-
-				</v-card-text>
-			</v-flex>
-		</v-content>      
-      </v-container>
-      <v-footer class="pa-3">
-        <v-spacer></v-spacer>
-        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
-      </v-footer> 
-    </v-app>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-  <!--<script src="distr/vue.js"></script>
-  <script src="distr/vuetify.js"></script>  
-  <script src="distr/axios.js"></script>
--->
-  <script src="scripts/boardgames.js"></script>
-  <script>
-    //let clock = '';
-    new Vue({ 
-      el: '#app', 
-      data() {
-        return games
-      },
-      computed: {
-      },
-      methods: {
-        timeNow: function() {
-          let hours = new Date().getHours();
-          let minutes = new Date().getMinutes();
-          let seconds = new Date().getSeconds();
-          if (hours   < 10) {hours   = "0"+hours;}
-          if (minutes < 10) {minutes = "0"+minutes;}
-          if (seconds < 10) {seconds = "0"+seconds;}        
-          return hours + ':' + minutes + ':' + seconds
-        },
-        getData: function() {
-          axios.get(this.apiURL)
-          .then(function (response) {
-              console.log(response.data)
-              //let info = JSON.parse(response.data);
-              console.log(response.data)        
-          })
-          .catch(function (error) {
-              console.log("An error has occurred.");
-          })
-        },
-        gotoLink: function(link) {
-          window.open(link, "_blank");
-        }       
-      },
-      mounted: function() {
-        setInterval(()=>{
-            this.clock = this.timeNow()
-        }, 100)
-      },
-      created: function() {
-        // console.log(collections)
-      }
-  }) 
-  </script>
-</body>
+<div>Каждое назначение отвечающим новой масти всегда форсирует Откр по крайней мере  до ближайшего б/к! Это один из основных принципов почти любой натуральной системы торговли, разве что партнеры заранее оговаривают какие-то особые случаи.</div>
+    <footer><hr>
+<center>Андрей Семенов aka Absolem © 2019</center>
+    </footer>
+  </body>
+</html>

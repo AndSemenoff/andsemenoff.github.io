@@ -1,0 +1,32 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">Гербер (Gerber)</h3>
+	<div>Искусственная заявка 4♣ "Четыре трефы" при открытии 1NT или 2NT. Вопрос о тузах и королях.</div>
+
+	<table class="minitable"> 
+	<tbody>
+		<tr><td colspan=3>Ответы на Гербер</td></tr>
+		<tr><th>Ступень</th><th>Отв</th><th>Прим</th></tr>
+		<tr><td>1</td><td>4<span class="red_card">♦</span></td><td>0 <b>или</b> 3 Туза</td></tr>
+		<tr><td>2</td><td>4<span class="red_card">♥</span></td><td>1 <b>или</b> 4 Туза</td></tr>
+		<tr><td>3</td><td>4♠</td><td>2 Туза <b>и</b> 0 Королей</td></tr>
+		<tr><td>4</td><td>4NT</td><td>2 Туза <b>и</b> 1 Король</td></tr>
+		<tr><td>5</td><td>5♣</td><td>2 Туза <b>и</b> 2 Короля</td></tr>
+		<tr><td>6</td><td>5<span class="red_card">♦</span></td><td>2 Туза <b>и</b> 3 Короля</td></tr>
+		<tr><td>7</td><td>5<span class="red_card">♥</span></td><td>2 Туза <b>и</b> 4 Короля</td></tr>
+	</tbody>
+	</table>
+
+	<div>Ближайшее назначение NT после ответа, показавшего только тузов(1 и 2 ступень) – вопрос о королях. Все остальные назначения окончательный контракт.</div>
+
+	<ul>Ответы на вопрос о королях:
+		<li>5♣ - первая ступень 0 королей</li>
+		<li>5<span class="red_card">♦</span> - вторая ступень 1 король</li>
+		<li>5<span class="red_card">♥</span>- третья ступень 2 короля</li>
+		<li>5♠ - четвертая ступень 3 короля</li>
+	</ul>
+	<div>После такого ответа любое назначение Отвечающего – контракт.</div>

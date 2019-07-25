@@ -1,0 +1,30 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">SAYC. Сокращения. Обозначения</h3>
+	<ul>Обозначения:
+		<li><span class="red_card"><strong>M</strong></span> — мажорных, мажор;</li>
+		<li><strong>м</strong> — минор, минорных; </li>
+		<li>¬ — отрицание, нет, без;</li>
+		<li><span class="hcp">&nbsp;7—9&nbsp;</span> — онерные пункты, HCP, мильтоны;</li>
+		<li><span class="hcp">&nbsp;max&nbsp;</span> — сила очков максимальна в диапазоне открытия;</li>
+		<li><span class="span1"><s>&nbsp;4&nbsp;</s></span> — без мажорных четверок;</li>
+		<li><span class="span3"><s>&nbsp;4&nbsp;</s></span> — без минорных четверок;</li>
+		<li><span class="span1">&nbsp;4&nbsp;</span> — мажорная четверка;</li>
+		<li><span class="span3">&nbsp;4&nbsp;</span> — минорная четверка;</li>
+		<li>
+		<span class="span2">&nbsp;5+♣&nbsp;</span> от 5-ки треф;
+		<span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span> от 5-ки бубей; 
+		<span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span> от 5-ки червей;
+		<span class="span2">&nbsp;5+♠&nbsp;</span> от 5-ки пик;
+		</li>
+		<li><span class="span2">&nbsp;•&nbsp;</span> окончательный контракт;</li>
+		<li>мш — малый шлем;</li>
+		<li>БШ — большой шлем;</li>
+		<li>G — гейм;</li>
+		<li>FG — форсирует гейм;</li>
+		<li>F1 — форсирует круг;</li>
+	</ul>

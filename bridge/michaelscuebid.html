@@ -1,125 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet">
-  <!--<link href="css/vuetify.min.css" rel="stylesheet">-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.8/vuetify.css" rel="stylesheet">
-  <link href="css/mystyle.css" rel="stylesheet">
-  <link href="css/cards.css" rel="stylesheet">
-  <link rel="shortcut icon" href="images/absolem.ico">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-$(document).ready(function(){
-  $(".example_button").click(function(){
-    $(".example").toggle();
-  });
-});
-</script>
-  <!--// <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>  -->
-  <meta charset='utf-8' />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>ABSOLEM.INFO|Спортивный бридж. Кью-бид Майклса. Michaels cuebid</title>
-</head>
-<body>
-  <div id="app">
-    <v-app>
-      <v-system-bar status color="primary" lights-out>
-        <v-spacer></v-spacer>
-        <span>&nbsp;всё работает&nbsp;</span>
-        <span>&nbsp;{{ clock }}&nbsp;</span>
-      </v-system-bar>
-      <v-toolbar dark color="primary">
-		<v-btn icon>
-			<a href="bridge.html" class="white--text">
-				<v-icon>home</v-icon>
-			</a>
-		</v-btn>
-        <v-toolbar-title class="white--text font-effect-vintage text-uppercase font-weight-bold display-1">Спортивный бридж</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>            
-      <v-container fluid grid-list-sm>
-        <v-content>
-        	<v-flex xs12>
-        		<v-card-text>
-        			<h1 class="font-effect-shadow-multiple">Кью-бид Майклса. Michaels cuebid</h1>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Бридж</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem, Бридж, Спортивный, игра, система, торговля">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="images/absolem.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
+    <link rel="stylesheet" href="css/mystyle.css" type="text/css" media="all">
+  </head>
+  <body><h1 class="font-effect-shadow-multiple">Спортивный бридж</h1><h3 class="font-effect-shadow-multiple">Кью-бид Майклса. Michaels cuebid</h3>
 <div>Кюбиды Майклса применяются только, если открытие соперников было натуральным. Если открытие искусственно, то 2 в масть <span class="hcp">10-15</span> <span class="span2">&nbsp;5+&nbsp;</span></div>
 <div>Кюбиды Майклса обещают 2-x мастную руку.</div>
 <div>Кюбиды Майклса обычно показывают расклад не менее чем  5-5, но после минорного открытия, расклад 5-4 в мажорах допустим, если 4 карты разумно хороши.</div>
 <table class="minitable"> 
 <tbody>
-	<tr>
-		<th>Соперник</th><th>Партнер1</th><th>Примечание</th><th>Партнер2</th><th>Примечание</th>
-	</tr>
-	<tr><td rowspan=2>1♣</td><td rowspan=2>2♣!</td><td rowspan=2><span class="hcp">8+</span> оба <span class="red_card"><b>M</b></span></td><td>(2/3/4)<span class="red_card">♥</span></td><td>по балансу</td></tr>
-					<tr><td>(2/3/4)♠</td><td>по балансу</td></tr>
-	<tr><td rowspan=2>1<span class="red_card">♦</span></td><td rowspan=2>2<span class="red_card">♦</span>!</td><td rowspan=2><span class="hcp">8+</span> оба <span class="red_card"><b>M</b></span></td><td>(2/3/4)<span class="red_card">♥</span></td><td>по балансу</td></tr>
-					<tr><td>(2/3/4)♠</td><td>по балансу</td></tr>
-	<tr><td rowspan=2>1<span class="red_card">♥</span></td><td rowspan=2>2<span class="red_card">♥</span>!</td><td rowspan=2><span class="hcp">10+</span> <span class="span2">&nbsp;5+♠&nbsp;</span> <span class="span2">&nbsp;5+<b>м</b>&nbsp;</span></td><td>(2/3/4)♠</td><td>по балансу</td></tr>
-					<tr><td>2NT</td><td>вопрос о миноре</td></tr>
-	<tr><td rowspan=2>1♠</td><td rowspan=2>2♠!</td><td rowspan=2><span class="hcp">10+</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+<b>м</b>&nbsp;</span></td><td>(3/4)<span class="red_card">♥</span></td><td>по балансу</td></tr>
-					<tr><td>2NT</td><td>вопрос о миноре</td></tr>
+<tr>
+<th>Соперник</th><th>Партнер1</th><th>Примечание</th><th>Партнер2</th><th>Примечание</th>
+</tr>
+<tr><td rowspan=2>1♣</td><td rowspan=2>2♣!</td><td rowspan=2><span class="hcp">8+</span> оба <span class="red_card"><b>M</b></span></td><td>(2/3/4)<span class="red_card">♥</span></td><td>по балансу</td></tr>
+<tr><td>(2/3/4)♠</td><td>по балансу</td></tr>
+<tr><td rowspan=2>1<span class="red_card">♦</span></td><td rowspan=2>2<span class="red_card">♦</span>!</td><td rowspan=2><span class="hcp">8+</span> оба <span class="red_card"><b>M</b></span></td><td>(2/3/4)<span class="red_card">♥</span></td><td>по балансу</td></tr>
+<tr><td>(2/3/4)♠</td><td>по балансу</td></tr>
+<tr><td rowspan=2>1<span class="red_card">♥</span></td><td rowspan=2>2<span class="red_card">♥</span>!</td><td rowspan=2><span class="hcp">10+</span> <span class="span2">&nbsp;5+♠&nbsp;</span> <span class="span2">&nbsp;5+<b>м</b>&nbsp;</span></td><td>(2/3/4)♠</td><td>по балансу</td></tr>
+<tr><td>2NT</td><td>вопрос о миноре</td></tr>
+<tr><td rowspan=2>1♠</td><td rowspan=2>2♠!</td><td rowspan=2><span class="hcp">10+</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span> <span class="span2">&nbsp;5+<b>м</b>&nbsp;</span></td><td>(3/4)<span class="red_card">♥</span></td><td>по балансу</td></tr>
+<tr><td>2NT</td><td>вопрос о миноре</td></tr>
 </tbody>
 </table>
-
-				</v-card-text>
-			</v-flex>
-		</v-content>      
-      </v-container>
-      <v-footer class="pa-3">
-        <v-spacer></v-spacer>
-        <div>Андрей Семенов aka Absolem &copy; {{ new Date().getFullYear() }}</div>
-      </v-footer> 
-    </v-app>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-  <!--<script src="distr/vue.js"></script>
-  <script src="distr/vuetify.js"></script>  
-  <script src="distr/axios.js"></script>
--->
-  <script src="scripts/boardgames.js"></script>
-  <script>
-    //let clock = '';
-    new Vue({ 
-      el: '#app', 
-      data() {
-        return games
-      },
-      computed: {
-      },
-      methods: {
-        timeNow: function() {
-          let hours = new Date().getHours();
-          let minutes = new Date().getMinutes();
-          let seconds = new Date().getSeconds();
-          if (hours   < 10) {hours   = "0"+hours;}
-          if (minutes < 10) {minutes = "0"+minutes;}
-          if (seconds < 10) {seconds = "0"+seconds;}        
-          return hours + ':' + minutes + ':' + seconds
-        },
-        getData: function() {
-          axios.get(this.apiURL)
-          .then(function (response) {
-              console.log(response.data)
-              //let info = JSON.parse(response.data);
-              console.log(response.data)        
-          })
-          .catch(function (error) {
-              console.log("An error has occurred.");
-          })
-        },
-        gotoLink: function(link) {
-          window.open(link, "_blank");
-        }       
-      },
-      mounted: function() {
-        setInterval(()=>{
-            this.clock = this.timeNow()
-        }, 100)
-      },
-      created: function() {
-        // console.log(collections)
-      }
-  }) 
-  </script>
-</body>
+    <footer><hr>
+<center>Андрей Семенов aka Absolem © 2019</center>
+    </footer>
+  </body>
+</html>

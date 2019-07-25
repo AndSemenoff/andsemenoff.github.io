@@ -1,0 +1,154 @@
+extends layouts/bridge_layout.jade
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h1 class="font-effect-shadow-multiple">Спортивный бридж</h1>
+	<h2 class="font-effect-shadow-multiple">Правила виста</h1>
+	<h3>Первый ход</h3>
+	<div></div>
+	<ol>
+	<li>Общее для безкозырного и козырного контракта:
+		<ol>
+			<li>Выход в масть партнера, заявленную в торговле; </li>
+			<li>Выход в свою плотную масть, возглавляемую фигурным рядом не менее чем из трех карт, например, KQJ или AKQ;</li>
+			<li>Выход в масть, заявленную в торговле болваном</li>
+		</ol>
+	</li>
+	<li>Для безкозырного:
+		<ol>
+			<li>Выход в свою самую длинную масть, если она не заявлялась в торговле противником;</li>
+			<li>Выход в незаявленные противником масти;</li>
+		</ol>
+	</li>
+	<li>Для козырного:
+		<ol>
+			<li>Выход с синглетов (одна карта в масти);</li>
+			<li>Выход с дублетов (две карты в масти);</li>
+			<li>Не следует избегать козырных ходов, если у вас в этой масти нет фигур.</li>
+		</ol>
+	</li>
+	</ol>
+	<h3>По ходу игры</h3>
+	
+	<ol>
+		<li>Если Вы выиграли взятку и не знаете, что делать дальше, то:
+			<ol>
+				<li>если разыгрывающий находится слева от Вас, а стол – справа, то Вы играете мастью, самой слабой на столе;</li>
+				<li>если разыгрывающий находится справа от Вас, а стол – слева, то Вы играете мастью, самой сильной на столе.</li>
+			</ol>
+		</li>
+
+		<li>Фигуру противника старайтесь надбивать своей фигурой (см. Пример 1.);</li>
+		<li>На второй руке, старайтесь не играть крупной картой, ведь у вашего партнера еще будет возможность поучаствовать в борьбе за взятку;</li>
+		<li>На третьей руке старайтесь бить так сильно, как только возможно;</li>
+
+
+	</ol>					
+	<h3>Традиционная система виста</h3>
+	<ol>
+		<li>Атаки:
+			<ul class="simple">
+				<li>Из дублета - старшей (<b>Х</b>х). </li>
+				<li>Из триплета - средней (х<b>X</b>х). </li>
+				<li>Из ряда фосок - старшей либо второй сверху (х<b>X</b>ххх). </li>
+				<li>Из под фигуры - 4-той сверху (Кхх<b>X</b>). </li>
+				<li>Из фигурной плотности - старшей (<b>В</b>109х, Т<b>В</b>10х). </li>
+			</ul>
+		</li>
+		<li>Поощрение - мелкими картами, запрет - крупными картами.</li>
+		<li>На проносах - "Итальянские" сигналы (снос нечетной фоски показывает силу в масти - К10<b>5</b>2).</li>
+	</ol>
+
+	<div><br/></div>
+						<div class="spcol sidecol">
+
+	<table cellspacing="0" cellpadding="0" border="0" style="min-width: 290px;"><tbody>
+		<tr>
+			<td width="33%" valign="top">Пример 1.</td>
+			<td width="33%">
+				<b>Q52</b><br>
+			</td>
+			<td width="33%"></td>
+		</tr>
+		<tr>
+			<td>
+				<b>T97</b>
+			</td>
+			
+			<td valign="middle" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N(С)<br>W(З) &nbsp; E(В)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S(Ю)</td>
+			
+			<td>
+				<b>К863</b>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<b>AJ5</b>
+			</td>
+			<td></td>
+		</tr>
+	</tbody></table>
+	<div>Если на даму, сыгранную разыгрывающим со стола, вы не поставите короля, то разыгрывающий возьмет три взятки в этой масти. В противном случае, третья взятка достанется десятке партнера.</div>
+	<br>
+	//-
+		<!--
+		<p style="margin-top: 0;">контракт: 3<span class="csym">♠</span>&nbsp;E+1</p>
+
+		<table cellspacing="0" cellpadding="0" border="0" style="min-width: 290px;"><tbody>
+			<tr>
+				<td width="33%" valign="top">d: W<br>v: -</td>
+				<td width="33%">
+					<span class="csym">♠</span> <b>A97</b><br>
+					<span class="csym" style="color: #e11;">♥</span> <b>J962</b><br>
+					<span class="csym" style="color: #e11;">♦</span> <b>KQJ7</b><br>
+					<span class="csym">♣</span> <b>74</b>
+				</td>
+				<td width="33%"></td>
+			</tr>
+			<tr>
+				<td>
+					<span class="csym">♠</span> <b>T</b><br>
+					<span class="csym" style="color: #e11;">♥</span> <b>QT3</b><br>
+					<span class="csym" style="color: #e11;">♦</span> <b>AT932</b><br>
+					<span class="csym">♣</span> <b>T983</b>
+				</td>
+				
+				<td valign="middle" align="left">&nbsp;&nbsp; N<br>W &nbsp; E<br>&nbsp;&nbsp; S</td>
+				
+				<td>
+					<span class="csym">♠</span> <b>KQJ432</b><br>
+					<span class="csym" style="color: #e11;">♥</span> <b>84</b><br>
+					<span class="csym" style="color: #e11;">♦</span> <b>4</b><br>
+					<span class="csym">♣</span> <b>AQJ5</b>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<span class="csym">♠</span> <b>865</b><br>
+					<span class="csym" style="color: #e11;">♥</span> <b>AK75</b><br>
+					<span class="csym" style="color: #e11;">♦</span> <b>865</b><br>
+					<span class="csym">♣</span> <b>K62</b>
+				</td>
+				<td></td>
+			</tr>
+		</tbody></table>
+		<br>
+
+		</div>
+							
+		<table class="auction"> 
+		<tbody>
+			<tr>
+				<th>Круг</th><th>S</th><th>W</th><th>N</th><th>E</th><th>Примечания</th>
+			</tr>
+
+			<tr><td>1</td><td>1<span class="red_card">♦</span></td><td>Pass</td><td>1<span class="red_card">♥</span></td><td>Pass</td><td>&nbsp;</td></tr>
+			<tr><td>2</td><td>3<span class="red_card">♥</span></td><td>Pass</td><td>4 NT</td><td>Pass</td><td>согласованной мастью является черва</td></tr>
+			<tr><td>3</td><td>Pass</td><td>Pass</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		</tbody>
+		</table>
+		-->
