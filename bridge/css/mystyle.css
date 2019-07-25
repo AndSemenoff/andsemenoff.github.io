@@ -15,13 +15,20 @@ a {
 }
 
 .auction{
+	font-family: 'Roboto', sans-serif;
+	/*font-size: 12px;*/
 	border-collapse: collapse;
 	width: 100%;
 	text-align: center;
 	border:2px solid black;
 	margin-top: 5px;
 }
+.auction tr{
+	height: 30px;
+	margin: auto;
+}
 .auction td{
+	margin: auto;
 	border: 1px solid black;
 }
 
@@ -79,6 +86,7 @@ a[href^="https"]::before {
 	color: white;
 	background-color: blue;
 	border:1px solid black;
+	margin: 5px;
 }
 
 .span1{
