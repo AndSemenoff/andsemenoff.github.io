@@ -1,3 +1,19 @@
+body {
+  font-family: 'Exo 2', 'Arimo', 'Roboto', sans-serif;
+  color: rgba(0,0,0,0.87);
+}
+
+h1, h2, h3{
+	/*font-family: 'Neucha', cursive;*/
+	text-align: center;
+	font-family: 'Roboto', sans-serif;	
+}
+a {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+}
+
 .auction{
 	border-collapse: collapse;
 	width: 100%;
@@ -33,6 +49,9 @@ a[href^="https"]::before {
   content: "\<i class="fas fa-external-link-alt"\>\<\/i\>";
 }
 */
+.simple{
+	list-style-type: none;	
+}
 
 .bidding ul{
 	list-style-type: circle;
@@ -139,7 +158,7 @@ ul {
   display: block;
   list-style-type: disc;
   margin-top: 1em;
-  margin-bottom: 1 em;
+  margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
@@ -155,10 +174,6 @@ counter-increment:item
 }
 ol{
 counter-reset:item
-}
-
-h1, h2, h3 {
-	text-align: center;
 }
 
 .pcard{
