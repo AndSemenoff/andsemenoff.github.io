@@ -33,6 +33,8 @@ a {
 }
 
 .minitable {
+	margin-left:auto; 
+	margin-right:auto;
 	border-collapse: collapse;
 	text-align: center;
 	border:2px solid rgb(80, 80, 80);
