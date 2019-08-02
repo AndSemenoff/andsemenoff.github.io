@@ -1,0 +1,42 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">SAYC. 1♣—2♣—...</h3>
+					
+	//-<!--<h2>1<span class="red_card">♥</span> <small><span class="hcp">12—21</span> <span class="span2">&nbsp;5+<span class="red_card">♥</span>&nbsp;</span></small> — 1♠ <small><span class="hcp">6+</span> <span class="span2">&nbsp;4+♠&nbsp;</span></small></h2>-->
+
+	<table class="mint"> 
+	<tbody>
+		<tr>
+			<th colspan=6>1♣ <small><span class="hcp_light">&nbsp;12—21&nbsp;</span> <span class="span2">&nbsp;3+♣&nbsp;</span></small> — 2♣ <small><span class="hcp_light">&nbsp;6—9&nbsp;</span>  <span class="span2">&nbsp;4+♣&nbsp;</span> <span class="span1"><s>&nbsp;4&nbsp;</s></span></th>
+		</tr>
+		<tr>
+			<th>Откр</th><th>Action</th><th>HCP</th><th>Прим</th><th colspan=2>Отв </th>
+		</tr>
+		<tr><td>pass</td><td> </td><td>min</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td colspan=2>-</td></tr>
+		<tr><td>2♣</td><td>SO</td><td>&nbsp;12—14&nbsp;</td><td> <span class="span2">&nbsp;5+♣&nbsp;</span></td><td colspan=2>pass</td></tr>
+
+		<tr><td>2<span class="red_card">♦</span></td><td>-</td><td>&nbsp;15—17&nbsp;</td><td><span class="span2">&nbsp;5+♣&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span></td><td colspan=2>2NT/3NT/3♣/3<span class="red_card">♦</span></td></tr>
+		<tr><td>2<span class="red_card">♥</span></td><td>  </td><td>&nbsp;15—17&nbsp;</td><td><span class="span2">&nbsp;5+♣&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span></td><td colspan=2>2NT/3NT/3♣</td></tr>
+		<tr><td>2♠</td><td> </td><td>&nbsp;15—17&nbsp;</td><td><span class="span2">&nbsp;5+♣&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span></td><td colspan=2>2NT/3NT/3♣</td></tr>
+		<tr><td>3♣</td><td>IG</td><td>&nbsp;15—17&nbsp;</td><td><span class="span2">&nbsp;5+♣&nbsp;</span> </td><td colspan=2>pass/3NT/IG(4♣)/5♣</td></tr>
+		<tr><td>3<span class="red_card">♦</span></td><td> FG </td><td>&nbsp;18—21&nbsp; </td><td><span class="span2">&nbsp;5+♣&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♦</span>&nbsp;</span></td><td colspan=2>3NT/4♠/IS(4♣)/IS(4<span class="red_card">♦</span>)/5♣/5<span class="red_card">♦</span></td></tr>
+		<tr><td>3<span class="red_card">♥</span></td><td> FG </td><td>&nbsp;18—21&nbsp; </td><td><span class="span2">&nbsp;5+♣&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span></td><td colspan=2>3NT/4<span class="red_card">♥</span>/IS(4♣)/5♣</td></tr>
+		<tr><td>3♠</td><td> FG </td><td>&nbsp;18—21&nbsp; </td><td><span class="span2">&nbsp;5+♣&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span></td><td colspan=2>3NT/4♠/IS(4♣)/5♣</td></tr>
+		<tr><td>4♣</td><td> IG</td><td>&nbsp;&nbsp;</td><td></td><td colspan=2>pass/5♣</td></tr>
+		<tr><td>4<span class="red_card">♦</span></td><td> </td><td></td><td>не используется</td><td colspan=2>-</td></tr>
+		<tr><td>4<span class="red_card">♥</span></td><td> </td><td></td><td>не используется </td><td colspan=2>-</td></tr>
+		<tr><td>4♠</td><td> </td><td></td><td>не используется </td><td colspan=2>-</td></tr>
+		<tr><td>5♣</td><td> </td><td>&nbsp;&nbsp;</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td colspan=2>-</td></tr>
+		<tr><td>2NT</td><td>IG(3NT)</td> <td> &nbsp;15—17&nbsp;</td><td><span class="span2">&nbsp;5+♣&nbsp;</span>—<span class="span2">&nbsp;3/4&nbsp;</span>—<span class="span2">&nbsp;3/4&nbsp;</span>—<span class="span2">&nbsp;2&nbsp;</span></td><td colspan=2>pass/3♣/3NT</td></tr>
+		<tr><td>3NT</td><td> </td><td>&nbsp;&nbsp;</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td colspan=2>-</td></tr>
+		<tr><td>4NT?</td><td> </td><td></td><td><A HREF="blackwood.html"><i class="far fa-eye"> </i></A> «Римский Блэквуд» 1430 </td><td colspan=2>-</td></tr>
+		
+
+	</tbody>
+	</table>
+	<div>Дальнейшая торговля аналогична ...</div>
+	
