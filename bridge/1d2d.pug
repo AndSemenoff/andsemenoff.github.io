@@ -1,0 +1,30 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">1<span class="red_card">♦</span>—2<span class="red_card">♦</span>—...</h3>
+	<table class="minitable">
+	<tbody>
+		<tr>
+			<th>Откр</th><th>Примечания</th><th>Отв</th><th>Примечания</th>
+		</tr>
+
+		<tr><td>pass</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td>2<span class="red_card">♥</span></td><td>F1 <span class="hcp">&nbsp;15+&nbsp;</span> <span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span></td><td>—</td><td>натурально по балансу как правило(2NT/3<span class="red_card">♦</span>/3NT/шп)</td></tr>
+		<tr><td>2♠</td><td>F1 <span class="hcp">&nbsp;15+&nbsp;</span> <span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span></td><td>—</td><td>натурально по балансу как правило(2NT/3<span class="red_card">♦</span>/3NT/шп)</td></tr>
+		<tr><td rowspan=5>2NT</td><td rowspan=5>инвит G(3NT) <span class="hcp">&nbsp;15—17&nbsp;</span> ~<span class="span2">&nbsp;5<span class="red_card">♦</span>&nbsp;</span>—3—3—2</td><td>pass</td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>3<span class="red_card">♦</span></td><td><span class="hcp">&nbsp;min&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>3NT</td><td><span class="hcp">&nbsp;max&nbsp;</span></td></tr>
+		<tr><td>4<span class="red_card">♦</span></td><td>~<span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span>—1—?—?</td></tr>
+		<tr><td>5<span class="red_card">♦</span></td><td><span class="hcp">&nbsp;max&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td rowspan=4>3<span class="red_card">♦</span></td><td rowspan=4> инвит G(5<span class="red_card">♦</span>) ~ <span class="hcp">&nbsp;15—17&nbsp;</span> <span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span></td><td>pass</td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>3NT</td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>4<span class="red_card">♦</span></td><td>инвит G(5<span class="red_card">♦</span>) <span class="hcp">&nbsp;max&nbsp;</span></td></tr>
+		<tr><td>5<span class="red_card">♦</span></td><td><span class="hcp">&nbsp;max&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>3NT</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td>4<span class="red_card">♦</span></td><td>инвит G(5<span class="red_card">♦</span>)</td><td>(pass/5<span class="red_card">♦</span>)</td><td>—</td></tr>
+		<tr><td>5<span class="red_card">♦</span></td><td><span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+	</tbody>
+	</table>

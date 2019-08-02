@@ -1,0 +1,23 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">1<span class="red_card">♦</span>—3♠—...</h3>
+	<table class="minitable">
+	<tbody>
+		<tr>
+			<th>Откр</th><th>Примечания</th><th>Отв</th><th>Примечания</th>
+		</tr>
+
+		<tr><td>pass</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td rowspan=2>3NT</td><td rowspan=2><span class="span2">&nbsp;2+♠&nbsp;</span></td><td>pass</td><td>—</td></tr>
+		<tr><td>4♠</td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>4♠ </td><td> <span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		
+		<tr><td>4<span class="red_card">♦</span> </td><td> по балансу <span class="span2">&nbsp;6+<span class="red_card">♦</span>&nbsp;</span> обычно <span class="span2">&nbsp;0♠&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td>5<span class="red_card">♦</span> </td><td> по балансу <span class="span2">&nbsp;6+<span class="red_card">♦</span>&nbsp;</span> обычно <span class="span2">&nbsp;0♠&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td>4NT</td><td>шлемовая торговля ♠ согласована</td><td>—</td><td><A HREF="blackwood.html"><i class="far fa-eye"> </i></A> «Римский Блэквуд» 1430 </td></tr>
+	</tbody>
+	</table>

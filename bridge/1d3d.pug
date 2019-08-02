@@ -1,0 +1,23 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">1<span class="red_card">♦</span>—3<span class="red_card">♦</span>—...</h3>
+	<table class="minitable">
+	<tbody>
+		<tr>
+			<th>Откр</th><th>Примечания</th><th>Отв</th><th>Примечания</th>
+		</tr>
+
+		<tr><td>pass</td><td><span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td>3<span class="red_card">♥</span></td><td> FG <span class="hcp">&nbsp;15+&nbsp;</span> <span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span></td><td>—</td><td>натурально по балансу (3NT<span class="span2">&nbsp;•&nbsp;</span>/5<span class="red_card">♦</span><span class="span2">&nbsp;•&nbsp;</span>/шп(4<span class="red_card">♦</span>))</td></tr>
+		<tr><td>3♠</td><td>FG <span class="hcp">&nbsp;15+&nbsp;</span> <span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;4+♠&nbsp;</span></td> <td>—</td><td>натурально по балансу (3NT<span class="span2">&nbsp;•&nbsp;</span>/5<span class="red_card">♦</span><span class="span2">&nbsp;•&nbsp;</span>/шп(4<span class="red_card">♦</span>))</td></tr>
+		<tr><td>3NT</td><td><span class="hcp">&nbsp;max&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td rowspan=2>4<span class="red_card">♦</span></td><td rowspan=2>инвит к G(5<span class="red_card">♦</span>) <span class="hcp">&nbsp;?&nbsp;</span> ¬3NT</td><td>pass</td><td> <span class="hcp">&nbsp;min&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+				<tr><td>5<span class="red_card">♦</span></td><td><span class="hcp">&nbsp;max&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+		<tr><td>5<span class="red_card">♦</span> </td><td> по балансу <span class="span2">&nbsp;•&nbsp;</span></td><td>—</td><td>—</td></tr>
+		<tr><td>4NT</td><td>шлемовая торговля <span class="red_card">♦</span> согласована</td><td>—</td><td><A HREF="blackwood.html"><i class="far fa-eye"> </i></A> «Римский Блэквуд» 1430 </td></tr>
+	</tbody>
+	</table>
