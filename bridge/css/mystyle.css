@@ -14,6 +14,12 @@ a {
 	text-decoration: none;
 }
 
+.hcp_light{
+	background-color: DodgerBlue;
+	color: white;
+	border:1px solid black;
+}
+
 .auction{
 	font-family: 'Roboto', sans-serif;
 	/*font-size: 12px;*/
@@ -102,7 +108,7 @@ a {
 }
 */
 
-	background-color: blue;
+
 
 .minitable caption {
 	padding-top: 10px;
