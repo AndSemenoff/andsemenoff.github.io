@@ -14,6 +14,72 @@ a {
 	text-decoration: none;
 }
 
+div {
+	padding-left: 40px;
+}
+
+.card_mark{
+	font-weight: bold;
+	font-size: normal;
+	text-decoration: underline;
+}
+
+.dummy{
+	font-weight: normal;
+	font-size: small;
+}
+
+.menu {
+	margin-left:auto; 
+	margin-right:auto;
+	border-collapse: collapse;
+	text-align: left;
+	border:0px solid rgb(80, 80, 80);
+	margin-top: 5px;
+}
+
+.menu tr{
+	height: 30px;
+	margin: auto;
+}
+
+.menu td {
+	border: 0px solid rgb(80, 80, 80);
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.menu a {
+	font-family: 'Fira Sans', sans-serif;
+	text-decoration: none;
+	color: rgb(80, 80, 80);
+}
+
+.menu a:hover {
+  color: DodgerBlue;
+}
+
+.diag td.txt_align_right{
+	text-align: right;
+}
+
+.diag td.center{
+	color: white;
+	background-color:green;
+}
+
+.diag{
+	border-collapse: collapse; 
+	border: 2px solid rgb(80, 80, 80);
+	min-width: 290px;
+	font-weight: bold;
+}
+
+.diag td{
+	border: 0px solid rgb(80, 80, 80);
+	text-align: center;
+}
+
 .hcp_light{
 	background-color: DodgerBlue;
 	color: white;
