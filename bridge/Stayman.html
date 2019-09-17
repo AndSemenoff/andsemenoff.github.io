@@ -15,44 +15,94 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" crossorigin="anonymous" media="all">
     <link rel="stylesheet" href="css/mystyle.css" type="text/css" media="all">
+    <script type="text/javascript" src="scripts/Card.js"></script>
+    <script type="text/javascript" src="scripts/utils_for_Card.js"></script>
   </head>
   <body><h1 class="font-effect-shadow-multiple">Спортивный бридж</h1><h3 class="font-effect-shadow-multiple">Стейман (Stayman)</h3>
-<div>Искусственная заявка может применяться на двух уровнях. Вопрос о мажорных четверках после бескозырного открытия. На первом уровне 1NT - 2♣ и на втором 2NT - 3♣. <br>Для вопроса должно быть <span class="hcp">8+</span> и <span class="span1">&nbsp;4&nbsp;</span> <sup>(1)</sup></div>
-<div>Примечание 1: Исключение. Стэйман может быть использован в случае, когда отвечающий имеет менее чем <span class="hcp">8+</span> и собирается пасовать любой ответ, т.е. отвечающий имеет 4-4-4-1 руку (в трефах синглет), любой ответ может быть запасован и надо надеяться на лучший контракт.</div>
-<h3>1NT - 2♣</h3>
-<table class="auction"> 
+<div>Искусственная заявка может применяться на двух уровнях. Вопрос о мажорных четверках после бескозырного открытия. На первом уровне 1NT - 2♣ и на втором 2NT - 3♣. <br>Для вопроса должно быть <span class="hcp">&nbsp;8+&nbsp;</span> и <span class="span1">&nbsp;4&nbsp;</span> <sup>(1)</sup></div>
+<h3>1NT <span class="hcp">&nbsp;15-17&nbsp;</span> - 2♣ <span class="hcp">&nbsp;8+&nbsp;</span></h3>
+<ol>Правила:
+<li>Если партнер открылся или интервировал с 1NT, то сразу ответ 2♣ это Стейман. Стейман не работает в конкурентной торговле.</li>
+<li>Рука должна быть <span class="hcp">&nbsp;8+&nbsp;</span> (есть одно исключение).
+<div>Примечание 1: Исключение. Стэйман может быть использован в случае, когда отвечающий имеет менее чем <span class="hcp">&nbsp;8+&nbsp;</span> и собирается пасовать любой ответ, т.е. отвечающий имеет 4-4-4-1 руку (в трефах синглет), любой ответ может быть запасован и надо надеяться на лучший контракт.</div>
+</li>
+<li>На Стейман только три ответа, например, на первом уровне это 2<span class="red_card">♦</span>; 2<span class="red_card">♥</span>; 2♠.</li>
+<li>Вопрос всегда один: "В каком мажоре ты имеешь 4 карты?"</li>
+<li>Когда у открывающего есть 4<span class="red_card">♥</span> и 4♠, то на Стейман всегда отвечаем 2<span class="red_card">♥</span></li>
+</ol>
+<table class="minitable"> 
 <tbody>
 <tr>
-<th>Откр</th><th>Отв</th><th>Прим</th>
+<th>Откр</th><th>HCP</th><th>Отв</th><th>Прим</th>
 </tr>
-<tr><td rowspan=4>2<span class="red_card">♦</span>!<br><br><span class="span1"><s>&nbsp;4&nbsp;</s></span></td><td>2<span class="red_card">♥</span></td><td><span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> и <span class="span2">&nbsp;4♠&nbsp;</span></td></tr>
-<tr><td>2♠</td><td><span class="span2">&nbsp;5♠&nbsp;</span> и <span class="span2">&nbsp;4<span class="red_card">♥</span>&nbsp;</span> </td></tr>
-<tr><td>2NT</td><td>-</td></tr>
-<tr><td>pass</td><td>плохой расклад меньше <span class="hcp"><s>8</s></span></td></tr>
-<tr><td rowspan=9>2<span class="red_card">♥</span><br><br>есть <span class="span2">&nbsp;4<span class="red_card">♥</span>&nbsp;</span>,
-<br>м.б.<span class="span2">&nbsp;4♠&nbsp;</span></td><td>pass</td><td>плохой расклад меньше <span class="hcp"><s>8</s></span></td></tr>
-<tr><td>2NT</td><td>нет фита 4-4 инвит к G(3NT)</td></tr>
-<tr><td>3<span class="red_card">♥</span></td><td>фит инвит к G(4<span class="red_card">♥</span>)</td></tr>
-<tr><td>3♣</td><td><span class="span2">&nbsp;5+♣&nbsp;</span>; Откр 3NT - <span class="span2"><s>&nbsp;3+♣&nbsp;</s></span>
+<tr><td rowspan=5>2<span class="red_card">♦</span>!<br><br><span class="span1"><s>&nbsp;4&nbsp;</s></span></td><td class="hcp">0-7</td><td>pass</td><td>плохой расклад </td></tr>
+<tr><td>-</td><td>2<span class="red_card">♥</span></td><td><span class="span2">&nbsp;5<span class="red_card">♥</span>&nbsp;</span> и <span class="span2">&nbsp;4♠&nbsp;</span></td></tr>
+<tr><td>-</td><td>2♠</td><td><span class="span2">&nbsp;5♠&nbsp;</span> и <span class="span2">&nbsp;4<span class="red_card">♥</span>&nbsp;</span> </td></tr>
+<tr><td>-</td><td>2NT</td><td>-</td></tr>
+<tr><td>-</td><td>3NT</td><td>-</td></tr>
+<tr><td rowspan=10>2<span class="red_card">♥</span><br><br>есть <span class="span2">&nbsp;4<span class="red_card">♥</span>&nbsp;</span>,
+<br>м.б.<span class="span2">&nbsp;4♠&nbsp;</span></td><td class="hcp">0-7</td><td>pass</td><td>плохой расклад </td></tr>
+<tr><td>-</td><td>2NT</td><td>нет фита 4-4 инвит к G(3NT)</td></tr>
+<tr><td>-</td><td>3<span class="red_card">♥</span></td><td>фит инвит к G(4<span class="red_card">♥</span>)</td></tr>
+<tr><td>-</td><td>3♣</td><td><span class="span2">&nbsp;5+♣&nbsp;</span>; Откр 3NT - <span class="span2"><s>&nbsp;3+♣&nbsp;</s></span>
 <br>Откр 4♣ - <span class="span2">&nbsp;3+♣&nbsp;</span> минимум силы
 <br>Откр 4<span class="red_card">♦</span> - <span class="span2">&nbsp;3+♣&nbsp;</span> концентрация силы в <span class="red_card">♦</span></td></tr>
-<tr><td>3<span class="red_card">♦</span></td><td><span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span></td></tr>
-<tr><td>3♠</td><td><span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
-<tr><td>4<span class="red_card">♥</span></td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
-<tr><td>5♣</td><td><span class="span2">&nbsp;6+♣&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
-<tr><td>5<span class="red_card">♦</span></td><td><span class="span2">&nbsp;6+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
-<tr><td rowspan=7>2♠ <br><br><span class="span2">&nbsp;4♠&nbsp;</span> <span class="span2"><s>&nbsp;4<span class="red_card">♥</span>&nbsp;</s></span></td><td>pass</td><td>плохой расклад меньше <span class="hcp"><s>8</s></span></td></tr>
-<tr><td>2NT</td><td>нет фита 4-4 инвит к G(3NT)</td></tr>
-<tr><td>3<span class="red_card">♥</span></td><td>?</td></tr>
-<tr><td>3♠</td><td>фит инвит к G(4♠)</td></tr>
-<tr><td>4♠</td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
-<tr><td>5♣</td><td><span class="span2">&nbsp;6+♣&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
-<tr><td>5<span class="red_card">♦</span></td><td><span class="span2">&nbsp;6+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+<tr><td>-</td><td>3<span class="red_card">♦</span></td><td><span class="span2">&nbsp;5+<span class="red_card">♦</span>&nbsp;</span></td></tr>
+<tr><td>-</td><td>3♠</td><td><span class="span2">&nbsp;5+♠&nbsp;</span></td></tr>
+<tr><td>-</td><td>3NT</td><td>-</td></tr>
+<tr><td>-</td><td>4<span class="red_card">♥</span></td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
+<tr><td>-</td><td>5♣</td><td><span class="span2">&nbsp;6+♣&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+<tr><td>-</td><td>5<span class="red_card">♦</span></td><td><span class="span2">&nbsp;6+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+<tr><td rowspan=7>2♠ <br><br><span class="span2">&nbsp;4♠&nbsp;</span> <span class="span2"><s>&nbsp;4<span class="red_card">♥</span>&nbsp;</s></span></td><td class="hcp">0-7</td><td>pass</td><td>плохой расклад</td></tr>
+<tr><td>-</td><td>2NT</td><td>нет фита 4-4 инвит к G(3NT)</td></tr>
+<tr><td>-</td><td>3<span class="red_card">♥</span></td><td>?</td></tr>
+<tr><td>-</td><td>3♠</td><td>фит инвит к G(4♠)</td></tr>
+<tr><td>-</td><td>4♠</td><td><span class="span2">&nbsp;•&nbsp;</span></td></tr>
+<tr><td>-</td><td>5♣</td><td><span class="span2">&nbsp;6+♣&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
+<tr><td>-</td><td>5<span class="red_card">♦</span></td><td><span class="span2">&nbsp;6+<span class="red_card">♦</span>&nbsp;</span> <span class="span2">&nbsp;•&nbsp;</span></td></tr>
 </tbody>
 </table>
+<h3 class="font-effect-shadow-multiple">Примеры</h3>
+<table class="minitable"><tbody>
+<tr><th>Круг</th><th>Откр</th><th>Отв</th><th>Примечания</th></tr>
+<tr><td>1</td><td>1 NT</td><td>2♣<sup>(1)</sup></td><td>(1) "В каком мажоре ты имеешь 4 карты?"</td></tr>
+<tr><td>2</td><td>2♠<sup>(2)</sup></td><td></td><td>(2) "Имею 4♠"</td></tr></tbody>
+</table>
+<div>Как торговать дальше с нашей рукой?
+<hand>Q5.A863.T64.KJ73</hand>
+<p>Нам не сфитовали <span class="red_card">♥</span>. При минимуме 25 очков мы можем сразу назвать 3NT.</p>
+<p>(??)Когда вы понимаете, что не сможете найти мажорный фит и в минорах тоже нет интереса, то на 1NT в зависимости от количества очков, можно сразу называть нужный уровень в бескозыря. 8-9 2NT; 10-14 3NT; 15+ Шлемовая торговля</p>
+</div>
+<table class="minitable"><tbody>
+<tr><th>Круг</th><th>Откр</th><th>Отв</th><th>Примечания</th></tr>
+<tr><td>1</td><td>1 NT</td><td>2♣<sup>(1)</sup></td><td>(1) "В каком мажоре ты имеешь 4 карты?"</td></tr>
+<tr><td>2</td><td>2<span class="red_card">♦</span><sup>(2)</sup></td><td></td><td>(2) "Нет мажорных 4"</td></tr></tbody>
+</table>
+<div>Как торговать дальше с нашей рукой?
+<hand>A864.K2.QT2.9842</hand>
+<p>У нас была надежда на фит в ♠. Но фита нет. Обычно если фита нет, то называем NT в зависимости от очков. У нас 9 очков. Наш ответ 2NT.</p>
+<p></p>
+</div>
+<table class="minitable"><tbody>
+<tr><th>Круг</th><th>Откр</th><th>Отв</th><th>Примечания</th></tr>
+<tr><td>1</td><td>1 NT</td><td>2♣<sup>(1)</sup></td><td>(1) "В каком мажоре ты имеешь 4 карты?"</td></tr>
+<tr><td>2</td><td>2<span class="red_card">♥</span><sup>(2)</sup></td><td>3NT</td><td>(2) "Есть 4<span class="red_card">♥</span>"</td></tr></tbody>
+<tr><td>3</td><td>?</td><td></td><td></td></tr>
+</table>
+<div>Как торговать дальше с нашей рукой?
+<hand>A653.K976.QT2.AK</hand>
+<p>Так как партнер назвал 3NT, значит у него не <span class="red_card">♥</span> четверка, а ♠. Значит у нас есть фит в ♠. Трудно, но проще играть контракт в масти. Поэтому наш ответ 4♠.</p>
+<p></p>
+</div>
+<ul>Дополнительные источники:
+<li><a href="http://web2.acbl.org/documentLibrary/play/Commonly_Used_Conventions/stayman.pdf">ACBL | stayman.pdf </a></li>
+<li><img src="images/favicon_youtube.png"/><a href="https://www.youtube.com/watch?v=xu3K28Y_G4g">The Stayman Convention in Bridge. </a> Learn Bridge .NYC <a href="Stayman_presentation.pdf"> презентация .pdf </a></li>
+</ul>
 <h3>2NT - 3♣</h3>
+<h3 class="font-effect-shadow-multiple">Тесты</h3>
     <footer><hr>
 <center>Андрей Семенов aka Absolem © 2019</center>
     </footer>
+    <script type="text/javascript" src="scripts/go.js"></script>
   </body>
 </html>
