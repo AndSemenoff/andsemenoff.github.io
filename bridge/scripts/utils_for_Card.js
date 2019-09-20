@@ -36,7 +36,7 @@ function show_bidding_history(tag)
 				case "H": html_str += "<td>" + history_str[x][0] + "<span class='red_card'>♥</span></td>"; break;
 				case "D": html_str += "<td>" + history_str[x][0] + "<span class='red_card'>♦</span></td>"; break;
 				case "C": html_str += "<td>"+ history_str[x][0] + "♣" +"</td>"; break;
-				case "D": html_str += "<td>"+ history_str[x][0] + "X" +"</td>"; break;
+				case "X": html_str += "<td>"+ history_str[x][0] + "X" +"</td>"; break;
 				case "R": html_str += "<td>"+ history_str[x][0] + "XX" +"</td>"; break;
 				case "N": html_str += "<td>"+ history_str[x][0] + "NT" +"</td>"; break;
 				default: html_str += "<td>"+ history_str[x] +"</td>"; break;
