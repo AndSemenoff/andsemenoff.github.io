@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>ChessTempo pgn viewer</title>
+  <!-- Support libraries from Yahoo YUI project -->  
+<script type="text/javascript"  
+    src="http://chesstempo.com/js/pgnyui.js">  
+</script>   
+<script type="text/javascript"  
+    src="http://chesstempo.com/js/pgnviewer.js">  
+</script>  
+<link  
+ type="text/css"   
+ rel="stylesheet"   
+ href="http://chesstempo.com/css/board-min.css">  
+</link>  
+</head>
+<body>
+<!-- C:\\Chrome-Extensions\\SPA_1.0\\chess\\kasparov.pgn -->
+<script>  
+
+new PgnViewer(  
+  { boardName: "demo",  
+    pgnFile: 'kasparov.pgn',
+    pieceSet: 'leipzig',
+    pieceSize: 46
+  }
+);  
+</script>
+
+
+<div id="demo-container"></div>  
+<div id="demo-moves"></div>  
+
+</body>
+</html>
