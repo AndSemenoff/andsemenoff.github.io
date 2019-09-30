@@ -18,6 +18,20 @@ div {
 	padding-left: 40px;
 }
 
+.flag_en {
+    background-image: url("../images/flag_en.png");
+    padding: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.flag_ru {
+    background-image: url("../images/flag_ru.png");
+    padding: 10px;    
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 .card_mark{
 	font-weight: bold;
 	font-size: normal;
