@@ -1,0 +1,144 @@
+extends layouts/bridge_layout.pug
+
+block title
+	title= site_title + " Бридж"
+	
+block content
+	<h3 class="font-effect-shadow-multiple">SAYC. Негативная Контра (Negative Double)</h3>
+	<div>Правило 1. Негативная контра разновидность призывной. Дается после мастевого открытия партнером и мастевой интервенции врага.</div>
+	<div>Правило 2. Если после двух назначений остался один не названный мажор, то негативная контра <b>всегда</b> показывает от 4+ в этом не названном мажоре.</div>
+	<h3>Пример 1</h3>
+	<center>
+	<bidding>-,1C,1S,?</bidding>
+	<br>
+
+	<hand>S|A2.T952.AK63.K52</hand>
+	</center>
+	<div>Если бы не враги, то South хотел бы показать <span class="red_card">♥</span>, но сейчас такой возможности уже нет. Но <span class="red_card">♥</span> можно показать негативной контрой. Негативная котра от South будет означать 4+ в неназванном мажоре и от 6+ очков.</div>
+	<div>Правило 3. Негативная контра всегда форсирует на круг.</div>
+	<div>Правило 4. Количество очков, которое показывает негативная контра зависит от уровня на котором вынужден отвечать <strong>партнер</strong>.
+		<ul>
+			<li>1 уровень - <span class="hcp_light">&nbsp;6+&nbsp;</span>
+			<bidding>-,1D,1H, X</bidding>
+			<p>Партнер может ответить начиная с 1 уровня, например, 1♠.</p>
+			</li>
+			<li>2 уровень - <span class="hcp_light">&nbsp;8+&nbsp;</span>
+			<bidding>-,1D,2H, X</bidding>
+			<p>Партнер может ответить начиная со 2 уровня, например, 2♠.</p>
+			</li>
+			<li>3 уровень - <span class="hcp_light">&nbsp;10+&nbsp;</span>
+			<bidding>-,1D,2S, X</bidding>
+			<p>Партнер может ответить начиная с 3 уровня, например,  3<span class="red_card">♥</span>.</p>
+			</li>
+			<li>4 уровень - это форсирование гейма, то <span class="hcp_light">&nbsp;13+&nbsp;</span>
+			<bidding>-,1D,3S, X</bidding>
+			<p>Партнер может ответить начиная с 4 уровня, например, 4<span class="red_card">♥</span>.</p>
+			</li>
+		</ul>
+	</div>
+	<div>Правило 5. Верхней границы на очки у негативной контры нет.</div>
+	<div>Правило 6. Если нам согласовали фит, то при:</div>
+	<ul>
+		<li><span class="hcp_light">&nbsp;6-9&nbsp;</span> - пас;</li>
+		<li><span class="hcp_light">&nbsp;10-12&nbsp;</span> - приглашаем к гейму;</li>
+		<li><span class="hcp_light">&nbsp;13+&nbsp;</span> - назначаем гейм в согласованной масти;</li>
+	</ul>
+	<h3>Пример 1(продолжение)</h3>
+	<center>
+	<bidding>-,1C,1S, X,P,2H,P,?</bidding>
+	<br>
+
+	<hand>S|A2.T952.AK63.K52</hand>
+	<p>Руководствуясь правилом 6(посчитав баланс), мы смело назначаем гейм - 4<span class="red_card">♥</span>.</p>
+	</center>
+
+	<h3>Пример 2</h3>
+	<center>
+	<bidding>-,1D,1S,?</bidding>
+	<br>
+
+	<hand>S|762.AT653.98.K82</hand>
+	<p>Нам бы хотелось показать <span class="red_card">♥</span>. Но для заявки на втором уровне при интервенции нам нужно <span class="hcp_light">&nbsp;10+&nbsp;</span>, а у нас только <span class="hcp_light">&nbsp;7&nbsp;</span>. Выручает негативная контра. На данном уровне она покажет от <span class="hcp_light">&nbsp;6+&nbsp;</span> и <span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span></p>
+	</center>
+	<br>
+
+	<h3>Пример 3</h3>
+	<center>
+	<bidding>-,1D,1S, X,P,2H,P,?</bidding>
+	<br>
+
+	<hand>S|762.AT653.98.K82</hand>
+	<p>У нас только <span class="hcp_light">&nbsp;7&nbsp;</span> - минимум. Его мы уже показали негативной контрой, на что партнер только сфитовал, т.е. он на минимуме. Гейма 4<span class="red_card">♥</span> нет. Наш ответ: <strong>Pass</strong>.</p>
+	</center>
+	<br>
+	<h3>Ответы на негативную контру</h3>
+	<div>Ответы на негативную контру такие же, как при нормальном ответе партнера.</div>
+	<ul>При фите и :
+		<li><span class="hcp_light">&nbsp;12-14&nbsp;</span> - масть на минимальном уровне;</li>
+		<li><span class="hcp_light">&nbsp;15-18&nbsp;</span> - масть с прыжком;</li>
+		<li><span class="hcp_light">&nbsp;19+&nbsp;</span> - назначаем гейм в удобной для нас масти;</li>
+	</ul>
+	<ul>Без фита и :
+		<li><span class="hcp_light">&nbsp;12-14&nbsp;</span> - приемлемая для игры масть на минимальном уровне;</li>
+		<li><span class="hcp_light">&nbsp;14+&nbsp;</span> - приемлемая для игры масть на подходящем уровне;</li>
+	</ul>
+	
+	<h3>Пример 4</h3>
+	<center>
+	<bidding>-,-,-,1D,1S, X,P,?</bidding>
+	<br>
+
+	<hand>S|2.AKT9.AKQ98.Q32</hand>
+	<p>У нас <span class="hcp_light">&nbsp;18&nbsp;</span>. Учитывая согласованный фит <span class="red_card">♥</span> и синглет в ♠. Наш ответ: <strong>4<span class="red_card">♥</span></strong>.</p>
+	</center>
+	
+	<h3 class="font-effect-shadow-multiple">Часные случаи использования. Надо запомнить!</h3>
+	<h3>Случай 1</h3>
+	<center>
+	<bidding>-,1C,1H,?</bidding>
+	<br>
+	<p>В данной ситуации говоря контра мы показываем <strong>ровно</strong> 4♠ <span class="hcp_light">&nbsp;6+&nbsp;</span>. Отвечая 1♠ мы показываем <span class="span2">&nbsp;5+♠&nbsp;</span> <span class="hcp_light">&nbsp;6+&nbsp;</span></p>
+	
+	</center>
+	
+		<h3>Случай 2</h3>
+	<center>
+	<bidding>-,1C,1D,?</bidding>
+	<br>
+	
+	<p>Варианты показать руку с мажором(мажерами).</p>
+	<table class="minitable"> 
+		<tbody>
+			<tr>
+			<th colspan=6><bidding>-,1C,1D,?</bidding></th>
+			</tr>
+			<tr>
+			<th>Отв</th><th>Action</th><th>HCP</th><th>Прим</th><th colspan=2>Откр </th>
+			</tr>
+			<tr><td>X</td><td>F1</td><td class="hcp_light">&nbsp;6+&nbsp;</td><td><span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span>&nbsp;<span class="span2">&nbsp;4+♠&nbsp;</span></td><td colspan=2></td></tr>
+			<tr><td>1<span class="red_card">♥</span></td><td>—</td><td class="hcp_light">&nbsp;6+&nbsp;</td><td><span class="span2">&nbsp;4+<span class="red_card">♥</span>&nbsp;</span></td><td colspan=2></td></tr>
+			<tr><td>1♠</td><td>—</td><td class="hcp_light">&nbsp;6+&nbsp;</td><td>&nbsp;<span class="span2">&nbsp;4+♠&nbsp;</span></td><td colspan=2></td></tr>
+		</tbody>
+	</table>
+	</center>
+	
+	<h3>Пример 5</h3>
+	<center>
+	<bidding>-,1C,1D, X,P,1H,P,?</bidding>
+	<br>
+	<hand>S|AT52.AQ62.654.96</hand>
+	<p>У нас <span class="hcp_light">&nbsp;18&nbsp;</span>. Учитывая согласованный фит <span class="red_card">♥</span> и синглет в ♠. Наш ответ: <strong>4<span class="red_card">♥</span></strong>.</p>
+	</center>
+		<h3>Случай 3</h3>
+	<center>
+	<bidding>-,1H,1S,?</bidding>
+	<br>
+	</center>
+	<ol>Дополнительные источники:
+		<li><span class="flag_en"></span>&nbsp;<span class="red_card"><i class="fab fa-youtube"></i></span> <a href="https://www.youtube.com/watch?v=ynwFopwvMtQ">Negative Double </a> Video Clip ~ Intermediate Level</li>
+		<li><span class="flag_en"></span>&nbsp;<span class="red_card"><i class="fab fa-youtube"></i></span> <a href="https://www.youtube.com/watch?v=bLicR-7COjs">Negative Double </a> Sky Bridge Club</li> 
+		<li><span class="flag_en"></span>&nbsp;<span class="red_card"><i class="fab fa-youtube"></i></span> <a href="https://www.youtube.com/watch?v=bLicR-7COjs">Negative Doubles </a> Learn Bridge .NYC</li>
+		<li><span class="flag_en"></span>&nbsp;<span class="red_card"><i title="формат PDF" class="far fa-file-pdf"></i></span> <a href="The_Negative_Double_Learnbridge.nyc.pdf">Презентация </a> Learn Bridge .NYC</li>
+		
+	</ol>
+

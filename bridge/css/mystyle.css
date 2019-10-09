@@ -217,14 +217,16 @@ a[href^="https"]::before {
 
 .hand{
 	border: 0px;
+	margin-bottom: 20px;
 }
 
 .hand tr{
-	height: 35px;
+	height: 70px;
 }
 
 .hand td{
-	width: 20px;
+	width: 35px;
+	vertical-align: top;
 }
 
 
@@ -262,7 +264,7 @@ a[href^="https"]::before {
 	position: absolute;
 	width:90px;
 	height:135px;
-	clip: rect(0px,20px,35px,0px); /* rect (top, right, bottom, left) */
+	clip: rect(0px,35px,70px,0px); /* rect (top, right, bottom, left) */
 }
 
 .cards_big {

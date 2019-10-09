@@ -21,14 +21,14 @@ function show_bidding_history(tag)
 */
 {
 	var history_array = document.getElementsByTagName(tag); /*Всегда несколько тегов на странице, поэтому массив HTMLCollection*/
-	console.log(history_array)
+	//console.log(history_array)
 	for (var i=0; i<history_array.length; i++){
 		history_str = history_array[i].innerText; /* Конкретная строка истории торговли */
-		console.log(history_str)
+		//console.log(history_str)
 		history_str = history_str.split(",");
-		console.log(history_str);
+		//console.log(history_str);
 		html_str = "<table class = 'minitable'><tbody><tr><th>W</th><th>N</th><th>E</th><th>S</th></tr><tr>";
-		html_str = "<table class = 'minitable'><tbody><tr><th>West</th><th>North</th><th>East</th><th>South</th></tr><tr>";
+		html_str = "<table class = 'minitable'><tbody><tr><td colspan=4>Наша пара: NS; Vul.: None</td></tr><tr><th>West</th><th>North</th><th>East</th><th>South</th></tr><tr>";
 		for (var x=0; x < history_str.length; x++){
 			switch (history_str[x][1]) 
 			{
@@ -65,10 +65,19 @@ function find_and_replace(tag)
 	//console.log("length:" + str.length);
 	for (var i=0; i<str.length; i++){
 		//console.log("i=" + i)
-		new_str = str[i] //document.getElementsByTagName(tag)[i]
-		hand = string_to_hand(str[i].innerText)
+		side = str[i].innerText.split("|")[0]
+		//raw_hand = str[i].split("|")[1]
+		raw_hand = str[i]
+		new_str = raw_hand //document.getElementsByTagName(tag)[i]
+		hand = string_to_hand(raw_hand.innerText.split("|")[1])
+		if (side == "S"){
+			side_text = "South:";
+		}
+		if (side == "N"){
+			side_text = "North:";
+		}
 		//console.log("HAnd:" + hand);
-		str1 = "<table class = 'hand'><tbody><tr>"
+		str1 = "<div>" + side_text + "</div><table class = 'hand'><tbody><tr>"
 		for (var count = 0; count < hand.max; count++) {
 			str1 = str1 + "<td><img class='cards_small' src='images/cards/" + hand[count].toString() + ".png'></td>"
 			}
