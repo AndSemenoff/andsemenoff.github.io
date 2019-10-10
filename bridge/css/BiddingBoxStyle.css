@@ -1,0 +1,54 @@
+.red_card{
+	color: #e11;
+	z-index: -1;
+}
+
+.BiddingBox {
+	margin-left:auto; 
+	margin-right:auto;
+	border-collapse: collapse;
+	text-align: center;
+	border:2px solid rgb(80, 80, 80);
+	margin-top: 5px;
+}
+/* .BiddingBox th {
+	border: 1px solid black;
+	border-bottom: 2px solid rgb(80, 80, 80);
+	border-top: 2px solid rgb(80, 80, 80);
+	padding: 5px;
+} */
+
+.BiddingBox tr{
+	/*height: 30px;*/
+	padding: 1px;
+	margin: auto;
+}
+
+.BiddingBox td {
+	border: 1px solid rgb(80, 80, 80);
+	min-width: 3em;
+	/*padding-left: 5px;*/
+	/*padding-right: 5px;*/
+}
+button {
+	font-size: large;
+	text-decoration: none;
+	border: none;
+	/*background-color: #008CBA;*/
+	background-color: #e7e7e7; 
+	color: black;
+	margin: auto;
+	width: 100%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+button span{
+  display : inline;
+}
+
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

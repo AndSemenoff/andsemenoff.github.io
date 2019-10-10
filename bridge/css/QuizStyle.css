@@ -1,0 +1,11 @@
+body {
+  font-family: 'Exo 2', 'Arimo', 'Roboto', sans-serif;
+  color: rgba(0,0,0,0.87);
+}
+
+.main{
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left: 0px;
+}

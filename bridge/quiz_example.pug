@@ -1,0 +1,77 @@
+extends layouts/bridge_layout.pug
+
+
+block title
+	title= site_title + " Бридж. Тесты"
+	script( type="text/javascript" src="scripts/quiz_for_bridge_bidding.js")
+	script( type="text/javascript" src="scripts/quiz_base.js")
+	link( rel="stylesheet" href="css/BiddingBoxStyle.css" type="text/css" media="all" )
+	link( rel="stylesheet" href="css/QuizStyle.css" type="text/css" media="all" )
+block content
+
+	<h3>Тесты</h3>
+	<center>
+	<div class="main" id="main"></div>
+	<div class="main">Подсказка: <span id="tip"></span></div>
+	<div class="main">Результат: <span id="result">вы пока не дали ответ</span></div>
+	</center>
+	<table class = "BiddingBox">
+	<tbody>
+	<tr>
+		<td colspan="3"><button onclick="clickButton(event)" id="pass" value = "0" width="100%"> p a s s </button></td>
+		<td><button onclick="clickButton(event)" id="double" value = "X">X</button></td>
+		<td><button onclick="clickButton(event)" id="redouble" value = "XX">XX</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="one_of_clubs" value = "1">1♣</button></td>
+		<td><button onclick="clickButton(event)" id="one_of_diamonds" value = "2">1<span id="one_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="one_of_hearts" value = "3">1<span id="one_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="one_of_spades" value = "4">1♠</button></td>
+		<td><button onclick="clickButton(event)" id="one_of_no_trump" value = "5">1NT</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="two_of_clubs" value = "6">2♣</button></td>
+		<td><button onclick="clickButton(event)" id="two_of_diamonds" value = "7">2<span id="two_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="two_of_hearts" value = "8">2<span id="two_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="two_of_spades" value = "9">2♠</button></td>
+		<td><button onclick="clickButton(event)" id="two_of_no_trump" value = "10">2NT</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="three_of_clubs" value = "11">3♣</button></td>
+		<td><button onclick="clickButton(event)" id="three_of_diamonds" value = "12">3<span id="three_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="three_of_hearts" value = "13">3<span id="three_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="three_of_spades" value = "14">3♠</button></td>
+		<td><button onclick="clickButton(event)" id="three_of_no_trump" value = "15">3NT</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="four_of_clubs" value = "16">4♣</button></td>
+		<td><button onclick="clickButton(event)" id="four_of_diamonds" value = "17">4<span id="four_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="four_of_hearts" value = "18">4<span id="four_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="four_of_spades" value = "19">4♠</button></td>
+		<td><button onclick="clickButton(event)" id="four_of_no_trump" value = "20">4NT</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="five_of_clubs" value = "21">5♣</button></td>
+		<td><button onclick="clickButton(event)" id="five_of_diamonds" value = "22">5<span id="five_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="five_of_hearts" value = "23">5<span id="five_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="five_of_spades" value = "24">5♠</button></td>
+		<td><button onclick="clickButton(event)" id="five_of_no_trump" value = "25">5NT</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="six_of_clubs" value = "26">6♣</button></td>
+		<td><button onclick="clickButton(event)" id="six_of_diamonds" value = "27">6<span id="six_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="six_of_hearts" value = "28">6<span id="six_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="six_of_spades" value = "29">6♠</button></td>
+		<td><button onclick="clickButton(event)" id="six_of_no_trump" value = "30">6NT</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="clickButton(event)" id="seven_of_clubs" value = "31">7♣</button></td>
+		<td><button onclick="clickButton(event)" id="seven_of_diamonds" value = "32">7<span id="seven_of_diamonds" class="red_card">♦</span></button></td>
+		<td><button onclick="clickButton(event)" id="seven_of_hearts" value = "33">7<span id="seven_of_hearts" class="red_card">♥</span></button></td>
+		<td><button onclick="clickButton(event)" id="seven_of_spades" value = "34">7♠</button></td>
+		<td><button onclick="clickButton(event)" id="seven_of_no_trump" value = "35">7NT</button></td>
+	</tr>
+	<tr><td colspan="2"><button onclick="clickTipShow(event)" id="evaluate" value = "0"> подсказать </button></td>
+	<td colspan="3"><button onclick="clickNewQuestion(event)" id="new" value = "0"> новая рука </button></td></tr>
+	</tbody>
+	</table>
