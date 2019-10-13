@@ -340,6 +340,11 @@ counter-reset:item
 .pcard{
 	width: 40px;
 }
+
+.fa-check-square {
+color: green;
+}
+
 /*
 <a class="list__tile list__tile--link list__tile--avatar">
 <div class="list__tile__avatar">
