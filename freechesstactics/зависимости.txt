@@ -1,0 +1,13 @@
+JavaScript:
+easytimer.js: https://github.com/albert-gonzalez/easytimer.js
+chess.js: 2018
+chessboard.js: 1.0
+jquery.js: 3.4.1
+
+/webfonts - Web Font files used with CSS
+
+CSS:
+font-awesome: 5.11.2
+
+chessboard 1.0:
+

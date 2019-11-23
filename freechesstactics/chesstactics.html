@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Chess Tactics</title>
+  <base href="" />
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="css/fontawesome_all.css">
+  <link rel="stylesheet" href="css/chesstactics.css">
+</head>
+<body>
+<!--- Begin Example HTML ------------------------------------------------------>
+<center>
+<div class="headstr"><span class="floatleft">№ </span><span id="current_position"></span><span id="white"></span> - <span id="black"></span></div>
+<div class="headstr"><span id="total_positions"></span><span id="site"></span>, <span id="event"></span>, <span id="date"></span>, <span id="result"></span> <span id="moveStatus"><i class="far fa-square"></i></span></div>
+<div id="myBoard"></div>
+<div class="buttons">
+	<button id="RepeatBtn"><i class="fas fa-redo-alt" title="Repeat current position"></i></button>
+	<button id="StepForwardBtn"><i class="fas fa-step-forward" title="Step Forward position"></i></button>
+	<button id="StepRandomBtn"><i class="fas fa-random" title="Random position"></i></button>
+	<button id="FlipOrientationBtn"><i class="fas fa-sync-alt" alt="Flip orientation" title="Flip orientation"></i></button>
+	<button id="StatisticsBtn"><i class="fas fa-signal" title="Open statistics page"></i></button>
+	<button id="HelpBtn"><i class="fas fa-question-circle" title="Open help page"></i></button>
+	<div id="basicUsage">00:00</div>
+</div>
+
+<div id="stts">Status: <span id="status"></span></div>
+
+<!-- https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp -->
+<button id = "ShareBtn" class = "small"><i class="fas fa-share-alt-square"></i></button>
+<label><button id = "fenToggleBtn" class = "small" onclick="myToggle('fen')">↓</button>FEN:</label>
+<div id="fen"></div>
+<label><button id = "pgnToggleBtn" class = "small" onclick="myToggle('pgn')">↓</button>PGN:</label>
+<div id="pgn"></div>
+<!--- End Example HTML -------------------------------------------------------->
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/chessboard-1.0.0.min.js"></script>
+<script src="js/chess.js"></script>
+<script src="js/data_base.js"></script>
+<script src="js/easytimer.js"></script>
+<script>
+
+// --- Begin Example JS --------------------------------------------------------
+function myToggle(id) {
+  var x = document.getElementById(id);
+  console.log("click", x.style.display)
+  if (x.style.display == "none") {
+    x.style.display = "block";
+	document.getElementById(id+"ToggleBtn").innerHTML = "↑";
+  } else {
+    x.style.display = "none";
+	document.getElementById(id+"ToggleBtn").innerHTML = "↓";
+  }
+}
+
+
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
+}
+
+var board = null
+var mySound = new sound("sound/punch.mp3");
+var game = new Chess()
+var $status = $('#status')
+var $fen = $('#fen')
+var $pgn = $('#pgn')
+var $moveStatus = $('#moveStatus')
+var completed = window.localStorage.getItem('completed');
+if ((window.localStorage.getItem('completed') ==null) || (window.localStorage.getItem('completed') == 'undefined')){
+	console.log("Not saved data")
+	completed = "0".repeat(data_base.length)
+	window.localStorage.setItem('completed', completed);
+}
+//console.log(load)
+//console.log(completed)
+var move_count = 0;
+var position_count = 0;
+
+var timer = new easytimer.Timer();
+
+timer.addEventListener('secondsUpdated', function (e) {
+    $('#basicUsage').html(timer.getTimeValues().toString(['minutes', 'seconds']));
+});
+
+init_board(position = 'clear', notation = "true")
+$('#HelpBtn').click(help);
+$('#StatisticsBtn').click(statistics);
+$('#RepeatBtn').on('click', repeat_diag)
+$('#FlipOrientationBtn').on('click', board.flip)
+$('#StepForwardBtn').click(make_next_diag)
+$('#StepRandomBtn').click(make_random_position)
+
+function help(){
+	window.location.href = "help.html"
+}
+
+function statistics(){
+	window.location.href = "statistics.html"
+}
+
+function pgn_info_show(){
+//Названия семи обязательных тегов (по порядку):
+//
+//Event (Название турнира или матча)
+//Site (Место проведения партии)
+//Date (Дата начала партии)
+//Round (Номер раунда в турнире)
+//White (Имя игрока белыми фигурами)
+//Black (Имя игрока чёрными фигурами)
+//Result (Результат партии)
+	var $event = $('#event')  // pgn_tag: Event
+	$event.html(data_base[position_count]['event'])
+	var $site = $('#site')  // pgn_tag: Site
+	$site.html(data_base[position_count]['site'])
+	var $date = $('#date')  // pgn_tag: Date
+	$date.html(data_base[position_count]['date'])
+	var $round = $('#round')  // pgn_tag: Round
+	var $white = $('#white')  // pgn_tag: White
+	$white.html(data_base[position_count]['white'])
+	var $black = $('#black')  // pgn_tag: Black
+	$black.html(data_base[position_count]['black'])
+	var $result = $('#result')  // pgn_tag: Result
+	$result.html(data_base[position_count]['result'])
+	var $current_position = $('#current_position')
+	$current_position.html(position_count)
+	var $total_positions = $('#total_positions')
+	$total_positions.html("(" + data_base.length + ")")
+}
+function repeat_diag(){
+	move_count = 0;
+	log = game.load(data_base[position_count]['fen'])
+	pgn_info_show()
+	board.position(game.fen())
+	updateStatus()
+}
+
+function make_random_position(){
+	
+	while (completed[position_count] == "1") { 
+		position_count = Math.floor(Math.random() * data_base.length) - 1;
+	}
+	make_next_diag();
+}
+
+function make_next_diag(){
+	move_count = 0;
+	position_count++;
+	if (position_count == data_base.length) position_count = 0;
+	log = game.load(data_base[position_count]['fen'])
+	//boardOrientation =  // "white" or "black"
+	if ((board.orientation() === "white" && game.turn() === 'b')||
+		(board.orientation() === "black" && game.turn() === 'w')){
+		board.flip()
+	}
+
+	pgn_info_show()
+	board.position(game.fen())
+	timer.reset()
+	updateStatus()
+}
+
+function makeMove () {
+  game.move(data_base[position_count]['answer'][move_count])
+  board.position(game.fen())
+  mySound.play();
+  move_count++;
+  updateStatus()
+}
+
+function onDragStart (source, piece, position, orientation) {
+  // do not pick up pieces if the game is over
+  if (game.game_over()) return false
+
+  // only pick up pieces for the side to move
+  if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
+      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+    return false
+  }
+}
+
+function promo(){
+// Нужно сделать модальное окно с выбором фигуры превращения
+	return 'q'
+}
+
+function onMoveEnd (oldPos, newPos) {
+
+  //window.setTimeout(makeMove, 250)
+}
+
+function onDrop (source, target) {
+  // see if the move is legal
+  var move = game.move({
+    from: source,
+    to: target,
+    promotion: promo()//'n' // NOTE: always promote to a queen for example simplicity
+	//a modal window lets the user to choose a promotion piece
+
+  })
+  
+  //move_1 = game.move({ from: 'e2', to: 'e4' });
+  //console.log(source, target)
+  //console.log(move_1);
+  //console.log(move);
+  //console.log(game.pgn);
+  // illegal move
+  if (move === null) return 'snapback'
+  //if (move != move_right) return 'snapback'
+  //var test = game.get('e4');
+  //console.log(game.history());
+  	//window.setTimeout(makeMove, 250)
+	isRightMove()
+	updateStatus()
+
+}
+
+// update the board position after the piece snap
+// for castling, en passant, pawn promotion
+function onSnapEnd () {
+  board.position(game.fen())
+
+}
+
+function isRightMove(){
+  if (game.history()[move_count] == data_base[position_count]['answer'][move_count]){
+	
+	status += " Правильное продолжение! ";
+	move_count ++;
+	window.setTimeout(makeMove, 250)
+  }
+  else {
+  
+  	game.undo();
+	board.position(game.fen())
+  }
+}
+
+function updateStatus () {
+  var status = ''
+  timer.start({precision: 'secondTenths'})
+  //console.log(move_count)
+  //console.log(game.history()[move_count], data_base[position_count]['answer'][move_count]);
+  
+
+
+  $moveStatus.html("<i class='far fa-square'></i>")
+  var moveColor = 'White'
+  if (game.turn() === 'b') {
+    moveColor = 'Black'
+	$moveStatus.html("<i class='fas fa-square'></i>")
+  }
+
+  // checkmate?
+  if (game.in_checkmate()) {
+    status += 'Game over, ' + moveColor + ' is in checkmate.'
+	timer.stop()
+	completed = completed.slice(0,position_count) + "1" + completed.slice(position_count+1)
+	console.log(position_count, completed.length)
+	window.localStorage.setItem('completed', completed);
+  }
+
+  // draw?
+  else if (game.in_draw()) {
+    status += 'Game over, drawn position'
+  }
+
+  // game still on
+  else {
+    status += moveColor + ' to move'
+
+    // check?
+    if (game.in_check()) {
+      status += ', ' + moveColor + ' is in check'
+    }
+  }
+
+  $status.html(status)
+  $fen.html(game.fen())
+  $pgn.html(game.pgn())
+}
+
+function init_board(position, notation){
+	var config = {
+		position: position,
+		showNotation: notation,
+		draggable: true,
+		onDragStart: onDragStart,
+		onDrop: onDrop,
+		onSnapEnd: onSnapEnd,
+		orientation: 'white', // 'black'
+		pieceTheme: 'img/chesspieces/alpha/{piece}.png',
+		onMoveEnd: onMoveEnd,
+	}
+	board = Chessboard('myBoard', config)
+
+}
+
+
+//game.load(data_base[position_count]['fen'])
+//board.position(game.fen())
+//updateStatus()
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+	//console.log("start!")
+	var parsedUrl = new URL(window.location.href);
+	position_count = parsedUrl.searchParams.get("p")
+	if (position_count == undefined || position_count == ""){
+		position_count = 0;
+	}
+	game.load(data_base[position_count]['fen'])
+	if ((board.orientation() === "white" && game.turn() === 'b')||
+		(board.orientation() === "black" && game.turn() === 'w')){
+		board.flip()
+	}
+	board.position(game.fen())
+	pgn_info_show()
+	updateStatus()
+	//console.log("script start q:", NumberQuestion)
+});
+
+// --- End Example JS ----------------------------------------------------------
+</script>
+</body>
+</html>

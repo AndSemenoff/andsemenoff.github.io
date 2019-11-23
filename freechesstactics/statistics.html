@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Chess Tactics. Statistics</title>
+  <base href="" />
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="css/fontawesome_all.css">
+  <link rel="stylesheet" href="css/chesstactics.css">
+  <!--<link href="css/mystyle.css" rel="stylesheet">-->
+</head>
+<body>
+<!--- Begin Example HTML ------------------------------------------------------>
+<center>
+<div id = "main"></div>
+<table class="minitable">
+<tbody id="position">
+</tbody>
+</table>
+<div class="buttons">
+	<button id="DeleteBtn"><i class="fas fa-trash" title="Delete all results"></i></button>
+</div>
+<!--- End Example HTML -------------------------------------------------------->
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/chessboard-1.0.0.min.js"></script>
+<script src="js/chess.js"></script>
+<script src="js/data_base.js"></script>
+<script src="js/player_base.js"></script>
+<script src="js/easytimer.js"></script>
+<script>
+
+// --- Begin Example JS --------------------------------------------------------
+$('#DeleteBtn').click(deleteResult);
+
+function deleteResult(){
+	var completed = "0".repeat(data_base.length)
+	console.log("delete")
+	window.localStorage.setItem('completed', completed);
+	window.location.href = "statistics.html"
+}
+
+function make_fide_link(name){
+	for (var x=0; x < player_base.length; x++)
+	{
+		console.log(name , player_base[x]["name"])
+		if (name == player_base[x]["name"]) 
+		{
+			console.log("!!",name)
+			return name + " <a target='_blank' href='https://ratings.fide.com/profile/" + player_base[x]['fide_id'] + "'><i class='fas fa-chess-knight'></i></a>";
+		} 
+	}
+	return name
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+	//console.log("start!")
+	var $position = $('#position');
+	var $main = $('#main');
+	var str1 = ""
+	var completed = window.localStorage.getItem('completed');
+	var sum = 0;
+	var done = "&#10008;";
+	var begin_str = "<tr><th>№</th><th>White/Белые</th><th>Black/Черные</th><th>Site/Место, Date/Дата</th><th>Link/Ссылка</th><th>Result/Результат</th></tr>";
+	for (i = 0; i<data_base.length; i++)
+	{
+		var done = "<span style = 'color:red'><b>&#10008;</b><span>";
+		//console.log(i, completed[i])
+		if (completed[i] == "1") 
+		{ 
+			sum += 1; 
+			done = "<span style = 'color:green'><b>&#10004;</b><span>"
+		}
+		var link = "<a href=chesstactics.html?p=" + i +  "><i class='fas fa-link'></i></a>";
+		var white_str = make_fide_link(data_base[i]["white"])
+		var black_str = make_fide_link(data_base[i]["black"])
+		str1 += "<tr><td class='num'>" + i.toString() + "</td><td>" + white_str + "</td><td>"  + black_str + "</td><td>"  + data_base[i]["site"] + ", " + data_base[i]["date"] + "</td><td class='link'>" + link + "</td><td class='res'>" + done + "</td></tr>";
+	}
+	
+	$position.html(begin_str+str1)
+	str2 = "Решено " + sum.toString() + " из " + data_base.length.toString() + "<br>"
+	$main.html(str2)
+});
+
+// --- End Example JS ----------------------------------------------------------
+</script>
+</body>
+</html>

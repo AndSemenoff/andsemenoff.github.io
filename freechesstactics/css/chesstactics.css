@@ -1,0 +1,157 @@
+:root {
+  --main-margin-top: 15px;	/*-- button, time */
+  --main-buttons-color: #F2F2F2;
+  --main-background-buttons-color: #2ba6cb;
+}
+
+#myBoard{
+	width: 400px;
+}
+
+.headstr{
+	width: 396px; 
+	text-align:center;
+}
+
+.buttons{
+	width: 396px;
+}
+
+button {
+    background: var(--main-background-buttons-color);
+    border-radius: 3px;
+    border: 1px solid #1e728c;
+    color: var(--main-buttons-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: var(--main-margin-top) 5px 0 0;
+    outline: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.cntr {
+	text-align: center;
+}
+
+table button {
+    background: var(--main-background-buttons-color);
+    border-radius: 3px;
+    border: 1px solid #1e728c;
+    color: var(--main-buttons-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 5px 0 0;
+    outline: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#stts {
+	margin: 5px;
+	width: 400px;
+}
+
+#pgn {
+	display : none;
+}
+
+#fen {
+	display : none;
+}
+
+#DeleteBtn {
+	background: #FF4845;
+	border: 1px solid #992B29;
+	color: var(--main-buttons-color);
+}
+
+.minitable {
+	border-collapse: collapse;
+	text-align: left;
+	border:2px solid black;
+	margin-top: 5px;
+}
+.minitable th {
+	text-align: center;
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+	padding: 5px;
+}
+
+.minitable td {
+	border: 1px solid black;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.minitable td.res, td.link, td.num {
+	text-align: center;
+	border: 1px solid black;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+button.small {
+    background: #2ba6cb;
+    border-radius: 3px;
+    border: 1px solid #1e728c;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 1px 1px 0 0;
+    outline: none;
+    padding: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+	min-width: 25px;
+	min-height: 25px;
+}
+
+#basicUsage {
+    background: #b58863;
+    border-radius: 3px;
+	color: var(--main-buttons-color);
+	margin: var(--main-margin-top) 0px 0 0;
+	float:right;
+	text-align: center;
+	font-size: 14px;
+	border: 1px solid #744926;
+	font-weight: 600;
+	padding: 10px 15px;
+}
+
+#basicUsageHelp {
+    background: #b58863;
+    border-radius: 3px;
+	color: var(--main-buttons-color);
+	margin: 0px 0px 0px 0px;
+	text-align: center;
+	font-size: 14px;
+	border: 1px solid #744926;
+	font-weight: 600;
+	padding: 10px 15px;
+}
+
+#moveStatus {
+	float:right;
+}
+
+#current_position,#total_positions {
+	float:left;
+	display : inline;
+}
+
+.floatleft{
+	float:left;
+}

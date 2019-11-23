@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Chess Tactics. Help.</title>
+  <base href="" />
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="css/fontawesome_all.css">
+  <link rel="stylesheet" href="css/chesstactics.css">
+</head>
+<body>
+<!--- Begin Example HTML ------------------------------------------------------>
+<center>
+<h3>Назначение кнопок</h3>
+	<button id="HomeBtn"><i class="fas fa-home" title="Go to home page"></i></button> <button id="BackBtn"><i class="fas fa-backward" title="Go back"></i></button>
+<table class="minitable">
+<tbody>
+	<tr><th>вопрос</th><th>назначение</th><th>ENG</th><tr>
+	<tr><td>moves on board<br>ходы на доске<br> </td><td>Ходы осуществляются путем перетаскивания мышкой фигуры. Ответ делается автоматически.</td><td>ENG</td><tr>
+
+	<tr><td class="cntr"><button id="RepeatBtn"><i class="fas fa-redo-alt" title="Repeat current position"></i></button></td><td>Повторить. Еще раз загрузить эту же диаграмму, для прохождения повторного решения.</td><td>ENG</td><tr>
+	<tr>
+		<td class="cntr"><button id="StepForwardBtn"><i class="fas fa-step-forward" title="Step Forward position"></i></button><br></td>
+		<td>Загрузить следующую по порядку диаграмму</td><td>ENG</td><tr>
+	<tr><td class="cntr"><button id="StepRandomBtn"><i class="fas fa-random" title="Random position"></i></button></td><td>Загрузить случайную не решенную диаграмму, <br>если решена текущая. Если текущая не решена, <br>то загрузится следующая по порядку.</td><td>ENG</td><tr>
+	<tr><td class="cntr"><button id="FlipOrientationBtn"><i class="fas fa-sync-alt" alt="Flip orientation" title="Flip orientation"></i></button></td><td>Перевернуть доску.</td><td>ENG</td><tr>
+	<tr><td class="cntr"><button id="StatisticsBtn"><i class="fas fa-signal" title="Open statistics page"></i></button></td><td>Открыть страницу статистики.</td><td>ENG</td><tr>
+	<tr><td class="cntr"><button id="HelpBtn"><i class="fas fa-question-circle" title="Open help page"></i></button></td><td>Открыть страницу помощи. Вы сейчас ее читаете.</td><td>ENG</td><tr>
+	<tr><td class="cntr"><div id="basicUsageHelp">00:00</div></td><td>Секундомер. Засекает время от загрузки диаграммы до мата на доске.</td><td>ENG</td><tr>
+</tbody>
+</table>
+<div>
+	
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+$('#BackBtn').click(browser_back);
+$('#HomeBtn').click(browser_home);
+function browser_back(){
+	window.history.back();
+}
+function browser_home(){
+	window.location.href = "chesstactics.html"
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+});
+</script>
+</body>
+</html>
