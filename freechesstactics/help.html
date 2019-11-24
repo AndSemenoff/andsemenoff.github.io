@@ -1,38 +1,72 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Chess Tactics. Help.</title>
-  <base href="" />
-  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
-  <link rel="stylesheet" href="css/fontawesome_all.css">
-  <link rel="stylesheet" href="css/chesstactics.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../caterpillar.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="author" content="Семенова Андрей Вячеславович">
+	<title>Chess Tactics. Help.</title>
+	<link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+	<link rel="stylesheet" href="css/fontawesome_all.css">
+	<link rel="stylesheet" href="css/chesstactics.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
 </head>
 <body>
-<!--- Begin Example HTML ------------------------------------------------------>
+<!--
+<a class="github-fork-ribbon right-bottom" href="https://github.com/AndSemenoff/andsemenoff.github.io/tree/master/freechesstactics" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+-->
 <center>
-<h3>Назначение кнопок</h3>
+<h3>Назначение кнопок/Button assignment</h3>
 	<button id="HomeBtn"><i class="fas fa-home" title="Go to home page"></i></button> <button id="BackBtn"><i class="fas fa-backward" title="Go back"></i></button>
 <table class="minitable">
 <tbody>
-	<tr><th>вопрос</th><th>назначение</th><th>ENG</th><tr>
-	<tr><td>moves on board<br>ходы на доске<br> </td><td>Ходы осуществляются путем перетаскивания мышкой фигуры. Ответ делается автоматически.</td><td>ENG</td><tr>
-
-	<tr><td class="cntr"><button id="RepeatBtn"><i class="fas fa-redo-alt" title="Repeat current position"></i></button></td><td>Повторить. Еще раз загрузить эту же диаграмму, для прохождения повторного решения.</td><td>ENG</td><tr>
+	<tr><th>вопрос/question</th><th>назначение [RU]</th><th>assignment [EN]</th><tr>
+	<tr>
+		<td>moves on board<br>ходы на доске<br> </td><td>Ходы осуществляются путем перетаскивания мышкой фигуры. Ответ делается автоматически.</td>
+		<td>You can move the chess by holding mouse. Opponent move is automatic.</td>
+	<tr>
+	<tr>
+		<td class="cntr"><button id="RepeatBtn"><i class="fas fa-redo-alt" title="Repeat current position"></i></button></td>
+		<td>Повторить. Еще раз загрузить эту же диаграмму, для прохождения повторного решения.</td>
+		<td>Play again. Load the same diagram to play again.</td>
+	<tr>
 	<tr>
 		<td class="cntr"><button id="StepForwardBtn"><i class="fas fa-step-forward" title="Step Forward position"></i></button><br></td>
-		<td>Загрузить следующую по порядку диаграмму</td><td>ENG</td><tr>
-	<tr><td class="cntr"><button id="StepRandomBtn"><i class="fas fa-random" title="Random position"></i></button></td><td>Загрузить случайную не решенную диаграмму, <br>если решена текущая. Если текущая не решена, <br>то загрузится следующая по порядку.</td><td>ENG</td><tr>
-	<tr><td class="cntr"><button id="FlipOrientationBtn"><i class="fas fa-sync-alt" alt="Flip orientation" title="Flip orientation"></i></button></td><td>Перевернуть доску.</td><td>ENG</td><tr>
-	<tr><td class="cntr"><button id="StatisticsBtn"><i class="fas fa-signal" title="Open statistics page"></i></button></td><td>Открыть страницу статистики.</td><td>ENG</td><tr>
-	<tr><td class="cntr"><button id="HelpBtn"><i class="fas fa-question-circle" title="Open help page"></i></button></td><td>Открыть страницу помощи. Вы сейчас ее читаете.</td><td>ENG</td><tr>
-	<tr><td class="cntr"><div id="basicUsageHelp">00:00</div></td><td>Секундомер. Засекает время от загрузки диаграммы до мата на доске.</td><td>ENG</td><tr>
+		<td>Загрузить следующую по порядку диаграмму</td>
+		<td>Load next diagram.</td>
+	<tr>
+	<tr>
+		<td class="cntr"><button id="StepRandomBtn"><i class="fas fa-random" title="Random position"></i></button></td>
+		<td>Загрузить случайную не решенную диаграмму, <br>если решена текущая. Если текущая не решена, <br>то загрузится следующая по порядку.</td>
+		<td>Load a random unsolved diagram if you completed the current.</td>
+	<tr>
+	<tr>
+		<td class="cntr"><button id="FlipOrientationBtn"><i class="fas fa-sync-alt" alt="Flip orientation" title="Flip orientation"></i></button></td>
+		<td>Перевернуть доску.</td>
+		<td>Flip the chess board.</td><tr>
+	<tr>
+		<td class="cntr"><button id="StatisticsBtn"><i class="fas fa-signal" title="Open statistics page"></i></button></td>
+		<td>Открыть страницу статистики.</td>
+		<td>Open statistic list.</td><tr>
+	<tr>
+		<td class="cntr"><button id="HelpBtn"><i class="fas fa-question-circle" title="Open help page"></i></button></td>
+		<td>Открыть страницу помощи. Вы сейчас ее читаете.</td>
+		<td>Open the help manual. You are reading now.</td>
+	<tr>
+	<tr>
+		<td class="cntr"><div id="basicUsageHelp">00:00</div></td>
+		<td>Секундомер. Засекает время от загрузки диаграммы до мата на доске.</td>
+		<td>Stopwatch. Control the time from the start to the checkmate.</td>
+	<tr>
 </tbody>
 </table>
+<br>
+<!--
 <div>
-	
+<iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%B4%D0%BE%D0%BD%D0%B0%D1%82%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%20%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%BD%D0%BE%D0%B9%20%D1%82%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8&targets-hint=&default-sum=&button-text=11&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=41001264197090" width="423" height="223" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
 </div>
+-->
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 $('#BackBtn').click(browser_back);
