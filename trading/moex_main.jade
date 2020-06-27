@@ -9,28 +9,60 @@ block content
 		h3 Вопросы по работе на ММВБ срочного рынка
 		ol
 			li 
-				a(href="https://www.moex.com/s1578") Регламенты 
+				a(href="https://www.moex.com/s1578") <i class="fas fa-external-link-alt"></i> 
+				| Регламенты - 
 				| иллюстрация на ММВБ
+			li 
+				a(href="https://www.moex.com/s93") <i class="fas fa-external-link-alt"></i> 
+				| Тарифы Срочного рынка ПАО Московская Биржа
 			li Национальный Клиринговый Центр(НКЦ) 
 				ol
 					li 
-						a(href="http://nationalclearingcentre.ru/viewCatalog.do?menuKey=209") Документы срочного рынка
+						a(href="http://nationalclearingcentre.ru/viewCatalog.do?menuKey=209") <i class="fas fa-external-link-alt"></i> 
+						| Документы срочного рынка
 			li Гарантийная система рынка фьючерсов и опционов
 				ol
 					li 
-						a(href="https://fs.moex.com/files/4718") Принципы расчета гарантийного обеспечения
-						|  с 17.09.2018
+						a(href="https://fs.moex.com/files/4718") <i class="fas fa-external-link-alt"></i> 
+						| Принципы расчета гарантийного обеспечения
+						|  с 03.12.2018
 					li 
-						a(href="http://nationalclearingcentre.ru/UserFiles/File/CK23/4.%20Pravila%20kliringa.%20Na%20srochnom%20rynke%20(3-ya%20redaktsiya%202018)_titul.pdf") Часть IV. Правила клиринга на срочном рынке
+						a(href="http://nationalclearingcentre.ru/UserFiles/File/CK23/4.%20Pravila%20kliringa.%20Na%20srochnom%20rynke%20(3-ya%20redaktsiya%202018)_titul.pdf") <i class="fas fa-external-link-alt"></i> 
+						| Часть IV. Правила клиринга на срочном рынке
 					li 
-						strong: a(href="moex_futures_go.html") Расчет ГО для фьючерсного контракта 
-						| устарело
+						a(href="https://fs.moex.com/files/6382") <i class="fas fa-external-link-alt"></i>
+						| Спецификация. Фьючерсные контракты на курс иностранной валюты к российскому рублю
+
+					li 
+						strong: a(href="moex_futures_go.html") <i class="far fa-eye"></i> 
+						| Расчет ГО для фьючерсного контракта 
+						| <span class="label success">устарело</span>
 			li 
-				a(href="https://www.moex.com/a2193") Получение данных 
+				a(href="https://www.moex.com/a2193") <i class="fas fa-external-link-alt"></i> 
+				| Получение данных 
 				| c информационно-статистического сервера Московской Биржи (ИСС / ISS) 
 				a(href="https://github.com/dvigal/moex") PyMOEX 
 				| Unofficial ISS MOEX API on Python
-			li: a(href="http://fs.moex.com/files/4266") Сбор за транзакции на ММВБ
-			li: a(href="http://fs.moex.com/files/5329") Коэффициенты для расчета сбора за транзакции на ММВБ
-			li: a(href="https://fs.moex.com/files/301") Правила организованных торгов на Срочном рынке ПАО Московская Биржа
-			li: strong: a(href="moex_rule_forts_04.08.2015.pdf") Правила срочного рынка (ред. 04.08.2015) pdf		
+			li 
+				a(href="https://www.moex.com/a3825") <i class="fas fa-external-link-alt"></i> 
+				| Сбор за неэффективные транзакции 
+			li 
+				a(href="http://fs.moex.com/files/4266") <i class="fas fa-external-link-alt"></i>  
+				| Сбор за транзакции на ММВБ
+			li 
+				a(href="http://fs.moex.com/files/5329") <i class="fas fa-external-link-alt"></i> 
+				| Коэффициенты для расчета сбора за транзакции на ММВБ
+			li 
+				a(href="https://fs.moex.com/files/301") <i class="fas fa-external-link-alt"></i> 
+				| Правила организованных торгов на Срочном рынке ПАО Московская Биржа
+			//li 
+				a(href="moex_rule_forts_04.08.2015.pdf") <i class="far fa-eye"></i> 
+				| Правила срочного рынка (ред. 04.08.2015) pdf <span class="label success">устарело</span>
+
+			div.
+				<br>http://iss.moex.com/iss/index - описание объектов
+				<br>http://iss.moex.com/iss/reference/ - справочник по запросам
+				<br>https://iss.moex.com/iss/engines/futures/markets/forts/turnovers.json обороты по фьючерсному рынку
+
+				<br>https://iss.moex.com/iss/engines/futures/markets/forts/ - описание полей по фьючерсному рынку
+				<br>https://iss.moex.com/iss/engines/futures/markets/forts/securities - фьючерсные контракты
