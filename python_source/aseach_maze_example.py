@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# file: bfs_maze_example.py
-from collections import deque
+# -*- coding: utf-8 -*
+# file: aseach_maze_example.py
+from heapq import heappop, heappush
 import pprint
 pp = pprint.PrettyPrinter()
 
@@ -18,21 +18,26 @@ def maze2graph(maze):
             graph[(row, col + 1)].append(("W", (row, col)))
     return graph
 
-def find_path_bfs(maze):
+def heuristic(cell, goal):
+    return abs(cell[0] - goal[0]) + abs(cell[1] - goal[1])
+
+
+def find_path_astar(maze):
     start, goal = (1, 1), (len(maze) - 2, len(maze[0]) - 2)
-    queue = deque([("", start)])
+    pr_queue = []
+    heappush(pr_queue, (0 + heuristic(start, goal), 0, "", start))
     visited = set()
     graph = maze2graph(maze)
-    while queue:
-        pp.pprint(queue)
-        path, current = queue.popleft()
+    while pr_queue:
+        _, cost, path, current = heappop(pr_queue)
         if current == goal:
             return path
         if current in visited:
             continue
         visited.add(current)
         for direction, neighbour in graph[current]:
-            queue.append((path + direction, neighbour))
+            heappush(pr_queue, (cost + heuristic(neighbour, goal), cost + 1,
+                                path + direction, neighbour))
     return "NO WAY!"
 
 maze = [
@@ -44,4 +49,4 @@ maze = [
 ]
 
 pp = pprint.PrettyPrinter()
-pp.pprint(find_path_bfs(maze))
+pp.pprint(find_path_astar(maze))

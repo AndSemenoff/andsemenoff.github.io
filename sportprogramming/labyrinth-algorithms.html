@@ -19,9 +19,10 @@
     <script src="../js/jquery.3.2.1.min.js"></script>
     <script src="../js/foundation.6.4.3.min.js"></script>
     <!-- default.min.css"-->
-    <link rel="stylesheet" href="../css/highlight.default.css">
+    <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
+    <!-- script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js")-->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
       
@@ -49,7 +50,15 @@
     <div class="row">
       <div class="large-12 columns">
         <h2>Постановка задачи</h2>
-        <div class="text-justify">У лабиринта нет стен, но он окружен кустами по внешним краям. Если игрок зашел в куст, то он проиграл. Лабиринт представлен как матрица (список (list) списков): 1 - это куст и 0 - это дорожка. Размер лабиринта N на N клеток и внешние клетки всегда кусты. Игрок начинает в клетке (1, 1). Выход в клетке (N-2, N-2). Вам нужно найти маршрут через Лабиринт. Игрок может двигатся только в четырех направлениях -- Юг (вниз [1,0]), Север (вверх [-1,0]), Восток (вправо [0,1]), Запад (влево [0, -1]). Маршрут описывается строкой состоящей из следующих символов: "S"=Юг, "N"=Север, "E"=Восток, and "W"=Запад.</div>
+        <div class="text-justify">У лабиринта нет стен, но он окружен кустами по внешним краям. Если игрок зашел в куст, то он проиграл. Лабиринт представлен как матрица (список (list) списков): 1 - это куст и 0 - это дорожка. Размер лабиринта N на N клеток и внешние клетки всегда кусты. Игрок начинает в клетке (1, 1). Выход в клетке (N-2, N-2). Вам нужно найти маршрут через Лабиринт. Игрок может двигатся только в четырех направлениях:
+          <ul> 
+            <li>Юг(S) (вниз [1,0]);</li>
+            <li>Север(N) (вверх [-1,0]);</li>
+            <li>Восток(E) (вправо [0,1]); </li>
+            <li>Запад(W) (влево [0, -1]). </li>
+          </ul>
+        </div>
+        <div>Маршрут описывается строкой состоящей из следующих символов: "S"=Юг, "N"=Север, "E"=Восток, and "W"=Запад.</div>
         <div>Пример:</div>
         <pre class="python"><code>maze = [
 	[1, 1, 1, 1, 1],
@@ -72,6 +81,20 @@ solve = "SSEE"</code></pre>
             graph[(row, col)].append(("E", (row, col + 1)))
             graph[(row, col + 1)].append(("W", (row, col)))
     return graph</code></pre>
+        <div>Сначала мы создаем словарь с ключами, которые равны координатам наших свободных клеток.</div>
+        <pre class="python"><code>height = len(maze)
+width = len(maze[0]) if height else 0
+graph = {(i, j): [] for j in range(width) for i in range(height) if not maze[i][j]}</code></pre>
+        <div>Получаем словарь:</div>
+        <pre class="python"><code>{(1, 1): [],
+(1, 3): [],
+(2, 1): [],
+(2, 3): [],
+(3, 1): [],
+(3, 2): [],
+(3, 3): []}</code></pre>
+        <div>Далее приступаем к заполнению списков</div>
+        <div>Окончательный результат преобразования выглядит так:</div>
         <pre class="python"><code>{(1, 1): [('S', (2, 1))],
 (1, 3): [('S', (2, 3))],
 (2, 1): [('N', (1, 1)), ('S', (3, 1))],
@@ -79,12 +102,200 @@ solve = "SSEE"</code></pre>
 (3, 1): [('E', (3, 2)), ('N', (2, 1))],
 (3, 2): [('E', (3, 3)), ('W', (3, 1))],
 (3, 3): [('W', (3, 2)), ('N', (2, 3))]}</code></pre>
-        <h2>Ссылки по теме
-          <ol>
-            <li><a href="http://habrahabr.ru/post/181265/">Необыкновенный способ генерации лабиринтов</a></li>
-            <li><a href="http://bryukh.com/labyrinth-algorithms/">Алгоритмы на лабиринтах</a></li>
-          </ol>
-        </h2>
+        <div>Полный пример кода.</div>
+        <pre class="python"><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*
+# file: maze2graph_example.py
+import pprint
+pp = pprint.PrettyPrinter()
+
+def maze2graph(maze):
+    height = len(maze)
+    width = len(maze[0]) if height else 0
+    graph = {(i, j): [] for j in range(width) for i in range(height) if not maze[i][j]}
+    pp.pprint(graph)
+    for row, col in graph.keys():
+        if row < height - 1 and not maze[row + 1][col]:
+            graph[(row, col)].append(("S", (row + 1, col)))
+            graph[(row + 1, col)].append(("N", (row, col)))
+        if col < width - 1 and not maze[row][col + 1]:
+            graph[(row, col)].append(("E", (row, col + 1)))
+            graph[(row, col + 1)].append(("W", (row, col)))
+    return graph
+
+maze = [
+    [1, 1, 1, 1, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1]
+]
+pp = pprint.PrettyPrinter()
+pp.pprint(maze2graph(maze))</code></pre>
+        <h2>Нахождение пути</h2>
+        <div class="text-justify">Следующая задача, которую нам нужно решить - это нахождение пути, что для лабиринта является выходом. Для это изучим ряд алгоритмов:
+          <ul>
+            <li><a href="#BFS">Поиск в ширину. Breadth-first searching (BFS)</a></li>
+            <li><a href="#DFS"> Поиск в глубину. Depth-first search (DFS)</a></li>
+            <li><a href="#AS"> Умный поиск. A* Search</a></li>
+          </ul>
+        </div>
+        <h3 id="BFS">Поиск в ширину. Breadth-first searching (BFS)</h3>
+        <div>Полный пример кода.</div>
+        <pre class="python"><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# file: bfs_maze_example.py
+from collections import deque
+import pprint
+pp = pprint.PrettyPrinter()
+
+def maze2graph(maze):
+    height = len(maze)
+    width = len(maze[0]) if height else 0
+    graph = {(i, j): [] for j in range(width) for i in range(height) if not maze[i][j]}
+    for row, col in graph.keys():
+        if row < height - 1 and not maze[row + 1][col]:
+            graph[(row, col)].append(("S", (row + 1, col)))
+            graph[(row + 1, col)].append(("N", (row, col)))
+        if col < width - 1 and not maze[row][col + 1]:
+            graph[(row, col)].append(("E", (row, col + 1)))
+            graph[(row, col + 1)].append(("W", (row, col)))
+    return graph
+
+def find_path_bfs(maze):
+    start, goal = (1, 1), (len(maze) - 2, len(maze[0]) - 2)
+    queue = deque([("", start)])
+    visited = set()
+    graph = maze2graph(maze)
+    while queue:
+        pp.pprint(queue)
+        path, current = queue.popleft()
+        if current == goal:
+            return path
+        if current in visited:
+            continue
+        visited.add(current)
+        for direction, neighbour in graph[current]:
+            queue.append((path + direction, neighbour))
+    return "NO WAY!"
+
+maze = [
+    [1, 1, 1, 1, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1]
+]
+
+pp = pprint.PrettyPrinter()
+pp.pprint(find_path_bfs(maze))</code></pre>
+        <h3 id="DFS"> Поиск в глубину. Depth-first search (DFS)</h3>
+        <div>Полный пример кода.</div>
+        <pre class="python"><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*
+# file: dfs_maze_example.py
+from collections import deque
+import pprint
+pp = pprint.PrettyPrinter()
+
+def maze2graph(maze):
+    height = len(maze)
+    width = len(maze[0]) if height else 0
+    graph = {(i, j): [] for j in range(width) for i in range(height) if not maze[i][j]}
+    for row, col in graph.keys():
+        if row < height - 1 and not maze[row + 1][col]:
+            graph[(row, col)].append(("S", (row + 1, col)))
+            graph[(row + 1, col)].append(("N", (row, col)))
+        if col < width - 1 and not maze[row][col + 1]:
+            graph[(row, col)].append(("E", (row, col + 1)))
+            graph[(row, col + 1)].append(("W", (row, col)))
+    return graph
+
+def find_path_dfs(maze):
+    start, goal = (1, 1), (len(maze) - 2, len(maze[0]) - 2)
+    stack = deque([("", start)])
+    visited = set()
+    graph = maze2graph(maze)
+    while stack:
+        path, current = stack.pop()
+        if current == goal:
+            return path
+        if current in visited:
+            continue
+        visited.add(current)
+        for direction, neighbour in graph[current]:
+            stack.append((path + direction, neighbour))
+    return "NO WAY!"
+
+maze = [
+    [1, 1, 1, 1, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1]
+]
+
+pp = pprint.PrettyPrinter()
+pp.pprint(find_path_dfs(maze))</code></pre>
+        <h3 id="AS"> Умный поиск. A* Search</h3>
+        <div>Полный пример кода.</div>
+        <pre class="python"><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*
+# file: aseach_maze_example.py
+from heapq import heappop, heappush
+import pprint
+pp = pprint.PrettyPrinter()
+
+def maze2graph(maze):
+    height = len(maze)
+    width = len(maze[0]) if height else 0
+    graph = {(i, j): [] for j in range(width) for i in range(height) if not maze[i][j]}
+    for row, col in graph.keys():
+        if row < height - 1 and not maze[row + 1][col]:
+            graph[(row, col)].append(("S", (row + 1, col)))
+            graph[(row + 1, col)].append(("N", (row, col)))
+        if col < width - 1 and not maze[row][col + 1]:
+            graph[(row, col)].append(("E", (row, col + 1)))
+            graph[(row, col + 1)].append(("W", (row, col)))
+    return graph
+
+def heuristic(cell, goal):
+    return abs(cell[0] - goal[0]) + abs(cell[1] - goal[1])
+
+
+def find_path_astar(maze):
+    start, goal = (1, 1), (len(maze) - 2, len(maze[0]) - 2)
+    pr_queue = []
+    heappush(pr_queue, (0 + heuristic(start, goal), 0, "", start))
+    visited = set()
+    graph = maze2graph(maze)
+    while pr_queue:
+        _, cost, path, current = heappop(pr_queue)
+        if current == goal:
+            return path
+        if current in visited:
+            continue
+        visited.add(current)
+        for direction, neighbour in graph[current]:
+            heappush(pr_queue, (cost + heuristic(neighbour, goal), cost + 1,
+                                path + direction, neighbour))
+    return "NO WAY!"
+
+maze = [
+    [1, 1, 1, 1, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1]
+]
+
+pp = pprint.PrettyPrinter()
+pp.pprint(find_path_astar(maze))</code></pre>
+        <h2>Ссылки по теме</h2>
+        <ol>
+          <li><a href="http://habrahabr.ru/post/181265/">Необыкновенный способ генерации лабиринтов</a></li>
+          <li><a href="http://bryukh.com/labyrinth-algorithms/">Алгоритмы на лабиринтах</a></li>
+        </ol>
       </div>
     </div>
     <footer>
@@ -93,7 +304,7 @@ solve = "SSEE"</code></pre>
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2018</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2020</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
