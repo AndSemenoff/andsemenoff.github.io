@@ -1,0 +1,51 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h1 Алгоритм минимакс на примере игры tic-tak-toe.
+	div.row: div.large-12.columns
+		h2 Правила игры
+		div.text-justify На поле размером 3 на 3 по-очереди ходят два игрока. Один играет за '0', другой за 'Х'.
+		| Ход заключается в размещении своего символа на любой свободной клетке доски.
+		| Побеждает тот, кто первый составит три своих символа в ряд: по вертикали, горизотали или диагонали.
+		div Реализацию будем делать на python 3.
+		div Поле будем представлять в виде списка списков:
+		| board = [
+		| [ '_', '_', '_' ], 
+		| [ '_', '_', '_' ], 
+		| [ '_', '_', '_' ] 
+		| ]
+		ul
+			li '_' - пустая клетка
+			li 'x' - ход крестиком
+			li 'o' - ход ноликом
+		| индексация с нуля.
+		| При обращении первый индекс это строка, второй столбец, например, board[row][col], board[0][1] - это нулевая строка второй столбец.
+		div Для оценивания позиции в игре введем простую оценочную функцию, которая если есть три в ряд крестика, а значит победили крестики будет ровна 10, а если есть три в ряд нолика, -10. Если трех в ряд ни у кого нет, то оценка ровна 0.
+		div На вход оценочной функции будет подаваться позиция в виде поля board.
+		pre.python: code
+			include ../python_source/minimax_evaluate.py
+			
+		div Полный пример кода.	
+		pre.python: code
+			include ../python_source/tic_tac_toe_minimax.py			
+		div Как учебный - данный пример хорош, но на практике при использовании рекурсии мы можем столкнуться с ограничением величины стека вызовов. Поэтому нужно переписать наш пример без рекурсии.
+		
+		h2 Ссылки по теме
+		ol
+			li: a(href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/") Minimax 1. Intro
+			li: a(href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-2-evaluation-function/") Minimax 2. Evaluation function
+			li: a(href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/") Minimax 3. Minimax
+			li: a(href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/") Minimax 4. alpha-beta pruning
+			li: a(href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-5-zobrist-hashing/") minimax 5. zobrist-hashing
+			li: a(href="https://www.freecodecamp.org/news/how-to-make-your-tic-tac-toe-game-unbeatable-by-using-the-minimax-algorithm-9d690bad4b37/") How to make your Tic Tac Toe game unbeatable by using the minimax algorithm
+			li: a(href="https://tproger.ru/translations/tic-tac-toe-minimax/") перевод предыдущей статьи 
+			li: a(href="https://en-academic.com/dic.nsf/enwiki/19448") Tic-tac-toe
+			li: a(href="https://gist.github.com/NoblesseCoder/cccf260ecc3e2052a0a1a013a7f7ac54") Код из книги Chapter-1 of Tom Mitchell's Machine Learning Book
+			li: a(href="https://en.wikipedia.org/wiki/Tic-tac-toe") WiKi Tic-tac-toe
+			li: a(href="https://habr.com/ru/post/533034/") Превращаем рекурсию в цикл
+			li: a(href="https://www.theofekfoundation.org/games/UltimateTicTacToe/") Ultimate TicTacToe 
+			li: a(href="https://www.khanacademy.org/computer-programming/tic-tac-toe-ception/1676336506/") khanacademy реализация UTTT на JS
+			li: a(href="http://cschlum2.free.fr/ticTacToeUlt.c/") UTTT код на С
+			li: a(href="https://github.com/jganzabal/tic-tac-toe-python-notebook-game") tic-tak-toe
+			
+			

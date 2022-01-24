@@ -1,0 +1,18 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h1 Алгоритмы на графах
+	div.row: div.large-12.columns
+		h2 Представление графа
+		div.text-justify Будем хранить граф в виде списка смежности. Список смежности в C++ удобно хранить в виде вектора векторов целых чисел (т.е. как <code>vector&lt;vector&lt;int>></code>). Иногда в качестве внешнего вектора используется массив. Размер внешнего вектора — количество вершин графа vertices, а i-я ячейка содержит список (вектор) всех вершин, которые смежны с i-й.
+		div Следующий сниппет кода считывает неориентированный граф, в котором вершины были пронумерованы от 1:
+		pre.cpp: code
+			|cin >> vertices >> edges;
+			|vector&ltvector&ltint>> g(vertices);
+			|for (int i = 0; i < edges; i++) {
+			|	int u, v;
+			|	cin >> u >> v;
+			|	u--, v--;
+			|	g[u].push_back(v);
+			|	g[v].push_back(u);
+			|}

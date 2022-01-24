@@ -2,9 +2,9 @@ extends ../layouts/html_layout.jade
 
 block footer
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js")
 	script.
-		$(document).foundation();	
+		$(document).foundation();
 
 block content
 	div.row: div.large-12.columns: h1: strong Ссылки
@@ -16,7 +16,7 @@ block content
 			li.tab-title: a(href="#panel31") Обучение
 			li.tab-title: a(href="#panel41") Хостинг
 			li.tab-title: a(href="#panel51") IDE
-			li.tab-title: a(href="#panel61") LaTex				
+			li.tab-title: a(href="#panel61") LaTex
 		
 		div.tabs-content
 			div#panel11.content.active
@@ -66,6 +66,31 @@ block content
 						a(href="http://www.checkio.org/") checkio.org
 					li
 						a(href="http://www.codewars.com/") codewars.com
+					li
+						a(href="https://leetcode.com") LeetCode.com 
+						| Соревнования. Задачи. Примеры собеседований. Много платного контента.
+					li 
+						a(href="https://www.codingame.com/") codingame.com 
+						| Соревнование по ИИ. Оптимизация. Короткий код. Задачи. Рейтинг. Работа.
+						ul
+							li: a(href="codingame.html") <strong>мои решения</strong> 
+							li: a(href="https://github.com/vadim-job-hg/Codingame") vadim 
+								a(href="https://github.com/kadary/codingame") kadary 
+								a(href="https://github.com/pathosDev/CodinGame-Solutions") pathosDev 
+								a(href="https://github.com/denvash/codingame-puzzles-solutions") denvash 
+								a(href="https://github.com/e1r0nd/codingame") (e1r0nd js + video) 
+								a(href="https://github.com/joand/codingame") (joand java) 
+								a(href="https://ethiery.github.io/codingame/index.html") (ethiery py3) 
+								a(href="https://www.xarg.org/puzzles/") (xarg C++ js)
+								a(href="https://github.com/charlesfranciscodev/codingame") (charlesfranciscodev py3 js c++ ...)
+								a(href="https://github.com/adrian-nesonson/Codingame") (adrian-nesonson java)
+								a(href="https://github.com/CodingameAlgeriaChallenge/codin-game") CodingameAlgeriaChallenge 
+								a(href="https://github.com/aethersg/codingame-puzzle") (aethersg py3) 
+								a(href="https://github.com/javadev/codingame-traning") (javadev dart js ...)
+								a(href="https://github.com/inoryy/csb-ai-starter") (Code strike back c++)
+								
+							li: a(href="https://github.com/texus/codingame") разбор от texus 
+							
 					li
 						a(href="https://pyweek.org") PyWeek 
 						| не частые соревнования по написанию игр

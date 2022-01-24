@@ -1,7 +1,7 @@
 extends ../layouts/code_layout.jade
 
 block content
-	div.row: div.large-12.columns: h1: Работа с модулем <strong>doctest</strong>
+	div.row: div.large-12.columns: h1 Работа с модулем <strong>doctest</strong>
 	div.row: div.large-12.columns
 		p.text-justify Модуль <strong>doctest</strong> позволяет писать тесты прямо в комментариях. Строчки комментариев, начинающиеся с '>>>' будут выполняются и возвращаемый результат будет сравниваться со значением, написанным в следующей строчке. Обратите внимание, что после '>>>' должен следовать ровно один пробел.  Для вызова непосредственно из программы мы должны импортировать библиотеку <strong>doctest</strong> и вызвать метод <strong>doctest.testmod()</strong>. Рекомендуется указывать в параметрах <strong>verbose=True</strong>, чтобы получить развернутый вывод в консоль информации о прошедшем тестировании.
 		pre.python: code

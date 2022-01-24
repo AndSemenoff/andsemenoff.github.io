@@ -1,0 +1,18 @@
+extends ../layouts/code_layout.jade
+
+block content
+	div.row: div.large-12.columns: h2 Перебор (brute force)
+	div.row: div.large-12.columns
+		div.text-justify Вывести все последовательности длины n, состоящие из чисел от 1 до m. Каждое число может встречаться в последовательности
+		| несколько раз или не встречаться совсем.
+		pre.cpp: code
+			include ../cpp_source/bruteforce_2_4.cpp
+
+		h4 Генерация перестановок
+		div.text-justify Вывести все последовательности чисел от 1 до n, в которых каждое число встречается ровно один раз. Такие последовательности
+		| называются перестановками.
+		pre.cpp: code
+			include ../cpp_source/bruteforce_2_5.cpp
+		h2 Ссылки по теме
+		ol
+			li: a(href="") .
