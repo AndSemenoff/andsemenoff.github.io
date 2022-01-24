@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>ABSOLEM.INFO | Библиотека DX.</title>
+    <title>ABSOLEM.INFO | Пример 1. Расчет по формуле Блэка-Шоулза.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -19,6 +19,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
     <script src="../js/foundation.6.4.3.min.js"></script>
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
+    <!-- script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js")-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <div class="top-bar">
@@ -33,15 +46,59 @@
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns">
-        <h3>DX библиотека для анализа деривативов</h3>
+      <div class="column text-center">
+        <h3>Пример 1. Расчет по формуле Блэка-Шоулза.</h3>
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns">
-        <p> </p>DX - библиотека для анализа деривативов с открытым кодом. Расположена на <a href="https://github.com/yhilpisch/dx">github </a>. В своей книге <a href="http://rutracker.org/forum/viewtopic.php?t=4969145">"Python for Finance" </a>Yves Hilpisch разбирает части этой библиотеки.
-        Я вместе с автором попробую разобраться, что к чему.	
+      <div class="columns large-2">&nbsp;</div>
+      <div class="columns large-8">
+        <div class="callout">
+          <div class="text-justify">
+            Напишем расчет премии опционов по формуле Блэка-Шоулза.  
+            Код представлен ниже
+          </div>
+          <div class="right"><a href="lua/Black-Scholes.lua">Black-Scholes.lua</a></div>
+          <pre class="lua"><code>function cnd(x)
+
+-- taylor series coefficients
+   local a1 = 0.31938153
+   local a2 = -0.356563782
+   local a3 = 1.781477937
+   local a4 = -1.821255978
+   local a5 = 1.330274429
+   local l = math.abs(x)
+   local k = 1.0 / (1.0 + 0.2316419 * l)
+   local w = 1.0 - 1.0 / math.sqrt(2 * math.pi) * math.exp(-l * l / 2) *
+   (a1 * k + a2 * k * k + a3 * math.pow(k, 3) + a4 * math.pow(k, 4) + a5 * math.pow(k, 5))
+   if x < 0 then w = 1.0 - w end
+   return w
+end
+
+-- The Black-Scholes option valuation function
+function black_scholes(
+	is_call, -- true for call, false for put
+	s,       -- current price
+	x,       -- strike price
+	t,       -- time
+	r,       -- interest rate
+	v        -- volatility
+)
+   local d1 = (math.log(s / x) + (r + v * v / 2.0) * t) / (v * math.sqrt(t))
+   local d2 = d1 - v * math.sqrt(t)
+   if is_call then
+      return s * cnd(d1) - x * math.exp(-r * t) * cnd(d2)
+   else
+      return x * math.exp(-r * t) * cnd(-d2) - s * cnd(-d1)
+   end
+end
+
+print(black_scholes(true, 79790, 80000, (1/252)*30, 0.05, 0.4))   -- 4516.0784287596
+</code></pre>
+          <!--div.clearfix-->
+        </div>
       </div>
+      <div class="columns large-2">&nbsp;</div>
     </div>
     <footer>
       <hr>
@@ -63,6 +120,8 @@
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
       <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
       <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
