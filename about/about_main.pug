@@ -3,111 +3,119 @@ extends ../layouts/html_layout.jade
 block title
 	title= site_title + " Обо мне"
 
+mixin stepik_course_link(course, text)
+	td
+		a(href="https://stepik.org/course/" + course title="Ссылка на курс"): i.fa.fa-external-link 
+		| &nbsp;&nbsp;#{text}	
+
+mixin stepik_certificate_link(certificate, pdf)
+	td
+		a(href="https://stepik.org/cert/" + certificate title="Посмотреть оригинал на сайте Stepik.org"): i.fa.fa-external-link &nbsp;&nbsp;&nbsp;
+		a(href="../certificate/stepik-certificate-" + pdf title="Посмотреть оригинал в формате pdf"): i.far.fa-file-pdf
+
 block content
 	// div.row: div.large-12.columns: h2 Обо мне
 	div.row: div.large-12.columns
-		div.row
 		h3 Дополнительное образование, сертификации и навыки.
 		ol
-			li Stepik
-			li Coursera
-			li ЛИТМО
-		h4 Stepik.org
-		a(href="https://stepik.org/users/125896") <i class="fas fa-user-graduate"></i> Мой профиль.
+			li
+				a(href="#Stepik") Stepik
+			li
+				a(href="#Coursera") Coursera
+			li
+				a(href="#LITMO") ЛИТМО
+		h4#Stepik Stepik.org
+		a(href="https://stepik.org/users/125896"): i.fas.fa-user-graduate Мой профиль.
 		<table class="stack">
 		<tbody>
-		<tr>
-		<th>Название Курса</span></th>
-		<th>Сертификат</th>
-		<th>Примечания</th>
-		<th></th>
-		</tr>
-		<tr>
-		<td><a href="https://stepik.org/course/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D0%B4%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%83%D1%8E-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D1%83-902" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i> </a>&nbsp;&nbsp;Введение в дискретную математику</td>
-		<td>пока нет</td>
-		<td><a href="about_discrete_mathematics_info.html"><i class="fa fa-info-circle" aria-hidden="true"></i> </a> <span class='flag_ru'></span></td>
-		<td></td>
-		</tr>
-	
-		<tr>
-		<td><a href="https://stepik.org/course/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B2-R-129" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i> </a>&nbsp;&nbsp;Анализ данных в R</td>
-		<td>пока нет</td>
-		<td><a href="about_R_info.html"><i class="fa fa-info-circle" aria-hidden="true"></i> </a> <span class='flag_ru'></span></td>
-		<td></td>
-		</tr>
-		<tr>
-		<td><a href="https://stepik.org/course/%D0%9C%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B0%D1%8F-%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B8-%D0%B3%D0%B5%D0%BD%D0%B5%D1%82%D0%B8%D0%BA%D0%B0-70" title="Ссылка на курс"> <i class="fa fa-external-link" aria-hidden="true"> </i> </a>&nbsp;&nbsp;Молекулярная биология и генетика</td>
-		<td><a href="https://stepik.org/certificate/61cc51b5ce63859717bf0efe595a9db563de917b.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-70-61cc51b.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a></td>
-		<td><span class='flag_ru'></span></td>
-		<td></td>
-		</tr>
-		<tr>
-		td
-			<a href="https://stepik.org/course/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D0%BC%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%83%D1%8E-%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8E-%D0%B8-%D0%B1%D0%B8%D0%BE%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%83-549" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Введение в молекулярную биологию и биомедицину
-		td
-			<a href="https://stepik.org/certificate/61cc51b5ce63859717bf0efe595a9db563de917b.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-70-61cc51b.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
-		td <span class='flag_ru'></span>
-		td &nbsp;
-		</tr>
-		<tr>
-		td
-			<a href="https://stepik.org/course/%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5-191" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Безопасность в интернете
-		td
-			<a href="https://stepik.org/certificate/7952470412fd07de7476e0180648f6481d0293fa.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-191-7952470.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
-		td <span class='flag_ru'></span>
-		td &nbsp;
-		</tr>
-		<tr>
-		td
-			<a href="https://stepik.org/course/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%83-%D0%AD%D0%92%D0%9C-%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC-253" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Введение в архитектуру ЭВМ. Элементы операционных систем.
-		td
-			<a href="https://stepik.org/certificate/3ee42fcd4d598d85c47437bd9690fe700b7b48fa.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-253-3ee42fc.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
-		td <span class='flag_ru'></span>
-		td &nbsp;
-		</tr>
+		tr
+			th Название Курса
+			th Сертификат
+			th Примечания
+			th Дата
+		tr
+			+stepik_course_link("4594", "Риторика")
+			+stepik_certificate_link("127495", "4594-b878f66.pdf")
+			td: span.flag_ru
+			td 11.09.2018
+		tr
+			+stepik_course_link("497", "Основы программирования на R")
+			+stepik_certificate_link("55458", "497-0b9ec47.pdf")
+			td: span.flag_ru
+			td 08.05.2017
+		tr
+			+stepik_course_link("902", "Введение в дискретную математику")
+			td пока нет
+			<td><a href="about_discrete_mathematics_info.html"><i class="fa fa-info-circle" aria-hidden="true"></i> </a> <span class='flag_ru'></span></td>
+			<td></td>
+		tr
+			+stepik_course_link("129", "Анализ данных в R")
+			<td>пока нет</td>
+			<td><a href="about_R_info.html"><i class="fa fa-info-circle" aria-hidden="true"></i> </a> <span class='flag_ru'></span></td>
+			<td></td>
+		tr
+			+stepik_course_link("70", "Молекулярная биология и генетика")
+			+stepik_certificate_link("53488", "70-61cc51b.pdf")
+			td: span.flag_ru
+			td 18.04.2017
+		tr
+			+stepik_course_link("549", "Введение в молекулярную биологию и биомедицину")
+			+stepik_certificate_link("53604", "549-6c5ea20.pdf")
+			td: span.flag_ru
+			td 20.04.2017
+		tr
+			+stepik_course_link("191", "Безопасность в интернете")
+			+stepik_certificate_link("17742", "191-7952470.pdf")
+			td: span.flag_ru
+			td 22.01.2016
+		tr
+			+stepik_course_link("253", "Введение в архитектуру ЭВМ. Элементы операционных систем.")
+			+stepik_certificate_link("16648", "253-3ee42fc.pdf")
+			td: span.flag_ru
+			td 30.12.2015
 		<tr>
 		td
-			<a href="https://stepik.org/course/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-127" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Анализ безопасности веб-проектов
+			<a href="https://stepik.org/course/127" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Анализ безопасности веб-проектов
 		td
 			<a href="https://stepik.org/certificate/fb8356e02a33418c31920ddf2c80a636d5d871b6.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-127-fb8356e.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
 		td <span class='flag_ru'></span>
-		td &nbsp;
+		td 08.12.2016
 		</tr>
 		<tr>
 		td
-			<a href="https://stepik.org/course/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-Linux-73" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Введение в Linux
+			<a href="https://stepik.org/course/73" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Введение в Linux
 		td
 			<a href="https://stepik.org/certificate/c55ed8d70c1cdbdce8dd9a973f8cc1e591b15ca8.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-73-c55ed8d.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
 		td <span class='flag_ru'></span>
-		td &nbsp;
+		td 06.10.2016
 		</tr>
 		<tr>
 		td
-			<a href="https://stepik.org/course/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D1%8B-%D0%B2-%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8-132" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Политические процессы в современной России
+			<a href="https://stepik.org/course/132" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Политические процессы в современной России
 		td
 			<a href="https://stepik.org/certificate/b8ddcd5701dde413e609c8594aa490a8d64f7e2c.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-132-b8ddcd5.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
 		td <span class='flag_ru'></span>
-		td &nbsp;
+		td 28.04.2017
 		</tr>
 		<tr>
 		td
-			<a href="https://stepik.org/course/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8-76" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Основы статистики
+			<a href="https://stepik.org/course/76" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Основы статистики
 		td
 			<a href="https://stepik.org/certificate/e7d2ae547b279814fcefbc1c605355a4e868df42.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-76-e7d2ae5.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
 		td <span class='flag_ru'></span>
-		td &nbsp;
+		td 14.01.2016
 		</tr>
 		<tr>
 		td
-			<a href="https://stepik.org/course/%D0%9A%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9-%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%D1%82%D0%B5%D0%BB%D1%8C-458" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Как работает реактивный двигатель
+			<a href="https://stepik.org/course/458" title="Ссылка на курс"><i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;Как работает реактивный двигатель
 		td
 			<a href="https://stepik.org/certificate/1453f9a36a712ce7d219a7acc6ff1454cb81d61a.pdf" title="Посмотреть оригинал на сайте Stepik.org в формате pdf"> <i class="fa fa-external-link" aria-hidden="true"> </i></a>&nbsp;&nbsp;&nbsp;<a href="../certificate/stepik-certificate-458-1453f9a.pdf" title="Посмотреть оригинал в формате pdf"> <i class="fa fa-file-pdf-o" aria-hidden="true"> </i></a>
 		td <span class='flag_ru'></span>
-		td &nbsp;
+		td 13.03.2017
 		</tr>											
 		</tbody>
 		</table>
-		h4 Coursera.org
+		h4#Coursera Coursera.org
 		<table class="stack">
 		<tbody>
 		<tr>
@@ -234,7 +242,7 @@ block content
 		</tbody>
 		</table>		
 
-		h4 ЛИТМО <small>(сейчас Санкт-Петербургский национальный исследовательский университет информационных технологий, механики и оптики)</small>
+		h4#LITMO ЛИТМО <small>(сейчас Санкт-Петербургский национальный исследовательский университет информационных технологий, механики и оптики)</small>
 		div
 			<a href="https://club.ifmo.ru/viewperson/32738/semenov_andrey_semenov.htm" title="Страница выпускника"> <i class="fa fa-external-link" aria-hidden="true"> </i> </a> Клуб выпускников ЛИТМО - Семенов Андрей Вячеславович. Год выпуска 1997.
 
