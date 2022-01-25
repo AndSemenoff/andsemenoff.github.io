@@ -1,0 +1,25 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Interactive Brokers API первая программа"
+
+block content
+	div.row: div.large-12.columns: h2 Interactive Brokers API первая программа
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Во-первых, соединение между клиентом API и TWS начинается в функции connect(). Соединение обязательно асинхронное, и поэтому программы выглядят иначе, чем программы в синхронной среде.
+		div Из-за асинхронной архитектуры обычно (как минимум) выполняются два потока. Один поток читает сообщения из TWS в API и помещает сообщения в очередь. Другие потоки отправляют сообщения в TWS или обрабатывают сообщения во входящей очереди.
+		div EClient — это класс в API, у которого есть функции, вызываемые для отправки сообщений в TWS. EWrapper — это класс, в котором определены обратные вызовы TWS, которые должны обрабатываться и реализовываться клиентом API. В отличие от других языков программирования, это обрабатывается во время выполнения и не требует реализации всех обратных вызовов в EWrapper.
+		pre
+			code.python3
+				include code/hello_tws_ex.py
+				
+		p При запуске данной программы вы должны получить примерно такой вывод:
+		img(src = "images/start_image_2.JPG")
+		div Значит все настройки TWS сделаны правильно и python с библиотеками установлены корректно.
+		| Можно переходить к следующему шагу. 
+		strong: a(href="interactive_brokers_hello_world_tws.html") Программа "hello world".
+		
+		h3 Ссылки по теме
+		div tradersacademy.online 
+			a(href = "https://tradersacademy.online/trading-topics/trader-workstation-tws/accessing-the-tws-python-api-source-code") Accessing the TWS Python API Source Code

@@ -1,0 +1,55 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Инвестирование"
+
+block content
+	div.row: div.large-12.columns: h2 Работа с Interactive Brokers
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		ol
+			li
+				| github 
+				a(href="https://interactivebrokers.github.io") download tws api
+			li
+				| github 
+				a(href="https://interactivebrokers.github.io/tws-api/") API Reference Guide
+			li Использование нативного API
+				ol
+					li
+						| TradersAcademy.online 
+						a(href="https://tradersacademy.online/trading-courses/python-tws-api") Course python tws api
+					li: strong: a(href="interactive_brokers_start.html") Начало работы с IB TWS API
+					li: strong: a(href="interactive_brokers_hello_tws.html") Первая простейшая программа 
+					li: strong: a(href="interactive_brokers_hello_world_tws.html") Программа "hello world"
+					li: strong: a(href="interactive_brokers_market_data_tws.html") Получение рыночных данных и исторических значений свечей
+					li: strong: a(href="interactive_brokers_history_forex_tws.html") Получение исторических значений свечей для FOREX
+					li: strong: a(href="interactive_brokers_orders_tws.html") Выставление ордеров
+					li: strong: a(href="interactive_brokers_options_tws.html") Опционная доска, данные по портфелю, информация об аккаунте
+					li: strong: a(href="interactive_brokers_pair_trading_tws.html") Парная торговля через API
+					li: strong: a(href="") 
+					li: strong: a(href="") 
+			li Использование библиотеки ib_insync
+				ol
+					li: strong: a(href="") 
+					li: strong: a(href="") 
+					li: strong: a(href="") 
+					
+			li: strong: a(href="") 
+			li: strong: a(href="") 
+			li: strong: a(href="") 
+		h3 Статьи
+		ol
+			li
+				| algotrading101.com 
+				a(href="https://algotrading101.com/learn/interactive-brokers-python-api-native-guide/") Нативное использование IB API
+			li: a(href="https://anaconda.org/camizulub/stock_trading_with_interactive_brokers/notebook") Notebook IB API
+			li: a(href="https://dimon.ca/dmitrys-tws-api-faq/") dmitrys tws api faq
+			li
+				| github 
+				a(href="https://github.com/erdewit/ib_insync") ib_insync
+			li
+				| algotrading101.com 
+				a(href="https://algotrading101.com/learn/ib_insync-interactive-brokers-api-guide/") ib_insync Guide – Interactive Brokers API
+			li: strong: a(href="") 
+			li: strong: a(href="") 
