@@ -1,0 +1,32 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Interactive Brokers API получение рыночных данных"
+
+block content
+	div.row: div.large-12.columns: h2 Interactive Brokers API получение рыночных данных
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Одной из наиболее распространенных задач при использовании API является запрос рыночных данных в реальном времени. В этом уроке мы обсудим различные способы запроса данных из API и рассмотрим простейший код программы на Python, который может запрашивать/получать данные в реальном времени.
+		div Для справки: соответствующие разделы справочного руководства по API можно найти по адресу: 
+			a(href="http://interactivebrokers.github.io/tws-api/market_data.html") http://interactivebrokers.github.io/tws-api/market_data.html
+		div Существует несколько функций API, обеспечивающих потоковое обновление рыночных данных:
+			| <br><b>reqMktData</b>: Предоставляет обновления несколько раз в секунду.
+			| <br><b>reqRealTimeBars</b>: предоставляет бары OHLC для каждого 5-секундного периода.
+			| <br><b>reqHistoricalData</b> (когда для параметра «keepUpToDate» установлено значение «Истина»): Предоставляет бары и обновления незавершенных баров
+			| <br><b>reqTickByTickData</b>: Предоставляет потоковые тиковые данные для каждой сделки или изменения котировок.
+		div Для каждой функции сначала должен быть определен объект контракта, который однозначно определяет отдельный финансовый инструмент. Примеры со множественным определением контрактов можно найти в справочном руководстве по API по адресу:
+			a(href = "http://interactivebrokers.github.io/tws-api/contracts.html") http://interactivebrokers.github.io/tws-api/contracts.html
+		| <br>
+		div 
+		pre
+			code.python3
+				include code/market_data_tws.py
+				
+		| <br>
+		| Можно переходить к следующему шагу. 
+		strong: a(href="interactive_brokers_history_forex_tws.html") Получение исторических значений свечей для FOREX.
+		
+		h3 Ссылки по теме
+		div tradersacademy.online 
+			a(href = "https://tradersacademy.online/trading-topics/trader-workstation-tws/receiving-market-data-and-historical-candlesticks") Receiving Market Data and Historical Candlesticks
