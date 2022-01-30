@@ -1,0 +1,23 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Объединенные ордера (Bracket Orders)"
+
+block content
+	div.row: div.large-12.columns: h2 Объединенные ордера (Bracket Orders)
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Еще такие ордера можно назвать скоординированными.
+		div Скоординированные ордера предназначены для того, чтобы помочь ограничить ваши убытки и зафиксировать прибыль путем «объединения» ордера с двумя противоположными ордерами. Ордер на ПОКУПКУ состоит из лимитного ордера на продажу с высокой стороны и стоп-ордера на продажу с низкой стороны. Ордер на ПРОДАЖУ состоит из стоп-ордера на покупку с высокой стороны и лимитного ордера на покупку с низкой стороны. Обратите внимание, как брекет-ордера используют механизм прикрепления ордеров TWS API.
+		div Bracket Orders are designed to help limit your loss and lock in a profit by "bracketing" an order with two opposite-side orders. A BUY order is bracketed by a high-side sell limit order and a low-side sell stop order. A SELL order is bracketed by a high-side buy stop order and a low side buy limit order. Note how bracket orders make use of the TWS API's Attaching Orders mechanism.
+		
+		div Одна ключевая вещь, которую следует иметь в виду, - это точно обрабатывать передачу ордеров. Поскольку объединенный ордер состоит из трех ордеров, всегда существует риск того, что хотя бы один из ордеров будет исполнен до того, как будет отправлена ​​вся цепочка. Чтобы этого избежать, используйте флаг <b>IBApi.Order.Transmit</b>. Когда для этого флага установлено значение <b>false</b>, TWS будет получать ордер, но не будет отправлять (передавать) его на серверы. В приведенном ниже примере первый (родительский) и второй (takeProfit) ордера будут отправлены в TWS, но не переданы на серверы. Однако, когда отправляется последний дочерний ордер (stopLoss) и если его флаг <b>IBApi.Order.Transmit</b> установлен в <b>true</b>, TWS интерпретирует это как сигнал для передачи не только своего родительского ордера, но и остальных дочерних ордеров, удаляя риск случайного исполнения.
+		div Дополнительная информация по объединенным ордерам:
+			span.flag_en &nbsp;
+			a(href = "https://interactivebrokers.github.io/tws-api/bracket_order.html"): i.fas.fa-external-link-alt &nbsp;
+		
+		| <br>
+		pre
+			code.python3
+				include code/bracket_order_example_tws.py
+		| <br>

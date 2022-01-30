@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Парная торговля через API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="../js/foundation.6.4.3.min.js"></script>
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
+    <!-- script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js")-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Парная торговля через API</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Общие вопросы</h3>
+        <div>В этом уроке мы выходим за рамки основных функций API и опираемся на предыдущие уроки, чтобы изучить пример, в котором расширенные типы ордеров могут быть полезны при реализации конкретной торговой стратегии. TWS API поддерживает более 60 типов заказов и атрибутов, доступных в TWS. Здесь мы рассматриваем сценарий, в котором тип ордера «Привязка к основному/относительному» используется с ордерами в хеджирующей парной сделке для размещения связанных ордеров для двух разных инструментов, так что размещение второго ордера обрабатывается сервером IBKR автоматически. Мы рассмотрим код программы Python, чтобы разместить начальный и хеджирующий ордера, и продемонстрируем, как они будут отображаться в TWS.</div>
+        <div>В этом уроке мы представляем тематическое исследование, основанное на концепциях, обсуждавшихся на предыдущих уроках. Показаны примеры нескольких из множества различных типов ордеров, доступных через API, а именно относительный тип ордера, также известный как тип ордера с привязкой к основному, и парные сделки хеджирования. Основные выводы:</div>
+        <ol>
+          <li>В API TWS можно использовать множество различных типов ордеров, например, ордера «Привязка к основному» или «Относительный (REL)». В этом типе ордера ордер размещается на бирже по лимитной цене, которая автоматически изменяется сервером IB по мере движения рынка вверх или вниз.</li>
+          <li>Во-вторых, ордера могут быть отправлены на сервер IB таким образом, что они будут «прикреплены» друг к другу, то есть на биржу будет размещен только один ордер, а другие ордера удерживаются до тех пор, пока не будет выполнен первый. заказ выполняет. В случае парных сделок два ордера предназначены для разных инструментов, тогда как для брекет-ордеров это будут два разных ордера для одного и того же инструмента.</li>
+          <li>И, наконец, просто имейте в виду, что существует множество различных креативных способов размещать и комбинировать заказы через TWS API.</li>
+        </ol>
+        <h4>Парные сделки</h4>
+        <div>Парная торговля — это популярная стратегия в алгоритмической торговле, при которой покупается инструмент, а связанный с ним инструмент продается без покрытия. Для общего обсуждения парной торговли в Интернете доступно множество ресурсов. Часто парная торговля акциями представляет собой стратегию возврата к среднему, когда ожидается, что относительная разница в цене двух связанных акций вернется к историческому среднему значению. Теоретически возможное преимущество парной торговли состоит в том, что она должна быть нейтральной по отношению к рынку стратегией, если оба инструмента имеют одинаковую корреляцию, или бета, к общему рынку. Кроме того, можно ожидать, что сделки с различными парами инструментов не будут коррелировать друг с другом. В этом уроке мы не будем обсуждать методы, с помощью которых можно выбирать инструменты в парных сделках, что выходит за рамки API, но мы сосредоточимся на том, как создать место для хеджирования парной торговли API.</div>
+        <div>Важно иметь в виду, что все типы и комбинации ордеров, доступные для API, также могут быть созданы вручную в TWS. Основное преимущество использования API для размещения заказов заключается в том, что этот процесс можно автоматизировать, что может сэкономить время, если необходимо разместить большое количество заказов или если имеется настраиваемая автоматизированная стратегия.</div>
+        <div>В этом примере после достаточного анализа трейдер решает разместить пару акций Dominos Pizza (DPZ) и Papa Johns (PZZA). Он размещает большое количество заказов, поэтому предпочитает автоматизировать размещение заказов через API.</div>
+        <div>Это шаги, которые следует предпринять трейдеру, чтобы разместить сделку по паре акций Dominos Pizza/Papa ​​Johns.</div>
+        <ol>
+          <li>Сначала должен быть определен объект контракта API для акций Dominos Pizza (символ DPZ). Это делается путем создания объекта контракта с интеллектуальной маршрутизацией с DPZ в качестве символа. В справочном руководстве по API есть много примеров определений контрактов для акций и других инструментов: http://interactivebrokers.github.io/tws-api/basic_contracts.html#stk.</li>
+          <li>Затем выбирается тип заказа для заказа DPZ. Трейдер решает здесь использовать Относительные ордера, потому что он думает, что может получить лучшую цену из-за спрэда бид/аск, чем с простым лимитным ордером, размещенным по цене бид или аск.</li>
+          <li>Первый заказ на акции DPZ размещается, но с установленным флагом передачи False, поэтому он не отправляется на сервер IB до тех пор, пока с ним не будет связан второй заказ.</li>
+          <li>Затем создается объект контракта на акции Papa Johns (символ: PZZA).</li>
+          <li>Наконец, размещается хеджирующий ордер для акций PZZA путем установки значения типа хеджирования на (P), для Pair Trade отношение (5), которое представляет собой отношение размера второго ордера к размеру первого, и идентификатор родительского заказа, выбранный на шаге (3), который свяжет заказы вместе.</li>
+        </ol>
+        <div>Как правило, при размещении ордеров через API существует два разных типа настроек, которые могут помешать размещению действительного ордера:</div>
+        <ol>
+          <li>Существует параметр «API только для чтения», который включен по умолчанию в глобальной конфигурации TWS и IB Gateway. Этот параметр предотвращает размещение любого заказа API в качестве меры предосторожности. Его можно отключить в настройках TWS или IB Gateway в разделе API -> Настройки.</li>
+          <li>Существуют также настройки предосторожности, которые включены по умолчанию для каждого типа инструмента, чтобы предотвратить отправку ордеров, превышающих определенные критерии, без подтверждения. Эти настройки предосторожности применяются как к заказам TWS, так и к заказам API. Их можно обойти по одному в Глобальной конфигурации, или их можно обойти глобально для заказов API, установив флажок настроек в Глобальной конфигурации в API -> Меры предосторожности -> «Меры предосторожности обхода заказов для заказов API».</li>
+        </ol><br>
+        <pre><code class="python3">from ibapi.client import EClient
+from ibapi.wrapper import EWrapper
+from ibapi.contract import Contract
+from ibapi.order import Order
+from threading import Timer
+import time
+
+class TestApp(EWrapper, EClient):
+    def __init__(self):
+        EClient.__init__(self, self)
+
+    def error(self, reqId, errorCode, errorString):
+        print("Error: ", reqId, " ", errorCode, " ", errorString)
+
+    def nextValidId(self, orderId):  # Store initial next order ID sent back on connection
+        self.nextValidOrderId = orderId
+        self.start()
+
+    def nextOrderId(self):  # There must be a larger ID for each new order
+        oid = self.nextValidOrderId
+        self.nextValidOrderId += 1
+        return oid
+
+    def orderStatus(self, orderId, status, filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId,
+                    whyHeld, mktCapPrice):
+        print("OrderStatus. Id: ", orderId, ", Status: ", status, ", Filled: ", filled, ", Remaining: ", remaining,
+              ", LastFillPrice: ", lastFillPrice)
+
+    def openOrder(self, orderId, contract, order, orderState):
+        print("OpenOrder. ID:", orderId, contract.symbol, contract.secType, "@", contract.exchange, ":", order.action,
+              order.orderType, order.totalQuantity, orderState.status)
+
+    def execDetails(self, reqId, contract, execution):
+        print("ExecDetails. ", reqId, contract.symbol, contract.secType, contract.currency, execution.execId,
+              execution.orderId, execution.shares, execution.lastLiquidity)
+
+    def start(self):
+        dpzStock = USStock("DPZ")
+        dpzOrder = RelativePeggedToPrimary("BUY", 1, 0, 0)
+        dpzOrder.transmit = False
+        dpzOrderId = self.nextOrderId()
+        self.placeOrder(dpzOrderId, dpzStock, dpzOrder)
+        time.sleep(0.2) #planned to be no longer necessary in future
+
+        # Pair trading documentation: http://interactivebrokers.github.io/tws-api/hedging.html
+        pzzaStock = USStock("PZZA")
+        # Size is 0 for hedge orders because it is calculated using the ratio
+        pzzaOrder = RelativePeggedToPrimary("SELL", 0, 0, 0)
+        pzzaOrder.parentId = dpzOrderId  # parent ID links child to parent order
+        pzzaOrder.hedgeType = "P"  # "P" stands for Pair Trade
+        pzzaOrder.hedgeParam = "5"  # 5 is the hedging ratio
+
+        self.placeOrder(self.nextOrderId(), pzzaStock, pzzaOrder)
+
+    def stop(self):
+        self.done = True
+        self.disconnect()
+
+# The REL order type is adjusted by the system automatically with the bid (for Buy) or ask (for Sell ) orders
+def RelativePeggedToPrimary(action: str, quantity: float, priceCap: float, offsetAmount: float):
+    order = Order()
+    order.action = action
+    order.orderType = "REL"
+    order.totalQuantity = quantity
+    order.lmtPrice = priceCap
+    order.auxPrice = offsetAmount
+    return order
+
+# API contract definition documentation: http://interactivebrokers.github.io/tws-api/basic_contracts.html#stk
+def USStock(ticker: str):
+    contract = Contract()
+    contract.symbol = ticker
+    contract.secType = "STK"
+    contract.exchange = "SMART"
+    contract.currency = "USD"
+    contract.primaryExchange = "NYSE"  # Should be native exchange of stock
+    return contract
+
+def main():
+    app = TestApp()
+    app.connect("127.0.0.1", 4002, 1)
+
+    Timer(5, app.stop).start()
+    app.run()
+
+if __name__ == "__main__":
+    main()</code></pre><br>
+        <div>Большинство частей этого примера покажутся вам знакомыми, если вы смотрели предыдущие уроки. Здесь обратные вызовы состояния заказа, которые мы переопределили, такие же, как и в предыдущем уроке, где обсуждалось размещение заказа, а именно: nextValidId, orderStatus, openOrder и execDetails. В нашем примере эти функции обратного вызова переопределяются только для вывода возвращаемых данных на консоль. Мы используем вспомогательную функцию под названием USStock(), чтобы предоставить поля по умолчанию для определений акций США. Вот это:</div>
+        <ol>
+          <li>тип инструмента (STK),</li>
+          <li>площадка(биржа) (СМАРТ),</li>
+          <li>валюта (долл. США),</li>
+          <li>приоритетная площадка (NYSE).</li>
+        </ol>
+        <div>так что для возврата однозначно определенного объекта контракта на акции США необходимо предоставить только символ. Поле «Первичная биржа» здесь определено как NYSE, поскольку мы размещаем заказы на акции США, котирующиеся на NYSE. Это помогает устранить двусмысленность, если в другом регионе есть контракт с тем же тикером и валютой, который также можно маршрутизировать с помощью Smart.</div>
+        <div>Мы также определяем вспомогательную функцию для создания относительных ордеров, взятую из файла OrderSamples.py, которая помогает сделать код более читабельным. Проходим в:</div>
+        <ol>
+          <li>действие, которым может быть либо покупка, либо продажа в большинстве типов учетных записей,</li>
+          <li>totalQuantity, который является размером заказа,</li>
+          <li>«priceCap», который определяет самую дальнюю цену, по которой ордер будет установлен сервером IB по мере движения рынка, и</li>
+          <li>значение смещения, которое является смещением между рыночной ценой и местом, где будет установлен ордер.</li>
+        </ol>
+        <div>Например, если это относительный ордер на покупку со смещением 0,05, а текущая рыночная цена предложения равна 10, система разместит первоначальный ордер на покупку по предельной цене 10,05. Если рынок движется вверх в этом направлении, предельная цена будет изменена системой таким образом, чтобы она оставалась со смещением 0,05 выше текущей заявки, но если рынок движется в противоположном направлении, она не изменится. Важно отметить, что Относительные ордера со смещением 0 могут вести себя по-разному при движении в обоих направлениях, как описано далее на сайте.</div>
+        <div>Основная часть кода, характерного для этой программы, начинается с функции Start. Здесь мы сначала создаем контракт на акции DPZ, используя вспомогательную функцию USStock, и создаем относительный ордер, используя вспомогательную функцию RelativePeggedToPrimary. Мы устанавливаем флаг передачи в этом объекте Order в false, чтобы этот заказ не был перенаправлен TWS на сервер IB до получения второго заказа. Используемый идентификатор заказа API — это следующий действительный идентификатор, полученный автоматически после установления исходного соединения. Затем мы вызываем placeOrder, чтобы отправить этот заказ в TWS.</div>
+        <div>Далее мы создаем второй ордер в парной торговле для PZZA, используя аналогичные шаги. Отличие этого заказа в том, что:</div>
+        <ol>
+          <li>поле parentId устанавливается как идентификатор заказа API предыдущего заказа, чтобы они были связаны вместе,</li>
+          <li>поле hedgeType имеет значение «P», чтобы указать, что это парная сделка (существуют другие доступные типы хеджирующих ордеров, такие как хеджирующая сделка Forex), и</li>
+          <li>что установлено отношение, здесь 5, чтобы указать отношение акций второго порядка к первому.</li>
+          <li>Поскольку количество акций рассчитывается системой с использованием отношения, поле totalQuantity в классе ордера устанавливается равным 0.</li>
+        </ol>
+        <div>Теперь для второго заказа вызывается метод placeOrder. В настоящее время перед размещением прикрепленного хеджирующего ордера должна быть небольшая пауза, чтобы TWS мог обработать первый ордер, здесь это 200 мс. Это требование о паузе планируется убрать в будущем. Флаг «Передать» по умолчанию установлен в True для ордеров в конструкторе класса Order, поэтому этот ордер уже настроен для передачи на сервер ИБ через TWS. Поскольку он связан с родительским заказом с помощью поля parentId, предыдущий заказ также будет передан.</div>
+        <div>Затем мы можем запустить программу, чтобы увидеть результаты. После его исполнения оба ордера должны появиться в TWS. Также будут соответствующие сообщения обратного вызова для функций API openOrder и orderStatus, а также execDetails, если есть выполнение. По сообщениям orderStatus мы можем сказать, что первый или родительский ордер должен работать, в то время как второй ордер ожидает на сервере IB выполнения исходного ордера.</div>
+      </div>
+    </div>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
+      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
+      <script>$(document).foundation();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>-->
+  </body>
+</html>

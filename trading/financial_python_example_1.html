@@ -46,31 +46,27 @@
       </div>
     </div>
     <div class="row">
-      <div class="column text-center">
-        <h3>Пример 1. График курса рубля.</h3>
+      <div class="large-12 columns">
+        <h2>Пример 1. График курса рубля.</h2>
       </div>
     </div>
     <div class="row">
-      <div class="columns large-2">&nbsp;</div>
-      <div class="columns large-8">
-        <div class="callout">
-          <div class="text-justify">
-            Напишем простой пример считывание данных о курсе рубля с сервиса yahoo finance и построим простой линейный график.Используем библиотеку <a href="https://github.com/pydata/pandas-datareader"> pandas-datareader</a>. Данная библиотека позволяет
-            читать данные из следующих источников:
-            <ol>
-              <li>Yahoo! Finance</li>
-              <li>Google Finance http://www.google.com/finance/info</li>
-              <li>FRED St. Louis FED (FRED) http://research.stlouisfed.org/fred2/series/</li>Еще библиотеки, которые позволяют работать с этими данными https://github.com/avelkoski/FRB; https://github.com/mortada/fredapi; 
-              https://github.com/zachwill/fred
-              <li>Fama/French</li>
-              <li>World Bank</li>
-              <li>OECD (Organisation for Economic Co-operation and Development) http://stats.oecd.org/SDMX-JSON/data</li>
-              <li>Eurostat http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest</li>
-              <li>EDGAR Index https://www.sec.gov/edgar/indices/fullindex.htm</li>
-            </ol>Результат представлен на рис.1
-          </div>
-          <div class="right"><a href="../python_source/financial_example_1.py">financial_example_1.py</a></div>
-          <pre class="python"><code>import os
+      <div class="columns large-12 columns">
+        <div class="text-justify">Напишем простой пример считывание данных о курсе рубля с сервиса yahoo finance и построим простой линейный график. Используем библиотеку <span class="flag_en">&nbsp;</span><a href="https://github.com/pydata/pandas-datareader"> <i class="fas fa-external-link-alt">&nbsp;</i>pandas-datareader.</a>Данная библиотека позволяет читать данные из следующих источников:
+          <ol>
+            <li>
+               Yahoo! Finance</li>
+            <li> <span class="flag_en">&nbsp;</span><a href="http://www.google.com/finance/info">&nbsp;<i class="fas fa-external-link-alt">&nbsp;</i>Google Finance </a></li>
+            <li> <span class="flag_en">&nbsp;</span><a href="http://research.stlouisfed.org/fred2/series/">&nbsp;<i class="fas fa-external-link-alt">&nbsp;</i>FRED St. Louis FED (FRED) </a></li>
+            <li>Fama/French</li>
+            <li>World Bank</li>
+            <li>OECD (Organisation for Economic Co-operation and Development) http://stats.oecd.org/SDMX-JSON/data</li>
+            <li> <span class="flag_en">&nbsp;</span><a href="http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest"><i class="fas fa-external-link-alt">&nbsp;</i>Eurostat </a></li>
+            <li> <span class="flag_en">&nbsp;</span><a href="https://www.sec.gov/edgar/indices/fullindex.htm"><i class="fas fa-external-link-alt">&nbsp;</i>EDGAR Index </a></li>
+          </ol>Результат представлен на рис.1
+        </div>
+        <div class="right"><a href="../python_source/financial_example_1.py">financial_example_1.py</a></div>
+        <pre class="python"><code>import os
 import pandas as pd
 import pandas_datareader.data as web
 import datetime
@@ -78,15 +74,15 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 # Утилита для записи графика в файл
-def save(name='', fmt='png'):
+def save(name='', type='png'):
     pwd = os.getcwd()
-    os.chdir('./pictures/%s' % fmt)
-    plt.savefig('%s.%s' % (name, fmt), fmt='png')
+    os.chdir('./pictures/')
+    plt.savefig('%s.%s' % (name, type), format=type)
     os.chdir(pwd)
 
 
 start = datetime.datetime(2016, 1, 10)
-end = datetime.datetime(2016, 7, 21)
+end = datetime.datetime(2022, 1, 30)
 
 # Параметры для надписей на кирилице
 mpl.rcParams['font.family'] = 'fantasy'
@@ -96,24 +92,23 @@ mpl.rcParams['font.fantasy'] = 'Times New Roman', 'Ubuntu','Arial','Tahoma','Cal
 gs = web.DataReader("RUB=X", 'yahoo', start, end)
 #print(gs.round(2))
 
-fig = plt.figure()
-ax1 = fig.add_subplot(111)
+fig = plt.figure(figsize=(16, 8))
+# ax1 = fig.add_subplot(111)
+ax1 = fig.subplots(1)
 ax1.plot(gs.Close)
 ax1.set_title("Курс рубля", size=20, color='black')
 ax1.set_xlabel("Дата", size=14, color='black')
 ax1.set_ylabel("Цена закрытия", size=14, color='black')
 ax1.grid(True)
 plt.tight_layout() # автоматическое выравнивание элементов на холсте plt
-save('pic_1', fmt='png')
+save('pic_1')
 plt.show()</code></pre>
-          <!--div.clearfix-->
-          <div class="card">
-            <div class="image"><img src="../images/pic_1.png"></div>
-            <div class="content"><p>Рис. 1</p></div>
-          </div>
+        <!--div.clearfix-->
+        <div class="card">
+          <div class="image"><img src="../images/pic_1.png"></div>
+          <div class="content"><p>Рис. 1</p></div>
         </div>
       </div>
-      <div class="columns large-2">&nbsp;</div>
     </div>
     <footer>
       <hr>
