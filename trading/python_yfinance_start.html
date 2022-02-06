@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>ABSOLEM.INFO | Python backtasting.</title>
+    <title>ABSOLEM.INFO | Начало работы с yfinance</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -47,77 +47,50 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <h2>Backtesting. Работа с библиотекой BT.</h2>
+        <h2>Начало работы с yfinance</h2>
       </div>
     </div>
     <div class="row">
       <div class="large-12 columns">
         <h3>Общие вопросы</h3>
-        <div><span class="flag_en">&nbsp;</span><a href="http://pmorissette.github.io/bt/"> <i class="fas fa-external-link-alt">&nbsp;</i>Официальный сайт </a>библиотеки BT</div>
+        <div>Для Anaconda устанавливаем <span class="flag_en">&nbsp;</span><a href="https://anaconda.org/conda-forge/yfinance"> <i class="fas fa-external-link-alt">&nbsp;</i>по инструкции</a></div>
+        <div>Состав библиотеки очень простой, всего три модуля:
+          <ol>
+            <li>yf.Tickers</li>
+            <li>yf.download</li>
+            <li>yf.pandas_datareader</li>
+          </ol>
+        </div>Практически все методы находятся в модуле Tickers.
+        Модуль <kbd>download</kbd> предназначен для быстрой загрузки исторических данных нескольких тикеров одновременно.
+        Модуль <kbd>pandas_datareader</kbd> предназначен для обратной совместимости с устаревшим кодом, который мы проигнорируем как не относящийся к делу, поскольку, если вы читаете это, вы, вероятно, новый пользователь библиотеки!
+        <div>Во-первых, давайте импортируем yfinance как yf и создадим себе объект тикера для определенной акции. У нас акции компании Apple и их тикер "aapl"</div>
+        <pre><code class="python3">import yfinance as yf
+&nbsp;
+apple = yf.Ticker("aapl")
+print(apple)</code></pre>
+        <div>>> yfinance.Ticker object &lt;AAPL&gt;</div>
+        <div>Помните, что теперь мы используем этот объект тикера <b>apple</b> практически для всего — вызывая для него различные методы.</div>
+        <div>Чтобы получить исторические данные, мы хотим использовать метод history(), который является наиболее «сложным» методом в библиотеке yfinance.</div>
+        <div>В качестве входных данных он принимает следующие параметры:</div>
+        <div>Это может показаться немного сложным, но в основном вы будете просто изменять период (или начало и конец) и параметры интервала.</div>
+        <div>Например, чтобы получить 1-минутные исторические данные для Apple между 01/02/2022 и 01/07/2022 (британский формат), мы просто используем объект тикера, который мы создали и запустили. Обратите внимание, что для минутных данных запрошенный диапазон должен быть в пределах последних 30 дней.</div>
+        <pre><code class="python3">apple_historical = apple.history(start="2022-01-02", end="2022-01-07", interval="1m")
+print(apple_historical)</code></pre><br><img src="images/yfinance_pic_1.JPG">
+        <h4>Фундаментальные параметры</h4>
+        <h5>Соотношение цены и прибыли (Price to Earnings Ratio)</h5>
+        <div>Вы можете получить соотношение цены и прибыли с помощью метода Ticker.info().</div>
+        <div>Ticker.info() возвращает словарь с широким спектром информации о тикере, включая такие вещи, как краткое описание, количество сотрудников, рыночная капитализация, объем, соотношение P/E, дивиденды и т. д. — рекомендуем ознакомиться с ним самостоятельно. так как это занимает много места, чтобы показать, но, короче говоря, если вы не можете найти информацию, которую ищете, с помощью других методов, попробуйте метод info()!</div>
+        <div>Чтобы получить точное соотношение цены и прибыли, поищите в словаре слово «forwardPE»:</div>
+        <pre><code class="python3">aapl = yf.Ticker("aapl")
+print(aapl.info['forwardPE'])</code></pre>
+        <h3>Ссылки по теме</h3>
         <ol>
-          <li>Рекомендации по установке</li>
-          <li>Загрузка котировок</li>
-          <li>Простейшая стратегия</li>
+          <li> <span class="flag_en">&nbsp;</span>algotrading101.com <a href="https://algotrading101.com/learn/yfinance-guide/"> <i class="fas fa-external-link-alt">&nbsp; </i>yfinance Library </a>– A Complete Guide
+            + exaple code ipynb<a href="https://github.com/GregBland/yfinance_article/blob/master/example_code.ipynb"></a>
+          </li>
+          <li> <span class="flag_en">&nbsp;</span>algotrading101.com <a href="https://algotrading101.com/learn/alpha-vantage-guide/"> <i class="fas fa-external-link-alt">&nbsp; </i>Alpha Vantage </a>– Introduction Guide</li>
+          <li> <span class="flag_en">&nbsp;</span>compucademy.net <a href="https://compucademy.net/getting-stock-data-using-python-and-yfinance/"> <i class="fas fa-external-link-alt">&nbsp; </i>article </a>– how to retrieve stock data using Python and the YFinance library</li>
         </ol>
-        <h3>Рекомендации по установке</h3>
-        <div>
-          Для установки пакета bt в системе должен быть установлен компилятор с С++.<a href="http://matthew-brett.github.io/pydagogue/python_msvc.html"> Объяснение на английском </a> для разных версий питона. (http://stackoverflow.com/questions/29909330/microsoft-visual-c-compiler-for-python-3-4)</div>
-        <div>Для установки на Anaconda2 под Windows7 мне потребовалось скачать и установить пакет <a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266"> Microsoft Visual C++ Compiler for Python 2.7 </a>. </div>
-        <div>
-           А для установки на Anaconda3 мне потребовалось
-          сначала произвести апргрейд утилиты setuptools минимальная версия 24.0
-          <kbd>pip install --upgrade setuptools</kbd>
-          потом скачиваем и устанавливаем 
-          пакет <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"> Visual CPP Build Tools </a>. При установке ставил галочку только для Windows 8.1 SDK.
-        </div>
-        <h3>Загрузка котировок</h3>
-        <div></div>Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
-        <div><a href="../python_source/bt_example_1.p">bt_example_1.py</a></div>
-        <pre><code class="python3">import bt
-data = bt.get('RUB=X', start='2016-01-01', end='2016-08-01')
-print(data.head())</code></pre>
-        <div class="clearfix"></div>
-        <div>
-          Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
-          Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
-        </div>
-        <pre class="python"><code>s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.SelectAll(),    # выбираем все бумаги;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.WeighEqually(), # в равной пропорции;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции</code></pre>
-        <div></div>Теперь можем протестировать нашу стратегию. Напишем код.
-        <pre class="python"><code># тестируем нашу стратегию
-test = bt.Backtest(s, data)
-res = bt.run(test)</code></pre>
-        <div></div>Можем вывести график результата и статистические параметры работы стратегии.
-        <pre class="python"><code># выводим график средств
-res.plot()
-# выводим статистические коэффициенты
-res.display()</code></pre>
-        <div>В итоге все вместе у нас будет выглядеть так.</div>
-        <div><a href="../python_source/bt_example_2.p">bt_example_2.py			</a></div>
-        <pre><code class="python3"># -*- coding: utf-8 -*-
-import bt
-data = bt.get('OGZPY, SBRCY', start='2016-01-01', end='2016-08-01')
-print(data.tail())
-s = bt.Strategy('s1', [bt.algos.RunMonthly(),
-                       bt.algos.SelectAll(),
-                       bt.algos.WeighEqually(),
-                       bt.algos.Rebalance()])
-# тестируем нашу стратегию
-test = bt.Backtest(s, data)
-#print(test)
-res = bt.run(test)
-# выводим график средств
-print(res)
-res.plot()
-# выводим статистические коэффициенты
-res.display()
-# выводим гистограмму прибылей и убытков
-res.plot_histogram()
-# выводим график весов акций в портфеле
-res.plot_security_weights()</code></pre>
-        <div></div>Теперь попробуем модифицировать стратегию.
       </div>
     </div>
     <footer>

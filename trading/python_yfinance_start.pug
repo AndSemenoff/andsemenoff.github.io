@@ -1,0 +1,91 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Начало работы с yfinance"
+
+block content
+	div.row: div.large-12.columns: h2 Начало работы с yfinance
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Для Anaconda устанавливаем 
+			span.flag_en &nbsp;
+			a(href="https://anaconda.org/conda-forge/yfinance") 
+				i.fas.fa-external-link-alt &nbsp;
+				| по инструкции
+		div Состав библиотеки очень простой, всего три модуля:
+			ol
+				li yf.Tickers
+				li yf.download
+				li yf.pandas_datareader
+		| Практически все методы находятся в модуле Tickers.
+
+		| Модуль <kbd>download</kbd> предназначен для быстрой загрузки исторических данных нескольких тикеров одновременно.
+
+		| Модуль <kbd>pandas_datareader</kbd> предназначен для обратной совместимости с устаревшим кодом, который мы проигнорируем как не относящийся к делу, поскольку, если вы читаете это, вы, вероятно, новый пользователь библиотеки!
+		div Во-первых, давайте импортируем yfinance как yf и создадим себе объект тикера для определенной акции. У нас акции компании Apple и их тикер "aapl"
+		
+		pre
+			code.python3
+				|import yfinance as yf
+				|&nbsp;
+				|apple = yf.Ticker("aapl")
+				|print(apple)
+		div >> yfinance.Ticker object &lt;AAPL&gt;
+		
+		div Помните, что теперь мы используем этот объект тикера <b>apple</b> практически для всего — вызывая для него различные методы.
+
+		div Чтобы получить исторические данные, мы хотим использовать метод history(), который является наиболее «сложным» методом в библиотеке yfinance.
+
+		div В качестве входных данных он принимает следующие параметры:
+
+		div Это может показаться немного сложным, но в основном вы будете просто изменять период (или начало и конец) и параметры интервала.
+
+		div Например, чтобы получить 1-минутные исторические данные для Apple между 01/02/2022 и 01/07/2022 (британский формат), мы просто используем объект тикера, который мы создали и запустили. Обратите внимание, что для минутных данных запрошенный диапазон должен быть в пределах последних 30 дней.
+		pre
+			code.python3
+				|apple_historical = apple.history(start="2022-01-02", end="2022-01-07", interval="1m")
+				|print(apple_historical)
+		br
+		img(src="images/yfinance_pic_1.JPG")
+		
+		h4 Фундаментальные параметры
+		
+		h5 Соотношение цены и прибыли (Price to Earnings Ratio)
+		div Вы можете получить соотношение цены и прибыли с помощью метода Ticker.info().
+
+		div Ticker.info() возвращает словарь с широким спектром информации о тикере, включая такие вещи, как краткое описание, количество сотрудников, рыночная капитализация, объем, соотношение P/E, дивиденды и т. д. — рекомендуем ознакомиться с ним самостоятельно. так как это занимает много места, чтобы показать, но, короче говоря, если вы не можете найти информацию, которую ищете, с помощью других методов, попробуйте метод info()!
+
+		div Чтобы получить точное соотношение цены и прибыли, поищите в словаре слово «forwardPE»:
+		pre
+			code.python3
+				|aapl = yf.Ticker("aapl")
+				|print(aapl.info['forwardPE'])
+				
+				
+				
+		h3 Ссылки по теме
+		ol
+			li 
+				span.flag_en &nbsp;
+				| algotrading101.com 
+				a(href = "https://algotrading101.com/learn/yfinance-guide/") 
+					i.fas.fa-external-link-alt &nbsp; 
+					| yfinance Library 
+				| – A Complete Guide
+				| + exaple code ipynb
+				a(href = "https://github.com/GregBland/yfinance_article/blob/master/example_code.ipynb")
+			li 
+				span.flag_en &nbsp;
+				| algotrading101.com 
+				a(href = "https://algotrading101.com/learn/alpha-vantage-guide/") 
+					i.fas.fa-external-link-alt &nbsp; 
+					| Alpha Vantage 
+				| – Introduction Guide
+			li 
+				span.flag_en &nbsp;
+				| compucademy.net 
+				a(href = "https://compucademy.net/getting-stock-data-using-python-and-yfinance/") 
+					i.fas.fa-external-link-alt &nbsp; 
+					| article 
+				| – how to retrieve stock data using Python and the YFinance library
+				

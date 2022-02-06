@@ -1,0 +1,69 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Python backtasting."
+
+block content
+	div.row: div.large-12.columns: h2 Backtesting. Работа с библиотекой BT.
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div
+			span.flag_en &nbsp;
+			a(href="http://pmorissette.github.io/bt/") 
+				i.fas.fa-external-link-alt &nbsp;
+				| Официальный сайт 
+			|библиотеки BT
+		ol
+			li Рекомендации по установке
+			li Загрузка котировок
+			li Простейшая стратегия
+		h3 Рекомендации по установке
+		div Для установки пакета bt в системе должен быть установлен компилятор с С++.
+			| <a href="http://matthew-brett.github.io/pydagogue/python_msvc.html"> Объяснение на английском </a> для разных версий питона. (http://stackoverflow.com/questions/29909330/microsoft-visual-c-compiler-for-python-3-4)
+		div Для установки на Anaconda2 под Windows7 мне потребовалось скачать и установить пакет <a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266"> Microsoft Visual C++ Compiler for Python 2.7 </a>. 
+		div 
+			| А для установки на Anaconda3 мне потребовалось
+			| сначала произвести апргрейд утилиты setuptools минимальная версия 24.0
+			| <kbd>pip install --upgrade setuptools</kbd>
+			| потом скачиваем и устанавливаем 
+			| пакет <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"> Visual CPP Build Tools </a>. При установке ставил галочку только для Windows 8.1 SDK.
+		h3 Загрузка котировок
+		div
+		| Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
+		div
+			a(href="../python_source/bt_example_1.p") bt_example_1.py
+		pre
+			code.python3
+				include ../python_source/bt_example_1.py
+		div.clearfix
+		div.
+			Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
+			Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
+		pre.python: code
+			|s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.SelectAll(),    # выбираем все бумаги;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.WeighEqually(), # в равной пропорции;
+			|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции
+
+		div
+		| Теперь можем протестировать нашу стратегию. Напишем код.
+		pre.python: code
+			|# тестируем нашу стратегию
+			|test = bt.Backtest(s, data)
+			|res = bt.run(test)
+		div
+		| Можем вывести график результата и статистические параметры работы стратегии.
+		pre.python: code
+			|# выводим график средств
+			|res.plot()
+			|# выводим статистические коэффициенты
+			|res.display()
+		div В итоге все вместе у нас будет выглядеть так.
+		div
+			a(href="../python_source/bt_example_2.p") bt_example_2.py			
+		pre
+			code.python3
+				include ../python_source/bt_example_2.py
+
+		div
+		|Теперь попробуем модифицировать стратегию.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>ABSOLEM.INFO | Python backtasting.</title>
+    <title>ABSOLEM.INFO | Скользящий лимитированный стоп ордер (Trailing Stop Limit)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -47,77 +47,88 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <h2>Backtesting. Работа с библиотекой BT.</h2>
+        <h2>Скользящий лимитированный стоп ордер (Trailing Stop Limit)</h2>
       </div>
     </div>
     <div class="row">
       <div class="large-12 columns">
         <h3>Общие вопросы</h3>
-        <div><span class="flag_en">&nbsp;</span><a href="http://pmorissette.github.io/bt/"> <i class="fas fa-external-link-alt">&nbsp;</i>Официальный сайт </a>библиотеки BT</div>
-        <ol>
-          <li>Рекомендации по установке</li>
-          <li>Загрузка котировок</li>
-          <li>Простейшая стратегия</li>
-        </ol>
-        <h3>Рекомендации по установке</h3>
-        <div>
-          Для установки пакета bt в системе должен быть установлен компилятор с С++.<a href="http://matthew-brett.github.io/pydagogue/python_msvc.html"> Объяснение на английском </a> для разных версий питона. (http://stackoverflow.com/questions/29909330/microsoft-visual-c-compiler-for-python-3-4)</div>
-        <div>Для установки на Anaconda2 под Windows7 мне потребовалось скачать и установить пакет <a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266"> Microsoft Visual C++ Compiler for Python 2.7 </a>. </div>
-        <div>
-           А для установки на Anaconda3 мне потребовалось
-          сначала произвести апргрейд утилиты setuptools минимальная версия 24.0
-          <kbd>pip install --upgrade setuptools</kbd>
-          потом скачиваем и устанавливаем 
-          пакет <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"> Visual CPP Build Tools </a>. При установке ставил галочку только для Windows 8.1 SDK.
+        <div>Предполагаем, что если мы хотим выставить скользящий лимитированный стоп ордер на продажу, то мы хотим продать, как можно дороже. И, наборот, если мы хотим выставить скользящий лимитированный стоп ордер на куплю, то мы хотим купить, как можно дешевле.</div>
+        <div>Обозначим текущую цену сделки за <b>CurrentPrice</b></div>
+        <div>Где для <b>action = "SELL"</b>:
+          <ul>
+            <li><b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>росте</u> <b>CurrentPrice</b></li>
+            <li><b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>продажу</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту</li>
+            <li><b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> - <b>auxPrice</b>. Но это условие работает только при <u>увеличении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> > <b>trailStopPrice</b> - <b>auxPrice</b>.</li>
+          </ul>
         </div>
-        <h3>Загрузка котировок</h3>
-        <div></div>Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
-        <div><a href="../python_source/bt_example_1.p">bt_example_1.py</a></div>
-        <pre><code class="python3">import bt
-data = bt.get('RUB=X', start='2016-01-01', end='2016-08-01')
-print(data.head())</code></pre>
-        <div class="clearfix"></div>
-        <div>
-          Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
-          Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
+        <div>Где для <b>action = "BUY"</b>:
+          <ul>
+            <li><b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>снижении</u> <b>CurrentPrice</b></li>
+            <li><b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>куплю</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту</li>
+            <li><b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> + <b>auxPrice</b>. Но это условие работает только при <u>уменьшении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> < <b>trailStopPrice</b> + <b>auxPrice</b>.</li>
+          </ul>
         </div>
-        <pre class="python"><code>s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.SelectAll(),    # выбираем все бумаги;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.WeighEqually(), # в равной пропорции;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции</code></pre>
-        <div></div>Теперь можем протестировать нашу стратегию. Напишем код.
-        <pre class="python"><code># тестируем нашу стратегию
-test = bt.Backtest(s, data)
-res = bt.run(test)</code></pre>
-        <div></div>Можем вывести график результата и статистические параметры работы стратегии.
-        <pre class="python"><code># выводим график средств
-res.plot()
-# выводим статистические коэффициенты
-res.display()</code></pre>
-        <div>В итоге все вместе у нас будет выглядеть так.</div>
-        <div><a href="../python_source/bt_example_2.p">bt_example_2.py			</a></div>
-        <pre><code class="python3"># -*- coding: utf-8 -*-
-import bt
-data = bt.get('OGZPY, SBRCY', start='2016-01-01', end='2016-08-01')
-print(data.tail())
-s = bt.Strategy('s1', [bt.algos.RunMonthly(),
-                       bt.algos.SelectAll(),
-                       bt.algos.WeighEqually(),
-                       bt.algos.Rebalance()])
-# тестируем нашу стратегию
-test = bt.Backtest(s, data)
-#print(test)
-res = bt.run(test)
-# выводим график средств
-print(res)
-res.plot()
-# выводим статистические коэффициенты
-res.display()
-# выводим гистограмму прибылей и убытков
-res.plot_histogram()
-# выводим график весов акций в портфеле
-res.plot_security_weights()</code></pre>
-        <div></div>Теперь попробуем модифицировать стратегию.
+        <div>Дополнительная информация по скользящим лимитированным стоп ордерам:<span class="flag_en">&nbsp;</span><a href="https://interactivebrokers.github.io/tws-api/basic_orders.html#trailingstoplimit"><i class="fas fa-external-link-alt">&nbsp;</i></a></div><br>
+        <pre><code class="python3">from ibapi.client import EClient
+from ibapi.wrapper import EWrapper
+from ibapi.contract import Contract
+from ibapi.order import *
+from threading import Timer
+
+class TestApp(EWrapper, EClient):
+    def __init__(self):
+        EClient.__init__(self, self)
+
+    def error(self, reqId , errorCode, errorString):
+        print("Error: ", reqId, " ", errorCode, " ", errorString)
+
+    def nextValidId(self, orderId ):
+        self.nextOrderId = orderId
+        self.start()
+
+    def orderStatus(self, orderId , status, filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice):
+        print("OrderStatus. Id: ", orderId, ", Status: ", status, ", Filled: ", filled, ", Remaining: ", remaining, ", LastFillPrice: ", lastFillPrice)
+
+    def openOrder(self, orderId, contract, order, orderState):
+        print("OpenOrder. ID:", orderId, contract.symbol, contract.secType, "@", contract.exchange, ":", order.action, order.orderType, order.totalQuantity, orderState.status)
+
+    def execDetails(self, reqId, contract, execution):
+        print("ExecDetails. ", reqId, contract.symbol, contract.secType, contract.currency, execution.execId,
+              execution.orderId, execution.shares, execution.lastLiquidity)
+
+    def start(self):
+    
+        FX_contract = Contract() 
+        FX_contract.symbol = "USD"
+        FX_contract.secType = "CASH"
+        FX_contract.exchange = "IDEALPRO"
+        FX_contract.currency = "RUB"
+    
+        order = Order()
+        order.action = "BUY"
+        order.orderType = "TRAIL LIMIT"
+        order.totalQuantity = 25000
+        order.trailStopPrice = 76.99
+        order.lmtPriceOffset = 0.02
+        order.auxPrice = 0.03  # Trailing Amt field
+        
+        self.placeOrder(self.nextOrderId, FX_contract, order)
+
+    def stop(self):
+        self.done = True
+        self.disconnect()
+
+def main():
+    app = TestApp()
+    app.nextOrderId = 0
+    app.connect("127.0.0.1", 7497, 9)
+
+    Timer(3, app.stop).start()
+    app.run()
+
+if __name__ == "__main__":
+    main()</code></pre><br>
       </div>
     </div>
     <footer>

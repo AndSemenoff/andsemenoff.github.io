@@ -1,0 +1,30 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Скользящий лимитированный стоп ордер (Trailing Stop Limit)"
+
+block content
+	div.row: div.large-12.columns: h2 Скользящий лимитированный стоп ордер (Trailing Stop Limit)
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div Предполагаем, что если мы хотим выставить скользящий лимитированный стоп ордер на продажу, то мы хотим продать, как можно дороже. И, наборот, если мы хотим выставить скользящий лимитированный стоп ордер на куплю, то мы хотим купить, как можно дешевле.
+		div Обозначим текущую цену сделки за <b>CurrentPrice</b>
+		div Где для <b>action = "SELL"</b>:
+			ul
+				li <b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>росте</u> <b>CurrentPrice</b>
+				li <b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>продажу</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту
+				li <b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> - <b>auxPrice</b>. Но это условие работает только при <u>увеличении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> > <b>trailStopPrice</b> - <b>auxPrice</b>.
+		div Где для <b>action = "BUY"</b>:
+			ul
+				li <b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>снижении</u> <b>CurrentPrice</b>
+				li <b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>куплю</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту
+				li <b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> + <b>auxPrice</b>. Но это условие работает только при <u>уменьшении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> < <b>trailStopPrice</b> + <b>auxPrice</b>.
+		div Дополнительная информация по скользящим лимитированным стоп ордерам:
+			span.flag_en &nbsp;
+			a(href = "https://interactivebrokers.github.io/tws-api/basic_orders.html#trailingstoplimit"): i.fas.fa-external-link-alt &nbsp;
+		
+		| <br>
+		pre
+			code.python3
+				include code/trailing_stop_limit_order_example_tws.py
+		| <br>
