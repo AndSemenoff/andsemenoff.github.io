@@ -7,22 +7,41 @@ block title
 
 block content
 	div.row: div.large-12.columns: h2 Python для финансовых вычислений
-		| <span><small> Обновлено: январь 2022.</small></span>
+		| <span><small> Обновлено: февраль 2022.</small></span>
 	div.row: div.large-12.columns
-		h3 Общие вопросы
+		div Содержание
+		ul
+			li 
+				a(href="#general_issues") Общие вопросы
+			li 
+				a(href="#Sites") Сайты
+			li 
+				a(href="#articles") Статьи [Финансовые вычисления + python]
+			li 
+				a(href="#libs") Финансовые библиотеки для питона
+			li 
+				a(href="#competitions") Соревнования
+			li 
+				a(href="#video") Видео
+			li 
+				a(href="#books") Книги
+			li 
+				a(href="#notations") Обозначения
+			
+		h3(id ="general_issues") Общие вопросы
 		div Для финансовых вычислений на питоне я использую пакет 
 			span.flag_en &nbsp;
-			a(href="https://www.anaconda.com/products/individual")
+			a(href="https://www.anaconda.com/products/individual" target="_blank")
 				i.fas.fa-external-link-alt &nbsp;
 				| Anaconda&nbsp;
 			| для питона версии 3
 
 		div Загрузку исторических данных по российскому рынку легко можно сделать на сайте 
 			span.flag_ru &nbsp;
-			a(href="http://mfd.ru/export") МФД 
+			a(href="http://mfd.ru/export" target="_blank") МФД 
 			| или на сайте 
 			span.flag_ru &nbsp;
-			a(href="https://www.finam.ru/profile/moex-akcii/sberbank/export/") Финам
+			a(href="https://www.finam.ru/profile/moex-akcii/sberbank/export/" target="_blank") Финам
 
 		ol
 			li 
@@ -42,23 +61,26 @@ block content
 				a(href="financial_python_example_3.html") 
 					i.far.fa-eye &nbsp;
 					| Пример. 
-				| Определение стоимости облигаций с фиксированным купоном.				
+				| Определение стоимости облигаций с фиксированным купоном.
 			li 
 				span.flag_ru &nbsp;
 				a(href="fin_py_ex_EIAgov_API.html") 
 					i.far.fa-eye &nbsp;
 					| Пример. 
 				| Получение данных с сайта EIA - независимого статистического агентства США. 
-				a(href="https://ru.wikipedia.org/wiki/Energy_Information_Administration"): i.fas.fa-external-link-alt &nbsp;WiKi.
+				a(href="https://ru.wikipedia.org/wiki/Energy_Information_Administration" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+					i.fab.fa-wikipedia-w
+					WiKi.
 			li
 				span.flag_ru &nbsp;
 				a(href="python_yfinance_start.html") 
 					i.far.fa-eye &nbsp;
 				| Начало работы с библиотекой <b>yfinance</b>. | 
-				a(href="https://nbviewer.jupyter.org/github/AndSemenoff/my-first-binder/tree/main/start.ipynb")
+				a(href="https://nbviewer.jupyter.org/github/AndSemenoff/my-first-binder/tree/main/start.ipynb" target="_blank")
 					img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg") 
 				|&nbsp;|&nbsp;
-				a(href="https://mybinder.org/v2/gh/AndSemenoff/my-first-binder/HEAD?labpath=start.ipynb")
+				a(href="https://mybinder.org/v2/gh/AndSemenoff/my-first-binder/HEAD?labpath=start.ipynb" target="_blank")
 					img(src="https://mybinder.org/badge_logo.svg")
 			li
 				span.label.success устарело
@@ -83,192 +105,185 @@ block content
 					| Работа с NumPy
 				
 
-		h3 Сайты
+		h3(id="Sites") Сайты
 		ol
 			li
 				span.flag_en &nbsp;
-				a(href="http://www.quantatrisk.com/")
+				i.fas.fa-heartbeat &nbsp;
+				i.fas.fa-book-open &nbsp;
+				img(src="http://www.google.com/s2/favicons?domain=https://www.ml-quant.com/" alt="Quantatrisk Icon") 
+				| &nbsp;
+				a(href="https://www.ml-quant.com/" target="_blank")
+					i.fas.fa-external-link-alt &nbsp;
+					| ML-Quant
+			li
+				span.flag_en &nbsp;
+				img(src="http://www.google.com/s2/favicons?domain=https://quantatrisk.com/" alt="Quantatrisk Icon") 
+				| &nbsp;
+				a(href="http://www.quantatrisk.com/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| Quant at Risk
 			li
 				span.flag_en &nbsp;
-				a(href="https://pyquantnews.com/")
+				img(src="http://www.google.com/s2/favicons?domain=https://pyquantnews.com/") 
+				| &nbsp;
+				a(href="https://pyquantnews.com/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| pyQuantNews
 			li
 				span.flag_en &nbsp;
-				a(href="https://quantocracy.com/")
+				img(src="http://www.google.com/s2/favicons?domain=https://quantocracy.com/" alt="Quantocracy Icon") 
+				| &nbsp;
+				a(href="https://quantocracy.com/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| quantocracy 
 				| This is a curated mashup of quantitative trading links
 			li
 				span.flag_en &nbsp;
-				a(href="https://www.quantinsti.com/")
+				img(src="http://www.google.com/s2/favicons?domain=https://quantinsti.com/" alt="Quantinsti Icon") 
+				| &nbsp;
+				a(href="https://www.quantinsti.com/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| quantinsti
 			li
 				span.flag_en &nbsp;
-				a(href="http://quant.stackexchange.com")
+				a(href="http://quant.stackexchange.com" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| quant.stackexchange.com
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/freqtrade/freqtrade/")
+				a(href="https://github.com/freqtrade/freqtrade/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| freqtrade 
 				| бот для торговли на криптоплащадках
-				a(href="https://www.freqtrade.io/en/stable/") 
+				a(href="https://www.freqtrade.io/en/stable/" target="_blank") 
 					i.fas.fa-external-link-alt &nbsp;
 					| freqtrade.io
 			li
 				span.flag_en &nbsp;
+				img(src="http://www.google.com/s2/favicons?domain=https://learndatasci.com/" alt="Learndatasci Icon") 
+				| &nbsp;
 				| learndatasci.com 
-				a(href="https://www.learndatasci.com/")
+				a(href="https://www.learndatasci.com/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| learndatasci
 			li
 				span.flag_en &nbsp;
 				| newmarkrisk.com 
-				a(href="https://newmarkrisk.com/blog")
+				img(src="http://www.google.com/s2/favicons?domain=https://newmarkrisk.com/" alt="Newmarkrisk Icon") 
+				| &nbsp;
+				a(href="https://newmarkrisk.com/blog" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| Статьи по опционным стратегиям
 			li
 				span.flag_en &nbsp;
 				| не обновлялось с 2016 
-				a(href="http://www.turingfinance.com") TuringFinance 
+				a(href="http://www.turingfinance.com" target="_blank") TuringFinance 
 				| Супер интересный сайт. И есть супер статья 
-				a(href="http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/") Стохастические процессы в финансах на питоне. 
+				a(href="http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/" target="_blank") Стохастические процессы в финансах на питоне. 
 				| и еще 
-				a(href="http://turingfinance.com/interactive-stochastic-processes/") стохастические процессы в интерактиве 
+				a(href="http://turingfinance.com/interactive-stochastic-processes/" target="_blank") стохастические процессы в интерактиве 
 				| И сам сайт заслуживает внимания. 
-				a(href="https://github.com/StuartGordonReid") Github аккаунт автора этого сайта
+				a(href="https://github.com/StuartGordonReid" target="_blank") Github аккаунт автора этого сайта
 			li
 				span.label.success устарело
-				a(href="http://venjin1.com") Онлайн инструментарий BSM, Volatility etc.
+				a(href="http://venjin1.com" target="_blank") Онлайн инструментарий BSM, Volatility etc.
 			li
 				span.label.success устарело
-				a(href="https://mktstk.wordpress.com/") Блог по визуализации финансовых данных
+				a(href="https://mktstk.wordpress.com/" target="_blank") Блог по визуализации финансовых данных
+
 			li 
 				span.flag_en &nbsp;
-				a(href="https://github.com/rsvp/fecon235")
-					i.fas.fa-external-link-alt &nbsp;
-				| fecon235 :: Notebooks for financial economics
-			li 
-				span.flag_en &nbsp;
-				a(href="https://irosyadi.gitbook.io/irosyadi/note/awesome-jupyter")
-					i.fas.fa-external-link-alt &nbsp;
-				| awesome-jupyter
-			li 
-				span.flag_en &nbsp;
-				a(href="https://github.com/markusschanta/awesome-jupyter")
-					i.fas.fa-external-link-alt &nbsp;
-				| awesome-jupyter
-			li 
-				span.flag_en &nbsp;
-				a(href="https://econ-ark.org/")
+				a(href="https://econ-ark.org/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| econ-ark.org
 			li 
 				span.flag_en &nbsp;
-				a(href="https://open-econ.org/")
+				a(href="https://open-econ.org/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| open-econ.org
 			li 
 				span.flag_en &nbsp;
-				a(href="https://project-awesome.org/antontarasenko/awesome-economics")
+				a(href="https://project-awesome.org/antontarasenko/awesome-economics" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| awesome-economics
 			li 
 				span.flag_en &nbsp;
-				a(href="https://github.com/alan-turing-institute/the-turing-way")
+				a(href="https://github.com/alan-turing-institute/the-turing-way" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| the-turing-way				
 
-		h3 Соревнования
+		h3(id="articles") Статьи [Финансовые вычисления + python]
 		ol
 			li 
 				span.flag_en &nbsp;
-				a(href="http://www.quantiacs.com") Quantiacs. 
-				| Можно писать на python
-			li 
-				span.flag_ru &nbsp;
-				a(href="https://quantnet.ai/") quantnet.ai. 
-				| Можно писать на python. Русские владельцы. Призы в рублях. Ничего не сказано про авторские права на стратегию!
-				
-			li
-				span.flag_en &nbsp;
-				a(href="https://www.quantconnect.com") Quantconnect.
-			li
-				span.label.success устарело
-				a(href="http://hftbattle.com/") High-Frequency Trading Battle. 
-				| Соревнование среди алгоритмов высокочастотной торговли. Используемый язык - С. Сайт на русском языке.
-				
-			li
-				span.label.success устарело
-				a(href="http://mmcfo.ru/") Молодежный центр изучения финансовых операций. 
-				| Проводит разные конкурсы для молодежи(школьников, студентов).
-			li 
-				span.label.success устарело
-				a(href="http://www.quantopian.com/") Quantopian. 
-				| Можно писать на python
-
-		h3 Статьи [Финансовые вычисления + python]				
-		ol
+				i.fab.fa-github &nbsp;
+				a(href="https://github.com/dedwards25/Python_Option_Pricing" target="_blank")
+					i.fas.fa-external-link-alt &nbsp;
+				| Библиотека Python_Option_Pricing
+				| с вычислением цены опционов. Много отличной теории. 
+				i.fas.fa-book-open &nbsp;
 			li 
 				span.flag_en &nbsp;
 				| QuantConnect.com&nbsp;
-				a(href="https://www.quantconnect.com/tutorials/strategy-library")
+				a(href="https://www.quantconnect.com/tutorials/strategy-library" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| Сборник 
 				| стратегий с кодом на Python.
 			li 
 				span.flag_en &nbsp;
 				| Kaggle.com&nbsp;
-				a(href="https://www.kaggle.com/nvukobrat/mutual-funds-and-etfs-analysis-python") 
+				a(href="https://www.kaggle.com/nvukobrat/mutual-funds-and-etfs-analysis-python" target="_blank") 
 					i.fas.fa-external-link-alt &nbsp;
 					| Статья 
 				| Mutual Funds and ETFs analysis - Python.
 			li 
 				span.flag_en &nbsp;
 				| algotrading101.com&nbsp;
-				a(href="https://algotrading101.com/learn/backtrader-for-backtesting/")
+				a(href="https://algotrading101.com/learn/backtrader-for-backtesting/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| Статья 
 				| Backtrader for backtesting.
 			li 
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/nickmccullum/algorithmic-trading-python") статья 
+				a(href="https://github.com/nickmccullum/algorithmic-trading-python" target="_blank") статья 
 				| algorithmic trading python.
-				a(href="https://www.youtube.com/watch?v=xfzGZB4HhEE") видео
+				a(href="https://www.youtube.com/watch?v=xfzGZB4HhEE" target="_blank") видео
 			li 
 				span.flag_en &nbsp;
 				| robusttechhouse.com&nbsp;
-				a(href="http://robusttechhouse.com/bitcoin-trading-strategies-backtest-with-pyalgotrade/")
+				a(href="http://robusttechhouse.com/bitcoin-trading-strategies-backtest-with-pyalgotrade/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| Алгоритм 
 				| торговли биткоинами с использованием библиотеки PyAlgoTrade.
+			li 
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				a(href="https://github.com/Hvass-Labs/FinanceOps" target="_blank") Hvass-Labs 
+					i.fas.fa-external-link-alt &nbsp;
+				| Много статей с кодом colab и ipynb и видео, отдельно pdf.
 
 			li 
 				span.flag_en &nbsp;
-				a(href="http://robusttechhouse.com/python-backtesting-libraries-for-quant-trading-strategies/")
+				a(href="http://robusttechhouse.com/python-backtesting-libraries-for-quant-trading-strategies/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					| Питон библиотеки&nbsp;
 				| для исторического тестирования алгоритмов торговли.
 			li 
 				span.flag_en &nbsp;
-				a(href="http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/")
+				a(href="http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| How to download fundamentals data with Python.
 			li 
 				span.flag_en &nbsp;
-				a(href="https://quant.stackexchange.com/questions/27741/understanding-yang-zhang-volatility-estimator")
+				a(href="https://quant.stackexchange.com/questions/27741/understanding-yang-zhang-volatility-estimator" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| Understanding Yang-Zhang Volatility Estimator.
 			li 
 				span.flag_en &nbsp;
-				a(href="https://quant.stackexchange.com/questions/11306/what-is-the-equation-for-garman-klass-volatility")
+				a(href="https://quant.stackexchange.com/questions/11306/what-is-the-equation-for-garman-klass-volatility" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| Формула Garman Klass для волатильности.
 			li 
@@ -292,30 +307,38 @@ block content
 			li 
 				span.flag_en &nbsp;
 				| analyticsvidhya.com 
-				a(href="https://www.analyticsvidhya.com/blog/2021/06/download-financial-dataset-using-yahoo-finance-in-python-a-complete-guide/")
+				a(href="https://www.analyticsvidhya.com/blog/2021/06/download-financial-dataset-using-yahoo-finance-in-python-a-complete-guide/" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| Download Financial Dataset Using Yahoo Finance in Python | A Complete Guide
 			li 
 				span.flag_en &nbsp;
 				| colab&nbsp;
-				a(href="https://colab.research.google.com/github/google/tf-quant-finance/blob/master/tf_quant_finance/examples/jupyter_notebooks/American_Option_Black_Scholes.ipynb")
+				a(href="https://colab.research.google.com/github/google/tf-quant-finance/blob/master/tf_quant_finance/examples/jupyter_notebooks/American_Option_Black_Scholes.ipynb" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| American Option Pricing in TFF under the Black-Scholes Model.
 
 			li 
 				span.flag_en &nbsp;
-				a(href="https://github.com/emfhal/Sentiment-Analysis-for-Stock-Price-Prediction-using-Bloomberg-Through-utilizing-Python-and-Machine-L")
+				a(href="https://github.com/emfhal/Sentiment-Analysis-for-Stock-Price-Prediction-using-Bloomberg-Through-utilizing-Python-and-Machine-L" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| Sentiment Analysis for Stock Price Prediction using Bloomberg Through utilizing Python and Machine Learning. 
-				a(href="https://emfhal.medium.com/ml-bloomberg-and-python-c82332157468")
+				a(href="https://emfhal.medium.com/ml-bloomberg-and-python-c82332157468" target="_blank")
 					i.fas.fa-external-link-alt &nbsp; 
 					| emfhal.medium.com
 			li 
 				span.flag_en &nbsp;
 				| notebook.community&nbsp;
-				a(href="https://notebook.community/arcyfelix/Courses/17-09-17-Python-for-Financial-Analysis-and-Algorithmic-Trading/07-Stock-Market-Analysis-Capstone-Project/.ipynb_checkpoints/Stock%20Market%20Analysis%20Project-checkpoint")
+				a(href="https://notebook.community/arcyfelix/Courses/17-09-17-Python-for-Financial-Analysis-and-Algorithmic-Trading/07-Stock-Market-Analysis-Capstone-Project/.ipynb_checkpoints/Stock%20Market%20Analysis%20Project-checkpoint" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
-				| Stock Market Analysis Project.
+				| Stock Market Analysis Project. 
+				a(href="https://github.com/theoneandonlywoj/Courses/blob/master/17-09-17-Python-for-Financial-Analysis-and-Algorithmic-Trading/07-Stock-Market-Analysis-Capstone-Project/Stock%20Market%20Analysis%20Project.ipynb" target="_blank") alt ipynb-
+			li 
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				| LongOnly&nbsp;
+				a(href="https://github.com/LongOnly/Quantitative-Notebooks" target="_blank")
+					i.fas.fa-external-link-alt &nbsp;
+				| Quantitative-Notebooks. 
 
 
 		ol Модели ценообразования опционов
@@ -327,150 +350,359 @@ block content
 			li Модель Монте-Карло
 			li Модели ценообразования опционов на базе кривой доходности
 
-		h3 Финансовые библиотеки для питона
+		h3(id="libs") Финансовые библиотеки для питона
 		ol 
+			li Сборники ссылок
+				ol
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| wilsonfreitas 
+						a(href="https://github.com/wilsonfreitas/awesome-quant" target="_blank") 
+							i.fas.fa-external-link-alt &nbsp;
+						| awesome-quant 
+						| - сборник ссылок на ресурсы по финансовым вычислениям не только на питоне
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| theoneandonlywoj 
+						a(href="https://github.com/theoneandonlywoj/Courses" target="_blank") 
+							i.fas.fa-external-link-alt &nbsp;
+						| Courses 
+						| - сборник ссылок на курсы по финансовым вычислениям в формате ipynb
+
+					li 
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| cantaro86 
+						a(href="https://github.com/cantaro86/Financial-Models-Numerical-Methods" target="_blank") 
+							i.fas.fa-external-link-alt &nbsp;
+						| Financial-Models-Numerical-Methods. Коллекция ipynb.
+					li 
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| rsvp 
+						a(href="https://github.com/rsvp/fecon235" target="_blank") 
+							i.fas.fa-external-link-alt &nbsp;
+						| fecon235 :: Notebooks for financial economics
+					li 
+						span.flag_en &nbsp;
+						| gitbook.io
+						| irosyadi 
+						a(href="https://irosyadi.gitbook.io/irosyadi/note/awesome-jupyter" target="_blank") 
+							i.fas.fa-external-link-alt &nbsp;
+						| awesome-jupyter
+					li 
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| markusschanta 
+						a(href="https://github.com/markusschanta/awesome-jupyter" target="_blank") 
+							i.fas.fa-external-link-alt &nbsp;
+						| awesome-jupyter
+			li 
+				span.flag_en &nbsp;
+				i.fas.fa-heartbeat &nbsp;
+				| QuantEcon.org
+				a(href="https://quantecon.org/" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Open source code for economic modeling. Много ipynb, notebooks, лекций, книг.
+			li
+				span.flag_en &nbsp;
+				i.fas.fa-heartbeat &nbsp;
+				| domokane 
+				a(href="https://github.com/domokane/FinancePy" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| FinancePy - финансовая библиотека 
+				a(href="https://github.com/domokane/FinancePy/tree/master/notebooks" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+					| ipynb
+			li
+				span.flag_en &nbsp;
+				i.fas.fa-heartbeat &nbsp;
+				| statsmodels.org 
+				a(href="https://www.statsmodels.org/stable/index.html" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| statsmodels - 
+				| статистические модели, анализ временных рядов
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/wilsonfreitas/awesome-quant") awesome-quant 
-				| - сборник ссылок на ресурсы по финансовым вычислениям не только на питоне
+				i.fas.fa-heartbeat &nbsp;
+				a(href="https://github.com/Nasdaq/data-link-python" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Nasdaq data link python - 
+				| данные с биржи Nasdaq
+			
 			li Библиотеки по трэйдингу и историческому тестированию
 				ol
 					li
 						span.flag_en &nbsp;
-						a(href="https://www.tradingwithpython.com") TradingWithPython
+						a(href="https://www.tradingwithpython.com" target="_blank") TradingWithPython
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="https://github.com/abbass2/pyqstrat") pyqstrat
+						a(href="https://github.com/abbass2/pyqstrat" target="_blank") pyqstrat
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="https://github.com/Blankly-Finance/Blankly") Blankly
+						a(href="https://github.com/Blankly-Finance/Blankly" target="_blank") Blankly
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="https://github.com/quantopian/zipline") ZipLine
+						a(href="https://github.com/mcdallas/wallstreet" target="_blank") wallstreet 
+							| Данные из Google finance по акциям и опционам
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="https://github.com/ematvey/pybacktest") PyBacktest
+						a(href="https://github.com/quantopian/zipline" target="_blank") ZipLine
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						a(href="https://github.com/ematvey/pybacktest" target="_blank") PyBacktest
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
 						a(href="http://ta-lib.org") TA-Lib.org | 
-						a(href="http://mrjbq7.github.io/ta-lib/") TA-Lib
+						a(href="http://mrjbq7.github.io/ta-lib/" target="_blank") TA-Lib
 						
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="http://gbeced.github.io/pyalgotrade/") PyAlgoTrade
+						a(href="http://gbeced.github.io/pyalgotrade/" target="_blank") PyAlgoTrade
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="https://github.com/quantopian/pyfolio") PyFolio
+						a(href="https://github.com/quantopian/pyfolio" target="_blank") PyFolio
 					
 					li 
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp;
-						a(href="http://pmorissette.github.io/bt/") <b>BT</b> 
+						a(href="http://pmorissette.github.io/bt/" target="_blank") <b>BT</b> 
 						|- backtesting
 			li 
 				span.flag_en &nbsp;
 				| notebook.community 
-				a(href="https://notebook.community/") notebook.community 
+				a(href="https://notebook.community/" target="_blank") notebook.community 
 				|- разные ipynb
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/dbrojas/optlib") OptLib 
-				| - библиотека по вычислению премий опционов. Есть много теории
+				i.fas.fa-heartbeat &nbsp;
+				a(href="https://github.com/dbrojas/optlib" target="_blank") OptLib 
+				| - библиотека по вычислению премий опционов. Есть много теории 
+				i.fas.fa-book-open &nbsp;
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/federicomariamassari/willowtree") willowtree 
+				a(href="https://github.com/federicomariamassari/willowtree" target="_blank") willowtree 
 				| - implementation of Michael Curran's derivatives pricing model of the same name.
 			li 
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="http://pmorissette.github.io/ffn/index.html") <b>ffn</b> 
+				a(href="http://pmorissette.github.io/ffn/index.html" target="_blank") <b>ffn</b> 
 				| - библиотека финансовых функций
 			li 
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="http://skillachie.github.io/finsymbols/") <b>finsymbols</b> 
+				i.fas.fa-blind &nbsp;
+				a(href="http://skillachie.github.io/finsymbols/" target="_blank") <b>finsymbols</b> 
 				| - библиотека для вывода символов акций входящих в S&P500 и другие
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/yhilpisch/dx") <b>DX</b> 
+				a(href="https://github.com/yhilpisch/dx" target="_blank") <b>DX</b> 
 				| библиотека для анализа деривативов
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/matplotlib/mplfinance") Financial Markets Data Visualization using Matplotlib
+				a(href="https://github.com/matplotlib/mplfinance" target="_blank") Financial Markets Data Visualization using Matplotlib
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/gabrielepompa88/pyBlackScholesAnalytics") <b>pyBlackScholesAnalytics</b> 
-				| <b>NB!</b>
+				a(href="https://github.com/gabrielepompa88/pyBlackScholesAnalytics" target="_blank") <b>pyBlackScholesAnalytics</b> 
+				| <b>NB!</b> 
+				i.fas.fa-book-open
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/jasonstrimpel/volatility-trading") A complete set of volatility estimators based on Euan Sinclair's Volatility Trading
+				a(href="https://github.com/jasonstrimpel/volatility-trading" target="_blank") A complete set of volatility estimators based on Euan Sinclair's Volatility Trading
 			li Работа с данными Yahoo Finance
 				ol
 					li
 						span.flag_en &nbsp;
 						| pypi 
-						a(href="https://pypi.org/project/yfinance/") <b>yfinance</b> 
+						a(href="https://pypi.org/project/yfinance/" target="_blank") <b>yfinance</b> 
 						| - Download market data from Yahoo! Finance's API
 					li
 						span.flag_en &nbsp;
 						i.fab.fa-github &nbsp; 
-						a(href="https://github.com/JECSand/yahoofinancials") <b>yahoofinancials</b> 
+						a(href="https://github.com/JECSand/yahoofinancials" target="_blank") <b>yahoofinancials</b> 
 						| - A powerful financial data module used for pulling data from Yahoo Finance.
 					li
 						span.flag_en &nbsp;
 						| theautomatic.net 
-						a(href="http://theautomatic.net/yahoo_fin-documentation/") <b>yahoo_fin</b> 
+						a(href="http://theautomatic.net/yahoo_fin-documentation/" target="_blank") <b>yahoo_fin</b> 
 						| Python wrapper yahoo finance
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/pydata/pandas-datareader") <b>pandas-datareader</b> 
+				a(href="https://github.com/pydata/pandas-datareader" target="_blank") <b>pandas-datareader</b> 
 				| - Extract data from a wide range of Internet sources into a pandas DataFrame
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/avelkoski/FRB") <b>FRB</b> 
-				| Python Client for FRED® API 
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/mortada/fredapi") <b>fredapi</b> 
-				| Python API for the FRED data provided by the Federal Reserve Bank of St. Louis.
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/zachwill/fred") <b>fred</b> 
-				| Python wrapper of the St. Louis Federal Reserve Bank's
+			li Работа с данными FRED® API
+				ol
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| 7astro7 
+						a(href="https://github.com/7astro7/full_fred" target="_blank") <b>full_fred</b> 
+						| Python interface to FRED
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| jjotterson 
+						a(href="https://github.com/jjotterson/datapungi_fed" target="_blank") <b>datapungi_fed</b> 
+						| Python Client for FRED® API
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| letsgoexploring 
+						a(href="https://github.com/letsgoexploring/fredpy" target="_blank") <b>fredpy</b> 
+						| Python module for easily retrieving and manipulating data series from Federal Reserve Economic Data. 
+						| Есть примеры использования. 
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| avelkoski 
+						a(href="https://github.com/avelkoski/FRB" target="_blank") <b>FRB</b> 
+						| Python Client for FRED® API 
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| mortada 
+						a(href="https://github.com/mortada/fredapi" target="_blank") <b>fredapi</b> 
+						| Python API for the FRED data provided by the Federal Reserve Bank of St. Louis.
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						| zachwill 
+						a(href="https://github.com/zachwill/fred" target="_blank") <b>fred</b> 
+						| Python wrapper of the St. Louis Federal Reserve Bank's
 
+		h3(id="competitions") Соревнования
+		ol
+			li 
+				span.flag_en &nbsp;
+				a(href="http://www.quantiacs.com" target="_blank") Quantiacs. 
+				| Можно писать на python
+			li 
+				span.flag_ru &nbsp;
+				a(href="https://quantnet.ai/" target="_blank") quantnet.ai. 
+				| Можно писать на python. Русские владельцы. Призы в рублях. Ничего не сказано про авторские права на стратегию!
 				
+			li
+				span.flag_en &nbsp;
+				a(href="https://www.quantconnect.com" target="_blank") Quantconnect.
+			li
+				span.label.success устарело
+				a(href="http://hftbattle.com/" target="_blank") High-Frequency Trading Battle. 
+				| Соревнование среди алгоритмов высокочастотной торговли. Используемый язык - С. Сайт на русском языке.
 				
-		h3 Видео
+			li
+				span.label.success устарело
+				a(href="http://mmcfo.ru/" target="_blank") Молодежный центр изучения финансовых операций. 
+				| Проводит разные конкурсы для молодежи(школьников, студентов).
+			li 
+				span.label.success устарело
+				a(href="http://www.quantopian.com/" target="_blank") Quantopian. 
+				| Можно писать на python
+		h3(id="video") Видео
 		ol
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-youtube &nbsp;
-				a(href="http://www.youtube.com/user/roshanRush/playlists") Научные вычисления
+				a(href="https://www.youtube.com/user/roshanRush/playlists" target="_blank") Научные вычисления
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-youtube &nbsp;
-				a(href="https://youtu.be/RETxgJcXBAY") Equity Option Implied Volatility Analytics with Python - PyData Singapore 2016
+				a(href="https://youtu.be/RETxgJcXBAY" target="_blank") Equity Option Implied Volatility Analytics with Python - PyData Singapore 2016
 			
-		h3 Книги
+		h3(id="books") Книги
 		ol
-			li: a(href="http://rutracker.org/forum/viewtopic.php?t=4969145") [rutracker] Yves Hilpisch - Python for Finance: Analyze Big Financial Data [2014, PDF, ENG]	
-			li: a(href="https://rutracker.org/forum/viewtopic.php?t=5176918") [rutracker] Yves Hilpisch - Derivatives Analytics with Python [2015, PDF, ENG]
-			li: a(href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119037999.html") Yves Hilpisch - Derivatives Analytics with Python
+			li 
+				span.flag_ru &nbsp;
+				i.far.fa-file-alt &nbsp;
+				| rutracker.org
+				a(href="https://rutracker.org/forum/viewtopic.php?t=5944211" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Wes McKinney. Python for Data Analysis. Second edition
+				| / Уэс Маккинни. Python и анализ данных. Второе издание, 2020.
+			li 
+				span.flag_ru &nbsp;
+				i.far.fa-file-alt &nbsp;
+				| rutracker.org
+				a(href="https://rutracker.org/forum/viewtopic.php?t=6148568" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Yves Hilpisch. Python for Finance: Mastering Data-Driven Finance. Second edition / Ив Хилпиш. Python для финансовых расчетов. Искусство работы с финансовыми данными, 2021, DjVu.
+				a(href="https://github.com/yhilpisch/py4fi2nd" target="_blank") 
+					i.fab.fa-github &nbsp;
+					i.fas.fa-external-link-alt &nbsp;
+				| Дополнительная информация к книге, коды и ipynb
+			li 
+				span.flag_ru &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				| rutracker.org
+				a(href="https://rutracker.org/forum/viewtopic.php?t=6133644" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Aileen Nielsen. Practical Time Series Analysis: Prediction with Statistics and Machine Learning 
+				|/ Эйлин Нильсен. Практический анализ временных рядов. Прогнозирование со статистикой и машинное обучение, 2021.
+			li 
+				span.flag_en &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				| rutracker.org
+				a(href="https://rutracker.org/forum/viewtopic.php?t=4969145" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Yves Hilpisch. Python for Finance: Analyze Big Financial Data, 2014.
+			li
+				span.flag_en &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				| rutracker.org
+				a(href="https://rutracker.org/forum/viewtopic.php?t=5176918" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Yves Hilpisch. Derivatives Analytics with Python, 2015.
+			li: a(href="https://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119037999.html" target="_blank") Yves Hilpisch - Derivatives Analytics with Python
+		h3(id="notations") Обозначения
+		div Разъясним обозначения, которые можно встретить на сайте:
+		ul 
+			li 
+				span.flag_en &nbsp;
+				| ресурс на английском языке
+			li
+				span.flag_ru &nbsp;
+				| ресурс на русском языке
+			li
+				i.far.fa-eye &nbsp;
+				| ссылка на внутреннюю страницу сайта, созданную мной
+			li
+				i.fas.fa-external-link-alt &nbsp;
+				| ссылка на внешний ресурс
+			li
+				i.fas.fa-book-open &nbsp;
+				| есть важная теоритическая информация
+			li
+				i.fab.fa-github &nbsp;
+				| ресурс расположен на github.com
+			li
+				i.fas.fa-heartbeat &nbsp;
+				| ресурс обновляется и не устарел
+			li 
+				i.fas.fa-blind &nbsp;
+				| ресурс устарел и не обновляется
+			li
+				span.i.far.fa-file-pdf &nbsp; 
+				| можно скачать файл в формате pdf
+			li
+				i.far.fa-file-alt &nbsp;
+				| можно скачать файл в формате <b>не</b> pdf
+			li
+				i.fab.fa-youtube &nbsp;
+				| - видео
