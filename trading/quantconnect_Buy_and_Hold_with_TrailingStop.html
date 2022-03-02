@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Стратегия 'Купи и держи' со скользящим стопом.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="../js/foundation.6.4.3.min.js"></script>
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
+    <!-- script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js")-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Стратегия "Купи и держи" со скользящим стопом.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <div>Содержание</div>
+        <ul>
+          <li> <a href="#init">Инициализация алгоритма</a></li>
+          <li> <a href="#enter">Вход в позицию</a></li>
+          <li> <a href="#stop">Создание стоп-ордера</a></li>
+          <li> <a href="#OnOrderEvent">Понятие обработчика событий OnOrderEvent</a></li>
+          <li> <a href="#Filled">Отслеживание выполнения</a></li>
+        </ul>
+        <h4 id="init">Инициализация алгоритма</h4>
+        <div>В <b>Initialize()</b> мы настраиваем наш алгоритм как обычно, используя <b>self.SetCash(), self.SetStartDate() и self.SetEndDate()</b>. Мы также можем запросить данные об инструменте с помощью метода <b>self.AddEquity()</b>.</div>
+        <pre><code class="python3"># Subscribe to IBM with raw, daily data
+ibm = self.AddEquity("IBM", Resolution.Daily)
+ibm.SetDataNormalizationMode(DataNormalizationMode.Raw)</code></pre>
+        <h4 id="enter">Вход в позицию</h4>
+        <div>Используя <b>MarketOrder()</b>, мы можем купить определенное количество единиц нашего актива. Рыночный ордер отправляется непосредственно на биржу и тут же исполняется.</div>
+        <pre><code class="python3"># Купить 300 штук акций IBM по текущей рыночной цене
+self.MarketOrder("IBM", 300)</code></pre>
+        <h4 id="stop">Создание стоп-ордера</h4>
+        <div>Обычно мы устанавливаем стоп-лосс так, чтобы он срабатывал ниже цены покупки существующего актива. Разница между ценой актива и ценой стопа состоит в том, сколько мы готовы потерять.</div>
+        <div>В QuantConnect есть два вида стоп-ордеров: стоп-лимит и стоп-рынок. Стоп-рыночный ордер должен знать количество акций для продажи (или покупки) и цену для срабатывания ордера. Метод <b>StopMarketOrder()</b> имеет следующие аргументы: <b>ticker, quantity,</b> и <b>stopPrice</b>.</div>
+        <pre><code class="python3"># Продать 300 штук акций IBM по текущей рыночной цене, когда цена опуститься ниже 95% текущей цены закрытия
+self.StopMarketOrder("IBM", -300, 0.95 * self.Securities["IBM"].Close)</code></pre>
+        <div>Пример:</div>
+        <pre><code class="python3">class BuyAndHold(QCAlgorithm):
+
+	def Initialize(self):
+		self.SetStartDate(2018, 12, 1) # Set Start Date
+		self.SetEndDate(2019, 4, 1) # Set End Date
+		self.SetCash(100000) # Set Strategy Cash
+		
+		#1. Subscribe to SPY in raw mode
+		spy = self.AddEquity("SPY", Resolution.Daily)
+		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+		
+	def OnData(self, data):
+		
+		if not self.Portfolio.Invested:
+			#2. Create market order to buy 500 units of SPY
+			self.MarketOrder("SPY", 500)
+			#3. Create a stop market order to sell 500 units at 90% of the SPY current price
+			self.StopMarketOrder("SPY", -500, 0.90 * self.Securities["SPY"].Close )</code></pre>
+        <h4 id="OnOrderEvent">Понятие обработчика событий OnOrderEvent</h4>
+        <div>События ордера — это обновления статуса вашего ордера. Каждое событие ордера отправляется обработчику событий <b>def OnOrderEvent()</b>, при этом информация о статусе заказа хранится в объекте <b>OrderEvent</b>.</div>
+        <pre><code class="python3">def OnOrderEvent(self, orderEvent):
+	pass</code></pre>
+        <div>Объект <b>OrderEvent</b> имеет свойство <b>Status</b> со значениями перечисления <b>OrderStatus Submitted, PartiallyFilled, Filled, Canceled и Invalid</b>. Он также содержит свойство <b>OrderId</b>, которое представляет собой уникальный номер, представляющий ордер.</div>
+        <h4 id="Filled">Отслеживание выполнения</h4>
+        <div>В нашем алгоритме мы хотим отслеживать полные выполнения ордера, чтобы знать, когда сработал наш стоп. Мы можем игнорировать другие события, явно ища статус <b>Filled</b>.</div>
+        <pre><code class="python3">if orderEvent.Status == OrderStatus.Filled:
+	# Печатать Id ордера
+	self.Debug(orderEvent.OrderId)</code></pre>
+        <div>Пример</div>
+        <pre><code class="python3">class BootCampTask(QCAlgorithm):
+
+	def Initialize(self):
+		self.SetStartDate(2018, 12, 1) 
+		self.SetEndDate(2019, 4, 1) 
+		self.SetCash(100000) 
+		spy = self.AddEquity("SPY", Resolution.Daily)
+		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+		self.lastOrderEvent = None
+		
+	def OnData(self, data):
+		if not self.Portfolio.Invested:
+			self.MarketOrder("SPY", 500)
+			self.StopMarketOrder("SPY", -500, 0.9 * self.Securities["SPY"].Close)
+		
+	def OnOrderEvent(self, orderEvent):
+		#1. Write code to only act on fills
+		if orderEvent.Status == OrderStatus.Filled:
+			#2. Save the orderEvent to lastOrderEvent, use Debug to print the event OrderId
+			self.lastOrderEvent = orderEvent
+			print(self.Debug(self.lastOrderEvent.OrderId))</code></pre>
+        <h4>Срабатывание стоп-лосс</h4>
+        <div>Важно знать, был ли достигнут стоп-лосс, чтобы мы не сразу снова вошли в рынок.</div>
+        <h4>Отслеживание с помощью OrderTicket</h4>
+        <div>При размещении ордера QuantConnect возвращает объект <b>OrderTicket</b>, который можно использовать для обновления свойств ордера, запроса его отмены или получения его <b>OrderId</b>.</div>
+        <pre><code class="python3"># Place our order and return an order ticket
+self.stopMarketTicket = self.StopMarketOrder("IBM", -300, ibmStockPrice * 0.9)
+#  Log its OrderId
+self.Debug(self.stopMarketTicket.OrderId) </code></pre>
+        <h4>Определение момента исполнения стоп-ордера</h4>
+        <div><b>OrderId</b> хранится в параметре <b>orderEvent</b>, переданном в наш метод <b>OnOrderEvent()</b>. Мы можем сопоставить <b>orderEvent.OrderId</b> с идентификатором стоп-рыночного ордера, чтобы увидеть, был ли исполнен наш ордер.</div>
+        <pre><code class="python3"># Check if we hit our stop market
+if self.stopMarketTicket is not None and orderEvent.OrderId == self.stopMarketTicket.OrderId:
+	self.stopMarketFillTime = self.Time;</code></pre>
+        <h4>Управление повторным входом алгоритма</h4>
+        <div>Алгоритм может размещать сотни сделок в секунду, поэтому важно тщательно контролировать, когда он размещает сделки. Задайте себе эти вопросы при отслеживании состояния вашего алгоритма, например:</div>
+        <ol>
+          <li>Когда я в последний раз размещал сделку?</li>
+          <li>Соответствовал ли заказ моим ожиданиям?</li>
+          <li>Правильно ли я размещаю заказы?</li>
+        </ol>
+        <pre><code class="python3"># Check that at least 15 days (~2 weeks) have passed since we last hit our limit order
+if (self.Time - self.stopMarketFillTime).days < 15:
+	return</code></pre>
+        <div>Пример:</div>
+        <pre><code class="python3">class BootCampTask(QCAlgorithm):
+	
+	# Order ticket for our stop order, Datetime when stop order was last hit
+	stopMarketTicket = None
+	stopMarketFillTime = datetime.min
+	
+	def Initialize(self):
+		self.SetStartDate(2018, 12, 1)
+		self.SetEndDate(2019, 4, 1)
+		self.SetCash(100000)
+		spy = self.AddEquity("SPY", Resolution.Daily)
+		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+		
+	def OnData(self, data):
+		
+		#4. Check that at least 15 days (~2 weeks) have passed since we last hit our stop order
+		if (self.Time - self.stopMarketFillTime).days < 15:
+			return
+		if not self.Portfolio.Invested:
+			self.MarketOrder("SPY", 500)
+			
+			#1. Create stop loss through a stop market order
+			self.stopMarketTicket = self.StopMarketOrder("SPY", -500, self.Securities["SPY"].Close* 0.9)
+			
+	def OnOrderEvent(self, orderEvent):
+		
+		if orderEvent.Status != OrderStatus.Filled:
+			return
+		
+		# Printing the security fill prices.
+		self.Debug(self.Securities["SPY"].Close)
+		
+		#2. Check if we hit our stop loss (Compare the orderEvent.Id with the stopMarketTicket.OrderId)
+		#   It's important to first check if the ticket isn't null (i.e. making sure it has been submitted)
+		if self.stopMarketTicket is not None and orderEvent.OrderId == self.stopMarketTicket.OrderId:
+			#3. Store datetime
+			self.stopMarketFillTime = self.Time;</code></pre>
+        <h4>Создание скользящего стоп-лосса</h4>
+        <div>Обновляя цену срабатывания стопа по мере движения рынка, мы теоретически можем зафиксировать прибыль и ограничить риск убытков. Это превращает наше статическое управление рисками в динамическое.</div>
+        <h4>Обновление ордеров</h4>
+        <div>Ордера, которые не были выполнены немедленно, могут быть обновлены с помощью их тикета ордера. Чтобы обновить ордер, вы создаете объект <b>UpdateOrderFields</b>, который содержит все свойства, которые вы хотите изменить.</div>
+        <div>Чтобы обновить стоп-цену данного тикета ордера, мы вызываем <b>orderticket.Update()</b>.</div>
+        <pre><code class="python3"># Update stop loss price using UpdateOrderFields helper.
+updateFields = UpdateOrderFields()
+updateFields.StopPrice = self.Securities["SPY"].Close * 0.9
+self.stopMarketTicket.Update(updateFields)</code></pre>
+        <div>Полный пример:</div>
+        <pre><code class="python3">class BootCampTask(QCAlgorithm):
+	
+	# Order ticket for our stop order, Datetime when stop order was last hit
+	stopMarketTicket = None
+	stopMarketOrderFillTime = datetime.min
+	highestSPYPrice = 0
+	
+	def Initialize(self):
+		self.SetStartDate(2018, 12, 1)
+		self.SetEndDate(2018, 12, 10)
+		self.SetCash(100000)
+		spy = self.AddEquity("SPY", Resolution.Daily)
+		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+		
+	def OnData(self, data):
+		
+		if (self.Time - self.stopMarketOrderFillTime).days < 15:
+			return
+
+		if not self.Portfolio.Invested:
+			self.MarketOrder("SPY", 500)
+			self.stopMarketTicket = self.StopMarketOrder("SPY", -500, 0.9 * self.Securities["SPY"].Close)
+		
+		else:
+			
+			#1. Check if the SPY price is higher that highestSPYPrice.
+			if self.Securities["SPY"].Close > self.highestSPYPrice:
+				self.highestSPYPrice = self.Securities["SPY"].Close
+				
+				#2. Save the new high to highestSPYPrice; then update the stop price to 90% of highestSPYPrice 
+				updateFields = UpdateOrderFields()
+				updateFields.StopPrice = self.highestSPYPrice * 0.9
+				self.stopMarketTicket.Update(updateFields)
+				#3. Print the new stop price with Debug()
+				print(self.Debug(updateFields.StopPrice))
+				
+	def OnOrderEvent(self, orderEvent):
+		if orderEvent.Status != OrderStatus.Filled:
+			return
+		if self.stopMarketTicket is not None and self.stopMarketTicket.OrderId == orderEvent.OrderId: 
+			self.stopMarketOrderFillTime = self.Time
+			</code></pre>
+      </div>
+    </div>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
+      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
+      <script>$(document).foundation();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>-->
+  </body>
+</html>

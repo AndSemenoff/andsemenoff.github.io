@@ -1,0 +1,231 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Стратегия 'Купи и держи' со скользящим стопом."
+
+block content
+	div.row: div.large-12.columns: h2 Стратегия "Купи и держи" со скользящим стопом.
+	div.row: div.large-12.columns
+		div Содержание
+		ul
+			li 
+				a(href="#init") Инициализация алгоритма
+			li 
+				a(href="#enter") Вход в позицию
+			li 
+				a(href="#stop") Создание стоп-ордера
+			li 
+				a(href="#OnOrderEvent") Понятие обработчика событий OnOrderEvent
+			li 
+				a(href="#Filled") Отслеживание выполнения
+		h4(id ="init") Инициализация алгоритма
+		div В <b>Initialize()</b> мы настраиваем наш алгоритм как обычно, используя <b>self.SetCash(), self.SetStartDate() и self.SetEndDate()</b>. Мы также можем запросить данные об инструменте с помощью метода <b>self.AddEquity()</b>.
+		pre
+			code.python3
+				|# Subscribe to IBM with raw, daily data
+				|ibm = self.AddEquity("IBM", Resolution.Daily)
+				|ibm.SetDataNormalizationMode(DataNormalizationMode.Raw)
+		h4(id ="enter") Вход в позицию
+		div Используя <b>MarketOrder()</b>, мы можем купить определенное количество единиц нашего актива. Рыночный ордер отправляется непосредственно на биржу и тут же исполняется.
+		pre
+			code.python3
+				|# Купить 300 штук акций IBM по текущей рыночной цене
+				|self.MarketOrder("IBM", 300)
+		h4(id ="stop") Создание стоп-ордера
+		div Обычно мы устанавливаем стоп-лосс так, чтобы он срабатывал ниже цены покупки существующего актива. Разница между ценой актива и ценой стопа состоит в том, сколько мы готовы потерять.
+
+		div В QuantConnect есть два вида стоп-ордеров: стоп-лимит и стоп-рынок. Стоп-рыночный ордер должен знать количество акций для продажи (или покупки) и цену для срабатывания ордера. Метод <b>StopMarketOrder()</b> имеет следующие аргументы: <b>ticker, quantity,</b> и <b>stopPrice</b>.
+		pre
+			code.python3
+				|# Продать 300 штук акций IBM по текущей рыночной цене, когда цена опуститься ниже 95% текущей цены закрытия
+				|self.StopMarketOrder("IBM", -300, 0.95 * self.Securities["IBM"].Close)
+		
+		div Пример:
+		pre
+			code.python3
+				|class BuyAndHold(QCAlgorithm):
+				|
+				|	def Initialize(self):
+				|		self.SetStartDate(2018, 12, 1) # Set Start Date
+				|		self.SetEndDate(2019, 4, 1) # Set End Date
+				|		self.SetCash(100000) # Set Strategy Cash
+				|		
+				|		#1. Subscribe to SPY in raw mode
+				|		spy = self.AddEquity("SPY", Resolution.Daily)
+				|		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+				|		
+				|	def OnData(self, data):
+				|		
+				|		if not self.Portfolio.Invested:
+				|			#2. Create market order to buy 500 units of SPY
+				|			self.MarketOrder("SPY", 500)
+				|			#3. Create a stop market order to sell 500 units at 90% of the SPY current price
+				|			self.StopMarketOrder("SPY", -500, 0.90 * self.Securities["SPY"].Close )
+		h4(id ="OnOrderEvent") Понятие обработчика событий OnOrderEvent
+		div События ордера — это обновления статуса вашего ордера. Каждое событие ордера отправляется обработчику событий <b>def OnOrderEvent()</b>, при этом информация о статусе заказа хранится в объекте <b>OrderEvent</b>.
+		
+		pre
+			code.python3
+				|def OnOrderEvent(self, orderEvent):
+				|	pass
+		div Объект <b>OrderEvent</b> имеет свойство <b>Status</b> со значениями перечисления <b>OrderStatus Submitted, PartiallyFilled, Filled, Canceled и Invalid</b>. Он также содержит свойство <b>OrderId</b>, которое представляет собой уникальный номер, представляющий ордер.
+		h4(id="Filled") Отслеживание выполнения
+		div В нашем алгоритме мы хотим отслеживать полные выполнения ордера, чтобы знать, когда сработал наш стоп. Мы можем игнорировать другие события, явно ища статус <b>Filled</b>.
+		pre
+			code.python3
+				|if orderEvent.Status == OrderStatus.Filled:
+				|	# Печатать Id ордера
+				|	self.Debug(orderEvent.OrderId)
+		div Пример
+		pre
+			code.python3
+		
+				|class BootCampTask(QCAlgorithm):
+				|
+				|	def Initialize(self):
+				|		self.SetStartDate(2018, 12, 1) 
+				|		self.SetEndDate(2019, 4, 1) 
+				|		self.SetCash(100000) 
+				|		spy = self.AddEquity("SPY", Resolution.Daily)
+				|		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+				|		self.lastOrderEvent = None
+				|		
+				|	def OnData(self, data):
+				|		if not self.Portfolio.Invested:
+				|			self.MarketOrder("SPY", 500)
+				|			self.StopMarketOrder("SPY", -500, 0.9 * self.Securities["SPY"].Close)
+				|		
+				|	def OnOrderEvent(self, orderEvent):
+				|		#1. Write code to only act on fills
+				|		if orderEvent.Status == OrderStatus.Filled:
+				|			#2. Save the orderEvent to lastOrderEvent, use Debug to print the event OrderId
+				|			self.lastOrderEvent = orderEvent
+				|			print(self.Debug(self.lastOrderEvent.OrderId))
+		h4 Срабатывание стоп-лосс
+		div Важно знать, был ли достигнут стоп-лосс, чтобы мы не сразу снова вошли в рынок.
+		h4 Отслеживание с помощью OrderTicket
+		div При размещении ордера QuantConnect возвращает объект <b>OrderTicket</b>, который можно использовать для обновления свойств ордера, запроса его отмены или получения его <b>OrderId</b>.
+		pre
+			code.python3
+				|# Place our order and return an order ticket
+				|self.stopMarketTicket = self.StopMarketOrder("IBM", -300, ibmStockPrice * 0.9)
+				|#  Log its OrderId
+				|self.Debug(self.stopMarketTicket.OrderId) 
+		h4 Определение момента исполнения стоп-ордера
+		div <b>OrderId</b> хранится в параметре <b>orderEvent</b>, переданном в наш метод <b>OnOrderEvent()</b>. Мы можем сопоставить <b>orderEvent.OrderId</b> с идентификатором стоп-рыночного ордера, чтобы увидеть, был ли исполнен наш ордер.
+		pre
+			code.python3
+				|# Check if we hit our stop market
+				|if self.stopMarketTicket is not None and orderEvent.OrderId == self.stopMarketTicket.OrderId:
+				|	self.stopMarketFillTime = self.Time;
+		h4 Управление повторным входом алгоритма
+		div Алгоритм может размещать сотни сделок в секунду, поэтому важно тщательно контролировать, когда он размещает сделки. Задайте себе эти вопросы при отслеживании состояния вашего алгоритма, например:
+		ol
+			li Когда я в последний раз размещал сделку?
+			li Соответствовал ли заказ моим ожиданиям?
+			li Правильно ли я размещаю заказы?
+
+		pre
+			code.python3
+				|# Check that at least 15 days (~2 weeks) have passed since we last hit our limit order
+				|if (self.Time - self.stopMarketFillTime).days < 15:
+				|	return
+				
+		div Пример:
+		pre
+			code.python3
+				|class BootCampTask(QCAlgorithm):
+				|	
+				|	# Order ticket for our stop order, Datetime when stop order was last hit
+				|	stopMarketTicket = None
+				|	stopMarketFillTime = datetime.min
+				|	
+				|	def Initialize(self):
+				|		self.SetStartDate(2018, 12, 1)
+				|		self.SetEndDate(2019, 4, 1)
+				|		self.SetCash(100000)
+				|		spy = self.AddEquity("SPY", Resolution.Daily)
+				|		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+				|		
+				|	def OnData(self, data):
+				|		
+				|		#4. Check that at least 15 days (~2 weeks) have passed since we last hit our stop order
+				|		if (self.Time - self.stopMarketFillTime).days < 15:
+				|			return
+				|		if not self.Portfolio.Invested:
+				|			self.MarketOrder("SPY", 500)
+				|			
+				|			#1. Create stop loss through a stop market order
+				|			self.stopMarketTicket = self.StopMarketOrder("SPY", -500, self.Securities["SPY"].Close* 0.9)
+				|			
+				|	def OnOrderEvent(self, orderEvent):
+				|		
+				|		if orderEvent.Status != OrderStatus.Filled:
+				|			return
+				|		
+				|		# Printing the security fill prices.
+				|		self.Debug(self.Securities["SPY"].Close)
+				|		
+				|		#2. Check if we hit our stop loss (Compare the orderEvent.Id with the stopMarketTicket.OrderId)
+				|		#   It's important to first check if the ticket isn't null (i.e. making sure it has been submitted)
+				|		if self.stopMarketTicket is not None and orderEvent.OrderId == self.stopMarketTicket.OrderId:
+				|			#3. Store datetime
+				|			self.stopMarketFillTime = self.Time;
+		h4 Создание скользящего стоп-лосса
+		div Обновляя цену срабатывания стопа по мере движения рынка, мы теоретически можем зафиксировать прибыль и ограничить риск убытков. Это превращает наше статическое управление рисками в динамическое.
+		h4 Обновление ордеров
+		div Ордера, которые не были выполнены немедленно, могут быть обновлены с помощью их тикета ордера. Чтобы обновить ордер, вы создаете объект <b>UpdateOrderFields</b>, который содержит все свойства, которые вы хотите изменить.
+
+		div Чтобы обновить стоп-цену данного тикета ордера, мы вызываем <b>orderticket.Update()</b>.
+		pre
+			code.python3
+				|# Update stop loss price using UpdateOrderFields helper.
+				|updateFields = UpdateOrderFields()
+				|updateFields.StopPrice = self.Securities["SPY"].Close * 0.9
+				|self.stopMarketTicket.Update(updateFields)
+				
+		div Полный пример:
+		pre
+			code.python3
+				|class BootCampTask(QCAlgorithm):
+				|	
+				|	# Order ticket for our stop order, Datetime when stop order was last hit
+				|	stopMarketTicket = None
+				|	stopMarketOrderFillTime = datetime.min
+				|	highestSPYPrice = 0
+				|	
+				|	def Initialize(self):
+				|		self.SetStartDate(2018, 12, 1)
+				|		self.SetEndDate(2018, 12, 10)
+				|		self.SetCash(100000)
+				|		spy = self.AddEquity("SPY", Resolution.Daily)
+				|		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+				|		
+				|	def OnData(self, data):
+				|		
+				|		if (self.Time - self.stopMarketOrderFillTime).days < 15:
+				|			return
+				|
+				|		if not self.Portfolio.Invested:
+				|			self.MarketOrder("SPY", 500)
+				|			self.stopMarketTicket = self.StopMarketOrder("SPY", -500, 0.9 * self.Securities["SPY"].Close)
+				|		
+				|		else:
+				|			
+				|			#1. Check if the SPY price is higher that highestSPYPrice.
+				|			if self.Securities["SPY"].Close > self.highestSPYPrice:
+				|				self.highestSPYPrice = self.Securities["SPY"].Close
+				|				
+				|				#2. Save the new high to highestSPYPrice; then update the stop price to 90% of highestSPYPrice 
+				|				updateFields = UpdateOrderFields()
+				|				updateFields.StopPrice = self.highestSPYPrice * 0.9
+				|				self.stopMarketTicket.Update(updateFields)
+				|				#3. Print the new stop price with Debug()
+				|				print(self.Debug(updateFields.StopPrice))
+				|				
+				|	def OnOrderEvent(self, orderEvent):
+				|		if orderEvent.Status != OrderStatus.Filled:
+				|			return
+				|		if self.stopMarketTicket is not None and self.stopMarketTicket.OrderId == orderEvent.OrderId: 
+				|			self.stopMarketOrderFillTime = self.Time
+				|			

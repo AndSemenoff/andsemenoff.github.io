@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Идентификаторы инструментов.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
+    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="../js/foundation.6.4.3.min.js"></script>
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
+    <!-- script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js")-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Идентификаторы инструментов.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Введение</h3>
+        <div><kbd>Symbols</kbd> — это способ уникальной идентификации актива. Это объекты, которые содержат всю информацию, необходимую для идентификации ценной бумаги, без необходимости использования внешних ссылок или поиска в собственной базе данных. Символы были реализованы в проекте с открытым исходным кодом LEAN как способ идентификации или «отпечатков пальцев» торгуемых активов, чтобы не требовался дополнительный поиск в базе данных.</div>
+        <div>Все методы API алгоритма QuantConnect и LEAN используют символы для идентификации актива для торговли.</div>
+        <h4>Что такое Symbol?</h4>
+        <div><kbd>Symbols</kbd> имеют несколько общедоступных свойств, которые можно использовать для уникальной идентификации актива. При сериализации вместе этот класс позволяет однозначно идентифицировать миллионы различных объектов активов.</div><img src="images/what-is-symbol_rev0.png">
+        <div>&nbsp;</div>
+        <pre><code class="python3">Symbol.Market            # Market USA, FXCM, GDAX, Bitfinex, Oanda. Liquidity venues.
+Symbol.SecurityType      # Security Types include Equity, Option, Future, Forex, Crypto and Cfd.
+Symbol.OptionType        # American or European Option.
+Symbol.OptionRight       # OptionRight indicates if a Put or Call.
+Symbol.Date              # Earliest listing date if equities, expiry for future/option.
+Symbol.HasUnderlying     # Is a derivative asset with another underlying asset.</code></pre>
+        <div>Все эти данные закодированы в объект символа. QuantConnect делает все возможное, чтобы скрыть детали этого от вашего алгоритма, но иногда вы можете увидеть, что он приходит в виде закодированного хэша, например: AAPL R735QTJ8XC9X. Первая половина закодированной строки представляет собой первый тикер, под которым был указан AAPL, другие буквы в конце строки представляют другую информацию об активе (тип ценной бумаги, дата листинга, дата истечения срока действия, страйк и основная биржа).</div>
+        <h4>Добавление ценных бумаг</h4>
+        <div>Когда вы вручную запрашиваете данные с помощью методов AddSecurity()/AddEquity(), QuantConnect предполагает, что вы добавляете тикер «сегодня», и автоматически ищет первый тикер, с которым указан актив. Используя приведенный выше пример Google:</div>
+        <pre><code class="python3">self.goog = self.AddEquity("GOOG").Symbol
+self.Debug(self.goog.ID) # Prints "GOOCV VP83T1ZUHROL"
+self.Debug(self.goog)    # Prints Your Reference "GOOG"</code></pre>
+        <div>Чтобы получить доступ к эталонному значению для символа, вы можете использовать свойство Symbol.Value, которое возвращает строковый тикер, который вы использовали для добавления данных в свой алгоритм (например, «GOOG» в нашем примере).</div>
+        <h4>Символы и Тикеры</h4>
+        <div>Тикеры — это строковое представление шорткода для актива. Некоторые примеры популярных тикеров включают «AAPL» для корпорации Apple или «IBM» для корпорации International Business Machines. Эти тикеры часто меняются при ребрендинге компании или при слиянии с другой ценной бумагой.</div>
+        <div>Тикер актива — это не то же самое, что символ. Объекты символов являются постоянными и отслеживают основной объект. Когда компания проводит ребрендинг или меняет свое название, объект QuantConnect Symbol остается неизменным, что дает алгоритмам возможность надежно отслеживать активы с течением времени.</div>
+        <div>Тикеры также часто повторно используются различными брокерскими конторами. Например, Coinbase, ведущая крипто-брокерская компания США, размещает тикер «BTCUSD» для торговли. Его конкурент Bitfinex также перечисляет «BTCUSD», и оба они торгуются в QuantConnect. Символы позволяют нам определить, на какого маркет-мейкера вы ссылаетесь.</div>
+        <h4>Технология Symbol Cache</h4>
+        <div>Чтобы упростить использование API, QuantConnect создал технологию под названием Symbol Cache, которая принимает строки и пытается угадать, какой объект Symbol вы могли бы иметь в виду. Из-за этого многие методы могут принимать строку, такую как «IBM», вместо полного объекта символа. Мы настоятельно рекомендуем вам не полагаться на эту технологию и вместо этого сохранять явные ссылки на ваши ценные бумаги, когда это необходимо.</div>
+        <pre><code class="python3"># Example 1: Relying On Symbol Cache:
+self.AddEquity("IBM")         # Add by IBM string ticker, save reference to Symbol Cache.
+self.MarketOrder("IBM", 100)  # Determine refering to IBM Equity from Symbol Cache.
+self.History("AAPL", 14)      # Makes a guess referring to AAPL Equity.
+
+# Example 2: Correctly Using Symbols: 
+self.ibm = self.AddEquity("IBM").Symbol   # Add IBM Equity string ticker, save Symbol.
+self.MarketOrder(self.ibm, 100)           # Use IBM Symbol in future API calls.
+
+self.aapl = Symbol.Create("AAPL", SecurityType.Equity, Market.USA)
+self.History(self.aapl, 14)</code></pre>
+        <h4>Декодирование Symbols</h4>
+        <div>Когда символ сериализуется в строку, он будет выглядеть примерно так: SPY R735QTJ8XC9X. Эта строка, состоящая из двух частей, представляет собой набор данных в кодировке base64. Кодирование всех свойств в краткий формат обеспечивает плотную коммуникацию, не требуя стороннего списка или поиска.</div>
+        <div>В большинстве случаев вам не нужно будет работать с этими закодированными строками. Однако QuantConnect предоставляет метод десериализации объектов Symbol в легко используемые объекты для использования API. Вы можете использовать этот метод, как показано ниже:</div>
+        <pre><code class="python3">google = self.Symbol("GOOCV VP83T1ZUHROL")
+print(google.ID.Market)                             # USA
+print(google.SecurityType)                          # Equity
+print(google.Value)                                # GOOCV</code></pre>
+        <div>Свойство <kbd>Market</kbd> используется для различения тикеров с одинаковым строковым значением, представляющих разные базовые активы. Ярким примером этого являются различные маркет-мейкеры, которые имеют разные цены на EURUSD. QuantConnect хранит эти данные отдельно, и, поскольку они имеют разные цены исполнения, мы рассматриваем места исполнения как разные рынки.</div>
+        <h4>Ограничения Symbol</h4>
+        <div>Недостатком Symbols является то, что он требует знания исходной строки тикера листинга. В приведенном выше примере первоначальный тикер GOOCV в конечном итоге переименовывается/сопоставляется с C-акциями класса GOOG. QuantConnect также работает над поддержкой других методов идентификации (CUSIP/ISIN/Open-FIGI), но на данный момент символы обеспечивают уникальную идентификацию и бесплатное распространение проекта LEAN без ссылок на внешние данные.</div>
+      </div>
+    </div>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
+      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
+      <script>$(document).foundation();</script>
+    </footer>
+    <!-- script(src="../js/jquary.js")-->
+    <!-- script(src="../js/foundation.min.js")-->
+    <!-- <script>-->
+    <!-- $(document).foundation();-->
+    <!-- </script>-->
+  </body>
+</html>

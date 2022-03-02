@@ -18,15 +18,10 @@ block content
 			li Загрузка котировок
 			li Простейшая стратегия
 		h3 Рекомендации по установке
-		div Для установки пакета bt в системе должен быть установлен компилятор с С++.
-			| <a href="http://matthew-brett.github.io/pydagogue/python_msvc.html"> Объяснение на английском </a> для разных версий питона. (http://stackoverflow.com/questions/29909330/microsoft-visual-c-compiler-for-python-3-4)
-		div Для установки на Anaconda2 под Windows7 мне потребовалось скачать и установить пакет <a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266"> Microsoft Visual C++ Compiler for Python 2.7 </a>. 
 		div 
-			| А для установки на Anaconda3 мне потребовалось
-			| сначала произвести апргрейд утилиты setuptools минимальная версия 24.0
-			| <kbd>pip install --upgrade setuptools</kbd>
-			| потом скачиваем и устанавливаем 
-			| пакет <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"> Visual CPP Build Tools </a>. При установке ставил галочку только для Windows 8.1 SDK.
+			| Для установки на Anaconda3 мне потребовалось в Anaconda3 Promt выполнить команду: 
+			| <kbd>conda install -c conda-forge bt</kbd>
+
 		h3 Загрузка котировок
 		div
 		| Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
