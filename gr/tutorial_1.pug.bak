@@ -1,0 +1,47 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Греческий язык"
+
+block content
+	div.row: div.large-12.columns: h2 Урок 1. Алфавит
+	div.row: div.large-12.columns
+		h3 Общие вопросы
+		div εερξχζψ ά, έ, ή, ί, ό, ύ, ώ Ά, Έ, Ή, Ί, Ό, Ύ, Ώ ϊ
+		table(style = "width:75%")
+			tr
+				th номер
+				th( style = "width:25%") буква
+				th название
+				th русское название
+				th произношение
+			tr
+				td 1
+				td Α α
+				td άλφα
+				td альфа
+				td 		
+					<audio controls>
+					<source src="audio\alpha.wav" type="audio/wav">
+						Your browser does not support the audio element.
+					</audio>
+			tr
+				td 2
+				td 
+				td 
+				td 
+				td 
+					<audio controls>
+					<source src="audio\abc_1.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>			
+			tr
+				td 3
+				td 
+				td 
+				td 
+				td 
+					<audio controls>
+					<source src="audio\abc_1.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
