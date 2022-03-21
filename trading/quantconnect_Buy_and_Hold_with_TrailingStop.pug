@@ -80,7 +80,7 @@ block content
 		pre
 			code.python3
 		
-				|class BootCampTask(QCAlgorithm):
+				|class BuyAndHold(QCAlgorithm):
 				|
 				|	def Initialize(self):
 				|		self.SetStartDate(2018, 12, 1) 
@@ -134,7 +134,7 @@ block content
 		div Пример:
 		pre
 			code.python3
-				|class BootCampTask(QCAlgorithm):
+				|class BuyAndHold(QCAlgorithm):
 				|	
 				|	# Order ticket for our stop order, Datetime when stop order was last hit
 				|	stopMarketTicket = None
@@ -187,7 +187,7 @@ block content
 		div Полный пример:
 		pre
 			code.python3
-				|class BootCampTask(QCAlgorithm):
+				|class BuyAndHold(QCAlgorithm):
 				|	
 				|	# Order ticket for our stop order, Datetime when stop order was last hit
 				|	stopMarketTicket = None
@@ -229,3 +229,62 @@ block content
 				|		if self.stopMarketTicket is not None and self.stopMarketTicket.OrderId == orderEvent.OrderId: 
 				|			self.stopMarketOrderFillTime = self.Time
 				|			
+		h4 Визуализация уровней стоп-лосса
+		div Диаграммы — это мощный способ визуализации поведения вашего алгоритма. Дополнительные сведения об API построения диаграмм 
+			a(href="https://www.quantconnect.com/docs/algorithm-reference/charting") 
+				| см. в документации.
+		h3 Создание диаграммы
+		div Метод <b>Plot()</b> может нарисовать линейный график с помощью одной строки кода. Требуется три аргумента, имя графика, имя серии и значение, которое вы хотели бы построить.
+		pre
+			code.python3
+				|# На одной диаграмме может быть несколько графиков.
+				|self.Plot("Levels", "Asset Price", self.Securities["IBM"].Price)
+				|self.Plot("Levels", "Stop Price",  self.Securities["IBM"].Price * 0.9)
+				
+		div Пример:
+		pre
+			code.python3
+				|class BuyAndHold(QCAlgorithm):
+				|	
+				|	# Order ticket for our stop order, Datetime when stop order was last hit
+				|	stopMarketTicket = None
+				|	stopMarketOrderFillTime = datetime.min
+				|	highestSPYPrice = -1
+				|	
+				|	def Initialize(self):
+				|		self.SetStartDate(2018, 12, 1)
+				|		self.SetEndDate(2018, 12, 10)
+				|		self.SetCash(100000)
+				|		spy = self.AddEquity("SPY", Resolution.Daily)
+				|		spy.SetDataNormalizationMode(DataNormalizationMode.Raw)
+				|		
+				|	def OnData(self, data):
+				|		
+				|		# 1. Plot the current SPY price to "Data Chart" on series "Asset Price"
+				|		self.Plot("Data Chart", "Asset Price", self.Securities["SPY"].Price)
+				|		if (self.Time - self.stopMarketOrderFillTime).days < 15:
+				|			return
+				|
+				|		if not self.Portfolio.Invested:
+				|			self.MarketOrder("SPY", 500)
+				|			self.stopMarketTicket = self.StopMarketOrder("SPY", -500, 0.9 * self.Securities["SPY"].Close)
+				|		
+				|		else:
+				|			
+				|			#2. Plot the moving stop price on "Data Chart" with "Stop Price" series name
+				|			self.Plot("Data Chart", "Stop Price",  self.Securities["SPY"].Price * 0.9)
+				|			
+				|			if self.Securities["SPY"].Close > self.highestSPYPrice:
+				|				
+				|				self.highestSPYPrice = self.Securities["SPY"].Close
+				|				updateFields = UpdateOrderFields()
+				|				updateFields.StopPrice = self.highestSPYPrice * 0.9
+				|				self.stopMarketTicket.Update(updateFields) 
+				|			
+				|	def OnOrderEvent(self, orderEvent):
+				|		
+				|		if orderEvent.Status != OrderStatus.Filled:
+				|			return
+				|		
+				|		if self.stopMarketTicket is not None and self.stopMarketTicket.OrderId == orderEvent.OrderId: 
+				|			self.stopMarketOrderFillTime = self.Time
