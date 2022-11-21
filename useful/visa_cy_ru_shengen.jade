@@ -1,0 +1,268 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Получение шенгенской визы"
+
+block content
+	div.row: div.large-12.columns: h2 Получение шенгенской визы для россиян на Кипре
+	div.row: div.large-12.columns
+		h3 Основные замечания
+		p Рассматриваем вариант получения шегенской визы с пасспортом РФ с видом на жительство Кипра.
+		table
+			body
+				tr
+					th флаг
+					th страна
+					th где получать
+					th ссылка
+					th примечание
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/at.png" alt="Austria")
+					td Австрия
+					td визовый центр vfs
+					td 
+						a(href="https://visa.vfsglobal.com/cyp/en/aut/book-an-appointment" target="_blank"): i.fa.fa-external-link &nbsp;
+					td 
+						a(href="https://visa.vfsglobal.com/one-pager/austria/cyprus/english/" target="_blank"): i.fa.fa-external-link &nbsp;
+						| как подать. 
+						| Дополнительно можно подать: Лихтинштейн, Швейцария.
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/fi.png" alt="Finland")
+					td Финляндия
+					td 
+						i.fas.fa-medal(title = "возможно выловить слоты") &nbsp;
+						| визовый центр vfs
+					td 
+						a(href="https://row7.vfsglobal.com/FinlandAppt/Home/SelectVAC" target="_blank"): i.fa.fa-external-link &nbsp;
+					td 
+						a(href="https://finlandabroad.fi/web/cyp/how-to-apply-for-a-visa" target="_blank"): i.fa.fa-external-link &nbsp;
+						| как подать
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/fr.png" alt="")
+					td Франция
+					td по звонку в визовый центр.
+					td .
+					td 
+						a(href="https://france-visas.gouv.fr/en/web/cy" target="_blank"): i.fa.fa-external-link &nbsp;
+						| как подать
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/gr.png" alt="")
+					td Греция
+					td визовый центр.
+					td 
+						a(href="https://appointment.mfa.gr/en/reservations/aero/grcon-cyprus/" target="_blank"): i.fa.fa-external-link &nbsp;
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/es.png" alt="")
+					td Испания
+					td 
+						i.far.fa-envelope(title="записываться через e-mail") &nbsp;
+					td .
+					td 
+						a(href="https://www.exteriores.gob.es/Embajadas/nicosia/en/Paginas/index.aspx" target="_blank"): i.fa.fa-external-link &nbsp;
+						| записаться
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/lu.png" alt="")
+					td Люксембург
+					td .
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/de.png" alt="")
+					td Германия
+					td визовый центр
+					td 
+						a(href="https://service2.diplo.de/rktermin/extern/appointment_showMonth.do?locationCode=niko&realmId=926&categoryId=1955" target="_blank"): i.fa.fa-external-link &nbsp;
+					td 
+						a(href="https://nikosia.diplo.de/cy-en" target="_blank"): i.fa.fa-external-link &nbsp;
+						| как подать &nbsp;
+						a(href="https://nikosia.diplo.de/appointments" target="_blank"): i.fa.fa-external-link &nbsp;
+						| записаться
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/pt.png" alt="")
+					td Португалия
+					td .
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/se.png" alt="")
+					td Швеция
+					td визовый центр vfs Финляндии
+					td 
+						a(href="https://row7.vfsglobal.com/FinlandAppt/Home/SelectVAC" target="_blank"): i.fa.fa-external-link &nbsp;
+					td Отдельной очереди нет.&nbsp;
+						a(href="https://www.swedenabroad.se/en/about-sweden-non-swedish-citizens/cyprus/going-to-sweden/visiting-sweden/apply-for-a-visa/" target="_blank"): i.fa.fa-external-link &nbsp;
+						| как подать
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/it.png" alt="")
+					td Италия
+					td .
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/mt.png" alt="")
+					td Мальта
+					td 
+						i.far.fa-envelope(title="записываться через e-mail") &nbsp;
+						| визового центра Греции.
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/sk.png" alt="")
+					td Словакия
+					td .
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/sl.png" alt="")
+					td Словения
+					td .
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/hu.png" alt="")
+					td Венгрия
+					td .
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/li.png" alt="")
+					td Лихтинштейн
+					td 
+						i.fas.fa-exclamation-triangle(title="Не входит в ЕС. Имеет свою валюту") &nbsp;
+						i.fas.fa-medal(title = "возможно выловить слоты") &nbsp;
+						| визовый центр vfs Австрии
+					td .
+					td Отдельная очередь. Входит в Шенген.
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/ch.png" alt="")
+					td Швейцария
+					td 
+						i.fas.fa-exclamation-triangle(title="Не входит в ЕС. Имеет свою валюту") &nbsp;
+						| визовый центр vfs Австрии
+					td .
+					td Отдельная очередь. Входит в Шенген.
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/no.png" alt="")
+					td Норвегия
+					td 
+						i.fas.fa-exclamation-triangle(title="Не входит в ЕС. Имеет свою валюту") &nbsp;
+						| 
+					td .
+					td Входит в Шенген.
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/is.png" alt="")
+					td Исландия
+					td 
+						i.fas.fa-exclamation-triangle(title="Не входит в ЕС. Имеет свою валюту") &nbsp;
+						| 
+					td .
+					td Входит в Шенген.
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/lt.png" alt="")
+					td Литва
+					td 
+						i.far.fa-calendar-times &nbsp;
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/lv.png" alt="")
+					td Латвия
+					td 
+						i.far.fa-calendar-times &nbsp;
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/ee.png" alt="")
+					td Эстония
+					td 
+						i.far.fa-calendar-times &nbsp;
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/pl.png" alt="")
+					td Польша
+					td
+						i.far.fa-calendar-times &nbsp;
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/cz.png" alt="")
+					td Чехия
+					td 
+						i.far.fa-calendar-times &nbsp;
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/be.png" alt="")
+					td Бельгия
+					td 
+						i.far.fa-calendar-times &nbsp;
+						i.fas.fa-question(title="информация не проверена") &nbsp;
+					td .
+					td .
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/dk.png" alt="")
+					td Дания
+					td 
+						i.far.fa-calendar-times &nbsp;
+						i.fas.fa-question(title="информация не проверена") &nbsp;
+					td .
+					td 
+						a(href="https://cypern.um.dk/" target="_blank"): i.fa.fa-external-link &nbsp;
+						| как подать
+				tr
+					td 
+						img(src="https://flagcdn.com/32x24/nl.png" alt="")
+					td Нидерланды
+					td 
+						i.far.fa-calendar-times &nbsp;
+						i.fas.fa-question(title="информация не проверена") &nbsp;
+					td .
+					td .
+		p Обозначения
+		ul
+			li
+				i.far.fa-calendar-times &nbsp;
+				|&nbsp;- не выдают гражданам РФ впринципе
+			li
+				i.fas.fa-exclamation-triangle &nbsp;
+				| не входит в ЕС. Имеет свою валюту.
+			li
+				i.far.fa-envelope &nbsp;
+				| записываться через e-mail
+			li
+				i.fas.fa-question &nbsp;
+				| информация не проверена
+			li
+				i.fas.fa-medal &nbsp;
+				| возможно выловить слоты
+		p Надо разделять страны, которые не выдают туристические визы гражданам РФ на территории РФ и страны которые не выдают туристические визы гражданам РФ вообще.
+		p Ирландия, Кипр, Хорватия, Болгария и Румыния являются государствами-членами ЕС, которые не входят в Шенгенскую зону.
+		p Флаги используются с разрешения и с сайта 
+			a(href="https://flagpedia.net" target="_blank") flagpedia.net
