@@ -1,0 +1,40 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Финансовая статистика по США"
+
+block content
+	div.row: div.large-12.columns: h1 Финансовая статистика по США
+	div.row: div.large-12.columns
+		div.
+			Открытые данные по экономически значимым показателям США
+		ol
+			li
+				span.flag_en &nbsp;
+				| CPI (Consumer Price Index) &nbsp;
+				a(href='https://www.bls.gov/cpi/news.htm') &nbsp;
+					i.fas.fa-external-link-alt &nbsp;
+				| Публикуется ежемесячно.
+
+		div.
+			Важные индексы
+		ol
+			li
+				span.flag_ru &nbsp;
+				| VIX &nbsp;
+				a(href='vix_main.html' target='_blank') 
+					i.far.fa-eye &nbsp;
+				| Индекс и его производные. Теория. Практика
+			li 
+				span.flag_en &nbsp;
+				| Индекс Consumer Sentiment Мичиганского университета &nbsp;
+				a(href='http://www.sca.isr.umich.edu/' target='_blank') &nbsp;
+					i.fas.fa-external-link-alt &nbsp;
+				| Исследования. &nbsp;
+			li 
+				span.flag_en &nbsp;
+				| Conference Board Consumer Confidence Index
+				a(href='https://www.conference-board.org/topics/consumer-confidence' target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| Исследования и разбор
+			li NFIB Small Business Optimism Index National Federation of Independent Business (NFIB)  

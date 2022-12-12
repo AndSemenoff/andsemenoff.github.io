@@ -1,0 +1,83 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " VIX индекс"
+
+block content
+	div.row: div.large-12.columns: h2 VIX индекс
+	div.row: div.large-12.columns
+		div.row
+		h3 Основные моменты
+		ol
+			li
+				span.flag_en &nbsp;
+				| cboe.com 
+				a(href="https://www.cboe.com/tradable_products/vix/faqs/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| Cboe VIX FAQ
+			li
+				span.flag_en &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				| cboe.com 
+				a(href="https://cdn.cboe.com/resources/vix/vixwhite.pdf" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| VIX white paper
+			li
+				span.flag_en &nbsp;
+				| cboe.com 
+				a(href="https://www.cboe.com/us/futures/market_statistics/settlement/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| VIX официальные цены закрытия 
+			li
+				span.flag_en &nbsp;
+				| cboe.com 
+				a(href="https://www.cboe.com/tradable_products/vix/vix_historical_data/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| VIX официальные исторические данные 
+			li
+				span.flag_en &nbsp;
+				| investopedia.com 
+				a(href="https://www.investopedia.com/terms/v/vix.asp" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| VIX
+			li
+				span.flag_en &nbsp;
+				| vixcentral.com 
+				a(href="http://vixcentral.com/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| графики VIX. Ссылки на теорию
+		h3 Статьи
+		ol
+			li
+				span.flag_en &nbsp;
+				| spglobal.com 
+				a(href="https://www.spglobal.com/spdji/en/vix-intro/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| What Is VIX and What Does it Measure?
+			li
+				span.flag_en &nbsp;
+				| indexologyblog.com 
+				a(href="https://www.indexologyblog.com/2014/02/04/whats-a-normal-vix-level/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| What’s a Normal VIX Level?
+			li
+				span.flag_en &nbsp;
+				| vix and more 
+				a(href="https://vixandmore.blogspot.com/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| blog
+				
+		h3 Книги, эссе
+		ol
+			li
+				span.flag_en &nbsp;
+				| - 
+				a(href="") --
+					i.fas.fa-external-link-alt &nbsp;
+				| Russell Rhoads. Trading VIX Derivatives - Trading and Hedging Strategies Using Vons and Exchange Traded Notes
+			li
+				span.flag_en &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				a(href="VIX_Asensio.pdf") 
+					i.far.fa-eye &nbsp;
+				| Ivan Oscar Asensio. The VIX-VIX Futures Puzzle
