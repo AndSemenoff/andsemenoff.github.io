@@ -1,58 +1,59 @@
 extends ../layouts/html_layout.jade
 
 block title
-	title= site_title + " Сайтостроение"
+	title= site_title + " Креатив"
 
 block content
-	div.row: div.large-12.columns: h2 Сайтостроение
+	div.row: div.large-12.columns: h2 Креатив
 	div.row: div.large-12.columns
-		h3 Полезные ресурсы
+		h3 Сайтостроение
 		ol Инструментарий
 			li
-				a(href="http://prismjs.com") PrismJS 
+				a(href="http://prismjs.com" target="_blank") PrismJS 
 				| - выделение кода на странице
 			li
-				a(href="https://github.com/kokes/nbviewer.js") nbviewer.js 
+				a(href="https://github.com/kokes/nbviewer.js" target="_blank") nbviewer.js 
 				| - компиляция jupyter notebook прямо в браузере на странице
-			li Jade | Pug
-				ul
-					li
-						a(href="https://pugjs.org/") Официальный сайт PugJS 
-						| - препроцессор pug
-					li
-						a(href="http://learnjade.com/") Обучение 
-						| - jade						
-										
+			li
+				a(href="https://pugjs.org/" target="_blank") Официальный сайт PugJS 
+				| - препроцессор pug
 			li 
-				a(href="http://brackets.io") Brackets 
+				a(href="http://brackets.io" target="_blank") Brackets 
 				| - pедактор кода (HTML, CSS, Javascript)
 			li
-				a(href="http://htmllinks.ru") Каталог 
-				| ссылок по теме HTML, CSS, Javascript
-			li: a(href="http://ghbtns.com/") Кнопки (fork, watch) для github
+				a(href="http://ghbtns.com/" target="_blank") Кнопки 
+				| (fork, watch) для github
 
 			li
-				a(href="hhttp://microjs.com/") Коллекция минималистичных библиотек Javascript
-				| 
+				a(href="http://microjs.com/" target="_blank") microjs 
+				| Коллекция минималистичных библиотек Javascript
 			li 
-				a(href="http://www.javascripting.com/") База библиотек Javascript
-				| 
+				a(href="http://www.javascripting.com/" target="_blank") javascripting.com 
+				| База библиотек Javascript
 			li
-				a(href="http://www.jointjs.com/demos/erd") Javascript библтотека для создания диаграмм и т.п. 
-				| 
-
-				
+				a(href="http://www.jointjs.com/demos/erd" target="_blank") jointjs  
+				| Javascript библтотека. Платная. Для создания диаграмм и т.п. 
 		ol Хостинг
 			li 
-				a(href="https://www.digitalocean.com/community/tutorials") DigitalOcean		
+				a(href="https://www.digitalocean.com/community/tutorials" target="_blank") DigitalOcean		
 
 		ol Локальные бесплатные сервера для разработки
 			li
-				a(href="http://open-server.ru") Open-Server 
-				| Русскоязычный. Поддерживает php7, Composer 
+				a(href="http://open-server.ru" target="_blank") Open-Server 
+				| Русскоязычный. Поддерживает php8, Composer 
 			li 
-				a(href="https://www.appservnetwork.com") AppServ 
+				a(href="https://www.appservnetwork.com" target="_blank") AppServ 
 				| Поддерживает php7	
 			li
-				a(href="http://www.zend.com/en/products/server/developer-editions-comparison") Zend Server 
+				a(href="http://www.zend.com/en/products/server/developer-editions-comparison" target="_blank") Zend Server 
 				| Бесплатно для сертифицированных специалистов, студентов, преподавателей и для открытых пректов.
+				
+		h3 Видео, аудио
+		ol Аудиоредакторы
+			li
+				a(href="https://www.audacityteam.org/" target="_blank") Audacityteam 
+				| Русскоязычный интерфейс, бесплатный
+		ol Видеоредакторы
+			li
+				a(href="https://www.openshot.org/" target="_blank") Openshot 
+				| Русскоязычный интерфейс, бесплатный
