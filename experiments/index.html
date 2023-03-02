@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+  <button id="connect-button">connect Metamask</button>
+
+  <script content="javascript">
+  document.getElementById('connect-button').addEventListener('click', event => {
+  let account;
+  ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+    account = accounts[0];
+    console.log(account);
+
+  });
+});
+  
+  </script>
+  
+  <!-- https://redstapler.co/adding-connect-wallet-button-to-website-with-metamask-javascript-api/ -->
+
+</body>
+
+</html>
