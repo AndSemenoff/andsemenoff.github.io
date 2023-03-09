@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lottery!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.0.8/ethers.umd.min.js" integrity="sha512-B/0gQMZc/py0Ldqgnuen4yZzABN1sz6dv65+2pVQHgOlIcrshSTJsk7yCSWqh0wh94KUD4Lr5F4HSWzcZjhqqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex">
+    <style>
+      body {
+        font-family: 'Roboto Flex';
+        font-size: 16px;
+    }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://absolem.info/Lottery">Fair Lottery</a>  
+            </div>
+        
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="https://absolem.info/Lottery">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <span>Main</span>
+                        </span>          
+                    </a>
+                    <!-- 
+                    <a class="navbar-item" href="documentation.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <span>Documentation</span>
+                        </span>
+                    </a>
+                    -->
+                    <a class="navbar-item" href="#LotteryHistory">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span>History</span>
+                        </span>
+                    </a>
+                    <a class="navbar-item" href="rules.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span>Rules</span>
+                        </span>
+                    </a>
+                    <!--
+                    <a class="navbar-item" href="">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </span>
+                    </a>
+                                  
+                    <a class="navbar-item" href="about.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-regular fa-circle-question"></i>
+                            </span>
+                            <span>About</span>
+                        </span>
+                    </a>
+                    -->
+                </div>
+        
+                <div class="navbar-end">
+                    <a class="navbar-item" href="rules.en.html">
+                        <span class="icon-text">
+                            <span>EN</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-4">
+            <h1 class="title has-text-centered">Как поучаствовать?</h1>
+        </div>
+ 
+        <div class="container">
+            <div class="content">Сейчас сайт и приложение работают в тестовом(игровом) режиме. Поэтому вы ничем не рискуете. О всех ошибках и сбоях
+                сообщайте по адресу andsemenoff<собака>ya.ru.
+            </div>
+            <div class="content">
+                <ol>
+                    <li>Скачайте плагин к броузеру: <a href="https://metamask.io/" target = "blank">MetaMask</a>. Он позволяет работать в сети Etherium.</li>
+                    <li>Зайдите на сайт: <a href="https://sepolia-faucet.pk910.de/" target = "blank">sepolia-faucet</a> для получения игровых эфиров.</li>
+                    <li>В MetaMask выбирете сеть Sepolia Test Network, как под цифрой 1 на скриншоте ниже
+                        <img src="images/info_1.jpg">
+                        
+                    </li>
+                    <li>Затем скопируйте адрес помеченный цифрой 2 на скриншоте и вставьте в поле 3, как на следующем скриншоте.
+                        <img src="images/info_2.jpg">
+                    </li>
+                    <li>Пройдите капчу. Запустите генерацию монет нажав на кнопку "Start Mining". Подождите немного и получите игровые монеты. Вы готовы идти на
+                        <a href="index.en.html" target = "blank">главную страницу</a> и участвовать в лотереи. 
+                        Кстати, процесс получения монет можно повторять бесконечно.</li>
+                </ol>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+            <p>
+                <strong>Честная лотерея</strong> создана <a href="https://absolem.info">Absolem</a>. Код распространяется по лицензии
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. 
+            </p>
+            <p>    
+                Контент сайта распространяется по лицензии
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+            </div>
+        </footer>
+    </body>
+</html>

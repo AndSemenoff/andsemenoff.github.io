@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lottery!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.0.8/ethers.umd.min.js" integrity="sha512-B/0gQMZc/py0Ldqgnuen4yZzABN1sz6dv65+2pVQHgOlIcrshSTJsk7yCSWqh0wh94KUD4Lr5F4HSWzcZjhqqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex">
+    <style>
+      body {
+        font-family: 'Roboto Flex';
+        font-size: 16px;
+    }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://absolem.info/Lottery">Fair Lottery</a>  
+            </div>
+        
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="https://absolem.info/Lottery">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <span>Main</span>
+                        </span>          
+                    </a>
+                    <!-- 
+                    <a class="navbar-item" href="documentation.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <span>Documentation</span>
+                        </span>
+                    </a>
+                    -->
+                    <a class="navbar-item" href="#LotteryHistory">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span>History</span>
+                        </span>
+                    </a>
+                    <a class="navbar-item" href="rules.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span>Rules</span>
+                        </span>
+                    </a>
+                    <!--
+                    <a class="navbar-item" href="">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </span>
+                    </a>
+                                  
+                    <a class="navbar-item" href="about.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-regular fa-circle-question"></i>
+                            </span>
+                            <span>About</span>
+                        </span>
+                    </a>
+                    -->
+                </div>
+        
+                <div class="navbar-end">
+                    <a class="navbar-item" href="rules.en.html">
+                        <span class="icon-text">
+                            <span>EN</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-4">
+            <h1 class="title has-text-centered">Честная лотерея. Правила.</h1>
+            <div class="content has-text-right">Весия 0.1 от 09.03.2023</div>
+            <div class="content has-text-left">Идет тест в сети Sepolia!</div>
+        </div>
+ 
+        <div class="container">
+            <div class="content">
+                <ol>
+                    <li>Общие положения:
+                        <ol>
+                            <li>Все полученные ставки идут в призовой фонд.</li>
+                            <li>Победитель получает весь призовой фонд.</li>
+                            <li>Вероятность выйграть прямо порпорциональна ставке. Пример. При двух участниках если один сдалал ставку в 1Eth, а второй в 0.5Eth. То вероятность выйгрыша первого
+                                игрока в два раза больше, чем второго.
+                            </li>
+                            <li>Все ставки анонимны. Никаких регистраций и привязок к социальным сетям не требуется. Участником считается адрес с которого сделана ставка.</li>
+                            <li>С одного адреса можно делать любое количество ставок. Все ставки с одного счета суммируются.</li>
+                            <li>При окончании текущей лотереи автоматически начинается новая.</li>
+                            <li>Победителю выйгрыш приходит автоматически на тот счет с которого была сделана ставка.</li>
+                        </ol>
+                    </li>
+                    <li>Термины и определения:
+                        <ol>
+                            <li><i>Организатор</i> - тот кто создал и запустил лотерею.</li>
+                            <li><i>Король лотереи</i> - счет, который сделал суммарно максимальный взнос.</li>
+                            <li><i>Период охлаждения</i> - 30 минут. Период, когда после смены Короля лотереи никто не может закончить лотерею даже Организатор.</li>
+                            <li><i>Основной период проведения лотереи</i> - период в 7 дней от старта текущей лотереи.</li>                                       
+                        </ol>
+                    </li>
+                    <li>Окончание текущей лотереи:
+                        <ol>
+                            <li>Лотерею может закончить Организатор или Король лотереи по окончании периода охлаждения.</li>
+                            <li>По окончании основного периода проведения лотереи любая ставка любого игрока автоматически приведет к окончанию лотереи.</li>
+                            <li>При окончании текущей лотереи выйгрыш переводится победителю и автоматически начинается новая лотерея.</li>                  
+                        </ol>
+                    </li>
+                    <li>Технические детали:
+                        <ol>
+                            <li>Адресс смарт контракта: <a href="https://sepolia.etherscan.io/address/0x27Fa96C75274d77a74AfC0a688CAb84935D7553f">0x27Fa96C75274d77a74AfC0a688CAb84935D7553f</a></li>
+                            <li>Открытый код  <a href="https://sepolia.etherscan.io/address/0x27Fa96C75274d77a74AfC0a688CAb84935D7553f#code">смарт-контракта</a></li>
+                            <li>Поддерживаемые сайтом кошельки: <a href="https://metamask.io/" target = "blank">MetaMask</a></li>
+                        </ol>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+            <p>
+                <strong>Честная лотерея</strong> создана <a href="https://absolem.info">Absolem</a>. Код распространяется по лицензии
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. 
+            </p>
+            <p>    
+                Контент сайта распространяется по лицензии
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+            </div>
+        </footer>
+    </body>
+</html>

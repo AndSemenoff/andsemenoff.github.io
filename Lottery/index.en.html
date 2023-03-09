@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fair Lottery!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.0.8/ethers.umd.min.js" integrity="sha512-B/0gQMZc/py0Ldqgnuen4yZzABN1sz6dv65+2pVQHgOlIcrshSTJsk7yCSWqh0wh94KUD4Lr5F4HSWzcZjhqqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex">
+    <style>
+      body {
+        font-family: 'Roboto Flex';
+        font-size: 16px;
+    }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://absolem.info/Lottery">Fair Lottery</a>  
+            </div>
+        
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="https://absolem.info/Lottery">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <span>Main</span>
+                        </span>          
+                    </a>
+                    <!-- 
+                    <a class="navbar-item" href="documentation.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <span>Documentation</span>
+                        </span>
+                    </a>
+                    
+                    <a class="navbar-item" href="#LotteryHistory">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span>History</span>
+                        </span>
+                    </a>
+                    -->
+                    <a class="navbar-item" href="rules.ru.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span>Rules</span>
+                        </span>
+                    </a>
+                    <!--
+                    <a class="navbar-item" href="">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </span>
+                    </a>
+                                  
+                    <a class="navbar-item" href="about.html">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-regular fa-circle-question"></i>
+                            </span>
+                            <span>About</span>
+                        </span>
+                    </a>
+                    -->
+                </div>
+        
+                <div class="navbar-end">
+                    <!-- 
+                    <a class="navbar-item" href="index.ru.html">
+                        <span class="icon-text">
+                            <span>RU</span>
+                        </span>
+                    </a>
+                    -->
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" id="startLotteryButtonOwner">
+                                <strong>Start Lottery</strong>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" id="endLotteryButtonOwner">
+                                <strong>End Lottery</strong>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" id="connectButton">
+                                <strong>Connect MetaMask</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-4">
+            <h1 class="title has-text-centered">Fair Lottery</h1>
+            <!--<p class="subtitle">My first website with <strong>Bulma</strong>!</p>-->
+        </div>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <!-- 1/2 -->
+                    <div class="content">
+                        <p>Current lottery status: 
+                            <strong>
+                                <span id="lotteryStatus"></span>
+                            </strong>
+                        </p>
+                        <p>
+                            King of the hill: 
+                            <strong>
+                                <span id="king"></span>
+                            </strong>
+                        </p>
+                        <p>
+                            King Lock time: 
+                            <strong>
+                                <span id="kingLockTime"></span>
+                            </strong>
+                        </p>
+                        <p>
+                            Global Lock time: 
+                            <strong>
+                                <span id="globalLockTime"></span>
+                            </strong>
+                        </p>
+                        <div class="content">
+                            Recent Winner: 
+                            <strong>
+                                <span id="recentWinner"></span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <!-- This tile will take the rest: 1/2 -->
+                    <div class="content has-text-right">
+                        Address Lottery: 
+                        <a href="https://sepolia.etherscan.io/address/0x27Fa96C75274d77a74AfC0a688CAb84935D7553f">0x27Fa96C75274d77a74AfC0a688CAb84935D7553f</a>
+                    </div>
+
+
+                    <div class="content has-text-right">
+                        Current prize pot: 
+                        <span class="has-text-link">
+                            <strong>
+                                <span class="has-text-link" id="prizePot"></span>
+                            </strong> 
+                            <i class="fa-brands fa-ethereum"></i>
+                            Eth
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <ul mt-0>Highlights:
+                    <li>No commissions. The project is based on voluntary donations. The winner takes all.</li>
+                    <li>Open source.</li>
+                    <li>There is no minimum limit. You can participate with any amount.</li>
+                    <li>Absolutely anonymous.</li>
+                    <li>The entire history of the draws is open and available on the blockchain forever.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="containerParticipate" class="container has-text-centered mt-4">
+            <div class="columns">
+                <div class="column column is-4 is-offset-2">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                            Participate
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                            <input id="amount" class="input" type="text" placeholder="Amount of ethers">
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="button is-info m-auto is-fullwidth" id="participate">
+                                Transfer
+                            </button>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column column is-4 " id="containerEndCurrentLottery">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                            End Current Lottery
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <p>Now you are King of the HIll. And you can end the Lottery.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="button is-info m-auto is-fullwidth" id="endCurrentLottery">
+                                Sign the order
+                            </button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container has-text-centered mt-4 mb-4">
+            <div>You wallet are working with: <span id="idchain"></span></div>
+            <div class="notification is-hidden" id="message">
+                <button class="delete" id="delete"></button>
+            
+            </div>
+        </div>
+
+        <div id="containerListOfParticipants" class="container">
+            <h1 class="title has-text-centered">List of participants</h1>
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth is-scrollable">
+                <thead>
+                    <tr>
+                    <th>N</th>
+                    <th>Address</th>
+                    <th>Volume (<i class="fa-brands fa-ethereum"></i> Eth)</th>
+                    </tr>
+                </thead>
+                <tbody id="playersTable">
+
+                </tbody height="400px">
+                <tfoot>
+                    <tr>
+                    <th>N</th>
+                    <th>Address</th>
+                    <th>Volume (<i class="fa-brands fa-ethereum"></i> Eth)</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!--           LOTERRY HISTORY BEGIN        
+        <div id="LotteryHistory" class="container mt-4">
+            <h1 class="title has-text-centered">Lottery history</h1>
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth is-scrollable" id="LotteryHistoryTable">
+                <thead>
+                    <tr>
+                    <th>N</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>Address</th>
+                    <th>Block N</th>
+                    <th>Volume (<i class="fa-brands fa-ethereum"></i> Eth)</th>
+                    </tr>
+                </thead>
+                <tbody id="DepositsTable"></tbody >
+                <tfoot>
+                    <tr>
+                    <th>N</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>Address</th>
+                    <th>Block N</th>
+                    <th>Volume (<i class="fa-brands fa-ethereum"></i> Eth)</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!--           LOTERRY HISTORY END        -->
+
+        <div id="dialog-message" title="Change network">
+            <p>
+            Please, change the network in you MetaMask wallet. We are working with <b>Goerli Test Network</b>.
+            </p>
+        </div>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+            <p>
+                <strong>Fair Lottery</strong> by <a href="https://absolem.info">Absolem</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+            </div>
+        </footer>
+        <script type="module" src="js/index.js"></script>
+    </body>
+</html>
