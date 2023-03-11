@@ -6,7 +6,6 @@ let lotteryState = null;
 let ownerAddress = null;
 let contractLottery = null;
 let provider = null;
-let prizePot = null;
 
 const addr = "0x27Fa96C75274d77a74AfC0a688CAb84935D7553f";
 const ETHERSCAN_URL = "https://sepolia.etherscan.io/";
@@ -22,13 +21,17 @@ async function main(){
     
     console.log( "main start" );
     const provider = await detectEthereumProvider() // this returns the provider, or null if it wasn't detected
-   
+
+    
+    
     if (provider) {
       startApp(provider); // Initialize your app
     } else {
       console.log('Please install MetaMask!');
       message('Please install <a href="https://metamask.io/" target = "blank">MetaMask</a>!', "is-warning");
       document.getElementById('connectButton').style.display = "none";
+      document.getElementById('startLotteryButtonOwner').style.display = "none";
+      document.getElementById('endLotteryButtonOwner').style.display = "none";
       document.getElementById('endCurrentLottery').style.display = "none";
       document.getElementById('containerParticipate').style.display = "none";
     }
@@ -41,31 +44,31 @@ async function main(){
           message('Do you have multiple wallets installed?', "is-warning");
         }
         // Access the decentralized web!
-    }
+      }
       
-    /**********************************************************/
-    /* Handle chain (network) and chainChanged (per EIP-1193) */
-    /**********************************************************/
-    
-    const chainId = await ethereum.request({ method: 'eth_chainId' });
-    // Do something with the chainId
-    // https://chainid.network/
-    let ch = {
-      1: "Ethereum Main Network (Mainnet)", 
-      3 : "Ropsten Test Network", 
-      4 : "Rinkeby Test Network", 
-      5 : "Goerli Test Network", 
-      42 : "Kovan Test Network", 
-      11155111 : "Sepolia Test Network"
-    }
-    let intChainId = parseInt(chainId, 16);
-    document.getElementById('idchain').textContent = ch[intChainId];
-    if (intChainId != 11155111) {
-      console.error('Please, change the network. We are working with Sepolia Test Network');
-      message('Please, change the network. We are working with <b>Sepolia Test Network<b>',  "is-warning");
-      $( "#dialog-message" ).dialog( "open" );
-    }
-    ethereum.on('chainChanged', handleChainChanged);
+      /**********************************************************/
+      /* Handle chain (network) and chainChanged (per EIP-1193) */
+      /**********************************************************/
+      
+      const chainId = await ethereum.request({ method: 'eth_chainId' });
+      // Do something with the chainId
+      // https://chainid.network/
+      let ch = {
+        1: "Ethereum Main Network (Mainnet)", 
+        3 : "Ropsten Test Network", 
+        4 : "Rinkeby Test Network", 
+        5 : "Goerli Test Network", 
+        42 : "Kovan Test Network", 
+        11155111 : "Sepolia Test Network"
+      }
+      let intChainId = parseInt(chainId, 16);
+      document.getElementById('idchain').textContent = ch[intChainId];
+      if (intChainId != 11155111) {
+        console.error('Please, change the network. We are working with Sepolia Test Network');
+        message('Please, change the network. We are working with <b>Sepolia Test Network<b>',  "is-warning");
+        $( "#dialog-message" ).dialog( "open" );
+      }
+      ethereum.on('chainChanged', handleChainChanged);
       
   /***********************************************************/
   /* Handle user accounts and accountsChanged (per EIP-1193) */
@@ -178,13 +181,23 @@ async function state(){
 
     if (lotteryState==1) {
       document.getElementById('containerParticipate').style.display = "none";
+      document.getElementById('startLotteryButtonOwner').style.display = "block";
     }
     else {
       document.getElementById('containerParticipate').style.display = "block";
+      document.getElementById('startLotteryButtonOwner').style.display = "none";
     }
 
     console.log("ownerAddress: ", ownerAddress);
     console.log("currentAccount: ", currentAccount);
+    if (lotteryState==0 & ownerAddress==currentAccount & ethers.toNumber(kingLockTime) * 1000 < Date.now()) {
+      document.getElementById('endLotteryButtonOwner').style.display = "block";
+    }
+    else {
+      document.getElementById('endLotteryButtonOwner').style.display = "none";
+    }
+
+
 
     contractLottery.on("Deposit", (time, from, value, event) => {
         console.log({time: time, from: from, value: value.toString(), data: event });
@@ -208,11 +221,11 @@ async function state(){
     });
 }
 
-async function getPrizePot(){
-    prizePot = await provider.getBalance(addr);  // prizePot global!
-    let prizePotFormatted = ethers.formatEther(prizePot);
-    console.log("Prize pot: ", prizePotFormatted);
-    document.getElementById('prizePot').textContent = prizePotFormatted;
+async function prizePot(){
+    let prizePot = await provider.getBalance(addr);
+    prizePot = ethers.formatEther(prizePot);
+    console.log("Prize pot: ", prizePot);
+    document.getElementById('prizePot').textContent = prizePot;
 }
 
 async function recentWinner(){
@@ -275,11 +288,9 @@ async function playersList(){
       //let tdAmount = document.createElement('td');
       //tdAmount.innerText(ethers.formatEther(player.ethValue));
       let tdAmount = ethers.formatEther(player.ethValue);
-      let prob = ethers.formatEther(player.ethValue) / ethers.formatEther(prizePot ) * 100;
       const playerAddress = player.addr.toLowerCase();
-      console.log(playerAddress, " : " , tdAmount);
-      txtHtml += "<tr><td>" + count + "</td><td><a href='" + ETHERSCAN_URL + "address/" + playerAddress + "' target='blank'>" + 
-      playerAddress + "</a></td><td>" + tdAmount + "</td><td>" + prob.toFixed(2) +"</td></tr>";
+      console.log(playerAddress, " : " , amount);
+      txtHtml += "<tr><td>" + count + "</td><td><a href='" + ETHERSCAN_URL + "address/" + playerAddress + "' target='blank'>" + playerAddress + "</a></td><td>" + tdAmount + "</td></tr>";
       count++;
     });
     tableTxt.innerHTML += txtHtml;
@@ -393,6 +404,67 @@ function showHistory(){
   console.log("showHistory END!" );
 }
 
+async function AllEvents(){
+  console.log("AllEvents" );
+  let provider = new ethers.BrowserProvider(window.ethereum);
+  //provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
+  let contr = new ethers.Contract(addr, abi, provider);
+  let eventFilter = contr.filters.Deposit();
+  let events = await contr.queryFilter(eventFilter);
+  events.forEach(event => {
+    console.log(event);
+    console.log(event.args[0], " : ",  ethers.formatEther(event.args[1]));
+  });
+
+  let eventFilterStartLottery = contr.filters.StartLottery();
+  let eventsStartLottery = await contr.queryFilter(eventFilterStartLottery);
+  eventsStartLottery.forEach(event => {
+    console.log(event);
+    console.log(event.args[0], event.blockNumber);
+  });
+
+  let eventFilterEndLottery = contr.filters.EndLottery();
+  let eventsEndLottery = await contr.queryFilter(eventFilterEndLottery);
+  eventsEndLottery.forEach(event => {
+    //console.log(event);
+    console.log(event.args[0], event.blockNumber);
+  });
+}
+
+async function startLottery(){
+  console.log("Start Lottery" );
+    let provider = new ethers.BrowserProvider(window.ethereum);
+    let signer = await provider.getSigner(); 
+    let contr = new ethers.Contract(addr, abi, signer);
+    let owner = await contr.owner();
+    console.log("Owner: ", owner);
+    console.log("Signer: ", signer.address);
+    if (signer.address == owner){
+      const funcTx = await contr.startLottery();
+      await funcTx.wait();
+    }
+    else {
+      console.log("You are not contract owner! First time only owner cat start lottery!");
+    }
+}
+
+async function endCurrentLotteryOwner(){
+  console.log("End Lottery by owner!" );
+    let provider = new ethers.BrowserProvider(window.ethereum);
+    let signer = await provider.getSigner(); 
+    let contr = new ethers.Contract(addr, abi, signer);
+    let owner = await contr.owner();
+    console.log("Owner: ", owner);
+    console.log("Signer: ", signer.address);
+    if (signer.address == owner){
+      const funcTx = await contr.endLottery();
+      await funcTx.wait();
+    }
+    else {
+      console.log("You are not contract owner! Only owner cat end lottery now!");
+    }
+}
+
 async function endCurrentLottery(){
   console.log("End Lottery" );
     let provider = new ethers.BrowserProvider(window.ethereum);
@@ -411,20 +483,22 @@ async function endCurrentLottery(){
     }
 }
 
+
+
 $( document ).ready(function() {
 
     console.log( "document loaded" );
     state();
     playersList();
-    getPrizePot();
+    prizePot();
     recentWinner();
     king();
     //prizeHistory();
    // DepositEvent();
-    //StartLotteryEvents();
+    StartLotteryEvents();
     //EndLotteryEvents();
     //showHistory();
-    //sH();
+    sH();
     //AllEvents();
 
     $('#delete').on( "click", function() {
@@ -435,7 +509,10 @@ $( document ).ready(function() {
     });
 
     $('#connectButton').on( "click", connect);
-    $('#endCurrentLottery').on( "click", endCurrentLottery);  
+    $('#startLotteryButtonOwner').on( "click", startLottery);
+    $('#endLotteryButtonOwner').on( "click", endCurrentLotteryOwner);
+    $('#endCurrentLottery').on( "click", endCurrentLottery);
+    
     $('#participate').on( "click", participate);
 
     $( function() {
@@ -449,6 +526,7 @@ $( document ).ready(function() {
           }
         });
       } );
+
 
     main();
 });
