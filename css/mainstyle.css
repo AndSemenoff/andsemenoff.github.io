@@ -132,3 +132,67 @@ input[type="checkbox"]{
 dd {
     margin-left: 1em; /* Отступ слева */
 }
+
+.spanish-ending{
+	margin-left: 2px;
+	color: red;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	/*background-color: grey;*/
+	border:1px solid black;
+	font-weight: bold;
+}
+.spanish-suffix{
+	margin-left: 2px;
+	color: red;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	/*background-color: grey;*/
+	background-image: url(../images/m_m2.svg);
+	font-weight: bold;
+	/*border-top:1px solid black;*/
+}
+
+.table-simple{
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border-color: black;
+	border-width: 0px;
+	border-style: solid;
+	/*border:1px solid black;*/
+	width: initial;
+}
+
+.table-simple td{
+	border-collapse: collapse;
+	border-color: gray;
+	border-width: 0px;
+	border-style: solid;
+}
+.table-simple td:nth-child(1), .table-simple td:nth-child(3){
+	font-weight: bold;
+}
+.table-simple td:nth-child(2), .table-simple td:nth-child(4){
+	font-style: italic;
+}
+
+.table-test {
+	width: initial;
+	margin-left: auto;
+	margin-right: auto;
+}
+.table-test th{
+	text-align: center; 
+}
+
+[type=text]{
+	display:block;
+	width: 100px;
+}
+
+.input_txt{
+	display:block;
+	width: 100px;
+}
+
