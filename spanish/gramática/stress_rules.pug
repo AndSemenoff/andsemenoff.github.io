@@ -1,0 +1,149 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Правила ударения.
+		div I. Если слово оканчивается на гласный или согласный <strong>n</strong> или <strong>s</strong>, то ударение падает на предпоследний слог:
+		table(class="table-simple")
+			tbody
+				tr
+					td corr<u>i</u>da
+					td коррида
+				tr
+					td m<u>e</u>tro
+					td метро
+				tr
+					td Merc<u>e</u>des
+					td Мерседес
+				tr
+					td C<u>a</u>rmen
+					td Кармен
+		
+		div Если слово оканчивается на согласную, кроме <strong>n, s</strong>, ударение падает на последний слог:
+		table(class="table-simple")
+			tbody
+				tr
+					td еspañ<u>o</u>l
+					td испанский
+				tr
+					td capit<u>a</u>l
+					td столица
+				tr
+					td rect<u>o</u>r
+					td ректор
+				tr
+					td facult<u>a</u>d
+					td факультет
+			
+		div При отклонении от этих правил над ударным слогом в слове обязательно ставится графический знак ударения (<strong>tilde</strong>):
+		table(class="table-simple")
+			tbody
+				tr
+					td simp<u>a</u>́tico
+					td симпатичный
+				tr
+					td caf<u>e</u>́
+					td кофе
+				tr
+					td m<u>u</u>́sica
+					td музыка
+				tr
+					td n<u>u</u>́mero
+					td номер
+
+		div II. Ударение ставится в словах с двойным значением. Их называют омонимы. Сравните:
+		table(class="table-simple")
+			tbody
+				tr
+					td dé
+					td форма глагола dar
+					td de
+					td предлог
+				tr
+					td sí
+					td да
+					td si
+					td ли, если
+				tr
+					td él
+					td он
+					td el
+					td артикль
+				tr
+					td tú 
+					td ты
+					td tu 
+					td твой
+				tr
+					td mí 
+					td меня, мне
+					td mi
+					td мой
+				tr
+					td té
+					td чай
+					td te
+					td тебя, тебе
+				tr
+					td sé
+					td я знаю
+					td se
+					td возвр. мест., себя
+				tr
+					td más
+					td более
+					td mas 
+					td но 
+				tr
+					td sólo
+					td только
+					td solo
+					td единственный
+
+
+		div III. Ударение ставится на все вопросительные местоимения и наречия, когда они употребляются в вопросительных и восклицательных предложениях (это правило сохраняется и для косвенной речи):
+		table(class="table-simple")
+			tbody
+				tr 
+					td ¿Cómo estás?
+					td Как ты поживаешь?
+				tr
+					td ¿Qué dices?
+					td Что ты говоришь?
+				tr
+					td ¡Qué bonita es esa muchacha!
+					td Какая красивая девушка!
+				tr
+					td ¿Quién es?
+					td Кто она?
+				tr
+					td ¿Dónde está Juan?
+					td Где Хуан?
+				tr
+					td ¿Cuándo viene Elena? - Pedro pregunta cuándo viene Elena.
+					td Когда придет Елена? - Педро спрашивает, когда придет Елена.
+		
+		div IV. Слабые звуки в дифтонгах.
+		
+		h3 Дополнительные источники:
+		ol
+			li 
+				a(href="https://tutesp.ru/2-2-pravila-udareniya.html" target="_blank") Правила ударения. 
+				| tutesp.ru
+			li 
+				a(href="https://espclubmoscu.com/blog/posts/pravila-udareniya-v-ispanskom-yazyke/" target="_blank") Правила ударения. 
+				| espclubmoscu.com. Другой подход к правилам ударения.
+			li 
+				a(href="https://www.youtube.com/watch?v=sL6ZvPwfayw" target="_blank") Все, что надо знать об ударениях в испанском.
+				| на канале Oleg Matveev | Онлайн-школа Estudiamos
+			li 
+				a(href="https://www.youtube.com/watch?v=86bLaT_NtJg" target="_blank") УДАРЕНИЕ В ИСПАНСКОМ ЯЗЫКЕ.
+				| на канале Уроки испанского языка
+			li 
+				a(href="https://es.wikipedia.org/wiki/Acentuaci%C3%B3n_del_idioma_espa%C3%B1ol" target="_blank") wiki Esp. 
+				| правила ударения.
+				
