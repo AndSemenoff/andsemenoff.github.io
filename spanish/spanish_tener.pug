@@ -1,0 +1,88 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	style
+		include my_table_style.css 
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Глагол tener - иметь.
+		table(class="minitable")
+			thead
+				tr
+					th &nbsp;
+					th &nbsp;
+					th &nbsp;
+					th ser
+					th estar
+					th tener
+					th ir
+					th decir
+			tbody
+				tr
+					td &nbsp;
+					td &nbsp;
+					td &nbsp;
+					td быть,<br> являться
+					td быть,<br> находиться
+					td иметь
+					td идти
+					td говорить
+				tr
+					td(rowspan=3 class="my_transform") Ед. число
+					td yo 
+					td я
+					td <strong>soy</strong>
+					td <strong>estoy</strong>
+					td <strong>tengo</strong>
+					td <strong>voy</strong>
+					td <strong>digo</strong>
+				tr
+					td(style="display:none") &nbsp;
+					td tú 
+					td ты
+					<td><strong>eres</strong></td>
+					<td><strong>estás</strong></td>
+					<td><strong>tienes</strong></td>
+					<td><strong>vas</strong></td>
+					<td><strong>dices</strong></td>
+				tr
+					td(style="display:none") &nbsp;
+					td él <br> ella <br> usted
+					td он <br>она<br> Вы
+					<td><strong>es</strong></td>
+					<td><strong>está</strong></td>
+					<td><strong>tiene</strong></td>
+					<td><strong>va</strong></td>
+					<td><strong>dice</strong></td>
+				tr
+					td(rowspan=3 class="my_transform") Мн. число
+					td nosotros(-as) 
+					td мы
+					<td><strong>somos</strong></td>
+					<td><strong>estamos</strong></td>
+					<td><strong>tenemos</strong></td>
+					<td><strong>vamos</strong></td>
+					<td><strong>decimos</strong></td>
+				tr
+					td(style="display:none") &nbsp;
+					td vosotros(-as) 
+					td вы
+					<td><strong>sois</strong></td>
+					<td><strong>estáis</strong></td>
+					<td><strong>tenéis</strong></td>
+					<td><strong>vais</strong></td>
+					<td><strong>decís</strong></td>
+				tr
+					td(style="display:none") &nbsp;
+					td ellos <br>ellas <br>ustedes
+					td они <br> они<br> Вы
+					<td><strong>son</strong></td>
+					<td><strong>están</strong></td>
+					<td><strong>tienen</strong></td>
+					<td><strong>van</strong></td>
+					<td><strong>dicen</strong></td>
+
+

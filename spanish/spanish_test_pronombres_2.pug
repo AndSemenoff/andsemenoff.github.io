@@ -1,0 +1,36 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*1*/ "ellos", 
+		| /*2*/	"usted", 
+		| /*3*/	"él", 
+		| /*4*/	"nosotros", 
+		| /*5*/	"ti", 
+		| /*6*/	"vosotros", 
+		| /*7*/	"ella", 
+		| /*8*/	"conmigo", 
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Употребите местоимения, относящиеся к выделенным словам:
+		ol
+			li Gilda está enfadada con <b>sus padres</b> y no quiere hablar con <input id = "question0" value=""></input>.
+			li <b>Señor Juárez</b>, ¡esto no lo podemos hacer sin <input id = "question1" value=""></input>!
+			li ¿Te acuerdas de <b>Jorge</b>? Anoche soñé con <input id = "question2" value=""></input>.
+			li La verdad es que a <input id = "question3" value=""></input> no <b>nos</b> gusta este lugar.
+			li ¿<b>Tú</b> estás buscando a Juana? Pues no la ves porque está detrás de <input id = "question4" value=""></input>.
+			li <b>Chicos</b>, sois mis mejores amigos, y por eso hoy pago por <input id = "question5" value=""></input>.
+			li <b>Nuria</b> es muy arrogante. No sé cómo puedes estar enamorado de <input id = "question6" value=""></input>.
+			li <b>Yo</b> no quiero ir al parque, sino al cine. ¿Quién viene con <input id = "question7" value=""></input>?
+
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

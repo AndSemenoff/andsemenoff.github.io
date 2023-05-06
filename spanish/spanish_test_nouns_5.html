@@ -1,0 +1,83 @@
+<html>
+   <head>
+   	<meta charset='utf-8' />
+      <script type = "text/javascript">
+	  	var answers = [
+		/*1*/ 	"una estudiante", 
+		/*2*/	"un maestro", 
+		/*3*/	"una empleada", 
+		/*4*/	"un peluqero", 
+		/*5*/	"una intérprete", 
+		/*6*/	"un camarero", 
+		/*7*/	"una pintora", 
+		/*8*/	"un abogado", 
+		/*9*/	"una enfermera", 
+		/*10*/	"un profesor",
+		/*11*/	"una secretaria",
+		/*12*/	"un actor",
+		/*13*/	"una periodista",
+		/*14*/	"un escritor",
+		/*15*/	"una cantante",
+		];
+		  function myclear()
+		  {
+			  for(count = 0; count < answers.length; count++)
+				  {
+					element = document.getElementById('question' + count);
+					element.value = "";
+					element.style.color = 'black';
+					color1.style.fontWeight = 'normal';
+				  }
+		  }
+		 function test()
+         {
+			for(count = 0; count < answers.length; count++)
+			{
+				answer1 = document.getElementById('question' + count).value;
+				color1 = document.getElementById('question' + count);
+				if (answer1 == answers[count]) color1.style.color = 'green';
+				else 
+					{
+					color1.style.color = 'red';
+					color1.style.fontWeight = 'bold';
+					}
+			}
+
+         }
+      </script>
+      <style>
+	  form{
+	  margin-left: 30px;
+	  }
+	  div{
+	  margin-left: 30px;
+	  }
+	  </style>
+   </head>
+   <body>
+   <div>Задание. Дополните пары профессий, не забывая изменить также форму артикля.</div>
+	<ol>
+      <li>un estudiante - студент | <input type="text" id = "question0" value=""></input> - студентка.</li>
+      <li><input type="text" id = "question1"></input> - учитель | una maestra - учительница.</li>
+      <li>un empleado - служащий | <input type="text" id = "question2"></input> - служащая.</li>
+	  <li><input type="text" id = "question3"></input> - парикмахер | una peluqera - парикмахерша .</li>
+      <li>un intérprete - переводчик | <input type="text" id = "question4"></input> - переводчица.</li>
+      <li><input type="text" id = "question5"></input> - официант | una camarera - официантка.</li>
+      <li>un pintor - художник | <input type="text" id = "question6"></input> - художница.</li>
+      <li><input type="text" id = "question7"></input> - адвокат | una abogada - адвокат женщина</li>
+      <li>un enfermero - медбрат | <input type="text" id = "question8"></input> - медсестра.</li>
+      <li><input type="text" id = "question9"></input> - преподаватель | una profesora - преподовательница.</li>
+	  <li>un secretario - секретарь | <input type="text" id = "question10"></input> - секретарша.</li>
+	  <li><input type="text" id = "question11"></input> - актер | una actriz - актриса. </li>
+	  <li>un periodista - журналист | <input type="text" id = "question12"></input> - журналистка.</li>
+	<li><input type="text" id = "question13"></input> - писатель | una escritora - писательница.</li>
+	<li>un cantante - певец | <input type="text" id = "question14"></input> - певица.</li>
+	</ol>
+	  
+      <form>
+         <input type = "button" onclick = "test()" value = "Проверить"> 
+		 <input type = "button" onclick = "myclear()" value = "Очистить">
+      </form>
+
+   </body>
+</html>

@@ -1,0 +1,166 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "el color", 
+		| /*02*/ "el matiz", 
+		| /*03*/ "el tono", 
+		| /*04*/ "el arco iris", 
+		| /*05*/ "blanco", 
+		| /*06*/ "negro",
+		| /*07*/ "gris", 
+		| /*08*/ "verde", 
+		| /*09*/ "amarillo", 
+		| /*10*/ "rojo", 
+		| /*11*/ "azul", 
+		| /*12*/ "azul claro",
+		| /*13*/ "rosa", 
+		| /*14*/ "naranja", 
+		| /*15*/ "violeta", 
+		| /*16*/ "marrón",
+		| /*17*/ "dorado", 
+		| /*18*/ "argentado", 
+		| /*19*/ "beige", 
+		| /*20*/ "crema", 
+		| /*21*/ "turquesa", 
+		| /*22*/ "rojo cereza", 
+		| /*23*/ "lila", 
+		| /*24*/ "carmesí", 
+		| /*25*/ "claro", 
+		| /*26*/ "oscuro", 
+		| /*27*/ "vivo", 
+		| /*28*/ "de color", 
+		| /*29*/ "en colores", 
+		| /*30*/ "blanco y negro", 
+		| /*31*/ "unicolor", 
+		| /*32*/ "multicolor", 
+		| /*33*/ "", 
+		| /*34*/ "", 
+		| /*35*/ "", 
+		| /*36*/ "", 
+		| /*37*/ "", 
+		| /*38*/ "", 
+		| /*39*/ "", 
+		| /*40*/ "", 
+		| /*41*/ "", 
+		| /*42*/ "", 
+		| /*43*/ "", 
+		| /*44*/ "", 
+		| /*45*/ "", 
+		| /*46*/ "", 
+		| /*47*/ "", 
+		| /*48*/ "", 
+		| /*49*/ "", 
+		| /*50*/ "", 
+		|];
+		include check_test.js 
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Тест. Цвета.
+		div á é í ó ú ñ
+		table(class="table-test")
+			tbody
+				tr 
+					td цвет 
+					td: input(type="text" id = "question0" value="")  
+				tr 
+					td оттенок 
+					td: input(type="text" id = "question1" value="")  
+				tr 
+					td тон 
+					td: input(type="text" id = "question2" value="")  
+				tr 
+					td радуга 
+					td: input(type="text" id = "question3" value="") 
+				tr 
+					td белый 
+					td: input(type="text" id = "question4" value="")
+				tr 
+					td чёрный 
+					td: input(type="text" id = "question5" value="")
+				tr 
+					td серый 
+					td: input(type="text" id = "question6" value="")
+				tr 
+					td зелёный 
+					td: input(type="text" id = "question7" value="")
+				tr 
+					td жёлтый 
+					td: input(type="text" id = "question8" value="")
+				tr 
+					td красный 
+					td: input(type="text" id = "question9" value="")
+				tr 
+					td синий 
+					td: input(type="text" id = "question10" value="")
+				tr 
+					td голубой 
+					td: input(type="text" id = "question11" value="")
+				tr 
+					td розовый 
+					td: input(type="text" id = "question12" value="")
+				tr 
+					td оранжевый 
+					td: input(type="text" id = "question13" value="")
+				tr 
+					td фиолетовый 
+					td: input(type="text" id = "question14" value="")
+				tr 
+					td коричневый 
+					td: input(type="text" id = "question15" value="")
+				tr 
+					td золотой 
+					td: input(type="text" id = "question16" value="")
+				tr 
+					td серебристый 
+					td: input(type="text" id = "question17" value="")
+				tr 
+					td бежевый 
+					td: input(type="text" id = "question18" value="")
+				tr 
+					td кремовый 
+					td: input(type="text" id = "question19" value="")
+				tr 
+					td бирюзовый 
+					td: input(type="text" id = "question20" value="")
+				tr 
+					td вишнёвый 
+					td: input(type="text" id = "question21" value="")
+				tr 
+					td лиловый 
+					td: input(type="text" id = "question22" value="")
+				tr 
+					td малиновый 
+					td: input(type="text" id = "question23" value="")
+				tr 
+					td светлый 
+					td: input(type="text" id = "question24" value="")
+				tr 
+					td тёмный 
+					td: input(type="text" id = "question25" value="")
+				tr 
+					td яркий 
+					td: input(type="text" id = "question26" value="")
+				tr 
+					td цветной (карандаш) 
+					td: input(type="text" id = "question27" value="")
+				tr 
+					td цветной (фильм) 
+					td: input(type="text" id = "question28" value="")
+				tr 
+					td чёрно-белый 
+					td: input(type="text" id = "question29" value="")
+				tr 
+					td одноцветный 
+					td: input(type="text" id = "question30" value="")
+				tr 
+					td разноцветный 
+					td: input(type="text" id = "question31" value="")
+				tr
+					td(colspan=2) 
+						input( class="button" onclick = "test()" value = "Проверить")
+						input( class="button" onclick = "myclear()" value = "Очистить")

@@ -1,0 +1,74 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Дни недели. Los días de la semana.
+		p Все дни недели в испанском языке мужского рода. Перед ними употребляется определенный артикль el (ед.ч.) или los (мн.ч.).
+		table(class="table-simple")
+			tbody
+				tr
+					td
+						| lunes
+					td 
+						| Понедельник
+					td
+						audio(controls="" autoplay="" name="media")
+							source(src="audio/es_0.mpga" type="audio/mpeg")
+				tr
+					td
+						| martes
+					td 
+						| Вторник
+					td
+						<audio controls="" autoplay="" name="media">
+						<source src="audio/es_1.mpga" type="audio/mpeg">
+						</audio>
+				tr
+					td
+						| miércoles
+					td 
+						| Среда
+					td
+						<audio controls="" autoplay="" name="media">
+						<source src="audio/es_2.mpga" type="audio/mpeg">
+						</audio>
+				tr
+					td
+						| jueves
+					td 
+						| Четверг
+					td
+						<audio controls="" autoplay="" name="media">
+						<source src="audio/es_3.mpga" type="audio/mpeg">
+						</audio>
+				tr
+					td
+						| viernes
+					td 
+						| Пятница
+					td
+						<audio controls="" autoplay="" name="media">
+						<source src="audio/es_4.mpga" type="audio/mpeg">
+						</audio>
+				tr
+					td
+						| sábado
+					td 
+						| Суббота
+					td
+						<audio controls="" autoplay="" name="media">
+						<source src="audio/es_5.mpga" type="audio/mpeg">
+						</audio>
+				tr
+					td
+						| domingo
+					td 
+						| Воскресенье
+					td
+						<audio controls="" autoplay="" name="media">
+						<source src="audio/es_6.mpga" type="audio/mpeg">
+						</audio>

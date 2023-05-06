@@ -1,0 +1,35 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "tienes", 
+		| /*02*/ "tengo", 
+		| /*03*/ "tiene", 
+		| /*04*/ "tenemos", 
+		| /*05*/ "tenéis", 
+		| /*06*/ "tiene", 
+		| /*07*/ "tenemos", 
+		| /*08*/ "tenéis", 
+		| /*09*/ "tienen", 
+		| /*10*/ "tienen", 
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Поставьте правильную форму глагола <b>tener</b> в настоящем времени:
+		ol 
+			li a) – Celia, ¿qué tal los alemanes? ¿ <input id = "question0" value=""></input> problemas con ellos?
+			li b) ° No, no <input id = "question1" value=""></input> problemas. Mi marido <input id = "question2" value=""></input> un buen trabajo, y (nosotros) <input id = "question3" value=""></input> un piso agradable para la familia.
+			li c) – ¿Y vosotros ya <input id = "question4" value=""></input> contacto con alemanes?
+			li d) ° Claro, él <input id = "question5" value=""></input> contacto con sus colegas, y además (nosotros)<input id = "question6" value=""></input> vecinos muy simpáticos.
+			li e) – Vosotros <input id = "question7" value=""></input> dos hijos, ¿verdad?
+			li f) ° Sí, <input id = "question8" value=""></input> seis y diez años. Y ellos <input id = "question9" value=""></input> amigos en el cole.
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

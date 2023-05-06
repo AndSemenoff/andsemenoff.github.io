@@ -1,0 +1,59 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		include test_pretérito_perfecto_1.js
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Forme Participio Pasado de los verbos siguientes. Образуйте причастие прошедшего времени следующих глаголов:
+		table(class="table-simple")
+			tbody
+				tr 
+					td ver 
+					td: input(type="text" id = "question0" value="")
+				tr 
+					td estar 
+					td: input(type="text" id = "question1") 
+				tr 
+					td ser 
+					td: input(type="text" id = "question2")
+				tr 
+					td viajar <input type="text" id = "question3"></input>.
+				tr 
+					td salir <input type="text" id = "question4"></input>.
+				tr 
+					td entender <input type="text" id = "question5"></input>.
+				tr 
+					td poner <input type="text" id = "question6"></input>.
+				tr 
+					td querer <input type="text" id = "question7"></input>.
+				tr 
+					td escribir <input type="text" id = "question8"></input>.
+				tr 
+					td esperar <input type="text" id = "question9"></input>.
+				tr 
+					td cubir <input type="text" id = "question10"></input>.
+				tr 
+					td leer <input type="text" id = "question11"></input>.
+				tr 
+					td jugar <input type="text" id = "question12"></input>.
+				tr 
+					td oír <input type="text" id = "question13" value=""></input>.
+				tr 
+					td morir <input type="text" id = "question14"></input>.
+				tr 
+					td vivir <input type="text" id = "question15"></input>.
+				tr 
+					td ir <input type="text" id = "question16"></input>.
+				tr 
+					td perder <input type="text" id = "question17"></input>.
+				tr 
+					td romper <input type="text" id = "question18"></input>.
+				tr 
+					td abrir <input type="text" id = "question19"></input>.
+		form
+			<input type = "button" class="button" onclick = "test()" value = "Проверить"> 
+			<input type = "button" class="button" onclick = "myclear()" value = "Очистить">

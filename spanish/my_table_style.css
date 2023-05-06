@@ -1,0 +1,53 @@
+.minitable {
+	margin-left:auto; 
+	margin-right:auto;
+	border-collapse: collapse;
+	text-align: center;
+	border:2px solid rgb(80, 80, 80);
+	margin-top: 5px;
+}
+.minitable th {
+	text-align: center;
+	font-style: normal;
+	border: 1px solid black;
+	border-bottom: 2px solid rgb(80, 80, 80);
+	border-top: 2px solid rgb(80, 80, 80);
+	padding: 5px;
+}
+
+.minitable th:nth-child(3){
+	border-right: 2px solid rgb(80, 80, 80);
+}
+
+
+.minitable tr{
+	height: 30px;
+	margin: auto;
+}
+
+.minitable tr:nth-child(1){
+	font-style: italic;
+}
+
+.minitable td {
+	border: 1px solid rgb(80, 80, 80);
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.minitable td:nth-child(3){
+	font-weight: normal;
+	font-style: italic;
+	border-right: 2px solid rgb(80, 80, 80);
+}
+
+.my_transform
+{
+	transform: rotate(270deg);
+	margin: 0 auto;
+	padding: 0;
+}
+input{
+	border-width: 3px;
+	width: 300px;
+}

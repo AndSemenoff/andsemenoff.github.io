@@ -1,0 +1,130 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	style
+		include my_table_style.css 
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Pretérito Perfecto de Indicativo.
+		div Все перфектные (совершенные) времена в испанском образуются с помощью вспомогательного глагола <strong>haber</strong>. В Pretérito Perfecto этот глагол стоит в настоящем, то есть:
+		div Образуется с помощью вспогательного глагола haber в настоящем времени и причастия прошедшего времени основного глагола. Смотри 
+			a(href="spanish_participio_pasado.html") причастие (participio pasado).
+		table(class="table-test")
+			tbody
+				tr
+					td yo
+					td he
+				tr
+					td tú
+					td has
+				tr
+					td él, ella, usted
+					td ha
+				tr
+					td nosotros
+					td hemos
+				tr
+					td vosotros
+					td habéis
+				tr
+					td ellos, ellas, ustedes
+					td han
+
+		table(class="minitable")
+			thead
+				tr
+					th &nbsp;
+					th &nbsp;
+					th &nbsp;
+					th haber
+					th +
+					th причастие прошедшего времени
+				tbody
+				tr
+					td &nbsp;
+					td &nbsp;
+					td &nbsp;
+					td иметь
+					td(rowspan=7) +
+					td(rowspan=7) &nbsp;hablado<br> comido<br> vivido<br> dicho<br> hecho<br> escrito
+				tr
+					td(rowspan=3 class="my_transform") Ед. число
+					td yo 
+					td я
+					td: strong he
+
+				tr
+					td(style="display:none") &nbsp;
+					td tú 
+					td ты
+					td: strong has
+
+				tr
+					td(style="display:none") &nbsp;
+					td él <br> ella <br> usted
+					td он <br>она<br> Вы
+					<td><strong>ha</strong></td>
+
+				tr
+					td(rowspan=3 class="my_transform") Мн. число
+					td nosotros(-as) 
+					td мы
+					<td><strong>hemos</strong></td>
+
+				tr
+					td(style="display:none") &nbsp;
+					td vosotros(-as) 
+					td вы
+					<td><strong>habéis</strong></td>
+
+				tr
+					td(style="display:none") &nbsp;
+					td ellos <br>ellas <br>ustedes
+					td они <br> они<br> Вы
+					td: strong han
+
+		h3 Маркеры Pretérito Perfecto
+		table(class="table-simple")
+			tbody
+				tr
+					td esta semana
+					td на этой неделе
+				tr
+					td este año
+					td в этом году
+				tr
+					td este mes
+					td в этом месяце
+				tr
+					td ya
+					td уже
+				tr
+					td este siglo
+					td в этом веке
+				tr
+					td hoy
+					td сегодня
+				tr
+					td todavía
+					td еще нет
+		h3 Дополнительные источники:
+		ol
+			li 
+				a(href="https://entre-amigos.ru/verbos/2996-preterito-perfecto-de-indicativo-formas-usos.html" target="_blank") Pretérito Perfecto de Indicativo.
+				| entre-amigos.ru
+			li 
+				a(href="https://tutesp.ru/8-3-10-slozhnoe-proshedshee-vremya.html" target="_blank") Pretérito Perfecto de Indicativo.
+				| tutesp.ru
+			li 
+				a(href="https://iespanol.ru/preterito.html" target="_blank") Pretérito Perfecto de Indicativo.
+				| iespanol.ru
+			li 
+				a(href="https://www.youtube.com/watch?v=XNNjOGP99pI" target="_blank") Разбираем время Pretérito Perfecto.
+				| на канале Oleg Matveev | Онлайн-школа Estudiamos
+			li 
+				a(href="https://iespanol.ru/testy-preterito-perfecto.html" target="_blank") 5 тестов на спряжение глаголов в Pretérito Perfecto (совершенное прошедшее время).
+				| iespanol.ru
+				

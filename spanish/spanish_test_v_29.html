@@ -1,0 +1,64 @@
+<html>
+   <head>
+   	<meta charset='utf-8' />
+      <script type = "text/javascript">
+		  function myclear()
+		  {
+			  for(count = 0; count < 10; count++)
+				  {
+					element = document.getElementById('question' + count);
+					element.value = "";
+					element.style.color = 'black';
+					color1.style.fontWeight = 'normal';
+				  }
+		  }
+		 function test()
+         {
+		 	var answers = ["un", "una", "una", "un", "una", "una", "un", "un", "una", "un"];
+			for(count = 0; count < 10; count++)
+			{
+				answer1 = document.getElementById('question' + count).value;
+				color1 = document.getElementById('question' + count);
+				if (answer1 == answers[count]) color1.style.color = 'green';
+				else 
+					{
+					color1.style.color = 'red';
+					color1.style.fontWeight = 'bold';
+					}
+			}
+
+         }
+      </script>
+      <style>
+	  form{
+	  margin-left: 30px;
+	  }
+	  div{
+	  margin-left: 30px;
+	  }
+	  </style>
+   </head>
+   <body>
+   <div>Задание. Употребите в тех случаях, где это необходимо, соответствующий артикль.</div>
+   <div>    5. ... aspiración de muchos jóvenes españoles es hacerse ... ingeniero. 6. Tu amigo Pedro es ... Don Juan. 7. María tiene ... tío en la Habana. 8. Su hermano es ... pintor, pero no gana ... centavo. 9. ... huevos están a den pesetas ... docena. 10. ... noble es respetar ... sentimientos de los demás. 11. Me gusta ... verde del paisaje valenciano. 12. ... más sensato es no perder ... calma en ... momentos de peligro. 13. Estudia ... matemáticas para ingresar en ... escuela de ... ingenieros. 14. ... Madrid del siglo XIX era ... pueblo grande. 15. ... Chunga era ... célebre "bailaora" española. 16. ... tortilla a ... española es uno de ... platos más sabrosos y baratos. 17. José estudia ... guitarra. 18. Se prohibe tirar ... papeles. 19. Esta tienda está cerrada. Usted puede comprar algo en ... de ... esquina. 20. Este abrigo te sienta mal, ... de ... pana te cae mejor. 21. ... naranjas valencianas me gustan más que ... de ... Cuba.
+	</div>
+	<ol>
+		<li><input type="text" id = "question0" value=""></input> doctor, me duele <input type="text" id = "question1"></input> cabeza estos días.</li>
+      <li><input type="text" id = "question2"></input> señor Ruiz es <input type="text" id = "question3"></input> hombre muy ocupado.</li>
+      <li>Su conducta es impropia de <input type="text" id = "question4"></input> maestro.</li>
+	  <li>A pesar de su juventud era todo <input type="text" id = "question5"></input> hombre.</li>
+      <li> familia .</li>
+      <li> mujer.</li>
+      <li><input type="text" id = "question6"></input> libro.</li>
+      <li><input type="text" id = "question7"></input> amor.</li>
+      <li><input type="text" id = "question8"></input> ciudad.</li>
+      <li><input type="text" id = "question9"></input> hombre.</li>
+	</ol>
+	  
+      <form>
+         <input type = "button" onclick = "test()" value = "Проверить"> 
+		 <input type = "button" onclick = "myclear()" value = "Очистить">
+      </form>
+
+   </body>
+</html>

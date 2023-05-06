@@ -1,0 +1,220 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "el/la mar", 
+		| /*02*/ "el océano", 
+		| /*03*/ "el golfo", 
+		| /*04*/ "el estrecho", 
+		| /*05*/ "el continente", 
+		| /*06*/ "la isla",
+		| /*07*/ "la península", 
+		| /*08*/ "el archipiélago", 
+		| /*09*/ "la bahía", 
+		| /*10*/ "el puerto", 
+		| /*11*/ "la laguna", 
+		| /*12*/ "el cabo",
+		| /*13*/ "el atolón", 
+		| /*14*/ "el arrecife", 
+		| /*15*/ "el coral", 
+		| /*16*/ "la profundidad",
+		| /*17*/ "el abismo", 
+		| /*18*/ "la corriente", 
+		| /*19*/ "la orilla", 
+		| /*20*/ "la costa", 
+		| /*21*/ "el flujo", 
+		| /*22*/ "el reflujo", 
+		| /*23*/ "el fondo", 
+		| /*24*/ "la ola", 
+		| /*25*/ "la espuma", 
+		| /*26*/ "la tempestad", 
+		| /*27*/ "el huracán", 
+		| /*28*/ "el tsunami", 
+		| /*29*/ "la bonanza", 
+		| /*30*/ "el polo", 
+		| /*31*/ "la latitud", 
+		| /*32*/ "la longitud", 
+		| /*33*/ "el paralelo", 
+		| /*34*/ "el ecuador", 
+		| /*35*/ "el cielo", 
+		| /*36*/ "el horizonte", 
+		| /*37*/ "el aire", 
+		| /*38*/ "el faro", 
+		| /*39*/ "", 
+		| /*40*/ "", 
+		| /*41*/ "", 
+		| /*42*/ "", 
+		| /*43*/ "", 
+		| /*44*/ "", 
+		| /*45*/ "", 
+		| /*46*/ "", 
+		| /*47*/ "", 
+		| /*48*/ "", 
+		| /*49*/ "", 
+		| /*50*/ "", 
+		|];
+		include check_test.js 
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Словарь. Море. Океан.
+		div á é í ó ú ñ
+		table(class="table-test")
+			tbody
+				tr 
+					td море 
+					td: input(type="text" id = "question0" value="")  
+				tr
+					td океан 
+					td: input(type="text" id = "question1" value="")
+				tr
+					td залив 
+					td: input(type="text" id = "question2" value="")  
+				tr 
+					td пролив 
+					td: input(type="text" id = "question3" value="")  
+				tr
+					td материк 
+					td: input(type="text" id = "question4" value="")  
+				tr
+					td остров 
+					td: input(type="text" id = "question5" value="")  
+				tr
+					td полуостров 
+					td: input(type="text" id = "question6" value="") 
+				tr
+					td архипелаг 
+					td: input(type="text" id = "question7" value="")  
+				tr
+					td бухта 
+					td: input(type="text" id = "question8" value="") 
+				tr
+					td гавань 
+					td: input(type="text" id = "question9" value="")  
+				tr
+					td лагуна 
+					td: input(type="text" id = "question10" value="") 
+				tr
+					td мыс 
+					td: input(type="text" id = "question11" value="")  
+				tr
+					td атолл 
+					td: input(type="text" id = "question12" value="")  
+				tr
+					td риф 
+					td: input(type="text" id = "question13" value="") 
+				tr
+					td коралл 
+					td: input(type="text" id = "question14" value="") 
+				tr
+					td глубина 
+					td: input(type="text" id = "question15" value="")  
+				tr
+					td бездна 
+					td: input(type="text" id = "question16" value="") 
+				tr
+					td течение 
+					td: input(type="text" id = "question17" value="") 
+				tr
+					td побережье 
+					td: input(type="text" id = "question18" value="") 
+				tr
+					td берег (моря) 
+					td: input(type="text" id = "question19" value="") 
+				tr
+					td прилив 
+					td: input(type="text" id = "question20" value="") 
+				tr
+					td отлив 
+					td: input(type="text" id = "question21" value="") 
+				tr
+					td дно 
+					td: input(type="text" id = "question22" value="") 
+				tr
+					td волна 
+					td: input(type="text" id = "question23" value="") 
+				tr
+					td пена 
+					td: input(type="text" id = "question24" value="") 
+				tr
+					td буря, шторм 
+					td: input(type="text" id = "question25" value="") 
+				tr
+					td ураган 
+					td: input(type="text" id = "question26" value="") 
+				tr
+					td цунами 
+					td: input(type="text" id = "question27" value="") 
+				tr
+					td штиль 
+					td: input(type="text" id = "question28" value="") 
+				tr
+					td полюс 
+					td: input(type="text" id = "question29" value="") 
+				tr
+					td широта 
+					td: input(type="text" id = "question30" value="") 
+				tr
+					td долгота 
+					td: input(type="text" id = "question31" value="") 
+				tr
+					td параллель 
+					td: input(type="text" id = "question32" value="") 
+				tr
+					td экватор 
+					td: input(type="text" id = "question33" value="") 
+				tr
+					td небо 
+					td: input(type="text" id = "question34" value="") 
+				tr
+					td горизонт 
+					td: input(type="text" id = "question35" value="")  
+				tr
+					td воздух 
+					td: input(type="text" id = "question36" value="") 
+				tr
+					td маяк 
+					td: input(type="text" id = "question37" value="") 
+				tr
+					td нырять 
+					td bucear (vi) 
+				tr
+					td затонуть (о корабле) 
+					td hundirse (vr) 
+				tr
+					td сокровища 
+					td tesoros (m pl) 
+				tr
+					td полярный 
+					td polar (adj) 
+				tr
+					td спокойный 
+					td calmo, tranquilo (adj) 
+				tr
+					td гребень волны 
+					td cresta (f) de la ola 
+				tr
+					td отмель 
+					td banco (m) de arena 
+				tr
+					td коралловый риф 
+					td arrecife (m) de coral 
+				tr
+					td впадина 
+					td fosa (f) oceánica 
+				tr
+					td земля, суша 
+					td tierra (f) firme
+				tr
+					td глубокий 
+					td profundo (adj) 
+				tr
+					td омывать 
+					td bañar (vt) 
+				tr
+					td(colspan=2) 
+						input( class="button" onclick = "test()" value = "Проверить")
+						input( class="button" onclick = "myclear()" value = "Очистить")

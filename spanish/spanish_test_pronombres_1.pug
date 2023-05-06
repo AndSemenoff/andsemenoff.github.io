@@ -1,0 +1,35 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*1*/ 	"--", 
+		| /*2*/	"Vosotros", 
+		| /*3*/	"Nosotros", 
+		| /*4*/	"--", 
+		| /*5*/	"--", 
+		| /*6*/	"ella", 
+		| /*7*/	"él", 
+		| /*8*/	"--", 
+
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Выберите правильное ?окончание:
+		ol 
+			li La casa está cerca de la playa. (-- / Ella / La) <input id = "question0" value=""></input> me encanta.
+			li ¿(-- / Vosotros / Los) <input id = "question1" value=""></input> sabéis de vinos? (-- / Nosotros / Nos) <input id = "question2" value=""></input> no, en realidad.
+			li En otoño recogemos las aceitunas y (-- / nosotros / nos) <input id = "question3" value=""></input> lo hacemos a mano.
+			li La cosecha ha sido mala, este año (-- / ella / la) <input id = "question4" value=""></input> será menor que nunca.
+			li Miriam y Raúl tienen trabajos un poco atípicos: (-- / ella / la) <input id = "question5" value=""></input> es ingeniera y (-- / él /ello) <input id = "question6" value=""></input>, educador.
+			li ¡Hoy existen zapatos ecológicos! Los usas, y luego (-- / ellos / los) <input id = "question7" value=""></input> se convierten en compost.
+
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

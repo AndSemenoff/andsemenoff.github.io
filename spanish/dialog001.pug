@@ -1,0 +1,41 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Диалог 001.
+
+		dl 
+			dt Mario 
+			dd Por favor, ¿tienen habitaciones libres?
+			dt Recepcionista 
+			dd ¿Cuántas personas son?
+			dt Mario 
+			dd Somos dos. Quisiéramos una habitación doble, con dos camas.
+			dt Recepcionista
+			dd Sí, no hay problema.
+			dt Mario
+			dd ¿Tienen baño las habitaciones?
+			dt Recepcionista
+			dd Sí, claro, baño, televisión y aire acondicionado.
+			dt Mario 
+			dd ¿Está incluido el desayuno?
+			dt Recepcionista 
+			dd No, es sin desayuno. El desayuno es aparte.
+
+		<audio controls="" autoplay="" name="media">
+		<source src="audio/dialog001.mp3" type="audio/mpeg">
+		</audio>
+		
+		ul 
+			li libre свободный, не занятый
+			li la cama кровать
+			li hay есть, имеется
+			li claro конечно
+			li con с
+			li sin без
+			li el desayuno завтрак
+			li aparte отдельно, раздельно

@@ -1,0 +1,37 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "sois", 
+		| /*02*/ "es", 
+		| /*03*/ "sois", 
+		| /*04*/ "somos", 
+		| /*05*/ "es", 
+		| /*06*/ "es", 
+		| /*07*/ "eres", 
+		| /*08*/ "soy", 
+		| /*09*/ "soy", 
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Выберите нужную форму глагола ser («быть, являться»):
+		ol 
+			li  Вы испанки. – Vosotras <input id = "question0" value=""></input> españolas.
+			li  Вы мой босс. – Usted <input id = "question1" value=""></input> mi jefe.
+			li  Вы опасны. – Vosotros <input id = "question2" value=""></input> peligrosos.
+			li  Мы студенты. – Nosotros <input id = "question3" value=""></input> estudiantes.
+			li  Он хороший человек. – Él <input id = "question4" value=""></input> un buen hombre.
+			li  Она путешественница. – Ella <input id = "question5" value=""></input> una viajera.
+			li  Ты мой друг. – Tú <input id = "question6" value=""></input> mi amigo.
+			li  Я твой брат. – Yo <input id = "question7" value=""></input> tu hermano.
+			li  Я твоя сестра. – Yo <input id = "question8" value=""></input> tu hermana.
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

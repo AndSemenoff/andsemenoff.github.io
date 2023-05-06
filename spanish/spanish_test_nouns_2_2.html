@@ -1,0 +1,72 @@
+<html>
+   <head>
+   	<meta charset='utf-8' />
+      <script type = "text/javascript">
+	  	var answers = [
+		/*1*/ 	"la", 
+		/*2*/	"el", 
+		/*3*/	"el", 
+		/*4*/	"la", 
+		/*5*/	"la", 
+		/*6*/	"el", 
+		/*7*/	"el", 
+		/*8*/	"el", 
+		/*9*/	"la", 
+		/*10*/	"la"];
+		  function myclear()
+		  {
+			  for(count = 0; count < answers.length; count++)
+				  {
+					element = document.getElementById('question' + count);
+					element.value = "";
+					element.style.color = 'black';
+					color1.style.fontWeight = 'normal';
+				  }
+		  }
+		 function test()
+         {
+			for(count = 0; count < answers.length; count++)
+			{
+				answer1 = document.getElementById('question' + count).value;
+				color1 = document.getElementById('question' + count);
+				if (answer1 == answers[count]) color1.style.color = 'green';
+				else 
+					{
+					color1.style.color = 'red';
+					color1.style.fontWeight = 'bold';
+					}
+			}
+
+         }
+      </script>
+      <style>
+	  form{
+	  margin-left: 30px;
+	  }
+	  div{
+	  margin-left: 30px;
+	  }
+	  </style>
+   </head>
+   <body>
+   <div>Задание. Поставьте соотвествующую форму <b>определенного</b> артикля перед существительными.</div>
+	<ol>
+      <li><input type="text" id = "question0" value=""></input> profesión.</li>
+      <li><input type="text" id = "question1"></input> bolígrafo.</li>
+      <li><input type="text" id = "question2"></input> lunes.</li>
+	  <li><input type="text" id = "question3"></input> revista.</li>
+      <li><input type="text" id = "question4"></input> flor .</li>
+      <li><input type="text" id = "question5"></input> paisaje.</li>
+      <li><input type="text" id = "question6"></input> apellido.</li>
+      <li><input type="text" id = "question7"></input> nombre.</li>
+      <li><input type="text" id = "question8"></input> edad.</li>
+      <li><input type="text" id = "question9"></input> semana.</li>
+	</ol>
+	  
+      <form>
+         <input type = "button" onclick = "test()" value = "Проверить"> 
+		 <input type = "button" onclick = "myclear()" value = "Очистить">
+      </form>
+
+   </body>
+</html>

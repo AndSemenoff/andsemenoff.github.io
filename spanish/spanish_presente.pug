@@ -1,0 +1,620 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	style
+		include my_table_style.css 
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Presente de Indicativo. Настоящее время.
+		div 
+		table(class="table-test")
+			tbody
+				tr
+					th(rowspan="2") &nbsp;<br>Местоимение</th>
+					th &nbsp;
+					th I<br>спряжение
+					th II<br>спряжение
+					th III<br>спряжение
+				tr
+					th &nbsp;
+					th -AR
+					th -ER
+					th -IR
+				tr
+					td <center>yo</center>
+					td я
+					td -o
+					td -o
+					td -o
+				tr
+					td <center>tú</center>
+					td ты
+					td -as
+					td -es
+					td -es
+				tr
+					td él ella Usted
+					td он она Вы
+					td -a
+					td -e
+					td -e
+				tr
+					td nosotros(-as)
+					td мы
+					td -amos
+					td -emos
+					td -imos
+				tr
+					td vosotros(-as)
+					td вы
+					td -áis
+					td -éis
+					td -ís
+				tr
+					td ellos ellas Ustedes
+					td они они Вы
+					td -an
+					td -en
+					td -en
+		div Испанские глаголы делятся на:
+			div I. правильные,
+			div II. неправильные,
+			div III. глаголы индивидуального спряжения.
+		div Неправильные глаголы можно условно разделить на семь основных групп.
+		h3 I группа
+		div К этой группе относятся глаголы I и II спряжений, под ударением дифтонгизируется корневой гласный: <strong>-e</strong> → <strong>-ie</strong>
+		table(class="table-test")
+			thead
+				tr
+					th
+					th 
+					th: center I спряжение
+					th: center II cпряжение
+			tbody
+				tr
+					td
+					td 
+					td
+						strong empezar 
+						em начинать
+					td 
+						strong defender 
+						em защищать
+				tr
+					td: center yo
+					td я
+					td emp<strong>ie</strong>z
+						span(class="spanish-ending") o
+					td def<strong>ie</strong>nd
+						span(class="spanish-ending") o
+				tr
+					td: center tú
+					td ты
+					td emp<strong>ie</strong>z
+						span(class="spanish-ending") as
+					td def<strong>ie</strong>nd
+						span(class="spanish-ending") es
+				tr
+					td él, ella, usted
+					td он она Вы
+					td emp<strong>ie</strong>z
+						span(class="spanish-ending") a
+					td def<strong>ie</strong>nd
+						span(class="spanish-ending") e
+				tr
+					td nosotros
+					td мы
+					td empez
+						span(class="spanish-ending") amos
+					td defend
+						span(class="spanish-ending") emos
+				tr
+					td vosotros
+					td вы
+					td empez
+						span(class="spanish-ending") áis
+					td defend
+						span(class="spanish-ending") éis
+				tr
+					td ellos, ellas, ustedes
+					td они они Вы
+					td emp<strong>ie</strong>z
+						span(class="spanish-ending") an
+					td def<strong>ie</strong>nd
+						span(class="spanish-ending") en
+
+		
+		div Важные глаголы, изменяющиеся по этому типу:
+		table(class="table-simple")
+			thead
+				tr
+					th(colspan=2): center I спряжение
+					th(colspan=2): center II cпряжение
+			tbody
+				tr 
+					td atravesar 
+					td пересекать
+					td defender 
+					td защищать
+				tr 
+					td cerrar 
+					td закрывать
+					td encender 
+					td зажигать
+				tr 
+					td comenzar 
+					td начинать
+					td entender 
+					td понимать
+				tr 
+
+				tr 
+					td despertar 
+					td будить
+					td perder 
+					td терять
+				tr 
+					td negar 
+					td отрицать
+					td querer
+					td хотеть
+				tr 
+					td pensar 
+					td думать
+					td 
+					td 
+				tr 
+					td recomendar 
+					td советовать
+					td 
+					td 
+				tr 
+					td fregar
+					td мыть
+					td 
+					td 
+					
+		table(class="table-test")
+			thead
+				tr
+					th 
+					th 
+					th
+					th yo
+					th tú
+					th él<br> ella<br> usted
+					th nosotros
+					th vosotros
+					th ellas<br> ellos<br> Ustedes
+			tbody
+				tr 
+					td I
+					td dar 
+					td давать
+					td <b>doy</b>
+					td d
+						span(class="spanish-ending") as 
+					td d
+						span(class="spanish-ending") a
+					td d
+						span(class="spanish-ending") amos
+					td d
+						span(class="spanish-ending") ais
+					td d
+						span(class="spanish-ending") an
+				tr
+					td II
+					td traer 
+					td приносить
+					td <b>traigo</b>
+					td tra
+						span(class="spanish-ending") es 
+					td tra
+						span(class="spanish-ending") e
+					td tra
+						span(class="spanish-ending") emos
+					td tra
+						span(class="spanish-ending") éis
+					td tra
+						span(class="spanish-ending") en
+				tr
+					td II
+					td hacer 
+					td делать
+					td <b>hago</b>
+					td hac
+						span(class="spanish-ending") es 
+					td hac
+						span(class="spanish-ending") e
+					td hac
+						span(class="spanish-ending") emos
+					td hac
+						span(class="spanish-ending") éis
+					td hac
+						span(class="spanish-ending") en
+				tr
+					td II
+					td saber 
+					td знать, уметь
+					td <b>sé</b>
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td II
+					td poner 
+					td помещать
+					td <b>pongo</b>
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td II
+					td conocer 
+					td знать
+					td <b>conozco</b>
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td II 
+					td parecer
+					td казаться 
+					td <b>parezco</b>
+					td pareces 
+					td parece
+					td parecemos
+					td parecéis
+					td parecen
+				tr
+					td III
+					td conducir 
+					td водить машину
+					td <b>conduzco</b>
+					td conduces 
+					td conduce
+					td conducimos
+					td conducís
+					td conducen
+				tr
+					td III
+					td traducir
+					td переводить
+					td <b>traduzco</b>
+					td traduces 
+					td traduce
+					td traducimos
+					td traducís
+					td traducen
+				tr
+					td III
+					td huir 
+					td бежать
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td III
+					td construir 
+					td строить
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td III
+					td destruir 
+					td разрушать
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td III
+					td oír 
+					td слышать
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td
+					td  
+					td 
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td
+					td  
+					td 
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+				tr
+					td
+					td  
+					td 
+					td 
+					td  
+					td 
+					td 
+					td 
+					td 
+		div dar, traer, hacer, saber, poner, conocer, conducir - у этих глаголов неправильная только форма Yo в единственном числе.
+		h3 II группа
+		<p>К этой группе тоже относятся глаголы I и II спряжений, также под ударением происходит дифтонгизация корневого гласного <strong>-o</strong> → <strong>-ue</strong>:</p>
+		table(class="table-test")
+			thead
+				tr
+					td 
+					td I спряжение
+					td II cпряжение
+			tbody
+				tr
+					td
+					td <strong>rogar</strong> <em>просить</em>
+					td <strong>volver</strong> <em>вернуться</em>
+				tr
+					td yo
+					td r<strong>ue</strong>g
+						span(class="spanish-ending") o
+					td v<strong>ue</strong>lv
+						span(class="spanish-ending") o
+				tr
+					td tú
+					td r<strong>ue</strong>g
+						span(class="spanish-ending") as
+					td v<strong>ue</strong>lv
+						span(class="spanish-ending") es
+				tr
+					td él, ella, usted
+					td r<strong>ue</strong>g
+						span(class="spanish-ending") a
+					td v<strong>ue</strong>lv
+						span(class="spanish-ending") e
+				tr
+					td nosotros
+					td rog
+						span(class="spanish-ending") amos
+					td volv
+						span(class="spanish-ending") emos
+				tr
+					td vosotros
+					td rog
+						span(class="spanish-ending") áis
+					td volv
+						span(class="spanish-ending") éis
+				tr
+					td ellos, ellas, ustedes
+					td r<strong>ue</strong>g
+						span(class="spanish-ending") an
+					td v<strong>ue</strong>lv
+						span(class="spanish-ending") en
+		
+		div Важные глаголы, изменяющиеся по этому типу:
+		table(class="table-simple")
+			tbody
+				tr 
+					td acordarse 
+					td вспоминать
+				tr 
+					td acostarse 
+					td ложиться спать
+				tr 
+					td almorzar 
+					td обедать
+				tr 
+					td contar 
+					td считать; рассказывать
+				tr 
+					td costar 
+					td стоить
+				tr 
+					td encontrar 
+					td встречать; находить
+				tr 
+					td mostrar 
+					td показывать
+				tr 
+					td moverse 
+					td двигаться
+				tr 
+					td recordar 
+					td вспоминать, помнить
+				tr 
+					td soler 
+					td иметь обыкновение что-то делать
+				tr 
+					td sonar 
+					td звучать
+				tr 
+					td soñar 
+					td мечтать
+				tr 
+					td volar 
+					td летать
+					
+		div Примеры
+		div ¿Cuántas horas duermes(dormir) al día? <em>Сколько часов в день ты спишь?</em>
+		h3 III группа
+		div К этой группе относятся глаголы III спряжения, корневой гласный инфинитива -e под ударением переходит в i: -e → -i
+		
+		table(class="table-test")
+			tbody
+				tr
+					td
+					td 
+					td
+						strong repetir 
+						em повторять 
+					td 
+						strong reír 
+						em смеяться 
+				tr
+					td: center yo
+					td я
+					td rep<strong>i</strong>t
+						span(class="spanish-ending") o
+					td r<strong>í</strong>
+						span(class="spanish-ending") o
+				tr
+					td: center tú
+					td ты
+					td rep<strong>i</strong>t
+						span(class="spanish-ending") es
+					td r<strong>í</strong>
+						span(class="spanish-ending") es
+				tr
+					td él, ella, usted
+					td он она Вы
+					td rep<strong>i</strong>t
+						span(class="spanish-ending") e
+					td r<strong>í</strong>
+						span(class="spanish-ending") e
+				tr
+					td nosotros
+					td мы
+					td repet
+						span(class="spanish-ending") imos
+					td re
+						span(class="spanish-ending") ímos
+				tr
+					td vosotros
+					td вы
+					td repet
+						span(class="spanish-ending") ís
+					td re
+						span(class="spanish-ending") ís
+				tr
+					td ellos, ellas, ustedes
+					td они они Вы
+					td rep<strong>i</strong>t
+						span(class="spanish-ending") en
+					td r<strong>í</strong>
+						span(class="spanish-ending") en
+
+		div Исключения: <b>venir, decir</b>.
+		
+		table(class="table-test")
+			tbody
+				tr
+					td
+					td 
+					td
+						strong venir 
+						em приходить
+					td 
+						strong decir 
+						em сказать 
+				tr
+					td: center yo
+					td я
+					td veng
+						span(class="spanish-ending") o
+					td dig
+						span(class="spanish-ending") o
+				tr
+					td: center tú
+					td ты
+					td vien
+						span(class="spanish-ending") es
+					td dic
+						span(class="spanish-ending") es
+				tr
+					td él, ella, usted
+					td он она Вы
+					td vien
+						span(class="spanish-ending") e
+					td dic
+						span(class="spanish-ending") e
+				tr
+					td nosotros
+					td мы
+					td ven
+						span(class="spanish-ending") imos
+					td dec
+						span(class="spanish-ending") ímos
+				tr
+					td vosotros
+					td вы
+					td ven
+						span(class="spanish-ending") ís
+					td dec
+						span(class="spanish-ending") ís
+				tr
+					td ellos, ellas, ustedes
+					td они они Вы
+					td vien
+						span(class="spanish-ending") en
+					td dic
+						span(class="spanish-ending") en
+
+		div Важные глаголы, изменяющиеся по этому типу:
+		table(class="table-simple")
+			tbody
+				tr 
+					td corregir 
+					td исправлять
+				tr 
+					td despedir 
+					td увольнять
+				tr 
+					td elegir 
+					td выбирать
+				tr 
+					td pedir 
+					td просить
+				tr 
+					td reír 
+					td смеяться
+				tr 
+					td repetir 
+					td повторять
+				tr 
+					td seguir 
+					td следовать; продолжать
+				tr 
+					td servir 
+					td служить
+				tr 
+					td sonreír 
+					td улыбаться
+				tr 
+					td vestirse 
+					td одеваться
+		div Примеры
+		div ¿Cuánto mides(medir)? <em>Какой у тебя рост?</em>
+		h3 Дополнительные источники:
+		ol
+			li 
+				a(href="https://tutesp.ru/8-3-1-nastoyashchee-vremya.html" target="_blank") Настоящее время.
+				| tutesp.ru
+			li 
+				a(href="https://linguistpro.net/spanish/lessons-esp/urok-9-pravilnye-glagoly-nastoyashhee-vremya-izyavitelnogo-nakloneniya-es" target="_blank") Правильные глаголы. Настоящее время изъявительного наклонения в испанском. 
+				| linguistpro.net
+				

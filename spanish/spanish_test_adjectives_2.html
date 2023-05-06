@@ -1,0 +1,113 @@
+<html>
+   <head>
+   	<meta charset='utf-8' />
+      <script type = "text/javascript">
+	  	var answers = [
+		/*1*/ 	"unas ciudades viejas", 
+		/*2*/	"unas casas baratas", 
+		/*3*/	"unas empleadas tristes", 
+		/*4*/	"unas enfermeras viejas", 
+		/*5*/	"unos idiomas difíciles", 
+		/*6*/	"unas situaciones difíciles", 
+		/*7*/	"unas revistas serias", 
+		/*8*/	"unos días aburridos", 
+		/*9*/	"unos libros grandes", 
+		/*10*/	"unos coches pequeños",
+		/*11*/	"unas familias ricas",
+		/*12*/	"unas vidas interesantes",
+		/*13*/	"unos libros inteligentes",
+		/*14*/	"unos trabajos buenos",
+		/*15*/	"unas actrices delgadas",
+		/*16*/	"unas canciones tristes",
+		/*17*/	"unos países ricos",
+		/*18*/	"unos jefes perezosos",
+		/*19*/	"unas noches largas",
+		/*20*/	"unos hombres altos",
+		/*21*/	"unos coches sucios",
+		/*22*/	"unos temas feos",
+		/*23*/	"unas fotos bonitas",
+		/*24*/	"unas situaciones tontas",
+		/*25*/	"unos ingenieros pobres",
+		/*26*/	"unos niños limpios",
+		/*27*/	"unas pintoras jóvenes",
+		/*28*/	"unas historias cortas",
+		/*29*/	"unas calles largas",
+		];
+ 
+		  function myclear()
+		  {
+			  for(count = 0; count < answers.length; count++)
+				  {
+					element = document.getElementById('question' + count);
+					element.value = "";
+					element.style.color = 'black';
+					color1.style.fontWeight = 'normal';
+				  }
+		  }
+		 function test()
+         {
+			for(count = 0; count < answers.length; count++)
+			{
+				answer1 = document.getElementById('question' + count).value;
+				color1 = document.getElementById('question' + count);
+				if (answer1 == answers[count]) color1.style.color = 'green';
+				else 
+					{
+					color1.style.color = 'red';
+					color1.style.fontWeight = 'bold';
+					}
+			}
+
+         }
+      </script>
+      <style>
+	  form{
+	  margin-left: 30px;
+	  }
+	  div{
+	  margin-left: 30px;
+	  }
+	  </style>
+   </head>
+   <body>
+   <div>Задание. Переведите, поставьте словосочетание во множественое число.</div>
+	<ol>
+      <li>старый город <input type="text" id = "question0" value=""></input>.</li>
+      <li>дешевый дом <input type="text" id = "question1"></input>.</li>
+      <li>грустная служащая <input type="text" id = "question2"></input>.</li>
+	  <li>старая медсестра <input type="text" id = "question3"></input>.</li>
+      <li>трудный язык <input type="text" id = "question4"></input>.</li>
+      <li>тяжелая ситуация <input type="text" id = "question5"></input>.</li>
+      <li>серьезный журнал <input type="text" id = "question6"></input>.</li>
+      <li>скучный день <input type="text" id = "question7"></input>.</li>
+      <li>большая книга <input type="text" id = "question8"></input>.</li>
+      <li>маленькая машина <input type="text" id = "question9"></input>.</li>
+	  <li>богатая семья <input type="text" id = "question10"></input>.</li>
+	  <li>интересная жизнь <input type="text" id = "question11"></input>.</li>
+	  <li>умная книга <input type="text" id = "question12"></input>.</li>
+      <li>старый город <input type="text" id = "question13" value=""></input>.</li>
+      <li>хорошая работа <input type="text" id = "question14"></input>.</li>
+      <li>худая актриса <input type="text" id = "question15"></input>.</li>
+	  <li>грустная песня <input type="text" id = "question16"></input>.</li>
+      <li>богатая страна <input type="text" id = "question17"></input>.</li>
+      <li>ленивый шеф <input type="text" id = "question18"></input>.</li>
+      <li>длинная ночь <input type="text" id = "question19"></input>.</li>
+      <li>высокий человек <input type="text" id = "question20"></input>.</li>
+      <li>грязная машина <input type="text" id = "question21"></input>.</li>
+      <li>некрасивая тема <input type="text" id = "question22"></input>.</li>
+	  <li>красивая фотография <input type="text" id = "question23"></input>.</li>
+	  <li>глупая ситуация <input type="text" id = "question24"></input>.</li>
+	  <li>бедный инженер <input type="text" id = "question25"></input>.</li>
+	  <li>чистый ребенок <input type="text" id = "question26"></input>.</li>
+	  <li>молодая художница <input type="text" id = "question27"></input>.</li>
+	  <li>короткая история <input type="text" id = "question28"></input>.</li>
+	  <li>длинная улица <input type="text" id = "question29"></input>.</li>
+	</ol>
+
+      <form>
+         <input type = "button" onclick = "test()" value = "Проверить"> 
+		 <input type = "button" onclick = "myclear()" value = "Очистить">
+      </form>
+
+   </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+   <head>
+   	<meta charset='utf-8' />
+      <script type = "text/javascript">
+	  	var answers = [
+		/*1*/ 	"visto", 
+		/*2*/	"estado", 
+		/*3*/	"sido", 
+		/*4*/	"viajado", 
+		/*5*/	"salido", 
+		/*6*/	"entendido", 
+		/*7*/	"puesto", 
+		/*8*/	"querido", 
+		/*9*/	"escrito", 
+		/*10*/	"esperado",
+		/*11*/	"cubierto",
+		/*12*/	"leído",
+		/*13*/	"jugado",
+		/*14*/	"oído",
+		/*15*/	"muerto",
+		/*16*/	"vivido",
+		/*17*/	"ido",
+		/*18*/	"perdido",
+		/*19*/	"roto",
+		/*20*/	"abierto",
+		];
+ 
+		  function myclear()
+		  {
+			  for(count = 0; count < answers.length; count++)
+				  {
+					element = document.getElementById('question' + count);
+					element.value = "";
+					element.style.color = 'black';
+					color1.style.fontWeight = 'normal';
+				  }
+		  }
+		 function test()
+         {
+			for(count = 0; count < answers.length; count++)
+			{
+				answer1 = document.getElementById('question' + count).value;
+				color1 = document.getElementById('question' + count);
+				if (answer1 == answers[count]) color1.style.color = 'green';
+				else 
+					{
+					color1.style.color = 'red';
+					color1.style.fontWeight = 'bold';
+					}
+			}
+
+         }
+      </script>
+      <style>
+	  form{
+	  margin-left: 30px;
+	  }
+	  div{
+	  margin-left: 30px;
+	  }
+	  </style>
+   </head>
+   <body>
+   <div>Задание. Forme Participio Pasado de los verbos siguientes. Образуйте причастие прошедшего времени следующих глаголов:</div>
+	<ol>
+		<li>ver <input type="text" id = "question0" value=""></input>.</li>
+		<li>estar <input type="text" id = "question1"></input>. </li>
+		<li>ser <input type="text" id = "question2"></input>.</li>
+		<li>viajar <input type="text" id = "question3"></input>.</li>
+		<li>salir <input type="text" id = "question4"></input>.</li>
+		<li>entender <input type="text" id = "question5"></input>.</li>
+		<li>poner <input type="text" id = "question6"></input>.</li>
+		<li>querer <input type="text" id = "question7"></input>.</li>
+		<li>escribir <input type="text" id = "question8"></input>.</li>
+		<li>esperar <input type="text" id = "question9"></input>.</li>
+		<li>cubir <input type="text" id = "question10"></input>.</li>
+		<li>leer <input type="text" id = "question11"></input>.</li>
+		<li>jugar <input type="text" id = "question12"></input>.</li>
+		<li>oír <input type="text" id = "question13" value=""></input>.</li>
+		<li>morir <input type="text" id = "question14"></input>.</li>
+		<li>vivir <input type="text" id = "question15"></input>.</li>
+		<li>ir <input type="text" id = "question16"></input>.</li>
+		<li>perder <input type="text" id = "question17"></input>.</li>
+		<li>romper <input type="text" id = "question18"></input>.</li>
+		<li>abrir <input type="text" id = "question19"></input>.</li>
+	</ol>
+
+      <form>
+         <input type = "button" onclick = "test()" value = "Проверить"> 
+		 <input type = "button" onclick = "myclear()" value = "Очистить">
+      </form>
+
+   </body>
+</html>

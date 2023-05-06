@@ -1,0 +1,107 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "traigo", 
+		| /*02*/ "vienen", 
+		| /*03*/ "das", 
+		| /*04*/ "vuelve", 
+		| /*05*/ "veo", 
+		| /*06*/ "",
+		| /*07*/ "", 
+		| /*08*/ "", 
+		| /*09*/ "", 
+		| /*10*/ "", 
+		| /*11*/ "", 
+		| /*12*/ "",
+		| /*13*/ "", 
+		| /*14*/ "", 
+		| /*15*/ "", 
+		| /*16*/ "",
+		| /*17*/ "", 
+		| /*18*/ "", 
+		| /*19*/ "", 
+		| /*20*/ "", 
+		| /*21*/ "", 
+		| /*22*/ "", 
+		| /*23*/ "", 
+		| /*24*/ "", 
+		| /*25*/ "", 
+		| /*26*/ "", 
+		| /*27*/ "", 
+		| /*28*/ "", 
+		| /*29*/ "", 
+		| /*30*/ "", 
+		| /*31*/ "", 
+		| /*32*/ "", 
+		| /*33*/ "", 
+		| /*34*/ "", 
+		| /*35*/ "", 
+		| /*36*/ "", 
+		| /*37*/ "", 
+		| /*38*/ "", 
+		| /*39*/ "", 
+		| /*40*/ "", 
+		| /*41*/ "", 
+		| /*42*/ "", 
+		| /*43*/ "", 
+		| /*44*/ "", 
+		| /*45*/ "", 
+		| /*46*/ "", 
+		| /*47*/ "", 
+		| /*48*/ "", 
+		| /*49*/ "", 
+		| /*50*/ "", 
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Раскройте скобки:
+		ol
+			li 
+				|Aquí te (traer, yo) 
+				input(id = "question0") 
+				|&nbsp;unas cositas que te van a gustar.
+			li
+				| ¿A qué hora (venir)
+				input(id = "question1")
+				|&nbsp; a casa ustedes? 
+			li 
+				|¿Me (dar, tú)  
+				input(id = "question2")
+				|&nbsp;tu manual, por favor?
+			li Oye, y esa tía me (volver)
+				input(id = "question3")
+				|&nbsp;a gritar, ¡qué fresca!
+			li (yo) No (ver) 
+				input(id = "question4")
+				|&nbsp;dónde están mis llaves.
+			li Cuando (venir) viene a vernos el abuelo, nos (traer) trae un montón de regalos.
+			li Estoy cansada de tus fiestas. (traer, tú) Traes a casa a todos.
+			li ¿Te (dar, yo) doy más dinero para la compra?
+			li ¿Con qué frecuencia (ver) ve usted programas de humor?
+			li Vale, de acuerdo, tú me (dar) das tu diccionario y yo te (dar) doy mi cuaderno.
+			li Hoy es mi primer día de trabajo. No (caber, yo) quepo en mí de alegría.
+			li Cada día yo (salir) salgo a las ocho de casa.
+			li Soy infeliz. Siempre (atraer) atraigo a los hombres de mal carácter.
+			li (suponer, yo) Supongo que lo (decir, tú) dices en serio.
+			li No me gusta vivir en el centro. Me (volver) vuelve loco tanta gente.
+			li (salir, yo) Salgo cada tarde para tomar café con mi amiga.
+			li Mi amigo cuando habla de su novia, siempre (decir) dice cosas bonitas.
+			li Yo me (poner) pongo nervioso cada vez que (oír) oigo su voz.
+			li ¿Qué (hacer, tú) haces esta mañana?
+			li Ahora (poner) pongo/ponemos la mesa.
+			li Si no (traer, vosotros) traéis bebida, no entráis a la fiesta.
+			li ¿Cuánto (valer) vale este libro?
+			li Todas las mañanas (hacer, yo) hago deporte.
+			li Yo no (valer) valgo para el fútbol.
+			li Estoy cansado, (venir, yo) vengo de muy lejos.
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

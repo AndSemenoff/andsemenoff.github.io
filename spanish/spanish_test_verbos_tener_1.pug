@@ -1,0 +1,85 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*1*/ 	"tengo", 
+		| /*2*/	"tiene", 
+		| /*3*/	"tienen", 
+		| /*4*/	"tenemos", 
+		| /*5*/	"tiene", 
+		| /*6*/	"tengo", 
+		| /*7*/	"tiene", 
+		| /*8*/	"Tienes", 
+		| /*9*/	"Tiene", 
+		| /*10*/	"Tienen",
+		| /*11*/	"Tenéis",
+		| /*12*/	"tienes",
+		| /*13*/	"tiene",
+		| /*14*/	"tiene",
+		| /*15*/	"tienes",
+		| /*16*/	"tiene",
+		| /*17*/ "", 
+		| /*18*/ "", 
+		| /*19*/ "", 
+		| /*20*/ "", 
+		| /*21*/ "", 
+		| /*22*/ "", 
+		| /*23*/ "", 
+		| /*24*/ "", 
+		| /*25*/ "", 
+		| /*26*/ "", 
+		| /*27*/ "", 
+		| /*28*/ "", 
+		| /*29*/ "", 
+		| /*30*/ "", 
+		| /*31*/ "", 
+		| /*32*/ "", 
+		| /*33*/ "", 
+		| /*34*/ "", 
+		| /*35*/ "", 
+		| /*36*/ "", 
+		| /*37*/ "", 
+		| /*38*/ "", 
+		| /*39*/ "", 
+		| /*40*/ "", 
+		| /*41*/ "", 
+		| /*42*/ "", 
+		| /*43*/ "", 
+		| /*44*/ "", 
+		| /*45*/ "", 
+		| /*46*/ "", 
+		| /*47*/ "", 
+		| /*48*/ "", 
+		| /*49*/ "", 
+		| /*50*/ "", 
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Дополните фразы, поставив глагол <b>tener</b> в нужную форму:
+		ol
+			li Yo <input id = "question0" value=""></input> una casa grande.
+			li Ella <input id = "question1"></input> un coche viejo. 
+			li Ellos <input id = "question2"></input> una familia buena.
+			li Nosotros no <input id = "question3"></input> problemas con el trabajo.
+			li Usted <input id = "question4"></input> un hijo hermoso.
+			li Yo no <input id = "question5"></input> trabajo.
+			li Pepe <input id = "question6"></input> una mujer fea.
+			li ¿<input id = "question7"></input>(tú) familia?
+			li ¿ <input id = "question8"></input> usted hijos?.
+			li ¿<input id = "question9"></input> ustedes problemas?
+			li ¿<input id = "question10"></input>(vosotros) clases de español?
+			li ¿Qué coche <input id = "question11"></input> (tú)?
+			li ¿Qué casa <input id = "question12"></input> tu jefa?
+			li ¿Qué ideas <input id = "question13" value=""></input> usted?
+			li ¿Cuántos años <input id = "question14"></input>(tú)?
+			li ¿Cuántos coches <input id = "question15"></input> tu novio?
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

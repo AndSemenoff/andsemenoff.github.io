@@ -1,0 +1,48 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "Doy", 
+		| /*02*/ "va", 
+		| /*03*/ "Da", 
+		| /*04*/ "ponen", 
+		| /*05*/ "Pongo", 
+		| /*06*/ "hacen", 
+		| /*07*/ "sabe", 
+		| /*08*/ "huyen",
+		| /*09*/ "Traduzco",
+		| /*10*/ "",
+		| /*11*/ "",
+		| /*12*/ "",
+		| /*13*/ "",
+		| /*14*/ "",
+		| /*15*/ "",
+		| /*16*/ "",
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Дополните фразы подходящими глаголами из списка ниже в правильной форме:
+		div ú é í ó á ñ ¿
+		div Список: dar, dar, hacer, huir, ir, poner, poner, <s>saber</s>, saber, traducir
+		div Пример. Guillermo no <u>sabe</u> nadar.
+		ol
+			li <input id = "question0" value=""></input>.
+			li <input id = "question1" value=""></input> .
+			li <input id = "question2" value=""></input> .
+			li <input id = "question3" value=""></input>.
+			li <input id = "question4" value=""></input>.
+			li <input id = "question5" value=""></input>.
+			li <input id = "question6" value=""></input> .
+			li <input id = "question7" value=""></input> .
+			li <input id = "question8" value=""></input>.
+			li <input id = "question9" value=""></input>.
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

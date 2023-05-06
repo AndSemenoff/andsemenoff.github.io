@@ -1,0 +1,325 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h3 Род существительных.
+		p В испанском языке существительные могут буть мужского и женского рода. Очень важно знать какого рода существительное, потому что все элементы связанные с ним(прилагательные, артикли, указательные местоимения) будут согласовываться в роде с существительным. La cas<b>a</b> blank<b>a</b> - белый дом, el piso pequeñio - маленькая квартира.
+		h3 Число имен существительных. Número de los nombres sustantivos.
+		p Образование множественного числа в испанском языке происходит следующим образом:
+		ol
+			li неударная гласная, ударная гласная é + S: casa — casaS, libro — libroS, café — caféS 
+			li согласная, ударная гласная í, ú + ES: rubí — rubíES, mes — mesES
+			li если существительное в единственном числе оканчивается на -Z, то во множественном числе -z заменяется на -с, например, el lápiz — los lápices
+		table
+			thead
+				tr
+					td
+						| Мужской род
+					td
+						| Женский род
+			tbody
+				tr
+					td 
+						| Обычно оканчиваются на <b>о</b>
+					td
+						| Обычно оканчиваются на <b>а</b>
+				tr
+					td 
+						| el libr<b>o</b> - книга
+						| <br>el diner<b>o</b> - деньги
+						| <br>el cas<b>o</b> - случай
+						| <br>el vas<b>o</b> - стакан
+					td
+						| lа cos<b>a</b> - вещь
+						| <br>la palabr<b>a</b> - слово
+						| <br>la cas<b>a</b> - дом
+						| <br>la mes<b>a</b> - стол
+				tr
+					td 
+						| <u>Исключения:</u>
+						| <br>el dí<b>a</b> - день
+						| <br>Сущ. греческого происхождения с окончанием на <b>-ma(-ema), ta</b>
+						| <br>el cli<b>ma</b> - климат
+						| <br>el proble<b>ma</b> - проблема
+						| <br>el pija<b>ma</b> - пижама
+						| <br>el te<b>ma</b> - тема
+						| <br>el idio<b>ma</b> - язык
+						| <br>el ma<b>pa</b> - карта
+						| <br> и другие
+					td
+						| <u>Исключения:</u>
+						| <br>lа man<b>o</b> - рука
+						| <br>la radi<b>o</b> - радио
+						| <br>la fot<b>o</b> - фотография (la fotografía)
+						| <br>la mot<b>o</b> - мотоцикл (la motocicleta)
+				tr
+					td 
+						| Обычно оканчиваются на <b>aje</b>
+					td
+						| Обычно оканчиваются на <b>dad(tad), сión(sión)</b>
+				tr
+					td 
+						| el mas<b>aje</b> - массаж
+						| <br>el pais<b>aje</b> - пейзаж
+
+					td
+						| lа ciu<b>dad</b> - город
+						| <br>la e<b>dad</b> - возраст
+						| <br>la profe<b>sión</b> - профессия
+						| <br>la direc<b>ción</b> - адрес
+						| <br>la amis<b>tad</b> - дружба
+						| <br>la can<b>ción</b> - песня
+				tr
+					td 
+						| Обычно оканчиваются на <b>e</b>, <b>i</b>, <b>u</b>
+					td
+						| 
+				tr
+					td 
+						| el caf<b>é</b> - кофе
+						| <br>el nombr<b>e</b> - имя
+						| <br>el espírit<b>u</b> - дух, душа
+						| <br>?el apellid<b>o</b> - фамилия
+						| <br><b>or</b>:
+						| <br>el am<b>or</b> - любовь
+						| <br>el ol<b>or</b> - запах
+						| <br><u>Исключения:</u>
+						| <br>la fl<b>or</b> - цветок
+					td
+						| 
+		p Существительные, которые обозначают людей или животных обычно имеют две формы: женского и мужского рода. Форма мужского рода пишется в словаре как базовая.
+		<p>Некоторые существительные, обозначающие профессию или занятие, имеют одну форму в мужском и женском роде и различаются только по артиклю:</p>
+		table(class="table-simple")
+			tbody 
+				tr
+					td <span class="colorred">el</span> dentista
+					td зубной врач
+					td <span class="colorred">la</span> dentista
+					td зубной врач
+				tr
+					td <span class="colorred">el</span> colega
+					td коллега
+					td <span class="colorred">la</span> colega
+					td коллега
+				tr
+					td <span class="colorred">el</span> estudiante
+					td студент
+					td <span class="colorred">la</span> estudiante 
+					td студентка
+				tr
+					td <span class="colorred">el</span> periodista
+					td журналист
+					td <span class="colorred">la</span> periodista
+					td журналистка
+
+		p Существительные, обозначающие профессию, по своему происхождению принадлежат к категории мужского рода, но в современном языке возможно их употребление и в женском роде:
+		table(class="table-simple")
+			tbody
+				tr
+					td el ministro 
+					td министр
+					td la ministra 
+					td министр
+				tr
+					td el médico 
+					td врач
+					td la médica 
+					td врач
+				tr
+					td el arquitecto 
+					td архитектор
+					td la arquitecta 
+					td архитектор
+				tr
+					td el jefe 
+					td начальник
+					td la jefe 
+					td начальница
+
+		p Существительные, называющие лицо или животное мужского рода с окончанием <span class="spanish-ending">-о</span>, меняют его на <span class="spanish-ending">-а</span> для женского рода:
+		table(class="table-simple")
+			tbody
+				tr
+					td el niñ<span class="spanish-ending">o</span>
+					td мальчик
+					td la niñ<span class="spanish-ending">a</span> 
+					td девочка
+				tr
+					td el herman<span class="spanish-ending">o</span> 
+					td брат
+					td la herman<span class="spanish-ending">a</span> 
+					td сестра
+				tr
+					td el tí<span class="spanish-ending">o</span> 
+					td дядя
+					td la tí<span class="spanish-ending">a</span> 
+					td тетя
+				tr
+					td el gat<span class="spanish-ending">o</span> 
+					td кот
+					td la gat<span class="spanish-ending">a</span>
+					td кошка
+
+		p Однако есть существительные, которые имеют свои, специальные формы для каждого из родов:
+		table(class="table-simple")
+			tbody
+				tr
+					td el hombre 
+					td мужчина
+					td la mujer 
+					td женщина
+				tr
+					td el rey 
+					td король
+					td la reina 
+					td королева
+				tr
+					td el marido 
+					td муж
+					td la mujer 
+					td жена
+				tr
+					td el padre 
+					td отец
+					td la madre 
+					td мать
+				tr
+					td el caballo 
+					td жеребец
+					td la yegua 
+					td кобыла
+				tr
+					td el toro 
+					td бык
+					td la vaca 
+					td корова
+				tr
+					td el gallo 
+					td петух
+					td la gallina 
+					td курица
+
+
+		<p>К некоторым существительным мужского рода, у которых в конце согласная <strong>-r</strong>, для образования женского рода прибавляется <strong>-а</strong>:</p>
+		table(class="table-simple")
+			tbody
+				tr
+					td el seño<u>r</u>
+					td сеньор
+					td la seño<u>r</u><span class="spanish-ending">a</span> 
+					td сеньора
+				tr
+					td el profeso<u>r</u>
+					td преподаватель
+					td la profeso<u>r</u><span class="spanish-ending">a</span> 
+					td преподавательница
+				tr
+					td el escrito<u>r</u> 
+					td писатель
+					td la escrito<u>r</u><span class="spanish-ending">a</span>
+					td писательница
+		<!-- tutesp.ru_MIDDLE -->
+		<p>Женский род существительных образуется также от существительных мужского рода при помощи суффиксов <span class="spanish-suffix">-esa</span>, <span class="spanish-suffix">-isa</span>, <span class="spanish-suffix">-triz</span>:</p>
+		table(class="table-simple")
+			tbody
+				tr
+					td el alcalde
+					td мэр
+					td la alcald<span class="spanish-suffix">esa</span> 
+					td мэр; жена мэра
+				tr
+					td el príncipe
+					td принц
+					td la princ<span class="spanish-suffix">esa</span> 
+					td принцесса
+				tr
+					td el poeta 
+					td поэт
+					td la poet<span class="spanish-suffix">isa</span> 
+					td поэтесса
+				tr
+					td el actor 
+					td актер
+					td la ac<span class="spanish-suffix">triz</span> 
+					td актриса
+				tr
+					td el emperador 
+					td император
+					td la empera<span class="spanish-suffix">triz</span>
+					td императрица
+					
+		p Существительные с суффиксом <span class="spanish-suffix">-ista</span> имеют общую форму для обоих родов. Обычно они обозначают профессию или занятие и отличаются только артиклем:
+		table(class="table-simple")
+			tbody
+				tr
+					td el art<span class="spanish-suffix">-ista</span> 
+					td артист
+					td la art<span class="spanish-suffix">-ista</span> 
+					td артистка
+				tr
+					td el deport<span class="spanish-suffix">-ista</span> 
+					td спортсмен
+					td la deport<span class="spanish-suffix">-ista</span> 
+					td спортсменка
+				tr
+					td el pian<span class="spanish-suffix">-ista</span> 
+					td пианист
+					td la pian<span class="spanish-suffix">-ista</span> 
+					td пианистка
+				tr
+					td el tur<span class="spanish-suffix">-ista</span> 
+					td турист
+					td la tur<span class="spanish-suffix">-ista</span> 
+					td туристка
+
+		p Некоторые другие, наиболее употребительные существительные общего рода:
+		table(class="table-simple")
+			tbody
+				tr
+					td el cliente 
+					td клиент
+					td la cliente 
+					td клиентка
+				tr
+					td el amante 
+					td возлюбленный
+					td la amante 
+					td возлюбленная
+				tr
+					td el intérprete 
+					td переводчик
+					td la intérprete 
+					td переводчица
+				tr
+					td el indígena 
+					td туземец
+					td la indígena 
+					td туземка
+
+
+		<p>Существительными общего рода считаются те существительные, которые можно отнести к лицам мужского и женского пола:</p>
+		<ul>
+		<li><strong>la persona</strong> <em>лицо, человек</em></li>
+		<li><strong>la colega</strong> <em>коллега</em></li>
+		<li><strong>la criatura</strong> <em>ребенок</em></li>
+		<li><strong>la víctima</strong> <em>жертва</em></li>
+		</ul>
+		<p>Существительные, оканчивающиеся на гласные <strong>-е, -i, -u</strong> или на согласные <strong>-l, -n, -s</strong>, могут быть как мужского, так и женского рода; их рекомендуется запоминать:</p>
+		<ul>
+		<li><strong>el café</strong> <em>кофе</em></li>
+		<li><strong>el colibrí</strong> <em>колибри</em></li>
+		<li><strong>el espíritu</strong> <em>дух</em></li>
+		<li><strong>el árbol</strong> <em>дерево</em></li>
+		<li><strong>el pan</strong> <em>хлеб</em></li>
+		<li><strong>el mes</strong> <em>месяц</em></li>
+		<li><strong>la cumbre</strong> <em>вершина</em></li>
+		<li><strong>la metrópoli</strong> <em>метрополия</em></li>
+		<li><strong>la tribu</strong> <em>племя</em></li>
+		<li><strong>la cárcel</strong> <em>тюрьма</em></li>
+		<li><strong>la imagen</strong> <em>образ</em></li>
+		<li><strong>la tos</strong> <em>кашель</em></li>
+		</ul>

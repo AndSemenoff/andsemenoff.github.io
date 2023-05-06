@@ -1,0 +1,45 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "mides", 
+		| /*02*/ "Mido", 
+		| /*03*/ "duermes", 
+		| /*04*/ "Duermo", 
+		| /*05*/ "Prefiere", 
+		| /*06*/ "Prefiero", 
+		| /*07*/ "empiezan", 
+		| /*08*/ "Empezamos",
+		| /*09*/ "friega",
+		| /*10*/ "friego",
+		| /*11*/ "quieres",
+		| /*12*/ "Quiero",
+		| /*13*/ "vuelves",
+		| /*14*/ "vuelvo",
+		| /*15*/ "vienes",
+		| /*16*/ "Vengo",
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Закончите вопросы и ответы используя глаголы предложенные в скобках в нужной форме:
+		div ú é í ó á ñ ¿
+		ol
+			li - ¿Cuánto (tú, medir) <input id = "question0" value=""></input>? - <input id = "question1" value=""></input> 1,75 metros.
+			li - ¿Cuántas horas (tú, dormir) <input id = "question2" value=""></input> al día? - <input id = "question3" value=""></input> unas ocho horas.
+			li - ¿(preferir) <input id = "question4" value=""></input> usted carne o pescado? - <input id = "question5" value=""></input> el pescado.
+			li - ¿A qué hora (empezar) <input id = "question6" value=""> ustedes a trabajar? - </input><input id = "question7" value=""></input> a las nueve.
+			li - ¿Quién (fregar) <input id = "question8" value=""></input> los platos en tu casa? - Los <input id = "question9" value=""></input> yo.
+			li - ¿Qué (tú, querer) <input id = "question10" value=""></input> ser de mayor? - <input id = "question11" value=""></input> ser arquitecto.
+			li - ¿A qué hora (tú, volver) <input id = "question12" value=""></input> por la noche? - Normalmente <input id = "question13" value=""></input> sobre las diez.
+			li - ¿Cómo (tú, venir) <input id = "question14" value=""></input> a la academia? - <input id = "question15" value=""></input> en autobús.
+
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

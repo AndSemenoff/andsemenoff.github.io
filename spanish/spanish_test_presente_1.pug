@@ -1,0 +1,53 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "Cenamos", 
+		| /*02*/ "pasas", 
+		| /*03*/ "Paso", 
+		| /*04*/ "viven", 
+		| /*05*/ "trabaja", 
+		| /*06*/ "Trabajo", 
+		| /*07*/ "hablan", 
+		| /*08*/ "beben",
+		| /*09*/ "bebemos",
+		| /*10*/ "vivís",
+		| /*11*/ "Vivimos",
+		| /*12*/ "no viajamos",
+		| /*13*/ "hablan",
+		| /*14*/ "Hablamos",
+		| /*15*/ "estudian",
+		| /*16*/ "estudia",
+		| /*17*/ "estudia",
+		| /*18*/ "No vemos",
+		| /*19*/ "abren", 
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Закончите фразы:
+		div Пример: ¿A qué hora (vosotros, cenar) <u>cenáis</u> ?
+		div ú é í ó á ñ ¿
+		ol
+			li - ¿A que hora  (vosotros, cenar) cenáis? - <input id = "question0" value=""></input> a las nueve.
+			li - ¿Dónde (tú, pasar) <input id = "question1" value=""></input> los veranos? - <input id = "question2" value=""></input> los veranos en Punta del Este.
+			li Las ballenas (vivir) <input id = "question3" value=""></input> en aguas frías.
+			li - ¿Dónde (trabajar) <input id = "question4" value=""> usted? - </input><input id = "question5" value=""></input> en unos grandes almacenes.
+			li Los argentinos (hablar) <input id = "question6" value=""></input> español.
+			li - ¿Qué (beber) <input id = "question7" value=""></input> ustedes en las comidas? - Normalmente <input id = "question8" value=""></input> agua.
+			li - ¿Dónde (vosotros, vivir) <input id = "question9" value=""></input>? - <input id = "question10" value=""></input> en Mérida.
+			li Lalo y yo (no viajar) <input id = "question11" value=""></input> nunca en avión.
+			li - ¿Qué idiomas (hablar) <input id = "question12" value=""></input> ustedes? - <input id = "question13" value=""></input> español e italiano.
+			li - ¿Qué (estudiar) <input id = "question14" value=""></input> tus hermanas? - Ana <input id = "question15" value=""></input> Económicas y Pilar <input id = "question16" value=""></input> Medicina.
+			li (Nosotros, no ver) <input id = "question17" value=""></input> mucho la tele.
+			li - ¿A qué hora (abrir) <input id = "question18" value=""></input> las tiendas?
+
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

@@ -1,0 +1,47 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [
+		| /*01*/ "quiere", 
+		| /*02*/ "riego", 
+		| /*03*/ "empieza", 
+		| /*04*/ "juegan", 
+		| /*05*/ "pierden", 
+		| /*06*/ "cierran", 
+		| /*07*/ "Pienso", 
+		| /*08*/ "vienen",
+		| /*09*/ "no miente",
+		| /*10*/ "dice",
+		| /*11*/ "No puedo",
+		| /*12*/ "mide",
+		| /*13*/ "digo",
+		| /*14*/ "vuela",
+		|];
+
+		include check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Закончите фразы поставив глагол в скобках в нужной форме:
+		div ú é í ó á ñ ¿
+		ol
+			li Antonio (querer) <input id = "question0" value=""></input> ser médico.
+			li En verano (yo, regar) <input id = "question1" value=""></input> las plantas todos los días.
+			li La clase (empezar) <input id = "question2" value=""></input> a las ocho.
+			li Luis y Pili (jugar) <input id = "question3" value=""> muy mal al golf. Siempre (perder) <input id = "question4" value="">.
+			li Los bancos (cerrar) <input id = "question5" value=""> a las dos.
+			li (yo, pensar) <input id = "question6" value=""> mucho en mis amigos.
+			li Algunos alumnos (venir) <input id = "question7" value=""> mucho a la biblioteca.
+			li Antonia (no mentir) <input id = "question8" value=""> nunca. Siempre (decir) <input id = "question9" value=""> la verdad.
+			li Estoy muy nerviosa. (no poder) <input id = "question10" value=""> dormir.
+			li ¿Cuanto (medir) <input id = "question11" value=""> una jirafa?.
+			li A veces (yo, decir) <input id = "question12" value=""> muchas tonterías.
+			li ¿A qué velocidad (volar) <input id = "question13" value=""> un avión?
+
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

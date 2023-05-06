@@ -1,0 +1,61 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	style
+		include my_table_style.css 
+		
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		h2 Система времен и наклонений испанского глагола.
+		div 
+		table(class="table-test")
+			thead
+				tr
+					th Наклонения
+					th Простые времена 
+					th Сложные времена
+			tbody
+				tr
+					th(rowspan=5) Modo Indicativo
+				tr
+					td: a(href="spanish_presente.html") Presente
+					td Pretérito Perfecto
+				tr
+					td Pretérito Imperfecto
+					td Pretérito Pluscuamperfecto
+				tr
+					td Pretérito Indefinido
+					td Pretérito Anterior
+				tr
+					td Futuro Imperfecto
+					td Futuro Perfecto
+				tr
+					th(rowspan=5) Modo Subjuntivo
+				tr
+					td Presente
+					td Pretérito Perfecto
+				tr
+					td Pretérito Imperfecto
+					td Pretérito Pluscuamperfecto
+				tr
+					td Pretérito Indefinido
+					td Pretérito Anterior
+				tr
+					td Futuro Imperfecto
+					td Futuro Perfecto
+				tr
+					th Modo Potencial (Condicional)
+					td Imperfecto
+					td Perfecto
+				tr
+					th Modo Imperativo
+					td Afirmativo
+					td Negativo
+
+		h3 Дополнительные источники:
+		ol
+			li 
+				a(href="https://linguistpro.net/spanish/lessons-esp/urok-17-tiempos-y-modos-verbales-vremena-i-nakloneniya-glagolov-es" target="_blank") Tiempos y modos verbales. Времена и наклонения глаголов в испанском языке. 
+				| linguistpro.net

@@ -1,0 +1,62 @@
+<html>
+   <head>
+   	<meta charset='utf-8' />
+      <script type = "text/javascript">
+		  function myclear()
+		  {
+			  for(count = 0; count < 10; count++)
+				  {
+					element = document.getElementById('question' + count);
+					element.value = "";
+					element.style.color = 'black';
+					color1.style.fontWeight = 'normal';
+				  }
+		  }
+		 function test()
+         {
+		 	var answers = ["una", "un", "una", "un", "un", "un", "un", "una", "un", "una"];
+			for(count = 0; count < 10; count++)
+			{
+				answer1 = document.getElementById('question' + count).value;
+				color1 = document.getElementById('question' + count);
+				if (answer1 == answers[count]) color1.style.color = 'green';
+				else 
+					{
+					color1.style.color = 'red';
+					color1.style.fontWeight = 'bold';
+					}
+			}
+
+         }
+      </script>
+      <style>
+	  form{
+	  margin-left: 30px;
+	  }
+	  div{
+	  margin-left: 30px;
+	  }
+	  </style>
+   </head>
+   <body>
+   <div>Задание. Поставьте соотвествующую форму <b>неопределенного</b> артикля перед существительными.</div>
+	<ol>
+      <li><input type="text" id = "question0" value=""></input> mujer.</li>
+      <li><input type="text" id = "question1"></input> amigo.</li>
+      <li><input type="text" id = "question2"></input> amiga.</li>
+	  <li><input type="text" id = "question3"></input> hermano.</li>
+      <li><input type="text" id = "question4"></input> hijo .</li>
+      <li><input type="text" id = "question5"></input> país.</li>
+      <li><input type="text" id = "question6"></input> pariente - родственник.</li>
+      <li><input type="text" id = "question7"></input> pariente - родственница.</li>
+      <li><input type="text" id = "question8"></input> tema.</li>
+      <li><input type="text" id = "question9"></input> dirección.</li>
+	</ol>
+	  
+      <form>
+         <input type = "button" onclick = "test()" value = "Проверить"> 
+		 <input type = "button" onclick = "myclear()" value = "Очистить">
+      </form>
+
+   </body>
+</html>
