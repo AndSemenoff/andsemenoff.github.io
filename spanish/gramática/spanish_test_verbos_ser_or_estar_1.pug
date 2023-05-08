@@ -2,7 +2,7 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
-	script(type = "text/javascript")
+	script
 		| var answers = [
 		| /*01*/ "estáis", 
 		| /*02*/ "estamos", 
@@ -16,20 +16,32 @@ block title
 		| /*10*/ "estás", 
 		|];
 
-		include check_test.js
+		include ../js/check_test.js
 
 block content
 
 	div.row: div.large-12.columns: h2 Испанский язык
 	div.row: div.large-12.columns
-		div Задание. Выберите нужную форму глаголов ser или estar:
+		div Задание. Выберите нужную форму глаголов <b>ser</b> или <b>estar</b>:
 		ol 
-			li Вы в Европе. – Vosotros <input id = "question0" value=""></input> en Europa.
-			li Мы готовы. – Nosotros <input id = "question1" value=""></input> preparados.
-			li Вы печальны. – Vosotras <input id = "question2" value=""></input> tristes.
-			li Ты мой друг. – Tú <input id = "question3" value=""></input> mi amigo.
-			li Он болен. – Él <input id = "question4" value=""></input> enfermo.
-			li Она моя сестра. – Ella <input id = "question5" value=""></input> mi hermana.
+			li Вы в Европе. – Vosotros 
+				input(id = "question0")
+				|&nbsp;en Europa.
+			li Мы готовы. – Nosotros 
+				input(id = "question1")
+				|&nbsp;preparados.
+			li Вы печальны. – Vosotras 
+				input(id = "question2")
+				|&nbsp;tristes.
+			li Ты мой друг. – Tú 
+				input(id = "question3")
+				|&nbsp;mi amigo.
+			li Он болен. – Él 
+				input(id = "question4")
+				|&nbsp;enfermo.
+			li Она моя сестра. – Ella 
+				input(id = "question5")
+				|&nbsp;mi hermana.
 			li Они интересные люди. – Ellos <input id = "question6" value=""></input> gente interesante.
 			li Мы умные. – Nosotros <input id = "question7" value=""></input> inteligentes.
 			li Они симпатичные. – Ellas <input id = "question8" value=""></input> simpáticas.
