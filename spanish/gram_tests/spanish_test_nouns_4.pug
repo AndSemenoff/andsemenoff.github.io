@@ -4,11 +4,8 @@ block title
 	title= site_title + " Испанский язык"
 	script(type = "text/javascript")
 		| var answers = [	/*1*/ 	"la", 		/*2*/	"el", 		/*3*/	"los", 		/*4*/	"los", 		/*5*/	"los", 		/*6*/	"la", 		];
-		include check_test.js
+		include ../js/check_test.js
 
-block scripts
-	style
-		include my_table_style.css
 block content
 
 	div.row: div.large-12.columns: h2 Испанский язык
@@ -18,27 +15,27 @@ block content
 			tbody
 				tr 
 					td ¿Qué tal
-					td: input(type="text" id = "question0" value="")
+					td: input(id = "question0" value="")
 					td vida?
 				tr 
 					td ¿Qué tal
-					td: input(type="text" id = "question1" value="")
+					td: input(id = "question1" value="")
 					td trabajo?
 				tr 
 					td ¿Qué tal
-					td: input(type="text" id = "question2" value="")
+					td: input(id = "question2" value="")
 					td hijos?
 				tr 
 					td ¿Qué tal
-					td: input(type="text" id = "question3" value="")
+					td: input(id = "question3" value="")
 					td padres?
 				tr 
 					td ¿Qué tal
-					td: input(type="text" id = "question4" value="")
+					td: input(id = "question4" value="")
 					td estudios?
 				tr 
 					td ¿Qué tal
-					td: input(type="text" id = "question5" value="")
+					td: input( id = "question5" value="")
 					td familia? 
 				tr
 					td(colspan=3) 

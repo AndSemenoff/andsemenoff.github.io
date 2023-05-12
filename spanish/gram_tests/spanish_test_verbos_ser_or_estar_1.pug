@@ -23,6 +23,7 @@ block content
 	div.row: div.large-12.columns: h2 Испанский язык
 	div.row: div.large-12.columns
 		div Задание. Выберите нужную форму глаголов <b>ser</b> или <b>estar</b>:
+		div ú é í ó á ñ ü ¿
 		ol 
 			li Вы в Европе. – Vosotros 
 				input(id = "question0")
@@ -42,10 +43,18 @@ block content
 			li Она моя сестра. – Ella 
 				input(id = "question5")
 				|&nbsp;mi hermana.
-			li Они интересные люди. – Ellos <input id = "question6" value=""></input> gente interesante.
-			li Мы умные. – Nosotros <input id = "question7" value=""></input> inteligentes.
-			li Они симпатичные. – Ellas <input id = "question8" value=""></input> simpáticas.
-			li Ты здесь. – Tú <input id = "question9" value=""></input> aquí.
+			li Они интересные люди. – Ellos 
+				input(id = "question6")
+				|&nbsp;gente interesante.
+			li Мы умные. – Nosotros 
+				input(id = "question7")
+				|&nbsp;inteligentes.
+			li Они симпатичные. – Ellas 
+				input(id = "question8")
+				|&nbsp;simpáticas.
+			li Ты здесь. – Tú 
+				input(id = "question9")
+				|&nbsp;aquí.
 		div
 			input( class="button" onclick = "test()" value = "Проверить")
 			input( class="button" onclick = "myclear()" value = "Очистить")

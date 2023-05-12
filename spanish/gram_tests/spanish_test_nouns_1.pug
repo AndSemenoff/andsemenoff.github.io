@@ -1,0 +1,75 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		| var answers = ["un", "una", "una", "un", "una", "una", "un", "un", "una", "un", "un", "una", "un", "un", "un", "un", "una", "un", "una"];
+		include ../js/check_test.js
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Поставьте соотвествующую форму <b>неопределенного</b> артикля перед существительными:
+		table(class="table-test")
+			tbody
+				tr 
+					td: input(id = "question0")
+					td trabajo 
+				tr 
+					td: input(id = "question1")
+					td vida 
+				tr 
+					td: input(id = "question2")
+					td casa 
+				tr 
+					td: input(id = "question3")
+					td problema 
+				tr 
+					td: input(id = "question4")
+					td familia 
+				tr 
+					td: input(id = "question5")
+					td mujer
+				tr 
+					td: input(id = "question6")
+					td libro 
+				tr 
+					td: input(id = "question7")
+					td amor 
+				tr 
+					td: input(id = "question8")
+					td ciudad 
+				tr 
+					td: input(id = "question9")
+					td hombre
+				tr 
+					td: input(id = "question10")
+					td amigo
+				tr 
+					td: input(id = "question11")
+					td amiga
+				tr 
+					td: input(id = "question12")
+					td hermano
+				tr 
+					td: input(id = "question13")
+					td hijo
+				tr 
+					td: input(id = "question14")
+					td país
+				tr 
+					td: input(id = "question15")
+					td pariente - родственник
+				tr 
+					td: input(id = "question16")
+					td pariente - родственница
+				tr 
+					td: input(id = "question17")
+					td tema
+				tr 
+					td: input(id = "question18")
+					td dirección
+
+				tr
+					td: input(type = "button" class="button" onclick = "test()" value = "Проверить")
+					td: input(type = "button" class="button" onclick = "myclear()" value = "Очистить")

@@ -2,6 +2,47 @@
 <html lang="ru">
   <head>
     <title>ABSOLEM.INFO | Испанский язык</title>
+    <script>
+      var answers = [
+      /*1*/ 	"los casos", 
+      /*2*/	"las amigas", 
+      /*3*/	"los cafés", 
+      /*4*/	"las ciudades", 
+      /*5*/	"los coches", 
+      /*6*/	"las fotos", 
+      /*7*/	"las manos", 
+      /*8*/	"los turistas", 
+      /*9*/	"las mujeres", 
+      /*10*/	"los hombres",
+      /*11*/	"las vidas",
+      /*12*/	"las almas",
+      /*13*/	"las noches",
+      ];function myclear()
+  {
+	  for(count = 0; count < answers.length; count++)
+		  {
+			element = document.getElementById('question' + count);
+			element.value = "";
+			element.style.color = 'black';
+			color1.style.fontWeight = 'normal';
+		  }
+  }
+function test()
+ {
+	for(count = 0; count < answers.length; count++)
+	{
+		answer1 = document.getElementById('question' + count).value;
+		color1 = document.getElementById('question' + count);
+		if (answer1 == answers[count]) color1.style.color = 'green';
+		else 
+			{
+			color1.style.color = 'red';
+			color1.style.fontWeight = 'bold';
+			}
+	}
+
+ }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -39,39 +80,99 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <h3>Pronombres interrogativos. Вопросительные местоимения.</h3>
-        <div>Вопросительные местоимения бывают двух типов: местоимения-прилагательные и местоимения-существительные.</div>
-        <div>Все вопросительные местоимения пишутся со знаком ударения.</div>
-        <div><b>I. Вопросительные местоимения-прилагательные</b></div>
-        <div>Эти местоимения всегда ставятся перед существительным (артикль опускается). К вопросительным местоимениям-прилагательным относятся:</div>
-        <ol>
-          <li>Qué? — какой (-ая, -ие)?</li>
-          <li>¿Cuál? — ¿cuáles? — который (-ая, -ые), какой (-ая, -ие)?</li>
-          <li>¿Cuánto? —¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?</li>
-        </ol>
-        <div><b>II. Вопросительные местоимения-существительные</b></div>
-        <div>Употребляются самостоятельно и обычно стоят перед глаголом.</div>
-        <div>К вопросительным местоимениям-существительным относятся:</div>
-        <ol>
-          <li>¿Qué? — что? кто?</li>
-          <li>¿Quién? — ¿quiénes? — кто?
-            <div>Вопросы с quién задаются только по отношению к людям, когда хотят идентифицировать их личность (фамилию, имя, звание и т.п.), иными словами, узнать, кто это такой:</div>
-            <div>— ¿<b>Quién</b> es este pajaro? - <span class="translate">Что это за «птица»?</span></div>
-            <div>— ¿<b>Quién</b> ha de ser? Caballuco. — <span class="translate">Кто кроме него может быть? Кабальюко.</span></div>
-            <div>— Y ¿<b>quién</b> es Caballuco? — <span class="translate">А кто такой Кабальюко?</span></div>
-            <div>—...Es un hombre muy bravo, gran jinete. — <span class="translate">Смелый человек, отличный наездник.</span></div>
-            <div>¿Еn <b>quién</b> confiar?  <span class="translate">На кого положиться (кому верить)?</span></div>
-            <div> Dime con <b>quién</b> andas y te diré quién eres. <span class="translate">Скажи мне, кто твой друг, и я скажу, кто ты.</span></div>
-            <div> <b>Quiénes</b> son esas muchachas? <span class="translate">Kто эти девушки?</span></div>
-          </li>
-          <li>¿Cuál? — ¿cuáles? — который (-ая, -ое, -ые), какой (-ая, -ое, -ие)?</li>
-          <li>¿Cuánto? — ¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?</li>
-        </ol>
-        <h3>Дополнительные источники:</h3>
-        <ol>
-          <li> <a href="https://tutesp.ru/6-4-voprositeljnye-mestoimeniya.html" target="_blank">Вопросительные местоимения.</a>tutesp.ru</li>
-          <li> <a href="https://speakasap.com/es/grammar/voprositelnye-mestoimeniya/" target="_blank">Вопросительные местоимения.</a>speakasap.com. Есть упражнение</li>
-        </ol>
+        <div>Задание. Поставьте существительные во множественное число, добавив нужную форму <b>определенного</b> артикля.</div>
+        <div>Пишите с маленькой буквы.</div>
+        <div>ú é í ó á ñ ü ¿</div>
+        <table class="table-test">
+          <tbody>
+            <tr> 
+              <td>el caso </td>
+              <td>
+                <input id="question0">
+              </td>
+            </tr>
+            <tr> 
+              <td>la amiga</td>
+              <td>
+                <input id="question1">
+              </td>
+            </tr>
+            <tr> 
+              <td>el café</td>
+              <td>
+                <input id="question2">
+              </td>
+            </tr>
+            <tr> 
+              <td>la ciudad</td>
+              <td>
+                <input id="question3">
+              </td>
+            </tr>
+            <tr> 
+              <td>el coche</td>
+              <td>
+                <input id="question4">
+              </td>
+            </tr>
+            <tr> 
+              <td>la foto</td>
+              <td>
+                <input id="question5">
+              </td>
+            </tr>
+            <tr> 
+              <td>la mano</td>
+              <td>
+                <input id="question6">
+              </td>
+            </tr>
+            <tr> 
+              <td>el turista</td>
+              <td>
+                <input id="question7">
+              </td>
+            </tr>
+            <tr> 
+              <td>la mujer </td>
+              <td>
+                <input id="question8">
+              </td>
+            </tr>
+            <tr> 
+              <td>el hombre</td>
+              <td>
+                <input id="question9">
+              </td>
+            </tr>
+            <tr> 
+              <td>la vida</td>
+              <td>
+                <input id="question10">
+              </td>
+            </tr>
+            <tr> 
+              <td>la alma</td>
+              <td>
+                <input id="question11">
+              </td>
+            </tr>
+            <tr> 
+              <td>la noche</td>
+              <td>
+                <input id="question12">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input class="button" type="button" onclick="test()" value="Проверить">
+              </td>
+              <td>
+                <input class="button" type="button" onclick="myclear()" value="Очистить">
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <footer>

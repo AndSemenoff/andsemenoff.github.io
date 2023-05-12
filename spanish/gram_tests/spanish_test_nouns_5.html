@@ -2,6 +2,49 @@
 <html lang="ru">
   <head>
     <title>ABSOLEM.INFO | Испанский язык</title>
+    <script type="text/javascript">
+      var answers = [	
+      /*1*/ 	"una estudiante", 
+      /*2*/	"un maestro", 
+      /*3*/	"una empleada", 
+      /*4*/	"un peluqero", 
+      /*5*/	"una intérprete", 
+      /*6*/	"un camarero", 
+      /*7*/	"una pintora", 
+      /*8*/	"un abogado", 
+      /*9*/	"una enfermera", 
+      /*10*/	"un profesor",
+      /*11*/	"una secretaria",
+      /*12*/	"un actor",
+      /*13*/	"una periodista",
+      /*14*/	"un escritor",
+      /*15*/	"una cantante",
+      ];function myclear()
+  {
+	  for(count = 0; count < answers.length; count++)
+		  {
+			element = document.getElementById('question' + count);
+			element.value = "";
+			element.style.color = 'black';
+			color1.style.fontWeight = 'normal';
+		  }
+  }
+function test()
+ {
+	for(count = 0; count < answers.length; count++)
+	{
+		answer1 = document.getElementById('question' + count).value;
+		color1 = document.getElementById('question' + count);
+		if (answer1 == answers[count]) color1.style.color = 'green';
+		else 
+			{
+			color1.style.color = 'red';
+			color1.style.fontWeight = 'bold';
+			}
+	}
+
+ }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -39,39 +82,35 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <h3>Pronombres interrogativos. Вопросительные местоимения.</h3>
-        <div>Вопросительные местоимения бывают двух типов: местоимения-прилагательные и местоимения-существительные.</div>
-        <div>Все вопросительные местоимения пишутся со знаком ударения.</div>
-        <div><b>I. Вопросительные местоимения-прилагательные</b></div>
-        <div>Эти местоимения всегда ставятся перед существительным (артикль опускается). К вопросительным местоимениям-прилагательным относятся:</div>
+        <div>Задание. Дополните пары профессий, не забывая изменить также форму артикля:</div>
+        <div>Пишите с маленькой буквы.</div>
         <ol>
-          <li>Qué? — какой (-ая, -ие)?</li>
-          <li>¿Cuál? — ¿cuáles? — который (-ая, -ые), какой (-ая, -ие)?</li>
-          <li>¿Cuánto? —¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?</li>
-        </ol>
-        <div><b>II. Вопросительные местоимения-существительные</b></div>
-        <div>Употребляются самостоятельно и обычно стоят перед глаголом.</div>
-        <div>К вопросительным местоимениям-существительным относятся:</div>
-        <ol>
-          <li>¿Qué? — что? кто?</li>
-          <li>¿Quién? — ¿quiénes? — кто?
-            <div>Вопросы с quién задаются только по отношению к людям, когда хотят идентифицировать их личность (фамилию, имя, звание и т.п.), иными словами, узнать, кто это такой:</div>
-            <div>— ¿<b>Quién</b> es este pajaro? - <span class="translate">Что это за «птица»?</span></div>
-            <div>— ¿<b>Quién</b> ha de ser? Caballuco. — <span class="translate">Кто кроме него может быть? Кабальюко.</span></div>
-            <div>— Y ¿<b>quién</b> es Caballuco? — <span class="translate">А кто такой Кабальюко?</span></div>
-            <div>—...Es un hombre muy bravo, gran jinete. — <span class="translate">Смелый человек, отличный наездник.</span></div>
-            <div>¿Еn <b>quién</b> confiar?  <span class="translate">На кого положиться (кому верить)?</span></div>
-            <div> Dime con <b>quién</b> andas y te diré quién eres. <span class="translate">Скажи мне, кто твой друг, и я скажу, кто ты.</span></div>
-            <div> <b>Quiénes</b> son esas muchachas? <span class="translate">Kто эти девушки?</span></div>
+          <li>un estudiante - студент | 
+            <input id="question0">&nbsp;- студентка.
           </li>
-          <li>¿Cuál? — ¿cuáles? — который (-ая, -ое, -ые), какой (-ая, -ое, -ие)?</li>
-          <li>¿Cuánto? — ¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?</li>
+          <li>
+            <input id="question1">&nbsp;- учитель | una maestra - учительница.
+          </li>
+          <li>un empleado - служащий | <input  id = "question2"></input> - служащая.</li>
+          <li>
+            <input id="question3">&nbsp;- парикмахер | una peluqera - парикмахерша .
+          </li>
+          <li>un intérprete - переводчик | <input  id = "question4"></input> - переводчица.</li>
+          <li><input id = "question5"></input> - официант | una camarera - официантка.</li>
+          <li>un pintor - художник | <input id = "question6"></input> - художница.</li>
+          <li><input  id = "question7"></input> - адвокат | una abogada - адвокат женщина</li>
+          <li>un enfermero - медбрат | <input id = "question8"></input> - медсестра.</li>
+          <li><input id = "question9"></input> - преподаватель | una profesora - преподовательница.</li>
+          <li>un secretario - секретарь | <input id = "question10"></input> - секретарша.</li>
+          <li><input id = "question11"></input> - актер | una actriz - актриса. </li>
+          <li>un periodista - журналист | <input id = "question12"></input> - журналистка.</li>
+          <li><input id = "question13"></input> - писатель | una escritora - писательница.</li>
+          <li>un cantante - певец | <input id = "question14"></input> - певица.</li>
         </ol>
-        <h3>Дополнительные источники:</h3>
-        <ol>
-          <li> <a href="https://tutesp.ru/6-4-voprositeljnye-mestoimeniya.html" target="_blank">Вопросительные местоимения.</a>tutesp.ru</li>
-          <li> <a href="https://speakasap.com/es/grammar/voprositelnye-mestoimeniya/" target="_blank">Вопросительные местоимения.</a>speakasap.com. Есть упражнение</li>
-        </ol>
+        <form>
+          <input class="button" onclick="test()" value="Проверить">
+          <input class="button" onclick="myclear()" value="Очистить">
+        </form>
       </div>
     </div>
     <footer>

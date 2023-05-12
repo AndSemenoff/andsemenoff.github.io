@@ -1,0 +1,56 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		| var answers = [
+		|/*1*/ 	"Son peluqueros",
+		|/*1*/ 	"Son profesores", 
+		|/*2*/	"Son estudiantes", 
+		|/*3*/	"Son maestras", 
+		|/*4*/	"Son pintores", 
+		|/*5*/	"Son secretarias", 
+		|/*6*/	"Son camareras", 
+		|/*7*/	"Son enfermeros", 
+		|/*9*/	"Son empleados", 
+		|];
+		include ../js/check_test.js
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Сделайте по образцу: Es empleado (Он служащий). -> Son empleados (Они служащие). Es - является, son - являются..
+		div Пишите с большой буквы.
+		div ú é í ó á ñ ü ¿
+		table(class="table-test")
+			tbody
+				tr 
+					td Es peluquera.
+					td: input(id = "question0")
+				tr 
+					td Es profesor.
+					td: input(id = "question1")
+				tr 
+					td Es estudiante.
+					td: input(id = "question2")
+				tr 
+					td Es maestra.
+					td: input(id = "question3")
+				tr 
+					td Es pintor.
+					td: input(id = "question4")
+				tr 
+					td Es secretaria.
+					td: input(id = "question5")
+				tr 
+					td Es camarera.
+					td: input(id = "question6")
+				tr 
+					td Es enfermero.
+					td: input(id = "question7")
+				tr 
+					td Es empleado.
+					td: input(id = "question8")
+				tr
+					td: input(type = "button" class="button" onclick = "test()" value = "Проверить")
+					td: input(type = "button" class="button" onclick = "myclear()" value = "Очистить")

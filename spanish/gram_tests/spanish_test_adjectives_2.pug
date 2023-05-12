@@ -1,0 +1,128 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+
+	script
+		| var answers = [
+		| /*01*/ "unas ciudades viejas", 
+		| /*02*/ "unas casas baratas", 
+		| /*03*/ "unas empleadas tristes", 
+		| /*04*/ "unas enfermeras viejas", 
+		| /*05*/ "unos idiomas difíciles", 
+		| /*06*/ "unas situaciones difíciles", 
+		| /*07*/ "unas revistas serias", 
+		| /*08*/ "unos días aburridos",
+		| /*09*/ "unos libros grandes",
+		| /*10*/ "unos coches pequeños",
+		| /*11*/ "unas familias ricas",
+		| /*12*/	"unas vidas interesantes",
+		| /*13*/	"unos libros inteligentes",
+		| /*14*/	"unos trabajos buenos",
+		| /*15*/	"unas actrices delgadas",
+		| /*16*/	"unas canciones tristes",
+		| /*17*/	"unos países ricos",
+		| /*18*/	"unos jefes perezosos",
+		| /*19*/	"unas noches largas",
+		| /*20*/	"unos hombres altos",
+		| /*21*/	"unos coches sucios",
+		| /*22*/	"unos temas feos",
+		| /*23*/	"unas fotos bonitas",
+		| /*24*/	"unas situaciones tontas",
+		| /*25*/	"unos ingenieros pobres",
+		| /*26*/	"unos niños limpios",
+		| /*27*/	"unas pintoras jóvenes",
+		| /*28*/	"unas historias cortas",
+		| /*29*/	"unas calles largas",
+		|];
+
+		include ../js/check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Переведите, поставьте словосочетание во множественое число.
+		div Пишите с маленькой буквы.
+		div Используйте слова: 
+			a(href="https://context.reverso.net/translation/spanish-russian/viejo" target="_blank") viejo&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/barato" target="_blank") barato&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/triste" target="_blank") triste&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/rico" target="_blank") rico&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/difícil" target="_blank") difícil&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/aburrido" target="_blank") aburrido&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/bueno" target="_blank") bueno&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/grande" target="_blank") grande&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/serio" target="_blank") serio&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/idioma" target="_blank") idioma&nbsp;
+			a(href="https://context.reverso.net/translation/spanish-russian/enfermero" target="_blank") enfermero&nbsp;
+			
+		div ú é í ó á ñ ü ¿
+		ol
+			li старый город
+				input(id = "question0")
+			li дешевый дом
+				input(id = "question1")
+			li грустная служащая
+				input(id = "question2")
+			li старая медсестра 
+				input(id = "question3")
+			li 
+				a(href="https://context.reverso.net/translation/russian-spanish/трудный" target="_blank") трудный 
+				a(href="https://context.reverso.net/translation/russian-spanish/язык" target="_blank") язык 
+				input(id = "question4")
+			li тяжелая ситуация 
+				input(id = "question5")
+			li 
+				a(href="https://context.reverso.net/translation/russian-spanish/серьезный" target="_blank") серьезный 
+				a(href="https://context.reverso.net/translation/russian-spanish/журнал" target="_blank") журнал
+				input(id = "question6")
+			li скучный день
+				input(id = "question7")
+			li большая книга
+				input(id = "question8")
+			li маленькая машина
+				input(id = "question9")
+			li богатая семья
+				input(id = "question10")
+			li интересная жизнь
+				input(id = "question11")
+			li умная книга
+				input(id = "question12")
+			li старый город
+				input(id = "question13")
+			li хорошая работа
+				input(id = "question14")
+			li худая актриса
+				input(id = "question15")
+			li грустная песня
+				input(id = "question16")
+			li богатая страна
+				input(id = "question17")
+			li ленивый шеф
+				input(id = "question18")
+			li длинная ночь
+				input(id = "question19")
+			li высокий человек
+				input(id = "question20")
+			li грязная машина
+				input(id = "question21")
+			li некрасивая тема
+				input(id = "question22")
+			li красивая фотография
+				input(id = "question23")
+			li глупая ситуация
+				input(id = "question24")
+			li бедный инженер
+				input(id = "question25")
+			li чистый ребенок
+				input(id = "question26")
+			li молодая художница
+				input(id = "question27")
+			li короткая история
+				input(id = "question28")
+			li длинная улица
+				input(id = "question29")
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

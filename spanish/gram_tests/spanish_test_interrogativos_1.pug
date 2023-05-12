@@ -1,0 +1,54 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+
+	script
+		| var answers = [
+		| /*01*/ "¿Qué tiene Julián en la mano?", 
+		| /*02*/ "¿Con quién está bailando Eloísa?", 
+		| /*03*/ "¿Para quién es ese anillo?", 
+		| /*04*/ "¿Qué pasó anoche?", 
+		| /*05*/ "¿De quién es esa bolsa?", 
+		| /*06*/ "¿Qué te han regalado tus padres?", 
+		| /*07*/ "¿Con qué has abierto la puerta?", 
+		| /*08*/ "¿Quién está escribiendo una novela?",
+		| /*09*/ "¿Qué quiere María?",
+		| /*10*/ "¿Quién quiere a María?",
+		| /*11*/ "¿De qué es la sopa?",
+		|];
+
+		include ../js/check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Расставьте слова в <b>вопросительных предложениях</b> в правильном порядке.
+		div ú é í ó á ñ ü ¿
+		ol
+			li ¿tiene / en la mano / Julián / qué?
+				input(id = "question0")
+			li ¿quién / Eloísa / está bailando / con?
+				input(id = "question1")
+			li ¿ese anillo / para / es / quién?
+				input(id = "question2")
+			li ¿anoche / pasó / qué?
+				input(id = "question3")
+			li ¿quién / esa bolsa / de / es? 
+				input(id = "question4")
+			li ¿tus padres / te / qué / han regalado? 
+				input(id = "question5")
+			li ¿la puerta / qué / has abierto / con?
+				input(id = "question6")
+			li ¿está escribiendo / una novela / quién?
+				input(id = "question7")
+			li ¿María / qué / quiere?
+				input(id = "question8")
+			li ¿quiere / a María / quién? 
+				input(id = "question9")
+			li ¿es / la sopa / qué / de?
+				input(id = "question10")
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

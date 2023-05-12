@@ -1,0 +1,74 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		| var answers = [
+		| /*01*/ "sois", 
+		| /*02*/ "es", 
+		| /*03*/ "sois", 
+		| /*04*/ "somos", 
+		| /*05*/ "es", 
+		| /*06*/ "es", 
+		| /*07*/ "eres", 
+		| /*08*/ "soy", 
+		| /*09*/ "soy", 
+		|];
+
+		include ../js/check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Выберите нужную форму глагола <b>ser</b> («быть, являться»):
+		div ú é í ó á ñ ü ¿
+		ol 
+			li 
+				span(class="translate") Вы испанки. 
+				|– Vosotras 
+				input(id = "question0") 
+				|&nbsp;españolas.
+			li 
+				span(class="translate") Вы мой босс. 
+				|– Usted 
+				input(id = "question1")
+				|&nbsp;mi jefe.
+			li 
+				span(class="translate") Вы опасны. 
+				| – Vosotros 
+				input(id = "question2") 
+				|&nbsp;peligrosos.
+			li 
+				span(class="translate") Мы студенты. 
+				| – Nosotros 
+				input(id = "question3")
+				|&nbsp;estudiantes.
+			li 
+				span(class="translate") Он хороший человек. 
+				| – Él 
+				input(id = "question4") 
+				|&nbsp;un buen hombre.
+			li 
+				span(class="translate") Она путешественница. 
+				| – Ella 
+				input(id = "question5") 
+				|&nbsp;una viajera.
+			li 
+				span(class="translate") Ты мой друг. 
+				| – Tú 
+				input(id = "question6") 
+				|&nbsp;mi amigo.
+			li 
+				span(class="translate") Я твой брат. 
+				| – Yo 
+				input(id = "question7") 
+				|&nbsp;tu hermano.
+			li 
+				span(class="translate") Я твоя сестра. 
+				| – Yo 
+				input(id = "question8") 
+				|&nbsp;tu hermana.
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

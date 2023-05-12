@@ -1,0 +1,100 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		| var answers = [
+		|/*01*/	"la", 
+		|/*02*/	"el", 
+		|/*03*/	"el", 
+		|/*04*/	"la", 
+		|/*05*/	"el", 
+		|/*06*/	"los", 
+		|/*07*/	"el", 
+		|/*08*/	"la", 
+		|/*09*/	"el", 
+		|/*10*/	"la",
+		|/*11*/	"la", 
+		|/*12*/	"el", 
+		|/*13*/	"el", 
+		|/*14*/	"la", 
+		|/*15*/	"la", 
+		|/*16*/	"el", 
+		|/*17*/	"el", 
+		|/*18*/	"el", 
+		|/*19*/	"la", 
+		|/*20*/	"la",
+		|];
+		include ../js/check_test.js
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Поставьте соотвествующую форму <b>определенного</b> артикля перед существительными:
+		div ú é í ó á ñ ü ¿
+		table(class="table-test")
+			tbody
+				tr 
+					td: input(id = "question0")
+					td foto 
+				tr 
+					td: input(id = "question1")
+					td turista
+				tr 
+					td: input(id = "question2")
+					td chico
+				tr 
+					td: input(id = "question3")
+					td  chica
+				tr 
+					td: input(id = "question4")
+					td  dinero
+				tr 
+					td: input(id = "question5")
+					td estudios
+				tr 
+					td: input(id = "question6")
+					td novio - парень - "boy friend"
+				tr 
+					td: input(id = "question7")
+					td novia - девушка - "girl friend".
+				tr 
+					td: input(id = "question8")
+					td  coche
+				tr 
+					td: input(id = "question9")
+					td cosa
+				tr 
+					td: input(id = "question10")
+					td profesión
+				tr 
+					td: input(id = "question11")
+					td bolígrafo
+				tr 
+					td: input(id = "question12")
+					td lunes
+				tr 
+					td: input(id = "question13")
+					td revista
+				tr 
+					td: input(id = "question14")
+					td flor
+				tr 
+					td: input(id = "question15")
+					td paisaje
+				tr 
+					td: input(id = "question16")
+					td apellido
+				tr 
+					td: input(id = "question17")
+					td nombre.
+				tr 
+					td: input(id = "question18")
+					td edad
+				tr 
+					td: input(id = "question19")
+					td semana
+
+				tr
+					td: input(type = "button" class="button" onclick = "test()" value = "Проверить")
+					td: input(type = "button" class="button" onclick = "myclear()" value = "Очистить")

@@ -2,16 +2,43 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
-	style
-		include my_table_style.css 
 		
 block content
 	div.row: div.large-12.columns: h2 Испанский язык
 	div.row: div.large-12.columns
 		h3 Pronombres interrogativos. Вопросительные местоимения.
-
+		div Вопросительные местоимения бывают двух типов: местоимения-прилагательные и местоимения-существительные.
+		div Все вопросительные местоимения пишутся со знаком ударения.
+		div <b>I. Вопросительные местоимения-прилагательные</b>
+		div Эти местоимения всегда ставятся перед существительным (артикль опускается). К вопросительным местоимениям-прилагательным относятся:
+		ol
+			li Qué? — какой (-ая, -ие)?
+			li ¿Cuál? — ¿cuáles? — который (-ая, -ые), какой (-ая, -ие)?
+			li ¿Cuánto? —¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?
+			
+		div <b>II. Вопросительные местоимения-существительные</b>
+		div Употребляются самостоятельно и обычно стоят перед глаголом.
+		div К вопросительным местоимениям-существительным относятся:
+		ol
+			li ¿Qué? — что? кто?
+			li ¿Quién? — ¿quiénes? — кто?
+				div Вопросы с quién задаются только по отношению к людям, когда хотят идентифицировать их личность (фамилию, имя, звание и т.п.), иными словами, узнать, кто это такой:
+				div — ¿<b>Quién</b> es este pajaro? - <span class="translate">Что это за «птица»?</span>
+				div — ¿<b>Quién</b> ha de ser? Caballuco. — <span class="translate">Кто кроме него может быть? Кабальюко.</span>
+				div — Y ¿<b>quién</b> es Caballuco? — <span class="translate">А кто такой Кабальюко?</span>
+				div —...Es un hombre muy bravo, gran jinete. — <span class="translate">Смелый человек, отличный наездник.</span>
+				div ¿Еn <b>quién</b> confiar?  <span class="translate">На кого положиться (кому верить)?</span>
+				div  Dime con <b>quién</b> andas y te diré quién eres. <span class="translate">Скажи мне, кто твой друг, и я скажу, кто ты.</span>
+				div  <b>Quiénes</b> son esas muchachas? <span class="translate">Kто эти девушки?</span>
+			li ¿Cuál? — ¿cuáles? — который (-ая, -ое, -ые), какой (-ая, -ое, -ие)?
+			li ¿Cuánto? — ¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?
+			
 		h3 Дополнительные источники:
 		ol
 			li 
 				a(href="https://tutesp.ru/6-4-voprositeljnye-mestoimeniya.html" target="_blank") Вопросительные местоимения.
 				| tutesp.ru
+			li 
+				a(href="https://speakasap.com/es/grammar/voprositelnye-mestoimeniya/" target="_blank") Вопросительные местоимения.
+				| speakasap.com. Есть упражнение
+				

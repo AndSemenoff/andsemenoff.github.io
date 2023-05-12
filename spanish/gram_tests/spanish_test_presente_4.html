@@ -2,6 +2,43 @@
 <html lang="ru">
   <head>
     <title>ABSOLEM.INFO | Испанский язык</title>
+    <script>
+      var answers = [
+      /*01*/ "Doy", 
+      /*02*/ "va", 
+      /*03*/ "Da", 
+      /*04*/ "ponen", 
+      /*05*/ "Pongo", 
+      /*06*/ "hacen", 
+      /*07*/ "sabe", 
+      /*08*/ "huyen",
+      /*09*/ "Traduzco",
+      ];function myclear()
+  {
+	  for(count = 0; count < answers.length; count++)
+		  {
+			element = document.getElementById('question' + count);
+			element.value = "";
+			element.style.color = 'black';
+			color1.style.fontWeight = 'normal';
+		  }
+  }
+function test()
+ {
+	for(count = 0; count < answers.length; count++)
+	{
+		answer1 = document.getElementById('question' + count).value;
+		color1 = document.getElementById('question' + count);
+		if (answer1 == answers[count]) color1.style.color = 'green';
+		else 
+			{
+			color1.style.color = 'red';
+			color1.style.fontWeight = 'bold';
+			}
+	}
+
+ }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -39,39 +76,43 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <h3>Pronombres interrogativos. Вопросительные местоимения.</h3>
-        <div>Вопросительные местоимения бывают двух типов: местоимения-прилагательные и местоимения-существительные.</div>
-        <div>Все вопросительные местоимения пишутся со знаком ударения.</div>
-        <div><b>I. Вопросительные местоимения-прилагательные</b></div>
-        <div>Эти местоимения всегда ставятся перед существительным (артикль опускается). К вопросительным местоимениям-прилагательным относятся:</div>
+        <div>Задание. Дополните фразы подходящими глаголами из списка ниже в правильной форме:</div>
+        <div>ú é í ó á ñ ü ¿</div>
+        <div>Список: dar, dar, hacer, huir, ir, poner, poner, <s>saber</s>, saber, traducir</div>
+        <div>Пример. Guillermo no <u>sabe</u> nadar. </div>
         <ol>
-          <li>Qué? — какой (-ая, -ие)?</li>
-          <li>¿Cuál? — ¿cuáles? — который (-ая, -ые), какой (-ая, -ие)?</li>
-          <li>¿Cuánto? —¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?</li>
-        </ol>
-        <div><b>II. Вопросительные местоимения-существительные</b></div>
-        <div>Употребляются самостоятельно и обычно стоят перед глаголом.</div>
-        <div>К вопросительным местоимениям-существительным относятся:</div>
-        <ol>
-          <li>¿Qué? — что? кто?</li>
-          <li>¿Quién? — ¿quiénes? — кто?
-            <div>Вопросы с quién задаются только по отношению к людям, когда хотят идентифицировать их личность (фамилию, имя, звание и т.п.), иными словами, узнать, кто это такой:</div>
-            <div>— ¿<b>Quién</b> es este pajaro? - <span class="translate">Что это за «птица»?</span></div>
-            <div>— ¿<b>Quién</b> ha de ser? Caballuco. — <span class="translate">Кто кроме него может быть? Кабальюко.</span></div>
-            <div>— Y ¿<b>quién</b> es Caballuco? — <span class="translate">А кто такой Кабальюко?</span></div>
-            <div>—...Es un hombre muy bravo, gran jinete. — <span class="translate">Смелый человек, отличный наездник.</span></div>
-            <div>¿Еn <b>quién</b> confiar?  <span class="translate">На кого положиться (кому верить)?</span></div>
-            <div> Dime con <b>quién</b> andas y te diré quién eres. <span class="translate">Скажи мне, кто твой друг, и я скажу, кто ты.</span></div>
-            <div> <b>Quiénes</b> son esas muchachas? <span class="translate">Kто эти девушки?</span></div>
+          <li>Soy profesor. 
+            <input id="question0">&nbsp;clases de Filosofía.
           </li>
-          <li>¿Cuál? — ¿cuáles? — который (-ая, -ое, -ые), какой (-ая, -ое, -ие)?</li>
-          <li>¿Cuánto? — ¿cuánta? — ¿cuántos? — ¿cuántas? — сколько?</li>
+          <li>Mi familia 
+            <input id="question1">&nbsp;a Punta del Este todos los veranos.
+          </li>
+          <li>Julia es profesora. 
+            <input id="question2">&nbsp;clases de Biología.
+          </li>
+          <li>Las cigüeñas 
+            <input id="question3">&nbsp;sus nidos en lugares altos.
+          </li>
+          <li>(yo) 
+            <input id="question4">&nbsp;la radio cuando me despierto.
+          </li>
+          <li>Mis padres 
+            <input id="question5">&nbsp;un viaje todos los años.
+          </li>
+          <li>Marta no 
+            <input id="question6">&nbsp;esquiar.
+          </li>
+          <li>La mayoría de animales 
+            <input id="question7">&nbsp;cuando hay peligro.
+          </li>
+          <li>Soy traductor. 
+            <input id="question8">&nbsp;libros del francés al español.
+          </li>
         </ol>
-        <h3>Дополнительные источники:</h3>
-        <ol>
-          <li> <a href="https://tutesp.ru/6-4-voprositeljnye-mestoimeniya.html" target="_blank">Вопросительные местоимения.</a>tutesp.ru</li>
-          <li> <a href="https://speakasap.com/es/grammar/voprositelnye-mestoimeniya/" target="_blank">Вопросительные местоимения.</a>speakasap.com. Есть упражнение</li>
-        </ol>
+        <div>
+          <input class="button" onclick="test()" value="Проверить">
+          <input class="button" onclick="myclear()" value="Очистить">
+        </div>
       </div>
     </div>
     <footer>

@@ -2,24 +2,16 @@
 <html lang="ru">
   <head>
     <title>ABSOLEM.INFO | Испанский язык</title>
-    <script type="text/javascript">
+    <script>
       var answers = [
-      /*01*/ "Doy", 
-      /*02*/ "va", 
-      /*03*/ "Da", 
-      /*04*/ "ponen", 
-      /*05*/ "Pongo", 
-      /*06*/ "hacen", 
-      /*07*/ "sabe", 
-      /*08*/ "huyen",
-      /*09*/ "Traduzco",
-      /*10*/ "",
-      /*11*/ "",
-      /*12*/ "",
-      /*13*/ "",
-      /*14*/ "",
-      /*15*/ "",
-      /*16*/ "",
+      /*01*/ "estáis", 
+      /*02*/ "estamos", 
+      /*03*/ "está", 
+      /*04*/ "está", 
+      /*05*/ "están", 
+      /*06*/ "estás", 
+      /*07*/ "estás", 
+      /*08*/ "estoy", 
       ];function myclear()
   {
 	  for(count = 0; count < answers.length; count++)
@@ -52,7 +44,7 @@ function test()
     <meta name="author" content="Семенова Андрей Вячеславович">
     <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
-    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="shortcut icon" href="../images/caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
     <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
     <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
@@ -83,20 +75,33 @@ function test()
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <div>Задание. Дополните фразы подходящими глаголами из списка ниже в правильной форме:</div>
+        <div>Задание. Выберите нужную форму глагола <b>estar</b> («быть, находиться»):</div>
         <div>ú é í ó á ñ ü ¿</div>
-        <div>Список: dar, dar, hacer, huir, ir, poner, poner, <s>saber</s>, saber, traducir</div>
-        <div>Пример. Guillermo no <u>sabe</u> nadar.</div>
         <ol>
-          <li>Soy profesor. <input id = "question0" value=""></input> clases de Filosofía.</li>
-          <li>Mi familia <input id = "question1" value=""></input> a Punta del Este todos los veranos.</li>
-          <li>Julia es profesora. <input id = "question2" value=""></input> clases de Biología.</li>
-          <li>Las cigüeñas <input id = "question3" value=""></input> sus nidos en lugares altos.</li>
-          <li>(yo) <input id = "question4" value=""></input> la radio cuando me despierto.</li>
-          <li>Mis padres <input id = "question5" value=""></input> un viaje todos los años.</li>
-          <li>Marta no <input id = "question6" value=""></input> esquiar.</li>
-          <li>La mayoría de animales <input id = "question7" value=""></input> cuando hay peligro.</li>
-          <li>Soy traductor. <input id = "question8" value=""></input> libros del francés al español.</li>
+          <li> <span class="translate">Вы находитесь в Африке. </span>– Vosotros 
+            <input id="question0">&nbsp;en África.
+          </li>
+          <li> <span class="translate">Мы находимся в Америке. </span>– Nosotros 
+            <input id="question1">&nbsp;en América.
+          </li>
+          <li> <span class="translate">Он находится в Европе. </span>– Él 
+            <input id="question2">&nbsp;en Europa.
+          </li>
+          <li> <span class="translate">Вы довольны. </span>– Usted 
+            <input id="question3">&nbsp;contento.
+          </li>
+          <li> <span class="translate">Они больны. </span>– Ellos 
+            <input id="question4">&nbsp;enfermos.
+          </li>
+          <li> <span class="translate">Ты находишься в правильном месте. </span>– Tú 
+            <input id="question5">&nbsp;en el sitio correcto.
+          </li>
+          <li> <span class="translate">Ты сердишься. </span>– Tú 
+            <input id="question6">&nbsp;enfadado.
+          </li>
+          <li> <span class="translate">Я нахожусь в своем доме. </span>– Yo 
+            <input id="question7">&nbsp;en mi casa.
+          </li>
         </ol>
         <div>
           <input class="button" onclick="test()" value="Проверить">
@@ -110,7 +115,7 @@ function test()
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>

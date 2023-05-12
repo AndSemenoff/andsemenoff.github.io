@@ -1,0 +1,68 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		| var answers = [
+		| /*01*/ "estáis", 
+		| /*02*/ "estamos", 
+		| /*03*/ "está", 
+		| /*04*/ "está", 
+		| /*05*/ "están", 
+		| /*06*/ "estás", 
+		| /*07*/ "estás", 
+		| /*08*/ "estoy", 
+		|];
+
+		include ../js/check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Выберите нужную форму глагола <b>estar</b> («быть, находиться»):
+		div ú é í ó á ñ ü ¿
+		ol
+			li 
+				span(class="translate") Вы находитесь в Африке. 
+				| – Vosotros 
+				input(id = "question0")
+				|&nbsp;en África.
+			li 
+				span(class="translate") Мы находимся в Америке. 
+				| – Nosotros 
+				input(id = "question1")
+				|&nbsp;en América.
+			li 
+				span(class="translate") Он находится в Европе. 
+				| – Él 
+				input(id = "question2")
+				|&nbsp;en Europa.
+			li 
+				span(class="translate") Вы довольны. 
+				| – Usted 
+				input(id = "question3") 
+				|&nbsp;contento.
+			li 
+				span(class="translate") Они больны. 
+				| – Ellos 
+				input(id = "question4") 
+				|&nbsp;enfermos.
+			li 
+				span(class="translate") Ты находишься в правильном месте. 
+				| – Tú 
+				input(id = "question5") 
+				|&nbsp;en el sitio correcto.
+			li 
+				span(class="translate") Ты сердишься. 
+				| – Tú 
+				input(id = "question6") 
+				|&nbsp;enfadado.
+			li 
+				span(class="translate") Я нахожусь в своем доме. 
+				| – Yo 
+				input(id = "question7")
+				|&nbsp;en mi casa.
+		div
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")

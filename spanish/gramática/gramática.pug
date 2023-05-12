@@ -2,6 +2,7 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
+	script(src="https://code.responsivevoice.org/responsivevoice.js?key=7rSSozwg")
 
 block content
 	div.row: div.large-12.columns: h2 Испанский язык
@@ -15,38 +16,36 @@ block content
 				a(href="stress_rules.html") Правила ударения. 
 			li
 				a(href="nouns.html") Род и число существительных. 
-					ol
-						li 
-							a(href="spanish_test_nouns_1_1.html") Упражнение 1.1.  
-							a(href="spanish_test_nouns_1_2.html") Упражнение 1.2. 
-						li
-							a(href="spanish_test_nouns_2_1.html") Упражнение 2.1. 
-							a(href="spanish_test_nouns_2_2.html") Упражнение 2.2. 
-						li
-							a(href="spanish_test_nouns_3.html") Упражнение 3
-						li
-							a(href="spanish_test_nouns_4.html") Упражнение 4
-						li
-							a(href="spanish_test_nouns_5.html") Упражнение 5
-						li
-							a(href="spanish_test_nouns_6.html") Упражнение 6
+				ol
+					li 
+						a(href="../gram_tests/spanish_test_nouns_1.html") Упражнение 1. Неопределенный артикль.
+					li
+						a(href="../gram_tests/spanish_test_nouns_2.html") Упражнение 2. Определенный артикль.
+					li
+						a(href="../gram_tests/spanish_test_nouns_3.html") Упражнение 3. Множественое чило и артикль.
+					li
+						a(href="../gram_tests/spanish_test_nouns_4.html") Упражнение 4. Артикль в вопросах.
+					li
+						a(href="../gram_tests/spanish_test_nouns_5.html") Упражнение 5. Артикль в профессиях.
+					li
+						a(href="../gram_tests/spanish_test_nouns_6.html") Упражнение 6. Мн. число.
 			li
 				a(href="articles.html") Артикли.
 			li
 				a(href="adjectives.html") Род и число прилагательных.
-					ol
-						li 
-							a(href="spanish_test_adjectives_1.html") Упражнение 1.
-						li
-							a(href="spanish_test_adjectives_2.html") Упражнение 2.
-						li
-							a(href="spanish_test_adjectives_3.html") Упражнение 3.
-						li
-							a(href="spanish_test_adjectives_4.html") Упражнение 4.
-						li
-							a(href="spanish_test_adjectives_5.html") Упражнение 5.
-						li
-							a(href="spanish_test_adjectives_6.html") Упражнение 6.
+				ol
+					li 
+						a(href="../gram_tests/spanish_test_adjectives_1.html") Упражнение 1.
+					li
+						a(href="../gram_tests/spanish_test_adjectives_2.html") Упражнение 2.
+					li
+						a(href="../gram_tests/spanish_test_adjectives_3.html") Упражнение 3.
+					li
+						a(href="../gram_tests/spanish_test_adjectives_4.html") Упражнение 4.
+					li
+						a(href="../gram_tests/spanish_test_adjectives_5.html") Упражнение 5.
+					li
+						a(href="../gram_tests/spanish_test_adjectives_6.html") Упражнение 6.
 			li
 				a(href="pronombres.html") Местоимения.
 				ol
@@ -56,42 +55,45 @@ block content
 						a(href="pronombres") Указательные местоимения.
 					li
 						a(href="pronombres_interrogativos.html") Вопросительные местоимения.
+						ol
+							li 
+								a(href="../gram_tests/spanish_test_interrogativos_1.html") Упражнение 1.
 					li
 						a(href="pronombres") Притяжательные местоимения.
 					li Упражнения общие
 						ol
 							li 
-								a(href="spanish_test_pronombres_1.html" target="_blank") 1 
+								a(href="../gram_tests/spanish_test_pronombres_1.html" target="_blank") 1 
 							li 
-								a(href="spanish_test_pronombres_2.html" target="_blank") 2
+								a(href="../gram_tests/spanish_test_pronombres_2.html" target="_blank") 2
 			li
 				a(href="spanish_ordinals.html") Порядковые числительные. Numerales ordinales.
 			li
 				a(href="spanish_participio_pasado.html") Причастие (Participio Pasado).
-					ol
-						li 
-							a(href="spanish_test_participio_pasado_1.html") Упражнение 1.
+				ol
+					li 
+						a(href="../gram_tests/spanish_test_participio_pasado_1.html") Упражнение 1.
 			li <strong>Глаголы</strong>
 				ol 
 					li
 						a(href="spanish_verbo.html") Система времен и наклонений испанского глагола. 
 					li
 						a(href="spanish_presente.html") Presente de Indicativo. Настоящее время.
-							ol
-								li 
-									a(href="spanish_test_presente_1.html") Упражнение 1. Regulares.
-								li
-									a(href="spanish_test_presente_2.html") Упражнение 2. Irregulares 1.
-								li
-									a(href="spanish_test_presente_3.html") Упражнение 3. Irregulares 2.
-								li
-									a(href="spanish_test_presente_4.html") Упражнение 4. Voy, hago, conozco
+						ol
+							li 
+								a(href="../gram_tests/spanish_test_presente_1.html") Упражнение 1. Regulares.
+							li
+								a(href="../gram_tests/spanish_test_presente_2.html") Упражнение 2. Irregulares 1.
+							li
+								a(href="../gram_tests/spanish_test_presente_3.html") Упражнение 3. Irregulares 2.
+							li
+								a(href="../gram_tests/spanish_test_presente_4.html") Упражнение 4. Voy, hago, conozco
 					li
 						a(href="spanish_pretérito_perfecto.html") Pretérito Perfecto de Indicativo.
 						| Сложное прошедшее время
 						ol
 							li 
-								a(href="spanish_test_pretérito_perfecto_1.html") Упражнение 1.
+								a(href="../gram_tests/spanish_test_pretérito_perfecto_1.html") Упражнение 1.
 					li
 						a(href="") Спряжение правильных глаголов.
 					li
@@ -105,12 +107,12 @@ block content
 							li Упражнения на tener: 
 								ol
 									li 
-										a(href="spanish_test_verbos_tener_1.html" target="_blank") 1 
+										a(href="../gram_tests/spanish_test_verbos_tener_1.html" target="_blank") 1 
 									li 
-										a(href="spanish_test_verbos_tener_2.html" target="_blank") 2 
+										a(href="../gram_tests/spanish_test_verbos_tener_2.html" target="_blank") 2 
 							li 
-								a(href="spanish_test_verbos_ser_1.html" target="_blank") Упражнение на ser.
+								a(href="../gram_tests/spanish_test_verbos_ser_1.html" target="_blank") Упражнение на ser.
 							li 
-								a(href="spanish_test_verbos_estar_1.html" target="_blank") Упражнение на estar.
+								a(href="../gram_tests/spanish_test_verbos_estar_1.html" target="_blank") Упражнение на estar.
 							li 
-								a(href="spanish_test_verbos_ser_or_estar_1.html" target="_blank") Упражнение на ser и estar.
+								a(href="../gram_tests/spanish_test_verbos_ser_or_estar_1.html" target="_blank") Упражнение на ser и estar.

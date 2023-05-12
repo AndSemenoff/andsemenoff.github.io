@@ -1,0 +1,72 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		| var answers = [
+		|/*1*/ 	"los casos", 
+		|/*2*/	"las amigas", 
+		|/*3*/	"los cafés", 
+		|/*4*/	"las ciudades", 
+		|/*5*/	"los coches", 
+		|/*6*/	"las fotos", 
+		|/*7*/	"las manos", 
+		|/*8*/	"los turistas", 
+		|/*9*/	"las mujeres", 
+		|/*10*/	"los hombres",
+		|/*11*/	"las vidas",
+		|/*12*/	"las almas",
+		|/*13*/	"las noches",
+		|];
+		include ../js/check_test.js
+
+block content
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Поставьте существительные во множественное число, добавив нужную форму <b>определенного</b> артикля.
+		div Пишите с маленькой буквы.
+		div ú é í ó á ñ ü ¿
+		table(class="table-test")
+			tbody
+				tr 
+					td el caso 
+					td: input(id = "question0")
+				tr 
+					td la amiga
+					td: input(id = "question1")
+				tr 
+					td el café
+					td: input(id = "question2")
+				tr 
+					td la ciudad
+					td: input(id = "question3")
+				tr 
+					td el coche
+					td: input(id = "question4")
+				tr 
+					td la foto
+					td: input(id = "question5")
+				tr 
+					td la mano
+					td: input(id = "question6")
+				tr 
+					td el turista
+					td: input(id = "question7")
+				tr 
+					td la mujer 
+					td: input(id = "question8")
+				tr 
+					td el hombre
+					td: input(id = "question9")
+				tr 
+					td la vida
+					td: input(id = "question10")
+				tr 
+					td la alma
+					td: input(id = "question11")
+				tr 
+					td la noche
+					td: input(id = "question12")
+				tr
+					td: input(type = "button" class="button" onclick = "test()" value = "Проверить")
+					td: input(type = "button" class="button" onclick = "myclear()" value = "Очистить")

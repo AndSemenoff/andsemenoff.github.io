@@ -2,8 +2,6 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
-	style
-		include my_table_style.css 
 		
 block content
 	div.row: div.large-12.columns: h2 Испанский язык
@@ -13,7 +11,7 @@ block content
 		table(class="table-test")
 			tbody
 				tr
-					th(rowspan="2") &nbsp;<br>Местоимение</th>
+					th(rowspan="2") &nbsp;<br>Местоимение
 					th &nbsp;
 					th I<br>спряжение
 					th II<br>спряжение
@@ -24,38 +22,38 @@ block content
 					th -ER
 					th -IR
 				tr
-					td <center>yo</center>
-					td я
+					td(class = "cell-center") yo
+					td: span(class="translate") я
 					td -o
 					td -o
 					td -o
 				tr
-					td <center>tú</center>
-					td ты
+					td(class = "cell-center") tú
+					td: span(class="translate") ты
 					td -as
 					td -es
 					td -es
 				tr
-					td él ella Usted
-					td он она Вы
+					td(class = "cell-center") él ella Usted
+					td: span(class="translate") он она Вы
 					td -a
 					td -e
 					td -e
 				tr
-					td nosotros(-as)
-					td мы
+					td(class = "cell-center") nosotros(-as)
+					td: span(class="translate") мы
 					td -amos
 					td -emos
 					td -imos
 				tr
-					td vosotros(-as)
-					td вы
+					td(class = "cell-center") vosotros(-as)
+					td: span(class="translate") вы
 					td -áis
 					td -éis
 					td -ís
 				tr
-					td ellos ellas Ustedes
-					td они они Вы
+					td(class = "cell-center") ellos ellas Ustedes
+					td: span(class="translate") они они Вы
 					td -an
 					td -en
 					td -en
@@ -65,115 +63,129 @@ block content
 			div III. глаголы индивидуального спряжения.
 		div Неправильные глаголы можно условно разделить на семь основных групп.
 		h3 I группа
-		div К этой группе относятся глаголы I и II спряжений, под ударением дифтонгизируется корневой гласный: <strong>-e</strong> → <strong>-ie</strong>
+		div К этой группе относятся глаголы I и II спряжений, под ударением дифтонгизируется корневой гласный: <span class="dip">-e</span> → <span class="dip">-ie</span>
 		table(class="table-test")
 			thead
 				tr
 					th
 					th 
-					th: center I спряжение
-					th: center II cпряжение
+					th(class = "cell-center") I спряжение
+					th(class = "cell-center") II cпряжение
 			tbody
 				tr
 					td
 					td 
 					td
 						strong empezar 
-						em начинать
+						span(class="translate") начинать
 					td 
 						strong defender 
-						em защищать
+						span(class="translate") защищать
 				tr
-					td: center yo
-					td я
-					td emp<strong>ie</strong>z
+					td(class = "cell-center") yo
+					td: span(class="translate") я
+					td emp
+						span(class="dip") ie
+						| z
 						span(class="spanish-ending") o
-					td def<strong>ie</strong>nd
+					td def
+						span(class="dip") ie
+						| nd
 						span(class="spanish-ending") o
 				tr
-					td: center tú
-					td ты
-					td emp<strong>ie</strong>z
+					td(class = "cell-center") tú
+					td: span(class="translate") ты
+					td emp
+						span(class="dip") ie
+						| z
 						span(class="spanish-ending") as
-					td def<strong>ie</strong>nd
+					td def
+						span(class="dip") ie
+						| nd
 						span(class="spanish-ending") es
 				tr
-					td él, ella, usted
-					td он она Вы
-					td emp<strong>ie</strong>z
+					td(class = "cell-center") él, ella, usted
+					td: span(class="translate") он она Вы
+					td emp
+						span(class="dip") ie
+						| z
 						span(class="spanish-ending") a
-					td def<strong>ie</strong>nd
+					td def
+						span(class="dip") ie
+						| nd
 						span(class="spanish-ending") e
 				tr
-					td nosotros
-					td мы
+					td(class = "cell-center") nosotros
+					td: span(class="translate") мы
 					td empez
 						span(class="spanish-ending") amos
 					td defend
 						span(class="spanish-ending") emos
 				tr
-					td vosotros
-					td вы
+					td(class = "cell-center") vosotros
+					td: span(class="translate") вы
 					td empez
 						span(class="spanish-ending") áis
 					td defend
 						span(class="spanish-ending") éis
 				tr
-					td ellos, ellas, ustedes
-					td они они Вы
-					td emp<strong>ie</strong>z
+					td(class = "cell-center") ellos, ellas, ustedes
+					td: span(class="translate") они они Вы
+					td emp
+						span(class="dip") ie
+						| z
 						span(class="spanish-ending") an
-					td def<strong>ie</strong>nd
+					td def
+						span(class="dip") ie
+						| nd
 						span(class="spanish-ending") en
 
 		
 		div Важные глаголы, изменяющиеся по этому типу:
-		table(class="table-simple")
+		table(class="table-test")
 			thead
 				tr
-					th(colspan=2): center I спряжение
-					th(colspan=2): center II cпряжение
+					th(colspan=2)(class = "cell-center") I спряжение
+					th(colspan=2)(class = "cell-center") II cпряжение
 			tbody
 				tr 
 					td atravesar 
-					td пересекать
+					td: span(class="translate") пересекать
 					td defender 
-					td защищать
+					td: span(class="translate") защищать
 				tr 
 					td cerrar 
-					td закрывать
+					td: span(class="translate") закрывать
 					td encender 
-					td зажигать
+					td: span(class="translate") зажигать
 				tr 
 					td comenzar 
-					td начинать
+					td: span(class="translate") начинать
 					td entender 
-					td понимать
-				tr 
-
+					td: span(class="translate") понимать
 				tr 
 					td despertar 
-					td будить
+					td: span(class="translate") будить
 					td perder 
-					td терять
+					td: span(class="translate") терять
 				tr 
 					td negar 
-					td отрицать
+					td: span(class="translate") отрицать
 					td querer
-					td хотеть
+					td: span(class="translate") хотеть
 				tr 
 					td pensar 
-					td думать
+					td: span(class="translate") думать
 					td 
 					td 
 				tr 
 					td recomendar 
-					td советовать
+					td: span(class="translate") советовать
 					td 
 					td 
 				tr 
 					td fregar
-					td мыть
+					td: span(class="translate") мыть
 					td 
 					td 
 					
@@ -193,7 +205,7 @@ block content
 				tr 
 					td I
 					td dar 
-					td давать
+					td: span(class="translate") давать
 					td <b>doy</b>
 					td d
 						span(class="spanish-ending") as 
@@ -208,7 +220,7 @@ block content
 				tr
 					td II
 					td traer 
-					td приносить
+					td: span(class="translate") приносить
 					td <b>traigo</b>
 					td tra
 						span(class="spanish-ending") es 
@@ -223,7 +235,7 @@ block content
 				tr
 					td II
 					td hacer 
-					td делать
+					td: span(class="translate") делать
 					td <b>hago</b>
 					td hac
 						span(class="spanish-ending") es 
@@ -238,7 +250,7 @@ block content
 				tr
 					td II
 					td saber 
-					td знать, уметь
+					td: span(class="translate") знать, уметь
 					td <b>sé</b>
 					td  
 					td 
@@ -248,7 +260,7 @@ block content
 				tr
 					td II
 					td poner 
-					td помещать
+					td: span(class="translate") помещать
 					td <b>pongo</b>
 					td  
 					td 
@@ -258,7 +270,7 @@ block content
 				tr
 					td II
 					td conocer 
-					td знать
+					td: span(class="translate") знать
 					td <b>conozco</b>
 					td  
 					td 
@@ -268,7 +280,7 @@ block content
 				tr
 					td II 
 					td parecer
-					td казаться 
+					td: span(class="translate") казаться 
 					td <b>parezco</b>
 					td pareces 
 					td parece
@@ -278,7 +290,7 @@ block content
 				tr
 					td III
 					td conducir 
-					td водить машину
+					td: span(class="translate") водить машину
 					td <b>conduzco</b>
 					td conduces 
 					td conduce
@@ -288,7 +300,7 @@ block content
 				tr
 					td III
 					td traducir
-					td переводить
+					td: span(class="translate") переводить
 					td <b>traduzco</b>
 					td traduces 
 					td traduce
@@ -298,7 +310,7 @@ block content
 				tr
 					td III
 					td huir 
-					td бежать
+					td: span(class="translate") бежать
 					td 
 					td  
 					td 
@@ -308,7 +320,7 @@ block content
 				tr
 					td III
 					td construir 
-					td строить
+					td: span(class="translate") строить
 					td 
 					td  
 					td 
@@ -318,7 +330,7 @@ block content
 				tr
 					td III
 					td destruir 
-					td разрушать
+					td: span(class="translate") разрушать
 					td 
 					td  
 					td 
@@ -328,7 +340,7 @@ block content
 				tr
 					td III
 					td oír 
-					td слышать
+					td: span(class="translate") слышать
 					td 
 					td  
 					td 
@@ -366,24 +378,34 @@ block content
 					td 
 					td 
 		div dar, traer, hacer, saber, poner, conocer, conducir - у этих глаголов неправильная только форма Yo в единственном числе.
+		h3 Дополнительные материалы:
+		div 
+			a(href="https://studyspanish.com/grammar/lessons/stemie" target="_blank") Изменение основы e -> ie. 
+			| studyspanish.com. Есть онлайн упражнения
 		h3 II группа
-		<p>К этой группе тоже относятся глаголы I и II спряжений, также под ударением происходит дифтонгизация корневого гласного <strong>-o</strong> → <strong>-ue</strong>:</p>
+		div К этой группе тоже относятся глаголы I и II спряжений, также под ударением происходит дифтонгизация корневого гласного <span class="dip">-o</span> → <span class="dip">-ue</span>:
 		table(class="table-test")
 			thead
 				tr
 					td 
-					td I спряжение
-					td II cпряжение
+					td(class = "cell-center") I спряжение
+					td(class = "cell-center") II cпряжение
 			tbody
 				tr
 					td
-					td <strong>rogar</strong> <em>просить</em>
-					td <strong>volver</strong> <em>вернуться</em>
+					td <strong>rogar</strong> 
+						span(class="translate") просить
+					td <strong>volver</strong> 
+						span(class="translate") вернуться
 				tr
 					td yo
-					td r<strong>ue</strong>g
+					td r
+						span(class="dip") ue
+						| g
 						span(class="spanish-ending") o
-					td v<strong>ue</strong>lv
+					td v
+						span(class="dip") ue
+						| lv
 						span(class="spanish-ending") o
 				tr
 					td tú
@@ -417,50 +439,51 @@ block content
 						span(class="spanish-ending") en
 		
 		div Важные глаголы, изменяющиеся по этому типу:
-		table(class="table-simple")
+		table(class="table-test")
 			tbody
 				tr 
 					td acordarse 
-					td вспоминать
+					td: span(class="translate") вспоминать
 				tr 
 					td acostarse 
-					td ложиться спать
+					td: span(class="translate") ложиться спать
 				tr 
 					td almorzar 
-					td обедать
+					td: span(class="translate") обедать
 				tr 
 					td contar 
-					td считать; рассказывать
+					td: span(class="translate") считать; рассказывать
 				tr 
 					td costar 
-					td стоить
+					td: span(class="translate") стоить
 				tr 
 					td encontrar 
-					td встречать; находить
+					td: span(class="translate") встречать; находить
 				tr 
 					td mostrar 
-					td показывать
+					td: span(class="translate") показывать
 				tr 
 					td moverse 
-					td двигаться
+					td: span(class="translate") двигаться
 				tr 
 					td recordar 
-					td вспоминать, помнить
+					td: span(class="translate") вспоминать, помнить
 				tr 
 					td soler 
-					td иметь обыкновение что-то делать
+					td: span(class="translate") иметь обыкновение что-то делать
 				tr 
 					td sonar 
-					td звучать
+					td: span(class="translate") звучать
 				tr 
 					td soñar 
-					td мечтать
+					td: span(class="translate") мечтать
 				tr 
 					td volar 
-					td летать
+					td: span(class="translate") летать
 					
 		div Примеры
-		div ¿Cuántas horas duermes(dormir) al día? <em>Сколько часов в день ты спишь?</em>
+		div ¿Cuántas horas duermes(dormir) al día? 
+			span(class="translate") Сколько часов в день ты спишь?
 		h3 III группа
 		div К этой группе относятся глаголы III спряжения, корневой гласный инфинитива -e под ударением переходит в i: -e → -i
 		
@@ -471,48 +494,48 @@ block content
 					td 
 					td
 						strong repetir 
-						em повторять 
+						span(class="translate") повторять 
 					td 
 						strong reír 
-						em смеяться 
+						span(class="translate") смеяться 
 				tr
-					td: center yo
-					td я
+					td(class = "cell-center") yo
+					td: span(class="translate") я
 					td rep<strong>i</strong>t
 						span(class="spanish-ending") o
 					td r<strong>í</strong>
 						span(class="spanish-ending") o
 				tr
-					td: center tú
-					td ты
+					td(class = "cell-center") tú
+					td: span(class="translate") ты
 					td rep<strong>i</strong>t
 						span(class="spanish-ending") es
 					td r<strong>í</strong>
 						span(class="spanish-ending") es
 				tr
-					td él, ella, usted
-					td он она Вы
+					td(class = "cell-center") él, ella, usted
+					td: span(class="translate") он она Вы
 					td rep<strong>i</strong>t
 						span(class="spanish-ending") e
 					td r<strong>í</strong>
 						span(class="spanish-ending") e
 				tr
-					td nosotros
-					td мы
+					td(class = "cell-center") nosotros
+					td: span(class="translate") мы
 					td repet
 						span(class="spanish-ending") imos
 					td re
 						span(class="spanish-ending") ímos
 				tr
-					td vosotros
-					td вы
+					td(class = "cell-center") vosotros
+					td: span(class="translate") вы
 					td repet
 						span(class="spanish-ending") ís
 					td re
 						span(class="spanish-ending") ís
 				tr
-					td ellos, ellas, ustedes
-					td они они Вы
+					td(class = "cell-center") ellos, ellas, ustedes
+					td: span(class="translate") они они Вы
 					td rep<strong>i</strong>t
 						span(class="spanish-ending") en
 					td r<strong>í</strong>
@@ -527,88 +550,89 @@ block content
 					td 
 					td
 						strong venir 
-						em приходить
+						span(class="translate") приходить
 					td 
 						strong decir 
-						em сказать 
+						span(class="translate") сказать 
 				tr
-					td: center yo
-					td я
+					td(class = "cell-center") yo
+					td: span(class="translate") я
 					td veng
 						span(class="spanish-ending") o
 					td dig
 						span(class="spanish-ending") o
 				tr
-					td: center tú
-					td ты
+					td(class = "cell-center") tú
+					td: span(class="translate") ты
 					td vien
 						span(class="spanish-ending") es
 					td dic
 						span(class="spanish-ending") es
 				tr
-					td él, ella, usted
-					td он она Вы
+					td(class = "cell-center") él, ella, usted
+					td: span(class="translate") он она Вы
 					td vien
 						span(class="spanish-ending") e
 					td dic
 						span(class="spanish-ending") e
 				tr
-					td nosotros
-					td мы
+					td(class = "cell-center") nosotros
+					td: span(class="translate") мы
 					td ven
 						span(class="spanish-ending") imos
 					td dec
 						span(class="spanish-ending") ímos
 				tr
-					td vosotros
-					td вы
+					td(class = "cell-center") vosotros
+					td: span(class="translate") вы
 					td ven
 						span(class="spanish-ending") ís
 					td dec
 						span(class="spanish-ending") ís
 				tr
-					td ellos, ellas, ustedes
-					td они они Вы
+					td(class = "cell-center") ellos, ellas, ustedes
+					td: span(class="translate") они они Вы
 					td vien
 						span(class="spanish-ending") en
 					td dic
 						span(class="spanish-ending") en
 
 		div Важные глаголы, изменяющиеся по этому типу:
-		table(class="table-simple")
+		table(class="table-test")
 			tbody
 				tr 
 					td corregir 
-					td исправлять
+					td: span(class="translate") исправлять
 				tr 
 					td despedir 
-					td увольнять
+					td: span(class="translate") увольнять
 				tr 
 					td elegir 
-					td выбирать
+					td: span(class="translate") выбирать
 				tr 
 					td pedir 
-					td просить
+					td: span(class="translate") просить
 				tr 
 					td reír 
-					td смеяться
+					td: span(class="translate") смеяться
 				tr 
 					td repetir 
-					td повторять
+					td: span(class="translate") повторять
 				tr 
 					td seguir 
-					td следовать; продолжать
+					td: span(class="translate") следовать; продолжать
 				tr 
 					td servir 
-					td служить
+					td: span(class="translate") служить
 				tr 
 					td sonreír 
-					td улыбаться
+					td: span(class="translate") улыбаться
 				tr 
 					td vestirse 
-					td одеваться
+					td: span(class="translate") одеваться
 		div Примеры
-		div ¿Cuánto mides(medir)? <em>Какой у тебя рост?</em>
+		div ¿Cuánto mides(medir)? 
+			span(class="translate") Какой у тебя рост?
 		h3 Дополнительные источники:
 		ol
 			li 

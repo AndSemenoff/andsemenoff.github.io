@@ -1,0 +1,70 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script(type = "text/javascript")
+		| var answers = [	
+		|/*1*/ 	"una estudiante", 
+		|/*2*/	"un maestro", 
+		|/*3*/	"una empleada", 
+		|/*4*/	"un peluqero", 
+		|/*5*/	"una intérprete", 
+		|/*6*/	"un camarero", 
+		|/*7*/	"una pintora", 
+		|/*8*/	"un abogado", 
+		|/*9*/	"una enfermera", 
+		|/*10*/	"un profesor",
+		|/*11*/	"una secretaria",
+		|/*12*/	"un actor",
+		|/*13*/	"una periodista",
+		|/*14*/	"un escritor",
+		|/*15*/	"una cantante",
+		|];
+		
+		include ../js/check_test.js
+
+block content
+
+	div.row: div.large-12.columns: h2 Испанский язык
+	div.row: div.large-12.columns
+		div Задание. Дополните пары профессий, не забывая изменить также форму артикля:
+		div Пишите с маленькой буквы.
+		ol
+			li
+				| un estudiante - студент | 
+				input(id = "question0") 
+				|&nbsp;- студентка.
+			li
+				input(id = "question1")
+				|&nbsp;- учитель | una maestra - учительница.
+			li
+				| un empleado - служащий | <input  id = "question2"></input> - служащая.
+			li
+				input(id = "question3")
+				|&nbsp;- парикмахер | una peluqera - парикмахерша .
+			li
+				| un intérprete - переводчик | <input  id = "question4"></input> - переводчица.
+			li
+				| <input id = "question5"></input> - официант | una camarera - официантка.
+			li
+				| un pintor - художник | <input id = "question6"></input> - художница.
+			li
+				| <input  id = "question7"></input> - адвокат | una abogada - адвокат женщина
+			li
+				| un enfermero - медбрат | <input id = "question8"></input> - медсестра.
+			li
+				| <input id = "question9"></input> - преподаватель | una profesora - преподовательница.
+			li
+				| un secretario - секретарь | <input id = "question10"></input> - секретарша.
+			li
+				| <input id = "question11"></input> - актер | una actriz - актриса. 
+			li
+				| un periodista - журналист | <input id = "question12"></input> - журналистка.
+			li
+				| <input id = "question13"></input> - писатель | una escritora - писательница.
+			li
+				| un cantante - певец | <input id = "question14"></input> - певица.
+
+		form
+			input( class="button" onclick = "test()" value = "Проверить")
+			input( class="button" onclick = "myclear()" value = "Очистить")
