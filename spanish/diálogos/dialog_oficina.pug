@@ -4,111 +4,121 @@ block title
 	title= site_title + " Испанский язык"
 
 block content
-	div.row: div.large-12.columns: h2 Испанский язык
-	div.row: div.large-12.columns
+	h2.text-center Испанский язык 
+		span.h4.subheader диалоги
+	article.grid-container
 		h2 В офисе.
-		h3 Диалог 1 
-	div.row
-		div.large-6.columns
-			div — María, ¿has enviado el correo electrónico a nuestro proveedor de Alemania?
-			div — No, aún no. No he tenido tiempo.
-			div — Pues hazlo, por favor. Es algo urgente.
-			div — Ahora mismo lo envío.
-			div — Por favor, también manda otro correo electrónico a la dirección de vendas de nuestra fi lial en Sevilla y por correo certifi cado envía estos documentos a Miguel para que pueda ir a la embajada a tramitar los documentos.
-			div — Enseguida lo hago.
-		div.large-6.columns
-			div — Мария, ты отправила письмо нашему немецкому поставщику?
-			div — Ой, нет еще. У меня не было времени.
-			div — Сделай, пожалуйста. Это срочно.
-			div — Прямо сейчас отправляю.
-			div — Также отправь, пожалуйста, другое письмо в дирекцию по продажам нашего филиала в Севилье и заказным письмом пошли эти документы Мигелю, чтобы он мог пойти в посольство оформлять документы.
-			div — Сейчас сделаю.
-		<audio controls="" autoplay="" name="media">
-		<source src="../audio/dialog_oficina_1.mp3" type="audio/mpeg">
-		</audio>
-	div.row: div.large-12.columns
-		h3 Диалог 2
-	div.row
-		div.large-6.columns
-			div — ¿Puede decirme cual es la manera más rápida para enviar estos documentos a China?
-			div — Lo mejor es enviarlos por nuestro servicio urgente que tarda dos días en llegar.
-			div — ¿Qué precio tiene?
-			div — Si los documentos pesan menos de un quilo, cuesta ochenta euros. Después por cada quilo extra son cincuenta euros.
-			div — ¡Vaya! ¡Qué caro! ¿No hay nada más económico?
-			div — Tenemos otras tarifas. Por ejemplo una de cuarenta euros pero tarda una semana. Si es urgente no sé si le sale a cuenta. Usted decide.
-			div — Creo que mejor la de dos días aunque sea un poco cara.
-			div — Bien. Relléneme estos documentos y deme el paquete. Le daré un recibo con un código para que pueda seguir su pedido.
-			div — Perfecto, gracias.
-		div.large-6.columns
-			div — Вы не скажете, как быстрее всего доставить эти документы в Китай?
-			div — Лучше всего — с нашей службой срочной доставки. Это займет два дня.
-			div — Сколько это стоит?
-			div — Если вес посылки меньше килограмма, это стоит восемьдесят евро. Если больше — то по пятьдесят евро за каждый килограмм.
-			div — С ума сойти! Как дорого! А подешевле ничего нет?
-			div — Есть и другие тарифы. Можно за сорок евро, но на это уйдет неделя. Если это срочно, не знаю, стоит ли экономить. Решайте сами.
-			div — Думаю, лучше за два дня, хотя это дороговато.
-			div — Хорошо. Заполните эти бланки и дайте мне пакет. Я дам вам квитанцию с кодом, по которому вы сможете отследить выполнение заказа.
-			div — Прекрасно, спасибо.
-	div.row: div.large-12.columns
-		<audio controls="" autoplay="" name="media">
-		<source src="../audio/dialog_oficina_2.mp3" type="audio/mpeg">
-		</audio>
-	div.row: div.large-12.columns
-		h3 Диалог 3
-	div.row
-		div.large-6.columns
-			div — Buenas tardes, ¿puedo hablar con la Sra. Domínguez?
-			div — Buenas tardes. Un momento que creo que está reunida. Efectivamente está reunida. ¿Puede llamar más tarde?
-			div — ¿A qué hora?
-			div — Sobre las cuatro.
-			div — No sé si podré llamarla a esa hora. ¿Le puedo dejar un recado?
-			div — Sí, dígame.
-			div — Dígale que Jorge Álvarez le ha llamado para el asunto del balance fi scal. Dígale que me llame cuando pueda.
-			div — Perfecto. Deme su teléfono.
-			div — Ya lo tiene.
-			div — De acuerdo. Entonces se lo diré. Gracias.
-			div — Gracias a usted.
+		h3 Диалог 
+			span.h3.subheader: strong 1
+		div.grid-x.grid-margin-x
+			div.cell.large-6
+				div — María, ¿has enviado el correo electrónico a nuestro proveedor de Alemania?
+				div — No, aún no. No he tenido tiempo.
+				div — Pues hazlo, por favor. Es algo urgente.
+				div — Ahora mismo lo envío.
+				div — Por favor, también manda otro correo electrónico a la dirección de vendas de nuestra fi lial en Sevilla y por correo certifi cado envía estos documentos a Miguel para que pueda ir a la embajada a tramitar los documentos.
+				div — Enseguida lo hago.
+			div.cell.large-6
+				div — Мария, ты отправила письмо нашему немецкому поставщику?
+				div — Ой, нет еще. У меня не было времени.
+				div — Сделай, пожалуйста. Это срочно.
+				div — Прямо сейчас отправляю.
+				div — Также отправь, пожалуйста, другое письмо в дирекцию по продажам нашего филиала в Севилье и заказным письмом пошли эти документы Мигелю, чтобы он мог пойти в посольство оформлять документы.
+				div — Сейчас сделаю.
+			div.cell.large-12
+				audio(controls="" autoplay="" name="media")
+					source(src="../audio/dialog_oficina_1.mp3" type="audio/mpeg")
 
-		div.large-6.columns
-			div — Добрый день, можно поговорить с сеньорой Домингес?
-			div — Добрый день. Минутку, я думаю, что она на совещании. Да, это так. Вы можете перезвонить позже?
-			div — В котором часу?
-			div — Часа в четыре.
-			div — Не знаю, получится ли у меня позвонить в это время. Я могу оставить ей сообщение?
-			div — Да, конечно.
-			div — Передайте ей, пожалуйста, что звонил Хорхе Альварес по поводу налогового отчета. Попросите ее перезвонить мне, когда она сможет.
-			div — Отлично. Оставьте номер телефона.
-			div — Она знает.
-			div — Понятно. В таком случае, я ей передам. Спасибо
-			div — Спасибо вам.
-		<audio controls="" autoplay="" name="media">
-		<source src="../audio/dialog_oficina_3.mp3" type="audio/mpeg">
-		</audio>
-	div.row: div.large-12.columns
-		h3 Диалог 4
-	div.row
-		div.large-6.columns
-			div — Tenemos que concretar una reunión la semana que viene para terminar de cerrar el negocio. ¿Cuándo tienes tiempo?
-			div — Mira podría ser el viernes de la semana que viene a las tres. Justo después de comer. ¿Te va bien?
-			div — El viernes… No, creo que no. Espera que lo consulte en la agenda. No, tengo una comida que termina a las cuatro. ¿El jueves no podría ser?
-			div — ¿Por la tarde?
-			div — Vale. Puedo cambiar una reunión que tengo. ¿A las dos?
-			div — Perfecto. El jueves a las dos.
-			div — Nos vemos.
-			div — María, cancela la reunión que tenía para el jueves. Llama a los señores García y a los de la fi lial.
-			div — Hecho.
+		h3 Диалог 
+			span.h3.subheader: strong 2
+		div.grid-x.grid-margin-x
+			div.cell.large-6
+				div — ¿Puede decirme cual es la manera más rápida para enviar estos documentos a China?
+				div — Lo mejor es enviarlos por nuestro servicio urgente que tarda dos días en llegar.
+				div — ¿Qué precio tiene?
+			div.cell.large-6
+				div — Вы не скажете, как быстрее всего доставить эти документы в Китай?
+				div — Лучше всего — с нашей службой срочной доставки. Это займет два дня.
+				div — Сколько это стоит?
+			div.cell.large-6
+				div — Si los documentos pesan menos de un quilo, cuesta ochenta euros. Después por cada quilo extra son cincuenta euros.
+				div — ¡Vaya! ¡Qué caro! ¿No hay nada más económico?
+				div — Tenemos otras tarifas. Por ejemplo una de cuarenta euros pero tarda una semana. Si es urgente no sé si le sale a cuenta. Usted decide.
+				div — Creo que mejor la de dos días aunque sea un poco cara.
+				div — Bien. Relléneme estos documentos y deme el paquete. Le daré un recibo con un código para que pueda seguir su pedido.
+				div — Perfecto, gracias.
+			div.cell.large-6
+				div — Если вес посылки меньше килограмма, это стоит восемьдесят евро. Если больше — то по пятьдесят евро за каждый килограмм.
+				div — С ума сойти! Как дорого! А подешевле ничего нет?
+				div — Есть и другие тарифы. Можно за сорок евро, но на это уйдет неделя. Если это срочно, не знаю, стоит ли экономить. Решайте сами.
+				div — Думаю, лучше за два дня, хотя это дороговато.
+				div — Хорошо. Заполните эти бланки и дайте мне пакет. Я дам вам квитанцию с кодом, по которому вы сможете отследить выполнение заказа.
+				div — Прекрасно, спасибо.
+			div.cell.large-12
+				audio(controls="" autoplay="" name="media")
+					source(src="../audio/dialog_oficina_2.mp3" type="audio/mpeg")
 
-		div.large-6.columns
-			div — Нам надо уточнить время совещания на следующей неделе для подписания договора. Когда тебе удобно?
-			div — Может быть, в пятницу на следующей неделе, в три часа? Сразу после обеда. Тебе подходит?
-			div — Пятница… Нет, думаю, не подходит. Подожди, я посмотрю в ежедневник. Нет, у меня обед, который закончится в четыре. А в четверг нельзя?
-			div — Во второй половине дня?
-			div — Хорошо. Перенесу запланированное совещание. В два нормально?
-			div — Прекрасно. В четверг, в два часа.
-			div — Увидимся.
-			div — Мария, перенеси совещание, которое назначено на четверг. Позвони сеньору Гарсия и в филиал.
-			div — Сейчас.
-		<audio controls="" autoplay="" name="media">
-		<source src="../audio/dialog_oficina_4.mp3" type="audio/mpeg">
-		</audio>
+
+		h3 Диалог 
+			span.h3.subheader: strong 3
+		div.grid-x.grid-margin-x
+			div.cell.large-6
+				div — Buenas tardes, ¿puedo hablar con la Sra. Domínguez?
+				div — Buenas tardes. Un momento que creo que está reunida. Efectivamente está reunida. ¿Puede llamar más tarde?
+				div — ¿A qué hora?
+				div — Sobre las cuatro.
+				div — No sé si podré llamarla a esa hora. ¿Le puedo dejar un recado?
+			div.cell.large-6
+				div — Добрый день, можно поговорить с сеньорой Домингес?
+				div — Добрый день. Минутку, я думаю, что она на совещании. Да, это так. Вы можете перезвонить позже?
+				div — В котором часу?
+				div — Часа в четыре.
+				div — Не знаю, получится ли у меня позвонить в это время. Я могу оставить ей сообщение?
+			div.cell.large-6
+				div — Sí, dígame.
+				div — Dígale que Jorge Álvarez le ha llamado para el asunto del balance fi scal. Dígale que me llame cuando pueda.
+				div — Perfecto. Deme su teléfono.
+				div — Ya lo tiene.
+				div — De acuerdo. Entonces se lo diré. Gracias.
+				div — Gracias a usted.
+
+			div.cell.large-6
+				div — Да, конечно.
+				div — Передайте ей, пожалуйста, что звонил Хорхе Альварес по поводу налогового отчета. Попросите ее перезвонить мне, когда она сможет.
+				div — Отлично. Оставьте номер телефона.
+				div — Она знает.
+				div — Понятно. В таком случае, я ей передам. Спасибо
+				div — Спасибо вам.
+			div.cell.large-12
+				audio(controls="" autoplay="" name="media")
+					source(src="../audio/dialog_oficina_3.mp3" type="audio/mpeg")
+
+
+		h3 Диалог 
+			span.h3.subheader: strong 4
+		div.grid-x.grid-margin-x
+			div.cell.large-6
+				div — Tenemos que concretar una reunión la semana que viene para terminar de cerrar el negocio. ¿Cuándo tienes tiempo?
+				div — Mira podría ser el viernes de la semana que viene a las tres. Justo después de comer. ¿Te va bien?
+				div — El viernes… No, creo que no. Espera que lo consulte en la agenda. No, tengo una comida que termina a las cuatro. ¿El jueves no podría ser?
+				div — ¿Por la tarde?
+				div — Vale. Puedo cambiar una reunión que tengo. ¿A las dos?
+				div — Perfecto. El jueves a las dos.
+				div — Nos vemos.
+				div — María, cancela la reunión que tenía para el jueves. Llama a los señores García y a los de la fi lial.
+				div — Hecho.
+
+			div.cell.large-6
+				div — Нам надо уточнить время совещания на следующей неделе для подписания договора. Когда тебе удобно?
+				div — Может быть, в пятницу на следующей неделе, в три часа? Сразу после обеда. Тебе подходит?
+				div — Пятница… Нет, думаю, не подходит. Подожди, я посмотрю в ежедневник. Нет, у меня обед, который закончится в четыре. А в четверг нельзя?
+				div — Во второй половине дня?
+				div — Хорошо. Перенесу запланированное совещание. В два нормально?
+				div — Прекрасно. В четверг, в два часа.
+				div — Увидимся.
+				div — Мария, перенеси совещание, которое назначено на четверг. Позвони сеньору Гарсия и в филиал.
+				div — Сейчас.
+			div.cell.large-12
+				audio(controls="" autoplay="" name="media")
+					source(src="../audio/dialog_oficina_4.mp3" type="audio/mpeg")
 		

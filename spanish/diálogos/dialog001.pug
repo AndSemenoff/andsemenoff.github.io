@@ -4,38 +4,47 @@ block title
 	title= site_title + " Испанский язык"
 
 block content
-	div.row: div.large-12.columns: h2 Испанский язык
-	div.row: div.large-12.columns
+	h2.text-center Испанский язык 
+		span.h4.subheader диалоги
+	article.grid-container
 		h3 Диалог 001.
+		div.grid-x.grid-margin-x
+			div.cell.large-12
+				dl 
+					dt Mario 
+					dd Por favor, ¿tienen habitaciones libres?
+					dt Recepcionista 
+					dd ¿Cuántas personas son?
+					dt Mario 
+					dd Somos dos. Quisiéramos una habitación doble, con dos camas.
+					dt Recepcionista
+					dd Sí, no hay problema.
+					dt Mario
+					dd ¿Tienen baño las habitaciones?
+					dt Recepcionista
+					dd Sí, claro, baño, televisión y aire acondicionado.
+					dt Mario 
+					dd ¿Está incluido el desayuno?
+					dt Recepcionista 
+					dd No, es sin desayuno. El desayuno es aparte.
 
-		dl 
-			dt Mario 
-			dd Por favor, ¿tienen habitaciones libres?
-			dt Recepcionista 
-			dd ¿Cuántas personas son?
-			dt Mario 
-			dd Somos dos. Quisiéramos una habitación doble, con dos camas.
-			dt Recepcionista
-			dd Sí, no hay problema.
-			dt Mario
-			dd ¿Tienen baño las habitaciones?
-			dt Recepcionista
-			dd Sí, claro, baño, televisión y aire acondicionado.
-			dt Mario 
-			dd ¿Está incluido el desayuno?
-			dt Recepcionista 
-			dd No, es sin desayuno. El desayuno es aparte.
+				audio(controls="" autoplay="" name="media")
+					source(src="../audio/dialog001.mp3" type="audio/mpeg")
 
-		<audio controls="" autoplay="" name="media">
-		<source src="../audio/dialog001.mp3" type="audio/mpeg">
-		</audio>
-		
-		ul 
-			li libre свободный, не занятый
-			li la cama кровать
-			li hay есть, имеется
-			li claro конечно
-			li con с
-			li sin без
-			li el desayuno завтрак
-			li aparte отдельно, раздельно
+				ul 
+					li libre 
+						span(class="translate") свободный, не занятый
+					li la cama 
+						span(class="translate") кровать
+					li hay 
+						span(class="translate") есть, имеется
+					li claro 
+						span(class="translate") конечно
+					li con 
+						span(class="translate") с
+					li sin 
+						span(class="translate") без
+					li el desayuno 
+						span(class="translate") завтрак
+					li aparte 
+						span(class="translate") отдельно, раздельно
