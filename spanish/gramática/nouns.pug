@@ -4,8 +4,8 @@ block title
 	title= site_title + " Испанский язык"
 
 block content
-	div.row: div.large-12.columns: h2 Испанский язык
-	div.row: div.large-12.columns
+	h2.text-center Испанский язык
+	article.grid-container
 		h3 Род существительных.
 		p В испанском языке существительные могут буть мужского и женского рода. Очень важно знать какого рода существительное, потому что все элементы связанные с ним(прилагательные, артикли, указательные местоимения) будут согласовываться в роде с существительным. La cas<b>a</b> blank<b>a</b> - белый дом, el piso pequeñio - маленькая квартира.
 		h3 Число имен существительных. Número de los nombres sustantivos.
@@ -97,24 +97,32 @@ block content
 			tbody 
 				tr
 					td <span class="colorred">el</span> dentista
-					td зубной врач
+					td 
+						span.translate зубной врач
 					td <span class="colorred">la</span> dentista
-					td зубной врач
+					td 
+						span.translate зубной врач
 				tr
 					td <span class="colorred">el</span> colega
-					td коллега
+					td 
+						span.translate коллега
 					td <span class="colorred">la</span> colega
-					td коллега
+					td 
+						span.translate коллега
 				tr
 					td <span class="colorred">el</span> estudiante
-					td студент
+					td 
+						span.translate студент
 					td <span class="colorred">la</span> estudiante 
-					td студентка
+					td 
+						span.translate студентка
 				tr
 					td <span class="colorred">el</span> periodista
-					td журналист
+					td 
+						span.translate журналист
 					td <span class="colorred">la</span> periodista
-					td журналистка
+					td 
+						span.translate журналистка
 
 		p Существительные, обозначающие профессию, по своему происхождению принадлежат к категории мужского рода, но в современном языке возможно их употребление и в женском роде:
 		table(class="table-simple")
@@ -204,101 +212,134 @@ block content
 					td курица
 
 
-		<p>К некоторым существительным мужского рода, у которых в конце согласная <strong>-r</strong>, для образования женского рода прибавляется <strong>-а</strong>:</p>
+		div К некоторым существительным мужского рода, у которых в конце согласная <strong>-r</strong>, для образования женского рода прибавляется <strong>-а</strong>:
 		table(class="table-simple")
 			tbody
 				tr
 					td el seño<u>r</u>
-					td сеньор
+					td 
+						span.translate сеньор
 					td la seño<u>r</u><span class="spanish-ending">a</span> 
-					td сеньора
+					td 
+						span.translate сеньора
 				tr
 					td el profeso<u>r</u>
-					td преподаватель
+					td 
+						span.translate преподаватель
 					td la profeso<u>r</u><span class="spanish-ending">a</span> 
-					td преподавательница
+					td 
+						span.translate преподавательница
 				tr
 					td el escrito<u>r</u> 
-					td писатель
+					td 
+						span.translate писатель
 					td la escrito<u>r</u><span class="spanish-ending">a</span>
-					td писательница
-		<!-- tutesp.ru_MIDDLE -->
-		<p>Женский род существительных образуется также от существительных мужского рода при помощи суффиксов <span class="spanish-suffix">-esa</span>, <span class="spanish-suffix">-isa</span>, <span class="spanish-suffix">-triz</span>:</p>
+					td 
+						span.translate писательница
+
+		div Женский род существительных образуется также от существительных мужского рода при помощи суффиксов <span class="spanish-suffix">-esa</span>, <span class="spanish-suffix">-isa</span>, <span class="spanish-suffix">-triz</span>:
 		table(class="table-simple")
 			tbody
 				tr
 					td el alcalde
-					td мэр
+					td 
+						span.translate мэр
 					td la alcald<span class="spanish-suffix">esa</span> 
-					td мэр; жена мэра
+					td 
+						span.translate мэр; жена мэра
 				tr
 					td el príncipe
-					td принц
+					td 
+						span.translate принц
 					td la princ<span class="spanish-suffix">esa</span> 
-					td принцесса
+					td 
+						span.translate принцесса
 				tr
 					td el poeta 
-					td поэт
+					td 
+						span.translate поэт
 					td la poet<span class="spanish-suffix">isa</span> 
-					td поэтесса
+					td 
+						span.translate поэтесса
 				tr
 					td el actor 
-					td актер
+					td 
+						span.translate актер
 					td la ac<span class="spanish-suffix">triz</span> 
-					td актриса
+					td 
+						span.translate актриса
 				tr
 					td el emperador 
-					td император
+					td 
+						span.translate император
 					td la empera<span class="spanish-suffix">triz</span>
-					td императрица
+					td 
+						span.translate императрица
 					
 		p Существительные с суффиксом <span class="spanish-suffix">-ista</span> имеют общую форму для обоих родов. Обычно они обозначают профессию или занятие и отличаются только артиклем:
 		table(class="table-simple")
 			tbody
 				tr
-					td el art<span class="spanish-suffix">-ista</span> 
-					td артист
+					td el art
+						span(class="spanish-suffix") -ista 
+					td 
+						span.translate артист
 					td la art<span class="spanish-suffix">-ista</span> 
-					td артистка
+					td 
+						span.translate артистка
 				tr
 					td el deport<span class="spanish-suffix">-ista</span> 
-					td спортсмен
+					td 
+						span.translate спортсмен
 					td la deport<span class="spanish-suffix">-ista</span> 
-					td спортсменка
+					td 
+						span.translate спортсменка
 				tr
 					td el pian<span class="spanish-suffix">-ista</span> 
-					td пианист
+					td 
+						span.translate пианист
 					td la pian<span class="spanish-suffix">-ista</span> 
-					td пианистка
+					td 
+						span.translate пианистка
 				tr
 					td el tur<span class="spanish-suffix">-ista</span> 
-					td турист
+					td 
+						span.translate турист
 					td la tur<span class="spanish-suffix">-ista</span> 
-					td туристка
+					td 
+						span.translate туристка
 
 		p Некоторые другие, наиболее употребительные существительные общего рода:
 		table(class="table-simple")
 			tbody
 				tr
 					td el cliente 
-					td клиент
+					td 
+						span.translate клиент
 					td la cliente 
-					td клиентка
+					td 
+						span.translate клиентка
 				tr
 					td el amante 
-					td возлюбленный
+					td 
+						span.translate возлюбленный
 					td la amante 
-					td возлюбленная
+					td 
+						span.translate возлюбленная
 				tr
 					td el intérprete 
-					td переводчик
+					td 
+						span.translate переводчик
 					td la intérprete 
-					td переводчица
+					td 
+						span.translate переводчица
 				tr
 					td el indígena 
-					td туземец
+					td 
+						span.translate туземец
 					td la indígena 
-					td туземка
+					td 
+						span.translate туземка
 
 
 		<p>Существительными общего рода считаются те существительные, которые можно отнести к лицам мужского и женского пола:</p>

@@ -14,16 +14,19 @@ block title
 		| /*8*/	"conmigo", 
 		|];
 
-		include check_test.js
+		include ../js/check_test.js
 
 block content
 
-	div.row: div.large-12.columns: h2 Испанский язык
-	div.row: div.large-12.columns
+	h2.text-center Испанский язык
+	article.grid-container
 		div Задание. Употребите местоимения, относящиеся к выделенным словам:
 		ol
-			li Gilda está enfadada con <b>sus padres</b> y no quiere hablar con <input id = "question0" value=""></input>.
-			li <b>Señor Juárez</b>, ¡esto no lo podemos hacer sin <input id = "question1" value=""></input>!
+			li Gilda está enfadada con <b>sus padres</b> y no quiere hablar con 
+				input(id = "question0").
+			li <b>Señor Juárez</b>, ¡esto no lo podemos hacer sin 
+				input(id = "question1")
+				| !
 			li ¿Te acuerdas de <b>Jorge</b>? Anoche soñé con <input id = "question2" value=""></input>.
 			li La verdad es que a <input id = "question3" value=""></input> no <b>nos</b> gusta este lugar.
 			li ¿<b>Tú</b> estás buscando a Juana? Pues no la ves porque está detrás de <input id = "question4" value=""></input>.
@@ -34,3 +37,7 @@ block content
 		div
 			input( class="button" onclick = "test()" value = "Проверить")
 			input( class="button" onclick = "myclear()" value = "Очистить")
+		
+		div Примечания:
+		div enfadada 
+			span.translate злой

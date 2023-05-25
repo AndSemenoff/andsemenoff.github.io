@@ -1,0 +1,205 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Испанский язык"
+
+	script
+		| var answers = [
+		| /*1*/ 	"los casos", 
+		| /*2*/	"las amigas", 
+		| /*3*/	"los cafés", 
+		| /*4*/	"las ciudades", 
+		| /*5*/	"los coches", 
+		| /*6*/	"las fotos", 
+		| /*7*/	"las manos", 
+		| /*8*/	"los turistas", 
+		| /*9*/	"las mujeres", 
+		| /*10*/	"los hombres",
+		| /*11*/	"las vidas",
+		| /*12*/	"las almas",
+		| /*13*/	"las noches",
+		|];
+
+		include ../js/check_test.js
+
+block content
+	// Дышлевая страница 7.
+	h2.text-center Испанский язык
+	article.grid-container
+		div Задание. Составьте словосочетание по образцу.
+		div bueno/cosa - <b>una</b> cosa buen<b>a</b> - <b>unas</b> cosa<b>s</b> buena<b>s</b>
+		div Пишите с маленькой буквы.
+		div ú é í ó á ñ ü ¿
+
+		ol
+			<li>triste/día <input id = "question0" value=""></input>.</li>
+			<li>rico/mujer <input id = "question1"></input>.</li>
+			<li>pequeño/familia <input  id = "question2"></input>.</li>
+			<li>interesante/libro <input  id = "question3"></input>.</li>
+			<li>fuerte/hombre <input  id = "question4"></input>.</li>
+			<li>difícil/tema <input  id = "question5"></input>.</li>
+			<li>joven/peluquera <input  id = "question6"></input>.</li>
+			<li>alegre/secretaria <input  id = "question7"></input>.</li>
+			<li>fásil/problema <input  id = "question8"></input>.</li>
+			<li>pobre/camarero <input id = "question9"></input>.</li>
+			<li>corto/día <input  id = "question10"></input>.</li>
+			<li>bonito/noche <input id = "question11"></input>.</li>
+			<li>bajo/futbolista <input id = "question12"></input>.</li>
+
+		table(class="table-test")
+			thead
+				tr
+					th
+					th ед. ч.
+					th мн. ч.
+			tbody
+				tr
+					td старый город
+					td 
+						input(id = "question29" placeholder = "una ciudad vieja")
+					td 
+						input(id = "question0" placeholder = "unas ciudades viejas")
+				tr
+					td дешевый дом
+					td 
+						input(id = "question30")
+					td 
+						input(id = "question1")
+				tr
+					td  грустная служащая
+					td 
+						input(id = "question31")
+					td 
+						input(id = "question2")
+				tr
+					td  старая медсестра 
+					td 
+						input(id = "question32")
+					td 
+						input(id = "question3")
+				tr
+					td  
+						a(href="https://context.reverso.net/translation/russian-spanish/трудный" target="_blank") трудный 
+						a(href="https://context.reverso.net/translation/russian-spanish/язык" target="_blank") язык 
+					td 
+						input(id = "question33")
+					td 
+						input(id = "question4")
+				tr
+					td тяжелая ситуация 
+					td 
+						input(id = "question34")
+					td 
+						input(id = "question5")
+				tr
+					td  
+						a(href="https://context.reverso.net/translation/russian-spanish/серьезный" target="_blank") серьезный 
+						a(href="https://context.reverso.net/translation/russian-spanish/журнал" target="_blank") журнал
+					td 
+						input(id = "question35")
+					td 
+						input(id = "question6")
+				tr
+					td скучный день
+					td 
+						input(id = "question36")
+					td 
+						input(id = "question7")
+				tr
+					td  большая книга
+					td 
+						input(id = "question37")
+					td 
+						input(id = "question8")
+				tr
+					td  маленькая машина
+					td 
+						input(id = "question38")
+					td 
+						input(id = "question9")
+				tr
+					td  богатая семья
+					td 
+						input(id = "question39")
+					td 
+						input(id = "question10")
+				tr
+					td  интересная жизнь
+					td 
+						input(id = "question40")
+					td 
+						input(id = "question11")
+				tr
+					td  умная книга
+					td 
+						input(id = "question12")
+				tr
+					td  хорошая работа
+					td 
+						input(id = "question13")
+				tr
+					td  худая актриса
+					td 
+						input(id = "question14")
+				tr
+					td грустная песня
+					td 
+						input(id = "question15")
+				tr
+					td  богатая страна
+					td 
+						input(id = "question16")
+				tr
+					td  ленивый шеф
+					td 
+						input(id = "question17")
+				tr
+					td  длинная ночь
+					td 
+						input(id = "question18")
+				tr
+					td  высокий человек
+					td 
+						input(id = "question19")
+				tr
+					td  грязная машина
+					td 
+						input(id = "question20")
+				tr
+					td  некрасивая тема
+					td 
+						input(id = "question21")
+				tr
+					td  красивая фотография
+					td 
+						input(id = "question22")
+				tr
+					td  глупая ситуация
+					td 
+						input(id = "question23")
+				tr
+					td  бедный инженер
+					td 
+						input(id = "question24")
+				tr
+					td  чистый ребенок
+					td 
+						input(id = "question25")
+				tr
+					td  молодая художница
+					td 
+						input(id = "question26")
+				tr
+					td  короткая история
+					td 
+						input(id = "question27")
+				tr
+					td  длинная улица 
+					td 
+						input(id = "question28")
+					
+				tr
+					td
+						input( class="button" onclick = "test()" value = "Проверить")
+					td
+						input( class="button" onclick = "myclear()" value = "Очистить")

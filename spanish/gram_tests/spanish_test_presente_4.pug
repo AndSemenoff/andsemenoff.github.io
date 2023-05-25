@@ -17,13 +17,56 @@ block title
 
 		include ../js/check_test.js
 
-block content
-
-	div.row: div.large-12.columns: h2 Испанский язык
-	div.row: div.large-12.columns
+block content 
+	// Aragones A1-B2 50.1
+	h2.text-center Испанский язык
+	article.grid-container
 		div Задание. Дополните фразы подходящими глаголами из списка ниже в правильной форме:
 		div ú é í ó á ñ ü ¿
-		div Список: dar, dar, hacer, huir, ir, poner, poner, <s>saber</s>, saber, traducir
+		div Список:
+		table(class="table-test")
+			tbody
+				tr
+					td dar 
+					td 
+						span.translate давать
+				tr
+					td dar
+					td
+						span.translate давать
+				tr
+					td hacer
+					td 
+						span.translate делать
+				tr
+					td huir 
+					td 
+						span.translate бежать 
+				tr 
+					td ir
+					td
+						span.translate идти
+				tr 
+					td poner 
+					td 
+						span.translate помещать 
+				tr 
+					td poner 
+					td 
+						span.translate помещать 
+				tr
+					td saber
+					td 
+						span.translate знать, уметь
+				tr
+					td <s>saber</s>
+					td 
+						span.translate знать, уметь
+				tr
+					td traducir
+					td 
+						span.translate переводить 
+		div Подсказка: все глаголы неправильные
 		div Пример. Guillermo no <u>sabe</u> nadar. 
 		ol
 			li Soy profesor. 
@@ -56,3 +99,5 @@ block content
 		div
 			input( class="button" onclick = "test()" value = "Проверить")
 			input( class="button" onclick = "myclear()" value = "Очистить")
+		div esquiar 
+			span.translate горнолыжный спорт

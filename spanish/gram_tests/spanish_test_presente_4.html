@@ -43,25 +43,26 @@ function test()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
     <meta name="author" content="Семенова Андрей Вячеславович">
-    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="keywords" content="Испанский язык русский упражнения тест ссылки">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../images/caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <!--link( rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <!--script(src="../js/foundation.6.4.3.min.js")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7rSSozwg"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -69,52 +70,93 @@ function test()
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Испанский язык</h2>
+    <!-- Aragones A1-B2 50.1-->
+    <h2 class="text-center">Испанский язык</h2>
+    <article class="grid-container">
+      <div>Задание. Дополните фразы подходящими глаголами из списка ниже в правильной форме:</div>
+      <div>ú é í ó á ñ ü ¿</div>
+      <div>Список:</div>
+      <table class="table-test">
+        <tbody>
+          <tr>
+            <td>dar </td>
+            <td> <span class="translate">давать</span></td>
+          </tr>
+          <tr>
+            <td>dar</td>
+            <td><span class="translate">давать</span></td>
+          </tr>
+          <tr>
+            <td>hacer</td>
+            <td> <span class="translate">делать</span></td>
+          </tr>
+          <tr>
+            <td>huir </td>
+            <td> <span class="translate">бежать </span></td>
+          </tr>
+          <tr> 
+            <td>ir</td>
+            <td><span class="translate">идти</span></td>
+          </tr>
+          <tr> 
+            <td>poner </td>
+            <td> <span class="translate">помещать </span></td>
+          </tr>
+          <tr> 
+            <td>poner </td>
+            <td> <span class="translate">помещать </span></td>
+          </tr>
+          <tr>
+            <td>saber</td>
+            <td> <span class="translate">знать, уметь</span></td>
+          </tr>
+          <tr>
+            <td><s>saber</s></td>
+            <td> <span class="translate">знать, уметь</span></td>
+          </tr>
+          <tr>
+            <td>traducir</td>
+            <td> <span class="translate">переводить </span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>Подсказка: все глаголы неправильные</div>
+      <div>Пример. Guillermo no <u>sabe</u> nadar. </div>
+      <ol>
+        <li>Soy profesor. 
+          <input id="question0">&nbsp;clases de Filosofía.
+        </li>
+        <li>Mi familia 
+          <input id="question1">&nbsp;a Punta del Este todos los veranos.
+        </li>
+        <li>Julia es profesora. 
+          <input id="question2">&nbsp;clases de Biología.
+        </li>
+        <li>Las cigüeñas 
+          <input id="question3">&nbsp;sus nidos en lugares altos.
+        </li>
+        <li>(yo) 
+          <input id="question4">&nbsp;la radio cuando me despierto.
+        </li>
+        <li>Mis padres 
+          <input id="question5">&nbsp;un viaje todos los años.
+        </li>
+        <li>Marta no 
+          <input id="question6">&nbsp;esquiar.
+        </li>
+        <li>La mayoría de animales 
+          <input id="question7">&nbsp;cuando hay peligro.
+        </li>
+        <li>Soy traductor. 
+          <input id="question8">&nbsp;libros del francés al español.
+        </li>
+      </ol>
+      <div>
+        <input class="button" onclick="test()" value="Проверить">
+        <input class="button" onclick="myclear()" value="Очистить">
       </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <div>Задание. Дополните фразы подходящими глаголами из списка ниже в правильной форме:</div>
-        <div>ú é í ó á ñ ü ¿</div>
-        <div>Список: dar, dar, hacer, huir, ir, poner, poner, <s>saber</s>, saber, traducir</div>
-        <div>Пример. Guillermo no <u>sabe</u> nadar. </div>
-        <ol>
-          <li>Soy profesor. 
-            <input id="question0">&nbsp;clases de Filosofía.
-          </li>
-          <li>Mi familia 
-            <input id="question1">&nbsp;a Punta del Este todos los veranos.
-          </li>
-          <li>Julia es profesora. 
-            <input id="question2">&nbsp;clases de Biología.
-          </li>
-          <li>Las cigüeñas 
-            <input id="question3">&nbsp;sus nidos en lugares altos.
-          </li>
-          <li>(yo) 
-            <input id="question4">&nbsp;la radio cuando me despierto.
-          </li>
-          <li>Mis padres 
-            <input id="question5">&nbsp;un viaje todos los años.
-          </li>
-          <li>Marta no 
-            <input id="question6">&nbsp;esquiar.
-          </li>
-          <li>La mayoría de animales 
-            <input id="question7">&nbsp;cuando hay peligro.
-          </li>
-          <li>Soy traductor. 
-            <input id="question8">&nbsp;libros del francés al español.
-          </li>
-        </ol>
-        <div>
-          <input class="button" onclick="test()" value="Проверить">
-          <input class="button" onclick="myclear()" value="Очистить">
-        </div>
-      </div>
-    </div>
+      <div>esquiar <span class="translate">горнолыжный спорт</span></div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
@@ -135,14 +177,6 @@ function test()
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
-      <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

@@ -42,18 +42,46 @@
       /*36*/ "el horizonte", 
       /*37*/ "el aire", 
       /*38*/ "el faro", 
-      /*39*/ "", 
-      /*40*/ "", 
-      /*41*/ "", 
-      /*42*/ "", 
-      /*43*/ "", 
-      /*44*/ "", 
-      /*45*/ "", 
-      /*46*/ "", 
-      /*47*/ "", 
-      /*48*/ "", 
-      /*49*/ "", 
-      /*50*/ "", 
+      ];
+      var questiones = [
+      /*01*/ "море", 
+      /*02*/ "океан", 
+      /*03*/ "залив", 
+      /*04*/ "пролив", 
+      /*05*/ "материк", 
+      /*06*/ "остров ",
+      /*07*/ "полуостров", 
+      /*08*/ "архипелаг", 
+      /*09*/ "бухта", 
+      /*10*/ "гавань", 
+      /*11*/ "лагуна", 
+      /*12*/ "мыс",
+      /*13*/ "атолл", 
+      /*14*/ "риф", 
+      /*15*/ "коралл", 
+      /*16*/ "глубина",
+      /*17*/ "бездна", 
+      /*18*/ "течение", 
+      /*19*/ "побережье", 
+      /*20*/ "берег (моря)", 
+      /*21*/ "прилив", 
+      /*22*/ "отлив", 
+      /*23*/ "дно", 
+      /*24*/ "волна", 
+      /*25*/ "пена", 
+      /*26*/ "буря, шторм", 
+      /*27*/ "ураган", 
+      /*28*/ "цунами", 
+      /*29*/ "штиль", 
+      /*30*/ "полюс", 
+      /*31*/ "широта", 
+      /*32*/ "долгота", 
+      /*33*/ "параллель", 
+      /*34*/ "экватор", 
+      /*35*/ "небо", 
+      /*36*/ "горизонт", 
+      /*37*/ "воздух", 
+      /*38*/ "маяк", 
       ];function myclear()
   {
 	  for(count = 0; count < answers.length; count++)
@@ -84,25 +112,26 @@ function test()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
     <meta name="author" content="Семенова Андрей Вячеславович">
-    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="keywords" content="Испанский язык русский упражнения тест ссылки">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
-    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="shortcut icon" href="../images/caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <!--link( rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <!--script(src="../js/foundation.6.4.3.min.js")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7rSSozwg"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -110,310 +139,19 @@ function test()
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Испанский язык</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Словарь. Море. Океан.</h3>
-        <div>á é í ó ú ñ</div>
-        <table class="table-test">
-          <tbody>
-            <tr> 
-              <td>море </td>
-              <td>
-                <input type="text" id="question0" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>океан </td>
-              <td>
-                <input type="text" id="question1" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>залив </td>
-              <td>
-                <input type="text" id="question2" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>пролив </td>
-              <td>
-                <input type="text" id="question3" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>материк </td>
-              <td>
-                <input type="text" id="question4" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>остров </td>
-              <td>
-                <input type="text" id="question5" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>полуостров </td>
-              <td>
-                <input type="text" id="question6" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>архипелаг </td>
-              <td>
-                <input type="text" id="question7" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>бухта </td>
-              <td>
-                <input type="text" id="question8" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>гавань </td>
-              <td>
-                <input type="text" id="question9" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>лагуна </td>
-              <td>
-                <input type="text" id="question10" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>мыс </td>
-              <td>
-                <input type="text" id="question11" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>атолл </td>
-              <td>
-                <input type="text" id="question12" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>риф </td>
-              <td>
-                <input type="text" id="question13" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>коралл </td>
-              <td>
-                <input type="text" id="question14" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>глубина </td>
-              <td>
-                <input type="text" id="question15" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>бездна </td>
-              <td>
-                <input type="text" id="question16" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>течение </td>
-              <td>
-                <input type="text" id="question17" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>побережье </td>
-              <td>
-                <input type="text" id="question18" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>берег (моря) </td>
-              <td>
-                <input type="text" id="question19" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>прилив </td>
-              <td>
-                <input type="text" id="question20" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>отлив </td>
-              <td>
-                <input type="text" id="question21" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>дно </td>
-              <td>
-                <input type="text" id="question22" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>волна </td>
-              <td>
-                <input type="text" id="question23" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>пена </td>
-              <td>
-                <input type="text" id="question24" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>буря, шторм </td>
-              <td>
-                <input type="text" id="question25" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>ураган </td>
-              <td>
-                <input type="text" id="question26" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>цунами </td>
-              <td>
-                <input type="text" id="question27" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>штиль </td>
-              <td>
-                <input type="text" id="question28" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>полюс </td>
-              <td>
-                <input type="text" id="question29" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>широта </td>
-              <td>
-                <input type="text" id="question30" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>долгота </td>
-              <td>
-                <input type="text" id="question31" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>параллель </td>
-              <td>
-                <input type="text" id="question32" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>экватор </td>
-              <td>
-                <input type="text" id="question33" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>небо </td>
-              <td>
-                <input type="text" id="question34" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>горизонт </td>
-              <td>
-                <input type="text" id="question35" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>воздух </td>
-              <td>
-                <input type="text" id="question36" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>маяк </td>
-              <td>
-                <input type="text" id="question37" value="">
-              </td>
-            </tr>
-            <tr>
-              <td>нырять </td>
-              <td>bucear (vi) </td>
-            </tr>
-            <tr>
-              <td>затонуть (о корабле) </td>
-              <td>hundirse (vr) </td>
-            </tr>
-            <tr>
-              <td>сокровища </td>
-              <td>tesoros (m pl) </td>
-            </tr>
-            <tr>
-              <td>полярный </td>
-              <td>polar (adj) </td>
-            </tr>
-            <tr>
-              <td>спокойный </td>
-              <td>calmo, tranquilo (adj) </td>
-            </tr>
-            <tr>
-              <td>гребень волны </td>
-              <td>cresta (f) de la ola </td>
-            </tr>
-            <tr>
-              <td>отмель </td>
-              <td>banco (m) de arena </td>
-            </tr>
-            <tr>
-              <td>коралловый риф </td>
-              <td>arrecife (m) de coral </td>
-            </tr>
-            <tr>
-              <td>впадина </td>
-              <td>fosa (f) oceánica </td>
-            </tr>
-            <tr>
-              <td>земля, суша </td>
-              <td>tierra (f) firme</td>
-            </tr>
-            <tr>
-              <td>глубокий </td>
-              <td>profundo (adj) </td>
-            </tr>
-            <tr>
-              <td>омывать </td>
-              <td>bañar (vt) </td>
-            </tr>
-            <tr>
-              <td colspan="2"> 
-                <input class="button" onclick="test()" value="Проверить">
-                <input class="button" onclick="myclear()" value="Очистить">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h2 class="text-center">Испанский язык <span class="h4 subheader">тесты</span></h2>
+    <article class="grid-container">
+      <h3 class="text-center">Тест. Море. Океан.</h3>
+      <div class="text-center">á é í ó ú ñ</div>
+      <div id="myTable"></div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -427,14 +165,70 @@ function test()
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
-      <script>$(document).foundation();</script>
+      <script>function tableCreate() {
+  //id reference 
+  var body = document.getElementById("myTable");
+
+  // create elements <table> and a <tbody>
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+
+  // cells creation
+	for (var j = 0; j < questiones.length; j++) {
+		// table row creation
+		var row = document.createElement("tr");
+		// cell 1
+		var cell1 = document.createElement("td");
+		var cellText1 = document.createTextNode(questiones[j] );
+		cell1.appendChild(cellText1);
+		row.appendChild(cell1);
+		// cell 2
+		var cell2 = document.createElement("td");
+		var cell2_input = document.createElement("input");
+		cell2_input.setAttribute("id", "question"+j);
+		cell2.appendChild(cell2_input);
+		row.appendChild(cell2);
+		// cell 3
+		var cell3 = document.createElement("td");
+		var cell3_span = document.createElement("span");
+		cell3_span.setAttribute("onclick", "test()");
+		var cell3_icon = document.createElement("i");
+		cell3_icon.setAttribute("class", "fa-solid fa-gears");
+		cell3_span.appendChild(cell3_icon);
+		cell3.appendChild(cell3_span);
+		row.appendChild(cell3);
+
+		//row added to end of table body
+		tblBody.appendChild(row);
+	}
+	// last row with buttons
+	var last_row = document.createElement("tr");
+	var cell1 = document.createElement("td");
+	cell1.setAttribute("colspan", "3");
+	var input1 = document.createElement("input");
+	input1.setAttribute("class", "button");
+	input1.setAttribute("onclick", "test()");
+	input1.setAttribute("value", "Проверить");
+	var input2 = document.createElement("input");
+	input2.setAttribute("class", "button");
+	input2.setAttribute("onclick", "myclear()");
+	input2.setAttribute("value", "Очистить");
+	cell1.appendChild(input1);
+	var cellText = document.createTextNode(" ");
+	cell1.appendChild(cellText);
+	cell1.appendChild(input2);
+	last_row.appendChild(cell1);
+	tblBody.appendChild(last_row);
+	// append the <tbody> inside the <table>
+	tbl.appendChild(tblBody);
+	// put <table> in the <body>
+	body.appendChild(tbl);
+	// tbl border attribute to 
+	tbl.setAttribute("class", "table-test");
+}
+
+tableCreate()
+      </script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

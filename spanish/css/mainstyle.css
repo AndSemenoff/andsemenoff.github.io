@@ -211,4 +211,40 @@ dd {
 	display:block;
 	width: 100px;
 }
+.Maria::before{
+	content: "\f007";
+	margin-right: 5px;
+	font-family: "Font Awesome 6 Free";
+	color: #ff007b;
+	font-weight: 900;
+}
 
+.Julio::before{
+	content: "\f007";
+	margin-right: 5px;
+	font-family: "Font Awesome 6 Free";
+	color: #001eff;
+	font-weight: 900;
+}
+
+.Fernando::before{
+	content: "\f007";
+	margin-right: 5px;
+	font-family: "Font Awesome 6 Free";
+	color: black;
+	font-weight: 900;
+}
+
+.Josefina::before{
+	content: "\f007";
+	margin-right: 5px;
+	font-family: "Font Awesome 6 Free";
+	color: green;
+	font-weight: 900;
+}
+
+/*
+a::before {
+    content: '🔗';
+}
+*/

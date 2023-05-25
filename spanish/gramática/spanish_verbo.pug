@@ -2,15 +2,13 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
-	style
-		include my_table_style.css 
 		
 block content
-	div.row: div.large-12.columns: h2 Испанский язык
-	div.row: div.large-12.columns
+	h2.text-center Испанский язык
+	article.grid-container
 		h2 Система времен и наклонений испанского глагола.
 		div 
-		table(class="table-test")
+		table(class="table-test").unstriped
 			thead
 				tr
 					th Наклонения
@@ -20,16 +18,30 @@ block content
 				tr
 					th(rowspan=5) Modo Indicativo
 				tr
-					td: a(href="spanish_presente.html") Presente
+					td
+						a(href="spanish_presente.html") Presente
+						br
+						small настоящее 
 					td Pretérito Perfecto
+						br
+						small прошедшее совершенное
 				tr
-					td Pretérito Imperfecto
+					td 
+						a(href="spanish_pretérito_imperfecto.html") Pretérito Imperfecto 
+						br
+						small прошедшее несовершенное
 					td Pretérito Pluscuamperfecto
+						br
+						small прошедшее 
 				tr
 					td Pretérito Indefinido
+						br
+						small прошедшее 
 					td Pretérito Anterior
 				tr
-					td Futuro Imperfecto
+					td Futuro Imperfecto 
+						br
+						small futuro simple de indicativo
 					td Futuro Perfecto
 				tr
 					th(rowspan=5) Modo Subjuntivo
@@ -53,7 +65,7 @@ block content
 					th Modo Imperativo
 					td Afirmativo
 					td Negativo
-
+		div futuro imperfecto/futuro simple de indicativo 
 		h3 Дополнительные источники:
 		ol
 			li 

@@ -36,23 +36,40 @@
       /*30*/ "blanco y negro", 
       /*31*/ "unicolor", 
       /*32*/ "multicolor", 
-      /*33*/ "", 
-      /*34*/ "", 
-      /*35*/ "", 
-      /*36*/ "", 
-      /*37*/ "", 
-      /*38*/ "", 
-      /*39*/ "", 
-      /*40*/ "", 
-      /*41*/ "", 
-      /*42*/ "", 
-      /*43*/ "", 
-      /*44*/ "", 
-      /*45*/ "", 
-      /*46*/ "", 
-      /*47*/ "", 
-      /*48*/ "",  
-      /*49*/ "", 
+      ];
+      var questiones = [
+      /*01*/ "цвет", 
+      /*02*/ "оттенок", 
+      /*03*/ "тон", 
+      /*04*/ "радуга ", 
+      /*05*/ "белый ", 
+      /*06*/ "чёрный",
+      /*07*/ "серый", 
+      /*08*/ "зелёный", 
+      /*09*/ "жёлтый", 
+      /*10*/ "красный", 
+      /*11*/ "синий", 
+      /*12*/ "голубой",
+      /*13*/ "розовый", 
+      /*14*/ "оранжевый", 
+      /*15*/ "фиолетовый", 
+      /*16*/ "коричневый",
+      /*17*/ "золотой", 
+      /*18*/ "серебристый", 
+      /*19*/ "бежевый", 
+      /*20*/ "кремовый", 
+      /*21*/ "бирюзовый", 
+      /*22*/ "вишнёвый", 
+      /*23*/ "лиловый", 
+      /*24*/ "малиновый", 
+      /*25*/ "светлый", 
+      /*26*/ "тёмный", 
+      /*27*/ "яркий", 
+      /*28*/ "цветной (карандаш)", 
+      /*29*/ "цветной (фильм)", 
+      /*30*/ "чёрно-белый", 
+      /*31*/ "одноцветный", 
+      /*32*/ "разноцветный", 
       ];function myclear()
   {
 	  for(count = 0; count < answers.length; count++)
@@ -83,25 +100,26 @@ function test()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
     <meta name="author" content="Семенова Андрей Вячеславович">
-    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="keywords" content="Испанский язык русский упражнения тест ссылки">
     <meta name="copyright" content="Семенова Андрей Вячеславович">
-    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="shortcut icon" href="../images/caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
+    <!--link( rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all" )-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <!--script(src="../js/foundation.6.4.3.min.js")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7rSSozwg"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -109,226 +127,19 @@ function test()
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Испанский язык</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Тест. Цвета.</h3>
-        <div>á é í ó ú ñ</div>
-        <table class="table-test">
-          <tbody>
-            <tr> 
-              <td>цвет </td>
-              <td>
-                <input type="text" id="question0" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>оттенок </td>
-              <td>
-                <input type="text" id="question1" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>тон </td>
-              <td>
-                <input type="text" id="question2" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>радуга </td>
-              <td>
-                <input type="text" id="question3" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>белый </td>
-              <td>
-                <input type="text" id="question4" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>чёрный </td>
-              <td>
-                <input type="text" id="question5" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>серый </td>
-              <td>
-                <input type="text" id="question6" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>зелёный </td>
-              <td>
-                <input type="text" id="question7" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>жёлтый </td>
-              <td>
-                <input type="text" id="question8" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>красный </td>
-              <td>
-                <input type="text" id="question9" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>синий </td>
-              <td>
-                <input type="text" id="question10" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>голубой </td>
-              <td>
-                <input type="text" id="question11" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>розовый </td>
-              <td>
-                <input type="text" id="question12" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>оранжевый </td>
-              <td>
-                <input type="text" id="question13" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>фиолетовый </td>
-              <td>
-                <input type="text" id="question14" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>коричневый </td>
-              <td>
-                <input type="text" id="question15" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>золотой </td>
-              <td>
-                <input type="text" id="question16" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>серебристый </td>
-              <td>
-                <input type="text" id="question17" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>бежевый </td>
-              <td>
-                <input type="text" id="question18" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>кремовый </td>
-              <td>
-                <input type="text" id="question19" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>бирюзовый </td>
-              <td>
-                <input type="text" id="question20" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>вишнёвый </td>
-              <td>
-                <input type="text" id="question21" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>лиловый </td>
-              <td>
-                <input type="text" id="question22" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>малиновый </td>
-              <td>
-                <input type="text" id="question23" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>светлый </td>
-              <td>
-                <input type="text" id="question24" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>тёмный </td>
-              <td>
-                <input type="text" id="question25" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>яркий </td>
-              <td>
-                <input type="text" id="question26" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>цветной (карандаш) </td>
-              <td>
-                <input type="text" id="question27" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>цветной (фильм) </td>
-              <td>
-                <input type="text" id="question28" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>чёрно-белый </td>
-              <td>
-                <input type="text" id="question29" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>одноцветный </td>
-              <td>
-                <input type="text" id="question30" value="">
-              </td>
-            </tr>
-            <tr> 
-              <td>разноцветный </td>
-              <td>
-                <input type="text" id="question31" value="">
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"> 
-                <input class="button" onclick="test()" value="Проверить">
-                <input class="button" onclick="myclear()" value="Очистить">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h2 class="text-center">Испанский язык <span class="h4 subheader">тесты</span></h2>
+    <article class="grid-container">
+      <h3 class="text-center">Тест. Цвета.</h3>
+      <div class="text-center">á é í ó ú ñ</div>
+      <div id="myTable"> </div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -342,14 +153,70 @@ function test()
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
-      <script>$(document).foundation();</script>
+      <script>function tableCreate() {
+  //id reference 
+  var body = document.getElementById("myTable");
+
+  // create elements <table> and a <tbody>
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+
+  // cells creation
+	for (var j = 0; j < questiones.length; j++) {
+		// table row creation
+		var row = document.createElement("tr");
+		// cell 1
+		var cell1 = document.createElement("td");
+		var cellText1 = document.createTextNode(questiones[j] );
+		cell1.appendChild(cellText1);
+		row.appendChild(cell1);
+		// cell 2
+		var cell2 = document.createElement("td");
+		var cell2_input = document.createElement("input");
+		cell2_input.setAttribute("id", "question"+j);
+		cell2.appendChild(cell2_input);
+		row.appendChild(cell2);
+		// cell 3
+		var cell3 = document.createElement("td");
+		var cell3_span = document.createElement("span");
+		cell3_span.setAttribute("onclick", "test()");
+		var cell3_icon = document.createElement("i");
+		cell3_icon.setAttribute("class", "fa-solid fa-gears");
+		cell3_span.appendChild(cell3_icon);
+		cell3.appendChild(cell3_span);
+		row.appendChild(cell3);
+
+		//row added to end of table body
+		tblBody.appendChild(row);
+	}
+	// last row with buttons
+	var last_row = document.createElement("tr");
+	var cell1 = document.createElement("td");
+	cell1.setAttribute("colspan", "3");
+	var input1 = document.createElement("input");
+	input1.setAttribute("class", "button");
+	input1.setAttribute("onclick", "test()");
+	input1.setAttribute("value", "Проверить");
+	var input2 = document.createElement("input");
+	input2.setAttribute("class", "button");
+	input2.setAttribute("onclick", "myclear()");
+	input2.setAttribute("value", "Очистить");
+	cell1.appendChild(input1);
+	var cellText = document.createTextNode(" ");
+	cell1.appendChild(cellText);
+	cell1.appendChild(input2);
+	last_row.appendChild(cell1);
+	tblBody.appendChild(last_row);
+	// append the <tbody> inside the <table>
+	tbl.appendChild(tblBody);
+	// put <table> in the <body>
+	body.appendChild(tbl);
+	// tbl border attribute to 
+	tbl.setAttribute("class", "table-test");
+}
+
+tableCreate()
+      </script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>
