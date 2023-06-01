@@ -2,99 +2,664 @@
 <html lang="ru">
   <head>
     <title>ABSOLEM.INFO | Испанский язык</title>
-    <script type="text/javascript">
-      var answers = [
-      /*01*/ "el color", 
-      /*02*/ "el matiz", 
-      /*03*/ "el tono", 
-      /*04*/ "el arco iris", 
-      /*05*/ "blanco", 
-      /*06*/ "negro",
-      /*07*/ "gris", 
-      /*08*/ "verde", 
-      /*09*/ "amarillo", 
-      /*10*/ "rojo", 
-      /*11*/ "azul", 
-      /*12*/ "azul claro",
-      /*13*/ "rosa", 
-      /*14*/ "naranja", 
-      /*15*/ "violeta", 
-      /*16*/ "marrón",
-      /*17*/ "dorado", 
-      /*18*/ "argentado", 
-      /*19*/ "beige", 
-      /*20*/ "crema", 
-      /*21*/ "turquesa", 
-      /*22*/ "rojo cereza", 
-      /*23*/ "lila", 
-      /*24*/ "carmesí", 
-      /*25*/ "claro", 
-      /*26*/ "oscuro", 
-      /*27*/ "vivo", 
-      /*28*/ "de color", 
-      /*29*/ "en colores", 
-      /*30*/ "blanco y negro", 
-      /*31*/ "unicolor", 
-      /*32*/ "multicolor", 
-      ];
-      var questiones = [
-      /*01*/ "цвет", 
-      /*02*/ "оттенок", 
-      /*03*/ "тон", 
-      /*04*/ "радуга ", 
-      /*05*/ "белый ", 
-      /*06*/ "чёрный",
-      /*07*/ "серый", 
-      /*08*/ "зелёный", 
-      /*09*/ "жёлтый", 
-      /*10*/ "красный", 
-      /*11*/ "синий", 
-      /*12*/ "голубой",
-      /*13*/ "розовый", 
-      /*14*/ "оранжевый", 
-      /*15*/ "фиолетовый", 
-      /*16*/ "коричневый",
-      /*17*/ "золотой", 
-      /*18*/ "серебристый", 
-      /*19*/ "бежевый", 
-      /*20*/ "кремовый", 
-      /*21*/ "бирюзовый", 
-      /*22*/ "вишнёвый", 
-      /*23*/ "лиловый", 
-      /*24*/ "малиновый", 
-      /*25*/ "светлый", 
-      /*26*/ "тёмный", 
-      /*27*/ "яркий", 
-      /*28*/ "цветной (карандаш)", 
-      /*29*/ "цветной (фильм)", 
-      /*30*/ "чёрно-белый", 
-      /*31*/ "одноцветный", 
-      /*32*/ "разноцветный", 
-      ];function myclear()
-  {
-	  for(count = 0; count < answers.length; count++)
-		  {
-			element = document.getElementById('question' + count);
-			element.value = "";
-			element.style.color = 'black';
-			color1.style.fontWeight = 'normal';
-		  }
-  }
-function test()
- {
-	for(count = 0; count < answers.length; count++)
-	{
-		answer1 = document.getElementById('question' + count).value;
-		color1 = document.getElementById('question' + count);
-		if (answer1 == answers[count]) color1.style.color = 'green';
-		else 
-			{
-			color1.style.color = 'red';
-			color1.style.fontWeight = 'bold';
-			}
-	}
-
- }
+    <script>var base = [
+	{ 
+		"russian": "цвет",
+		"spanish": "el color",
+		"transcription": "ko'lor",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "оттенок",
+		"spanish": "el matiz",
+		"transcription": "ma'tiθ",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "тон",
+		"spanish": "el tono",
+		"transcription": "'tono",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "радуга",
+		"spanish": "el arco iris",
+		"transcription": "'arko 'iris",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "белый",
+		"spanish": "blanco",
+		"transcription": "'blʲaŋko",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "чёрный",
+		"spanish": "negro",
+		"transcription": "'neɣro",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "серый",
+		"spanish": "gris",
+		"transcription": "'ɡris",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "зелёный",
+		"spanish": "verde",
+		"transcription": "'berðe",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "жёлтый",
+		"spanish": "amarillo",
+		"transcription": "ama'rijo",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "красный",
+		"spanish": "rojo",
+		"transcription": "'roχo",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "розовый",
+		"spanish": "rosa",
+		"transcription": "'rosa",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "синий",
+		"spanish": "azul",
+		"transcription": "a'θulʲ",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "голубой",
+		"spanish": "azul claro",
+		"transcription": "a'θulʲ 'klʲaro",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "оранжевый",
+		"spanish": "naranja",
+		"transcription": "na'ranχa",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "фиолетовый",
+		"spanish": "violeta",
+		"transcription": "bio'leta",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "коричневый",
+		"spanish": "marrón",
+		"transcription": "ma'ron",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "золотой",
+		"spanish": "dorado",
+		"transcription": "do'raðo",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "серебристый",
+		"spanish": "argentado",
+		"transcription": "arχen'taðo",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "бежевый",
+		"spanish": "beige",
+		"transcription": "'bejs",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "кремовый",
+		"spanish": "crema",
+		"transcription": "'krema",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "бирюзовый",
+		"spanish": "turquesa",
+		"transcription": "tur'kesa",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "вишнёвый",
+		"spanish": "rojo cereza",
+		"transcription": "'roχo θe'reθa",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "лиловый",
+		"spanish": "lila",
+		"transcription": "'lilʲa",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "малиновый",
+		"spanish": "carmesí",
+		"transcription": "karme'si",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "светлый",
+		"spanish": "claro",
+		"transcription": "'klʲaro",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "тёмный",
+		"spanish": "oscuro",
+		"transcription": "os'kuro",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "яркий",
+		"spanish": "vivo",
+		"transcription": "'biβo",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "цветной (карандаш)",
+		"spanish": "de color",
+		"transcription": "de ko'lor",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "цветной (фильм)",
+		"spanish": "en colores",
+		"transcription": "en ko'lores",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "чёрно-белый",
+		"spanish": "blanco y negro",
+		"transcription": "'blʲaŋko i 'neɣro",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "одноцветный",
+		"spanish": "unicolor",
+		"transcription": "uniko'lor",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "разноцветный",
+		"spanish": "multicolor",
+		"transcription": "mulʲtiko'lor",
+		"tags" : [
+			"color",
+		]
+	},
+	{ 
+		"russian": "океан",
+		"spanish": "el océano",
+		"transcription": "o'θeano",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "залив",
+		"spanish": "el golfo",
+		"transcription": "'ɡolʲfo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "пролив",
+		"spanish": "el estrecho",
+		"transcription": "es'treʧo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "материк",
+		"spanish": "el continente",
+		"transcription": "konti'nente",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "остров",
+		"spanish": "la isla",
+		"transcription": "'islʲa",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "полуостров",
+		"spanish": "la península",
+		"transcription": "pe'ninsulʲa",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "архипелаг",
+		"spanish": "el archipiélago",
+		"transcription": "arʧipi'elʲaɣo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "бухта",
+		"spanish": "la bahía",
+		"transcription": "ba'ia",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "гавань",
+		"spanish": "el puerto",
+		"transcription": "pu'erto",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "лагуна",
+		"spanish": "la laguna",
+		"transcription": "lʲa'ɣuna",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "мыс",
+		"spanish": "el cabo",
+		"transcription": "'kaβo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "атолл",
+		"spanish": "el atolón",
+		"transcription": "ato'lon",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "риф",
+		"spanish": "el arrecife",
+		"transcription": "are'θife",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "коралл",
+		"spanish": "el coral",
+		"transcription": "ko'ralʲ",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "глубина",
+		"spanish": "la profundidad",
+		"transcription": "profundi'ðað",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "бездна",
+		"spanish": "el abismo",
+		"transcription": "a'βismo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "течение",
+		"spanish": "la corriente",
+		"transcription": "ko'rjente",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "побережье",
+		"spanish": "la orilla",
+		"transcription": "o'rija",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "берег (моря)",
+		"spanish": "la costa",
+		"transcription": "'kosta",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "прилив",
+		"spanish": "el flujo",
+		"transcription": "'flʲuχo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "отлив",
+		"spanish": "el reflujo",
+		"transcription": "re'flʲuχo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "дно",
+		"spanish": "el fondo",
+		"transcription": "'fondo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "волна",
+		"spanish": "la ola",
+		"transcription": "'olʲa",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "пена",
+		"spanish": "la espuma",
+		"transcription": "es'puma",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "буря, шторм",
+		"spanish": "la tempestad",
+		"transcription": "tempes'tað",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "ураган",
+		"spanish": "el huracán",
+		"transcription": "ura'kan",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "цунами",
+		"spanish": "el tsunami",
+		"transcription": "tsu'nami",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "штиль",
+		"spanish": "la bonanza",
+		"transcription": "bo'nanθa",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "полюс",
+		"spanish": "el polo",
+		"transcription": "'polo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "широта",
+		"spanish": "la latitud",
+		"transcription": "lʲati'tuð",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "долгота",
+		"spanish": "la longitud",
+		"transcription": "lonχi'tuð",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "параллель",
+		"spanish": "el paralelo",
+		"transcription": "para'lelo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "экватор",
+		"spanish": "el ecuador",
+		"transcription": "ekua'ðor",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "небо",
+		"spanish": "el cielo",
+		"transcription": "'θjelo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "горизонт",
+		"spanish": "el horizonte",
+		"transcription": "ori'θonte",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "воздух",
+		"spanish": "el aire",
+		"transcription": "'ajre",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "маяк",
+		"spanish": "el faro",
+		"transcription": "'faro",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "нырять",
+		"spanish": "bucear",
+		"transcription": "buθe'ar",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "затонуть (о корабле)",
+		"spanish": "hundirse",
+		"transcription": "un'dirse",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "сокровища",
+		"spanish": "los tesoros",
+		"transcription": "te'soros",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "полярный",
+		"spanish": "polar",
+		"transcription": "po'lʲar",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "спокойный",
+		"spanish": "calmo",
+		"transcription": "'kalʲmo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "гребень волны",
+		"spanish": "cresta de la ola",
+		"transcription": "'kresta de lʲa 'olʲa",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "отмель",
+		"spanish": "banco de arena",
+		"transcription": "'baŋko de a'rena",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "коралловый риф",
+		"spanish": "arrecife de coral",
+		"transcription": "are'θife de ko'ralʲ",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "впадина",
+		"spanish": "fosa oceánica",
+		"transcription": "'fosa oθe'anika",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "земля, суша",
+		"spanish": "tierra firme",
+		"transcription": "'tjera 'firme",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "глубокий",
+		"spanish": "profundo",
+		"transcription": "pro'fundo",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "омывать",
+		"spanish": "bañar",
+		"transcription": "ba'njar",
+		"tags" : [
+			"sea",
+		]
+	},
+	{ 
+		"russian": "море",
+		"spanish": "el mar",
+		"transcription": "mar",
+		"tags" : [
+			"sea",
+		]
+	},
+]
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -131,7 +696,7 @@ function test()
     <article class="grid-container">
       <h3 class="text-center">Тест. Цвета.</h3>
       <div class="text-center">á é í ó ú ñ</div>
-      <div id="myTable"> </div>
+      <div id="myQTable"> </div>
     </article>
     <footer>
       <hr>
@@ -153,21 +718,23 @@ function test()
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
-      <script>function tableCreate() {
-  //id reference 
-  var body = document.getElementById("myTable");
+      <script>
+        function tableQCreate(tag) {
+	var data = base.filter( element => element.tags == tag)
+	//id reference 
+	var body = document.getElementById("myQTable");
 
-  // create elements <table> and a <tbody>
-  var tbl = document.createElement("table");
-  var tblBody = document.createElement("tbody");
+	// create elements <table> and a <tbody>
+	var tbl = document.createElement("table");
+	var tblBody = document.createElement("tbody");
 
-  // cells creation
-	for (var j = 0; j < questiones.length; j++) {
+	// cells creation
+	for (var j = 0; j < data.length; j++) {
 		// table row creation
 		var row = document.createElement("tr");
 		// cell 1
 		var cell1 = document.createElement("td");
-		var cellText1 = document.createTextNode(questiones[j] );
+		var cellText1 = document.createTextNode(data[j].russian);
 		cell1.appendChild(cellText1);
 		row.appendChild(cell1);
 		// cell 2
@@ -179,7 +746,7 @@ function test()
 		// cell 3
 		var cell3 = document.createElement("td");
 		var cell3_span = document.createElement("span");
-		cell3_span.setAttribute("onclick", "test()");
+		cell3_span.setAttribute("onclick", "test('" + tag + "')");
 		var cell3_icon = document.createElement("i");
 		cell3_icon.setAttribute("class", "fa-solid fa-gears");
 		cell3_span.appendChild(cell3_icon);
@@ -195,11 +762,11 @@ function test()
 	cell1.setAttribute("colspan", "3");
 	var input1 = document.createElement("input");
 	input1.setAttribute("class", "button");
-	input1.setAttribute("onclick", "test()");
+	input1.setAttribute("onclick", "test('" + tag + "')");
 	input1.setAttribute("value", "Проверить");
 	var input2 = document.createElement("input");
 	input2.setAttribute("class", "button");
-	input2.setAttribute("onclick", "myclear()");
+	input2.setAttribute("onclick", "myclear('" + tag + "')");
 	input2.setAttribute("value", "Очистить");
 	cell1.appendChild(input1);
 	var cellText = document.createTextNode(" ");
@@ -215,7 +782,29 @@ function test()
 	tbl.setAttribute("class", "table-test");
 }
 
-tableCreate()
+function myclear(tag) {
+	var data = base.filter( element => element.tags == tag);
+	for(count = 0; count < data.length; count++){
+		element = document.getElementById('question' + count);
+		element.value = "";
+		element.style.color = 'black';
+		color1.style.fontWeight = 'normal';
+	}
+}
+function test(tag){
+	var data = base.filter( element => element.tags == tag);
+	for(count = 0; count < data.length; count++){
+		answer1 = document.getElementById('question' + count).value;
+		color1 = document.getElementById('question' + count);
+		if (answer1 == data[count].spanish) color1.style.color = 'green';
+		else 
+			{
+			color1.style.color = 'red';
+			color1.style.fontWeight = 'bold';
+			}
+	}
+
+}tableQCreate("color")
       </script>
     </footer>
   </body>

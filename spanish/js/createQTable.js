@@ -1,18 +1,19 @@
-function tableCreate() {
-  //id reference 
-  var body = document.getElementById("myTable");
+function tableQCreate(tag) {
+	var data = base.filter( element => element.tags == tag)
+	//id reference 
+	var body = document.getElementById("myQTable");
 
-  // create elements <table> and a <tbody>
-  var tbl = document.createElement("table");
-  var tblBody = document.createElement("tbody");
+	// create elements <table> and a <tbody>
+	var tbl = document.createElement("table");
+	var tblBody = document.createElement("tbody");
 
-  // cells creation
-	for (var j = 0; j < questiones.length; j++) {
+	// cells creation
+	for (var j = 0; j < data.length; j++) {
 		// table row creation
 		var row = document.createElement("tr");
 		// cell 1
 		var cell1 = document.createElement("td");
-		var cellText1 = document.createTextNode(questiones[j] );
+		var cellText1 = document.createTextNode(data[j].russian);
 		cell1.appendChild(cellText1);
 		row.appendChild(cell1);
 		// cell 2
@@ -24,7 +25,7 @@ function tableCreate() {
 		// cell 3
 		var cell3 = document.createElement("td");
 		var cell3_span = document.createElement("span");
-		cell3_span.setAttribute("onclick", "test()");
+		cell3_span.setAttribute("onclick", "test('" + tag + "')");
 		var cell3_icon = document.createElement("i");
 		cell3_icon.setAttribute("class", "fa-solid fa-gears");
 		cell3_span.appendChild(cell3_icon);
@@ -40,11 +41,11 @@ function tableCreate() {
 	cell1.setAttribute("colspan", "3");
 	var input1 = document.createElement("input");
 	input1.setAttribute("class", "button");
-	input1.setAttribute("onclick", "test()");
+	input1.setAttribute("onclick", "test('" + tag + "')");
 	input1.setAttribute("value", "Проверить");
 	var input2 = document.createElement("input");
 	input2.setAttribute("class", "button");
-	input2.setAttribute("onclick", "myclear()");
+	input2.setAttribute("onclick", "myclear('" + tag + "')");
 	input2.setAttribute("value", "Очистить");
 	cell1.appendChild(input1);
 	var cellText = document.createTextNode(" ");
@@ -60,4 +61,26 @@ function tableCreate() {
 	tbl.setAttribute("class", "table-test");
 }
 
-tableCreate()
+function myclear(tag) {
+	var data = base.filter( element => element.tags == tag);
+	for(count = 0; count < data.length; count++){
+		element = document.getElementById('question' + count);
+		element.value = "";
+		element.style.color = 'black';
+		color1.style.fontWeight = 'normal';
+	}
+}
+function test(tag){
+	var data = base.filter( element => element.tags == tag);
+	for(count = 0; count < data.length; count++){
+		answer1 = document.getElementById('question' + count).value;
+		color1 = document.getElementById('question' + count);
+		if (answer1 == data[count].spanish) color1.style.color = 'green';
+		else 
+			{
+			color1.style.color = 'red';
+			color1.style.fontWeight = 'bold';
+			}
+	}
+
+}

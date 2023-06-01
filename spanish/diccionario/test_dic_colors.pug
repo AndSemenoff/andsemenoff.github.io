@@ -2,84 +2,18 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
-	script(type = "text/javascript")
-		| var answers = [
-		| /*01*/ "el color", 
-		| /*02*/ "el matiz", 
-		| /*03*/ "el tono", 
-		| /*04*/ "el arco iris", 
-		| /*05*/ "blanco", 
-		| /*06*/ "negro",
-		| /*07*/ "gris", 
-		| /*08*/ "verde", 
-		| /*09*/ "amarillo", 
-		| /*10*/ "rojo", 
-		| /*11*/ "azul", 
-		| /*12*/ "azul claro",
-		| /*13*/ "rosa", 
-		| /*14*/ "naranja", 
-		| /*15*/ "violeta", 
-		| /*16*/ "marrón",
-		| /*17*/ "dorado", 
-		| /*18*/ "argentado", 
-		| /*19*/ "beige", 
-		| /*20*/ "crema", 
-		| /*21*/ "turquesa", 
-		| /*22*/ "rojo cereza", 
-		| /*23*/ "lila", 
-		| /*24*/ "carmesí", 
-		| /*25*/ "claro", 
-		| /*26*/ "oscuro", 
-		| /*27*/ "vivo", 
-		| /*28*/ "de color", 
-		| /*29*/ "en colores", 
-		| /*30*/ "blanco y negro", 
-		| /*31*/ "unicolor", 
-		| /*32*/ "multicolor", 
-		|];
-		| var questiones = [
-		| /*01*/ "цвет", 
-		| /*02*/ "оттенок", 
-		| /*03*/ "тон", 
-		| /*04*/ "радуга ", 
-		| /*05*/ "белый ", 
-		| /*06*/ "чёрный",
-		| /*07*/ "серый", 
-		| /*08*/ "зелёный", 
-		| /*09*/ "жёлтый", 
-		| /*10*/ "красный", 
-		| /*11*/ "синий", 
-		| /*12*/ "голубой",
-		| /*13*/ "розовый", 
-		| /*14*/ "оранжевый", 
-		| /*15*/ "фиолетовый", 
-		| /*16*/ "коричневый",
-		| /*17*/ "золотой", 
-		| /*18*/ "серебристый", 
-		| /*19*/ "бежевый", 
-		| /*20*/ "кремовый", 
-		| /*21*/ "бирюзовый", 
-		| /*22*/ "вишнёвый", 
-		| /*23*/ "лиловый", 
-		| /*24*/ "малиновый", 
-		| /*25*/ "светлый", 
-		| /*26*/ "тёмный", 
-		| /*27*/ "яркий", 
-		| /*28*/ "цветной (карандаш)", 
-		| /*29*/ "цветной (фильм)", 
-		| /*30*/ "чёрно-белый", 
-		| /*31*/ "одноцветный", 
-		| /*32*/ "разноцветный", 
-		|];
-		include ../js/check_test.js 
+	script
+		include ../js/dic_base.js
+		
 block content
 	h2.text-center Испанский язык 
 		span.h4.subheader тесты
 	article.grid-container
 		h3.text-center Тест. Цвета.
 		div.text-center á é í ó ú ñ
-		div(id="myTable") 
+		div(id="myQTable") 
 
 block footer
 	script
 		include ../js/createQTable.js
+		| tableQCreate("color")

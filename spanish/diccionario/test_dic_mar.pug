@@ -2,88 +2,8 @@ extends ../layouts/html_layout.jade
 
 block title
 	title= site_title + " Испанский язык"
-	script(type = "text/javascript")
-		| var answers = [
-		| /*01*/ "el/la mar", 
-		| /*02*/ "el océano", 
-		| /*03*/ "el golfo", 
-		| /*04*/ "el estrecho", 
-		| /*05*/ "el continente", 
-		| /*06*/ "la isla",
-		| /*07*/ "la península", 
-		| /*08*/ "el archipiélago", 
-		| /*09*/ "la bahía", 
-		| /*10*/ "el puerto", 
-		| /*11*/ "la laguna", 
-		| /*12*/ "el cabo",
-		| /*13*/ "el atolón", 
-		| /*14*/ "el arrecife", 
-		| /*15*/ "el coral", 
-		| /*16*/ "la profundidad",
-		| /*17*/ "el abismo", 
-		| /*18*/ "la corriente", 
-		| /*19*/ "la orilla", 
-		| /*20*/ "la costa", 
-		| /*21*/ "el flujo", 
-		| /*22*/ "el reflujo", 
-		| /*23*/ "el fondo", 
-		| /*24*/ "la ola", 
-		| /*25*/ "la espuma", 
-		| /*26*/ "la tempestad", 
-		| /*27*/ "el huracán", 
-		| /*28*/ "el tsunami", 
-		| /*29*/ "la bonanza", 
-		| /*30*/ "el polo", 
-		| /*31*/ "la latitud", 
-		| /*32*/ "la longitud", 
-		| /*33*/ "el paralelo", 
-		| /*34*/ "el ecuador", 
-		| /*35*/ "el cielo", 
-		| /*36*/ "el horizonte", 
-		| /*37*/ "el aire", 
-		| /*38*/ "el faro", 
-		|];
-		| var questiones = [
-		| /*01*/ "море", 
-		| /*02*/ "океан", 
-		| /*03*/ "залив", 
-		| /*04*/ "пролив", 
-		| /*05*/ "материк", 
-		| /*06*/ "остров ",
-		| /*07*/ "полуостров", 
-		| /*08*/ "архипелаг", 
-		| /*09*/ "бухта", 
-		| /*10*/ "гавань", 
-		| /*11*/ "лагуна", 
-		| /*12*/ "мыс",
-		| /*13*/ "атолл", 
-		| /*14*/ "риф", 
-		| /*15*/ "коралл", 
-		| /*16*/ "глубина",
-		| /*17*/ "бездна", 
-		| /*18*/ "течение", 
-		| /*19*/ "побережье", 
-		| /*20*/ "берег (моря)", 
-		| /*21*/ "прилив", 
-		| /*22*/ "отлив", 
-		| /*23*/ "дно", 
-		| /*24*/ "волна", 
-		| /*25*/ "пена", 
-		| /*26*/ "буря, шторм", 
-		| /*27*/ "ураган", 
-		| /*28*/ "цунами", 
-		| /*29*/ "штиль", 
-		| /*30*/ "полюс", 
-		| /*31*/ "широта", 
-		| /*32*/ "долгота", 
-		| /*33*/ "параллель", 
-		| /*34*/ "экватор", 
-		| /*35*/ "небо", 
-		| /*36*/ "горизонт", 
-		| /*37*/ "воздух", 
-		| /*38*/ "маяк", 
-		|];
-		include ../js/check_test.js 
+	script
+		include ../js/dic_base.js
 		
 block content
 	h2.text-center Испанский язык 
@@ -91,8 +11,9 @@ block content
 	article.grid-container
 		h3.text-center Тест. Море. Океан.
 		div.text-center á é í ó ú ñ
-		div(id="myTable")
+		div(id="myQTable")
 
 block footer
 	script
 		include ../js/createQTable.js
+		| tableQCreate("sea")

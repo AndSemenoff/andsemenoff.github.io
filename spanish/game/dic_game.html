@@ -669,97 +669,211 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../images/caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )-->
-    <!--link( rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all" )-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/dic_game_style.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
     <!--script(src="../js/foundation.6.4.3.min.js")-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7rSSozwg"></script>
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left"> 
-        <ul class="menu">
-          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
-          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
-          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
-          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
-          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="text-center">Испанский язык <span class="h4 subheader">словарь</span></h2>
-    <article class="grid-container">
-      <h3 class="text-center">Цвета. Цвет.</h3>
-      <div id="myITable"> </div>
-    </article>
-    <footer>
-      <hr>
-      <div class="grid-container fluid text-center">
-        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
-          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
-          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
-            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
-            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
-          </div>
-          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
-        </div>
-      </div>
-      <!--div.row
-      div.large-12.columns
-      	block footer_scripts
-      	div#logo5HTML
-      		a(href="https://validator.w3.org/check?uri=referer")
-      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
-      -->
-      <script>// https://stackoverflow.com/questions/23720988/how-to-filter-json-data-in-javascript-or-jquery
-function tableInfoCreate(tag) {
+    <div id="myGame"></div>
+    <script>
+      let player1Count = 0;
+let player2Count = 0;
+
+function buttonCreate(data, dataIndex, tag, cl, id){
+	var input = document.createElement("input");
+	input.setAttribute("class", "text-center button action " + cl);
+	//input.setAttribute("onclick", "test()");
+	input.setAttribute("id", id);
+	input.setAttribute("value", String(data[dataIndex].russian));
+	return input
+}
+function tableGameCreate(tag) {
 	var data = base.filter(element => element.tags == tag)
+	let r = [];
+	r[0] = Math.floor(Math.random() * data.length);
+	//console.log("r[0]=", r[0]);
+	r[1] = r[0];
+	while (r[0] == r[1]) { 
+		r[1] = Math.floor(Math.random() * data.length);
+	}
+	//console.log("r[1]=", r[1]);
+	r[2] = r[1];
+	while (r[0] == r[2] || r[1] == r[2]) 
+	{
+		r[2] = Math.floor(Math.random() * data.length);
+	}
+	//console.log("r[2]=", r[2]);
+	
+	let correct = r[Math.floor(Math.random() * 3)];
+	
+	let answerCorrect = String(data[correct].russian);
 	//id reference 
-	var body = document.getElementById("myITable");
+	var body = document.getElementById("myGame");
 
 	// create elements <table> and a <tbody>
 	var tbl = document.createElement("table");
 	var tblBody = document.createElement("tbody");
 
 	// cells creation
-	for (var j = 0; j < data.length; j++) {
-		// table row creation
-		var row = document.createElement("tr");
-		// cell 1
-		var cell1 = document.createElement("td");
-		var cellText1 = document.createTextNode(data[j].russian );
-		cell1.appendChild(cellText1);
-		row.appendChild(cell1);
-		// cell 2
-		var cell2 = document.createElement("td");
-		var cell2Text2 = document.createTextNode(data[j].spanish);
-		cell2.appendChild(cell2Text2);
-		row.appendChild(cell2);
-		// cell 3
-		var cell3 = document.createElement("td");
-		var cell3Text3 = document.createTextNode("[" + data[j].transcription + "]");
-		cell3.appendChild(cell3Text3);
-		row.appendChild(cell3);
+	// table row creation
 
-		//row added to end of table body
-		tblBody.appendChild(row);
+	
+	// next button
+	var row = document.createElement("tr");
+	// cell 1
+	var cell1 = document.createElement("td");
+	var cellText1 = document.createTextNode(player1Count + " : " + player2Count);
+	cell1.setAttribute("class", "text-center rotated");
+	cell1.appendChild(cellText1);
+	row.appendChild(cell1);
+	// cell 2
+	var cell2 = document.createElement("td");
+	cell2.setAttribute("colspan", "2");
+	cell2.setAttribute("class", "text-center");
+	var cellNext = document.createElement("input");
+	cellNext.setAttribute("value", "Next");
+	cellNext.setAttribute("disabled", "disabled");
+	cellNext.setAttribute("class", "next button rotated ");
+	cellNext.setAttribute("onclick", "next('"+ String(tag) +"')");
+	cell2.appendChild(cellNext);
+	row.appendChild(cell2);
+	tblBody.appendChild(row);
+	
+	// ROW PLAYER1
+	var row = document.createElement("tr");
+	for (let i=0; i < 3; i++){
+		var input1 = buttonCreate(data, r[i], tag, "rotated", i);
+		var cell1 = document.createElement("td");
+		cell1.appendChild(input1);
+		row.appendChild(cell1);
 	}
+
+	//row added to end of table body
+	tblBody.appendChild(row);
+	// END ROW PLAYER1
+	// row question for player1
+	var row = document.createElement("tr");
+	// cell 1
+	var cell1 = document.createElement("td");
+	cell1.setAttribute("colspan", "3");
+	cell1.setAttribute("class", "rotated text-center");
+	var cellText1 = document.createTextNode(data[correct].spanish);
+	cell1.appendChild(cellText1);
+	row.appendChild(cell1);
+
+	//row added to end of table body
+	tblBody.appendChild(row);
+	// end row question for player1
+	
+	// row question for player2
+	var row = document.createElement("tr");
+	// cell 1
+	var cell1 = document.createElement("td");
+	cell1.setAttribute("colspan", "3");
+	cell1.setAttribute("class", "text-center");
+	var cellText1 = document.createTextNode(data[correct].spanish);
+	cell1.appendChild(cellText1);
+	row.appendChild(cell1);
+
+	//row added to end of table body
+	tblBody.appendChild(row);
+	// end row question for player2
+	
+	// ROW PLAYER2
+	var row = document.createElement("tr");
+	for (let i=0; i < 3; i++){
+		var input1 = buttonCreate(data, r[i], tag, "", i+3);
+		var cell1 = document.createElement("td");
+		cell1.appendChild(input1);
+		row.appendChild(cell1);
+	}
+
+	//row added to end of table body
+	tblBody.appendChild(row);
+	// END ROW PLAYER2
+	
+	// next button
+	var row = document.createElement("tr");
+	// cell 1
+	var cell1 = document.createElement("td");
+	var cellText1 = document.createTextNode(player1Count + " : " + player2Count);
+	cell1.setAttribute("class", "text-center");
+	cell1.appendChild(cellText1);
+	row.appendChild(cell1);
+	// cell 2
+	var cell2 = document.createElement("td");
+	cell2.setAttribute("colspan", "2");
+	cell2.setAttribute("class", "text-center");
+	var cellNext = document.createElement("input");
+	cellNext.setAttribute("value", "Next");
+	cellNext.setAttribute("disabled", "disabled");
+	cellNext.setAttribute("class", "next button");
+	cellNext.setAttribute("onclick", "next('"+ String(tag) +"')");
+	cell2.appendChild(cellNext);
+	row.appendChild(cell2);
+	tblBody.appendChild(row);
+	
 	
 	// append the <tbody> inside the <table>
 	tbl.appendChild(tblBody);
 	// put <table> in the <body>
 	body.appendChild(tbl);
 	// tbl border attribute to 
-	tbl.setAttribute("class", "table-test");
+	//tbl.setAttribute("class", "table-test");
+	
+	const buttons = document.getElementsByClassName("button");
+	for (var i = 0 ; i < buttons.length; i++) {
+		buttons[i].addEventListener('click' , t); 
+		//buttons[i].addEventListener('click' , ); 
+	}
+
+	return answerCorrect
+
 }
-      </script>
-      <script>tableInfoCreate("color");</script>
-    </footer>
+function t(event){
+	//console.log(event.target);
+	//console.log(event.target.value);
+	//console.log(answerCorrect);
+	//console.log(event.target.id);
+	if (answerCorrect == event.target.value) {
+		if (event.target.id < 3) {
+			console.log("Player 1 WIN!");
+			player1Count += 1;
+		}
+		else {
+			console.log("Player 2 WIN!");
+			player2Count += 1;
+		}
+		const buttons = document.getElementsByClassName("action");
+		for (var i = 0 ; i < buttons.length; i++) {
+			buttons[i].setAttribute("disabled", "disabled");
+		}
+		const next = document.getElementsByClassName("next");
+		for (var i = 0 ; i < next.length; i++) {
+			next[i].removeAttribute("disabled");
+		}
+	}
+}
+
+function tableGameClear(){
+	const element = document.getElementById("myGame");
+	element.removeChild(element.firstElementChild);
+}
+
+function next(tag){
+	tableGameClear();
+	answerCorrect = tableGameCreate(tag);
+}
+
+function gameLoop(tag){
+	answerCorrect = tableGameCreate(tag);
+}
+
+      gameLoop("sea");
+    </script>
   </body>
 </html>

@@ -1,0 +1,14 @@
+extends ../layouts/html_dic_game.jade
+
+block title
+	title= site_title + " Испанский язык"
+	script
+		include ../js/dic_base.js
+		
+block content
+		div(id="myGame")
+
+block footer
+	script
+		include ../js/dic_game.js
+		| gameLoop("sea");
