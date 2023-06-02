@@ -6,7 +6,28 @@ block title
 		include ../js/dic_base.js
 		
 block content
-		div(id="myGame")
+	div(class="content")
+		div(class="grid-x")
+			div(class="cell medium-6 large-8") 
+				span.button.expanded.large.next.rotated(onclick="next('sea')" disabled = "disabled") Next
+			div(class="cell medium-6 large-4 text-center rotated stat")
+				span(class="score1") 0 
+				|&nbsp;:&nbsp;
+				span(class="score2") 0 
+		div(class="grid-x" id="player1")
+		
+		div(class="grid-y")
+			div.h2(id="question1" class = "cell medium-12 large-12 text-center rotated")
+			div.h2(id="question2" class = "cell medium-12 large-12 text-center")
+	div(class="footer")
+		div(class="grid-x" id="player2")
+		div(class="grid-x")
+			div(class="cell medium-6 large-8") 
+				span.button.expanded.large.next(onclick="next('sea')" disabled = "disabled") Next
+			div(class="cell medium-6 large-4 text-center stat") 
+				span(class="score1") 0 
+				|&nbsp;:&nbsp;
+				span(class="score2") 0 
 
 block footer
 	script

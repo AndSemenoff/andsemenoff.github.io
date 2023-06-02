@@ -673,162 +673,115 @@
     <link rel="stylesheet" href="../css/dic_game_style.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
-    <script src="../js/jquery.3.2.1.min.js"></script>
+    <!--script(src="../js/jquery.3.2.1.min.js")-->
     <!--script(src="../js/foundation.6.4.3.min.js")-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js")-->
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js")-->
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/plugins/foundation.core.min.js")-->
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/plugins/foundation.sticky.min.js")-->
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/plugins/foundation.util.triggers.min.js")-->
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/plugins/foundation.util.mediaQuery.min.js")-->
   </head>
   <body>
-    <div id="myGame"></div>
+    <div class="content">
+      <div class="grid-x">
+        <div class="cell medium-6 large-8"> <span class="button expanded large next rotated" onclick="next('sea')" disabled="disabled">Next</span></div>
+        <div class="cell medium-6 large-4 text-center rotated stat"><span class="score1">0 </span>&nbsp;:&nbsp;<span class="score2">0 </span></div>
+      </div>
+      <div class="grid-x" id="player1"></div>
+      <div class="grid-y">
+        <div class="h2 cell medium-12 large-12 text-center rotated" id="question1"></div>
+        <div class="h2 cell medium-12 large-12 text-center" id="question2"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="grid-x" id="player2"></div>
+      <div class="grid-x">
+        <div class="cell medium-6 large-8"> <span class="button expanded large next" onclick="next('sea')" disabled="disabled">Next</span></div>
+        <div class="cell medium-6 large-4 text-center stat"> <span class="score1">0 </span>&nbsp;:&nbsp;<span class="score2">0 </span></div>
+      </div>
+    </div>
     <script>
-      let player1Count = 0;
+      const audio_click = new Audio("../audio/click_1.mp3");
+let player1Count = 0;
 let player2Count = 0;
+let questions = 3;
 
-function buttonCreate(data, dataIndex, tag, cl, id){
+function scoreUpdate(){
+	var score1 = document.getElementsByClassName("score1");
+	for (var i = 0 ; i < score1.length; i++) {
+		score1[i].innerHTML = player1Count;
+	}
+	var score2 = document.getElementsByClassName("score2");
+	for (var i = 0 ; i < score2.length; i++) {
+		score2[i].innerHTML = "" + player2Count + "";
+	}
+}
+
+function questionUpdate(data, correct){
+	var q1 = document.getElementById("question1");
+	var q2 = document.getElementById("question2");
+	q1.innerHTML = data[correct].spanish;
+	q2.innerHTML = data[correct].spanish;
+}
+
+function buttonCreate(data, dataIndex, cl, id){
 	var input = document.createElement("input");
-	input.setAttribute("class", "text-center button action " + cl);
+	input.setAttribute("class", "text-center button action large " + cl);
 	//input.setAttribute("onclick", "test()");
 	input.setAttribute("id", id);
 	input.setAttribute("value", String(data[dataIndex].russian));
 	return input
 }
+function getRandom(data){
+	let rendom_list = [];
+	rendom_list[0] = Math.floor(Math.random() * data.length);
+	rendom_list[1] = rendom_list[0];
+	while (rendom_list[0] == rendom_list[1]) { 
+		rendom_list[1] = Math.floor(Math.random() * data.length);
+	}
+	rendom_list[2] = rendom_list[1];
+	while (rendom_list[0] == rendom_list[2] || rendom_list[1] == rendom_list[2]) 
+	{
+		rendom_list[2] = Math.floor(Math.random() * data.length);
+	}
+	
+	return rendom_list
+}
+
 function tableGameCreate(tag) {
 	var data = base.filter(element => element.tags == tag)
-	let r = [];
-	r[0] = Math.floor(Math.random() * data.length);
-	//console.log("r[0]=", r[0]);
-	r[1] = r[0];
-	while (r[0] == r[1]) { 
-		r[1] = Math.floor(Math.random() * data.length);
-	}
-	//console.log("r[1]=", r[1]);
-	r[2] = r[1];
-	while (r[0] == r[2] || r[1] == r[2]) 
-	{
-		r[2] = Math.floor(Math.random() * data.length);
-	}
-	//console.log("r[2]=", r[2]);
-	
-	let correct = r[Math.floor(Math.random() * 3)];
-	
+	let r = getRandom(data);
+	let correct = r[Math.floor(Math.random() * questions)];
 	let answerCorrect = String(data[correct].russian);
-	//id reference 
-	var body = document.getElementById("myGame");
 
-	// create elements <table> and a <tbody>
-	var tbl = document.createElement("table");
-	var tblBody = document.createElement("tbody");
-
-	// cells creation
-	// table row creation
-
-	
-	// next button
-	var row = document.createElement("tr");
-	// cell 1
-	var cell1 = document.createElement("td");
-	var cellText1 = document.createTextNode(player1Count + " : " + player2Count);
-	cell1.setAttribute("class", "text-center rotated");
-	cell1.appendChild(cellText1);
-	row.appendChild(cell1);
-	// cell 2
-	var cell2 = document.createElement("td");
-	cell2.setAttribute("colspan", "2");
-	cell2.setAttribute("class", "text-center");
-	var cellNext = document.createElement("input");
-	cellNext.setAttribute("value", "Next");
-	cellNext.setAttribute("disabled", "disabled");
-	cellNext.setAttribute("class", "next button rotated ");
-	cellNext.setAttribute("onclick", "next('"+ String(tag) +"')");
-	cell2.appendChild(cellNext);
-	row.appendChild(cell2);
-	tblBody.appendChild(row);
-	
 	// ROW PLAYER1
-	var row = document.createElement("tr");
-	for (let i=0; i < 3; i++){
-		var input1 = buttonCreate(data, r[i], tag, "rotated", i);
-		var cell1 = document.createElement("td");
+	var pl1 = document.getElementById("player1");
+	for (let i=0; i < questions; i++){
+		var input1 = buttonCreate(data, r[i], "rotated", i);
+		var cell1 = document.createElement("div");
+		cell1.setAttribute("class", "cell medium-4 large-4 text-center");
 		cell1.appendChild(input1);
-		row.appendChild(cell1);
+		pl1.appendChild(cell1);
 	}
-
-	//row added to end of table body
-	tblBody.appendChild(row);
-	// END ROW PLAYER1
-	// row question for player1
-	var row = document.createElement("tr");
-	// cell 1
-	var cell1 = document.createElement("td");
-	cell1.setAttribute("colspan", "3");
-	cell1.setAttribute("class", "rotated text-center");
-	var cellText1 = document.createTextNode(data[correct].spanish);
-	cell1.appendChild(cellText1);
-	row.appendChild(cell1);
-
-	//row added to end of table body
-	tblBody.appendChild(row);
-	// end row question for player1
 	
-	// row question for player2
-	var row = document.createElement("tr");
-	// cell 1
-	var cell1 = document.createElement("td");
-	cell1.setAttribute("colspan", "3");
-	cell1.setAttribute("class", "text-center");
-	var cellText1 = document.createTextNode(data[correct].spanish);
-	cell1.appendChild(cellText1);
-	row.appendChild(cell1);
+	questionUpdate(data, correct);
 
-	//row added to end of table body
-	tblBody.appendChild(row);
-	// end row question for player2
-	
 	// ROW PLAYER2
-	var row = document.createElement("tr");
-	for (let i=0; i < 3; i++){
-		var input1 = buttonCreate(data, r[i], tag, "", i+3);
-		var cell1 = document.createElement("td");
+	var pl2 = document.getElementById("player2");
+	for (let i=0; i < questions; i++){
+		var input1 = buttonCreate(data, r[i], "", i+questions);
+		var cell1 = document.createElement("div");
+		cell1.setAttribute("class", "cell medium-4 large-4 text-center");
 		cell1.appendChild(input1);
-		row.appendChild(cell1);
+		pl2.appendChild(cell1);
 	}
-
-	//row added to end of table body
-	tblBody.appendChild(row);
-	// END ROW PLAYER2
 	
-	// next button
-	var row = document.createElement("tr");
-	// cell 1
-	var cell1 = document.createElement("td");
-	var cellText1 = document.createTextNode(player1Count + " : " + player2Count);
-	cell1.setAttribute("class", "text-center");
-	cell1.appendChild(cellText1);
-	row.appendChild(cell1);
-	// cell 2
-	var cell2 = document.createElement("td");
-	cell2.setAttribute("colspan", "2");
-	cell2.setAttribute("class", "text-center");
-	var cellNext = document.createElement("input");
-	cellNext.setAttribute("value", "Next");
-	cellNext.setAttribute("disabled", "disabled");
-	cellNext.setAttribute("class", "next button");
-	cellNext.setAttribute("onclick", "next('"+ String(tag) +"')");
-	cell2.appendChild(cellNext);
-	row.appendChild(cell2);
-	tblBody.appendChild(row);
+	scoreUpdate();
 	
-	
-	// append the <tbody> inside the <table>
-	tbl.appendChild(tblBody);
-	// put <table> in the <body>
-	body.appendChild(tbl);
-	// tbl border attribute to 
-	//tbl.setAttribute("class", "table-test");
-	
-	const buttons = document.getElementsByClassName("button");
+	const buttons = document.getElementsByClassName("action");
 	for (var i = 0 ; i < buttons.length; i++) {
 		buttons[i].addEventListener('click' , t); 
-		//buttons[i].addEventListener('click' , ); 
 	}
 
 	return answerCorrect
@@ -840,12 +793,13 @@ function t(event){
 	//console.log(answerCorrect);
 	//console.log(event.target.id);
 	if (answerCorrect == event.target.value) {
-		if (event.target.id < 3) {
-			console.log("Player 1 WIN!");
+		audio_click.play();
+		if (event.target.id < questions) {
+			//console.log("Player 1 WIN!");
 			player1Count += 1;
 		}
 		else {
-			console.log("Player 2 WIN!");
+			//console.log("Player 2 WIN!");
 			player2Count += 1;
 		}
 		const buttons = document.getElementsByClassName("action");
@@ -857,16 +811,42 @@ function t(event){
 			next[i].removeAttribute("disabled");
 		}
 	}
+	else {
+		if (event.target.id < questions) {
+			//console.log("Player 1 WRONG!");
+			player1Count -= 2;
+			const btn_wrong = document.getElementById(event.target.id);
+			btn_wrong.setAttribute("class", "text-center button action large alert rotated");
+		}
+		else {
+			//console.log("Player 2 WRONG!");
+			player2Count -= 2;
+			const btn_wrong = document.getElementById(event.target.id);
+			btn_wrong.setAttribute("class", "text-center button action large alert");
+		}
+	}
 }
 
-function tableGameClear(){
-	const element = document.getElementById("myGame");
-	element.removeChild(element.firstElementChild);
+function empty(element) {
+	while(element.firstElementChild) {
+		element.firstElementChild.remove();
+	}
+}
+
+function infoClear(){
+	const element1 = document.getElementById("player1");
+	empty(element1);
+	const element2 = document.getElementById("player2");
+	empty(element2);
 }
 
 function next(tag){
-	tableGameClear();
+	infoClear();
 	answerCorrect = tableGameCreate(tag);
+	const next = document.getElementsByClassName("next");
+	for (var i = 0 ; i < next.length; i++) {
+		next[i].setAttribute("disabled", "disabled");
+	}
 }
 
 function gameLoop(tag){
