@@ -686,23 +686,25 @@
     <div class="content">
       <div class="grid-x">
         <div class="cell medium-6 large-8"> <span class="button expanded large next rotated" onclick="next('sea')" disabled="disabled">Next</span></div>
-        <div class="cell medium-6 large-4 text-center rotated stat"><span class="score1">0 </span>&nbsp;:&nbsp;<span class="score2">0 </span></div>
+        <div class="cell medium-6 large-4 text-center stat vb">
+          <p class="rotated"><span class="score1">0 </span>&nbsp;:&nbsp;<span class="score2">0 </span></p>
+        </div>
       </div>
-      <div class="grid-x" id="player1"></div>
+      <div class="grid-x grid-margin-x" id="player1"></div>
       <div class="grid-y">
         <div class="h2 cell medium-12 large-12 text-center rotated" id="question1"></div>
         <div class="h2 cell medium-12 large-12 text-center" id="question2"></div>
       </div>
     </div>
     <div class="footer">
-      <div class="grid-x" id="player2"></div>
+      <div class="grid-x grid-margin-x" id="player2"></div>
       <div class="grid-x">
         <div class="cell medium-6 large-8"> <span class="button expanded large next" onclick="next('sea')" disabled="disabled">Next</span></div>
         <div class="cell medium-6 large-4 text-center stat"> <span class="score1">0 </span>&nbsp;:&nbsp;<span class="score2">0 </span></div>
       </div>
     </div>
     <script>
-      const audio_click = new Audio("../audio/click_1.mp3");
+      const audio_click = new Audio("../audio/click_1.mp3"); // https://www.fesliyanstudios.com/
 let player1Count = 0;
 let player2Count = 0;
 let questions = 3;
@@ -726,8 +728,10 @@ function questionUpdate(data, correct){
 }
 
 function buttonCreate(data, dataIndex, cl, id){
-	var input = document.createElement("input");
-	input.setAttribute("class", "text-center button action large " + cl);
+	var input = document.createElement("button");
+	const textNode = document.createTextNode(String(data[dataIndex].russian));
+	input.appendChild(textNode);
+	input.setAttribute("class", "text-center button action large expanded " + cl);
 	//input.setAttribute("onclick", "test()");
 	input.setAttribute("id", id);
 	input.setAttribute("value", String(data[dataIndex].russian));

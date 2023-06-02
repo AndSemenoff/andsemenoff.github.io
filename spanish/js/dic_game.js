@@ -1,4 +1,4 @@
-const audio_click = new Audio("../audio/click_1.mp3");
+const audio_click = new Audio("../audio/click_1.mp3"); // https://www.fesliyanstudios.com/
 let player1Count = 0;
 let player2Count = 0;
 let questions = 3;
@@ -22,8 +22,10 @@ function questionUpdate(data, correct){
 }
 
 function buttonCreate(data, dataIndex, cl, id){
-	var input = document.createElement("input");
-	input.setAttribute("class", "text-center button action large " + cl);
+	var input = document.createElement("button");
+	const textNode = document.createTextNode(String(data[dataIndex].russian));
+	input.appendChild(textNode);
+	input.setAttribute("class", "text-center button action large expanded " + cl);
 	//input.setAttribute("onclick", "test()");
 	input.setAttribute("id", id);
 	input.setAttribute("value", String(data[dataIndex].russian));
