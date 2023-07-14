@@ -19,6 +19,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
     <script src="../js/foundation.6.4.3.min.js"></script>
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
+    <!-- script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js")-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+      
+    </script>
+    <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <div class="top-bar">
@@ -41,6 +54,53 @@
       <div class="large-12 columns">
         <div class="row"></div>
         <h3>Основные моменты</h3>
+        <p><img src="images/decomposition_pic_4.png"></p>
+        <AAPL_1mo_2000-01-01_2023-07-01></AAPL_1mo_2000-01-01_2023-07-01>
+        <p>Файл данных: <a href="code/AAPL_1mo_2000-01-01_2023-07-01.csv">AAPL_1mo_2000-01-01_2023-07-01.csv</a></p>
+        <p>Полный текст примера: <a href="code/decomposition_trend.py">decomposition_trend.py</a></p>
+        <pre class="python"><code>import pandas as pd
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.seasonal import seasonal_decompose
+import matplotlib.pyplot as plt
+
+# Утилита для записи графика в файл
+import os
+def save(name='', type='png'):
+    pwd = os.getcwd()
+    os.chdir('./pictures/')
+    plt.savefig('%s.%s' % (name, type), format=type)
+    os.chdir(pwd)
+    
+STOCK_CODE = "AAPL"
+START_DATE = "2000-01-01" # YYYY-DD-MM
+END_DATE = "2023-07-01"   # YYYY-DD-MM
+INTERVAL = "1mo"           # 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo
+
+df  = pd.read_csv(STOCK_CODE+ "_" + INTERVAL + "_" + START_DATE + "_" + END_DATE + ".csv")
+df.Date = pd.to_datetime(df.Date)
+df = df.dropna()
+df = df.set_index('Date')
+result = seasonal_decompose(df, model='multiplicative')
+
+plt.figure(figsize=(12,8))
+fig1 = plt.figure(1)
+ax1 = fig1.add_subplot(411)
+ax1.set_ylabel('Trend')
+ax1.grid(True)
+plt.plot(result.trend)
+ax2 = fig1.add_subplot(412)
+ax2.set_ylabel('Seasonal')
+ax2.grid(True)
+plt.plot(result.seasonal)
+ax3 = fig1.add_subplot(413)
+ax3.set_ylabel('Resid')
+ax3.grid(True)
+plt.plot(result.resid)
+ax4 = fig1.add_subplot(414)
+ax4.set_ylabel('Observed')
+ax4.grid(True)
+plt.plot(result.observed)
+save("decomposition_pic_4")</code></pre>
       </div>
     </div>
     <footer>
@@ -63,6 +123,8 @@
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
       <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
       <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>

@@ -1,0 +1,126 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " ADF и KPSS"
+
+block content
+	div.row: div.large-12.columns: h2 Тест Дики-Фуллера(ADF) и тест Квятковского-Филлипса-Шмидта-Шина(KPSS)
+	div.row: div.large-12.columns
+		div.row
+		h3 Основные моменты
+		p Стационарность означает, что статистические свойства временного ряда, т. е. среднее значение, дисперсия и ковариация, не меняются с течением времени. Многие статистические модели требуют, чтобы ряды были стационарными, чтобы делать эффективные и точные прогнозы.
+		p Для проверки стационарности временного ряда будут использоваться два статистических теста — расширенный тест Дики-Фуллера («ADF») и тест Квятковского-Филлипса-Шмидта-Шина («KPSS»). Также попробуем преобразовать нестационарный временной ряд в стационарный ряд.
+		pre.python: code
+			| import matplotlib.pyplot as plt
+			| import numpy as np
+			| import pandas as pd
+			| import statsmodels.api as sm
+		p Для примера будем использовать набор данных солнечных пятен. Он содержит ежегодные (1700-2008 гг.) данные о солнечных пятнах из Национального центра геофизических данных.
+		pre.python: code
+			| sunspots = sm.datasets.sunspots.load_pandas().data
+		p Проведем предварительную подготовку данных. Будем использовать "YEAR" как индекс, а сам столбец "YEAR" удалим.
+		pre.python: code
+			| sunspots.index = pd.Index(sm.tsa.datetools.dates_from_range("1700", "2008"))
+			| del sunspots["YEAR"]
+		
+		p Теперь постороим график
+		pre.python: code
+			| sunspots.plot(figsize=(12, 8))
+		div
+			img(src="images/ADF_KPSS_pic_1.png")
+		h3 Тест ADF
+		div
+			p Тест ADF используется для определения наличия единичного корня в ряду и, следовательно, помогает понять, является ли ряд стационарным или нет. 
+			ul Нулевая и альтернативная гипотезы этого теста:
+				li Нулевая гипотеза: ряд имеет единичный корень (ряд не является стационарным)..
+				li Альтернативная гипотеза: ряд не имеет единичного корня.
+			p Если нулевую гипотезу не удалось отвергнуть, этот тест может свидетельствовать о нестационарности ряда.
+			p Создадим функцию для проведения теста ADF на временном ряду.
+			pre.python: code
+				| from statsmodels.tsa.stattools import adfuller
+				| 
+				| 
+				| def adf_test(timeseries):
+				|     print("Results of Dickey-Fuller Test:")
+				|     dftest = adfuller(timeseries, autolag="AIC")
+				|     dfoutput = pd.Series(
+				|         dftest[0:4],
+				|         index=[
+				|             "Test Statistic",
+				|             "p-value",
+				|             "#Lags Used",
+				|             "Number of Observations Used",
+				|         ],
+				|     )
+				|     for key, value in dftest[4].items():
+				|         dfoutput["Critical Value (%s)" % key] = value
+				|     print(dfoutput)
+		h3 Тест KPSS
+		p KPSS — еще один тест для проверки стационарности временного ряда. Нулевая и альтернативная гипотезы для теста KPSS противоположны таковым для теста ADF.
+		p Нулевая гипотеза: процесс является стационарным по тренду.
+		p Альтернативная гипотеза: ряд имеет единичный корень (ряд не является стационарным).
+		p Напишем функцию для проведения теста KPSS на временном ряду.
+		pre.python: code
+			| from statsmodels.tsa.stattools import kpss
+			| 
+			| 
+			| def kpss_test(timeseries):
+			|     print("Results of KPSS Test:")
+			|     kpsstest = kpss(timeseries, regression="c", nlags="auto")
+			|     kpss_output = pd.Series(
+			|         kpsstest[0:3], index=["Test Statistic", "p-value", "Lags Used"]
+			|     )
+			|     for key, value in kpsstest[3].items():
+			|         kpss_output["Critical Value (%s)" % key] = value
+			|     print(kpss_output)
+			| 
+		p Тест ADF дает следующие результаты - статистика теста, значение p и критическое значение при доверительных интервалах 1%, 5% и 10%.
+		p Вызовем тест ADF.
+		pre.python: code
+			| adf_test(sunspots["SUNACTIVITY"])
+		p
+			img(src="images/ADF_KPSS_pic_2.png")
+		p Основываясь на уровне значимости 0,05 и p-значении теста ADF, нулевую гипотезу нельзя отвергнуть. Следовательно, ряд нестационарен.
+		p Вызовем тест KPSS.
+		pre.python: code
+			| kpss_test(sunspots["SUNACTIVITY"])
+		p
+			img(src="images/ADF_KPSS_pic_3.png")
+		p Основываясь на уровне значимости 0,05 и p-значении теста KPSS, есть основания отвергнуть нулевую гипотезу в пользу альтернативы. Следовательно, по тесту КПСС ряд является нестационарным.
+		h3 Удаление тренда путем дифференцирования
+		p Это один из самых простых методов устранения тренда временного ряда. Строится новый ряд, в котором значение на текущем временном шаге рассчитывается как разница между исходным наблюдением и наблюдением на предыдущем временном шаге.
+		p Вычислим разность. Нарисуем график.
+		pre.python: code
+			| sunspots["SUNACTIVITY_diff"] = sunspots["SUNACTIVITY"] - sunspots["SUNACTIVITY"].shift(1)
+			| diff = sunspots["SUNACTIVITY_diff"].dropna()
+			| 
+			| plt.figure(figsize=(12,8))
+			| fig2 = plt.figure(2)
+			| ax1 = fig2.add_subplot(111)
+			| ax1.grid(True)
+			| ax1.set_xlabel('Date')
+			| ax1.set_ylabel('Difference')
+			| plt.plot(diff, color='blue', label='Diff')
+			| plt.legend(loc='best')
+			| plt.title('Sun Activity Difference')
+			| save("ADF_KPSS_pic_4")
+		p
+			img(src="images/ADF_KPSS_pic_4.png")
+		p Проверим полученный ряд на стационарность, запустив тесты ADF и KPSS.
+		pre.python: code
+			| adf_test(diff)
+			| kpss_test(diff)
+		p
+			img(src="images/ADF_KPSS_pic_5.png")
+		p Основываясь на p-значении теста ADF, есть основания отвергнуть нулевую гипотезу в пользу альтернативы. Следовательно, ряд теперь строго стационарен.
+		p
+			img(src="images/ADF_KPSS_pic_6.png")
+		p Основываясь на p-значении теста KPSS, нулевую гипотезу нельзя отвергнуть. Следовательно, ряд является стационарным.
+		p Полный текст примера:
+		div.right
+			a(href="code/ADF_example.py") ADF_example.py
+		pre.python: code
+			include code/ADF_example.py
+		h3 Выводы
+		p Используются два теста для проверки стационарности временного ряда, а именно тест ADF и тест KPSS. Удаление тренда осуществляется с помощью разности. Трендовый стационарный временной ряд преобразуется в строгий стационарный временной ряд. Необходимая модель прогнозирования теперь может быть применена к данным стационарного временного ряда.
+		div 

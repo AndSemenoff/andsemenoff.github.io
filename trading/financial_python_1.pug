@@ -1,18 +1,21 @@
 extends ../layouts/html_layout.jade
 //- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
 //- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
+//- https://www.helenkapatsa.ru/
 
 block title
 	title= site_title + " Python для финансовых вычислений."
 
 block content
 	div.row: div.large-12.columns: h2 Python для финансовых вычислений
-		| <span><small> Обновлено: февраль 2022.</small></span>
+		| <span><small> Обновлено: июнь 2023.</small></span>
 	div.row: div.large-12.columns
 		div Содержание
 		ul
 			li 
 				a(href="#general_issues") Общие вопросы
+			li 
+				a(href="#ts_issues") Анализ временных рядов
 			li 
 				a(href="#Sites") Сайты
 			li 
@@ -47,22 +50,6 @@ block content
 			a(href="https://www.finam.ru/profile/moex-akcii/sberbank/export/" target="_blank") Финам
 
 		ol
-			li Анализ временных рядов
-				ol
-					li 
-						span.flag_ru &nbsp;
-						a(href="time_series_trend_decomposition.html") 
-						i.far.fa-eye &nbsp;
-						| Пример. 
-						| Выделение тренда.
-					li 
-					li Дикки-Фулер тест
-					li
-					li 
-						span.flag_en &nbsp;
-						a(href="http://www.fanaee.com/") 
-						i.fas.fa-external-link-alt &nbsp;
-						| Hadi Fanaee-T.
 			li 
 				span.flag_ru &nbsp;
 				a(href="financial_python_example_1.html") 
@@ -159,7 +146,119 @@ block content
 					i.far.fa-eye &nbsp;
 					| Работа с NumPy
 				
-
+		h3(id ="ts_issues") Анализ временных рядов
+		ol
+			li 
+				span.flag_ru &nbsp;
+				a(href="time_series_trend_decomposition.html" target="_blank") 
+					i.far.fa-eye &nbsp;
+					| Пример. 
+				| Выделение тренда.
+			li 
+				span.flag_ru &nbsp;
+				a(href="time_series_ADF_KPSS.html" target="_blank") 
+					i.far.fa-eye &nbsp;
+					| Пример. 
+				| Расширенный Дикки-Фулер тест и тест Квятковского-Филлипса-Шмидта-Шина.
+			li 
+				span.flag_en &nbsp;
+				a(href="http://www.fanaee.com/") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Hadi Fanaee-T.
+			li Библиотеки python
+				ol 
+					li
+						span.flag_en &nbsp;
+						a(href="https://facebook.github.io/prophet/" target="_blank") prophet 
+							i.fas.fa-external-link-alt &nbsp;
+						| Facebook. 
+						| Есть уроки и примеры.
+					li
+						span.flag_en &nbsp;
+						a(href="https://facebookresearch.github.io/Kats/" target="_blank") Kats 
+							i.fas.fa-external-link-alt &nbsp;
+						| Facebook Research. 
+						| Есть уроки и примеры.
+					li
+						span.flag_en &nbsp;
+						a(href="https://unit8co.github.io/darts/index.html" target="_blank") Darts 
+							i.fas.fa-external-link-alt &nbsp;
+						| Unit8 co. 
+						| Есть примеры.
+					li
+						span.flag_en &nbsp;
+						a(href="https://etna.tinkoff.ru/" target="_blank") ETNA 
+							i.fas.fa-external-link-alt &nbsp;
+						| Tinkoff. 
+						| Обучение. Есть примеры. Русские разработчики 
+					li
+						span.flag_en &nbsp;
+						a(href="https://tsfresh.com/" target="_blank") tsfresh 
+							i.fas.fa-external-link-alt &nbsp;
+						| Обучение. Есть примеры.
+					li
+						span.flag_en &nbsp;
+						a(href="https://timeseriesai.github.io/tsai/" target="_blank") tsai 
+							i.fas.fa-external-link-alt &nbsp;
+						| Обучение. Есть примеры.
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						a(href="https://github.com/sktime/sktime" target="_blank") sktime 
+							i.fas.fa-external-link-alt &nbsp;
+						| Обучение. Есть примеры. Видео
+						ol
+							li
+								span.flag_ru &nbsp;
+								a(href="sktime_start.html" target="_blank") 
+									i.far.fa-eye &nbsp;
+									| Пример. 
+								| Прогнозирование временного ряда. Акции.
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						a(href="https://github.com/TDAmeritrade/stumpy" target="_blank") stumpy 
+							i.fas.fa-external-link-alt &nbsp;
+						| Обучение. Есть примеры. От TD Ameritrade
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						a(href="https://github.com/uber/orbit" target="_blank") orbit 
+							i.fas.fa-external-link-alt &nbsp;
+						| Обучение. Есть примеры. От Uber
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						a(href="https://github.com/jdb78/pytorch-forecasting" target="_blank") Pytorch forecasting 
+							i.fas.fa-external-link-alt &nbsp;
+						| Обучение. Есть примеры. Прогнозирование на основе нейронных сетей.
+					li
+						span.flag_en &nbsp;
+						i.fab.fa-github &nbsp;
+						a(href="https://github.com/MaxBenChrist/awesome_time_series_in_python" target="_blank") awesome  
+							i.fas.fa-external-link-alt &nbsp;
+						| time series in python.
+					li 
+			li Видео
+				ol 
+					li
+						span.flag_ru &nbsp;
+						a(href="https://www.youtube.com/watch?v=VxWHLEFgXnE" target="_blank") ETNA 
+							i.fas.fa-external-link-alt &nbsp;
+						| Андрей Алексеев. ETNA Time Series Library: удобное прогнозирование временных рядов
+					li
+						span.flag_ru &nbsp;
+						a(href="https://www.youtube.com/watch?v=Rmh6b96u6UU" target="_blank") Лекция 2019 года. 
+							i.fas.fa-external-link-alt &nbsp;
+						| К.В. Воронцов. Машинное обучение. Прогнозирование временных рядов. Школа анализа данных, Яндекс.
+					li
+						span.flag_en &nbsp;
+						a(href="https://www.youtube.com/watch?v=ODspi8-uWgo" target="_blank") sktime введение. 
+							i.fas.fa-external-link-alt &nbsp;
+						| Markus Löning. A Unified Toolbox for ML with Time Series | PyData Global 2021
+			li 
+				
+				
 		h3(id="Sites") Сайты
 		ol
 			li
@@ -325,7 +424,18 @@ block content
 				a(href="https://github.com/Hvass-Labs/FinanceOps" target="_blank") Hvass-Labs 
 					i.fas.fa-external-link-alt &nbsp;
 				| Много статей с кодом colab и ipynb и видео, отдельно pdf.
-
+			li 
+				span.flag_ru &nbsp;
+				i.fab.fa-github &nbsp;
+				a(href="https://ranalytics.github.io/tsa-with-r/index.html" target="_blank") Мастицкий С. Э. 
+					i.fas.fa-external-link-alt &nbsp;
+				| Анализ временных рядов с помощью R.
+			li 
+				span.flag_ru &nbsp;
+				a(href="https://habr.com/ru/companies/otus/articles/732080/" target="_blank") Обзор 
+					i.fas.fa-external-link-alt &nbsp;
+				| Анализ временных рядов.
+			
 			li 
 				span.flag_en &nbsp;
 				a(href="http://robusttechhouse.com/python-backtesting-libraries-for-quant-trading-strategies/" target="_blank")
@@ -400,6 +510,12 @@ block content
 				a(href="https://github.com/LongOnly/Quantitative-Notebooks" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 				| Quantitative-Notebooks. 
+			li 
+				span.flag_ru &nbsp;
+				| www.mbureau.ru&nbsp;
+				a(href="https://www.mbureau.ru/articles/dissertaciya-model-prognozirovaniya-vremennyh-ryadov-glava-1" target="_blank")
+					i.fas.fa-external-link-alt &nbsp;
+				| Диссертация «Модель прогнозирования временных рядов по выборке максимального подобия».
 
 
 		ol Модели ценообразования опционов
@@ -669,6 +785,16 @@ block content
 						| zachwill 
 						a(href="https://github.com/zachwill/fred" target="_blank") <b>fred</b> 
 						| Python wrapper of the St. Louis Federal Reserve Bank's
+			li
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				a(href="https://github.com/AminHP/gym-anytrading" target="_blank") <b>gym-anytrading</b> 
+				| -  is a collection of OpenAI Gym environments for reinforcement learning-based trading algorithms
+			li
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				a(href="https://github.com/AminHP/gym-mtsim" target="_blank") <b>gym-mtsim</b> 
+				| -  OpenAI Gym - MetaTrader 5 Simulator
 
 		h3(id="competitions") Соревнования
 		ol
@@ -751,6 +877,13 @@ block content
 				a(href="https://rutracker.org/forum/viewtopic.php?t=5176918" target="_blank") 
 					i.fas.fa-external-link-alt &nbsp;
 				| Yves Hilpisch. Derivatives Analytics with Python, 2015.
+			li
+				span.flag_ru &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				| www.mirkin.ru
+				a(href="http://www.mirkin.ru/_docs/tiho.pdf" target="_blank") 
+					i.fas.fa-external-link-alt &nbsp;
+				| Э.Е. Тихонов. Методы прогнозирования в условиях рынка. 
 			li: a(href="https://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119037999.html" target="_blank") Yves Hilpisch - Derivatives Analytics with Python
 		h3(id="articles2") Статьи для детального изучения
 		ul
