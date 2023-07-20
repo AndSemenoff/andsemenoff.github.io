@@ -54,7 +54,7 @@
       <div class="large-12 columns">
         <div class="row"></div>
         <h3>Основные моменты</h3>
-        <p><img src="images/decomposition_pic_4.png"></p>
+        <p><img src="images/decomposition_pic.png"></p>
         <AAPL_1mo_2000-01-01_2023-07-01></AAPL_1mo_2000-01-01_2023-07-01>
         <p>Файл данных: <a href="code/AAPL_1mo_2000-01-01_2023-07-01.csv">AAPL_1mo_2000-01-01_2023-07-01.csv</a></p>
         <p>Полный текст примера: <a href="code/decomposition_trend.py">decomposition_trend.py</a></p>
@@ -62,15 +62,7 @@
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.seasonal import seasonal_decompose
 import matplotlib.pyplot as plt
-
-# Утилита для записи графика в файл
-import os
-def save(name='', type='png'):
-    pwd = os.getcwd()
-    os.chdir('./pictures/')
-    plt.savefig('%s.%s' % (name, type), format=type)
-    os.chdir(pwd)
-    
+  
 STOCK_CODE = "AAPL"
 START_DATE = "2000-01-01" # YYYY-DD-MM
 END_DATE = "2023-07-01"   # YYYY-DD-MM
@@ -100,7 +92,7 @@ ax4 = fig1.add_subplot(414)
 ax4.set_ylabel('Observed')
 ax4.grid(True)
 plt.plot(result.observed)
-save("decomposition_pic_4")</code></pre>
+fig1.savefig("pictures/decomposition_pic.png")</code></pre>
       </div>
     </div>
     <footer>

@@ -1,0 +1,28 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Сохраняем данные"
+
+block content
+	div.row: div.large-12.columns: h2 Сохраняем и загружем на диск данные по акциям SP500 в формате parquet
+	div.row: div.large-12.columns
+		div.row
+		h3 Основные моменты
+		p Чтобы ускорить взаимодействия с данными из библиотеки yfinance создадим необходимый нам pandas DataFrame и сохраним его локально для дальнейшего использования.
+		p Сохраним данные по всем акциям индекса SP500 за последний полный год до текущего момента. Ориентируемся по составу акций в индексе на страницу в 
+			a(href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies") wiki 
+		p Для работы с современным форматом parquet потребуется установить библиотеку fastparquet. Просто пишем:
+		p <kbd> pip install fastparquet </kbd>
+		
+		p Файл данных: 
+			a(href="code/base_sp500.parquet.gzip") base_sp500.parquet.gzip 
+		p Полный текст примера: 
+			a(href="code/sp500_write_base.py") sp500_write_base.py 
+		pre.python: code
+			include code/sp500_write_base.py
+			
+		p Читаем файл с диска. Для проверки целостности проведем подсчет всех строк с полем Dividends > 0.
+		p Полный текст примера: 
+			a(href="code/read_base_sp500.py") read_base_sp500.py 
+		pre.python: code
+			include code/read_base_sp500.py

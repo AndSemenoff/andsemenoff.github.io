@@ -2,15 +2,7 @@ import pandas as pd
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.seasonal import seasonal_decompose
 import matplotlib.pyplot as plt
-
-# Утилита для записи графика в файл
-import os
-def save(name='', type='png'):
-    pwd = os.getcwd()
-    os.chdir('./pictures/')
-    plt.savefig('%s.%s' % (name, type), format=type)
-    os.chdir(pwd)
-    
+  
 STOCK_CODE = "AAPL"
 START_DATE = "2000-01-01" # YYYY-DD-MM
 END_DATE = "2023-07-01"   # YYYY-DD-MM
@@ -40,4 +32,4 @@ ax4 = fig1.add_subplot(414)
 ax4.set_ylabel('Observed')
 ax4.grid(True)
 plt.plot(result.observed)
-save("decomposition_pic_4")
+fig1.savefig("pictures/decomposition_pic.png")
