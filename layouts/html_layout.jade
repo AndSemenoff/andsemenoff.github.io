@@ -15,22 +15,23 @@ html(lang="ru")
 		meta( name="copyright" content="Семенова Андрей Вячеславович" )
 		link( rel="shortcut icon" href="../caterpillar.png" )
 		link( rel="stylesheet" href="../css/normalize.css" media="all")
-		//link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")
-		link( rel="stylesheet" href="../css/foundation.css" type="text/css" media="all" )
-		link( rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all" )
 		link( rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all" )
-		//link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")
-		link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all")
-		link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css")
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css")
 		script(src="../js/jquery.3.2.1.min.js")
-		script(src="../js/foundation.6.4.3.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js")
 
 		block scripts
 	body
 		div.top-bar
 			div.top-bar-left 
 				ul.menu
-					li: strong: a(href="/"): i.fas.fa-home: = site_title_name
+					li
+						a(href="/") 
+							i.fas.fa-home
+							| &nbsp;
+							= site_title_name
 					li: a(href= site_url+"/sportprogramming/programming_index.html") <i class="fas fa-code"></i> Программирование
 					li: a(href= site_url+"/trading/index.html") <i class="fas fa-chart-line"></i> Инвестирование
 					li: a(href= site_url+"/bigdata/index.html") <i class="fas fa-database"></i> Анализ данных
@@ -49,7 +50,7 @@ html(lang="ru")
 					div.cell.small-4
 						a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/")
 							img(alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png")
-						p <i class="far fa-copyright"></i> 2001 - 2018
+						p <i class="far fa-copyright"></i> 2001 - 2023
 						div: small Это произведение, автор которого — 
 							a(href="../about/about_main.html") Андрей Семенов
 						div: small Доступно на условиях 
@@ -65,11 +66,4 @@ html(lang="ru")
 						a(href="https://validator.w3.org/check?uri=referer")
 							img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
 			block footer
-			//script(src="https://code.jquery.com/jquery-2.1.4.min.js")
-			//script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")
 			script $(document).foundation();
-		// script(src="../js/jquary.js")
-		// script(src="../js/foundation.min.js")
-		// <script>
-		// $(document).foundation();
-		// </script>

@@ -10,21 +10,18 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -32,40 +29,34 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2><strong>Библиотека Pandas</strong></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Общее</h3>
-        <ol>
-          <li><strong><a href="begin_page_1.html">Подготовка данных</a></strong></li>
-          <li> </li>
-          <li>Расчет суточной доходности (daily returns)</li>
-          <li>Загрузка данных из третьих источников http://pandas.pydata.org/pandas-docs/stable/remote_data.html</li>
-        </ol>
-        <h3>Ссылки на материалы по Pandas</h3>
-        <ol>
-          <li>http://habrahabr.ru/post/196980/</li>
-          <li>https://github.com/fonnesbeck/statistical-analysis-python-tutorial</li>
-          <li>https://github.com/fonnesbeck/statistical-analysis-python-tutorial/blob/master/1.%20Introduction%20to%20Pandas.ipynb</li>
-          <li>https://bitbucket.org/hrojas/learn-pandas</li>
-          <li>https://github.com/jvns/pandas-cookbook/tree/v0.1</li>
-        </ol>
-        <p class="text-justify"></p>Для начала, скажем, пару слов о конструкциях хранения данных в Pandas. Основными являются Series и DataFrame.
-        Series – это проиндексированный одномерный массив значений. Он схож на примитивный словарь типа dict, где имя элемента будет соответствовать индексу, а значение – значению записи.
-        DataFrame — это проиндексированный многомерный массив значений, соответственно всякий столбец DataFrame, является конструкцией Series.
-      </div>
-    </div>
+    <h2 class="text-center">strong Библиотека Pandas</h2>
+    <article class="grid-container">
+      <h3>Общее</h3>
+      <ol>
+        <li><strong><a href="begin_page_1.html">Подготовка данных</a></strong></li>
+        <li> </li>
+        <li>Расчет суточной доходности (daily returns)</li>
+        <li>Загрузка данных из третьих источников http://pandas.pydata.org/pandas-docs/stable/remote_data.html</li>
+      </ol>
+      <h3>Ссылки на материалы по Pandas</h3>
+      <ol>
+        <li>http://habrahabr.ru/post/196980/</li>
+        <li>https://github.com/fonnesbeck/statistical-analysis-python-tutorial</li>
+        <li>https://github.com/fonnesbeck/statistical-analysis-python-tutorial/blob/master/1.%20Introduction%20to%20Pandas.ipynb</li>
+        <li>https://bitbucket.org/hrojas/learn-pandas</li>
+        <li>https://github.com/jvns/pandas-cookbook/tree/v0.1</li>
+      </ol>
+      <p class="text-justify"></p>Для начала, скажем, пару слов о конструкциях хранения данных в Pandas. Основными являются Series и DataFrame.
+      Series – это проиндексированный одномерный массив значений. Он схож на примитивный словарь типа dict, где имя элемента будет соответствовать индексу, а значение – значению записи.
+      DataFrame — это проиндексированный многомерный массив значений, соответственно всякий столбец DataFrame, является конструкцией Series.
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -79,14 +70,7 @@
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

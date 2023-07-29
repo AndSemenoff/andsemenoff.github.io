@@ -1,0 +1,17 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Сохранение исторических данных"
+
+block content
+	h2.text-center Сохранение исторических данных с официального сайта в файл
+	article.grid-container
+		h3 Основные моменты
+		p
+
+		p Файл данных: 
+			a(href="code/vix_daily.parquet.gzip") vix_daily.parquet.gzip
+		p Полный текст примера: 
+			a(href="code/vix_write_to_file.py") vix_write_to_file.py
+		pre.python: code
+			include code/vix_write_to_file.py

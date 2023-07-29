@@ -10,21 +10,18 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -32,70 +29,64 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Ссылки по теме: "Торговля на ММВБ"</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Вопросы по работе на ММВБ срочного рынка</h3>
-        <ol>
-          <li> <a href="https://www.moex.com/s1578"><i class="fas fa-external-link-alt"></i> </a>Регламенты - 
-            иллюстрация на ММВБ
-          </li>
-          <li> <a href="https://www.moex.com/s93"><i class="fas fa-external-link-alt"></i> </a>Тарифы Срочного рынка ПАО Московская Биржа</li>
-          <li>Национальный Клиринговый Центр(НКЦ) 
-            <ol>
-              <li> <a href="http://nationalclearingcentre.ru/viewCatalog.do?menuKey=209"><i class="fas fa-external-link-alt"></i> </a>Документы срочного рынка</li>
-            </ol>
-          </li>
-          <li>Гарантийная система рынка фьючерсов и опционов
-            <ol>
-              <li> <a href="https://fs.moex.com/files/4718"><i class="fas fa-external-link-alt"></i> </a>Принципы расчета гарантийного обеспечения
-                 с 03.12.2018
-              </li>
-              <li> <a href="http://nationalclearingcentre.ru/UserFiles/File/CK23/4.%20Pravila%20kliringa.%20Na%20srochnom%20rynke%20(3-ya%20redaktsiya%202018)_titul.pdf"><i class="fas fa-external-link-alt"></i> </a>Часть IV. Правила клиринга на срочном рынке</li>
-              <li> <a href="https://fs.moex.com/files/6382"><i class="fas fa-external-link-alt"></i></a>Спецификация. Фьючерсные контракты на курс иностранной валюты к российскому рублю</li>
-              <li> <strong><a href="moex_futures_go.html"><i class="far fa-eye"></i> </a></strong>Расчет ГО для фьючерсного контракта 
-                <span class="label success">устарело</span>
-              </li>
-            </ol>
-          </li>
-          <li> <a href="https://www.moex.com/a2193"><i class="fas fa-external-link-alt"></i> </a>Получение данных 
-            c информационно-статистического сервера Московской Биржи (ИСС / ISS) <a href="https://github.com/dvigal/moex">PyMOEX </a>Unofficial ISS MOEX API on Python
-          </li>
-          <li> <a href="https://www.moex.com/a3825"><i class="fas fa-external-link-alt"></i> </a>Сбор за неэффективные транзакции </li>
-          <li> <a href="http://fs.moex.com/files/4266"><i class="fas fa-external-link-alt"></i>  </a>Сбор за транзакции на ММВБ</li>
-          <li> <a href="http://fs.moex.com/files/5329"><i class="fas fa-external-link-alt"></i> </a>Коэффициенты для расчета сбора за транзакции на ММВБ</li>
-          <li> <a href="https://fs.moex.com/files/301"><i class="fas fa-external-link-alt"></i> </a>Правила организованных торгов на Срочном рынке ПАО Московская Биржа</li>
-          <li><a href="moex_option_fee.html"><i class="far fa-eye"></i> </a>Расчет бириржевого сбора за заключение маржируемых опционных контрактов</li>
-          <li><a href="https://www.moex.com/a2351"><i class="fas fa-external-link-alt"></i> </a>Рейтинг маркет-мейкеров – лидеров Программы ранжирования</li>
-          <li><a href="https://fs.moex.com/files/4720"><i class="fas fa-external-link-alt"></i> </a>Методика расчета теоретической цены опциона и коэффициента "дельта"</li>
-          <li><a href="https://www.moex.com/s205"><i class="fas fa-external-link-alt"></i> </a>Спецификации коротких кодов фьючерсных и опционных контрактов на срочном рынке</li>
-          <!--li 
-          a(href="moex_rule_forts_04.08.2015.pdf") <i class="far fa-eye"></i> 
-          | Правила срочного рынка (ред. 04.08.2015) pdf <span class="label success">устарело</span>
+    <h2 class="text-center">Ссылки по теме: "Торговля на ММВБ"</h2>
+    <article class="grid-container">
+      <h3>Вопросы по работе на ММВБ срочного рынка</h3>
+      <ol>
+        <li> <a href="https://www.moex.com/s1578"><i class="fas fa-external-link-alt"></i> </a>Регламенты - 
+          иллюстрация на ММВБ
+        </li>
+        <li> <a href="https://www.moex.com/s93"><i class="fas fa-external-link-alt"></i> </a>Тарифы Срочного рынка ПАО Московская Биржа</li>
+        <li>Национальный Клиринговый Центр(НКЦ) 
+          <ol>
+            <li> <a href="http://nationalclearingcentre.ru/viewCatalog.do?menuKey=209"><i class="fas fa-external-link-alt"></i> </a>Документы срочного рынка</li>
+          </ol>
+        </li>
+        <li>Гарантийная система рынка фьючерсов и опционов
+          <ol>
+            <li> <a href="https://fs.moex.com/files/4718"><i class="fas fa-external-link-alt"></i> </a>Принципы расчета гарантийного обеспечения
+               с 03.12.2018
+            </li>
+            <li> <a href="http://nationalclearingcentre.ru/UserFiles/File/CK23/4.%20Pravila%20kliringa.%20Na%20srochnom%20rynke%20(3-ya%20redaktsiya%202018)_titul.pdf"><i class="fas fa-external-link-alt"></i> </a>Часть IV. Правила клиринга на срочном рынке</li>
+            <li> <a href="https://fs.moex.com/files/6382"><i class="fas fa-external-link-alt"></i></a>Спецификация. Фьючерсные контракты на курс иностранной валюты к российскому рублю</li>
+            <li> <strong><a href="moex_futures_go.html"><i class="far fa-eye"></i> </a></strong>Расчет ГО для фьючерсного контракта 
+              <span class="label success">устарело</span>
+            </li>
+          </ol>
+        </li>
+        <li> <a href="https://www.moex.com/a2193"><i class="fas fa-external-link-alt"></i> </a>Получение данных 
+          c информационно-статистического сервера Московской Биржи (ИСС / ISS) <a href="https://github.com/dvigal/moex">PyMOEX </a>Unofficial ISS MOEX API on Python
+        </li>
+        <li> <a href="https://www.moex.com/a3825"><i class="fas fa-external-link-alt"></i> </a>Сбор за неэффективные транзакции </li>
+        <li> <a href="http://fs.moex.com/files/4266"><i class="fas fa-external-link-alt"></i>  </a>Сбор за транзакции на ММВБ</li>
+        <li> <a href="http://fs.moex.com/files/5329"><i class="fas fa-external-link-alt"></i> </a>Коэффициенты для расчета сбора за транзакции на ММВБ</li>
+        <li> <a href="https://fs.moex.com/files/301"><i class="fas fa-external-link-alt"></i> </a>Правила организованных торгов на Срочном рынке ПАО Московская Биржа</li>
+        <li><a href="moex_option_fee.html"><i class="far fa-eye"></i> </a>Расчет бириржевого сбора за заключение маржируемых опционных контрактов</li>
+        <li><a href="https://www.moex.com/a2351"><i class="fas fa-external-link-alt"></i> </a>Рейтинг маркет-мейкеров – лидеров Программы ранжирования</li>
+        <li><a href="https://fs.moex.com/files/4720"><i class="fas fa-external-link-alt"></i> </a>Методика расчета теоретической цены опциона и коэффициента "дельта"</li>
+        <li><a href="https://www.moex.com/s205"><i class="fas fa-external-link-alt"></i> </a>Спецификации коротких кодов фьючерсных и опционных контрактов на срочном рынке</li>
+        <!--li 
+        a(href="moex_rule_forts_04.08.2015.pdf") <i class="far fa-eye"></i> 
+        | Правила срочного рынка (ред. 04.08.2015) pdf <span class="label success">устарело</span>
+        
+        -->
+        <div>
+          <br>http://iss.moex.com/iss/index - описание объектов
+          <br>http://iss.moex.com/iss/reference/ - справочник по запросам
+          <br>https://iss.moex.com/iss/engines/futures/markets/forts/turnovers.json обороты по фьючерсному рынку
           
-          -->
-          <div>
-            <br>http://iss.moex.com/iss/index - описание объектов
-            <br>http://iss.moex.com/iss/reference/ - справочник по запросам
-            <br>https://iss.moex.com/iss/engines/futures/markets/forts/turnovers.json обороты по фьючерсному рынку
-            
-            <br>https://iss.moex.com/iss/engines/futures/markets/forts/ - описание полей по фьючерсному рынку
-            <br>https://iss.moex.com/iss/engines/futures/markets/forts/securities - фьючерсные контракты
-          </div>
-        </ol>
-      </div>
-    </div>
+          <br>https://iss.moex.com/iss/engines/futures/markets/forts/ - описание полей по фьючерсному рынку
+          <br>https://iss.moex.com/iss/engines/futures/markets/forts/securities - фьючерсные контракты
+        </div>
+      </ol>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -109,14 +100,7 @@
       		a(href="https://validator.w3.org/check?uri=referer")
       			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
       -->
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

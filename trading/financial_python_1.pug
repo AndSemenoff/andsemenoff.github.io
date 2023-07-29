@@ -1,14 +1,33 @@
 extends ../layouts/html_layout.jade
 //- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
 //- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
-
+mixin li_link(lang, github, autor, url, title_text, descriptions, ...tags)
+	// - lang - ["ru", "en"]
+	// - github - ["y", "n"] - ресурс на гитхабе?
+	// - url - str ссылка
+	// - title_text - str текст ссылки
+	// - descriptions - str текст описания
+	- var gh = github
+	li
+		<span class= 'flag_#{lang}'></span>&nbsp;
+		if gh == "y"
+			i.fab.fa-github
+			|&nbsp;#{autor}&nbsp;
+		else
+			|&nbsp;#{github}&nbsp;
+			|&nbsp;#{autor}&nbsp;
+		<a href = #{url} target="_blank">&nbsp;#{title_text}&nbsp;<i class='fas fa-external-link-alt'></i></a>
+		|&nbsp;-&nbsp;#{descriptions}&nbsp;
+		each tag in tags
+			if tag = "heartbeat"
+				i.fas.fa-heartbeat &nbsp;
 block title
 	title= site_title + " Python для финансовых вычислений."
 
 block content
-	div.row: div.large-12.columns: h2 Python для финансовых вычислений
-		| <span><small> Обновлено: июль 2023.</small></span>
-	div.row: div.large-12.columns
+	h2.text-center Python для финансовых вычислений 
+		span.h4.subheader Обновлено: июль 2023.
+	article.grid-container
 		div Содержание
 		ul
 			li 
@@ -84,6 +103,12 @@ block content
 					i.fas.fa-external-link-alt &nbsp;
 					i.fab.fa-wikipedia-w
 					WiKi.
+			li 
+				span.flag_ru &nbsp;
+				a(href="vix_main.html") 
+					i.far.fa-eye &nbsp;
+				| Работа с VIX индексом. 
+				i.fas.fa-book-open &nbsp;
 			li Работа с библиотекой <b>yfinance</b>
 				ol
 					li
@@ -325,7 +350,12 @@ block content
 				a(href="https://github.com/LeoLioLieLion/arima-test" target="_blank")
 					i.fas.fa-external-link-alt &nbsp;
 					i.fab.fa-github &nbsp;
-				
+			li 
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				a(href="https://github.com/dbrojas/optlib" target="_blank") Optlib
+					i.fas.fa-external-link-alt &nbsp;
+				| Библиотека по опционам
 
 		ol Модели ценообразования опционов
 			li Биноминальная модель ценообразования опциона

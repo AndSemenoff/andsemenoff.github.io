@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -45,36 +42,31 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Получение исторических значений свечей для FOREX</h2>
+    <h2 class="text-center">Получение исторических значений свечей для FOREX</h2>
+    <article class="grid-container">
+      <h3>Общие вопросы</h3>
+      <div>В этом примере мы покажем, как запросить отложенные данные по акции, если у вас еще нет открытой учетной записи с разрешениями на рыночные данные. Чтобы переключиться в режим отложенных данных для функции reqMktData, нам сначала нужно вызвать reqMarketDataType. Мы можем использовать либо параметр 3, что указывает на отложенные данные, либо 4, что указывает на отложенные замороженные данные. Отложенные замороженные данные означают, что после закрытия рынка отображаемые значения спроса/предложения будут относиться к последнему доступному значению перед закрытием.</div>
+      <div>После переключения на тип данных 4 мы можем использовать функцию reqMktData для запроса отложенных данных для определенного объекта контракта AAPL. В дополнение к объекту контракта и идентификатору тикера, который используется для уникальной идентификации конкретного запроса reqMktData, другими параметрами являются общий тик-лист, используемый для запроса других типов данных для инструмента, и логические значения моментальных снимков, используемые для запроса моментальных снимков, а не потоковые данные.</div>
+      <h4>Исторические данные</h4>
+      <div>Исторические данные свечей, соответствующие данным, показанным на графиках TWS, можно получить из API с помощью функции reqHistoricalData. Для этой функции требуется текущий уровень 1 (потоковые данные) для инструмента.</div>
+      <div>Справочное руководство по API: <a href="http://interactivebrokers.github.io/tws-api/historical_data.html">http://interactivebrokers.github.io/tws-api/historical_data.html</a></div>
+      <div>Эти данные соответствуют данным в диаграммах TWS и будут точно совпадать, если диаграмма создается с теми же параметрами. Объем исторических данных, доступных в IBKR, будет зависеть от типа инструмента — для обыкновенных акций:
+        <ol>
+          <li>Для обыкновенных акций обычно доступны данные как минимум за 5-10 лет при больших размерах столбцов.</li>
+          <li>Доступны данные за 2 года по истекшим фьючерсным контрактам</li>
+          <li>Данные недоступны для опционов с истекшим сроком действия или опционов на фьючерсы.</li>
+        </ol>
       </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Общие вопросы</h3>
-        <div>В этом примере мы покажем, как запросить отложенные данные по акции, если у вас еще нет открытой учетной записи с разрешениями на рыночные данные. Чтобы переключиться в режим отложенных данных для функции reqMktData, нам сначала нужно вызвать reqMarketDataType. Мы можем использовать либо параметр 3, что указывает на отложенные данные, либо 4, что указывает на отложенные замороженные данные. Отложенные замороженные данные означают, что после закрытия рынка отображаемые значения спроса/предложения будут относиться к последнему доступному значению перед закрытием.</div>
-        <div>После переключения на тип данных 4 мы можем использовать функцию reqMktData для запроса отложенных данных для определенного объекта контракта AAPL. В дополнение к объекту контракта и идентификатору тикера, который используется для уникальной идентификации конкретного запроса reqMktData, другими параметрами являются общий тик-лист, используемый для запроса других типов данных для инструмента, и логические значения моментальных снимков, используемые для запроса моментальных снимков, а не потоковые данные.</div>
-        <h4>Исторические данные</h4>
-        <div>Исторические данные свечей, соответствующие данным, показанным на графиках TWS, можно получить из API с помощью функции reqHistoricalData. Для этой функции требуется текущий уровень 1 (потоковые данные) для инструмента.</div>
-        <div>Справочное руководство по API: <a href="http://interactivebrokers.github.io/tws-api/historical_data.html">http://interactivebrokers.github.io/tws-api/historical_data.html</a></div>
-        <div>Эти данные соответствуют данным в диаграммах TWS и будут точно совпадать, если диаграмма создается с теми же параметрами. Объем исторических данных, доступных в IBKR, будет зависеть от типа инструмента — для обыкновенных акций:
-          <ol>
-            <li>Для обыкновенных акций обычно доступны данные как минимум за 5-10 лет при больших размерах столбцов.</li>
-            <li>Доступны данные за 2 года по истекшим фьючерсным контрактам</li>
-            <li>Данные недоступны для опционов с истекшим сроком действия или опционов на фьючерсы.</li>
-          </ol>
-        </div>
-        <div>Справочное руководство по API: <a href="http://interactivebrokers.github.io/tws-api/historical_limitations.html">http://interactivebrokers.github.io/tws-api/historical_limitations.html</a></div>
-        <div>Некоторые другие важные ограничения исторических данных:
-          <ol> 
-            <li>Запросы на размер бара от 30 секунд и меньше имеют ограничение: за 10 минут можно сделать не более 60 запросов.</li>
-            <li>Запросы на большие объемы данных с более длинными размерами столбцов будут выполняться так, чтобы данные возвращались дольше.</li>
-          </ol>
-        </div>
-        <h4>reqHistoricalData</h4>
-        <div>Чтобы запросить исторические данные с помощью функции reqHistoricalData, другие параметры в запросе — это tickerId (который однозначно определяет запрос), размер бара свечи, продолжительность, тип сделки и логическое значение keepUpToDate, которое указывает, должны ли данные продолжать передаваться в режиме реального времени. после возврата исторических данных.</div><br>
-        <pre><code class="python3">from ibapi.client import EClient
+      <div>Справочное руководство по API: <a href="http://interactivebrokers.github.io/tws-api/historical_limitations.html">http://interactivebrokers.github.io/tws-api/historical_limitations.html</a></div>
+      <div>Некоторые другие важные ограничения исторических данных:
+        <ol> 
+          <li>Запросы на размер бара от 30 секунд и меньше имеют ограничение: за 10 минут можно сделать не более 60 запросов.</li>
+          <li>Запросы на большие объемы данных с более длинными размерами столбцов будут выполняться так, чтобы данные возвращались дольше.</li>
+        </ol>
+      </div>
+      <h4>reqHistoricalData</h4>
+      <div>Чтобы запросить исторические данные с помощью функции reqHistoricalData, другие параметры в запросе — это tickerId (который однозначно определяет запрос), размер бара свечи, продолжительность, тип сделки и логическое значение keepUpToDate, которое указывает, должны ли данные продолжать передаваться в режиме реального времени. после возврата исторических данных.</div><br>
+      <pre><code class="python3">from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
 
@@ -106,17 +98,16 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre><br>
-        <div>Обычная практика заключается в хранении возвращенных данных во фреймах данных Pandas. <a href="https://pandas.pydata.org/">https://pandas.pydata.org/ </a></div>
-        <div>Важно отметить, как свечи из исторического потока данных IB строятся для торговых данных. Некоторые типы сделок, обычно происходящие вне NBBO, не включаются в исторические данные: сделки по средней цене, нечетные лоты и сделки с деривативами. Обычно включаются только сделки на NBBO. По этой причине объем будет отличаться от других источников данных, которые включают эти типы сделок.</div>Можно переходить к следующему шагу. <strong><a href="interactive_brokers_orders_tws.html">Выставление ордеров.</a></strong>
-      </div>
-    </div>
+      <div>Обычная практика заключается в хранении возвращенных данных во фреймах данных Pandas. <a href="https://pandas.pydata.org/">https://pandas.pydata.org/ </a></div>
+      <div>Важно отметить, как свечи из исторического потока данных IB строятся для торговых данных. Некоторые типы сделок, обычно происходящие вне NBBO, не включаются в исторические данные: сделки по средней цене, нечетные лоты и сделки с деривативами. Обычно включаются только сделки на NBBO. По этой причине объем будет отличаться от других источников данных, которые включают эти типы сделок.</div>Можно переходить к следующему шагу. <strong><a href="interactive_brokers_orders_tws.html">Выставление ордеров.</a></strong>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -132,14 +123,7 @@ if __name__ == "__main__":
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

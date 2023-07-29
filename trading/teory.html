@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -45,72 +42,66 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Теория финансового рынка</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <ol>
-          <li>Арифметика финансового рынка
-            <ol>
-              <li><a href="#a">Простой процент	</a></li>
-              <li><a href="#b">Сложный процент</a></li>
-              <li><a href="">Дисконтированная стоимость</a></li>
-              <li><a href="">Определение периода начисления процента</a></li>
-              <li><a href="">Аннуитет</a></li>
-              <li><a href="">Доходность</a></li>
-            </ol>
-          </li>
-          <li>Облигации и процентные ставки</li>
-          <li>Акции и фондовые индексы</li>
-          <li>Доходность и риск портфеля ценных бумаг</li>
-          <li>Модели оценки стоимости активов</li>
-          <li>Стратегии управления портфелем</li>
-          <li>Оценка управления портфелем</li>
-          <li>Неопределенность и риск</li>
-          <li>Форвардные и фьючерсные контракты</li>
-          <li>Опционы</li>
-        </ol>
-        <h2 id="a">Простой процент</h2>
-        <p class="text-justify"></p>Будущая стоимость<br>
-        \[ FV = PV \times (1+r_1+r_2+...+r_n) \]
-        <p class="text-justify"></p>где 
-        \(r_n\) — это процентная ставка за n-ый период, выраженная в долях единицы;<br>
-        \(n\) — это общее количество начислений процентов (если начисление происходит раз в полгода, то это количество полугодий, которое вклад лежит в банке);<br>
-        \( PV \) — текущая стоимость (первоначальная стоимость на момент инвестирования = основная сумма вклада при первоначальном инвестировании);<br> 
-        \( FV \) — будущая стоимость.<br>
-        Если период выражается не в годах, а в днях. В таком случае применяется следующая формула:<br>
-        \[ FV = PV \times (1 + \frac{n}{B}\times r) \]        
-        где <br>
-        \(n\) — это количество дней периода;<br>
-        \(B\) — это база в днях);<br>    
-        Первоначальная стоимость<br>
-        \[ PV = \frac{FV} {(1+r_1+r_2+...+r_n)} \]
-        <h2 id="b">Сложный процент</h2>
-        <p class="text-justify"></p>Будущая стоимость<br>      
-        \[ FV = PV \times (1+r)^n \]
-        <p class="text-justify"></p>где <br>
-        \(r\) — это процентная ставка за период начисления процента, выраженная в долях единицы, под которую размещается текущая стоимость (если начисление происходит раз  полгода, то она в два раза меньше годовой);<br>
-        \(n\) — это общее количество начислений процентов (если начисление происходит раз в полгода, то это количество полугодий, которое вклад лежит в банке);<br>
-        \( PV \) — текущая стоимость (первоначальная стоимость на момент инвестирования = основная сумма вклада при первоначальном инвестировании);<br> 
-        \( FV \) — будущая стоимость.     
-        <p class="text-justify"></p>Первоначальная стоимость<br>      
-        \[ PV = \frac{FV} {(1+r)^n} \]
-        <p class="text-justify"></p>Сложная процентная ставка<br>      
-        \[ r = \sqrt[n]{\frac{FV}{PV}} - 1\]
-        <p class="text-justify"></p>Срок инвестирования<br>      
-        \[ n = log_{(1+r)}{\frac{FV}{PV}} \]    
-      </div>
-    </div>
+    <h2 class="text-center">Теория финансового рынка</h2>
+    <article class="grid-container">
+      <ol>
+        <li>Арифметика финансового рынка
+          <ol>
+            <li><a href="#a">Простой процент	</a></li>
+            <li><a href="#b">Сложный процент</a></li>
+            <li><a href="">Дисконтированная стоимость</a></li>
+            <li><a href="">Определение периода начисления процента</a></li>
+            <li><a href="">Аннуитет</a></li>
+            <li><a href="">Доходность</a></li>
+          </ol>
+        </li>
+        <li>Облигации и процентные ставки</li>
+        <li>Акции и фондовые индексы</li>
+        <li>Доходность и риск портфеля ценных бумаг</li>
+        <li>Модели оценки стоимости активов</li>
+        <li>Стратегии управления портфелем</li>
+        <li>Оценка управления портфелем</li>
+        <li>Неопределенность и риск</li>
+        <li>Форвардные и фьючерсные контракты</li>
+        <li>Опционы</li>
+      </ol>
+      <h2 id="a">Простой процент</h2>
+      <p class="text-justify"></p>Будущая стоимость<br>
+      \[ FV = PV \times (1+r_1+r_2+...+r_n) \]
+      <p class="text-justify"></p>где 
+      \(r_n\) — это процентная ставка за n-ый период, выраженная в долях единицы;<br>
+      \(n\) — это общее количество начислений процентов (если начисление происходит раз в полгода, то это количество полугодий, которое вклад лежит в банке);<br>
+      \( PV \) — текущая стоимость (первоначальная стоимость на момент инвестирования = основная сумма вклада при первоначальном инвестировании);<br> 
+      \( FV \) — будущая стоимость.<br>
+      Если период выражается не в годах, а в днях. В таком случае применяется следующая формула:<br>
+      \[ FV = PV \times (1 + \frac{n}{B}\times r) \]        
+      где <br>
+      \(n\) — это количество дней периода;<br>
+      \(B\) — это база в днях);<br>    
+      Первоначальная стоимость<br>
+      \[ PV = \frac{FV} {(1+r_1+r_2+...+r_n)} \]
+      <h2 id="b">Сложный процент</h2>
+      <p class="text-justify"></p>Будущая стоимость<br>      
+      \[ FV = PV \times (1+r)^n \]
+      <p class="text-justify"></p>где <br>
+      \(r\) — это процентная ставка за период начисления процента, выраженная в долях единицы, под которую размещается текущая стоимость (если начисление происходит раз  полгода, то она в два раза меньше годовой);<br>
+      \(n\) — это общее количество начислений процентов (если начисление происходит раз в полгода, то это количество полугодий, которое вклад лежит в банке);<br>
+      \( PV \) — текущая стоимость (первоначальная стоимость на момент инвестирования = основная сумма вклада при первоначальном инвестировании);<br> 
+      \( FV \) — будущая стоимость.     
+      <p class="text-justify"></p>Первоначальная стоимость<br>      
+      \[ PV = \frac{FV} {(1+r)^n} \]
+      <p class="text-justify"></p>Сложная процентная ставка<br>      
+      \[ r = \sqrt[n]{\frac{FV}{PV}} - 1\]
+      <p class="text-justify"></p>Срок инвестирования<br>      
+      \[ n = log_{(1+r)}{\frac{FV}{PV}} \]    
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -126,14 +117,7 @@
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

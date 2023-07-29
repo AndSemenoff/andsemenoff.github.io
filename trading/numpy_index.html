@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -45,77 +42,71 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Работа с NumPy</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <div><a href="http://habrahabr.ru/post/121031/">NumPy, пособие для новичков. Часть 1</a></div>
-        <h3>NPV - Чистый дисконтированный доход</h3>
-        <div>Чистый дисконтированный доход (NPV, Net Present Value, чистая текущая стоимость, чистая дисконтированная стоимость)</div>\begin{equation}
-        	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + rate)^t} - IC
-        	\label{eq:npv}
-        \end{equation}
-        <ul>где
-          <li>\( cashflow_t \) - денежный поток (платеж) в момент времени t (t=1,..., N);</li>
-          <li>\( rate  \) - ставка дисконтирования;</li>
-          <li>\( N \) - количество периодов;</li>
-          <li>\( IC \) - первоначальные инвестиции;</li>
-        </ul>
-        <pre class="python"><code>import numpy as np
+    <h2 class="text-center">Работа с NumPy</h2>
+    <article class="grid-container">
+      <div><a href="http://habrahabr.ru/post/121031/">NumPy, пособие для новичков. Часть 1</a></div>
+      <h3>NPV - Чистый дисконтированный доход</h3>
+      <div>Чистый дисконтированный доход (NPV, Net Present Value, чистая текущая стоимость, чистая дисконтированная стоимость)</div>\begin{equation}
+      	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + rate)^t} - IC
+      	\label{eq:npv}
+      \end{equation}
+      <ul>где
+        <li>\( cashflow_t \) - денежный поток (платеж) в момент времени t (t=1,..., N);</li>
+        <li>\( rate  \) - ставка дисконтирования;</li>
+        <li>\( N \) - количество периодов;</li>
+        <li>\( IC \) - первоначальные инвестиции;</li>
+      </ul>
+      <pre class="python"><code>import numpy as np
 cashflows = [-45.45, 50]
 npv = np.npv(0.1, cashflows)
 print(round(50/(1+0.1), 2))
 print(round(npv, 2))
 >> 45.45
 >> 0.0</code></pre>
-        <div> </div>Первый параметр это ставка процента(ставка дисконтирования). Ставка дисконтирования указывается в том же временном измерении, что
-        и денежный поток. Т.е. если у нас платежи раз в год, то и ставка в годовых, если раз в квартал, то и ставка квартальная. Второй параметр - 
-        это массив представляющий денежный поток в момент времени t.
-        Первое значение в массиве по умолчанию - это первоначальные инвестиции, поэтому они идут с отрицательным знаком.
-        <a href="docs.scipy.org/doc/numpy/reference/generated/numpy.npv.html"> Документация.</a>
-        <h3>IRR (internal rate of return) Внутренняя норма доходности</h3>
-        <div>
-          Это процентная ставка, при которой чистая приведённая стоимость (чистый дисконтированный доход — NPV) равна 0. 
-          NPV рассчитывается на основании потока платежей, дисконтированного к сегодняшнему дню. Перепишем формулу \eqref{eq:npv} в следующем виде:
-        </div>\begin{equation}
-        	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t} - IC = 0 \\
-        или \\
-        IC = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t}
-        	\label{eq:irr}
-        \end{equation}
-        <ul>где
-          <li>\( IRR \) - внутренняя норма доходности;</li><a href="http://web.archive.org/web/20121013034311/http://letscount.ru/2011-10/investicionnaya-privlekatelnost-npv-vs-irr"> Ссылка</a>
-          <br>
-          Для вычисления внутренней нормы доходности существует функция <kbd>irr</kbd>.
-        </ul>
-        <pre class="python"><code>import numpy as np
+      <div> </div>Первый параметр это ставка процента(ставка дисконтирования). Ставка дисконтирования указывается в том же временном измерении, что
+      и денежный поток. Т.е. если у нас платежи раз в год, то и ставка в годовых, если раз в квартал, то и ставка квартальная. Второй параметр - 
+      это массив представляющий денежный поток в момент времени t.
+      Первое значение в массиве по умолчанию - это первоначальные инвестиции, поэтому они идут с отрицательным знаком.
+      <a href="docs.scipy.org/doc/numpy/reference/generated/numpy.npv.html"> Документация.</a>
+      <h3>IRR (internal rate of return) Внутренняя норма доходности</h3>
+      <div>
+        Это процентная ставка, при которой чистая приведённая стоимость (чистый дисконтированный доход — NPV) равна 0. 
+        NPV рассчитывается на основании потока платежей, дисконтированного к сегодняшнему дню. Перепишем формулу \eqref{eq:npv} в следующем виде:
+      </div>\begin{equation}
+      	NPV  = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t} - IC = 0 \\
+      или \\
+      IC = \sum \limits_{t=1}^{N} \frac{cashflow_t}{(1 + IRR)^t}
+      	\label{eq:irr}
+      \end{equation}
+      <ul>где
+        <li>\( IRR \) - внутренняя норма доходности;</li><a href="http://web.archive.org/web/20121013034311/http://letscount.ru/2011-10/investicionnaya-privlekatelnost-npv-vs-irr"> Ссылка</a>
+        <br>
+        Для вычисления внутренней нормы доходности существует функция <kbd>irr</kbd>.
+      </ul>
+      <pre class="python"><code>import numpy as np
 cashflows = [-45.45, 50]
 irr = round(np.irr(cashflows), 2)
 print(irr)
 >> 0.1</code></pre>
-        <h3>Платеж по кредиту</h3>
-        <div> </div>Мы взяли кредит в банке в размере 2000000 рублей на 5 лет под 11% годовых. Сколько нам нужно выплачивать ежемесячно? Можно подсчитать
-        воспользовавшись функцией <kbd>pmt</kbd>.
-        <pre class="python"><code>import numpy as np
+      <h3>Платеж по кредиту</h3>
+      <div> </div>Мы взяли кредит в банке в размере 2000000 рублей на 5 лет под 11% годовых. Сколько нам нужно выплачивать ежемесячно? Можно подсчитать
+      воспользовавшись функцией <kbd>pmt</kbd>.
+      <pre class="python"><code>import numpy as np
 kredit = 2000000
 rate = 0.11/12 # приводим к месячным процентам
 period = 5*12 # срок приводим к месяцам
 payment = np.pmt(rate, period, kredit)
 print(round(payment,2))
 >> -43484.85</code></pre>
-        <div>Получилось, что нужно будет выплачивать по 43484 рубля и 85 копеек ежемесячно.</div>
-      </div>
-    </div>
+      <div>Получилось, что нужно будет выплачивать по 43484 рубля и 85 копеек ежемесячно.</div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -131,14 +122,7 @@ print(round(payment,2))
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -46,137 +43,134 @@
       </div>
     </div>
     <!-- div.row: div.large-12.columns: h2 Глава 1-->
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="row"></div>
-        <h3>Глава 5. Срочный рынок</h3>
-        <div>Формулы используемые в этом разделе:</div>
-        <div>Нижняя граница премии европейского опциона колл на акции, по которым в последний день действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{call_price_div_at_end} I_{call} = Spot - \frac{Strike+div}{1 + r\cdot(\frac{T}{\text{база}})} \end{equation} \]
-        <div>Нижняя граница премии европейского опциона пут на акции, по которым в последний день действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{put_price_div_at_end} I_{put} = \frac{Strike+div}{1 + r\cdot(\frac{T}{\text{база}})} - Spot \end{equation} \]		
-        <div>Нижняя граница премии европейского опциона колл на акции, по которым в течение действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{call_price_div} I_{call} = Spot - \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} - D \end{equation} \]<br>D - привиденная стоимость дивидендов на момент заключения контракта. См. ( \ref{div} )
-        <div>Нижняя граница премии европейского опциона пут на акции, по которым в течение действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{put_price_div} I_{put} = \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} + D - Spot \end{equation} \]<br>D - привиденная стоимость дивидендов на момент заключения контракта. См. ( \ref{div} )
-        <div>Между премиями европейских опционов колл (\( P_{call} \)) и пут (\(P_{put}\)) на одни и те же акции с одинаковой ценой исполнения (Strike) и сроком истечения контрактов (T) существует паритет, который имеет следующий вид:</div>\[ \begin{equation} \label{paritet} P_{call} + \frac {Strike} {1+r \cdot (\frac{T}{\text{база}})} = P_{put} + Spot \end{equation} \]	
-        \[ \begin{equation} \label{put_price} I_{put} = \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} - Spot \end{equation} \]
-        \[ \begin{equation}  \text{верхняя граница премии } P_{call} = Spot - D;  \end{equation} \]
-        \[ \begin{equation} \label{div} D = \frac{div}{1+r\cdot(\frac{T}{\text{база}})} \end{equation} \]	
-        \[ \text{где&nbsp} I_{put} - \text{минимальная премия опциона put;} \]
-        \[ I_{call} - \text{минимальная премия опциона call;} \]
-        \[ r - \text{ставка без риска;} \]
-        \[ Strike - \text{цена исполнения;} \]
-        \[ Spot - \text{спот цена.}\]
-        \[ Т - \text{период действия контракта;}\]	
-        \[ div - \text{выплачиваемый дивиденд;}\]
-        \[ \begin{equation} \label{call_price} I_{call} = Spot - \frac{Strike} {1 + r \cdot (\frac{T}{\text{база}}) } \end{equation} \]
-        <div>[1]</div>
-        <div>[2]</div>
-        <div>[3]</div>
-        <div>[4]</div>
-        <div>[5]</div>
-        <div>[6]</div>
-        <div>[7]</div>
-        <div>[8]</div>
-        <div>[9]</div>
-        <div>[10]</div>
-        <div>[11]</div>
-        <div>[12]</div>
-        <div>[13]</div>
-        <div>[14]</div>
-        <div>[15]</div>
-        <div>[16]</div>
-        <div>[17]</div>
-        <div>[18]</div>
-        <div>[19]</div>
-        <div>[20]</div>
-        <div>[21]</div>
-        <div>[22]</div>
-        <div>[23]</div>
-        <div>[24]</div>
-        <div>[25]</div>
-        <div>[26]</div>
-        <div>[27]</div>
-        <div>[28]</div>
-        <div>[29]</div>
-        <div>[30]</div>
-        <div>[31]</div>
-        <div>[32]</div>
-        <div>[33]</div>
-        <div>[34]</div>
-        <div>[35]</div>
-        <div>[36]</div>
-        <div>[37]</div>
-        <div>[38]</div>
-        <div>[39]</div>
-        <div>[40]</div>
-        <div>[41]</div>
-        <div>[42]</div>
-        <div>[43]</div>
-        <div>[44]</div>
-        <div>[45]</div>
-        <div>[46]</div>
-        <div>[47]</div>
-        <div>[48]</div>
-        <div>[49]</div>
-        <div>[50]</div>
-        <div>[51]</div>
-        <div>[52]</div>
-        <div>[53]</div>
-        <div>[54]</div>
-        <div>[55]</div>\[ F = 28.2 \times \frac{(1+0.08  \times \frac{3}{12})} {(1+0.04 \times \frac{3}{12})} \approx 28.48 \]
-        <div>[56]</div>
-        <div>[57]</div>
-        <div>[58]</div>
-        <div>[59]</div>
-        <div>[60]										</div>
-        <div>[61]</div>
-        <div>[62]</div>
-        <div>[63]</div>
-        <div>[64]</div>
-        <div>[65]</div>
-        <div>[66]</div>
-        <div>[67]</div>
-        <div>[68]</div>
-        <div>[69]</div>
-        <div>[70]</div>
-        <div>[71]</div>
-        <div>[72]</div>
-        <div>[73]</div>
-        <div>[74]</div>
-        <div>[75]</div>
-        <div>[76]</div>
-        <div>[77]</div>
-        <div>[78]</div>
-        <div>[79]</div>
-        <div>[80]</div>
-        <div>[81]</div>
-        <div>[82]</div>\[ \text{По формуле } ( \ref{put_price} ) I_p = \frac{100}{(1 + 0,10 \cdot \frac{30}{365})} - 95 = 4.1847 \approx 4.18 \]
-        <div>[83]</div>\[ \text{верхняя граница премии } P_{call} = Spot - D; D = \frac{div}{1+r\cdot(\frac{T}{\text{база}})} \]
-        <div>[84]</div>
-        <div>[85]</div>
-        <div>[86] Чистая цена спот акции (т.е. за вычетом дисконтированного выплачиваемого по ней в течение периода дивиденда)</div>\[ S = 105 - \frac{3}{1+0.1 \cdot \frac {60}{365}} = 105 - 2.95 = 102.05 \]
-        \[ \text{нижняя граница премии опциона колл } P_{call} = 102.05 - \frac{100}{1+0.1 \cdot \frac{90}{365}} = 4.46 \]
-        <div>[87]</div>
-        <div>[88]</div>
-        <div>[89]</div>
-        <div>[90]</div>
-        <div>[91]</div>
-        <div>[92]</div>
-        <div>[93]</div>
-        <div>[94] Из условия паритета опционов пут и колл</div><br> ip = iс + X/(1+r) - S = 5 + 100 / (1 + 0,10 * 5/12) - 100 = 1 руб. 
-        <div>[95]</div>
-        <div>[96]</div>
-        <div>[97]</div>
-        <div>[98]</div>
-        <div>[99]</div>
-        <div>[100]</div>
-      </div>
-    </div>
+    <article class="grid-container">
+      <h3>Глава 5. Срочный рынок</h3>
+      <div>Формулы используемые в этом разделе:</div>
+      <div>Нижняя граница премии европейского опциона колл на акции, по которым в последний день действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{call_price_div_at_end} I_{call} = Spot - \frac{Strike+div}{1 + r\cdot(\frac{T}{\text{база}})} \end{equation} \]
+      <div>Нижняя граница премии европейского опциона пут на акции, по которым в последний день действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{put_price_div_at_end} I_{put} = \frac{Strike+div}{1 + r\cdot(\frac{T}{\text{база}})} - Spot \end{equation} \]		
+      <div>Нижняя граница премии европейского опциона колл на акции, по которым в течение действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{call_price_div} I_{call} = Spot - \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} - D \end{equation} \]<br>D - привиденная стоимость дивидендов на момент заключения контракта. См. ( \ref{div} )
+      <div>Нижняя граница премии европейского опциона пут на акции, по которым в течение действия контракта выплачиваются дивиденды, определяется по формуле:</div>\[ \begin{equation} \label{put_price_div} I_{put} = \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} + D - Spot \end{equation} \]<br>D - привиденная стоимость дивидендов на момент заключения контракта. См. ( \ref{div} )
+      <div>Между премиями европейских опционов колл (\( P_{call} \)) и пут (\(P_{put}\)) на одни и те же акции с одинаковой ценой исполнения (Strike) и сроком истечения контрактов (T) существует паритет, который имеет следующий вид:</div>\[ \begin{equation} \label{paritet} P_{call} + \frac {Strike} {1+r \cdot (\frac{T}{\text{база}})} = P_{put} + Spot \end{equation} \]	
+      \[ \begin{equation} \label{put_price} I_{put} = \frac{Strike}{1 + r\cdot(\frac{T}{\text{база}})} - Spot \end{equation} \]
+      \[ \begin{equation}  \text{верхняя граница премии } P_{call} = Spot - D;  \end{equation} \]
+      \[ \begin{equation} \label{div} D = \frac{div}{1+r\cdot(\frac{T}{\text{база}})} \end{equation} \]	
+      \[ \text{где&nbsp} I_{put} - \text{минимальная премия опциона put;} \]
+      \[ I_{call} - \text{минимальная премия опциона call;} \]
+      \[ r - \text{ставка без риска;} \]
+      \[ Strike - \text{цена исполнения;} \]
+      \[ Spot - \text{спот цена.}\]
+      \[ Т - \text{период действия контракта;}\]	
+      \[ div - \text{выплачиваемый дивиденд;}\]
+      \[ \begin{equation} \label{call_price} I_{call} = Spot - \frac{Strike} {1 + r \cdot (\frac{T}{\text{база}}) } \end{equation} \]
+      <div>[1]</div>
+      <div>[2]</div>
+      <div>[3]</div>
+      <div>[4]</div>
+      <div>[5]</div>
+      <div>[6]</div>
+      <div>[7]</div>
+      <div>[8]</div>
+      <div>[9]</div>
+      <div>[10]</div>
+      <div>[11]</div>
+      <div>[12]</div>
+      <div>[13]</div>
+      <div>[14]</div>
+      <div>[15]</div>
+      <div>[16]</div>
+      <div>[17]</div>
+      <div>[18]</div>
+      <div>[19]</div>
+      <div>[20]</div>
+      <div>[21]</div>
+      <div>[22]</div>
+      <div>[23]</div>
+      <div>[24]</div>
+      <div>[25]</div>
+      <div>[26]</div>
+      <div>[27]</div>
+      <div>[28]</div>
+      <div>[29]</div>
+      <div>[30]</div>
+      <div>[31]</div>
+      <div>[32]</div>
+      <div>[33]</div>
+      <div>[34]</div>
+      <div>[35]</div>
+      <div>[36]</div>
+      <div>[37]</div>
+      <div>[38]</div>
+      <div>[39]</div>
+      <div>[40]</div>
+      <div>[41]</div>
+      <div>[42]</div>
+      <div>[43]</div>
+      <div>[44]</div>
+      <div>[45]</div>
+      <div>[46]</div>
+      <div>[47]</div>
+      <div>[48]</div>
+      <div>[49]</div>
+      <div>[50]</div>
+      <div>[51]</div>
+      <div>[52]</div>
+      <div>[53]</div>
+      <div>[54]</div>
+      <div>[55]</div>\[ F = 28.2 \times \frac{(1+0.08  \times \frac{3}{12})} {(1+0.04 \times \frac{3}{12})} \approx 28.48 \]
+      <div>[56]</div>
+      <div>[57]</div>
+      <div>[58]</div>
+      <div>[59]</div>
+      <div>[60]										</div>
+      <div>[61]</div>
+      <div>[62]</div>
+      <div>[63]</div>
+      <div>[64]</div>
+      <div>[65]</div>
+      <div>[66]</div>
+      <div>[67]</div>
+      <div>[68]</div>
+      <div>[69]</div>
+      <div>[70]</div>
+      <div>[71]</div>
+      <div>[72]</div>
+      <div>[73]</div>
+      <div>[74]</div>
+      <div>[75]</div>
+      <div>[76]</div>
+      <div>[77]</div>
+      <div>[78]</div>
+      <div>[79]</div>
+      <div>[80]</div>
+      <div>[81]</div>
+      <div>[82]</div>\[ \text{По формуле } ( \ref{put_price} ) I_p = \frac{100}{(1 + 0,10 \cdot \frac{30}{365})} - 95 = 4.1847 \approx 4.18 \]
+      <div>[83]</div>\[ \text{верхняя граница премии } P_{call} = Spot - D; D = \frac{div}{1+r\cdot(\frac{T}{\text{база}})} \]
+      <div>[84]</div>
+      <div>[85]</div>
+      <div>[86] Чистая цена спот акции (т.е. за вычетом дисконтированного выплачиваемого по ней в течение периода дивиденда)</div>\[ S = 105 - \frac{3}{1+0.1 \cdot \frac {60}{365}} = 105 - 2.95 = 102.05 \]
+      \[ \text{нижняя граница премии опциона колл } P_{call} = 102.05 - \frac{100}{1+0.1 \cdot \frac{90}{365}} = 4.46 \]
+      <div>[87]</div>
+      <div>[88]</div>
+      <div>[89]</div>
+      <div>[90]</div>
+      <div>[91]</div>
+      <div>[92]</div>
+      <div>[93]</div>
+      <div>[94] Из условия паритета опционов пут и колл</div><br> ip = iс + X/(1+r) - S = 5 + 100 / (1 + 0,10 * 5/12) - 100 = 1 руб. 
+      <div>[95]</div>
+      <div>[96]</div>
+      <div>[97]</div>
+      <div>[98]</div>
+      <div>[99]</div>
+      <div>[100]</div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -192,14 +186,7 @@
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

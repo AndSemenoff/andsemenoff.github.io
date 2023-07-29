@@ -4,14 +4,38 @@ block title
 	title= site_title + " Программирование в Quik на Lua"
 
 block content
-	div.row: div.large-12.columns: h2 Ссылки по теме: "Программирование в Quik на Lua"
-	div.row: div.large-12.columns
-		div.row
+	mixin li_link(lang, url, title_text, text)
+		// - lang - [ru, en]
+		// - url - ссылка
+		// - title_text - текст ссылки
+		// - text - текст описания
+		li
+			<span class= 'flag_#{lang}'></span>
+			<a href = #{url}>&nbsp;<i class='fas fa-external-link-alt'></i> #{title_text}</a>
+			|&nbsp;-&nbsp;#{text}
+	h2.text-center  Ссылки по теме: "Программирование в Quik на QLua"
+	article.grid-container
 		h3 Общие вопросы
 		ol
-			li: a(href="http://arqatech.com/ru/support/files/") Официальная документация по QLua
-			li: a(href="http://robostroy.ru/community/article.aspx?id=792") QLua для чайников
-			li: a(href="https://github.com/rjpcomputing/luaforwindows/releases") Lua для Windows
-			li: a(href="https://github.com/LewisJEllis/awesome-lua") ссылки на Lua ресурсы
-			li: a(href="http://rusalgo.com/article/qpile-i-qlua") ссылка
-			li: a(href="http://www.coppeliarobotics.com/helpFiles/en/luaCrashCourse.htm") ссылки на Lua ресурсы
+			li: a(href="https://arqatech.com/ru/support/files/") Официальная документация по QLua
+			li: a(href="http://quik2dde.ru/index.php") Форум сайта quik2dde.ru
+			+li_link("ru", "http://www.bot4sale.ru/", "Cайт bot4sale", " ")
+			+li_link("ru", "https://quikluacsharp.ru", "quikluacsharp.ru", "	") 
+			+li_link("en", "https://github.com/rjpcomputing/luaforwindows/releases", "github", "Lua для Windows")
+			li: a(href="https://github.com/LewisJEllis/awesome-lua") Awesome Lua ресурсы
+			li: a(href="http://www.coppeliarobotics.com/helpFiles/en/luaCrashCourse.htm") Lua crash course
+			li: a(href="https://www.optionsprofitcalculator.com/") Optionsprofitcalculator
+		div.row
+		h3 Конкретные вопросы
+		ol
+			+li_link("ru", "https://quik2dde.ru/viewtopic.php?id=287", "Опционы", "полезные функции")
+			+li_link("ru", "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D0%B0%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C", "Wiki", "волатильность")
+			+li_link("ru", "https://habr.com/ru/company/exness/blog/495298/", "habr", "Оцениваем опционы на Clojure методом Монте-Карло")
+			+li_link("ru", "https://quik2dde.ru/viewtopic.php?id=286", "2dde-forum", "Советы по написанию Lua-роботов от профессионалов")
+			+li_link("ru", "https://github.com/untoxa/lua_share", "lua_share", "Библиотека предназначена для обмена данными между lua-скриптами, работающими в разных процессах, а так же в одном процессе, но в разных lua-машинах. Прежде всего, она будет полезна пользователям терминала QUIK.")
+			+li_link("ru", "http://luaq.ru/sendTransaction.html", "sendTransaction", "параметры")
+			+li_link('en', "https://www.ivolatility.com", 'ivolatility.com', 'сайт с калькулятором по опционам')
+			+li_link('ru', "https://forum.quik.ru/messages/forum10/message11805/topic1302/#message11805", "quik-forum", "Порядок отслеживания процесса выполнения транзакций")
+			li 
+				a(href="bs_calculation.html") <i class="far fa-eye"></i> 
+				| Расчет по формуле Блека-Шоулза

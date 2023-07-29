@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -45,32 +42,27 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Скользящий лимитированный стоп ордер (Trailing Stop Limit)</h2>
+    <h2 class="text-center">Скользящий лимитированный стоп ордер (Trailing Stop Limit)</h2>
+    <article class="grid-container">
+      <h3>Общие вопросы</h3>
+      <div>Предполагаем, что если мы хотим выставить скользящий лимитированный стоп ордер на продажу, то мы хотим продать, как можно дороже. И, наборот, если мы хотим выставить скользящий лимитированный стоп ордер на куплю, то мы хотим купить, как можно дешевле.</div>
+      <div>Обозначим текущую цену сделки за <b>CurrentPrice</b></div>
+      <div>Где для <b>action = "SELL"</b>:
+        <ul>
+          <li><b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>росте</u> <b>CurrentPrice</b></li>
+          <li><b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>продажу</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту</li>
+          <li><b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> - <b>auxPrice</b>. Но это условие работает только при <u>увеличении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> > <b>trailStopPrice</b> - <b>auxPrice</b>.</li>
+        </ul>
       </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Общие вопросы</h3>
-        <div>Предполагаем, что если мы хотим выставить скользящий лимитированный стоп ордер на продажу, то мы хотим продать, как можно дороже. И, наборот, если мы хотим выставить скользящий лимитированный стоп ордер на куплю, то мы хотим купить, как можно дешевле.</div>
-        <div>Обозначим текущую цену сделки за <b>CurrentPrice</b></div>
-        <div>Где для <b>action = "SELL"</b>:
-          <ul>
-            <li><b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>росте</u> <b>CurrentPrice</b></li>
-            <li><b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>продажу</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту</li>
-            <li><b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> - <b>auxPrice</b>. Но это условие работает только при <u>увеличении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> > <b>trailStopPrice</b> - <b>auxPrice</b>.</li>
-          </ul>
-        </div>
-        <div>Где для <b>action = "BUY"</b>:
-          <ul>
-            <li><b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>снижении</u> <b>CurrentPrice</b></li>
-            <li><b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>куплю</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту</li>
-            <li><b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> + <b>auxPrice</b>. Но это условие работает только при <u>уменьшении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> < <b>trailStopPrice</b> + <b>auxPrice</b>.</li>
-          </ul>
-        </div>
-        <div>Дополнительная информация по скользящим лимитированным стоп ордерам:<span class="flag_en">&nbsp;</span><a href="https://interactivebrokers.github.io/tws-api/basic_orders.html#trailingstoplimit"><i class="fas fa-external-link-alt">&nbsp;</i></a></div><br>
-        <pre><code class="python3">from ibapi.client import EClient
+      <div>Где для <b>action = "BUY"</b>:
+        <ul>
+          <li><b>trailStopPrice</b> - лимитированная цена, котороая будет сдвигаться при <u>снижении</u> <b>CurrentPrice</b></li>
+          <li><b>lmtPriceOffset</b> - дельта по которой будет выставлен лимитированный ордер на <u>куплю</u>, если очень маленький будет проскок и ордер не выставиться, а будет ждать попадания цены в эту дельту</li>
+          <li><b>auxPrice</b> - разница между текущей ценой сделки и тригерной ценой срабатывания ордера, т.е. <b>trailStopPrice</b> = <b>CurrentPrice</b> + <b>auxPrice</b>. Но это условие работает только при <u>уменьшении</u> <b>CurrentPrice</b>, а точнее при <b>CurrentPrice</b> < <b>trailStopPrice</b> + <b>auxPrice</b>.</li>
+        </ul>
+      </div>
+      <div>Дополнительная информация по скользящим лимитированным стоп ордерам:<span class="flag_en">&nbsp;</span><a href="https://interactivebrokers.github.io/tws-api/basic_orders.html#trailingstoplimit"><i class="fas fa-external-link-alt">&nbsp;</i></a></div><br>
+      <pre><code class="python3">from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
 from ibapi.order import *
@@ -129,15 +121,14 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre><br>
-      </div>
-    </div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -153,14 +144,7 @@ if __name__ == "__main__":
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>ABSOLEM.INFO | Пример 3. Определение стоимости облигаций с фиксированным купоном .</title>
+    <title>ABSOLEM.INFO | Сохранение исторических данных</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -42,39 +42,31 @@
         </ul>
       </div>
     </div>
-    <h2 class="text-center">Пример 3. Определение стоимости облигаций с фиксированным купоном.</h2>
+    <h2 class="text-center">Сохранение исторических данных с официального сайта в файл</h2>
     <article class="grid-container">
-      <div class="text-justify">Нетрудно заметить, что денежный поток, генерируемый подобными ценными бумагами представляет собой аннуитет, к которому в конце срока операции прибавляется дисконтированная номинальная стоимость облигации.</div>
-      <div>Определим современную (текущую) стоимость такого потока:</div>\[ \begin{equation} \label{bond_price} PV = \sum_{t=1}^{mn} \frac {\frac {(N \times k)} {m}} {(1 + \frac{r}{m})^{t}} + \frac{F} {(1+r)^{nm}} \end{equation} \]
-      <div>где F – сумма погашения (как правило – номинал, т.е. F = N); k – годовая ставка купона; r – рыночная ставка (норма дисконта); n – срок облигации; N – номинал; m – число купонных выплат в году. </div>
-      <div>Напишем программу, которая вычисляет стоимость по формуле ( \ref{bond_price} ). Будем использовать библиотеку SymPy для символьных вычислений.</div>
-      <div class="large-2 columns right"><a href="../python_source/sympy_1.py">sympy_1.py</a></div>
-      <div class="large-12 columns">
-        <pre class="python"><code>#! /usr/bin/env python
-# -*- coding: utf-8 -*-
-# в идеале нужно еще учесть накопленный купонный доход (НКД)
-import sympy
-from sympy import summation, symbols
-n, m, t = symbols('n m t', integer=True)
-nominal_price = 1000 # номинальная цена облигации
-k = 0.07 # годовая ставка купона
-r = 0.06 # рыночная ставка
-m = 4 # число купонных выплат в году
-n = 5 # срок облигации (лет)
-last = nominal_price/(1 + r/m)**(m*n)
-result = summation(((nominal_price*k)/m)/(1 + r/m)**(t), (t, 1, m*n)) + last
-print(result)</code></pre>
-      </div>
-      <div class="clearfix"></div>
+      <h3>Основные моменты</h3>
+      <p></p>
+      <p>Файл данных: <a href="code/vix_daily.parquet.gzip">vix_daily.parquet.gzip</a></p>
+      <p>Полный текст примера: <a href="code/vix_write_to_file.py">vix_write_to_file.py</a></p>
+      <pre class="python"><code># -*- coding: utf-8 -*-
+"""
+@author: Semenov Andrey
+file: vix_write_to_file.py
+"""
+import pandas as pd
+
+# https://www.cboe.com/tradable_products/vix/vix_historical_data/
+# https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv
+
+vix_history = pd.read_csv('https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv')
+
+vix_history.DATE = pd.to_datetime(vix_history.DATE)
+vix_history  = vix_history.set_index('DATE')
+vix_history['Y'] = vix_history.index.year
+vix_history['MoY'] = vix_history.index.month_name()        # MoY - Month of Year 
+vix_history['DoW'] = vix_history.index.day_name()          # DoW - Day of week
+vix_history.to_parquet('vix_daily.parquet.gzip', compression='gzip')</code></pre>
     </article>
-    <div class="row">
-      <div class="large-12 columns">
-        <div>Ссылки по теме:</div>
-        <ul>
-          <li> <a href="http://www.cfin.ru/finanalysis/inexcel/2-2-2.shtml">Анализ операций с ценными бумагами с Microsoft Excel	</a></li>
-        </ul>
-      </div>
-    </div>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">

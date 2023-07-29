@@ -1,0 +1,19 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Пример 1. Расчет по формуле Блэка-Шоулза."
+
+block content
+	h2.text-center Пример 1. Расчет по формуле Блэка-Шоулза.
+	article.grid-container
+			div.callout
+				div.text-justify Напишем расчет премии опционов по формуле Блэка-Шоулза.
+					|   
+					| Код представлен ниже
+				div.right
+					a(href="lua/Black-Scholes.lua") Black-Scholes.lua
+				pre.lua: code
+					include lua/Black-Scholes.lua
+				//div.clearfix
+
+		div.columns.large-2 &nbsp;

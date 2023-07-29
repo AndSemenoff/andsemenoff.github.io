@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -45,84 +42,78 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Начало работы с yfinance</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h3>Общие вопросы</h3>
-        <div>Для Anaconda устанавливаем <span class="flag_en">&nbsp;</span><a href="https://anaconda.org/conda-forge/yfinance"> <i class="fas fa-external-link-alt">&nbsp;</i>по инструкции</a></div>
-        <div>Состав библиотеки очень простой, всего три модуля:
-          <ol>
-            <li>yf.Tickers</li>
-            <li>yf.download</li>
-            <li>yf.pandas_datareader</li>
-          </ol>
-        </div>Практически все методы находятся в модуле Tickers.
-        Модуль <kbd>download</kbd> предназначен для быстрой загрузки исторических данных нескольких тикеров одновременно.
-        Модуль <kbd>pandas_datareader</kbd> предназначен для обратной совместимости с устаревшим кодом, который мы проигнорируем как не относящийся к делу, поскольку, если вы читаете это, вы, вероятно, новый пользователь библиотеки!
-        <div>Во-первых, давайте импортируем yfinance как yf и создадим себе объект тикера для определенной акции. У нас акции компании Apple и их тикер "aapl"</div>
-        <pre><code class="python3">import yfinance as yf
+    <h2 class="text-center">Начало работы с yfinance</h2>
+    <article class="grid-container">
+      <h3>Общие вопросы</h3>
+      <div>Для Anaconda устанавливаем <span class="flag_en">&nbsp;</span><a href="https://anaconda.org/conda-forge/yfinance"> <i class="fas fa-external-link-alt">&nbsp;</i>по инструкции</a></div>
+      <div>Состав библиотеки очень простой, всего три модуля:
+        <ol>
+          <li>yf.Tickers</li>
+          <li>yf.download</li>
+          <li>yf.pandas_datareader</li>
+        </ol>
+      </div>Практически все методы находятся в модуле Tickers.
+      Модуль <kbd>download</kbd> предназначен для быстрой загрузки исторических данных нескольких тикеров одновременно.
+      Модуль <kbd>pandas_datareader</kbd> предназначен для обратной совместимости с устаревшим кодом, который мы проигнорируем как не относящийся к делу, поскольку, если вы читаете это, вы, вероятно, новый пользователь библиотеки!
+      <div>Во-первых, давайте импортируем yfinance как yf и создадим себе объект тикера для определенной акции. У нас акции компании Apple и их тикер "aapl"</div>
+      <pre><code class="python3">import yfinance as yf
 &nbsp;
 apple = yf.Ticker("aapl")
 print(apple)</code></pre>
-        <div>>> yfinance.Ticker object &lt;AAPL&gt;</div>
-        <div>Помните, что теперь мы используем этот объект тикера <b>apple</b> практически для всего — вызывая для него различные методы.</div>
-        <h4>метод history()</h4>
-        <div>Чтобы получить исторические данные, мы хотим использовать метод history(), который является наиболее «сложным» методом в библиотеке yfinance.</div>
-        <div>В качестве входных данных он принимает следующие параметры:</div>
-        <div>
-           <b>period</b>: период для получения (скачивания) данных (так же для указания периода можно использовать параметры <b>start</b> и <b>end</b>) Допустимые значения периодов: </div>
-        <ul>
-          <li>1d </li>
-          <li>5d</li>
-          <li>1mo </li>
-          <li>3mo</li>
-          <li>6mo</li>
-          <li>1y</li>
-          <li>2y</li>
-          <li>5y</li>
-          <li>10y</li>
-          <li>ytd</li>
-          <li>max</li>
-        </ul>
-        <div>
-          <b>interval</b>: интервал (1m одноминутный интервал доступен только для последних 7 дней, а интервал меньше 1 дня для последних 60 дней) Допустимые значения интервалов:[1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo]</div>
-        <div><b>start</b>: если не используется <b>period</b> – в формате (yyyy-mm-dd) или datetime.</div>
-        <div><b>end</b>: если не используется <b>period</b> – в формате (yyyy-mm-dd) или datetime.</div>
-        <div><b>prepost</b>: Включать ли данные с пре-маркета и пост-маркета? (по умолчанию = False) - обычно нет смысла менять значение по умолчанию</div>
-        <div><b>auto_adjust</b>: Автоматически приводить к одному маштабу(выравнивать) цены (Open/High/Low/Close)? (по умолчанию = True). Важно при сплитах и т.п.</div>
-        <div><b>actions</b>: скачивать события по дивидендам и делениям? (по умолчанию = True)</div>
-        <div>Это может показаться немного сложным, но в основном вы будете просто изменять период (или начало и конец) и параметры интервала.</div>
-        <div>Например, чтобы получить 1-минутные исторические данные для Apple между 01/02/2022 и 01/07/2022 (британский формат), мы просто используем объект тикера, который мы создали и запустили. Обратите внимание, что для минутных данных запрошенный диапазон должен быть в пределах последних 30 дней.</div>
-        <pre><code class="python3">apple_historical = apple.history(start="2022-01-02", end="2022-01-07", interval="1m")
+      <div>>> yfinance.Ticker object &lt;AAPL&gt;</div>
+      <div>Помните, что теперь мы используем этот объект тикера <b>apple</b> практически для всего — вызывая для него различные методы.</div>
+      <h4>метод history()</h4>
+      <div>Чтобы получить исторические данные, мы хотим использовать метод history(), который является наиболее «сложным» методом в библиотеке yfinance.</div>
+      <div>В качестве входных данных он принимает следующие параметры:</div>
+      <div>
+         <b>period</b>: период для получения (скачивания) данных (так же для указания периода можно использовать параметры <b>start</b> и <b>end</b>) Допустимые значения периодов: </div>
+      <ul>
+        <li>1d </li>
+        <li>5d</li>
+        <li>1mo </li>
+        <li>3mo</li>
+        <li>6mo</li>
+        <li>1y</li>
+        <li>2y</li>
+        <li>5y</li>
+        <li>10y</li>
+        <li>ytd</li>
+        <li>max</li>
+      </ul>
+      <div>
+        <b>interval</b>: интервал (1m одноминутный интервал доступен только для последних 7 дней, а интервал меньше 1 дня для последних 60 дней) Допустимые значения интервалов:[1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo]</div>
+      <div><b>start</b>: если не используется <b>period</b> – в формате (yyyy-mm-dd) или datetime.</div>
+      <div><b>end</b>: если не используется <b>period</b> – в формате (yyyy-mm-dd) или datetime.</div>
+      <div><b>prepost</b>: Включать ли данные с пре-маркета и пост-маркета? (по умолчанию = False) - обычно нет смысла менять значение по умолчанию</div>
+      <div><b>auto_adjust</b>: Автоматически приводить к одному маштабу(выравнивать) цены (Open/High/Low/Close)? (по умолчанию = True). Важно при сплитах и т.п.</div>
+      <div><b>actions</b>: скачивать события по дивидендам и делениям? (по умолчанию = True)</div>
+      <div>Это может показаться немного сложным, но в основном вы будете просто изменять период (или начало и конец) и параметры интервала.</div>
+      <div>Например, чтобы получить 1-минутные исторические данные для Apple между 01/02/2022 и 01/07/2022 (британский формат), мы просто используем объект тикера, который мы создали и запустили. Обратите внимание, что для минутных данных запрошенный диапазон должен быть в пределах последних 30 дней.</div>
+      <pre><code class="python3">apple_historical = apple.history(start="2022-01-02", end="2022-01-07", interval="1m")
 print(apple_historical)</code></pre><br><img src="images/yfinance_pic_1.JPG">
-        <h4>Фундаментальные параметры</h4>
-        <h5>Соотношение цены и прибыли (Price to Earnings Ratio)</h5>
-        <div>Вы можете получить соотношение цены и прибыли с помощью метода Ticker.info().</div>
-        <div>Ticker.info() возвращает словарь с широким спектром информации о тикере, включая такие вещи, как краткое описание, количество сотрудников, рыночная капитализация, объем, соотношение P/E, дивиденды и т. д. — рекомендуем ознакомиться с ним самостоятельно. так как это занимает много места, чтобы показать, но, короче говоря, если вы не можете найти информацию, которую ищете, с помощью других методов, попробуйте метод info()!</div>
-        <div>Чтобы получить точное соотношение цены и прибыли, поищите в словаре слово «forwardPE»:</div>
-        <pre><code class="python3">aapl = yf.Ticker("aapl")
+      <h4>Фундаментальные параметры</h4>
+      <h5>Соотношение цены и прибыли (Price to Earnings Ratio)</h5>
+      <div>Вы можете получить соотношение цены и прибыли с помощью метода Ticker.info().</div>
+      <div>Ticker.info() возвращает словарь с широким спектром информации о тикере, включая такие вещи, как краткое описание, количество сотрудников, рыночная капитализация, объем, соотношение P/E, дивиденды и т. д. — рекомендуем ознакомиться с ним самостоятельно. так как это занимает много места, чтобы показать, но, короче говоря, если вы не можете найти информацию, которую ищете, с помощью других методов, попробуйте метод info()!</div>
+      <div>Чтобы получить точное соотношение цены и прибыли, поищите в словаре слово «forwardPE»:</div>
+      <pre><code class="python3">aapl = yf.Ticker("aapl")
 print(aapl.info['forwardPE'])</code></pre>
-        <h3>Ссылки по теме</h3>
-        <ol>
-          <li> <span class="flag_en">&nbsp;</span>algotrading101.com <a href="https://algotrading101.com/learn/yfinance-guide/"> <i class="fas fa-external-link-alt">&nbsp; </i>yfinance Library </a>– A Complete Guide
-            + exaple code ipynb<a href="https://github.com/GregBland/yfinance_article/blob/master/example_code.ipynb"></a>
-          </li>
-          <li> <span class="flag_en">&nbsp;</span>algotrading101.com <a href="https://algotrading101.com/learn/alpha-vantage-guide/"> <i class="fas fa-external-link-alt">&nbsp; </i>Alpha Vantage </a>– Introduction Guide</li>
-          <li> <span class="flag_en">&nbsp;</span>compucademy.net <a href="https://compucademy.net/getting-stock-data-using-python-and-yfinance/"> <i class="fas fa-external-link-alt">&nbsp; </i>article </a>– how to retrieve stock data using Python and the YFinance library</li>
-        </ol>
-      </div>
-    </div>
+      <h3>Ссылки по теме</h3>
+      <ol>
+        <li> <span class="flag_en">&nbsp;</span>algotrading101.com <a href="https://algotrading101.com/learn/yfinance-guide/"> <i class="fas fa-external-link-alt">&nbsp; </i>yfinance Library </a>– A Complete Guide
+          + exaple code ipynb<a href="https://github.com/GregBland/yfinance_article/blob/master/example_code.ipynb"></a>
+        </li>
+        <li> <span class="flag_en">&nbsp;</span>algotrading101.com <a href="https://algotrading101.com/learn/alpha-vantage-guide/"> <i class="fas fa-external-link-alt">&nbsp; </i>Alpha Vantage </a>– Introduction Guide</li>
+        <li> <span class="flag_en">&nbsp;</span>compucademy.net <a href="https://compucademy.net/getting-stock-data-using-python-and-yfinance/"> <i class="fas fa-external-link-alt">&nbsp; </i>article </a>– how to retrieve stock data using Python and the YFinance library</li>
+      </ol>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -138,14 +129,7 @@ print(aapl.info['forwardPE'])</code></pre>
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

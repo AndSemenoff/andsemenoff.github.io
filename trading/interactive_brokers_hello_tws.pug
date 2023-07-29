@@ -4,8 +4,8 @@ block title
 	title= site_title + " Interactive Brokers API первая программа"
 
 block content
-	div.row: div.large-12.columns: h2 Interactive Brokers API первая программа
-	div.row: div.large-12.columns
+	h2.text-center Interactive Brokers API первая программа
+	article.grid-container
 		h3 Общие вопросы
 		div Во-первых, соединение между клиентом API и TWS начинается в функции connect(). Соединение обязательно асинхронное, и поэтому программы выглядят иначе, чем программы в синхронной среде.
 		div Из-за асинхронной архитектуры обычно (как минимум) выполняются два потока. Один поток читает сообщения из TWS в API и помещает сообщения в очередь. Другие потоки отправляют сообщения в TWS или обрабатывают сообщения во входящей очереди.

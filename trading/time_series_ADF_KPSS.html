@@ -10,15 +10,12 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
     <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
@@ -37,7 +34,7 @@
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -45,39 +42,33 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h2>Тест Дики-Фуллера(ADF) и тест Квятковского-Филлипса-Шмидта-Шина(KPSS)</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="row"></div>
-        <h3>Основные моменты</h3>
-        <p>Стационарность означает, что статистические свойства временного ряда, т. е. среднее значение, дисперсия и ковариация, не меняются с течением времени. Многие статистические модели требуют, чтобы ряды были стационарными, чтобы делать эффективные и точные прогнозы.</p>
-        <p>Для проверки стационарности временного ряда будут использоваться два статистических теста — расширенный тест Дики-Фуллера («ADF») и тест Квятковского-Филлипса-Шмидта-Шина («KPSS»). Также попробуем преобразовать нестационарный временной ряд в стационарный ряд.</p>
-        <pre class="python"><code>import matplotlib.pyplot as plt
+    <h2 class="text-center">Тест Дики-Фуллера(ADF) и тест Квятковского-Филлипса-Шмидта-Шина(KPSS)</h2>
+    <article class="grid-container">
+      <h3>Основные моменты</h3>
+      <p>Стационарность означает, что статистические свойства временного ряда, т. е. среднее значение, дисперсия и ковариация, не меняются с течением времени. Многие статистические модели требуют, чтобы ряды были стационарными, чтобы делать эффективные и точные прогнозы.</p>
+      <p>Для проверки стационарности временного ряда будут использоваться два статистических теста — расширенный тест Дики-Фуллера («ADF») и тест Квятковского-Филлипса-Шмидта-Шина («KPSS»). Также попробуем преобразовать нестационарный временной ряд в стационарный ряд.</p>
+      <pre class="python"><code>import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm</code></pre>
-        <p>Для примера будем использовать набор данных солнечных пятен. Он содержит ежегодные (1700-2008 гг.) данные о солнечных пятнах из Национального центра геофизических данных.</p>
-        <pre class="python"><code>sunspots = sm.datasets.sunspots.load_pandas().data</code></pre>
-        <p>Проведем предварительную подготовку данных. Будем использовать "YEAR" как индекс, а сам столбец "YEAR" удалим.</p>
-        <pre class="python"><code>sunspots.index = pd.Index(sm.tsa.datetools.dates_from_range("1700", "2008"))
+      <p>Для примера будем использовать набор данных солнечных пятен. Он содержит ежегодные (1700-2008 гг.) данные о солнечных пятнах из Национального центра геофизических данных.</p>
+      <pre class="python"><code>sunspots = sm.datasets.sunspots.load_pandas().data</code></pre>
+      <p>Проведем предварительную подготовку данных. Будем использовать "YEAR" как индекс, а сам столбец "YEAR" удалим.</p>
+      <pre class="python"><code>sunspots.index = pd.Index(sm.tsa.datetools.dates_from_range("1700", "2008"))
 del sunspots["YEAR"]</code></pre>
-        <p>Теперь постороим график</p>
-        <pre class="python"><code>sunspots.plot(figsize=(12, 8))</code></pre>
-        <div><img src="images/ADF_KPSS_pic_1.png"></div>
-        <h3>Тест ADF</h3>
-        <div>
-          <p>Тест ADF используется для определения наличия единичного корня в ряду и, следовательно, помогает понять, является ли ряд стационарным или нет. </p>
-          <ul>Нулевая и альтернативная гипотезы этого теста:
-            <li>Нулевая гипотеза: ряд имеет единичный корень (ряд не является стационарным)..</li>
-            <li>Альтернативная гипотеза: ряд не имеет единичного корня.</li>
-          </ul>
-          <p>Если нулевую гипотезу не удалось отвергнуть, этот тест может свидетельствовать о нестационарности ряда.</p>
-          <p>Создадим функцию для проведения теста ADF на временном ряду.</p>
-          <pre class="python"><code>from statsmodels.tsa.stattools import adfuller
+      <p>Теперь постороим график</p>
+      <pre class="python"><code>sunspots.plot(figsize=(12, 8))</code></pre>
+      <div><img src="images/ADF_KPSS_pic_1.png"></div>
+      <h3>Тест ADF</h3>
+      <div>
+        <p>Тест ADF используется для определения наличия единичного корня в ряду и, следовательно, помогает понять, является ли ряд стационарным или нет. </p>
+        <ul>Нулевая и альтернативная гипотезы этого теста:
+          <li>Нулевая гипотеза: ряд имеет единичный корень (ряд не является стационарным)..</li>
+          <li>Альтернативная гипотеза: ряд не имеет единичного корня.</li>
+        </ul>
+        <p>Если нулевую гипотезу не удалось отвергнуть, этот тест может свидетельствовать о нестационарности ряда.</p>
+        <p>Создадим функцию для проведения теста ADF на временном ряду.</p>
+        <pre class="python"><code>from statsmodels.tsa.stattools import adfuller
  
  
 def adf_test(timeseries):
@@ -95,13 +86,13 @@ def adf_test(timeseries):
     for key, value in dftest[4].items():
         dfoutput["Critical Value (%s)" % key] = value
     print(dfoutput)</code></pre>
-        </div>
-        <h3>Тест KPSS</h3>
-        <p>KPSS — еще один тест для проверки стационарности временного ряда. Нулевая и альтернативная гипотезы для теста KPSS противоположны таковым для теста ADF.</p>
-        <p>Нулевая гипотеза: процесс является стационарным по тренду.</p>
-        <p>Альтернативная гипотеза: ряд имеет единичный корень (ряд не является стационарным).</p>
-        <p>Напишем функцию для проведения теста KPSS на временном ряду.</p>
-        <pre class="python"><code>from statsmodels.tsa.stattools import kpss
+      </div>
+      <h3>Тест KPSS</h3>
+      <p>KPSS — еще один тест для проверки стационарности временного ряда. Нулевая и альтернативная гипотезы для теста KPSS противоположны таковым для теста ADF.</p>
+      <p>Нулевая гипотеза: процесс является стационарным по тренду.</p>
+      <p>Альтернативная гипотеза: ряд имеет единичный корень (ряд не является стационарным).</p>
+      <p>Напишем функцию для проведения теста KPSS на временном ряду.</p>
+      <pre class="python"><code>from statsmodels.tsa.stattools import kpss
  
  
 def kpss_test(timeseries):
@@ -114,19 +105,19 @@ def kpss_test(timeseries):
         kpss_output["Critical Value (%s)" % key] = value
     print(kpss_output)
  </code></pre>
-        <p>Тест ADF дает следующие результаты - статистика теста, значение p и критическое значение при доверительных интервалах 1%, 5% и 10%.</p>
-        <p>Вызовем тест ADF.</p>
-        <pre class="python"><code>adf_test(sunspots["SUNACTIVITY"])</code></pre>
-        <p><img src="images/ADF_KPSS_pic_2.png"></p>
-        <p>Основываясь на уровне значимости 0,05 и p-значении теста ADF, нулевую гипотезу нельзя отвергнуть. Следовательно, ряд нестационарен.</p>
-        <p>Вызовем тест KPSS.</p>
-        <pre class="python"><code>kpss_test(sunspots["SUNACTIVITY"])</code></pre>
-        <p><img src="images/ADF_KPSS_pic_3.png"></p>
-        <p>Основываясь на уровне значимости 0,05 и p-значении теста KPSS, есть основания отвергнуть нулевую гипотезу в пользу альтернативы. Следовательно, по тесту КПСС ряд является нестационарным.</p>
-        <h3>Удаление тренда путем дифференцирования</h3>
-        <p>Это один из самых простых методов устранения тренда временного ряда. Строится новый ряд, в котором значение на текущем временном шаге рассчитывается как разница между исходным наблюдением и наблюдением на предыдущем временном шаге.</p>
-        <p>Вычислим разность. Нарисуем график.</p>
-        <pre class="python"><code>sunspots["SUNACTIVITY_diff"] = sunspots["SUNACTIVITY"] - sunspots["SUNACTIVITY"].shift(1)
+      <p>Тест ADF дает следующие результаты - статистика теста, значение p и критическое значение при доверительных интервалах 1%, 5% и 10%.</p>
+      <p>Вызовем тест ADF.</p>
+      <pre class="python"><code>adf_test(sunspots["SUNACTIVITY"])</code></pre>
+      <p><img src="images/ADF_KPSS_pic_2.png"></p>
+      <p>Основываясь на уровне значимости 0,05 и p-значении теста ADF, нулевую гипотезу нельзя отвергнуть. Следовательно, ряд нестационарен.</p>
+      <p>Вызовем тест KPSS.</p>
+      <pre class="python"><code>kpss_test(sunspots["SUNACTIVITY"])</code></pre>
+      <p><img src="images/ADF_KPSS_pic_3.png"></p>
+      <p>Основываясь на уровне значимости 0,05 и p-значении теста KPSS, есть основания отвергнуть нулевую гипотезу в пользу альтернативы. Следовательно, по тесту КПСС ряд является нестационарным.</p>
+      <h3>Удаление тренда путем дифференцирования</h3>
+      <p>Это один из самых простых методов устранения тренда временного ряда. Строится новый ряд, в котором значение на текущем временном шаге рассчитывается как разница между исходным наблюдением и наблюдением на предыдущем временном шаге.</p>
+      <p>Вычислим разность. Нарисуем график.</p>
+      <pre class="python"><code>sunspots["SUNACTIVITY_diff"] = sunspots["SUNACTIVITY"] - sunspots["SUNACTIVITY"].shift(1)
 diff = sunspots["SUNACTIVITY_diff"].dropna()
  
 plt.figure(figsize=(12,8))
@@ -139,17 +130,17 @@ plt.plot(diff, color='blue', label='Diff')
 plt.legend(loc='best')
 plt.title('Sun Activity Difference')
 save("ADF_KPSS_pic_4")</code></pre>
-        <p><img src="images/ADF_KPSS_pic_4.png"></p>
-        <p>Проверим полученный ряд на стационарность, запустив тесты ADF и KPSS.</p>
-        <pre class="python"><code>adf_test(diff)
+      <p><img src="images/ADF_KPSS_pic_4.png"></p>
+      <p>Проверим полученный ряд на стационарность, запустив тесты ADF и KPSS.</p>
+      <pre class="python"><code>adf_test(diff)
 kpss_test(diff)</code></pre>
-        <p><img src="images/ADF_KPSS_pic_5.png"></p>
-        <p>Основываясь на p-значении теста ADF, есть основания отвергнуть нулевую гипотезу в пользу альтернативы. Следовательно, ряд теперь строго стационарен.</p>
-        <p><img src="images/ADF_KPSS_pic_6.png"></p>
-        <p>Основываясь на p-значении теста KPSS, нулевую гипотезу нельзя отвергнуть. Следовательно, ряд является стационарным.</p>
-        <p>Полный текст примера:</p>
-        <div class="right"><a href="code/ADF_example.py">ADF_example.py</a></div>
-        <pre class="python"><code>import matplotlib.pyplot as plt
+      <p><img src="images/ADF_KPSS_pic_5.png"></p>
+      <p>Основываясь на p-значении теста ADF, есть основания отвергнуть нулевую гипотезу в пользу альтернативы. Следовательно, ряд теперь строго стационарен.</p>
+      <p><img src="images/ADF_KPSS_pic_6.png"></p>
+      <p>Основываясь на p-значении теста KPSS, нулевую гипотезу нельзя отвергнуть. Следовательно, ряд является стационарным.</p>
+      <p>Полный текст примера:</p>
+      <div class="right"><a href="code/ADF_example.py">ADF_example.py</a></div>
+      <pre class="python"><code>import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -221,18 +212,17 @@ adf_test(diff)
 kpss_test(diff)
 
 </code></pre>
-        <h3>Выводы</h3>
-        <p>Используются два теста для проверки стационарности временного ряда, а именно тест ADF и тест KPSS. Удаление тренда осуществляется с помощью разности. Трендовый стационарный временной ряд преобразуется в строгий стационарный временной ряд. Необходимая модель прогнозирования теперь может быть применена к данным стационарного временного ряда.</p>
-        <div> </div>
-      </div>
-    </div>
+      <h3>Выводы</h3>
+      <p>Используются два теста для проверки стационарности временного ряда, а именно тест ADF и тест KPSS. Удаление тренда осуществляется с помощью разности. Трендовый стационарный временной ряд преобразуется в строгий стационарный временной ряд. Необходимая модель прогнозирования теперь может быть применена к данным стационарного временного ряда.</p>
+      <div> </div>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2022</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -248,14 +238,7 @@ kpss_test(diff)
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

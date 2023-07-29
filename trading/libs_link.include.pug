@@ -1,72 +1,20 @@
+// main file: financial_python_1.pug
+
 h3(id="libs") Финансовые библиотеки для питона
 ol 
 	li Сборники ссылок
 		ol
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| wilsonfreitas 
-				a(href="https://github.com/wilsonfreitas/awesome-quant" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| awesome-quant 
-				| - сборник ссылок на ресурсы по финансовым вычислениям не только на питоне
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| theoneandonlywoj 
-				a(href="https://github.com/theoneandonlywoj/Courses" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Courses 
-				| - сборник ссылок на курсы по финансовым вычислениям в формате ipynb
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| MaxBenChrist 
-				a(href="https://github.com/MaxBenChrist/awesome_time_series_in_python" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| - сборник ссылок на библиотеки по анализу временных рядов
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| cantaro86 
-				a(href="https://github.com/cantaro86/Financial-Models-Numerical-Methods" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Financial-Models-Numerical-Methods. Коллекция ipynb.
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| rsvp 
-				a(href="https://github.com/rsvp/fecon235" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| fecon235 :: Notebooks for financial economics
-			li 
-				span.flag_en &nbsp;
-				| gitbook.io
-				| irosyadi 
-				a(href="https://irosyadi.gitbook.io/irosyadi/note/awesome-jupyter" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| awesome-jupyter
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| maread99 
-				a(href="https://github.com/maread99/awesome-quant" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| awesome quant
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| markusschanta 
-				a(href="https://github.com/markusschanta/awesome-jupyter" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| awesome-jupyter
-	li 
-		span.flag_en &nbsp;
-		i.fas.fa-heartbeat &nbsp;
-		| QuantEcon.org
-		a(href="https://quantecon.org/" target="_blank") 
-			i.fas.fa-external-link-alt &nbsp;
-		| Open source code for economic modeling. Много ipynb, notebooks, лекций, книг.
+			+li_link("en", "y", "wilsonfreitas", "https://github.com/wilsonfreitas/awesome-quant", "awesome-quant", "сборник ссылок на ресурсы по финансовым вычислениям не только на питоне")
+			+li_link("en", "y", "theoneandonlywoj", "https://github.com/theoneandonlywoj/Courses", "Courses", "сборник ссылок на курсы по финансовым вычислениям в формате ipynb")
+			+li_link("en", "y", "MaxBenChrist", "https://github.com/MaxBenChrist/awesome_time_series_in_python", "awesome time series in python", "сборник ссылок на библиотеки по анализу временных рядов")
+			+li_link("en", "y", "cantaro86", "https://github.com/cantaro86/Financial-Models-Numerical-Methods", "Financial Models Numerical Methods", "Коллекция ipynb")
+			+li_link("en", "y", "rsvp", "https://github.com/rsvp/fecon235", "Notebooks for financial economics", "fecon235: Коллекция ipynb")
+			+li_link("en", "gitbook.io", "irosyadi", "https://irosyadi.gitbook.io/irosyadi/note/awesome-jupyter", "awesome-jupyter", "awesome-jupyter")
+			+li_link("en", "y", "maread99", "https://github.com/maread99/awesome-quant", "awesome quant", "awesome quant")
+			+li_link("en", "y", "markusschanta", "https://github.com/markusschanta/awesome-jupyter", "awesome-jupyter", "awesome-jupyter")
+	+li_link("en", "", "", "https://quantecon.org/", "QuantEcon.org", "Open source code for economic modeling. Много ipynb, notebooks, лекций, книг.", "heartbeat")
+
+
 	li
 		span.flag_en &nbsp;
 		i.fas.fa-heartbeat &nbsp;
@@ -104,57 +52,32 @@ ol
 		
 	li Библиотеки по трэйдингу и историческому тестированию
 		ol
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/abbass2/pyqstrat" target="_blank") pyqstrat 
-				| обновлено: 08.01.2022
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/enzoampil/fastquant" target="_blank") fastquant 
-				| обновлено: 07.03.2022
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/cuemacro/finmarketpy" target="_blank") finmarketpy 
-				| обновлено: 07.10.2021
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/Blankly-Finance/Blankly" target="_blank") Blankly 
-				| обновлено: 11.03.2022
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/quantopian/zipline" target="_blank") ZipLine 
-				| обновлено: 14.10.2020
+			+li_link("en", "y", "abbass2", "https://github.com/abbass2/pyqstrat", "pyqstrat", "обновлено: 22.04.2023")
+			+li_link("en", "y", "enzoampil", "https://github.com/enzoampil/fastquant", "fastquant", "обновлено: 02.06.2023")
+			+li_link("en", "y", "enzoampil", "https://github.com/cuemacro/finmarketpy", "finmarketpy", "обновлено: 26.04.2023")
+			+li_link("en", "y", "Blankly-Finance", "https://github.com/Blankly-Finance/Blankly", "Blankly", "Библиотека интегрируется с криптобиржами. Обновлено: 11.07.2023")
+			+li_link("en", "y", "quantopian", "https://github.com/quantopian/zipline", "ZipLine", "обновлено: 14.10.2020")
+			+li_link("en", "y", "TA-Lib", "https://github.com/TA-Lib/ta-lib-python", "ta-lib-python", "обновлено: 14.07.2023")
+			+li_link("en", "github.io", "pmorissette", "http://pmorissette.github.io/bt/", "BT", "backtesting обновлено: on 23.05.2023")
+
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
 				a(href="https://github.com/ematvey/pybacktest" target="_blank") PyBacktest 
-				| обновлено: 09.09.2019
-			li
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="http://ta-lib.org") TA-Lib.org | 
-				a(href="http://mrjbq7.github.io/ta-lib/" target="_blank") TA-Lib
-				
+				| обновлено: 09.09.2019 
+				i.fas.fa-blind &nbsp;
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
 				a(href="http://gbeced.github.io/pyalgotrade/" target="_blank") PyAlgoTrade 
 				| обновлено: 20.08.2018
+				i.fas.fa-blind &nbsp;
 			li
 				span.flag_en &nbsp;
 				i.fab.fa-github &nbsp;
-				a(href="https://github.com/quantopian/pyfolio" target="_blank") PyFolio
-			
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="http://pmorissette.github.io/bt/" target="_blank") <b>BT</b> 
-				|- backtesting. обновлено: on 9.02.2022
+				a(href="https://github.com/quantopian/pyfolio" target="_blank") PyFolio 
+				| обновлено: 15.07.2020 
+				i.fas.fa-blind &nbsp;
 	li 
 		span.flag_en &nbsp;
 		| notebook.community 

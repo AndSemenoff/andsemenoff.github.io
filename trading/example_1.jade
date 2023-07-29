@@ -7,8 +7,8 @@ block scripts
 	link(rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css")
 
 block content
-	div.row: div.large-12.columns: h3 Пример 1. Простейший пример.
-	div.row: div.large-12.columns
+	h2.text-center Пример 1. Простейший пример.
+	article.grid-container
 		div Условие покупки/продажи: если текущая цена больше пятидневного скользящего среднего плюс один процент и есть деньги для покупки - покупаем.
 		| Если текущая цена меньше скользящего среднего и у нас есть акции, то продаем все акции.
 		pre.python: code
