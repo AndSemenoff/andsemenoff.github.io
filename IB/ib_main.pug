@@ -1,0 +1,195 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Инвестирование"
+
+block content
+	h2.font-effect-shadow-multiple Работа с Interactive Brokers
+	article.grid-container
+		h3 Общие вопросы
+		ol
+			+mli("en","out", "https://interactivebrokers.github.io", "interactivebrokers.github.io", "download tws api")
+			+mli("en","out", "https://interactivebrokers.github.io/tws-api/", "interactivebrokers.github.io", "API Reference Guide")
+			+mli("en","out", "https://contract.ibkr.info/v3.10/index.php", "ibkr.info", "Спецификации, контракты")
+			+mli("ru","my", "vix_main.html", "absolem.info", "Начало работы с индексом VIX")
+			li Использование нативного API
+				ol
+					+mli("en","out", "https://tradersacademy.online/trading-courses/python-tws-api", "TradersAcademy.online", "Курс по нативному python tws API")
+					+mli("ru","my", "ib_start.html", "absolem.info", "Начало работы с IB TWS API")
+					+mli("ru","my", "ib_hello_tws.html", "absolem.info", "Первая простейшая программа")
+					+mli("ru","my", "ib_hello_world_tws.html", "absolem.info", "Программа 'hello world'")
+					+mli("ru","my", "ib_market_data_tws.html", "absolem.info", "Получение рыночных данных")
+					+mli("ru","my", "ib_history_forex_tws.html", "absolem.info", "Получение исторических значений свечей для FOREX")
+					+mli("ru","my", "ib_orders_tws.html", "absolem.info", "Выставление ордеров")
+					+mli("ru","my", "ib_options_tws.html", "absolem.info", "Опционная доска")
+					+mli("ru","my", "ib_portfolio_data_tws.html", "absolem.info", " Данные по портфелю, информация об аккаунте")
+					+mli("ru","my", "ib_pair_trading_tws.html", "absolem.info", "Парная торговля через API")
+					li Примеры написания кода для выставления разных ордеров
+						ol
+							+mli("ru","my", "ib_bracket_orders_tws.html", "absolem.info", "Объединенные ордера (Bracket Orders)")
+							+mli("ru","my", "ib_trailing_limit_orders_tws.html", "absolem.info", "Скользящий лимитированный стоп ордер (Trailing Stop Limit)")
+					+mli("en","out", "https://datawookie.dev/blog/2022/04/setting-up-interactive-brokers-gateway/", "blog post", "Настройка IB Gateway")
+			li Использование библиотеки ib_insync
+					
+			li Правила
+				ol
+					+mli("ru","out", "https://ibkr.info/ru/article/2189", "ibkr.info", "Добро пожаловать Interactive Brokers", "c")
+					+mli("en","out", "https://ibkr.info/article/1736", "ibkr.info", "Overview of SEC Fees", "")
+					+mli("en","out", "https://guides.interactivebrokers.com/cp/cp.htm", "guides.interactivebrokers.com", "Руководство по клиентскому порталу", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/1287", "ibkr.info", "Обзор комиссий и сборов", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/2816", "ibkr.info", "Документация о хостах и портах IBKR", "cogs")
+					+mli("ru","out", "https://ibkr.info/ru/article/1184", "ibkr.info", "Регуляторный сбор по опционам (ORF)", "")
+					+mli("en","out", "https://ibkr.info/article/1184", "ibkr.info", "Регуляторный сбор по опционам (ORF)", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/1242-1", "ibkr.info №1242-1", "Приоритет ордеров профессиональных клиентов", "old")
+					+mli("en","out", "https://www.ibkrguides.com/kb/article-1242.htm", "ibkr.info №1242", "Priority of Professional Customer Orders", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/3449", "ibkr.info №3449", "Информация об оповещениях от Interactive Brokers относительно ограничений цены", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/1912", "ibkr.info №1912", "Обзор предлагаемых IBKR CFD на акции", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/3060", "ibkr.info №3060", "Криптовалютные продукты, доступные в IBKR", "btc")
+					+mli("ru","out", "https://ibkr.info/ru/article/1131", "ibkr.info №1131", "Информация о 'Системе безопасного входа'", "sec")
+					+mli("ru","out", "https://ibkr.info/ru/article/1861", "ibkr.info №1861", "Плата за замену устройства безопасности", "sec")
+					+mli("en","out", "https://ibkr.info/article/971", "ibkr.info №971", "Currency Margin Calculation (Withdrawals)", "dollar")
+					+mli("en","out", "https://ibkr.info/article/970", "ibkr.info №970", "Currency Margin Calculation", "dollar")
+
+
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/3956")
+							i.fas.fa-external-link-alt &nbsp;
+						| Внебиржевой рынок (акции с микрокапитализацией) – изменение Правила 15c2-11 SEC
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/2930")
+							i.fas.fa-external-link-alt &nbsp;
+						| Общие сведения о расчете T+2
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/1839")
+							i.fas.fa-external-link-alt &nbsp;
+						| Программа повышения доходности акций в IBKR
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/1838")
+							i.fas.fa-external-link-alt &nbsp;
+						| Программа повышения доходности акций (SYEP): ЧаВО
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/201")
+							i.fas.fa-external-link-alt &nbsp;
+						| Добавление/удаление ликвидности
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/2892")
+							i.fas.fa-external-link-alt &nbsp;
+						| Ограничения для Microcap-акций США
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/1267")
+							i.fas.fa-external-link-alt &nbsp;
+							i.fas.fa-dollar-sign &nbsp;
+						| Введение в торговлю валютой 
+						small: sup 1267
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/2840")
+							i.fas.fa-external-link-alt &nbsp;
+							i.far.fa-newspaper &nbsp;
+						| Выбор подписки на рыночные данные США (для непрофессионалов) 
+						small: sup 2840
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/2830-1")
+							i.fas.fa-external-link-alt &nbsp;
+							i.far.fa-newspaper &nbsp;
+						| Сводки рыночных данных 
+						small: sup 2830-1
+					li 
+						span.flag_ru &nbsp;
+						| ibkr.info 
+						a(href="https://ibkr.info/ru/article/2966")
+							i.fas.fa-external-link-alt &nbsp;
+							i.far.fa-newspaper &nbsp;
+						| Время отставания рыночных данных 
+						small: sup 2966
+
+					+mli("ru","out", "https://ibkr.info/ru/article/1852", "ibkr.info №1852", "Биржевая плата за доступ к рыночным данным", "news")
+					+mli("ru","out", "https://ibkr.info/ru/article/2843", "ibkr.info №2843", "Доступ к рыночным данным: профессиональное и непроессиональное использование", "news")
+					+mli("ru","out", "https://ibkr.info/ru/article/2583", "ibkr.info №2583", "Рыночные данные: Анкета для непрофессионалов", "news")
+					+mli("ru","out", "https://ibkr.info/ru/article/3105", "ibkr.info №3105", "Рыночные данные: Минимальные требования к капиталу", "news")
+					+mli("ru","out", "https://ibkr.info/ru/article/3061", "ibkr.info №3061", "Рыночные данные о криптовалютных продуктах", "news", "btc")
+					+mli("ru","out", "https://ibkr.info/ru/article/1767", "ibkr.info №1767", "Ликвидация по истечении", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/729", "ibkr.info №729", "Где можно узнать дополнительную информацию об опционах?", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/2133", "ibkr.info №2133", "Доходы (по акциям приминительно к опционам)", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/3059", "ibkr.info №3059", "Bitcoin и другие криптовалютные продукты в IBKR", "btc")
+					+mli("ru","out", "https://ibkr.info/ru/article/3049-0", "ibkr.info №3049-0", "Торговля фьючерсами на криптовалюту через IBKR ", "btc")
+					+mli("ru","out", "https://ibkr.info/ru/article/3137", "ibkr.info №3137", "Внебиржевые фьючерсы IBKR на металлы LME – Факты и частые вопросы", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/2707", "ibkr.info №2707", "Forex CFD IB: Факты и частые вопросы", "dollar")
+					+mli("ru","out", "https://ibkr.info/ru/article/2784", "ibkr.info №2784", "Единый стандарт отчетности (CRS)", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/576", "ibkr.info №576", "Как торговать акциями до или после открытия рынка?", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/2949", "ibkr.info №2949", "Методика вычисления действующих ставок", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/2958", "ibkr.info №2958", "Расчет ставок-ориентиров - Принципы фиксинга ", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/941", "ibkr.info №941", "Налоги: Неамериканские физические и юридические лица - Форма 1042-S", "")
+					+mli("ru","out", "https://ibkr.info/ru/article/3441", "ibkr.info №3441", "Ограничения на перевод средств", "")
+					+mli("en","out", "https://kb.clientam.com/node/2837", "ibkr.info №2837", "Withholding Tax on Dividend Equivalent Payments - FAQs ", "")
+					+mli("en","out", "https://ibkr.info/it/article/2024", "ibkr.info №2024", "Monitoring Stock Loan Availability. Public IB FTP", "") 
+ 
+		h3 Статьи
+		ol
+			li
+				span.flag_ru &nbsp;
+				| absolem.info 
+				a(href="financial_python_1.html") &nbsp;<i class="far fa-eye"></i>&nbsp;
+				| Python для финансовых вычислений
+			li
+				span.flag_en &nbsp;
+				| algotrading101.com 
+				a(href="https://algotrading101.com/learn/interactive-brokers-python-api-native-guide/"): i.fas.fa-external-link-alt &nbsp;
+				| Нативное использование IB API
+			li
+				span.flag_en &nbsp;
+				a(href="https://anaconda.org/camizulub/stock_trading_with_interactive_brokers/notebook"): i.fas.fa-external-link-alt &nbsp;
+				| Notebook IB API
+			li
+				span.flag_en &nbsp;
+				a(href="https://dimon.ca/dmitrys-tws-api-faq/"): i.fas.fa-external-link-alt &nbsp;
+				| dmitrys tws api faq
+			li
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				a(href="https://github.com/erdewit/ib_insync"): i.fas.fa-external-link-alt &nbsp;
+				| ib_insync
+			li
+				span.flag_en &nbsp;
+				| algotrading101.com 
+				a(href="https://algotrading101.com/learn/ib_insync-interactive-brokers-api-guide/"): i.fas.fa-external-link-alt &nbsp;
+				| ib_insync Guide – Interactive Brokers API
+			li
+				span.flag_en &nbsp;
+				| tradersinsight.news 
+				a(href="https://www.tradersinsight.news/category/ibkr-quant-news/api_development/"): i.fas.fa-external-link-alt &nbsp;
+				| Interactive Brokers API development
+			li
+				span.flag_en &nbsp;
+				| tradersinsight.news 
+				strong: a(href="https://www.tradersinsight.news/ibkr-quant-news/implementing-market-scanners-using-tws-api-part-ii/"): i.fas.fa-external-link-alt &nbsp;
+				| Implementing Market Scanners using TWS API – Part II
+			li
+				span.flag_en &nbsp;
+				| tradersinsight.news 
+				strong: a(href="https://www.tradersinsight.news/ibkr-quant-news/historical-options-futures-data-using-tws-api-part-ii/"): i.fas.fa-external-link-alt &nbsp;
+				| Historical Options & Futures Data using TWS API – Part II
+			li
+				span.flag_en &nbsp;
+				i.fab.fa-github &nbsp;
+				strong: a(href="https://github.com/jasonstrimpel/High-Frequency-Trading-Model-with-IB"): i.fas.fa-external-link-alt &nbsp;
+				| A high-frequency trading model using Interactive Brokers API with pairs and mean-reversion in Python
+				
+			li https://stackoverflow.com/questions/74943249/python-program-that-buys-options-using-ibkr

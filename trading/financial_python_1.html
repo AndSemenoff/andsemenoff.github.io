@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="top-bar">
@@ -29,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <h2 class="text-center">Python для финансовых вычислений <span class="h4 subheader">Обновлено: июль 2023.</span></h2>
+    <h2 class="font-effect-shadow-multiple">Python для финансовых вычислений <span class="h4 subheader">Обновлено: июль 2023.</span></h2>
     <article class="grid-container">
       <div>Содержание</div>
       <ul>
@@ -42,8 +46,8 @@
         <li> <a href="#competitions">Соревнования</a></li>
         <li> <a href="#video">Видео</a></li>
         <li> <a href="#books">Книги</a></li>
-        <li> <a href="#notations">Обозначения</a></li>
         <li> <a href="#articles2">Статьи для детального изучения</a></li>
+        <li> <a href="#notations">Обозначения</a></li>
       </ul>
       <h3 id="general_issues">Общие вопросы</h3>
       <div>Для финансовых вычислений на питоне я использую пакет <span class="flag_en">&nbsp;</span><a href="https://www.anaconda.com/products/individual" target="_blank"><i class="fas fa-external-link-alt">&nbsp;</i>Anaconda&nbsp;</a>для питона версии 3</div>
@@ -64,16 +68,72 @@
         </li>
         <li>Работа с <b>QuantConnect</b>
           <ol>
-            <li> <span class="flag_ru">&nbsp;</span><a href="quantconnect_Understanding_Time.html"> <i class="far fa-eye">&nbsp;</i></a>Понимание работы со временем.</li>
-            <li> <span class="flag_ru">&nbsp;</span><a href="quantconnect_Security_Identifiers.html"> <i class="far fa-eye">&nbsp;</i></a>Идентификаторы инструментов.</li>
-            <li> <span class="flag_ru">&nbsp;</span><a href="quantconnect_Buy_and_Hold.html"> <i class="far fa-eye">&nbsp;</i></a>Стратегия "Купи и держи".</li>
-            <li> <span class="flag_ru">&nbsp;</span><a href="quantconnect_Buy_and_Hold_with_TrailingStop.html"> <i class="far fa-eye">&nbsp; </i></a>Стратегия "Купи и держи" со скользящим стопом.</li>
+            <!-- - lang - ["ru", "en"]-->
+            <!-- - url - str ссылка-->
+            <!-- - link_text - str текст ссылки-->
+            <!-- - descriptions - str текст описания-->
+            <!-- - tags-->
+            <li><span class= 'flag_ru'></span>&nbsp;
+<a href = quantconnect_Understanding_Time.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Понимание работы со временем.&nbsp;
+            </li>
+            <!-- - lang - ["ru", "en"]-->
+            <!-- - url - str ссылка-->
+            <!-- - link_text - str текст ссылки-->
+            <!-- - descriptions - str текст описания-->
+            <!-- - tags-->
+            <li><span class= 'flag_ru'></span>&nbsp;
+<a href = quantconnect_Security_Identifiers.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Идентификаторы инструментов.&nbsp;
+            </li>
+            <!-- - lang - ["ru", "en"]-->
+            <!-- - url - str ссылка-->
+            <!-- - link_text - str текст ссылки-->
+            <!-- - descriptions - str текст описания-->
+            <!-- - tags-->
+            <li><span class= 'flag_ru'></span>&nbsp;
+<a href = quantconnect_Buy_and_Hold.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Стратегия 'Купи и держи'.&nbsp;
+            </li>
+            <!-- - lang - ["ru", "en"]-->
+            <!-- - url - str ссылка-->
+            <!-- - link_text - str текст ссылки-->
+            <!-- - descriptions - str текст описания-->
+            <!-- - tags-->
+            <li><span class= 'flag_ru'></span>&nbsp;
+<a href = quantconnect_Buy_and_Hold_with_TrailingStop.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Стратегия 'Купи и держи' со скользящим стопом.&nbsp;
+            </li>
           </ol>
         </li>
-        <li><span class="flag_ru">&nbsp;</span><a href="python_backtesting_bt.html"> <i class="far fa-eye">&nbsp;</i>Работа с библиотекой BT.</a></li>
-        <li><span class="flag_ru">&nbsp;</span><a href="../pandas/pandas_1.html"> <i class="far fa-eye">&nbsp;</i>Работа с Pandas</a></li>
-        <li><span class="flag_ru">&nbsp;</span><a href="pandas_index.html"> <i class="far fa-eye">&nbsp;</i>Работа с Pandas еще</a></li>
-        <li><span class="flag_ru">&nbsp;</span><a href="numpy_index.html"> <i class="far fa-eye">&nbsp;</i>Работа с NumPy</a></li>
+        <!-- - lang - ["ru", "en"]-->
+        <!-- - url - str ссылка-->
+        <!-- - link_text - str текст ссылки-->
+        <!-- - descriptions - str текст описания-->
+        <!-- - tags-->
+        <li><span class= 'flag_ru'></span>&nbsp;
+<a href = python_backtesting_bt.html target="_blank">&nbsp;Пример кода&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Работа с библиотекой BT.&nbsp;
+        </li>
+        <!-- - lang - ["ru", "en"]-->
+        <!-- - url - str ссылка-->
+        <!-- - link_text - str текст ссылки-->
+        <!-- - descriptions - str текст описания-->
+        <!-- - tags-->
+        <li><span class= 'flag_ru'></span>&nbsp;
+<a href = ../pandas/pandas_1.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Работа с Pandas&nbsp;
+        </li>
+        <!-- - lang - ["ru", "en"]-->
+        <!-- - url - str ссылка-->
+        <!-- - link_text - str текст ссылки-->
+        <!-- - descriptions - str текст описания-->
+        <!-- - tags-->
+        <li><span class= 'flag_ru'></span>&nbsp;
+<a href = pandas_index.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Работа с Pandas еще&nbsp;
+        </li>
+        <!-- - lang - ["ru", "en"]-->
+        <!-- - url - str ссылка-->
+        <!-- - link_text - str текст ссылки-->
+        <!-- - descriptions - str текст описания-->
+        <!-- - tags-->
+        <li><span class= 'flag_ru'></span>&nbsp;
+<a href = numpy_index.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Работа с NumPy&nbsp;
+        </li>
       </ol>
       <h3 id="ts_issues">Анализ временных рядов</h3>
       <ol>

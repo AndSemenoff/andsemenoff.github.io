@@ -1,6 +1,18 @@
 extends ../layouts/html_layout.jade
 //- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
 //- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
+
+mixin my_li(lang, url, link_text, descriptions, ...tags)
+	// - lang - ["ru", "en"]
+	// - url - str ссылка
+	// - link_text - str текст ссылки
+	// - descriptions - str текст описания
+	// - tags
+	li
+		<span class= 'flag_#{lang}'></span>&nbsp;
+		<a href = #{url} target="_blank">&nbsp;#{link_text}&nbsp;<i class='far fa-eye'></i></a>
+		|&nbsp;-&nbsp;#{descriptions}&nbsp;
+		
 mixin li_link(lang, github, autor, url, title_text, descriptions, ...tags)
 	// - lang - ["ru", "en"]
 	// - github - ["y", "n"] - ресурс на гитхабе?
@@ -25,7 +37,7 @@ block title
 	title= site_title + " Python для финансовых вычислений."
 
 block content
-	h2.text-center Python для финансовых вычислений 
+	h2.font-effect-shadow-multiple Python для финансовых вычислений 
 		span.h4.subheader Обновлено: июль 2023.
 	article.grid-container
 		div Содержание
@@ -49,10 +61,9 @@ block content
 			li 
 				a(href="#books") Книги
 			li 
-				a(href="#notations") Обозначения
-			li 
 				a(href="#articles2") Статьи для детального изучения
-				
+			li 
+				a(href="#notations") Обозначения
 			
 		h3(id ="general_issues") Общие вопросы
 		div Для финансовых вычислений на питоне я использую пакет 
@@ -136,46 +147,14 @@ block content
 						| Сохраняем и загружем на диск данные по акциям SP500 в формате parquet.
 			li Работа с <b>QuantConnect</b>
 				ol
-					li 
-						span.flag_ru &nbsp;
-						a(href="quantconnect_Understanding_Time.html") 
-							i.far.fa-eye &nbsp;
-						| Понимание работы со временем.
-					li 
-						span.flag_ru &nbsp;
-						a(href="quantconnect_Security_Identifiers.html") 
-							i.far.fa-eye &nbsp;
-						| Идентификаторы инструментов.
-					li 
-						span.flag_ru &nbsp;
-						a(href="quantconnect_Buy_and_Hold.html") 
-							i.far.fa-eye &nbsp;
-						| Стратегия "Купи и держи".
-					li 
-						span.flag_ru &nbsp;
-						a(href="quantconnect_Buy_and_Hold_with_TrailingStop.html") 
-							i.far.fa-eye &nbsp; 
-						| Стратегия "Купи и держи" со скользящим стопом.
-			li
-				span.flag_ru &nbsp;
-				a(href="python_backtesting_bt.html") 
-					i.far.fa-eye &nbsp;
-					| Работа с библиотекой BT.
-			li
-				span.flag_ru &nbsp;
-				a(href="../pandas/pandas_1.html") 
-					i.far.fa-eye &nbsp;
-					| Работа с Pandas
-			li
-				span.flag_ru &nbsp;
-				a(href="pandas_index.html") 
-					i.far.fa-eye &nbsp;
-					| Работа с Pandas еще
-			li
-				span.flag_ru &nbsp;
-				a(href="numpy_index.html") 
-					i.far.fa-eye &nbsp;
-					| Работа с NumPy
+					+my_li("ru", "quantconnect_Understanding_Time.html", "", "Понимание работы со временем.")
+					+my_li("ru", "quantconnect_Security_Identifiers.html", "", "Идентификаторы инструментов.")
+					+my_li("ru", "quantconnect_Buy_and_Hold.html", "", "Стратегия 'Купи и держи'.")
+					+my_li("ru", "quantconnect_Buy_and_Hold_with_TrailingStop.html", "", "Стратегия 'Купи и держи' со скользящим стопом.")
+			+my_li("ru", "python_backtesting_bt.html", "Пример кода", "Работа с библиотекой BT.", "")
+			+my_li("ru", "../pandas/pandas_1.html", "", "Работа с Pandas", "")
+			+my_li("ru", "pandas_index.html", "", "Работа с Pandas еще", "")
+			+my_li("ru", "numpy_index.html", "", "Работа с NumPy", "")
 					
 		include sites_ts_issues.include.pug
 				

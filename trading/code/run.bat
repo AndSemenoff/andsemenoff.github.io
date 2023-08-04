@@ -1,0 +1,2 @@
+C:\Python38\python.exe trailing_stop_limit_order_example_tws.py
+pause
