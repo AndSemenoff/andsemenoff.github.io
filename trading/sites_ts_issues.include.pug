@@ -1,60 +1,19 @@
+// main file: financial_python_1.pug
+
 h3(id ="ts_issues") Анализ временных рядов
 ol
-	li 
-		span.flag_ru &nbsp;
-		a(href="time_series_trend_decomposition.html" target="_blank") 
-			i.far.fa-eye &nbsp;
-			| Пример. 
-		| Выделение тренда.
-	li 
-		span.flag_ru &nbsp;
-		a(href="https://quantviews.github.io/Financial_Markets4/" target="_blank") 
-			i.fas.fa-external-link-alt &nbsp;
-			| Курс. 
-		| ВШЭ.
-	li 
-		span.flag_ru &nbsp;
-		a(href="time_series_ADF_KPSS.html" target="_blank") 
-			i.far.fa-eye &nbsp;
-			| Пример. 
-		| Расширенный Дикки-Фулер тест и тест Квятковского-Филлипса-Шмидта-Шина.
-	li 
-		span.flag_en &nbsp;
-		a(href="http://www.fanaee.com/") 
-			i.fas.fa-external-link-alt &nbsp;
-		| Hadi Fanaee-T.
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/ChadFulton/tsa-notebooks/tree/master") 
-			i.fas.fa-external-link-alt &nbsp;
-		| Chad Fulton. Notebooks - Time Series Analysis
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/jpmorganchase/python-training/tree/main") 
-			i.fas.fa-external-link-alt &nbsp;
-		| JPmorgan Chase. Notebooks tutorial for clients 
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/LechGrzelak/Computational-Finance-Course/tree/main") 
-			i.fas.fa-external-link-alt &nbsp;
-		| LechGrzelak. Computational Finance Course
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/PacktPublishing/Python-for-Finance-Cookbook") 
-			i.fas.fa-external-link-alt &nbsp;
-		| Python For Finance Cookbook - Code Repository
-	li https://macroeconomics.github.io/
-	li 
-		span.flag_ru &nbsp;
-		www.dmitrymakarov.ru &nbsp;
-		a(href="https://www.dmitrymakarov.ru/intro/time-series-20/") 
-			i.fas.fa-external-link-alt &nbsp;
-		| Дмитрий Макаров. Урок 20. Временные ряды.
-	li Библиотеки python
+	+mli("ru","my", "time_series_trend_decomposition.html", "Пример.", "Выделение тренда.", "")
+	+mli("ru","my", "time_series_ADF_KPSS.html", "Пример.", "Расширенный Дикки-Фулер тест и тест Квятковского-Филлипса-Шмидта-Шина.", "")
+	+mli("ru","out", "https://quantviews.github.io/Financial_Markets4/", "Курс.", "ВШЭ.", "github")
+	+mli("en","out", "http://www.fanaee.com/", "Hadi Fanaee-T.", "Хорошие примеры с видео объяснениями.", "")
+	+mli("en","out", "https://github.com/ChadFulton/tsa-notebooks/tree/master", "Notebooks.", "Chad Fulton. Notebooks - Time Series Analysis.", "github")
+	+mli("en","out", "https://github.com/jpmorganchase/python-training/tree/main", "JPmorgan Chase", "JPmorgan Chase. Notebooks tutorial for clients.", "github")
+	+mli("en","out", "https://github.com/LechGrzelak/Computational-Finance-Course/tree/main", "LechGrzelak.", " Computational Finance Course", "github")
+	+mli("en","out", "https://github.com/PacktPublishing/Python-for-Finance-Cookbook", "PacktPublishing", "Python For Finance Cookbook - Code Repository.", "github")
+	+mli("en","out", "https://macroeconomics.github.io/", "macroeconomics", "Macroeconomics.", "github")
+	+mli("ru","out", "https://www.dmitrymakarov.ru/intro/time-series-20/", "dmitrymakarov.ru", "Дмитрий Макаров. Урок 20. Временные ряды.", "")
+
+	li Библиотеки python для работы с временными рядами
 		ol 
 			li
 				span.flag_en &nbsp;
@@ -74,7 +33,7 @@ ol
 					i.fas.fa-external-link-alt &nbsp;
 				| Есть уроки и примеры.
 			li Nixtla 
-				img(src="../images/logo_mid_nixtla.png" width="20px" alt="nixtla Icon")
+				img(src="../images/logo_mid_nixtla.png" width="20" alt="nixtla Icon")
 				ol
 					li
 						span.flag_en &nbsp;
@@ -182,26 +141,11 @@ ol
 			li 
 	li Видео
 		ol 
-			li
-				span.flag_ru &nbsp;
-				a(href="https://www.youtube.com/watch?v=VxWHLEFgXnE" target="_blank") ETNA 
-					i.fas.fa-external-link-alt &nbsp;
-				| Андрей Алексеев. ETNA Time Series Library: удобное прогнозирование временных рядов
-			li
-				span.flag_ru &nbsp;
-				a(href="https://www.youtube.com/watch?v=Rmh6b96u6UU" target="_blank") Лекция 2019 года. 
-					i.fas.fa-external-link-alt &nbsp;
-				| К.В. Воронцов. Машинное обучение. Прогнозирование временных рядов. Школа анализа данных, Яндекс.
-			li
-				span.flag_en &nbsp;
-				a(href="https://www.youtube.com/watch?v=ODspi8-uWgo" target="_blank") sktime введение. 
-					i.fas.fa-external-link-alt &nbsp;
-				| Markus Löning. A Unified Toolbox for ML with Time Series | PyData Global 2021
-			li
-				span.flag_en &nbsp;
-				a(href="https://www.youtube.com/watch?v=V2qAHYmDqpY" target="_blank") Backtesting : Time Series Talk 
-					i.fas.fa-external-link-alt &nbsp;
-				| Код есть
+			+mli("ru","out", "https://www.youtube.com/watch?v=VxWHLEFgXnE", "ETNA", "Андрей Алексеев. ETNA Time Series Library: удобное прогнозирование временных рядов.", "youtube")
+			+mli("ru","out", "https://www.youtube.com/watch?v=Rmh6b96u6UU", "Лекция 2019 года.", "К.В. Воронцов. Машинное обучение. Прогнозирование временных рядов. Школа анализа данных, Яндекс.", "youtube")
+			+mli("en","out", "https://www.youtube.com/watch?v=ODspi8-uWgo", "sktime введение", "Markus Löning. A Unified Toolbox for ML with Time Series | PyData Global 2021.", "youtube")
+			+mli("en","out", "https://www.youtube.com/watch?v=V2qAHYmDqpY", "Backtesting : Time Series Talk", "Код есть.", "youtube")
+
 	li Статьи
 		ol
 			li
@@ -209,37 +153,12 @@ ol
 				a(href="https://pythonpip.ru/examples/model-arima-v-python" target="_blank") статья. 
 					i.fas.fa-external-link-alt &nbsp;
 				| Модель ARIMA в Python для прогнозирования временных рядов
-			li
-				span.flag_ru &nbsp;
-				evogeek.ru &nbsp;
-				a(href="https://evogeek.ru/articles/32833/" target="_blank") статья. 
-					i.fas.fa-external-link-alt &nbsp;
-				| Как построить модель SARIMA на Python
-			li
-				span.flag_en &nbsp;
-				machinelearningmastery.com &nbsp;
-				a(href="https://machinelearningmastery.com/start-here/#timeseries" target="_blank") статьи. 
-					i.fas.fa-external-link-alt &nbsp;
-				| Много статей
-			li
-				span.flag_ru &nbsp;
-				questu.ru &nbsp;
-				a(href="https://questu.ru/articles/462420/" target="_blank") статья. 
-					i.fas.fa-external-link-alt &nbsp;
-				| Анализ временных рядов для финансовых данных VI - модель GARCH и прогнозирование доходности SPX
-				a(href="https://github.com/Auquan/Tutorials" target="_blank") 4 урока ipynb.
-			li
-				span.flag_ru &nbsp;
-				digitrain.ru &nbsp;
-				a(href="https://digitrain.ru/articles/166878/" target="_blank") статья. 
-					i.fas.fa-external-link-alt &nbsp;
-				| Статистическое прогнозирование данных временных рядов, часть 4: Прогнозирование волатильности с использованием GARCH
-			li
-				span.flag_en &nbsp;
-				tomaugspurger.net &nbsp;
-				a(href="https://tomaugspurger.net/posts/modern-7-timeseries/" target="_blank") статья. 
-					i.fas.fa-external-link-alt &nbsp;
-				| Modern Pandas (Part 7): Timeseries
+			+mli("ru","out", "https://evogeek.ru/articles/32833/", "evogeek.ru", "Как построить модель SARIMA на Python", "")
+			+mli("en","out", "https://machinelearningmastery.com/start-here/#timeseries", "machinelearningmastery.com", "Много статей", "")
+			+mli("ru","out", "https://questu.ru/articles/462420/", "questu.ru", "Анализ временных рядов для финансовых данных VI - модель GARCH и прогнозирование доходности SPX", "")
+			+mli("en","out", "https://github.com/Auquan/Tutorials", "Auquan", "4 урока ipynb.", "github")
+			+mli("ru","out", "https://digitrain.ru/articles/166878/", "digitrain.ru", "Статистическое прогнозирование данных временных рядов, часть 4: Прогнозирование волатильности с использованием GARCH", "")
+			+mli("en","out", "https://tomaugspurger.net/posts/modern-7-timeseries/", "tomaugspurger.net", "Modern Pandas (Part 7): Timeseries", "")
 			li <b>Kaggle</b>
 				ol
 					li https://www.kaggle.com/thebrownviking20/everything-you-can-do-with-a-time-series

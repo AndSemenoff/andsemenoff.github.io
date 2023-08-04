@@ -2,68 +2,26 @@ extends ../layouts/html_layout.jade
 //- http://lms.hse.ru/ap_service.php?getwork=1&guid=30F1EEAE-C018-4B82-8DDE-CD2DB409D556 Анализ стабильности портфеля ценных бумаг
 //- https://softalgotrade.com/calculation-statistics/ Статистические параметры для алготрейдинга
 
-mixin my_li(lang, url, link_text, descriptions, ...tags)
-	// - lang - ["ru", "en"]
-	// - url - str ссылка
-	// - link_text - str текст ссылки
-	// - descriptions - str текст описания
-	// - tags
-	li
-		<span class= 'flag_#{lang}'></span>&nbsp;
-		<a href = #{url} target="_blank">&nbsp;#{link_text}&nbsp;<i class='far fa-eye'></i></a>
-		|&nbsp;-&nbsp;#{descriptions}&nbsp;
-		
-mixin li_link(lang, github, autor, url, title_text, descriptions, ...tags)
-	// - lang - ["ru", "en"]
-	// - github - ["y", "n"] - ресурс на гитхабе?
-	// - url - str ссылка
-	// - title_text - str текст ссылки
-	// - descriptions - str текст описания
-	- var gh = github
-	li
-		<span class= 'flag_#{lang}'></span>&nbsp;
-		if gh == "y"
-			i.fab.fa-github
-			|&nbsp;#{autor}&nbsp;
-		else
-			|&nbsp;#{github}&nbsp;
-			|&nbsp;#{autor}&nbsp;
-		<a href = #{url} target="_blank">&nbsp;#{title_text}&nbsp;<i class='fas fa-external-link-alt'></i></a>
-		|&nbsp;-&nbsp;#{descriptions}&nbsp;
-		each tag in tags
-			if tag = "heartbeat"
-				i.fas.fa-heartbeat &nbsp;
 block title
 	title= site_title + " Python для финансовых вычислений."
 
 block content
 	h2.font-effect-shadow-multiple Python для финансовых вычислений 
-		span.h4.subheader Обновлено: июль 2023.
+		span.h4.subheader Обновлено: август 2023.
 	article.grid-container
 		div Содержание
 		ul
-			li 
-				a(href="#general_issues") Общие вопросы
-			li 
-				a(href="#ts_issues") Анализ временных рядов
-			li 
-				a(href="#Sites") Сайты
-			li 
-				a(href="#LSites") Личные сайты
-			li 
-				a(href="#articles") Статьи [Финансовые вычисления + python]
-			li 
-				a(href="#libs") Финансовые библиотеки для питона
-			li 
-				a(href="#competitions") Соревнования
-			li 
-				a(href="#video") Видео
-			li 
-				a(href="#books") Книги
-			li 
-				a(href="#articles2") Статьи для детального изучения
-			li 
-				a(href="#notations") Обозначения
+			li: a(href="#general_issues") Общие вопросы
+			li: a(href="#Sites") Сайты
+			li: a(href="#LSites") Личные сайты
+			li: a(href="#ts_issues") Анализ временных рядов
+			li: a(href="#articles") Статьи [Финансовые вычисления + python]
+			li: a(href="#libs") Финансовые библиотеки для питона
+			li: a(href="#competitions") Соревнования
+			li: a(href="#video") Видео
+			li: a(href="#books") Книги
+			li: a(href="#articles2") Статьи для детального изучения
+			li: a(href="#notations") Обозначения
 			
 		h3(id ="general_issues") Общие вопросы
 		div Для финансовых вычислений на питоне я использую пакет 
@@ -88,10 +46,10 @@ block content
 					| Пример. 
 				| Линейный график курса рубля | 
 				a(href="https://nbviewer.jupyter.org/github/AndSemenoff/my-first-binder/tree/main/financial_example.ipynb" target="_blank")
-					img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg") 
+					img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" alt="nbviewer badge") 
 				|&nbsp;|&nbsp;
 				a(href="https://mybinder.org/v2/gh/AndSemenoff/my-first-binder/HEAD?labpath=financial_example.ipynb" target="_blank")
-					img(src="https://mybinder.org/badge_logo.svg")
+					img(src="https://mybinder.org/badge_logo.svg" alt="nbviewer logo")
 			li 
 				span.flag_ru &nbsp;
 				a(href="financial_python_example_2.html") 
@@ -110,10 +68,8 @@ block content
 					i.far.fa-eye &nbsp;
 					| Пример. 
 				| Получение данных с сайта EIA - независимого статистического агентства США. 
-				a(href="https://ru.wikipedia.org/wiki/Energy_Information_Administration" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-					i.fab.fa-wikipedia-w
-					WiKi.
+			+mli("ru", "out", "https://ru.wikipedia.org/wiki/Energy_Information_Administration", "wikipedia", "Energy Information Administration", "wikipedia")
+
 			li 
 				span.flag_ru &nbsp;
 				a(href="vix_main.html") 
@@ -128,55 +84,39 @@ block content
 							i.far.fa-eye &nbsp;
 						| Начало работы с библиотекой <b>yfinance</b>. | 
 						a(href="https://nbviewer.jupyter.org/github/AndSemenoff/my-first-binder/tree/main/start.ipynb" target="_blank")
-							img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg") 
+							img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" alt="nbviewer badge") 
 						|&nbsp;|&nbsp;
 						a(href="https://mybinder.org/v2/gh/AndSemenoff/my-first-binder/HEAD?labpath=start.ipynb" target="_blank")
-							img(src="https://mybinder.org/badge_logo.svg")
+							img(src="https://mybinder.org/badge_logo.svg" alt="nbviewer logo")
 					li
 						span.flag_ru &nbsp;
 						| Пример использования библиотеки <b>yfinance</b>, для построения графиков последней цены опционов Put и Call по акциям Microsoft. | 
 						a(href="https://nbviewer.jupyter.org/github/AndSemenoff/my-first-binder/tree/main/example_msft.ipynb" target="_blank")
-							img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg") 
+							img(src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg" alt="nbviewer badge") 
 						|&nbsp;|&nbsp;
 						a(href="https://mybinder.org/v2/gh/AndSemenoff/my-first-binder/HEAD?labpath=example_msft.ipynb" target="_blank")
-							img(src="https://mybinder.org/badge_logo.svg")
-					li 
-						span.flag_ru &nbsp;
-						a(href="yfinance_download_sp500.html") 
-							i.far.fa-eye &nbsp;
-						| Сохраняем и загружем на диск данные по акциям SP500 в формате parquet.
+							img(src="https://mybinder.org/badge_logo.svg" alt="nbviewer logo")
+					+mli("ru", "my", "yfinance_download_sp500.html", "", "Сохраняем и загружем на диск данные по акциям SP500 в формате parquet.", "")
+
 			li Работа с <b>QuantConnect</b>
 				ol
-					+my_li("ru", "quantconnect_Understanding_Time.html", "", "Понимание работы со временем.")
-					+my_li("ru", "quantconnect_Security_Identifiers.html", "", "Идентификаторы инструментов.")
-					+my_li("ru", "quantconnect_Buy_and_Hold.html", "", "Стратегия 'Купи и держи'.")
-					+my_li("ru", "quantconnect_Buy_and_Hold_with_TrailingStop.html", "", "Стратегия 'Купи и держи' со скользящим стопом.")
-			+my_li("ru", "python_backtesting_bt.html", "Пример кода", "Работа с библиотекой BT.", "")
-			+my_li("ru", "../pandas/pandas_1.html", "", "Работа с Pandas", "")
-			+my_li("ru", "pandas_index.html", "", "Работа с Pandas еще", "")
-			+my_li("ru", "numpy_index.html", "", "Работа с NumPy", "")
+					+mli("ru", "my", "quantconnect_Understanding_Time.html", "", "Понимание работы со временем.")
+					+mli("ru", "my", "quantconnect_Security_Identifiers.html", "", "Идентификаторы инструментов.")
+					+mli("ru", "my", "quantconnect_Buy_and_Hold.html", "", "Стратегия 'Купи и держи'.")
+					+mli("ru", "my", "quantconnect_Buy_and_Hold_with_TrailingStop.html", "", "Стратегия 'Купи и держи' со скользящим стопом.")
+			+mli("ru", "my", "python_backtesting_bt.html", "Пример кода", "Работа с библиотекой BT.", "")
+			+mli("ru", "my", "../pandas/pandas_1.html", "", "Работа с Pandas", "")
+			+mli("ru", "my", "pandas_index.html", "", "Работа с Pandas еще", "")
+			+mli("ru", "my", "numpy_index.html", "", "Работа с NumPy", "")
 					
-		include sites_ts_issues.include.pug
-				
 		include sites_link.include.pug
+		include sites_ts_issues.include.pug
 
 		h3(id="articles") Статьи [Финансовые вычисления + python]
 		ol
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/dedwards25/Python_Option_Pricing" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-				| Библиотека Python_Option_Pricing
-				| с вычислением цены опционов. Много отличной теории. 
-				i.fas.fa-book-open &nbsp;
-			li 
-				span.flag_en &nbsp;
-				| QuantEcon.org&nbsp;
-				a(href="https://intro.quantecon.org/monte_carlo.html" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-					| Лекция 
-				| Monte Carlo and Option Pricing.
+			+mli("en","out", "https://github.com/dedwards25/Python_Option_Pricing", "dedwards25", "Библиотека Python_Option_Pricing. C вычислением цены опционов. Много отличной теории.", "github", "book")
+			+mli("en","out", "https://intro.quantecon.org/monte_carlo.html", "Лекция", "Monte Carlo and Option Pricing.", "")
+
 			li 
 				span.flag_en &nbsp;
 				| QuantConnect.com&nbsp;
@@ -296,47 +236,19 @@ block content
 					i.fas.fa-external-link-alt &nbsp;
 				| Stock Market Analysis Project. 
 				a(href="https://github.com/theoneandonlywoj/Courses/blob/master/17-09-17-Python-for-Financial-Analysis-and-Algorithmic-Trading/07-Stock-Market-Analysis-Capstone-Project/Stock%20Market%20Analysis%20Project.ipynb" target="_blank") alt ipynb-
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				| LongOnly&nbsp;
-				a(href="https://github.com/LongOnly/Quantitative-Notebooks" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-				| Quantitative-Notebooks. 
-			li 
-				span.flag_ru &nbsp;
-				| www.mbureau.ru&nbsp;
-				a(href="https://www.mbureau.ru/articles/dissertaciya-model-prognozirovaniya-vremennyh-ryadov-glava-1" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-				| Диссертация «Модель прогнозирования временных рядов по выборке максимального подобия».
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/letsgoexploring/computational-macroeconomics/tree/master" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-				| Лекции по макроэкономике в ipnb формате
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/stnavdeev/econometrics" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-				| Курс Эконометрии. Econometrics at the Tinbergen Institute, Amsterdam
-			li 
-				span.flag_en &nbsp;
-				a(href="https://newtechaudit.ru/arima-v-statsmodels/" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-				| Регрессия и прогнозирование ARIMA в statsmodels 
-				a(href="https://github.com/LeoLioLieLion/arima-test" target="_blank")
-					i.fas.fa-external-link-alt &nbsp;
-					i.fab.fa-github &nbsp;
-			li 
-				span.flag_en &nbsp;
-				i.fab.fa-github &nbsp;
-				a(href="https://github.com/dbrojas/optlib" target="_blank") Optlib
-					i.fas.fa-external-link-alt &nbsp;
-				| Библиотека по опционам
-
-		ol Модели ценообразования опционов
+ 
+			+mli("en","out", "https://github.com/LongOnly/Quantitative-Notebooks", "LongOnly", "Quantitative-Notebooks.", "github")
+			+mli("ru","out", "https://www.mbureau.ru/articles/dissertaciya-model-prognozirovaniya-vremennyh-ryadov-glava-1", "www.mbureau.ru", "Диссертация «Модель прогнозирования временных рядов по выборке максимального подобия».", "")
+			+mli("en","out", "https://github.com/letsgoexploring/computational-macroeconomics/tree/master", "letsgoexploring", "Лекции по макроэкономике в ipynb формате.", "github")
+			+mli("en","out", "https://github.com/stnavdeev/econometrics", "stnavdeev", "Курс Эконометрии. Econometrics at the Tinbergen Institute, Amsterdam.", "github")
+			+mli("ru","out", "https://newtechaudit.ru/arima-v-statsmodels/", "newtechaudit.ru", "Регрессия и прогнозирование ARIMA в statsmodels.", "")
+			+mli("en","out", "https://github.com/LeoLioLieLion/arima-test", "", "arima-test.", "github")
+			+mli("en","out", "https://github.com/dbrojas/optlib", "Optlib", "Библиотека по опционам.", "github")
+			+mli("en","out", "https://kitchingroup.cheme.cmu.edu/pycse/pycse.html", "pycse", "Сборник статей по научным вычислениям на python.", "")
+			+mli("en","out", "https://onlyvix.blogspot.com/", "blog", "Volatility Futures & Options.", "")
+				
+		h3 Модели ценообразования опционов
+		ol 
 			li Биноминальная модель ценообразования опциона
 			li Биноминальная модель Кокса-Росса-Рубинштейна
 			li Модель ценообразования опциона Гармена-Кольхагена

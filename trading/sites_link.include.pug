@@ -1,177 +1,44 @@
 h3(id="Sites") Сайты
 ol
-	li
-		span.flag_en &nbsp;
-		i.fas.fa-heartbeat &nbsp;
-		i.fas.fa-book-open &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://www.ml-quant.com/" alt="Quantatrisk Icon") 
-		| &nbsp;
-		a(href="https://www.ml-quant.com/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| ML-Quant
-	li
-		span.flag_en &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://quantatrisk.com/" alt="Quantatrisk Icon") 
-		| &nbsp;
-		a(href="http://www.quantatrisk.com/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| Quant at Risk
-	li
-		span.flag_en &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://pyquantnews.com/") 
-		| &nbsp;
-		a(href="https://pyquantnews.com/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| pyQuantNews
-	li
-		span.flag_en &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://quantocracy.com/" alt="Quantocracy Icon") 
-		| &nbsp;
-		a(href="https://quantocracy.com/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| quantocracy 
-		| This is a curated mashup of quantitative trading links
-	li
-		span.flag_en &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://quantinsti.com/" alt="Quantinsti Icon") 
-		| &nbsp;
-		a(href="https://www.quantinsti.com/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| quantinsti
-	li 
-		span.flag_en &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://quantecon.org" alt="QuantEcon Icon") 
-		| &nbsp;
-		a(href="https://quantecon.org/projects/" target="_blank") QuantEcon 
-			i.fas.fa-external-link-alt &nbsp;
-		| Крутые лекции с кодом.
-	li
-		span.flag_en &nbsp;
-		a(href="http://quant.stackexchange.com" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| quant.stackexchange.com
-	li
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/freqtrade/freqtrade/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| freqtrade 
-		| бот для торговли на криптоплащадках
-		a(href="https://www.freqtrade.io/en/stable/" target="_blank") 
-			i.fas.fa-external-link-alt &nbsp;
-			| freqtrade.io
-	li
-		span.flag_en &nbsp;
-		img(src="http://www.google.com/s2/favicons?domain=https://learndatasci.com/" alt="Learndatasci Icon") 
-		| &nbsp;
-		| learndatasci.com 
-		a(href="https://www.learndatasci.com/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| learndatasci
-	li
-		span.flag_en &nbsp;
-		| newmarkrisk.com 
-		img(src="http://www.google.com/s2/favicons?domain=https://newmarkrisk.com/" alt="Newmarkrisk Icon") 
-		| &nbsp;
-		a(href="https://newmarkrisk.com/blog" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-			| Статьи по опционным стратегиям
+	+mli("en","out", "https://quantocracy.com/", "quantocracy", "This is a curated mashup of quantitative trading links", "icon", "book", "news")
+	+mli("en","out", "https://www.ml-quant.com/", "ML-Quant", "Агрегатор. Стал платным.", "icon")
+	+mli("en","out", "https://www.quantatrisk.com/", "quantatrisk.com", "Quant at Risk", "icon")
+	+mli("en","out", "https://pyquantnews.com/", "pyQuantNews", "Все стало платным и закрытым", "icon")
+	+mli("en","out", "https://www.quantinsti.com/", "quantinsti.com", "quantinsti", "icon")
+	+mli("en","out", "https://quantecon.org", "quantecon.org", "Крутые лекции с кодом.", "icon")
+	+mli("en","out", "https://notes.quantecon.org/", "notes.quantecon.org", "Заметки на экономические темы в формате python notebook", "")
+	+mli("en","out", "https://quant.stackexchange.com", "stackexchange.com", "Ответы на вопросы от сообщества stackexchange.", "icon")
+	+mli("en","out", "https://www.learndatasci.com/", "learndatasci.com", "Статьи по научным рассчетам", "icon")
+	+mli("en","out", "https://newmarkrisk.com/blog", "newmarkrisk.com", "Статьи по опционным стратегиям. Больше рекламы.", "icon")
+	+mli("en","out", "https://github.com/freqtrade/freqtrade/", "freqtrade.io", "бот для торговли на криптоплащадках", "icon")
+
+
 	li
 		span.flag_en &nbsp;
 		| не обновлялось с 2016 
-		a(href="http://www.turingfinance.com" target="_blank") TuringFinance 
+		a(href="https://www.turingfinance.com" target="_blank") TuringFinance 
 		| Супер интересный сайт. И есть супер статья 
-		a(href="http://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/" target="_blank") Стохастические процессы в финансах на питоне. 
+		a(href="https://www.turingfinance.com/random-walks-down-wall-street-stochastic-processes-in-python/" target="_blank") Стохастические процессы в финансах на питоне. 
 		| и еще 
-		a(href="http://turingfinance.com/interactive-stochastic-processes/" target="_blank") стохастические процессы в интерактиве 
+		a(href="https://turingfinance.com/interactive-stochastic-processes/" target="_blank") стохастические процессы в интерактиве 
 		| И сам сайт заслуживает внимания. 
 		a(href="https://github.com/StuartGordonReid" target="_blank") Github аккаунт автора этого сайта
-	li
-		span.label.success устарело
-		a(href="http://venjin1.com" target="_blank") Онлайн инструментарий BSM, Volatility etc.
-	li
-		span.label.success устарело
-		a(href="https://mktstk.wordpress.com/" target="_blank") Блог по визуализации финансовых данных
 
-	li 
-		span.flag_en &nbsp;
-		a(href="https://econ-ark.org/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-		| econ-ark.org
-	li 
-		span.flag_en &nbsp;
-		a(href="https://open-econ.org/" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-		| open-econ.org
-	li 
-		span.flag_en &nbsp;
-		a(href="https://project-awesome.org/antontarasenko/awesome-economics" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-		| awesome-economics
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/alan-turing-institute/the-turing-way" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-		| the-turing-way
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/hackingthemarkets" target="_blank")
-			i.fas.fa-external-link-alt &nbsp;
-		| hackingthemarkets. Маленькие учебные проекты с кодом
-	li 
-		span.flag_en &nbsp;
-		a(href="https://pythoninvest.com/" target="_blank") pythoninvest.com
-			i.fas.fa-external-link-alt &nbsp;
-		| Не очень информативный. Но пару идей есть.
-	li 
-		span.flag_en &nbsp;
-		i.fab.fa-github &nbsp;
-		a(href="https://github.com/dkgaraujo/OpenSourcedMacroModels" target="_blank") OpenSourcedMacroModels
-			i.fas.fa-external-link-alt &nbsp;
-		| Макро модели.
+	+mli("en","out", "https://econ-ark.org/", "econ-ark.org", "open-source toolkits", "icon")
+	+mli("en","out", "https://open-econ.org/", "open-econ.org", "Open Source Economics", "icon")
+	+mli("en","out", "https://project-awesome.org/antontarasenko/awesome-economics", "awesome-economics", "Curated list of awesome lists", "")
+	+mli("en","out", "https://github.com/alan-turing-institute/the-turing-way", "Alan Turing institute", "The turing way", "github")
+	+mli("en","out", "https://github.com/hackingthemarkets", "hackingthemarkets", "Маленькие учебные проекты с кодом", "github")
+	+mli("en","out", "https://pythoninvest.com/", "pythoninvest.com", " Не очень информативный. Но пару идей есть.", "")
+	+mli("en","out", "https://github.com/dkgaraujo/OpenSourcedMacroModels", "OpenSourcedMacroModels", "Макро модели.", "github")
 
 h3(id="LSites") Личные сайты
 ol
-	li 
-		span.flag_en &nbsp;
-		a(href="https://gregorboehl.com/" target="_blank") Gregor Boehl 
-			i.fas.fa-external-link-alt &nbsp;
-		| Macroeconomist. Статьи. Ресурсы. Ведет список экономических парадоксов(головоломок)
-	li 
-		span.flag_en &nbsp;
-		a(href="http://www.fanaee.com/") Hadi Fanaee-T. 
-			i.fas.fa-external-link-alt &nbsp;
-		| В лекциях просто объсняет сложные веши. Дает код на питоне.
-	li 
-		span.flag_ru &nbsp;
-		a(href="https://www.helenkapatsa.ru/author/helenkapatsa/") Елена Капаца 
-			i.fas.fa-external-link-alt &nbsp;
-		| Хорошие статьи.
-	li 
-		span.flag_en &nbsp;
-		a(href="https://lesniewski.us/index.html") Andrew Lesniewski 
-			i.fas.fa-external-link-alt &nbsp;
-		| Один из создателей модели SABR. Публикации. Слайды лекции
-	li 
-		span.flag_en &nbsp;
-		a(href="https://www.kevinsheppard.com/") Kevin Sheppard 
-			i.fas.fa-external-link-alt &nbsp;
-		| Один из создателей библиотеки Arch. Публикации. Слайды лекции
-	li 
-		span.flag_en &nbsp;
-		a(href="https://reasonabledeviations.com/") Robert Andrew Martin 
-			i.fas.fa-external-link-alt &nbsp;
-		| Один из создателей библиотеки PyPortfolioOpt. Крутые статьи по опционам, волатильности, вероятностям
-	li 
-		span.flag_en &nbsp;
-		a(href="https://bcgts.wordpress.com/") Dr Robin Reed 
-			i.fas.fa-external-link-alt &nbsp;
-		| Распределения
-	li 
-		span.flag_en &nbsp;
-		a(href="https://jeremypiger.com/") Jeremy Piger 
-			i.fas.fa-external-link-alt &nbsp;
-		| Professor of Economics at the University of Oregon
-	
+	+mli("en","out", "https://gregorboehl.com/", "Gregor Boehl", "Macroeconomist. Статьи. Ресурсы. Ведет список экономических парадоксов(головоломок)", "")
+	+mli("en","out", "https://www.fanaee.com/", "Hadi Fanaee-T", "В лекциях просто объсняет сложные веши. Дает код на питоне.", "")
+	+mli("ru","out", "https://www.helenkapatsa.ru/author/helenkapatsa/", "Елена Капаца", "Хорошие статьи.", "")
+	+mli("en","out", "https://lesniewski.us/index.html", "Andrew Lesniewski", "Один из создателей модели SABR. Публикации. Слайды лекции", "")
+	+mli("en","out", "https://www.kevinsheppard.com/", "Kevin Sheppard ", "Один из создателей библиотеки Arch. Публикации. Слайды лекции", "")
+	+mli("en","out", "https://reasonabledeviations.com/", "Robert Andrew Martin", "Один из создателей библиотеки PyPortfolioOpt. Крутые статьи по опционам, волатильности, вероятностям", "")
+	+mli("en","out", "https://bcgts.wordpress.com/", "Dr Robin Reed", "Распределения", "")
+	+mli("en","out", "https://jeremypiger.com/", "Jeremy Piger ", "Professor of Economics at the University of Oregon", "")

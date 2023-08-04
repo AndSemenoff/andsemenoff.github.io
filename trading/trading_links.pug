@@ -4,19 +4,19 @@ block title
 	title= site_title + " Инвестирование"
 
 block content
-	h2.text-center Ссылки по теме: "Инвестирование и спекуляции"
-		span.h4.subheader Обновлено: февраль 2022.
+	h2.font-effect-shadow-multiple Ссылки по теме: "Инвестирование и спекуляции"
+		span.h4.subheader Обновлено: август 2023.
 	article.grid-container
 		h3 GitHub
 		ol
-			li: a(href="https://github.com/bloomberg") Bloomberg Finance L.P.
+			+mli("en","out", "https://github.com/bloomberg", "", "Bloomberg Finance L.P.", "")
 
 		h3 Сайты
 		ol
 			li 
 				span.flag_en &nbsp;
 				| yardeni.com 
-				img(src="http://www.google.com/s2/favicons?domain=https://www.yardeni.com/" alt="Yardeni Research icon") 
+				img(src="https://www.google.com/s2/favicons?domain=https://www.yardeni.com/" alt="Yardeni Research icon") 
 				| &nbsp;
 				a(href="https://www.yardeni.com/") 
 					i.fas.fa-external-link-alt &nbsp;
@@ -24,7 +24,7 @@ block content
 			li 
 				span.flag_en &nbsp;
 				| fred.stlouisfed.org 
-				img(src="http://www.google.com/s2/favicons?domain=https://fred.stlouisfed.org/" alt="FRED data Icon") 
+				img(src="https://www.google.com/s2/favicons?domain=https://fred.stlouisfed.org/" alt="FRED data Icon") 
 				| &nbsp;
 				a(href="https://fred.stlouisfed.org/") 
 					i.fas.fa-external-link-alt &nbsp;
@@ -32,7 +32,7 @@ block content
 			li 
 				span.flag_en &nbsp;
 				| theocc.com 
-				img(src="http://www.google.com/s2/favicons?domain=https://www.theocc.com/" alt="OCC Icon") 
+				img(src="https://www.google.com/s2/favicons?domain=https://www.theocc.com/" alt="OCC Icon") 
 				| &nbsp;
 				a(href="https://www.theocc.com/") 
 					i.fas.fa-external-link-alt &nbsp;
@@ -40,65 +40,22 @@ block content
 			li 
 				span.flag_en &nbsp;
 				| optionseducation.org 
-				img(src="http://www.google.com/s2/favicons?domain=https://www.optionseducation.org/" alt="OptionsEducation Icon") 
+				img(src="https://www.google.com/s2/favicons?domain=https://www.optionseducation.org/" alt="OptionsEducation Icon") 
 				| &nbsp;
 				a(href="https://www.optionseducation.org/")
 					i.fas.fa-external-link-alt &nbsp;
 				| The Options Industry Council. Есть курсы по опционам.
-			li 
-				span.flag_en &nbsp;
-				| cmegroup.com 
-				a(href="https://www.cmegroup.com/education.html")
-					i.fas.fa-external-link-alt &nbsp;
-				| DEEPEN YOUR UNDERSTANDING OF THE FUTURES MARKET WITH CME INSTITUTE
-			li
-				span.flag_en &nbsp;
-				| cmegroup.com 
-				a(href="https://www.cmegroup.com/trading/cryptocurrency-indices/cf-bitcoin-reference-rate.html")
-					i.fas.fa-external-link-alt &nbsp;
-				| CME CF Bitcoin Real-Time Index
-			li 
-				span.flag_en &nbsp;
-				| quantocracy.com
-				a(href="http://quantocracy.com/") 
-					i.fas.fa-external-link-alt &nbsp;
-				| - агрегатор информации
-			li: a(href="http://www.mathfinance.cn/") mathfinance
-			li
-				a(href="http://tradingwithpython.blogspot.ru/") tradingwithpython
-					i.fas.fa-external-link-alt &nbsp;
-			li
-				span.flag_en &nbsp;
-				| realoptions.org
-				a(href="http://www.realoptions.org/abstracts.html") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Сайт практической конференции, есть материалы докладов за много лет.
-			li
-				span.flag_en &nbsp;
-				| afajof.org
-				a(href="http://www.afajof.org/view/index.html") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Американская финансовая ассоциация (академическая).
-			li
-				span.flag_en &nbsp;
-				| nobelprize.org
-				a(href="http://nobelprize.org/economics/laureates/1990") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Сайт нобелевской премии.
-			li
-				span.flag_en &nbsp;
-				| sfu.ca
-				a(href="http://www.sfu.ca/~poitras/links.htm") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Сборник финансовых ссылок
-			li
-				span.flag_en &nbsp;
-				| tulipshare.com
-				a(href="https://tulipshare.com/") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Сервис объединения инвесторов для решения(постановки) социально значимых вопросов перед компаниями
-			li
-				a(href="http://www.margrabe.com/Links.html") Ссылки
+
+			+mli("en","out", "https://www.cmegroup.com/education.html", "cmegroup.com", "Обучение от CME", "")
+			+mli("en","out", "https://www.cmegroup.com/trading/cryptocurrency-indices/cf-bitcoin-reference-rate.html", "cmegroup.com", "CME CF Bitcoin Real-Time Index", "")
+			+mli("en","out", "https://quantocracy.com/", "quantocracy.com", "агрегатор информации", "news")
+			+mli("en","out", "https://onlyvix.blogspot.com/", "blog", "Volatility Futures & Options", "dollar")
+			+mli("en","out", "https://tradingwithpython.blogspot.com/", "blog", "tradingwithpython", "old")
+			+mli("en","out", "https://www.realoptions.org/abstracts.html", "realoptions.org", "Сайт практической конференции, есть материалы докладов за много лет.", "news")
+			+mli("en","out", "https://www.afajof.org", "afajof.org", "Американская финансовая ассоциация (академическая).", "")
+			+mli("en","out", "https://nobelprize.org", "nobelprize.org", "Сайт нобелевской премии.", "")
+			+mli("en","out", "https://www.sfu.ca/~poitras/links.htm", "sfu.ca", "Сборник финансовых ссылок", "old")
+			+mli("en","out", "https://tulipshare.com/", "tulipshare.com", "Сервис объединения инвесторов для решения(постановки) социально значимых вопросов перед компаниями", "")
 		h3 Нефть
 		ol
 			li: a(href="http://www.opec.org") OPEC
@@ -149,25 +106,9 @@ block content
 			li устарело 
 				a(href="http://onlinemoney4you.ru/data/documents/E.Torp.Kriteriy-Kelli-v-blek-dzheke-sportivnyh-totalizatorah-i-fondovyh-birzhah.pdf") 
 					| Е.Торп. Критерий Келли (перевод)
-		h3 Рынок деривативов
-		ol
-			li Общие вопросы
-				ol
-					li
-						a(href="http://forum.quik.ru/") 
-							|Форум пользователей Quik
-					li
-						a(href="http://forum.qlua.org/") 
-							|Форум сайта qlua.org
-					li
-						a(href="http://quik2dde.ru/index.php") 
-							|Форум сайта quik2dde.ru
-					li 
-						a(href="http://www.bot4sale.ru/") 
-							|Cайт bot4sale
-					li 
-						a(href="http://www.tadoc.org/index.htm") 
-							|Технический анализ. Формулы и реализации индикаторов
+			li 
+				a(href="http://www.tadoc.org/index.htm") 
+					|Технический анализ. Формулы и реализации индикаторов
 
 			li Открытие демо-счетов
 				ol
@@ -187,7 +128,6 @@ block content
 			li Программирование
 				ol
 					li: a(href="http://dx-analytics.com/#") Супер-библиотека</a> для python для работы с деривативами.
-					li: a(href="https://kitchingroup.cheme.cmu.edu/pycse/pycse.html") Библиотека</a> для научных вычислений на python, что-то есть про деривативы
 					li: strong: a(href="lua_quik_main.html") Программирование в Quik на Lua
 			li Литература
 				ol
@@ -207,36 +147,23 @@ block content
 		
 		h3 Рынок FOREX
 		ol
-			li Общие вопросы
-				ol
-					li: a(href="http://www.forexclub-russia.ru/") ForexClub-Russia
-					li: a(href="http://www.fxclub.org") FxClub.org
-					li: a(href="http://forex4you.org") forex4you.org
-					li: a(href="https://corsaforex.com") CorsaCapital - форекс опционы
-					li: a(href="http://tradelikeapro.ru/") Портал на русском
-					li: a(href="http://www.myfxbook.com/forex-broker-spreads") Спреды различных контор
-			li Конкурсы на демо-счетах
-				ol
-					li: a(href="http://contest.roboforex.ru/ru/") RoboForex.ru
-					li: a(href="http://www.instaforex.com/ru/contest_forex_option_rules.php") Конкурс Опцион на миллион
-					li: a(href="http://www.alpari.ru/ru/contest/") Alpari конкурсы
-					li: a(href="http://fortrader.ru") fortrader.ru
-					li: a(href="http://fxkonkurs.ru/") fxkonkurs.ru
+			li: a(href="https://tradelikeapro.ru/") Портал на русском
+			li: a(href="https://www.forexclub-russia.ru/") ForexClub-Russia
+			li: a(href="https://www.fxclub.org") FxClub.org
+			li: a(href="https://forex4you.org") forex4you.org
+			li: a(href="https://corsaforex.com") CorsaCapital - форекс опционы
+			li: a(href="https://www.myfxbook.com/forex-broker-spreads") Спреды различных контор
+			li: a(href="https://contest.roboforex.ru/ru/") RoboForex.ru
+			li: a(href="https://www.instaforex.com") instaforex
+			li: a(href="https://www.alpari.ru/") Alpari
+			li: a(href="https://fortrader.ru") fortrader.ru
+			li: a(href="https://fxkonkurs.ru/") fxkonkurs.ru
 
 			li Еще что-то
 				ol
-					li: a(href="http://www.mql5.com/ru/articles/100") Написание советника на MQL5 для начинающих.
-					li: a(href="http://www.fxclub.org/tools_info_archdoc/") Описание основных экономических индикаторов
+
 					li: a(href="http://www.instaforex.com/ru/forex_technical_indicators.php") Технические индикаторы
-					li: a(href="http://forumtrading.com/forumdisplay.php?f=54") Форумтрайдинг
 
 
-			li Написание пользовательских индикаторов на MQL5
-				ol
-					li: a(href="http://www.mql5.com/ru/articles/37") Пользовательские индикаторы в MQL5 для начинающих
-					li: a(href="http://www.mql5.com/ru/articles/15") Индикатор от индикатора в MQL5
-					li: a(href="http://www.mql5.com/ru/articles/135") Цветные индикаторы - создание и применение       
 
-			li Важные статьи
-				ol
-					li: a(href="http://www.mql5.com/ru/articles/385") Как опубликовать свой продукт в сервисе Маркет
+
