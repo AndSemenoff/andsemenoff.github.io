@@ -1,51 +1,25 @@
 extends ../layouts/html_layout.jade
 
 block content
-	div.row: div.large-12.columns: h2: strong Python
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Python
+	article.grid-container
 		ol
 			li
 				| Конспект теории по питону
 				ol
-					li
-						a(href='python_abc.html') <i class="far fa-eye"></i> 
-						strong Работа с библиотекой abc(Abstract Base Classes)
-					li
-						a(href='python_doctest.html') <i class="far fa-eye"></i> 
-						strong Работа с библиотекой doctest
-					li
-						a(href='python_re.html') <i class="far fa-eye"></i> 
-						strong Работа с регулярными выражениями
-					li
-						a(href='python_venv.html') <i class="far fa-eye"></i> 
-						strong Работа с виртуальным окружением в питоне с версии 3.4
-					li
-						a(href='kivy_main.html') <i class="far fa-eye"></i> 
-						strong Работа с библиотекой Kivy
-					li
-						a(href='statistics_main.html') <i class="far fa-eye"></i> 
-						strong Статистика на python
-					li
-						a(href='pythonistic.html') <i class="far fa-eye"></i> 
-						strong Питонистический код
-					li
-						a(href='brython_test.html') <i class="far fa-eye"></i> 
-						strong Работа питона в браузере - ТЕСТ
-					li
-						a(href='quiz_n_0001.html') <i class="far fa-eye"></i> 
-						strong Quiz по python - ТЕСТ
-					li
-						a(href='python_faq.html') <i class="far fa-eye"></i> <i class="far fa-question-circle"></i> 
-						strong Вопросы и ответы по python
-					li
-						a(href='python_testing.html') <i class="far fa-eye"></i> 
-						strong Вопросы тестирования на python
-					li
-						a(href='python_queue.html') <i class="far fa-eye"></i> 
-						strong Работа с библиотекой Queue на python
-					li
-						a(href='../python_patterns/python_patterns.html') <i class="far fa-eye"></i> <i class="fas fa-puzzle-piece"></i> 
-						strong Шаблоны проектирования на python
+					+mli("ru", "my", "python_abc.html", "Урок", "Работа с библиотекой abc(Abstract Base Classes)")
+					+mli("ru", "my", "python_doctest.html", "Урок", "Работа с библиотекой doctest")
+					+mli("ru", "my", "python_re.html", "Урок", "Работа с регулярными выражениями")
+					+mli("ru", "my", "python_venv.html", "Урок", "Работа с виртуальным окружением в питоне с версии 3.4")
+					+mli("ru", "my", "statistics_main.html", "Урок", "Статистика на python")
+					+mli("ru", "my", "pythonistic.html", "Урок", "Питонистический код")
+					+mli("ru", "my", "python_testing.html", "Урок", "Вопросы тестирования на python")
+					+mli("ru", "my", "brython_test.html", "ТЕСТ", "Работа питона в браузере")
+					+mli("ru", "my", "quiz_n_0001.html", "ТЕСТ", "Quiz по python")
+					+mli("ru", "my", "python_faq.html", "Урок", "Вопросы и ответы по python")
+					+mli("ru", "my", "python_queue.html", "Урок", "Работа с библиотекой Queue на python")
+					+mli("ru", "my", "../python_patterns/python_patterns.html", "Раздел", "Шаблоны проектирования на python")
+
 			li Литература по python на <strong>русском языке</strong>
 				ol
 					li
@@ -64,14 +38,10 @@ block content
 
 			li Дайджесты
 				ol
-					li
-						a(href="http://dataelixir.com") DataElixir
-					li
-						a(href="http://highscalability.com/") highscalability
-					li
-						a(href="http://www.kdnuggets.com/") kdnuggets
-					li
-						a(href="http://www.datasciencecentral.com/") datasciencecentral
+					+mli("en", "out", "https://dataelixir.com", "", "DataElixir")
+					+mli("en", "out", "http://highscalability.com/", "", "Highscalability")
+					+mli("en", "out", "https://www.kdnuggets.com/", "", "KDnuggets")
+					+mli("en", "out", "https://www.datasciencecentral.com/", "", "datasciencecentral")
 
 			li Анализ изображений (OpenCV, ...)
 				ol
@@ -116,23 +86,21 @@ block content
 
 			li Генетические алгоритмы
 				ol
-					li
-						a(href="http://lethain.com/genetic-algorithms-cool-name-damn-simple/") Генетический алгоритм
+					+mli("en", "out", "http://lethain.com/genetic-algorithms-cool-name-damn-simple/", "Статья", "Генетический алгоритм")
+
 					li
 						a(href="http://outlace.com/Simple-Genetic-Algorithm-in-15-lines-of-Python/") Генетический алгоритм
 
 			li Статьи по python на английском языке
 				ol
-					li
-						a(href="http://github.com/rouseguy/intro2stats") введение в статистику на Python
+					+mli("en", "out", "http://github.com/rouseguy/intro2stats", "Код", "введение в статистику на Python", "github")
 
 			li Сайты
 				ol
-					li: a(href="http://pythonworld.ru/") Питон 3 для начинающих [RUS]
-					li: a(href="http://asvetlov.blogspot.ru/") Блог Андрея Светлова [RUS]
-					li: a(href="https://pythonadventures.wordpress.com/") Python Adventures Blog [EN]
-					li: a(href="http://security-corp.org/infosecurity/crypto/") Статьи по криптографии [RUS]
-					li: a(href="http://www.cyberforum.ru/python/") Форум по питону [RUS]
+					+mli("ru", "out", "https://pythonworld.ru/", "pythonworld.ru", "Питон 3 для начинающих", "")
+					+mli("ru", "out", "https://asvetlov.blogspot.ru/", "Блог", " Андрея Светлова", "")
+					+mli("en", "out", "https://pythonadventures.wordpress.com/", "blog", "Python Adventures Blog", "")
+					+mli("ru", "out", "https://www.cyberforum.ru/python/", "cyberforum.ru", "Форум по питону ", "")
 
 			li Бесплатные среды разработки
 				ol

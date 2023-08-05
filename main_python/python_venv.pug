@@ -1,8 +1,8 @@
 extends ../layouts/code_layout.jade
 
 block content
-	div.row: div.large-12.columns: h1 Виртуальное окружение в питоне с версии 3.4
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Виртуальное окружение в питоне с версии 3.4
+	article.grid-container
 		p.text-justify Начиная с версии 3.3 в стандартный пакет был добавлен модуль venv, который позволяет работать с виртуальным окружением в питоне. 
 			|В питоне версии 3.4 произошли существенные добавления в данный модуль, поэтому будем рассматривать его. Все примеры я пишу для windows. 
 			|Итак, чтобы создать виртуальную среду нужно запустить скрипт <strong>pyvenv.py</strong> и в качестве параметра передать путь, 
@@ -14,17 +14,8 @@ block content
 			|где префиксом идет каталог виртуального окружения. В нашем примере префикс приглашения будет:<br><kbd>(test01)</kbd><br> Чтобы вернуться в 
 			|нормальный режим нужно просто набрать команду:<br><kbd>deactivate</kbd><br> 
 		h3 Литература. Источники.
-			ol
-				li
-					a(href="http://habrahabr.ru/post/157287/") Статья на Хабре.
-					| Питон в коробке – venv в python 3.3.
-				li
-					a(href="http://www.drdobbs.com/architecture-and-design/lightweight-virtual-environments-in-pyth/240167069") Статья на английском. 
-					| Lightweight Virtual Environments in Python 3.4
-				li
-					a(href="http://legacy.python.org/dev/peps/pep-0405/") Спецификация 
-					| PEP-0405 для venv.
-				li
-					a(href="http://docs.activestate.com/activepython/3.3/python/library/venv.html") Venv 
-					| пример расширения.
+		ol
+			+mli("ru", "out", "https://habrahabr.ru/post/157287/", "Статья на Хабре.", "Питон в коробке – venv в python 3.3.")
+			+mli("en", "out", "https://legacy.python.org/dev/peps/pep-0405/", "python.org", "Спецификация PEP-0405 для venv.")
+
 

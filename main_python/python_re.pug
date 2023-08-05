@@ -1,0 +1,59 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Работа с регулярными выражениями
+	article.grid-container
+		p.text-justify Регулярные выражения — формальный язык поиска и осуществления манипуляций с подстроками в тексте, основанный на использовании метасимволов. Это шаблон, состоящий из символов и метасимволов и задающий правило поиска. Язык регулярных выражений имеет специальный синтаксис и команды.
+		p.text-justify Метасимволы - специальные символы, которые не соотвествуют себе, а влияют на суть шаблона исходя из своего специального значения. Всего метасимволов 12.
+		ul
+			li $ -  Соотвествует позиции конца строки
+			li (
+			li )
+			li * - Ноль или более повторение предшествующего выражения
+			li + - Одно или более повторение предшествующего выражения
+			li . - Любой символ, кроме переноса строки
+			li ? - Ноль или одно повторение предшествующего выражения
+			li [ - Начало символьного класса
+			li \ - Символ экранирования или начала предопределенных последовательностей
+			li ^ - Соотвествует позиции начала строки
+			li {
+			li |
+
+		p.text-justify Символ <kbd>]</kbd> становится метасимволом, если идет после соотвествующей открывающей скобки. Тоже справедливо и для <kbd>}</kbd>. Дефис <kbd>-</kbd>, является метасимволом только внутри скобок <kbd>[]</kbd>. Если мы хотим, чтобы указанные матасимволы соотвествовали своему буквальному смыслу их нужно экранировать, т.е. помещать перед ними символ обратного слэша <kbd>\</kbd>.
+		p.text-justify Символьный класс - последовательность символов заключенная в скобки <kbd>[]</kbd>. Внутри данного класса четыре символа имеют специальное значение. 
+
+		ul
+			li <kbd>-</kbd> - если он находится между двумя символами, тогда обозначает диапазон, т.е. <kbd>[a-d]</kbd> это тоже, что и <kbd>[abcd]</kbd>. В другом случае, обозначает символ дефиса, наприм при <kbd>[abcd-]</kbd>
+			li <kbd>^</kbd> - символ отрицания, используется для указания класса "все кроме"
+			li <kbd>\</kbd> - символ экранирования
+			li <kbd>]</kbd> - становится метасимволом и обозначает конец символьного класса
+
+		p.text-justify Все другие метасимволы имеют свое обычное символьное значение.
+		p Ссылки по данной теме:
+			ol
+				+mli("en","out", "https://docs.python.org/3/library/re.html", "", "Оригинальная документация по модулю.", "")
+				+mli("ru","out", "https://developers.google.com/edu/python/regular-expressions?hl=ru", "на сайте Google", "Регулярные выражения в Питоне.", "")
+				+mli("ru","out", "https://habrahabr.ru/post/115825/", "habrahabr.ru", "Регулярные выражения, пособие для новичков. Часть 1", "")
+				+mli("ru","out", "https://habrahabr.ru/post/115436/", "habrahabr.ru", "Регулярные выражения, пособие для новичков. Часть 2", "")
+				+mli("en","out", "https://www.regexr.com", "", "Редактор регулярных выражений онлайн.", "")
+				+mli("en","out", "https://regexcrossword.com/", "Regex Crossword", "Обучение. Игра. Головоломки на тему регулярных выражений.", "")
+
+		p Видео уроки
+			ol
+				+mli("en","out", "http://rutracker.org/forum/viewtopic.php?t=5192233", "rutracker", "[pluralsight] Regular Expressions Fundamentals.", "")
+				+mli("en","out", "https://www.pluralsight.com/courses/regular-expressions-fundamentals", "pluralsight", "Regular Expressions Fundamentals 2016.", "")
+				+mli("en","out", "http://rutracker.org/forum/viewtopic.php?t=5166605", "rutracker", "[teamtreehouse.com] Regular Expressions in Python 2016.", "")
+				+mli("en","out", "http://rutracker.org/forum/viewtopic.php?t=3927441", "rutracker", "[tutsplus]Regular Expressions: Up and Running.", "")
+				+mli("en","out", "http://code.tutsplus.com/courses/regular-expressions-up-and-running", "tutsplus.com", "Regular Expressions: Up and Running 2011.", "")
+				+mli("en","out", "http://rutracker.org/forum/viewtopic.php?t=3865164", "rutracker", "[Lynda.com]Using Regular Expressions with Kevin Skoglund 2011.", "")
+ 					
+		p Литература:
+			ol
+				+mli("en","out", "https://rutracker.org/forum/viewtopic.php?t=6332854", "rutracker", "Regular Expression Puzzles and AI Coding Assistants. 24 puzzles solved by the author, with and without assistance. 2023.", "")
+				+mli("ru","out", "https://rutracker.org/forum/viewtopic.php?t=6133611", "rutracker", "Бен Форта. Изучаем регулярные выражения. 2019.", "")
+				+mli("ru","out", "https://rutracker.org/forum/viewtopic.php?t=5881712", "rutracker", "Джеффри Фридл. Регулярные выражения, 3-е издание. 2018.", "")
+				+mli("ru","out", "http://rutracker.org/forum/viewtopic.php?t=5179199", "rutracker", "Майкл Фицджеральд. Регулярные выражения. Основы. 2015.", "")
+				li стр. 354-362. Бизли Д. Python. Подробный справочник, 4-е издание. Перевод с английского. Спб.: Символ-Плюс, 2010. [RUS]
+				+mli("ru","out", "http://rutracker.org/forum/viewtopic.php?t=4956738", "rutracker", "Гойвертс Я., Левитан С. Регулярные выражения. Сборник рецептов. (второе издание) 2015.", "")
+				+mli("en","out", "http://rutracker.org/forum/viewtopic.php?t=4200078", "rutracker", "Гойвертс Я., Левитан С. Регулярные выражения. Сборник рецептов. (второе издание) 2012.", "")
+				+mli("ru","out", "http://rutracker.org/forum/viewtopic.php?t=3828631", "rutracker", "Бен Форта. Регулярные выражения. 2005.", "")

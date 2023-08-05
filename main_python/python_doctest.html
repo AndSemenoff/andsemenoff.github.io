@@ -10,31 +10,32 @@
     <meta name="copyright" content="Семенова Андрей Вячеславович">
     <link rel="shortcut icon" href="../caterpillar.png">
     <link rel="stylesheet" href="../css/normalize.css" media="all">
-    <!--link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css" media="all")-->
-    <link rel="stylesheet" href="../css/foundation.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/foundation.sites.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
-    <!--link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all")-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" media="all">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
     <script src="../js/jquery.3.2.1.min.js"></script>
-    <script src="../js/foundation.6.4.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
     <!-- default.min.css"-->
     <link rel="stylesheet" href="../css/vs.css">
-    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js-->
-    <!-- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css-->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
       
     </script>
     <!--script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML")-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-left"> 
         <ul class="menu">
-          <li><strong><a href="/"><i class="fas fa-home">ABSOLEM.INFO</i></a></strong></li>
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
           <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
           <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
           <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
@@ -42,17 +43,12 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Работа с модулем <strong>doctest</strong></h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <p class="text-justify">Модуль <strong>doctest</strong> позволяет писать тесты прямо в комментариях. Строчки комментариев, начинающиеся с '>>>' будут выполняются и возвращаемый результат будет сравниваться со значением, написанным в следующей строчке. Обратите внимание, что после '>>>' должен следовать ровно один пробел.  Для вызова непосредственно из программы мы должны импортировать библиотеку <strong>doctest</strong> и вызвать метод <strong>doctest.testmod()</strong>. Рекомендуется указывать в параметрах <strong>verbose=True</strong>, чтобы получить развернутый вывод в консоль информации о прошедшем тестировании.</p>
-        <div class="large-2 columns right"><a href="../python_source/doctest_example_1.py">doctest_example_1.py</a></div>
-        <div class="large-12 columns">
-          <pre class="python"><code># -*- coding: utf-8 -*-
+    <h2 class="font-effect-shadow-multiple">Работа с модулем <strong>doctest</strong></h2>
+    <article class="grid-container">
+      <p class="text-justify">Модуль <strong>doctest</strong> позволяет писать тесты прямо в комментариях. Строчки комментариев, начинающиеся с '>>>' будут выполняются и возвращаемый результат будет сравниваться со значением, написанным в следующей строчке. Обратите внимание, что после '>>>' должен следовать ровно один пробел.  Для вызова непосредственно из программы мы должны импортировать библиотеку <strong>doctest</strong> и вызвать метод <strong>doctest.testmod()</strong>. Рекомендуется указывать в параметрах <strong>verbose=True</strong>, чтобы получить развернутый вывод в консоль информации о прошедшем тестировании.</p>
+      <p><a href="../python_source/doctest_example_1.py">doctest_example_1.py</a></p>
+      <p>
+        <pre class="python"><code># -*- coding: utf-8 -*-
 # файл doctest_example_1.py
 def simple(a):
     '''
@@ -64,11 +60,11 @@ def simple(a):
 if __name__ == "__main__":
     import doctest
     doctest.testmod(verbose=True)</code></pre>
-        </div>
-        <p class="text-justify">Возможно помещать тесты в отдельный файл. Тогда для его вызова нужно использовать метод <strong>doctest.testfile("doctest.txt")</strong>, которому в параметре передать имя файла с тестами. В самом файле тестов нужно импортировать модуль(и) к которым у нас относятся тесты.</p>
-        <div class="large-2 columns right"><a href="../python_source/doctest_example_2.py">doctest_example_2.py</a></div>
-        <div class="large-12 columns">
-          <pre class="python"><code># -*- coding: utf-8 -*-
+      </p>
+      <p class="text-justify">Возможно помещать тесты в отдельный файл. Тогда для его вызова нужно использовать метод <strong>doctest.testfile("doctest.txt")</strong>, которому в параметре передать имя файла с тестами. В самом файле тестов нужно импортировать модуль(и) к которым у нас относятся тесты.</p>
+      <p><a href="../python_source/doctest_example_2.py">doctest_example_2.py</a></p>
+      <p>
+        <pre class="python"><code># -*- coding: utf-8 -*-
 # файл doctest_example_2.py
 def simple(a):
     return a*a-1
@@ -76,62 +72,63 @@ def simple(a):
 if __name__ == "__main__":
     import doctest
     doctest.testfile("doctest.txt")</code></pre>
-        </div>
-        <p>Для файла doctest_example_2.py файл с тестами может быть такой</p>
-        <pre class="python"><code>&nbsp;&nbsp;&nbsp;&nbsp;'''
+      </p>
+      <p>Для файла doctest_example_2.py файл с тестами может быть такой</p>
+      <pre class="python"><code>&nbsp;&nbsp;&nbsp;&nbsp;'''
 &nbsp;&nbsp;&nbsp;&nbsp;файл doctest.txt
 &nbsp;&nbsp;&nbsp;&nbsp;>>> from doctest_example1 import simple
 &nbsp;&nbsp;&nbsp;&nbsp;>>> simple(4)
 &nbsp;&nbsp;&nbsp;&nbsp;15
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;'''</code></pre>
-        <p>Небольшие сложности возникают, когда мы используем:</p>
+      <p>Небольшие сложности возникают, когда мы используем:</p>
+      <ol>
+        <li>Словари (dict)</li>
+        <li>Числа с плавающей точкой (float)</li>
+        <li>Идентификаторы (id)</li>
+        <li>Вывод об ошибках ()          </li>
+      </ol>
+      <p>Если совсем кратко описать решение выше перечисленных проблем, то это:</p>
+      <ol>
+        <li>сортировка словаря перед выводом</li>
+        <li>округления числа с фиксированной точностью перед выводом</li>
+        <li>не использовать в тестах вывод идентификаторов (id)</li>
+        <li>использовать директиву #doctest: ELLIPSYS         </li>
+      </ol>
+      <!--
+      <p>Еще есть возможность написать отдельный модуль для тестирования. Например, для файла doctest_example_1.py назовем модуль doctest.py, вот его вид:</p>
+      
+      <pre class = "python">
+      <code>
+      # -*- coding: utf-8 -*-
+      # файл doctest.py
+      import doctest
+      import doctest_example_1
+      
+      doctest.testmod(simple)
+      </code>
+      </pre>
+      
+      -->
+      <p>Ссылки по данной теме:
         <ol>
-          <li>Словари (dict)</li>
-          <li>Числа с плавающей точкой (float)</li>
-          <li>Идентификаторы (id)</li>
-          <li>Вывод об ошибках ()          </li>
+          <li><span class= 'flag_en'></span>&nbsp;<a href = https://docs.python.org/3/library/doctest.html target="_blank">&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Оригинальная документация по модулю.&nbsp;
+          </li>
+          <li><span class= 'flag_ru'></span>&nbsp;<a href = https://python-lab.ru/doctest target="_blank">&nbsp;Перевод&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;оригинальной документация по модулю на русский.&nbsp;
+          </li>
+          <li><a href="http://rutracker.org/forum/viewtopic.php?t=4582652">Обучающее видео </a>от pluralsight.com</li>
+          <li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=unit-testing-python">Обучающее видео </a>от pluralsight.com</li>
+          <li>Д.Бизли. Питон. Подробный справочник. 4 издание. 2010 г. стр.236-239</li>
         </ol>
-        <p>Если совсем кратко описать решение выше перечисленных проблем, то это:</p>
-        <ol>
-          <li>сортировка словаря перед выводом</li>
-          <li>округления числа с фиксированной точностью перед выводом</li>
-          <li>не использовать в тестах вывод идентификаторов (id)</li>
-          <li>использовать директиву #doctest: ELLIPSYS         </li>
-        </ol>
-        <!--
-        <p>Еще есть возможность написать отдельный модуль для тестирования. Например, для файла doctest_example_1.py назовем модуль doctest.py, вот его вид:</p>
-        
-        <pre class = "python">
-        <code>
-        # -*- coding: utf-8 -*-
-        # файл doctest.py
-        import doctest
-        import doctest_example_1
-        
-        doctest.testmod(simple)
-        </code>
-        </pre>
-        
-        -->
-        <p>Ссылки по данной теме:
-          <ol>
-            <li><a href="http://docs.python.org/3.7/library/doctest.html">Оригинальная документация по модулю</a></li>
-            <li><a href="http://python-lab.ru/documentation/27/stdlib/doctest.html">Перевод </a>оригинальной документация по модулю для версии 2.7 на русский  </li>
-            <li><a href="http://rutracker.org/forum/viewtopic.php?t=4582652">Обучающее видео </a>от pluralsight.com</li>
-            <li><a href="http://pluralsight.com/training/courses/TableOfContents?courseName=unit-testing-python">Обучающее видео </a>от pluralsight.com</li>
-            <li>Д.Бизли. Питон. Подробный справочник. 4 издание. 2010 г. стр.236-239</li>
-          </ol>
-        </p>
-      </div>
-    </div>
+      </p>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2018</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>
@@ -147,14 +144,7 @@ if __name__ == "__main__":
       -->
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script(src="https://code.jquery.com/jquery-2.1.4.min.js")-->
-      <!--script(src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js")-->
       <script>$(document).foundation();</script>
     </footer>
-    <!-- script(src="../js/jquary.js")-->
-    <!-- script(src="../js/foundation.min.js")-->
-    <!-- <script>-->
-    <!-- $(document).foundation();-->
-    <!-- </script>-->
   </body>
 </html>

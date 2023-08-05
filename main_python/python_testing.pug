@@ -1,0 +1,17 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Вопросы тестирования на python
+	article.grid-container
+		ol
+			li
+				| Сайты по теме тестирования
+				ol
+					+mli("en", "out", "http://pythontesting.net/", "", "Pythontesting.net.", "")
+					+mli("en", "out", "http://pythonhosted.org/testing/", "", "Обзор средств тестирования.", "old")
+			li
+				| Статьи и т.п.
+				ol
+					+mli("ru", "my", "python_doctest.html", "Урок.", "Работа с библиотекой doctest.")
+					+mli("en", "out", "http://www.blog.pythonlibrary.org/2016/07/20/an-intro-to-coverage-py/", "Урок.", "Введение в покрытие кода тестами.")
+					+mli("en", "out", "http://docs.python-guide.org/en/latest/writing/tests/'", "Статья.", "Написание тестов.")
