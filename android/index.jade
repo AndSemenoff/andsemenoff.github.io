@@ -1,35 +1,29 @@
 extends ../layouts/html_layout.jade
 
 block content
-	div.row: div.large-12.columns: h1 Ссылки по теме Android
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Ссылки по теме Android
+	article.grid-container
 		ol
-			li
-				a(href="http://developer.alexanderklimov.ru/android/") Разработка под Android 
-				| от Александра Климова
-			li
-				a(href="https://hexlet.org/course/android/") Курс 
-				| на Xexlet.</li>
-
+			+mli("ru", "out", "https://developer.alexanderklimov.ru/android/", "от Александра Климова", "Разработка под Android")
 			li Книги
 				ol
-					li: a(href="http://nnm-club.me/forum/viewtopic.php?p=7731772") Андроид для разработчиков
+					li: a(href="https://nnm-club.me/forum/viewtopic.php?p=7731772") Андроид для разработчиков
 					
 			li Эмуляторы Android под windows
 				ol
-					li: a(href="http://www.bluestacks.com") BlueStacks
-					li: a(href="") AndY
-					li: a(href="") GenyMotion
-					li: a(href="") YouWave								
+					+mli("en", "out", "https://www.bluestacks.com", "BlueStacks", "Хороший. Когда-то пользовался")
+					li AndY
+					li GenyMotion
+					li YouWave
 			li Оригинальные идеи в играх
 				ol
 					li: a(href="https://play.google.com/store/apps/details?id=com.noodlecake.huebrixfree") HueBrix
 					li: a(href="https://play.google.com/store/apps/details?id=com.bigduckgames.flowbridges") Flow Bridges
-					li: a(href="https://play.google.com/store/apps/details?id=com.oxothuk.worldpuzzle") worldpuzzle	
-					li: a(href="http://www.nobelprize.org/educational/") Образовательные игры на сайте нобелевской премии			
+					li: a(href="https://play.google.com/store/apps/details?id=com.oxothuk.worldpuzzle") worldpuzzle
+					+mli("en", "out", "http://www.nobelprize.org/educational/", "nobelprize.org", "Образовательные игры на сайте нобелевской премии")
 			li App Inventor MIT.edu
 				ol
-					li: a(href="http://appinvent.ru") appinvent.ru
-					li: a(href="http://ai2.appinventor.mit.edu/") Основной веб-интерфейс 2.0
-					li: a(href="http://www.appinventor.org/") appinventor.org - обучение [ENG]	  
-					li: a(href="https://www.youtube.com/channel/UCWYZUfnS0aMVTiIfntEW1NA") Канал на youtube.com  		
+					li: a(href="https://appinvent.ru") appinvent.ru
+					li: a(href="https://ai2.appinventor.mit.edu/") Основной веб-интерфейс 2.0
+					li: a(href="https://www.appinventor.org/") appinventor.org - обучение [ENG]	  
+					li: a(href="https://www.youtube.com/channel/UCWYZUfnS0aMVTiIfntEW1NA") Канал на youtube.com

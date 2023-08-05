@@ -1,17 +1,8 @@
 extends ../layouts/code_layout.jade
 
 block content
-	mixin li_link(lang, url, title_text, text)
-		// - lang - [ru, en]
-		// - url - ссылка
-		// - title_text - текст ссылки
-		// - text - текст описания
-		li
-			<span class= 'flag_#{lang}'></span>
-			<a href = #{url}> #{title_text}</a>
-			|&nbsp;—&nbsp;#{text}	
-	div.row: div.large-12.columns: h1: strong JavaScript
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple JavaScript
+	article.grid-container
 		ol
 			li
 				| Конспект теории по JavaScript
@@ -25,17 +16,14 @@ block content
 					//li: strong: a(href='python_faq.html') Вопросы и ответы по python
 			li Фреймворки
 				ol
-					+li_link("en", "https://p5js.org/", "p5js", "визуальный фишки")
-					+li_link("en", "", "", "")
-					+li_link("en", "", "", "")
-					+li_link("en", "", "", "")
+					+mli("en", "out", "https://p5js.org/", "p5js", "визуальный фишки")
+
 			li
 				| Плагины
 				ol
-					+li_link("en", "", "", "")
-					+li_link("en", "http://www.listjs.com/", "List.js", "cортировка, поиск по спискам")
-					+li_link("en", 'https://github.com/atayahmet/jquery.easypin', "jQuery easypin", "добавление информационных булавок на изображения")
-					+li_link("en", "https://github.com/fengyuanchen/viewerjs", "Viewer.js", "JavaScript просмотрщик изображений")
+					+mli("en", "out", "http://www.listjs.com/", "List.js", "cортировка, поиск по спискам")
+					+mli("en", "out", 'https://github.com/atayahmet/jquery.easypin', "jQuery easypin", "добавление информационных булавок на изображения")
+					+mli("en", "out", "https://github.com/fengyuanchen/viewerjs", "Viewer.js", "JavaScript просмотрщик изображений")
 					li 
 						a(href='http://dummytext.com/') dummy text 
 						| — плагин для автоматического добавления «текста-рыбы»
@@ -53,12 +41,11 @@ block content
 						| — современный инструмент для создания анимации в вебе
 			li Youtube видео, плейлисты, каналы
 				ol
-					+li_link("ru", "https://www.youtube.com/channel/UCY10FZglXJ8RL3xB04VpykQ", "канал", "Все темы: NodeJS, React, Redux, JS6.")
-					+li_link("ru", "https://www.youtube.com/watch?v=4YfsAz-sNAo&list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q", "плейлист", "Dojo - Основы JS6.")
-					+li_link("en", "", "", "")
+					+mli("ru", "out", "https://www.youtube.com/channel/UCY10FZglXJ8RL3xB04VpykQ", "канал", "Все темы: NodeJS, React, Redux, JS6.")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=4YfsAz-sNAo&list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q", "плейлист", "Dojo - Основы JS6.")
+
 			li Инструменты для создания дистрибутива из Electron проекта
 				ol
-					+li_link("en", "https://www.npmjs.com/package/electron-winstaller", "electron-winstaller", "")
-					+li_link("en", "https://www.npmjs.com/package/electron-forge", "electron-forge", "")
-					+li_link("en", "https://www.npmjs.com/package/electron-builder", "electron-builder", "Самый популярный")
-					+li_link("en", "", "", "")
+					+mli("en", "out", "https://www.npmjs.com/package/electron-winstaller", "electron-winstaller", "")
+					+mli("en", "out", "https://www.npmjs.com/package/electron-forge", "electron-forge", "")
+					+mli("en", "out", "https://www.npmjs.com/package/electron-builder", "electron-builder", "Самый популярный")

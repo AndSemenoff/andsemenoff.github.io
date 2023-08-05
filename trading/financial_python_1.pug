@@ -15,6 +15,7 @@ block content
 			li: a(href="#Sites") Сайты
 			li: a(href="#LSites") Личные сайты
 			li: a(href="#ts_issues") Анализ временных рядов
+			li: a(href="#portfolio_investment") Портфельные инвестиции
 			li: a(href="#articles") Статьи [Финансовые вычисления + python]
 			li: a(href="#libs") Финансовые библиотеки для питона
 			li: a(href="#competitions") Соревнования
@@ -108,7 +109,8 @@ block content
 			+mli("ru", "my", "../pandas/pandas_1.html", "", "Работа с Pandas", "")
 			+mli("ru", "my", "pandas_index.html", "", "Работа с Pandas еще", "")
 			+mli("ru", "my", "numpy_index.html", "", "Работа с NumPy", "")
-					
+			+mli("en", "out", "https://www.quantopian.com/", "Quantopian", "Не понятно что. Раньше было соревнование", "old")
+
 		include sites_link.include.pug
 		include sites_ts_issues.include.pug
 
@@ -116,7 +118,7 @@ block content
 		ol
 			+mli("en","out", "https://github.com/dedwards25/Python_Option_Pricing", "dedwards25", "Библиотека Python_Option_Pricing. C вычислением цены опционов. Много отличной теории.", "github", "book")
 			+mli("en","out", "https://intro.quantecon.org/monte_carlo.html", "Лекция", "Monte Carlo and Option Pricing.", "")
-
+			+mli("en","out", "https://github.com/nakulnayyar/SupResGenerator", "Код", "Авоматическое генерирование уровней поддержки и сопротивления.", "github")
 			li 
 				span.flag_en &nbsp;
 				| QuantConnect.com&nbsp;
@@ -259,33 +261,13 @@ block content
 			
 		include libs_link.include.pug
 
-		h3(id="competitions") Соревнования
+		h3(id="competitions") Соревнования 
 		ol
-			li 
-				span.flag_en &nbsp;
-				a(href="http://www.quantiacs.com" target="_blank") Quantiacs. 
-				| Можно писать на python
-			li 
-				span.flag_ru &nbsp;
-				a(href="https://quantnet.ai/" target="_blank") quantnet.ai. 
-				| Можно писать на python. Русские владельцы. Призы в рублях. Ничего не сказано про авторские права на стратегию!
-				
-			li
-				span.flag_en &nbsp;
-				a(href="https://www.quantconnect.com" target="_blank") Quantconnect.
-			li
-				span.label.success устарело
-				a(href="http://hftbattle.com/" target="_blank") High-Frequency Trading Battle. 
-				| Соревнование среди алгоритмов высокочастотной торговли. Используемый язык - С. Сайт на русском языке.
-				
-			li
-				span.label.success устарело
-				a(href="http://mmcfo.ru/" target="_blank") Молодежный центр изучения финансовых операций. 
-				| Проводит разные конкурсы для молодежи(школьников, студентов).
-			li 
-				span.label.success устарело
-				a(href="http://www.quantopian.com/" target="_blank") Quantopian. 
-				| Можно писать на python
+			+mli("en","out", "https://www.quantiacs.com", "Quantiacs", "Биржевые данные. Призы. Python. Обучение", "")
+			+mli("ru","out", "https://quantnet.ai/", "QuantNet.ai", "Можно писать на python. Призы в рублях. Ничего не сказано про авторские права на стратегию! Обучение.")
+			+mli("en","out", "https://www.quantconnect.com", "Quantconnect", "Исследования. Историческое тестирование. Доступ к биржевым данным.", "news", "book")
+			li High-Frequency Trading Battle. 
+
 		h3(id="video") Видео
 		ol
 			li
