@@ -1,0 +1,69 @@
+extends layouts/layout.pug
+
+block title
+	title= site_title + "Семейный фотоальбом"
+	
+block content
+	h2.font-effect-shadow-multiple Семейный фотоальбом.
+	
+	ul
+		li
+			<div itemscope itemtype="https://schema.org/Person">Смалкайс <a href="Alvina.html" itemprop="url">Альвина-Мария</a> Карловна:</div>
+			<a href="foto_8.html">8</a> | 
+			<a href="foto_9.html">9</a> | 
+			<a href="foto_19.html">19</a> | 
+			<a href="foto_26.html">26</a> |
+			<a href="foto_27.html">27</a> | 
+			<a href="foto_41.html">41</a> | 
+			<a href="foto_98.html">98</a> | 
+			<a href="foto_99.html">99</a> | 
+		<li>Барильникова(Смалкайс) <a href="mirdza.html">Мирдза</a> Рейнгольдовна: 
+			<a href="foto_8.html">8</a> | 
+			<a href="foto_9.html">9</a> | 
+			<a href="foto_10.html">10</a> | 
+			<a href="foto_11.html">11</a> |
+			<a href="foto_12.html">12</a> | 
+			<a href="foto_13.html">13</a> | 
+			<a href="foto_26.html">26</a>  | 
+			<a href="foto_27.html">27</a>  
+		</li>
+		
+		<li>Смалкайс Рейнгольд Петрович: <a href="foto_15.html">15</a> | <a href="foto_16.html">16</a> | <a href="foto_17.html">17</a> |
+		<a href="foto_18.html">18</a> | <a href="foto_20.html">20</a> | <a href="foto_21.html">21</a> | <a href="foto_22.html">22</a> | <a href="foto_23.html">23</a> |
+		<a href="foto_24.html">24</a> | <a href="foto_27.html">27</a> | <a href="foto_41.html">41</a> | <a href="foto_42.html">42</a></li>
+		<li>Мария (подруга Альвины): <a href="foto_26.html">26</a> </li>
+		<li>Амалия: <a href="foto_28.html">28</a> | <a href="foto_30.html">30</a> | <a href="foto_31.html">31</a> |</li>
+		<li>Алфред Карлович Хелманис: <a href="foto_28.html">28</a> | <a href="foto_30.html">30</a> | <a href="foto_31.html">31</a> |
+			<ul>
+				<li> <b><a href="alfred_passport.html">passport</a></b></li>
+			</ul>
+		</li>
+		<li>Барильников Григорий Григорьевич: <a href="foto_14.html">14</a> </li>
+		<li>Олаф: <a href="foto_28.html">28</a> |</li>
+		<li>Коля: <a href="foto_32.html">32</a> | <a href="foto_33.html">33</a> | <a href="foto_35.html">35</a> | <a href="foto_36.html">36</a> | <a href="foto_37.html">37</a> 
+		| <a href="foto_39.html">39</a></li>
+		<li>Рита: <a href="foto_32.html">32</a> | <a href="foto_33.html">33</a> | <a href="foto_35.html">35</a> | <a href="foto_38.html">38</a> | <a href="foto_39.html">39</a></li>
+		<li>Инга: <a href="foto_40.html">40</a></li>
+		<li>не семья: <a href="foto_34.html">34</a> | <a href="foto_43.html">43</a></li> 
+		<li>Неизвестный: 
+			<a href="foto_25.html">25</a> | 
+			<a href="foto_29.html">29</a> | 
+			<a href="foto_68.html">68</a>
+		</li>
+	</ul>
+	//-div(id="galley")
+		<ul id="pictures">
+			<img data-original="images/foto_7-CER.jpg" src="images/foto_7-CER_min.jpg" alt="Picture 1">
+			<img data-original="images/foto_8-CER.jpg" src="images/foto_8-CER_min.jpg" alt="Picture 2">
+			<img data-original="images/foto_9-CER.jpg" src="images/foto_9-CER_min.jpg" alt="Picture 3">
+		</ul>
+	script
+		|window.addEventListener('DOMContentLoaded', function () {
+		|  var galley = document.getElementById('galley');
+		|  var viewer = new Viewer(galley, {
+		|    url: 'data-original',
+		|    title: function (image) {
+		|      return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+		|    },
+		|  });
+		|});
