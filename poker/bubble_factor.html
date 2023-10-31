@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="font-effect-shadow-multiple">Bubble Factor в спортивном покере</h2>
+    <article class="grid-container">
+      <p>Эквити - шансы на победу у конретной руки(или диапазона) против руки или диапазона.</p>
+      <p>Bubble Factor измеряет давление ICM в покере. Он определяется как соотношение между тем, сколько турнирного капитала ($EV) вы потеряете, играя на стек, разделить на то, сколько турнирного капитала $EV вы получите, выйграя стек другого игрока в турнире. В практическом плане, Bubble Factor показывает вам: столкновения с кем опасаться в турнире и кого можно атаковать более свободно.</p>
+      <ol>Свойства BF
+        <li>Баббл фактор ассиметричен: у вас против игрока на BTN может быть один баббл фактор, а у него против вас — совсем другой.</li>
+      </ol>
+      <h4>Пример расчета BF</h4>
+      <p>Основополагающий принцип ICM заключается в том, что когда мы вкладываем фишки в виде турнирного капитала в банк, мы не выигрываем столько капитала, сколько теряем. Сумма, которую мы выиграем в эквити, никогда не будет такой большой, как мы выиграем в фишках из-за того, что в турнирах есть шкала выплат.</p>
+      <p>Возьмем пример игры с бай-ином в $100 и 10 человек со стеками в 1000 и призовыми выплатами $500/$300/$200. Нет рейка или анте в этом примере, блаинды 50/100.</p>
+      <table class="poker">
+        <thead>
+          <tr>
+            <th>место</th>
+            <th>фишки</th>
+            <th>турнирное эквити</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>1000</td>
+            <td>$100</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Предположим большой и маленький блаинды пошли all-in. И победил большой блаинд. Как измениться наша таблица?</p>
+      <table class="poker">
+        <thead>
+          <tr>
+            <th>место</th>
+            <th>фишки</th>
+            <th>турнирное эквити</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2000</td>
+            <td>$184.44</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>1000</td>
+            <td>$101.94</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Игрок 10 потерял $100, т.к. выбыл из турнира. Игрок 1, который выйграл раздачу заработал $84.44, а не $100. Т.к. часть потеренного эквити от 10 игрока распределилось по оставшимся игрокам, которые даже не принимали участие в раздаче. Они заработали по $1.94. Важный вывод, что те, кто сделали Fold в этой раздаче стали ближе к призам и заработали турнироное эквити. Игрок 1 рисковал $100, а выйграл $84.44. Еще один важный вывод, что выигрываем мы всегда меньше эквити, чем проигрываем. Потому, что если мы выйграем все(10000) фишки турнира, то мы не получим весь призовой фонд турнира, а получим только приз за первое место. В нашем примере это $500. Если говорить про цену одной фишки. То чем стек больше, чем средний, тем стоимость фишки меньше первоначальной. И наборот, чем стек меньше среднего, тем фишка ценнее начальной. Т.е. в конце турнира одна фишка будет стоить $0.05, а в начале она стоила $0.1</p>
+      <p>BF = $EVlost/$EVwin</p>
+      <p>В нашем примере это будет $100/$84.44 = 1.18</p>
+      <p>Когда посчитан Bubble Factor можно сделать простой расчет для необходимого колл эквити:</p>
+      <p>EqCall = BF / (BF + 1)</p>
+      <p>В нашем примере: 1.18 / (1.18 + 1) = 0.54 = 54%</p>
+      <p>Так же есть понятие Risk Premium - это проценты, которые нужно добавить к ChipEV, чтобы получить icmEV</p>
+      <p>В нашем примере  RP = 54% - 50% = 4%</p>
+      <h4>От чего зависит Bubble Factor?</h4>
+      <p>Поскольку BF измеряет ICM давление, то он зависит от:</p>
+      <ol>
+        <li>Структуры призовых выплат</li>
+        <li>Стадии турнира</li>
+        <li>Размера стэков игроков</li>
+      </ol>
+    </article>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script>$(document).foundation();</script>
+    </footer>
+  </body>
+</html>

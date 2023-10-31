@@ -1,0 +1,301 @@
+extends ../layouts/html_layout.jade
+mixin p_tr(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13)
+	tr
+		<td>#{data1}</td>
+		<td>#{data2}</td>
+		<td>#{data3}</td>
+		<td>#{data4}</td>
+		<td>#{data5}</td>
+		<td>#{data6}</td>
+		<td>#{data7}</td>
+		<td>#{data8}</td>
+		<td>#{data9}</td>
+		<td>#{data10}</td>
+		<td>#{data11}</td>
+		<td>#{data12}</td>
+		<td>#{data13}</td>
+		
+mixin poker_tr(cl1,d1,cl2,d2,cl3,d3,cl4,d4,cl5,d5,cl6,d6,cl7,d7,cl8,d8,cl9,d9,cl10,d10,cl11,d11,cl12,d12,cl13,d13)
+	tr
+		<td class="#{cl1}">#{d1}</td>
+		<td class="#{cl2}">#{d2}</td>
+		<td class="#{cl3}">#{d3}</td>
+		<td class="#{cl4}">#{d4}</td>
+		<td class="#{cl5}">#{d5}</td>
+		<td class="#{cl6}">#{d6}</td>
+		<td class="#{cl7}">#{d7}</td>
+		<td class="#{cl8}">#{d8}</td>
+		<td class="#{cl9}">#{d9}</td>
+		<td class="#{cl10}">#{d10}</td>
+		<td class="#{cl11}">#{d11}</td>
+		<td class="#{cl12}">#{d12}</td>
+		<td class="#{cl13}">#{d13}</td>
+		
+mixin poker_head(stack, antes, position)
+	tr
+		th(colspan=3) Game type
+		th(colspan=2) Model
+		th(colspan=4) Effective stack
+		th(colspan=2) Antes
+		th(colspan=2) Position
+	tr
+		th(colspan=3) Tournament
+		th(colspan=2) chip EV
+		th(colspan=4) #{stack}
+		th(colspan=2) #{antes}
+		th(colspan=2) #{position}
+block content
+	h2.font-effect-shadow-multiple Push/Fold
+	article.gid-container
+		div.grid-x
+			div(class="cell medium-1")
+				<ul class="vertical tabs" data-tabs id="example-tabs">
+					<li class="tabs-title is-active"><a href="#panel_20BBv" aria-selected="true">20 BB</a></li>
+					<li class="tabs-title"><a href="#panel2v">19 BB</a></li>
+					<li class="tabs-title"><a href="#panel3v">18 BB</a></li>
+					<li class="tabs-title"><a href="#panel4v">17 BB</a></li>
+					<li class="tabs-title"><a href="#panel5v">16 BB</a></li>
+					<li class="tabs-title"><a href="#panel6v">15 BB</a></li>
+					<li class="tabs-title"><a href="#panel7v">14 BB</a></li>
+					<li class="tabs-title"><a href="#panel8v">13 BB</a></li>
+					<li class="tabs-title"><a href="#panel9v">12 BB</a></li>
+					<li class="tabs-title"><a href="#panel10v">11 BB</a></li>
+					<li class="tabs-title"><a href="#panel11v">10 BB</a></li>
+					<li class="tabs-title"><a href="#panel12v">9 BB</a></li>
+					<li class="tabs-title"><a href="#panel12v">8 BB</a></li>
+					<li class="tabs-title"><a href="#panel12v">7 BB</a></li>
+					<li class="tabs-title"><a href="#panel12v">6 BB</a></li>
+					<li class="tabs-title"><a href="#panel12v">4 BB</a></li>
+					<li class="tabs-title"><a href="#panel_3BBv">3 BB</a></li>
+					<li class="tabs-title"><a href="#panel_2BBv">2 BB</a></li>
+					li.tabs-title 
+						a(href="#panel_1BBv") 1 BB
+				</ul>
+			div(class="cell medium-11")
+				div(class="tabs-content vertical" data-tabs-content="example-tabs")
+					div(class="tabs-panel is-active" id="panel_20BBv")
+						include pf_125_20BBinc.pug
+					div(class="tabs-panel" id="panel_1BBv")
+						include pf_125_1BBinc.pug
+					div(class="tabs-panel" id="panel_2BBv")
+						include pf_125_2BBinc.pug
+					<div class="tabs-panel" id="panel4v">
+						<p>Four</p>
+					</div>
+					<div class="tabs-panel" id="panel5v">
+						<p>Five</p>
+						<p>Check me out! I'm a super cool Tab panel with text content!</p>
+					</div>
+				<div class="tabs-panel" id="panel6v">
+					<p>Six</p>
+				</div>
+			</div>
+		</div>
+		</div>
+		<ul class="tabs" data-tabs id="example-tabs">
+			<li class="tabs-title is-active"><a href="#UTG" aria-selected="true">UTG</a></li>
+			<li class="tabs-title"><a data-tabs-target="UTG1" href="#UTG1">UTG+1</a></li>
+			<li class="tabs-title"><a data-tabs-target="UTG2" href="#UTG2">UTG+2</a></li>
+			<li class="tabs-title"><a data-tabs-target="LoJack" href="#LoJack">LoJack</a></li>
+			<li class="tabs-title"><a data-tabs-target="HiJack" href="#HiJack">HiJack</a></li>
+			<li class="tabs-title"><a data-tabs-target="CutOff" href="#CutOff">CutOff</a></li>
+			<li class="tabs-title"><a data-tabs-target="Button" href="#Button">Button</a></li>
+			<li class="tabs-title"><a data-tabs-target="SB" href="#SB">SB</a></li>
+		</ul>
+		<div class="tabs-content" data-tabs-content="example-tabs">
+			div(class="tabs-panel is-active" id="UTG")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "UTG")
+						tr
+							th(colspan=13) 7.4%, TT+ ATs+ AJo+ KTs+ QJs
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'',"A9s",'',"A8s",'',"A7s",'',"A6s",'',"A5s",'',"A4s",'',"A3s",'',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g','AQo','','KQo','g',"QQ",'g',"QJs",'',"QTs",'',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('g','AJo','','KJo','',"QJo",'g',"JJ",'',"JTs",'',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('','ATo','','KTo','',"QTo",'',"JTo",'g',"TT",'',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'',"99",'',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'',"22")
+
+			div(class="tabs-panel" id="UTG1")
+					table.poker
+						thead
+							+poker_head("20 BB", "12,5%", "UTG+1")
+							tr
+								th(colspan=13) 9.7%, 99+ ATs+ A5s AJo+ KTs+ KQo QTs+ JTs 
+						tbody
+							+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'',"A9s",'',"A8s",'',"A7s",'',"A6s",'g',"A5s",'',"A4s",'',"A3s",'',"A2s")
+							+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+							+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+							+poker_tr('g','AJo','','KJo','',"QJo",'g',"JJ",'g',"JTs",'',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+							+poker_tr('','ATo','','KTo','',"QTo",'',"JTo",'g',"TT",'',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+							+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'g',"99",'',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+							+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+							+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+							+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+							+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'',"55",'',"54s",'',"53s",'',"52s")
+							+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'',"44",'',"43s",'',"42s")
+							+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'',"33",'',"32s")
+							+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'',"22")
+			
+			div(class="tabs-panel" id="UTG2")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "UTG+2")
+						tr
+							th(colspan=13) 11.3%, 44+ A9s+ A5s AJo+ KTs+ QTs+ JTs 
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'g',"A9s",'',"A8s",'',"A7s",'',"A6s",'g',"A5s",'',"A4s",'',"A3s",'',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('g','AJo','','KJo','',"QJo",'g',"JJ",'g',"JTs",'',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('','ATo','','KTo','',"QTo",'',"JTo",'g',"TT",'',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'g',"99",'',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'g',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'g',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'g',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'g',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'g',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'',"22")
+
+			div(class="tabs-panel" id="LoJack")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "LoJack")
+						tr
+							th(colspan=13) 15.2%, 22+ A9s+ A5s ATo+ K9s+ KQo Q9s+ J9s+ T9s  
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'g',"A9s",'',"A8s",'',"A7s",'',"A6s",'g',"A5s",'',"A4s",'',"A3s",'',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'g',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'g',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('g','AJo','','KJo','',"QJo",'g',"JJ",'g',"JTs",'g',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('g','ATo','','KTo','',"QTo",'',"JTo",'g',"TT",'g',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'g',"99",'',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'g',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'g',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'g',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'g',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'g',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'g',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'g',"22")
+
+			div(class="tabs-panel" id="HiJack")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "HiJack")
+						tr
+							th(colspan=13) 17.6%, 22+ A8s+ A5s ATo+ K9s+ KJo+ Q9s+ QJo J9s+ T9s 98s
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'g',"A9s",'g',"A8s",'',"A7s",'',"A6s",'g',"A5s",'',"A4s",'',"A3s",'',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'g',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'g',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('g','AJo','g','KJo','g',"QJo",'g',"JJ",'g',"JTs",'g',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('g','ATo','','KTo','',"QTo",'',"JTo",'g',"TT",'g',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'g',"99",'g',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'g',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'g',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'g',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'g',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'g',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'g',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'g',"22")
+
+
+			div(class="tabs-panel" id="CutOff")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "CutOff")
+						tr
+							th(colspan=13) 26.1%, 22+ A2s+ A8o+ K6s+ KTo+ Q8s+ QTo+ J8s+ JTo T8s+ 97s+ 87s 
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'g',"A9s",'g',"A8s",'g',"A7s",'g',"A6s",'g',"A5s",'g',"A4s",'g',"A3s",'g',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'g',"K9s",'g',"K8s",'g',"K7s",'g',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'g',"Q9s",'g',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('g','AJo','g','KJo','g',"QJo",'g',"JJ",'g',"JTs",'g',"J9s",'g',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('g','ATo','g','KTo','g',"QTo",'g',"JTo",'g',"TT",'g',"T9s",'g',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('g','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'g',"99",'g',"98s",'g',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('g','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'g',"88",'g',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'g',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'g',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'g',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'g',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'g',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'g',"22")
+
+			div(class="tabs-panel" id="Button")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "Button")
+						tr
+							th(colspan=13) 33.0%, 22+ Ax+ K5s+ KTo+ Q8s+ QTo+ J8s+ JTo T7s+ 97s+ 86s+ 76s 65s 
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'g',"A9s",'g',"A8s",'g',"A7s",'g',"A6s",'g',"A5s",'g',"A4s",'g',"A3s",'g',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'g',"K9s",'g',"K8s",'g',"K7s",'g',"K6s",'g',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'g',"Q9s",'g',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('g','AJo','g','KJo','g',"QJo",'g',"JJ",'g',"JTs",'g',"J9s",'g',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('g','ATo','g','KTo','g',"QTo",'g',"JTo",'g',"TT",'g',"T9s",'g',"T8s",'g',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('g','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'g',"99",'g',"98s",'g',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('g','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'g',"88",'g',"87s",'g',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('g','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'g',"77",'g',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('g','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'g',"66",'g',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('g','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'g',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('g','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'g',"44",'',"43s",'',"42s")
+						+poker_tr('g','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'g',"33",'',"32s")
+						+poker_tr('g','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'g',"22")
+
+			div(class="tabs-panel" id="SB")
+				table.poker
+					thead
+						+poker_head("20 BB", "12,5%", "SB")
+						tr
+							th(colspan=13) 54.4%, 22+ Kx+ Q2s+ Q8o+ J4s+ J8o+ T5s+ T8o+ 95s+ 98o 85s+ 87o 74s+ 64s+ 53s+
+					tbody
+						+poker_tr('g','AA','g','AKs','g',"AQs",'g',"AJs",'g',"ATs",'g',"A9s",'g',"A8s",'g',"A7s",'g',"A6s",'g',"A5s",'g',"A4s",'g',"A3s",'g',"A2s")
+						+poker_tr('g','AKo','g','KK','g',"KQs",'g',"KJs",'g',"KTs",'g',"K9s",'g',"K8s",'g',"K7s",'g',"K6s",'g',"K5s",'g',"K4s",'g',"K3s",'g',"K2s")
+						+poker_tr('g','AQo','g','KQo','g',"QQ",'g',"QJs",'g',"QTs",'g',"Q9s",'g',"Q8s",'g',"Q7s",'g',"Q6s",'g',"Q5s",'g',"Q4s",'g',"Q3s",'g',"Q2s")
+						+poker_tr('g','AJo','g','KJo','g',"QJo",'g',"JJ",'g',"JTs",'g',"J9s",'g',"J8s",'g',"J7s",'g',"J6s",'g',"J5s",'g',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('g','ATo','g','KTo','g',"QTo",'g',"JTo",'g',"TT",'g',"T9s",'g',"T8s",'g',"T7s",'g',"T6s",'g',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('g','A9o','g','K9o','g',"Q9o",'g',"J9o",'g',"T9o",'g',"99",'g',"98s",'g',"97s",'g',"96s",'g',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('g','A8o','g','K8o','g',"Q8o",'g',"J8o",'g',"T8o",'g',"98o",'g',"88",'g',"87s",'g',"86s",'g',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('g','A7o','g','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'g',"87o",'g',"77",'g',"76s",'g',"75s",'g',"74s",'',"73s",'',"72s")
+						+poker_tr('g','A6o','g','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'g',"66",'g',"65s",'g',"64s",'',"63s",'',"62s")
+						+poker_tr('g','A5o','g','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'g',"55",'g',"54s",'g',"53s",'',"52s")
+						+poker_tr('g','A4o','g','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'g',"44",'',"43s",'',"42s")
+						+poker_tr('g','A3o','g','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'g',"33",'',"32s")
+						+poker_tr('g','A2o','g','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'g',"22")
+
+		</div>
+	
+	
+
+
+
+
+
+				table.poker
+					thead
+					+poker_head("20 BB", "12,5%", "UTG")
+					tbody
+						+poker_tr('','AA','','AKs','',"AQs",'',"AJs",'',"ATs",'',"A9s",'',"A8s",'',"A7s",'',"A6s",'',"A5s",'',"A4s",'',"A3s",'',"A2s")
+						+poker_tr('','AKo','','KK','',"KQs",'',"KJs",'',"KTs",'',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('','AQo','','KQo','',"QQ",'',"QJs",'',"QTs",'',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('','AJo','','KJo','',"QJo",'',"JJ",'',"JTs",'',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('','ATo','','KTo','',"QTo",'',"JTo",'',"TT",'',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'',"99",'',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'',"22")
+
+					

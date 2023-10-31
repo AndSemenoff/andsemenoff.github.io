@@ -1,0 +1,5314 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="font-effect-shadow-multiple">Push/Fold</h2>
+    <article class="gid-container">
+      <div class="grid-x">
+        <div class="cell medium-1"><ul class="vertical tabs" data-tabs id="example-tabs">
+<li class="tabs-title is-active"><a href="#panel_20BBv" aria-selected="true">20 BB</a></li>
+<li class="tabs-title"><a href="#panel2v">19 BB</a></li>
+<li class="tabs-title"><a href="#panel3v">18 BB</a></li>
+<li class="tabs-title"><a href="#panel4v">17 BB</a></li>
+<li class="tabs-title"><a href="#panel5v">16 BB</a></li>
+<li class="tabs-title"><a href="#panel6v">15 BB</a></li>
+<li class="tabs-title"><a href="#panel7v">14 BB</a></li>
+<li class="tabs-title"><a href="#panel8v">13 BB</a></li>
+<li class="tabs-title"><a href="#panel9v">12 BB</a></li>
+<li class="tabs-title"><a href="#panel10v">11 BB</a></li>
+<li class="tabs-title"><a href="#panel11v">10 BB</a></li>
+<li class="tabs-title"><a href="#panel12v">9 BB</a></li>
+<li class="tabs-title"><a href="#panel12v">8 BB</a></li>
+<li class="tabs-title"><a href="#panel12v">7 BB</a></li>
+<li class="tabs-title"><a href="#panel12v">6 BB</a></li>
+<li class="tabs-title"><a href="#panel12v">4 BB</a></li>
+<li class="tabs-title"><a href="#panel_3BBv">3 BB</a></li>
+<li class="tabs-title"><a href="#panel_2BBv">2 BB</a></li>
+          <li class="tabs-title"> <a href="#panel_1BBv">1 BB</a></li></ul>
+        </div>
+        <div class="cell medium-11">
+          <div class="tabs-content vertical" data-tabs-content="example-tabs">
+            <div class="tabs-panel is-active" id="panel_20BBv"><ul class="tabs" data-tabs id="example-tabs">
+<li class="tabs-title is-active"><a href="#UTG" aria-selected="true">UTG</a></li>
+<li class="tabs-title"><a data-tabs-target="UTG1" href="#UTG1">UTG+1</a></li>
+<li class="tabs-title"><a data-tabs-target="UTG2" href="#UTG2">UTG+2</a></li>
+<li class="tabs-title"><a data-tabs-target="LoJack" href="#LoJack">LoJack</a></li>
+<li class="tabs-title"><a data-tabs-target="HiJack" href="#HiJack">HiJack</a></li>
+<li class="tabs-title"><a data-tabs-target="CutOff" href="#CutOff">CutOff</a></li>
+<li class="tabs-title"><a data-tabs-target="Button" href="#Button">Button</a></li>
+<li class="tabs-title"><a data-tabs-target="SB" href="#SB">SB</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="example-tabs">
+              <div class="tabs-panel is-active" id="UTG">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">7.4%, TT+ ATs+ AJo+ KTs+ QJs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="UTG1">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG+1</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">9.7%, 99+ ATs+ A5s AJo+ KTs+ KQo QTs+ JTs </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="UTG2">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG+2</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">11.3%, 44+ A9s+ A5s AJo+ KTs+ QTs+ JTs </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="LoJack">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">LoJack</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">15.2%, 22+ A9s+ A5s ATo+ K9s+ KQo Q9s+ J9s+ T9s  </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="HiJack">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">HiJack</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">17.6%, 22+ A8s+ A5s ATo+ K9s+ KJo+ Q9s+ QJo J9s+ T9s 98s</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="CutOff">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">CutOff</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">26.1%, 22+ A2s+ A8o+ K6s+ KTo+ Q8s+ QTo+ J8s+ JTo T8s+ 97s+ 87s </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="Button">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">Button</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">33.0%, 22+ Ax+ K5s+ KTo+ Q8s+ QTo+ J8s+ JTo T7s+ 97s+ 86s+ 76s 65s </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="SB">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">20 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">SB</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">54.4%, 22+ Kx+ Q2s+ Q8o+ J4s+ J8o+ T5s+ T8o+ 95s+ 98o 85s+ 87o 74s+ 64s+ 53s+</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div></div>
+            </div>
+            <div class="tabs-panel" id="panel_1BBv"><ul class="tabs" data-tabs id="tabs1BB">
+<li class="tabs-title is-active"><a href="#1BBUTG" aria-selected="true">UTG</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBUTG1" href="#1BBUTG1">UTG+1</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBUTG2" href="#1BBUTG2">UTG+2</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBLoJack" href="#1BBLoJack">LoJack</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBHiJack" href="#1BBHiJack">HiJack</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBCutOff" href="#1BBCutOff">CutOff</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBButton" href="#1BBButton">Button</a></li>
+<li class="tabs-title"><a data-tabs-target="1BBSB" href="#1BBSB">SB</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="tabs1BB">
+              <div class="tabs-panel is-active" id="1BBUTG">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBUTG1">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG+1</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBUTG2">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG+2</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBLoJack">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">LoJack</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBHiJack">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">HiJack</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBCutOff">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">CutOff</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBButton">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">Button</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tabs-panel" id="1BBSB">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">1 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">SB</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div></div>
+            </div>
+            <div class="tabs-panel" id="panel_2BBv"><ul class="tabs" data-tabs id="tabs2BB">
+<li class="tabs-title is-active"><a href="#2BBUTG" aria-selected="true">UTG</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBUTG1" href="#2BBUTG1">UTG+1</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBUTG2" href="#2BBUTG2">UTG+2</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBLoJack" href="#2BBLoJack">LoJack</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBHiJack" href="#2BBHiJack">HiJack</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBCutOff" href="#2BBCutOff">CutOff</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBButton" href="#2BBButton">Button</a></li>
+<li class="tabs-title"><a data-tabs-target="2BBSB" href="#2BBSB">SB</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="tabs2BB">
+              <div class="tabs-panel is-active" id="2BBUTG">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">71.3%, 22+ Kx+ Q2s+ Q4o+ J2s+ J7o+ T2s+ T6o+ <br>92s+ 96o+ 84s+ 86o+ 73s+ 75o+ 63s+ 65o 52s+ 54o 42s+ </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBUTG1">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG+1</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">77.1%, 22+ Kx+ Q2s+ Q3o+ J2s+ J5o+ T2s+ T6o+ <br>92s+ 96o+ 82s+ 85o+ 73s+ 75o+ 62s+ 64o+ 52s+ 54o 42s+ 32s  </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="g">83s</td>
+<td class="g">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="g">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="g">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="g">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="g">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="g">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="g">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="g">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBUTG2">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">UTG+2</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">78.6%, 22+ Qx+ J2s+ J4o+ T2s+ T6o+ 92s+ 96o+ <br>82s+ 85o+ 73s+ 75o+ 62s+ 64o+ 52s+ 54o 42s+</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="g">83s</td>
+<td class="g">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="g">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="g">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="g">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="g">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="g">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="g">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="g">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="g">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBLoJack">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">LoJack</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">83.7%, 22+ Qx+ J2s+ J3o+ T2s+ T4o+ 92s+ 95o+ <br>82s+ 85o+ 72s+ 74o+ 62s+ 64o+ 52s+ 54o 42s+ 32s</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="g">83s</td>
+<td class="g">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="g">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="g">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="g">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="g">J5o</td>
+<td class="g">T5o</td>
+<td class="g">95o</td>
+<td class="g">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="g">J4o</td>
+<td class="g">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="g">74o</td>
+<td class="g">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="g">Q3o</td>
+<td class="g">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="g">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="g">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBHiJack">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">HiJack</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">84.6%, 22+ Jx+ T2s+ T4o+ 92s+ 95o+ 82s+ 85o+ <br>72s+ 74o+ 62s+ 64o+ 52s+ 54o 42s+ 32s</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="g">83s</td>
+<td class="g">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="g">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="g">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="g">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="g">J5o</td>
+<td class="g">T5o</td>
+<td class="g">95o</td>
+<td class="g">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="g">J4o</td>
+<td class="g">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="g">74o</td>
+<td class="g">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="g">Q3o</td>
+<td class="g">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="g">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="g">Q2o</td>
+<td class="g">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBCutOff">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">CutOff</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">85.2%, 22+ Jx+ T2s+ T3o+ 92s+ 95o+ 82s+ 85o+ <br>72s+ 74o+ 62s+ 64o+ 52s+ 54o 42s+ </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="g">83s</td>
+<td class="g">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="g">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="g">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="g">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="g">J5o</td>
+<td class="g">T5o</td>
+<td class="g">95o</td>
+<td class="g">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="g">J4o</td>
+<td class="g">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="g">74o</td>
+<td class="g">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="g">Q3o</td>
+<td class="g">J3o</td>
+<td class="g">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="g">Q2o</td>
+<td class="g">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBButton">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">Button</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">90.0%, 22+ Tx+ 92s+ 93o+ 82s+ 84o+ 72s+ 74o+ <br>62s+ 64o+ 52s+ 53o+ 42s+ 32s </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+                    </tr>
+                    <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+                    </tr>
+                    <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+                    </tr>
+                    <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="g">J3s</td>
+<td class="g">J2s</td>
+                    </tr>
+                    <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="g">T4s</td>
+<td class="g">T3s</td>
+<td class="g">T2s</td>
+                    </tr>
+                    <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="g">94s</td>
+<td class="g">93s</td>
+<td class="g">92s</td>
+                    </tr>
+                    <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="g">84s</td>
+<td class="g">83s</td>
+<td class="g">82s</td>
+                    </tr>
+                    <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="g">Q7o</td>
+<td class="g">J7o</td>
+<td class="g">T7o</td>
+<td class="g">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="g">73s</td>
+<td class="g">72s</td>
+                    </tr>
+                    <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="g">Q6o</td>
+<td class="g">J6o</td>
+<td class="g">T6o</td>
+<td class="g">96o</td>
+<td class="g">86o</td>
+<td class="g">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="g">63s</td>
+<td class="g">62s</td>
+                    </tr>
+                    <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="g">Q5o</td>
+<td class="g">J5o</td>
+<td class="g">T5o</td>
+<td class="g">95o</td>
+<td class="g">85o</td>
+<td class="g">75o</td>
+<td class="g">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="g">52s</td>
+                    </tr>
+                    <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="g">Q4o</td>
+<td class="g">J4o</td>
+<td class="g">T4o</td>
+<td class="g">94o</td>
+<td class="g">84o</td>
+<td class="g">74o</td>
+<td class="g">64o</td>
+<td class="g">54o</td>
+<td class="g">44</td>
+<td class="g">43s</td>
+<td class="g">42s</td>
+                    </tr>
+                    <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="g">Q3o</td>
+<td class="g">J3o</td>
+<td class="g">T3o</td>
+<td class="g">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="g">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="g">32s</td>
+                    </tr>
+                    <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="g">Q2o</td>
+<td class="g">J2o</td>
+<td class="g">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tabs-panel" id="2BBSB">
+                <table class="poker">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Game type</th>
+                      <th colspan="2">Model</th>
+                      <th colspan="4">Effective stack</th>
+                      <th colspan="2">Antes</th>
+                      <th colspan="2">Position</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tournament</th>
+                      <th colspan="2">chip EV</th>
+                      <th colspan="4">2 BB</th>
+                      <th colspan="2">12,5%</th>
+                      <th colspan="2">SB</th>
+                    </tr>
+                    <tr>
+                      <th colspan="13">100.0%, Any two</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div></div>
+            </div><div class="tabs-panel" id="panel4v">
+<p>Four</p>
+</div>
+<div class="tabs-panel" id="panel5v">
+<p>Five</p>
+<p>Check me out! I'm a super cool Tab panel with text content!</p>
+</div>
+          </div><div class="tabs-panel" id="panel6v">
+<p>Six</p>
+</div>
+        </div></div>
+      </div></div>
+</div>
+<ul class="tabs" data-tabs id="example-tabs">
+<li class="tabs-title is-active"><a href="#UTG" aria-selected="true">UTG</a></li>
+<li class="tabs-title"><a data-tabs-target="UTG1" href="#UTG1">UTG+1</a></li>
+<li class="tabs-title"><a data-tabs-target="UTG2" href="#UTG2">UTG+2</a></li>
+<li class="tabs-title"><a data-tabs-target="LoJack" href="#LoJack">LoJack</a></li>
+<li class="tabs-title"><a data-tabs-target="HiJack" href="#HiJack">HiJack</a></li>
+<li class="tabs-title"><a data-tabs-target="CutOff" href="#CutOff">CutOff</a></li>
+<li class="tabs-title"><a data-tabs-target="Button" href="#Button">Button</a></li>
+<li class="tabs-title"><a data-tabs-target="SB" href="#SB">SB</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="example-tabs">
+      <div class="tabs-panel is-active" id="UTG">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">UTG</th>
+            </tr>
+            <tr>
+              <th colspan="13">7.4%, TT+ ATs+ AJo+ KTs+ QJs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="UTG1">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">UTG+1</th>
+            </tr>
+            <tr>
+              <th colspan="13">9.7%, 99+ ATs+ A5s AJo+ KTs+ KQo QTs+ JTs </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="UTG2">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">UTG+2</th>
+            </tr>
+            <tr>
+              <th colspan="13">11.3%, 44+ A9s+ A5s AJo+ KTs+ QTs+ JTs </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="LoJack">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">LoJack</th>
+            </tr>
+            <tr>
+              <th colspan="13">15.2%, 22+ A9s+ A5s ATo+ K9s+ KQo Q9s+ J9s+ T9s  </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="g">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="HiJack">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">HiJack</th>
+            </tr>
+            <tr>
+              <th colspan="13">17.6%, 22+ A8s+ A5s ATo+ K9s+ KJo+ Q9s+ QJo J9s+ T9s 98s</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="g">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="g">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="CutOff">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">CutOff</th>
+            </tr>
+            <tr>
+              <th colspan="13">26.1%, 22+ A2s+ A8o+ K6s+ KTo+ Q8s+ QTo+ J8s+ JTo T8s+ 97s+ 87s </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="g">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="g">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="Button">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">Button</th>
+            </tr>
+            <tr>
+              <th colspan="13">33.0%, 22+ Ax+ K5s+ KTo+ Q8s+ QTo+ J8s+ JTo T7s+ 97s+ 86s+ 76s 65s </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="g">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="g">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="g">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="g">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="g">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="g">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="g">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="g">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-panel" id="SB">
+        <table class="poker">
+          <thead>
+            <tr>
+              <th colspan="3">Game type</th>
+              <th colspan="2">Model</th>
+              <th colspan="4">Effective stack</th>
+              <th colspan="2">Antes</th>
+              <th colspan="2">Position</th>
+            </tr>
+            <tr>
+              <th colspan="3">Tournament</th>
+              <th colspan="2">chip EV</th>
+              <th colspan="4">20 BB</th>
+              <th colspan="2">12,5%</th>
+              <th colspan="2">SB</th>
+            </tr>
+            <tr>
+              <th colspan="13">54.4%, 22+ Kx+ Q2s+ Q8o+ J4s+ J8o+ T5s+ T8o+ 95s+ 98o 85s+ 87o 74s+ 64s+ 53s+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="g">AA</td>
+<td class="g">AKs</td>
+<td class="g">AQs</td>
+<td class="g">AJs</td>
+<td class="g">ATs</td>
+<td class="g">A9s</td>
+<td class="g">A8s</td>
+<td class="g">A7s</td>
+<td class="g">A6s</td>
+<td class="g">A5s</td>
+<td class="g">A4s</td>
+<td class="g">A3s</td>
+<td class="g">A2s</td>
+            </tr>
+            <tr><td class="g">AKo</td>
+<td class="g">KK</td>
+<td class="g">KQs</td>
+<td class="g">KJs</td>
+<td class="g">KTs</td>
+<td class="g">K9s</td>
+<td class="g">K8s</td>
+<td class="g">K7s</td>
+<td class="g">K6s</td>
+<td class="g">K5s</td>
+<td class="g">K4s</td>
+<td class="g">K3s</td>
+<td class="g">K2s</td>
+            </tr>
+            <tr><td class="g">AQo</td>
+<td class="g">KQo</td>
+<td class="g">QQ</td>
+<td class="g">QJs</td>
+<td class="g">QTs</td>
+<td class="g">Q9s</td>
+<td class="g">Q8s</td>
+<td class="g">Q7s</td>
+<td class="g">Q6s</td>
+<td class="g">Q5s</td>
+<td class="g">Q4s</td>
+<td class="g">Q3s</td>
+<td class="g">Q2s</td>
+            </tr>
+            <tr><td class="g">AJo</td>
+<td class="g">KJo</td>
+<td class="g">QJo</td>
+<td class="g">JJ</td>
+<td class="g">JTs</td>
+<td class="g">J9s</td>
+<td class="g">J8s</td>
+<td class="g">J7s</td>
+<td class="g">J6s</td>
+<td class="g">J5s</td>
+<td class="g">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+            </tr>
+            <tr><td class="g">ATo</td>
+<td class="g">KTo</td>
+<td class="g">QTo</td>
+<td class="g">JTo</td>
+<td class="g">TT</td>
+<td class="g">T9s</td>
+<td class="g">T8s</td>
+<td class="g">T7s</td>
+<td class="g">T6s</td>
+<td class="g">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+            </tr>
+            <tr><td class="g">A9o</td>
+<td class="g">K9o</td>
+<td class="g">Q9o</td>
+<td class="g">J9o</td>
+<td class="g">T9o</td>
+<td class="g">99</td>
+<td class="g">98s</td>
+<td class="g">97s</td>
+<td class="g">96s</td>
+<td class="g">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+            </tr>
+            <tr><td class="g">A8o</td>
+<td class="g">K8o</td>
+<td class="g">Q8o</td>
+<td class="g">J8o</td>
+<td class="g">T8o</td>
+<td class="g">98o</td>
+<td class="g">88</td>
+<td class="g">87s</td>
+<td class="g">86s</td>
+<td class="g">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+            </tr>
+            <tr><td class="g">A7o</td>
+<td class="g">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="g">87o</td>
+<td class="g">77</td>
+<td class="g">76s</td>
+<td class="g">75s</td>
+<td class="g">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+            </tr>
+            <tr><td class="g">A6o</td>
+<td class="g">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="g">66</td>
+<td class="g">65s</td>
+<td class="g">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+            </tr>
+            <tr><td class="g">A5o</td>
+<td class="g">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="g">55</td>
+<td class="g">54s</td>
+<td class="g">53s</td>
+<td class="">52s</td>
+            </tr>
+            <tr><td class="g">A4o</td>
+<td class="g">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="g">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+            </tr>
+            <tr><td class="g">A3o</td>
+<td class="g">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="g">33</td>
+<td class="">32s</td>
+            </tr>
+            <tr><td class="g">A2o</td>
+<td class="g">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="g">22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div></div>
+      <table class="poker">
+        <thead></thead>
+        <tr>
+          <th colspan="3">Game type</th>
+          <th colspan="2">Model</th>
+          <th colspan="4">Effective stack</th>
+          <th colspan="2">Antes</th>
+          <th colspan="2">Position</th>
+        </tr>
+        <tr>
+          <th colspan="3">Tournament</th>
+          <th colspan="2">chip EV</th>
+          <th colspan="4">20 BB</th>
+          <th colspan="2">12,5%</th>
+          <th colspan="2">UTG</th>
+        </tr>
+        <tbody>
+          <tr><td class="">AA</td>
+<td class="">AKs</td>
+<td class="">AQs</td>
+<td class="">AJs</td>
+<td class="">ATs</td>
+<td class="">A9s</td>
+<td class="">A8s</td>
+<td class="">A7s</td>
+<td class="">A6s</td>
+<td class="">A5s</td>
+<td class="">A4s</td>
+<td class="">A3s</td>
+<td class="">A2s</td>
+          </tr>
+          <tr><td class="">AKo</td>
+<td class="">KK</td>
+<td class="">KQs</td>
+<td class="">KJs</td>
+<td class="">KTs</td>
+<td class="">K9s</td>
+<td class="">K8s</td>
+<td class="">K7s</td>
+<td class="">K6s</td>
+<td class="">K5s</td>
+<td class="">K4s</td>
+<td class="">K3s</td>
+<td class="">K2s</td>
+          </tr>
+          <tr><td class="">AQo</td>
+<td class="">KQo</td>
+<td class="">QQ</td>
+<td class="">QJs</td>
+<td class="">QTs</td>
+<td class="">Q9s</td>
+<td class="">Q8s</td>
+<td class="">Q7s</td>
+<td class="">Q6s</td>
+<td class="">Q5s</td>
+<td class="">Q4s</td>
+<td class="">Q3s</td>
+<td class="">Q2s</td>
+          </tr>
+          <tr><td class="">AJo</td>
+<td class="">KJo</td>
+<td class="">QJo</td>
+<td class="">JJ</td>
+<td class="">JTs</td>
+<td class="">J9s</td>
+<td class="">J8s</td>
+<td class="">J7s</td>
+<td class="">J6s</td>
+<td class="">J5s</td>
+<td class="">J4s</td>
+<td class="">J3s</td>
+<td class="">J2s</td>
+          </tr>
+          <tr><td class="">ATo</td>
+<td class="">KTo</td>
+<td class="">QTo</td>
+<td class="">JTo</td>
+<td class="">TT</td>
+<td class="">T9s</td>
+<td class="">T8s</td>
+<td class="">T7s</td>
+<td class="">T6s</td>
+<td class="">T5s</td>
+<td class="">T4s</td>
+<td class="">T3s</td>
+<td class="">T2s</td>
+          </tr>
+          <tr><td class="">A9o</td>
+<td class="">K9o</td>
+<td class="">Q9o</td>
+<td class="">J9o</td>
+<td class="">T9o</td>
+<td class="">99</td>
+<td class="">98s</td>
+<td class="">97s</td>
+<td class="">96s</td>
+<td class="">95s</td>
+<td class="">94s</td>
+<td class="">93s</td>
+<td class="">92s</td>
+          </tr>
+          <tr><td class="">A8o</td>
+<td class="">K8o</td>
+<td class="">Q8o</td>
+<td class="">J8o</td>
+<td class="">T8o</td>
+<td class="">98o</td>
+<td class="">88</td>
+<td class="">87s</td>
+<td class="">86s</td>
+<td class="">85s</td>
+<td class="">84s</td>
+<td class="">83s</td>
+<td class="">82s</td>
+          </tr>
+          <tr><td class="">A7o</td>
+<td class="">K7o</td>
+<td class="">Q7o</td>
+<td class="">J7o</td>
+<td class="">T7o</td>
+<td class="">97o</td>
+<td class="">87o</td>
+<td class="">77</td>
+<td class="">76s</td>
+<td class="">75s</td>
+<td class="">74s</td>
+<td class="">73s</td>
+<td class="">72s</td>
+          </tr>
+          <tr><td class="">A6o</td>
+<td class="">K6o</td>
+<td class="">Q6o</td>
+<td class="">J6o</td>
+<td class="">T6o</td>
+<td class="">96o</td>
+<td class="">86o</td>
+<td class="">76o</td>
+<td class="">66</td>
+<td class="">65s</td>
+<td class="">64s</td>
+<td class="">63s</td>
+<td class="">62s</td>
+          </tr>
+          <tr><td class="">A5o</td>
+<td class="">K5o</td>
+<td class="">Q5o</td>
+<td class="">J5o</td>
+<td class="">T5o</td>
+<td class="">95o</td>
+<td class="">85o</td>
+<td class="">75o</td>
+<td class="">65o</td>
+<td class="">55</td>
+<td class="">54s</td>
+<td class="">53s</td>
+<td class="">52s</td>
+          </tr>
+          <tr><td class="">A4o</td>
+<td class="">K4o</td>
+<td class="">Q4o</td>
+<td class="">J4o</td>
+<td class="">T4o</td>
+<td class="">94o</td>
+<td class="">84o</td>
+<td class="">74o</td>
+<td class="">64o</td>
+<td class="">54o</td>
+<td class="">44</td>
+<td class="">43s</td>
+<td class="">42s</td>
+          </tr>
+          <tr><td class="">A3o</td>
+<td class="">K3o</td>
+<td class="">Q3o</td>
+<td class="">J3o</td>
+<td class="">T3o</td>
+<td class="">93o</td>
+<td class="">83o</td>
+<td class="">73o</td>
+<td class="">63o</td>
+<td class="">53o</td>
+<td class="">43o</td>
+<td class="">33</td>
+<td class="">32s</td>
+          </tr>
+          <tr><td class="">A2o</td>
+<td class="">K2o</td>
+<td class="">Q2o</td>
+<td class="">J2o</td>
+<td class="">T2o</td>
+<td class="">92o</td>
+<td class="">82o</td>
+<td class="">72o</td>
+<td class="">62o</td>
+<td class="">52o</td>
+<td class="">42o</td>
+<td class="">32o</td>
+<td class="">22</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script>$(document).foundation();</script>
+    </footer>
+  </body>
+</html>

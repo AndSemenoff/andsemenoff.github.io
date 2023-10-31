@@ -1,4 +1,10 @@
 /* CSS Document */
+.root {
+    --reddack-color: red;/*#fd625e;*/
+    --content-color: yellow;
+}
+@redcolor: var(--reddack-color);
+
 html{
 
 }
@@ -158,6 +164,113 @@ dd {
 	background-image: url(../images/m_m2.svg);
 	font-weight: bold;
 	/*border-top:1px solid black;*/
+}
+
+.poker td.gr{
+	background:linear-gradient(to top, #fd625e 50%, #22885c 50%);
+	background-position:top left;
+	text-align:center;
+	background-size: 100% 100%;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+  }
+
+.poker td.g{
+	background-color: lightgreen;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.g1{
+	background-color: #22885c;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.g2{
+	background-color: #30c585;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+
+.poker td.b{
+	background-color: #5fa8db;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.r1{
+	background-color: @redcolor;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.r2{
+	background-color: #e67888; /*#ea9999;  #fd625e; */
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.r3{
+	background-color: #f8afbe; /* #fd625e; */
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.a{
+	background-color: #028f8e;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker td.q{
+	background-color: #dbdcff;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+
+
+.poker td.y{
+	background-color: #f2c80f;
+	border:2px solid black;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.poker{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: small;
+	border-width: 2px;
+	border-style: solid;
+	/*border:1px solid black;*/
+	width: initial;
+}
+.poker th{
+	border:1px solid black;
+	margin: 0;
+	padding: 0.3em;
+	background-color: lightgrey;
+	text-align: center; 
+}
+.poker td{
+	border:0px solid white;
+	margin: 0;
+	padding: 0.3em;
+	background-color: lightgrey;
+	text-align: center; 
 }
 
 .table-simple{

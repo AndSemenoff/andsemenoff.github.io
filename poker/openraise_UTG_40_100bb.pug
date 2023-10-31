@@ -1,0 +1,58 @@
+extends ../layouts/poker_layout.pug
+
+block content
+	h2.font-effect-shadow-multiple Чарты открытия
+	article.grid-container
+		div.grid-x
+			div(class="cell small-3")
+
+			div(class="cell small-6")
+				table.poker
+					thead
+						+poker_head("40-100 BB", "12,5%", "UTG")
+						tr
+							th(colspan=13) 152 (11.46%), 77+, A9s+, A5s-A2s, KTs+, QTs+, JTs, T9s, 98s, AJo+ 
+					tbody
+						+poker_tr('r1','AA','r2','AKs','g1',"AQs",'g1',"AJs",'g1',"ATs",'b3',"A9s",'',"A8s",'',"A7s",'',"A6s",'b1',"A5s",'b1',"A4s",'b1',"A3s",'b3',"A2s")
+						+poker_tr('r2','AKo','r1','KK','g1',"KQs",'g1',"KJs",'b3',"KTs",'',"K9s",'',"K8s",'',"K7s",'',"K6s",'',"K5s",'',"K4s",'',"K3s",'',"K2s")
+						+poker_tr('g1','AQo','','KQo','r2',"QQ",'g2',"QJs",'b3',"QTs",'',"Q9s",'',"Q8s",'',"Q7s",'',"Q6s",'',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('b3','AJo','','KJo','',"QJo",'r2',"JJ",'g2',"JTs",'',"J9s",'',"J8s",'',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('','ATo','','KTo','',"QTo",'',"JTo",'r3',"TT",'g3',"T9s",'',"T8s",'',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('','A9o','','K9o','',"Q9o",'',"J9o",'',"T9o",'r3',"99",'b3',"98s",'',"97s",'',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'g2',"88",'',"87s",'',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'g2',"77",'',"76s",'',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'',"66",'',"65s",'',"64s",'',"63s",'',"62s")
+						+poker_tr('','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'',"55",'',"54s",'',"53s",'',"52s")
+						+poker_tr('','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'',"44",'',"43s",'',"42s")
+						+poker_tr('','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'',"33",'',"32s")
+						+poker_tr('','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'',"22")
+			div(class="cell small-3")
+				br
+				br
+				br
+				br
+				table.poker
+					tr 
+						td.r1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td 4bet value
+					tr
+						td.r2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td 4bet allin < 40bb
+					tr
+						td.r3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td 4bet allin < 30bb
+					tr
+						td.g1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td call vs 3bet oop(out of position)
+					tr
+						td.g2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td call vs 3bet 40bb+
+					tr
+						td.g3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td call vs 3bet 50bb+
+					tr
+						td.b1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td 4bet bluff
+					tr
+						td.b3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td fold vs 3bet

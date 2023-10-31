@@ -1,0 +1,69 @@
+<ul class="tabs" data-tabs id="tabs1BB">
+	<li class="tabs-title is-active"><a href="#1BBUTG" aria-selected="true">UTG</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBUTG1" href="#1BBUTG1">UTG+1</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBUTG2" href="#1BBUTG2">UTG+2</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBLoJack" href="#1BBLoJack">LoJack</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBHiJack" href="#1BBHiJack">HiJack</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBCutOff" href="#1BBCutOff">CutOff</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBButton" href="#1BBButton">Button</a></li>
+	<li class="tabs-title"><a data-tabs-target="1BBSB" href="#1BBSB">SB</a></li>
+</ul>
+<div class="tabs-content" data-tabs-content="tabs1BB">
+	div(class="tabs-panel is-active" id="1BBUTG")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "UTG")
+				tr
+					th(colspan=13) 100.0%, Any two
+
+	div(class="tabs-panel" id="1BBUTG1")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "UTG+1")
+				tr
+					th(colspan=13) 100.0%, Any two
+						
+	div(class="tabs-panel" id="1BBUTG2")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "UTG+2")
+				tr
+					th(colspan=13) 100.0%, Any two
+					
+	div(class="tabs-panel" id="1BBLoJack")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "LoJack")
+				tr
+					th(colspan=13) 100.0%, Any two
+
+	div(class="tabs-panel" id="1BBHiJack")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "HiJack")
+				tr
+					th(colspan=13) 100.0%, Any two
+			tbody
+
+	div(class="tabs-panel" id="1BBCutOff")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "CutOff")
+				tr
+					th(colspan=13) 100.0%, Any two
+					
+					
+	div(class="tabs-panel" id="1BBButton")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "Button")
+				tr
+					th(colspan=13) 100.0%, Any two
+					
+	div(class="tabs-panel" id="1BBSB")
+		table.poker
+			thead
+				+poker_head("1 BB", "12,5%", "SB")
+				tr
+					th(colspan=13) 100.0%, Any two
+</div>

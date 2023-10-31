@@ -1,0 +1,137 @@
+- var site_title_name = "ABSOLEM.INFO";
+- var site_title = "ABSOLEM.INFO |";
+- var site_url = "http://absolem.info";
+mixin mli(lang, direction, url, link_text, descriptions, ...tags)
+	//- lang - ["ru", "en"]
+	//- direction ["my", "out"]
+	//- url - str ссылка
+	//- link_text - str текст ссылки
+	//- descriptions - str текст описания
+	//- tags
+	li
+		<span class= 'flag_#{lang}'></span>&nbsp;
+		<a href = #{url} target="_blank">&nbsp;#{link_text}&nbsp;
+		if direction == "my"
+			<i class='far fa-eye'></i></a>
+		else
+			<i class="fas fa-external-link-alt"></i></a>
+		|&nbsp;-&nbsp;#{descriptions}&nbsp;
+		each tag in tags
+			case tag
+				when "c"
+					<i class="fas fa-info-circle"></i> 
+				when "cogs"
+					<i class="fas fa-cogs"></i> 
+				when "dollar"
+					<i class="fas fa-dollar-sign"></i> 
+				when "btc"
+					<i class="fab fa-bitcoin"></i> 
+				when "news"
+					<i class="far fa-newspaper"></i> 
+				when "sec"
+					<i class="fas fa-user-secret"></i> 
+				when "old"
+					<i class="fas fa-blind"></i>
+				when "github"
+					<i class="fab fa-github"></i> 
+				when "youtube"
+					<i class="fab fa-youtube"></i>
+				when "pdf"
+					<i class="fa-regular fa-file-pdf"></i>
+					
+mixin poker_head(stack, antes, position)
+	tr
+		th(colspan=3) Game type
+		th(colspan=2) Model
+		th(colspan=4) Effective stack
+		th(colspan=2) Antes
+		th(colspan=2) Position
+	tr
+		th(colspan=3) Tournament
+		th(colspan=2) chip EV
+		th(colspan=4) #{stack}
+		th(colspan=2) #{antes}
+		th(colspan=2) #{position}
+		
+mixin poker_tr(cl1,d1,cl2,d2,cl3,d3,cl4,d4,cl5,d5,cl6,d6,cl7,d7,cl8,d8,cl9,d9,cl10,d10,cl11,d11,cl12,d12,cl13,d13)
+	tr
+		<td class="#{cl1}">#{d1}</td>
+		<td class="#{cl2}">#{d2}</td>
+		<td class="#{cl3}">#{d3}</td>
+		<td class="#{cl4}">#{d4}</td>
+		<td class="#{cl5}">#{d5}</td>
+		<td class="#{cl6}">#{d6}</td>
+		<td class="#{cl7}">#{d7}</td>
+		<td class="#{cl8}">#{d8}</td>
+		<td class="#{cl9}">#{d9}</td>
+		<td class="#{cl10}">#{d10}</td>
+		<td class="#{cl11}">#{d11}</td>
+		<td class="#{cl12}">#{d12}</td>
+		<td class="#{cl13}">#{d13}</td>
+		
+//- "http://andsemenoff.github.io";
+//- var site_url = "http://localhost:8000";
+doctype html
+html(lang="ru")
+	head
+		block title
+		meta( charset="utf-8" )
+		meta( name="viewport" content="width=device-width, initial-scale=1.0")
+		meta( name="description" content="Семенова Андрей Вячеславович. Личный сайт" )
+		meta( name="author" content="Семенова Андрей Вячеславович" )
+		meta( name="keywords" content="Poker. Tournament Poker, MTT")
+		meta( name="copyright" content="Семенова Андрей Вячеславович" )
+		link( rel="shortcut icon" href="../caterpillar.png" )
+		link( rel="stylesheet" href="../css/normalize.css" media="all")
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="../css/mainstyle2024.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css")
+		script(src="../js/jquery.3.2.1.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js")
+		link( href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&effect=shadow-multiple|vintage&subset=cyrillic' rel="stylesheet")
+		link( href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet")
+		link( href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet")
+		link( href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet")
+
+		block scripts
+	body
+		div.top-bar
+			div.top-bar-left 
+				ul.menu
+					li
+						a(href="/") 
+							i.fas.fa-home
+							| &nbsp;
+							= site_title_name
+		block navigation
+		block content
+		footer
+			hr
+			block footer_scripts
+			div.grid-container.fluid.text-center
+				div.grid-x.grid-margin-x.small-up-1.medium-up-3.large-up-3
+					div.cell.small-4
+						a(href="https://validator.w3.org/check?uri=referer")
+							img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+
+					div.cell.small-4
+						a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/")
+							img(alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png")
+						p <i class="far fa-copyright"></i> 2001 - 2023
+						div: small Это произведение, автор которого — 
+							a(href="../about/about_main.html") Андрей Семенов
+						div: small Доступно на условиях 
+							a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/") лицензии 
+							| Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.
+					div.cell.small-4
+						a(rel="license" href="http://freedomdefined.org")
+							img(alt="freedomdefined" style="border-width:0" src="../images/seal.png")
+			//div.row
+				div.large-12.columns
+					block footer_scripts
+					div#logo5HTML
+						a(href="https://validator.w3.org/check?uri=referer")
+							img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+			block footer
+			script $(document).foundation();

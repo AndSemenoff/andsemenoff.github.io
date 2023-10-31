@@ -7,51 +7,168 @@ block content
 			li
 				| Статьи
 				ol
+					+mli("ru", "my", "#python", "", "Python и покер", "")
+					+mli("ru", "my", "bubble_factor.html", "", "Bubble Factor в спортивном покере", "")
+					+mli("ru", "my", "casinos.html", "", "Казино для реальной турнирной игры", "")
 					+mli("en", "out", "https://www.pokerstrategy.com/strategy/various-poker/texas-holdem-probabilities/", "pokerstrategy.com", "Вероятности разных покерных событий", "book")
 					+mli("en", "out", "https://en.wikipedia.org/wiki/Poker_probability", "", "Вероятности разных покерных событий", "wikipedia")
-					+mli("en", "out", "https://www.datacamp.com/tutorial/statistics-python-tutorial-probability-1", "", "Poker Probability and Statistics with Python", "")
-					
-					+mli("en", "out", "https://www.datacamp.com/tutorial/python-probability-tutorial", "", "Analyzing Poker Hands with Python", "")
+
 					+mli("en", "out", "https://dev.to/rainleander/create-a-simple-5-card-draw-poker-game-in-python-with-asyncio-2ifh", "dev.to", "Create a Simple 5-Card Draw Poker Game in Python with Asyncio", "") 
 					+mli("en", "out", "https://www.espn.com/espn/poker/columns/story?columnist=bluff_magazine&id=2817110", "", "G-Bucks", "")
 					+mli("en", "out", "https://www.thepokerbank.com/strategy/mathematics/", "thepokerbank.com", "Mathematics", "")
 					+mli("en", "out", "https://www.thepokerbank.com/videos/wilcox/articles/4betting-mathematics/", "thepokerbank.com", "4betting mathematics", "")
-			
+					//https://www.youtube.com/watch?v=PZLCOgubhEE
+					//https://colab.research.google.com/drive/1oh1nW0foTSEnX4g_KlRlLQd-Tv8mamW0?usp=sharing
+					+mli("en", "out", "http://www.cs.virginia.edu/~evans/poker/wp-content/uploads/2011/02/opponent_modeling_in_poker_billings.pdf", "", "Darse Billings, Denis Papp, Jonathan Schaeffer, Duane Szafron, Opponent modeling in poker", "pdf") 
+					+mli("en", "out", "https://www.thepokerbank.com/strategy/basic/starting-hand-selection/sklansky-groups/", "", "David Skalinsky & Mason Malmuth, Starting hand groups", "")
+			li Чарты
+				ol
+					li 40-100BB
+						ol
+							li Open Raise
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_UTG_40_100bb.html") UTG
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_UTG1_40_100bb.html") UTG+1
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_UTG2_40_100bb.html") UTG+2
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_LJ_40_100bb.html") MP/LJ
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_HJ_40_100bb.html") HJ
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_CO_40_100bb.html") CO
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_BU_40_100bb.html") BU
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_SB_40_100bb.html") SB
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+							li Flat calling / 3Betting
+							li BB vs SB
+							li Защита BB
+					li 10-20BB
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_UTG_10_20bb.html") UTG
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_UTG1_10_20bb.html") UTG+1
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_UTG2_10_20bb.html") UTG+2
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_LJ_10_20bb.html") MP/LJ
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_HJ_10_20bb.html") HJ
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_CO_10_20bb.html") CO
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_BU_10_20bb.html") BU
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_SB_10_20bb.html") SB
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+					li 1-10BB
+						ol
+							+mli("ru", "my", "push_fold_chart.html", "", "Push/Fold", "")
+							+mli("ru", "my", "push_10bb.html", "", "Push 10BB", "")
 			li <u>ICM Independent Chip Model</u>
 				ol
 					+mli("en", "out", "https://en.wikipedia.org/wiki/Independent_Chip_Model", "", "Independent Chip Model", "wikipedia")
 					+mli("en", "out", "https://www.holdemresources.net/blog/high-accuracy-mtt-icm/", "holdemresources.net", "ICM Calculations For Large Fields", "")
-					
 					+mli("en", "out", "https://www.holdemresources.net/icmcalculator", "holdemresources.net", "ICMcalculator", "")
 					+mli("en", "out", "https://www.icmizer.com/icmcalculator/", "icmizer.com", "ICMcalculator", "")
+					+mli("en", "out", "https://www.icmizer.com/en/blog/poker-icm-101-what-is-icm-poker/", "icmizer.com", "Blog. What is ICM poker?", "")
 					+mli("en", "out", "https://icmcalculator.com/", "icmcalculator.com", "ICMcalculator", "")
 					+mli("en", "out", "https://www.gipsyteam.ru/tools/icm-calculator", "gipsyteam.ru", "ICMcalculator", "")
-					+mli("en", "out", "https://github.com/aidanf/SimpleICM/blob/master/model.py", "", "python code", "github")
+					
+
+			li <u>Push/Fold стратегия</u>
+				ol
+					+mli("en", "out", "https://github.com/wyattferguson/pokerstars-tempest-bot", "", "pokerstars tempest bot", "github")
+					+mli("en", "out", "https://matchpoker.com/learn/strategy-guides/push-fold-charts", "matchpoker.com", "Nash Equilibrium Heads-Up Poker Charts", "")
+					+mli("en", "out", "https://www.holdemresources.net/hune", "holdemresources.net", "HeadsUp Push/Fold Nash Equilibrium", "")
+					+mli("en", "out", "https://upswingpoker.com/push-fold-tournament-strategy-charts/", "upswingpoker.com", "push fold tournament strategy charts", "")
+					+mli("en", "out", "https://www.push-or-fold.com/jennifear-push-fold.php", "push-or-fold.com", "Jennifear Push or Fold Chart", "")
 					
 			li Теория
 				ol
-					+mli("en", "out", "http://suffe.cool/poker/evaluator.html", "", "Cactus Kev's Poker Hand Evaluator", "")
-					+mli("en", "out", "https://colab.research.google.com/github/norvig/pytudes/blob/main/ipynb/poker.ipynb", "Peter Norvig", "Poker: Ranking Hands", "ipynb")
 					+mli("en", "out", "https://www.holdemresources.net/blog/card-bunching-effects/", "holdemresources.net", "Влияние сброшенных до вас карт, на диапазоны и стратегию.", "")
 					+mli("en", "out", "https://en.wikipedia.org/wiki/Effective_hand_strength_algorithm", "", "Effective hand strength algorithm", "wikipedia")
+					+mli("en", "out", "https://learnwpt.com/learn/tools/", "learnwpt.com", "Teory", "")
+					+mli("en", "out", "https://upswingpoker.com/poker-positions-101-explaining-what-you-must-know/", "upswingpoker.com", "Определения позиций в Texas NL", "")
+			li Сайты
+				ol
+					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "Есть бесплатные инструменты. Есть пробный период в 14 дней.", "")
+					+mli("en", "out", "https://www.gtowizard.com", "gtowizard.com", "", "")
+					+mli("en", "out", "https://simplepoker.com/", "simplepoker.com", "Есть видео. Есть теория. Много дорогого софта", "")
+					+mli("en", "out", "https://www.flopzilla.com/index.html", "FlopZilla", "Минимальная цена - $25", "")
+					+mli("en", "out", "https://www.pokerstrategy.com", "pokerstrategy.com", "", "")
+					+mli("en", "out", "https://piosolver.com/", "PioSolver", "GTO инструмент. Минимальная цена - $249", "")
+					+mli("en", "out", "https://www.pokersnowie.com/", "pokersnowie.com", "Минимальная $99/год. Есть бесплатный контент. И триал период.", "")
+					+mli("en", "out", "https://gtorangebuilder.com/", "GTOrangebuilder.com", "Есть бесплатный контент", "")
+					+mli("en", "out", "https://www.gtoplus.com/", "gtoplus.com", "GTO инструмент. Минимальная цена - $75", "")
+					HoldemResourses Calculator, PreflopSSS, ,
+					+mli("en", "out", "https://hyperschool.ru", "hyperschool.ru", "Пул для игроков Spin&Go & HU SNG. Программа Hypertracker. ", "")
+					+mli("en", "out", "https://ocw.mit.edu/courses/15-s50-poker-theory-and-analytics-january-iap-2015/", "MIT", "Poker Teory (2015)", "")
+					+mli("en", "out", "https://plogenius.com/", "plogenius.com", "PLO GTO Solver", "")
+					+mli("en", "out", "https://pokeit.co/", "pokeit.co", "HUD. $5-10/мес", "")
+					+mli("en", "out", "https://pokercopilot.com/", "pokercopilot.com", "HUD. Проигрыватель рук", "")
+					+mli("en", "out", "https://www.pokertube.com/", "PokerTube", "Видео. Текстовые новости.", "")
+			li Инструментарий. Бесплатный.
+				ol
+					+mli("en", "out", "https://openpokertools.com/", "OpenpokerTools.com", " ", "")
+					+mli("en", "out", "https://www.pokerhandrange.com/", "pokerhandrange.com", " ", "")
+					+mli("en", "out", "https://replayer.winningpokerhud.com/", "pokerhandrange.com", " Replayer. Поддерживает PS, GGPoker", "")
+					+mli("en", "out", "https://winningpokerhud.com/", "winningpokerhud.com", " HUD PokerStars.", "")
+					
+					+mli("en", "out", "https://www.pokerstrategy.com/poker-software-tools/equilab-holdem/", "pokerstrategy.com", "EquiLab Holdem ", "")
+					+mli("en", "out", "https://www.pokerstrategy.com/poker-software-tools/equilab-omaha/", "pokerstrategy.com", "EquiLab Omaha ", "")
+					+mli("en", "out", "https://www.pokerstrategy.com/poker-software-tools/icm-trainer/", "pokerstrategy.com", "ICM trainer ", "")
+					+mli("en", "out", "https://pokerstove.informer.com/download/#downloading", "PokerStove", " ", "")
+					+mli("en", "out", "https://www.thepokerbank.com/tools/pokerbank/spoc/", "thepokerbank.com", "SPOC - Simple Pot Odds Calculator", "")
+					
+			li YouTube
+				ol
+					+mli("en", "out", "https://www.youtube.com/@WowPoker/videos", "WowPoker", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/@babyshark1kk/videos", "babyshark1kk", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/@gtowizard_ru/videos", "gtowizard_ru", "Переводы обучающих видео с gtowizard", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/@kot-mtt/videos", "kot-mtt", "Канал школы. Много хороших обучающих видео.", "youtube")
+					+mli("en", "out", "https://www.youtube.com/@bcpoff/videos", "bcpoff", "Poker Replays", "youtube")
+					+mli("en", "out", "https://www.youtube.com/@DougPolkPoker/videos", "DougPolkPoker", "Разборы. Разоблачения.", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/@GIPSYTEAM-poker/videos", "GIPSYTEAM", "", "youtube")
+					+mli("en", "out", "https://www.youtube.com/@HustlerCasinoLive/videos", "HustlerCasinoLive", "", "youtube")
+					// https://www.youtube.com/watch?v=TM_sMACxSzY
+	article.grid-container
+		h4(id="python") Python(и др.) и покер
+		ol 
+			li Отдельные статьи
+				ol
+					+mli("en", "out", "https://www.datacamp.com/tutorial/statistics-python-tutorial-probability-1", "", "Poker Probability and Statistics with Python", "")
+					+mli("en", "out", "https://www.datacamp.com/tutorial/python-probability-tutorial", "", "Analyzing Poker Hands with Python", "")
+					+mli("en", "out", "https://www.megacolorboy.com/posts/poker-hand-analyser-in-python/", "", "poker hand analyser in python. Наивная реализация в лоб.", "")
+					+mli("en", "out", "http://suffe.cool/poker/evaluator.html", "", "Cactus Kev's Poker Hand Evaluator", "")
+					+mli("en", "out", "https://colab.research.google.com/github/norvig/pytudes/blob/main/ipynb/poker.ipynb", "Peter Norvig", "Poker: Ranking Hands", "github")
+					+mli("en", "out", "https://www-personal.umich.edu/~liy/", "", "Decision Tree Modeling of First Reactions in Heads-Up No Limit Hold'em Poker", "")
+
+			li Отдельные проекты
+				ol
+					+mli("en", "out", "https://github.com/aidanf/SimpleICM/blob/master/model.py", "", "ICM model", "github")
+					+mli("en", "out", "https://github.com/zb46392/poker", "zb46392", "Deep Q-learning Poker. Limit Holdem", "github")
+					+mli("en", "out", "https://pokerbots.org/", "pokerbots.org", "MIT project", "")
+					+mli("en", "out", "https://github.com/brunoscopelliti/poker-holdem-engine", "brunoscopelliti", "Javascript. Poker holdem engine.", "")
+					
 			li Python библиотеки
 				ol
 					+mli("en", "out", "https://github.com/SirRender00/texasholdem", "SirRender00", "texasholdem", "github")
 					+mli("en", "out", "https://github.com/y0sh12/GatorHoldEm", "y0sh12", "GatorHoldEm. Используют AI. Используют HandRanks.dat", "github")
-					
+					+mli("en", "out", "https://github.com/worldveil/deuces", "worldveil", "deuces", "github")
 					+mli("en", "out", "https://github.com/johnsoong216/PokerOddsCalc", "johnsoong216", "PokerOddsCalc", "github")
 					+mli("en", "out", "https://github.com/elleklinton/PiedPoker", "elleklinton", "PiedPoker", "github")
 					+mli("en", "out", "https://ishikota.github.io/PyPokerEngine/", "", "PyPokerEngine", "github")
-					+mli("en", "out", "https://github.com/uoftcprg/pokerkit", "", "PokerKit", "github")
-					+mli("en", "out", "https://github.com/Sondar4/poker-sim", "", "Poker simulator", "github")
-					+mli("en", "out", "https://github.com/kuco23/pokerlib/", "", "pokerlib", "github")
+					+mli("en", "out", "https://github.com/uoftcprg/pokerkit", "uoftcprg", "PokerKit", "github")
+					+mli("en", "out", "https://github.com/Sondar4/poker-sim", "Sondar4", "Poker simulator", "github")
+					+mli("en", "out", "https://github.com/kuco23/pokerlib/", "kuco23", "pokerlib", "github")
 					+mli("en", "out", "https://github.com/gabhijit/pycon/tree/master/2019/poker", "gabhijit", "poker", "github")
 					+mli("en", "out", "https://github.com/pokerregion/poker", "pokerregion", "poker. Был хороший проект. Использовались диапазоны.", "github", "old")
 					+mli("en", "out", "https://github.com/annaymj/Python-Code/blob/master/Poker.py", "", "Наивная студенческая реализация", "github", "old")
 					+mli("en", "out", "https://github.com/tangentforks/TwoPlusTwoHandEvaluator", "tangentforks", "TwoPlusTwoHandEvaluator", "github")
-					+mli("en", "out", "https://github.com/petekanev/Bluffasaurus", "", "Bluffasaurus C#", "github")
-					+mli("en", "out", "https://github.com/glpcc/PokerPy", "", "PokerPy", "github")
-			li Сайты
-				ol
-					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "Есть бесплатные инструменты. Есть пробный период в 14 дней.", "")
-					+mli("en", "out", "https://www.pokerstrategy.com", "pokerstrategy.com", "", "")
+					+mli("en", "out", "https://github.com/petekanev/Bluffasaurus", "petekanev", "Bluffasaurus C#", "github")
+					+mli("en", "out", "https://github.com/glpcc/PokerPy", "glpcc", "PokerPy", "github")
+					+mli("en", "out", "https://github.com/ihendley/treys", "ihendley", "treys", "github")
