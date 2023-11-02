@@ -1,0 +1,94 @@
+extends ../layouts/poker_layout.pug
+
+block content
+	h2.font-effect-shadow-multiple Теория
+	article.grid-container
+		ol
+			li
+				| Статьи
+				ol
+					+mli("ru", "my", "bubble_factor.html", "", "Bubble Factor в спортивном покере", "")
+					+mli("en", "out", "https://www.pokerstrategy.com/strategy/various-poker/texas-holdem-probabilities/", "pokerstrategy.com", "Вероятности разных покерных событий", "book")
+					+mli("en", "out", "https://en.wikipedia.org/wiki/Poker_probability", "", "Вероятности разных покерных событий", "wikipedia")
+
+					+mli("en", "out", "https://dev.to/rainleander/create-a-simple-5-card-draw-poker-game-in-python-with-asyncio-2ifh", "dev.to", "Create a Simple 5-Card Draw Poker Game in Python with Asyncio", "") 
+					+mli("en", "out", "https://www.espn.com/espn/poker/columns/story?columnist=bluff_magazine&id=2817110", "", "G-Bucks", "")
+					+mli("en", "out", "https://www.thepokerbank.com/strategy/mathematics/", "thepokerbank.com", "Mathematics", "")
+					+mli("en", "out", "https://www.thepokerbank.com/videos/wilcox/articles/4betting-mathematics/", "thepokerbank.com", "4betting mathematics", "")
+					//https://www.youtube.com/watch?v=PZLCOgubhEE
+					//https://colab.research.google.com/drive/1oh1nW0foTSEnX4g_KlRlLQd-Tv8mamW0?usp=sharing
+					+mli("en", "out", "http://www.cs.virginia.edu/~evans/poker/wp-content/uploads/2011/02/opponent_modeling_in_poker_billings.pdf", "", "Darse Billings, Denis Papp, Jonathan Schaeffer, Duane Szafron, Opponent modeling in poker", "pdf") 
+					+mli("en", "out", "https://www.thepokerbank.com/strategy/basic/starting-hand-selection/sklansky-groups/", "", "David Skalinsky & Mason Malmuth, Starting hand groups", "")
+			li Чарты
+				ol
+					li 40-100BB
+						ol
+							li Open Raise
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_UTG_40_100bb.html" target="_blank") UTG
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_UTG1_40_100bb.html" target="_blank") UTG+1
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_UTG2_40_100bb.html" target="_blank") UTG+2
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_LJ_40_100bb.html" target="_blank") MP/LJ
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_HJ_40_100bb.html" target="_blank") HJ
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_CO_40_100bb.html" target="_blank") CO
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_BU_40_100bb.html" target="_blank") BU
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+								a(href="openraise_SB_40_100bb.html" target="_blank") SB
+								| &nbsp;&nbsp;|&nbsp;&nbsp;
+							li Flat calling / 3Betting
+							li BB vs SB
+							li Защита BB
+					li 20-40BB
+					li 10-20BB
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_UTG_10_20bb.html" target="_blank") UTG
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_UTG1_10_20bb.html" target="_blank") UTG+1
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_UTG2_10_20bb.html" target="_blank") UTG+2
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_MP_10_20bb.html" target="_blank") MP/LJ
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_HJ_10_20bb.html" target="_blank") HJ
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_CO_10_20bb.html" target="_blank") CO
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_BU_10_20bb.html" target="_blank") BU
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+						a(href="openraise_SB_10_20bb.html" target="_blank") SB
+						| &nbsp;&nbsp;|&nbsp;&nbsp;
+					li 1-10BB
+						ol
+							+mli("ru", "my", "push_fold_chart.html", "", "Push/Fold", "")
+							+mli("ru", "my", "push_10bb.html", "", "Push 10BB", "")
+			li <u>ICM Independent Chip Model</u>
+				ol
+					+mli("en", "out", "https://en.wikipedia.org/wiki/Independent_Chip_Model", "", "Independent Chip Model", "wikipedia")
+					+mli("en", "out", "https://www.holdemresources.net/blog/high-accuracy-mtt-icm/", "holdemresources.net", "ICM Calculations For Large Fields", "")
+					+mli("en", "out", "https://www.holdemresources.net/icmcalculator", "holdemresources.net", "ICMcalculator", "")
+					+mli("en", "out", "https://www.icmizer.com/icmcalculator/", "icmizer.com", "ICMcalculator", "")
+					+mli("en", "out", "https://www.icmizer.com/en/blog/poker-icm-101-what-is-icm-poker/", "icmizer.com", "Blog. What is ICM poker?", "")
+					+mli("en", "out", "https://icmcalculator.com/", "icmcalculator.com", "ICMcalculator", "")
+					+mli("en", "out", "https://www.gipsyteam.ru/tools/icm-calculator", "gipsyteam.ru", "ICMcalculator", "")
+					
+
+			li <u>Push/Fold стратегия</u>
+				ol
+					+mli("en", "out", "https://github.com/wyattferguson/pokerstars-tempest-bot", "", "pokerstars tempest bot", "github")
+					+mli("en", "out", "https://matchpoker.com/learn/strategy-guides/push-fold-charts", "matchpoker.com", "Nash Equilibrium Heads-Up Poker Charts", "")
+					+mli("en", "out", "https://www.holdemresources.net/hune", "holdemresources.net", "HeadsUp Push/Fold Nash Equilibrium", "")
+					+mli("en", "out", "https://upswingpoker.com/push-fold-tournament-strategy-charts/", "upswingpoker.com", "push fold tournament strategy charts", "")
+					+mli("en", "out", "https://www.push-or-fold.com/jennifear-push-fold.php", "push-or-fold.com", "Jennifear Push or Fold Chart", "")
+					
+			li Теория
+				ol
+					+mli("en", "out", "https://www.holdemresources.net/blog/card-bunching-effects/", "holdemresources.net", "Влияние сброшенных до вас карт, на диапазоны и стратегию.", "")
+					+mli("en", "out", "https://en.wikipedia.org/wiki/Effective_hand_strength_algorithm", "", "Effective hand strength algorithm", "wikipedia")
+					+mli("en", "out", "https://learnwpt.com/learn/tools/", "learnwpt.com", "Teory", "")
+					+mli("en", "out", "https://upswingpoker.com/poker-positions-101-explaining-what-you-must-know/", "upswingpoker.com", "Определения позиций в Texas NL", "")
