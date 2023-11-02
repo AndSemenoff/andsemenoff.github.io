@@ -4,18 +4,14 @@ block title
 	title= site_title + " Английский язык"
 
 block content
-	div.row: div.large-12.columns: h2 Английский язык
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Английский язык
+	article.grid-container
 		h3 Общие вопросы
 		ul
-			li
-				a(href="englishwithpeter.html") English with Peter. 
-				| 
+			+mli("ru", "my", "englishwithpeter.html", "", "English with Peter.", "")
 		h3 Сайты
 		ul 
-			li
-				a(href="https://kleis.gr/links/") kleis.gr 
-				| Ссылки по греческому языку
+
 		h3 Обучение онлайн
 		ul 
 			li
@@ -77,8 +73,10 @@ block content
 			li <A HREF="https://www.google.com/docs/about/">Google Docs</A>
 		<h3 class="font-effect-shadow-multiple">Youtube каналы</h3>
 		<ol>
-			<li><A HREF="https://www.youtube.com/watch?v=_DmYA7OzyRE">Peppa Pig</A> 1 сезон, 1 серия.</li>
-			<li><A HREF=""></A></li>
+			+mli("en", "out", "https://www.youtube.com/watch?v=_DmYA7OzyRE", "Peppa Pig", " 1 сезон, 1 серия.", "youtube")
+			+mli("en", "out", "https://www.youtube.com/@learntospeakenglishofficial/", "learntospeakenglish", "American English.", "youtube")
+			+mli("en", "out", "https://www.youtube.com/@LearnEnglishwithJessica", "LearnEnglishwithJessica", "Мультики с диалогами и английскими субтитрами.", "youtube")
+			
 		</ol>
 		<h3 class="font-effect-shadow-multiple">Youtube ролики</h3>
 		<ol>

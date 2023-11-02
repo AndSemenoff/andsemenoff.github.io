@@ -1,0 +1,62 @@
+extends ../layouts/poker_layout.pug
+block title
+	title= site_title + " Poker"
+	
+block content
+	article.grid-container
+		h3 Button 10-20BB Opening
+		div.grid-x
+			div(class="cell small-3")
+
+			div(class="cell small-6")
+				table.poker
+					thead
+						+poker_head("10-20 BB", "12,5%", "BU")
+						tr
+							th
+								a(href="openraise_UTG_10_20bb.html") UTG
+							th("colspan"=2)
+								a(href="openraise_UTG1_10_20bb.html") UTG+1
+							th("colspan"=2)
+								a(href="openraise_UTG2_10_20bb.html") UTG+2
+							th("colspan"=2)
+								a(href="openraise_MP_10_20bb.html") MP/LJ
+							th
+								a(href="openraise_HJ_10_20bb.html") HJ
+							th
+								a(href="openraise_CO_10_20bb.html") CO
+							th
+								a(href="openraise_BU_10_20bb.html") BU
+							th
+								a(href="openraise_SB_10_20bb.html") SB
+							th
+							th
+					tbody
+						+poker_tr('r1','AA','r1','AKs','r1r2',"AQs",'r1r2',"AJs",'r1r2',"ATs",'r1r2',"A9s",'r1r2',"A8s",'r3',"A7s",'r3',"A6s",'r3',"A5s",'r3',"A4s",'r3',"A3s",'r3',"A2s")
+						+poker_tr('r1r2','AKo','r1','KK','r1r2',"KQs",'r1r2',"KJs",'r3',"KTs",'r3',"K9s",'r3',"K8s",'r3',"K7s",'r3',"K6s",'r3',"K5s",'r1r2',"K4s",'r1r2',"K3s",'r1r2',"K2s")
+						+poker_tr('r1r2','AQo','r1r2','KQo','r1',"QQ",'r3',"QJs",'r3',"QTs",'r3',"Q9s",'r3',"Q8s",'r1r2',"Q7s",'r1r2',"Q6s",'r1r2',"Q5s",'',"Q4s",'',"Q3s",'',"Q2s")
+						+poker_tr('r1r2','AJo','r3','KJo','r1',"QJo",'r1',"JJ",'r3',"JTs",'r3',"J9s",'r3',"J8s",'r1r2',"J7s",'',"J6s",'',"J5s",'',"J4s",'',"J3s",'',"J2s")
+						+poker_tr('r1r2','ATo','r3','KTo','r3',"QTo",'r3',"JTo",'r1',"TT",'r3',"T9s",'r3',"T8s",'r3',"T7s",'',"T6s",'',"T5s",'',"T4s",'',"T3s",'',"T2s")
+						+poker_tr('r3','A9o','r1r2','K9o','r1r2',"Q9o",'r1r2',"J9o",'r1r2',"T9o",'r1r2',"99",'r3',"98s",'r3',"97s",'r1r2',"96s",'',"95s",'',"94s",'',"93s",'',"92s")
+						+poker_tr('r3','A8o','','K8o','',"Q8o",'',"J8o",'',"T8o",'',"98o",'r1r2',"88",'r3',"87s",'r3',"86s",'',"85s",'',"84s",'',"83s",'',"82s")
+						+poker_tr('r3','A7o','','K7o','',"Q7o",'',"J7o",'',"T7o",'',"97o",'',"87o",'r3',"77",'r3',"76s",'r3',"75s",'',"74s",'',"73s",'',"72s")
+						+poker_tr('r3','A6o','','K6o','',"Q6o",'',"J6o",'',"T6o",'',"96o",'',"86o",'',"76o",'r3',"66",'r3',"65s",'r3',"64s",'',"63s",'',"62s")
+						+poker_tr('r3','A5o','','K5o','',"Q5o",'',"J5o",'',"T5o",'',"95o",'',"85o",'',"75o",'',"65o",'r2',"55",'r3',"54s",'',"53s",'',"52s")
+						+poker_tr('r3','A4o','','K4o','',"Q4o",'',"J4o",'',"T4o",'',"94o",'',"84o",'',"74o",'',"64o",'',"54o",'r2',"44",'',"43s",'',"42s")
+						+poker_tr('r3','A3o','','K3o','',"Q3o",'',"J3o",'',"T3o",'',"93o",'',"83o",'',"73o",'',"63o",'',"53o",'',"43o",'r2',"33",'',"32s")
+						+poker_tr('r3','A2o','','K2o','',"Q2o",'',"J2o",'',"T2o",'',"92o",'',"82o",'',"72o",'',"62o",'',"52o",'',"42o",'',"32o",'r2',"22")
+			div(class="cell small-3")
+				br
+				br
+				br
+				br
+				table.poker
+					tr 
+						td.r1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td open raise
+					tr
+						td.r2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td push &lt; 20bb | openraise/fold
+					tr
+						td.r3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						td push &lt; 15bb | openraise/fold

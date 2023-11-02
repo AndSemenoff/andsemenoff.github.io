@@ -1,4 +1,4 @@
-extends ../layouts/html_layout.jade
+extends ../layouts/poker_layout.pug
 
 block content
 	h2.font-effect-shadow-multiple Ссылки по теме: спортивные покер
@@ -27,42 +27,43 @@ block content
 						ol
 							li Open Raise
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_UTG_40_100bb.html") UTG
+								a(href="openraise_UTG_40_100bb.html" target="_blank") UTG
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_UTG1_40_100bb.html") UTG+1
+								a(href="openraise_UTG1_40_100bb.html" target="_blank") UTG+1
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_UTG2_40_100bb.html") UTG+2
+								a(href="openraise_UTG2_40_100bb.html" target="_blank") UTG+2
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_LJ_40_100bb.html") MP/LJ
+								a(href="openraise_LJ_40_100bb.html" target="_blank") MP/LJ
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_HJ_40_100bb.html") HJ
+								a(href="openraise_HJ_40_100bb.html" target="_blank") HJ
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_CO_40_100bb.html") CO
+								a(href="openraise_CO_40_100bb.html" target="_blank") CO
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_BU_40_100bb.html") BU
+								a(href="openraise_BU_40_100bb.html" target="_blank") BU
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
-								a(href="openraise_SB_40_100bb.html") SB
+								a(href="openraise_SB_40_100bb.html" target="_blank") SB
 								| &nbsp;&nbsp;|&nbsp;&nbsp;
 							li Flat calling / 3Betting
 							li BB vs SB
 							li Защита BB
+					li 20-40BB
 					li 10-20BB
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_UTG_10_20bb.html") UTG
+						a(href="openraise_UTG_10_20bb.html" target="_blank") UTG
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_UTG1_10_20bb.html") UTG+1
+						a(href="openraise_UTG1_10_20bb.html" target="_blank") UTG+1
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_UTG2_10_20bb.html") UTG+2
+						a(href="openraise_UTG2_10_20bb.html" target="_blank") UTG+2
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_LJ_10_20bb.html") MP/LJ
+						a(href="openraise_MP_10_20bb.html" target="_blank") MP/LJ
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_HJ_10_20bb.html") HJ
+						a(href="openraise_HJ_10_20bb.html" target="_blank") HJ
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_CO_10_20bb.html") CO
+						a(href="openraise_CO_10_20bb.html" target="_blank") CO
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_BU_10_20bb.html") BU
+						a(href="openraise_BU_10_20bb.html" target="_blank") BU
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
-						a(href="openraise_SB_10_20bb.html") SB
+						a(href="openraise_SB_10_20bb.html" target="_blank") SB
 						| &nbsp;&nbsp;|&nbsp;&nbsp;
 					li 1-10BB
 						ol
@@ -123,7 +124,10 @@ block content
 					+mli("en", "out", "https://www.pokerstrategy.com/poker-software-tools/icm-trainer/", "pokerstrategy.com", "ICM trainer ", "")
 					+mli("en", "out", "https://pokerstove.informer.com/download/#downloading", "PokerStove", " ", "")
 					+mli("en", "out", "https://www.thepokerbank.com/tools/pokerbank/spoc/", "thepokerbank.com", "SPOC - Simple Pot Odds Calculator", "")
-					
+					+mli("en", "out", "https://github.com/b-inary/desktop-postflop", "desktop-postflop", "Free Solver", "github")
+					+mli("en", "out", "https://freebetrange.com/ru", "freebetrange.com", "Менеджер префлоп чартов", "")
+					+mli("en", "out", "https://wasm-postflop.pages.dev/", "postflop", "Solver", " ")
+					+mli("en", "out", "https://telegra.ph/Desktop-Postflop---GTO-solver-10-10", "postflop", "Help", " ")
 			li YouTube
 				ol
 					+mli("en", "out", "https://www.youtube.com/@WowPoker/videos", "WowPoker", "", "youtube")
