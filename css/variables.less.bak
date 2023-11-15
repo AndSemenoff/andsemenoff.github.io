@@ -16,8 +16,3 @@
 @bluecolor: darken(@bluelightcolor, percentage(@base+0.05));
 @bluelightcolor: lightblue;      
 @lightgreycolor: lightgrey;
-@hhbg: #1C221E;
-@hhheart: #801000;
-@hhclub: #018001;
-@hhdiamond: #0059B3;
-@hhspade: #525252;

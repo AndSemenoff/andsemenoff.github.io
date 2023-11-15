@@ -1,0 +1,129 @@
+extends ../layouts/poker_layout.pug
+mixin hole(hole)
+	case hole[1]
+		when "d": span.diamond #{hole[0]}♦
+		when "c": span.club #{hole[0]}♣
+		when "s": span.spade #{hole[0]}♠
+		when "h": span.heart #{hole[0]}♥
+	case hole[3]
+		when "d": span.diamond #{hole[2]}♦
+		when "c": span.club #{hole[2]}♣
+		when "s": span.spade #{hole[2]}♠
+		when "h": span.heart #{hole[2]}♥
+	case hole[5]
+		when "d": span.diamond #{hole[4]}♦
+		when "c": span.club #{hole[4]}♣
+		when "s": span.spade #{hole[4]}♠
+		when "h": span.heart #{hole[4]}♥
+	
+mixin action(ac)
+		if ac[0]=="h"
+			span.hero
+				- var n = 1;
+				while n < ac.length
+					| #{ac[n++]}
+		else
+			span.player #{ac}
+
+mixin stack(hero, v)
+	span
+		span.hero #{hero}
+		| &nbsp;
+		span.player #{v}
+		
+mixin position(hero, player)
+	case hero
+		when "UTG": style: | .hero {color: #FF6B6B;}
+		when "UTG1": style: | .hero {color: #FFA1A1;}
+		when "UTG2": style: | .hero {color: #FFB0B0;}
+		when "MP1": style: | .hero {color: #EBBD9F;}
+		when "MP2": style: | .hero {color: #EB931C;}
+		when "CO": style: | .hero {color: #C8C928;}
+		when "BU": style: | .hero {color: #00FF00;}
+		when "SB": style: | .hero {color: #00FFFF;}
+		when "BB": style: | .hero {color: #5CA0FF;}
+	case player
+		when "UTG": style: | .player {color: #FF6B6B;}
+		when "UTG1": style: | .player {color: #FFA1A1;}
+		when "UTG2": style: | .player {color: #FFB0B0;}
+		when "MP1": style: | .player {color: #EBBD9F;}
+		when "MP2": style: | .player {color: #EB931C;}
+		when "CO": style: | .player {color: #C8C928;}
+		when "BU": style: | .player {color: #00FF00;}
+		when "SB": style: | .player {color: #00FFFF;}
+		when "BB": style: | .player {color: #5CA0FF;}
+	span 
+		span.hero #{hero}
+		| &nbsp; 
+		span.player #{player}
+		
+mixin preFlop(max, hero, v, pos_h, pos_v, hole, ...action)
+	span.max &nbsp;#{max}&nbsp;
+	|&nbsp;
+	+stack(hero, v)
+	|&nbsp;&nbsp;
+	+position(pos_h, pos_v)
+	|&nbsp;&nbsp;
+	+hole(hole)
+	each act in action
+		+action(act)
+		| &nbsp;
+
+mixin FlopTurnRiver(card, pot, ...action)
+	+hole(card)
+	span #{pot} &nbsp;&nbsp;
+	each act in action
+		+action(act)
+		| &nbsp;
+
+mixin Flop(flop, pot, ...action)
+	+FlopTurnRiver(flop, pot, ...action)
+	
+mixin Turn(turn, pot, ...action)
+	+FlopTurnRiver(turn, pot, ...action)
+	
+mixin River(river, pot, ...action)
+	+FlopTurnRiver(river, pot, ...action)
+	
+block title
+	title= site_title + " Компактное представление раздачи"
+	
+block content
+	h2.font-effect-shadow-multiple Компактное представление раздачи
+	article.grid-container
+		div
+			| Команда HandtoNote предложила вариант компактного графического представления раздачи.
+			| Расмотрим их вариант. 
+			| Действия рассматриваемого игрока(Героя) выделяются пунктирным подчеркиванием.
+			| X - значит Check
+		div Масти карт кодируются цветом:
+			ol
+				li бубны <span style="background-color:#0059B3" "color:white">#0059B3</span>
+				li черви <span style="background-color:#801000">#801000</span>
+				li крести <span style="background-color:#018001">#018001</span>
+				li пики <span style="background-color:#525252">#525252</span>
+			| 
+		div Место за столом кодируется цветом.
+			ol
+				li UTG(UTG) <span style="background-color:#FF6B6B">#FF6B6B</span>
+				li UTG+1(UTG) <span style="background-color:#FFA1A1">#FFA1A1</span>
+				li UTG+2(UTG) <span style="background-color:#FFB0B0">#FFB0B0</span>
+				li MP1(LJ) <span style="background-color:#EBBD9F">#EBBD9F</span>
+				li MP2(HJ) <span style="background-color:#EB931C">#EB931C</span>
+				li CO(Cutoff) <span style="background-color:#C8C928">#C8C928</span>
+				li BU <span style="background-color:#00FF00">#00FF00</span>
+				li SB <span style="background-color:#00FFFF">#00FFFF</span>
+				li BB <span style="background-color:#5CA0FF">#5CA0FF</span>
+				li Straddle <span style="background-color:#C388F7">#C388F7</span>
+		div Фон <span style="background-color:#1C221E">#1C221E</span>
+			ol
+				li All-in '
+				li Check X
+				li Call C
+				li Raise R
+		div.history
+			+preFlop(9, 100, 100, "CO", "BB", "KdJs", "hR3", "C2")
+			+Flop("7hKs8c", 6, "X", "hX")
+			+Turn("8d", 6, "B4.5", "hC4.5")
+			+River("Th", 15, "B86'", "hC86")
+		

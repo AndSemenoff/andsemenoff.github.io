@@ -24,7 +24,7 @@ block content
 					+mli("en", "out", "https://www.thepokerbank.com/strategy/basic/starting-hand-selection/sklansky-groups/", "", "David Skalinsky & Mason Malmuth, Starting hand groups", "")
 			li Сайты
 				ol
-					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "HRC. $15/мес или $99/год. Есть бесплатные инструменты. Есть пробный период в 14 дней.", "")
+					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "Есть бесплатные инструменты. Есть пробный период в 14 дней.", "")
 					+mli("en", "out", "https://www.gtowizard.com", "gtowizard.com", "", "")
 					+mli("en", "out", "https://simplepoker.com/", "simplepoker.com", "Есть видео. Есть теория. Много дорогого софта", "")
 					+mli("en", "out", "https://www.flopzilla.com/index.html", "FlopZilla", "Минимальная цена - $25", "")
@@ -95,7 +95,7 @@ block content
 					+mli("en", "out", "https://github.com/brunoscopelliti/poker-holdem-engine", "brunoscopelliti", "Javascript. Poker holdem engine.", "")
 					+mli("en", "out", "https://hh-specs.handhistory.org/", "handhistory.org", "Спецификация на стандарт истории покерных рук. OHH(Open Hand History)", "") 
 					+mli("en", "out", "https://ts-specs.handhistory.org/", "handhistory.org", "Спецификация на стандарт истории покерных турниров. OTS(Open Tournament Summary)", "") 
-					+mli("en", "out", "http://www.gambit-project.org/", "gambit-project.org", "Равновесие Нэша. Теория игр. Примеры.", "")
+					
 			li Python библиотеки
 				ol
 					+mli("en", "out", "https://github.com/SirRender00/texasholdem", "SirRender00", "texasholdem", "github")

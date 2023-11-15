@@ -153,6 +153,94 @@ dd {
   font-weight: bold;
   /*border-top:1px solid black;*/
 }
+.max {
+  border: 2px solid lightblue;
+  background-color: #0059B3;
+  color: lightgrey;
+}
+.hero {
+  -webkit-text-decoration: dashed underline;
+          text-decoration: dashed underline;
+}
+.history {
+  background-color: #1C221E;
+  padding: 20px;
+  margin-top: 20px;
+}
+.carded {
+  color: white;
+  /*border: 2px solid black;*/
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.heart {
+  background-color: #801000;
+  color: white;
+  /*border: 2px solid black;*/
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.club {
+  background-color: #018001;
+  color: white;
+  /*border: 2px solid black;*/
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.diamond {
+  background-color: #0059B3;
+  color: white;
+  /*border: 2px solid black;*/
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.spade {
+  background-color: #525252;
+  color: white;
+  /*border: 2px solid black;*/
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .bordered {
   border: 2px solid black;
   margin: 2px;
