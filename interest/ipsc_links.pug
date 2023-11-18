@@ -1,0 +1,23 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Спортивная стрельба. Ссылки"
+
+block content
+	h2.font-effect-shadow-multiple Спортивная стрельба. Ссылки
+	article.grid-container
+		ol
+			li Федерации, клубы
+				ol
+					+mli('ru', "out", "https://ipsc.ru", "ipsc.ru", "Федерация практической стрельбы России", "icon")
+					+mli('ru', "out", "https://ipsc-msk.ru/index.php", "ipsc-msk.ru", "I.P.S.C. Москва", "icon")
+					+mli('ru', "out", "https://ipsc-nw.spb.ru", "ipsc-nw.spb.ru", "I.P.S.C. Северо-Запад", "icon")
+					+mli('ru', "out", "https://www.tirspb.ru", "www.tirspb.ru", "Балтийский стрекловый центр", "icon")
+					+mli('ru', "out", "https://www.fsc.su", "https://www.fsc.su", "Французский стрелковый клуб. г. Мытищи", "icon")
+					+mli('ru', "out", "https://ipsc-club.spb.ru", "ipsc-club.spb.ru", "I.P.S.C. клуб", "icon")
+					+mli('ru', "out", "https://www.sporting-bars.ru", "www.sporting-bars.ru", "Спортивно-стрелковый клуб 'Невский'", "icon")
+
+			li Инструментарий
+				ol
+					+mli('ru', "out", "https://www.makeready.ru", "www.makeready.ru", "Система организации и анализа соревнований по стрельбе", "icon")
+					+mli('ru', "out", "https://scoresheet.ru", "scoresheet.ru", "Система проведения спортивных событий", "icon")

@@ -1,0 +1,53 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Все о AI. Ссылки."
+
+block content
+	h2.font-effect-shadow-multiple Все о AI. Ссылки
+	article.grid-container
+		ol
+			li Текстовые генеративные сети
+				ol
+					+mli('en', "out", 'https://chat.openai.com/', 'chatGPT', 'Официальный сайт. ', "icon")
+					li Copy.ai
+						ol
+							+mli('en', "out", 'https://www.copy.ai/', 'copy.ai', 'Официальный сайт.', "icon")
+							+mli('en', "out", 'https://www.youtube.com/@CopyAI/videos', 'videos', 'Очень много обучающих.', "youtube")
+					+mli('en', "out", 'https://claude.ai/', 'claude.ai', 'Официальный сайт.', "icon")
+					+mli('en', "out", 'https://mistral.ai/', 'mistral.ai', 'mistral 7B. Официальный сайт.', "icon")
+
+			
+			li Генеративные сети изображений
+				ol
+					+mli('en', "out", 'https://www.bing.com/images/create', 'DALL·E 3', 'В Binq бесплатный ограниченный допуск', "")
+					+mli('en', "out", 'https://www.midjourney.com/', 'Midjourney','Text to Image. Самый раскрученный проект.', "icon")
+					+mli('en', "out", 'https://stability.ai/', 'stability.ai', ' Stable Diffusion, Stable Audio, Beluga', "icon")
+			li Аудио генеративные сети
+				ol
+			li Видео генеративные сети
+				ol
+					+mli('en', "out", 'https://runwayml.com/', 'RunWayML', 'Text to Video. Image to Video. Video to Video.', "icon")
+			li Сервисы
+				ol
+					+mli('en', "out", 'https://playgroundai.com/', 'playgroundai.com', 'Text to Image. Движок: Stable Diffusion', "icon")
+					li Leonardo.AI
+						ol
+							+mli('en', "out", 'https://Leonardo.Ai/', 'Leonardo.Ai', 'Text to Image. Движок: Stable Diffusion и др.', "icon")
+							+mli('en', "out", 'https://www.youtube.com/@leonardo.ai_community/videos', 'videos', 'Видео обучение, обзоры, новости', "youtube")
+					+mli('en', "out", 'https://lensgo.ai/', 'Lensgo.ai', 'Text to Image. Image to Image. Движок: ?', "icon")
+					+mli('en', "out", 'https://dust.tt/', 'dust.tt', 'Агрегатор', "icon")
+					+mli('en', "out", 'https://fengmyshui.com/', 'fengmyshui.com', 'Агрегатор. Движок: MJ + SDXL, Midjourney, Stable Diffusion', "icon")
+					+mli('en', "out", 'https://clipdrop.co/', 'clipdrop.co', 'by stability', "icon")
+			li Фирмы
+				ol
+					li stability.ai
+						ol
+							li
+					li OpenAI
+			li Сайты
+				ol
+					+mli('en', "out", 'https://stable-diffusion-art.com/', 'stable-diffusion-art', 'Stable Diffusion. Обучение установке, настройке. Промпты.', "icon")
+			li Youtube
+				ol
+					+mli('ru', "out", 'https://www.youtube.com/@neur0mania', 'neur0mania', 'Канал о нейросетях. Обзор новинок. Новости.', "")

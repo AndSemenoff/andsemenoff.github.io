@@ -1,7 +1,9 @@
 - var site_title_name = "ABSOLEM.INFO";
 - var site_title = "ABSOLEM.INFO |";
 - var site_url = "http://absolem.info";
-mixin mli(lang, direction, url, link_text, descriptions, ...tags)
+block mixin
+include mixin_mli.pug
+//-mixin mli(lang, direction, url, link_text, descriptions, ...tags)
 	//- lang - ["ru", "en"]
 	//- direction ["my", "out"]
 	//- url - str ссылка
@@ -10,6 +12,10 @@ mixin mli(lang, direction, url, link_text, descriptions, ...tags)
 	//- tags
 	li
 		<span class= 'flag_#{lang}'></span>&nbsp;
+		each tag in tags
+			case tag
+				when "icon"
+					<img alt="image" src="https://www.google.com/s2/favicons?domain=#{url}"/>
 		<a href = #{url} target="_blank">&nbsp;#{link_text}&nbsp;
 		if direction == "my"
 			<i class='far fa-eye'></i></a>
@@ -37,7 +43,7 @@ mixin mli(lang, direction, url, link_text, descriptions, ...tags)
 				when "youtube"
 					<i class="fab fa-youtube"></i>
 				when "pdf"
-					<i class="fab fa-youtube"></i>
+					<i class="fa-regular fa-file-pdf"></i>
 //- "http://andsemenoff.github.io";
 //- var site_url = "http://localhost:8000";
 doctype html

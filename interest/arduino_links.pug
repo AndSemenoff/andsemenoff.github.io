@@ -1,0 +1,40 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Все о Arduino. Ссылки."
+
+block content
+	h2.font-effect-shadow-multiple Все о Arduino. Ссылки
+	article.grid-container
+		ol
+			li Youtube каналы
+				ol
+					+mli('en', "out", 'https://www.youtube.com/channel/UCvqt-5zndHl97F0RoxExvfQ','TechEasyZone','простые схемы, даже без ардуино', "youtube")
+					+mli('en', "out", 'https://www.youtube.com/user/electronicshuborg/videos', 'Electronics Hub','видеоблог от сайта electronicshub.org', "youtube")
+					+mli('en', "out", 'https://www.youtube.com/user/arduinoteam', 'arduinoteam', 'официальный канал', "youtube")
+					+mli('ru', "out", 'https://www.youtube.com/channel/UCRfNkq8F8rxmDa3sPoEQv1w', 'Iarduino', 'официальный канал сайта и магазина', "youtube")
+					+mli('ru', "out", 'https://www.youtube.com/channel/UCRKRGoo367_uweBlZ8PF4Nw', 'Amperka', 'официальный канал сайта и магазина', "youtube")
+					+mli('ru', "out", 'https://www.youtube.com/channel/UClBGHIhsEz4Xpa0HqJXvaxw', 'Home Made', 'то, что ты можешь сделать', "youtube")
+					+mli('ru', "out", 'https://www.youtube.com/channel/UCZ2a-GXoEFH8W34vq5ob7Kw', 'Arduino Prom', 'проекты на ардуино', "youtube")
+					+mli('ru', "out", 'https://www.youtube.com/channel/UC4axiS76D784-ofoTdo5zOA', 'Заметки Ардуинщика', 'второй канал AlexGyver только об ардуино', "youtube")
+			li Youtube плейлисты
+				ol
+					+mli('ru', "out", 'https://www.youtube.com/watch?v=bO_jN0Lpz3Q&list=PLfDmj22jP9S759DT250VVzfZs_4VnJqLa','Уроки по ардуино','Переведено. Автор: Jeremy Blum')
+			li Отдельные видео на Youtube
+				ol
+					+mli('ru', "out", 'https://www.youtube.com/watch?v=bO_jN0Lpz3Q&list=PLfDmj22jP9S759DT250VVzfZs_4VnJqLa','Уроки по ардуино','Переведено. Автор: Jeremy Blum')
+			+mli('en', "out", 'https://www.arduino.cc', 'arduino', 'официальный сайт', "icon")
+			+mli('ru', "out", 'https://arduino.ru', 'arduino', 'русский сайт, есть форум', "icon")
+			+mli('ru', "out", "https://amperka.ru/page/what-is-arduino", "amperka.ru", "Статьи", "icon")
+			+mli('ru', "out", "https://wiki.iarduino.ru/", "wiki.iarduino.ru", "Статьи", "icon")
+			+mli('ru', "out", "https://know.smartelements.ru", "smartelements.ru", "База знаний", "icon")
+
+			li Сайты и блоги
+				ol
+					+mli('ru', "out", 'https://voltiq.ru/blog/', 'Вольтик.ру', ' Блог об Arduino, микроконтроллерах и проектах для мейкеров', "icon")
+					+mli('en', "out", 'https://www.hackster.io/arduino', 'hackster.io', 'проекты на arduino', "icon")
+					+mli('en', "out", 'https://www.electronicshub.org/arduino-project-ideas/', 'electronicshub', 'Проекты на Arduino')
+					+mli('ru', "out", 'https://dmitrysnotes.ru/arduino-rpi', 'dmitrysnotes.ru', 'Рубрика: Raspberry Pi & Arduino')
+			+mli('en', "out", 'https://fritzing.org/home/', "fritzing.org", "Fritzing", "icon")
+
+

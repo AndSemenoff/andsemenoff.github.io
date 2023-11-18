@@ -115,7 +115,7 @@ block content
 
 			li GGP.org <span class="label warning">Устарело</span>
 				ol
-					+mli("en","out", "http://www.ggp.org", "ggp.org", "General Game Playing", "icon")
+					+mli("en","out", "http://www.ggp.org", "ggp.org", "", "icon")
 					+mli("en","out", "http://alloyggp.blogspot.ru/", "", "Alloy GGP blog")
 					+mli("en","out", "http://www.ggp.org/cs227b/player.html", "", "Parametric Player")
 					+mli("en","out", "http://tiltyard.ggp.org/", "Tiltyard", "Сервер для игр.")

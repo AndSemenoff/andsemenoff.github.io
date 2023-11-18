@@ -1,0 +1,51 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Яхтинг"
+
+block content
+	h2.font-effect-shadow-multiple Яхтинг
+	article.grid-container
+		ol
+			li Ассоциации
+				ol
+					+mli('en', "out", 'https://www.rya.org.uk', "RYA", "The Royal Yachting Association", "icon") 
+					+mli('en', "out", 'https://issa-schools.org/', "ISSA", "", "icon")
+					+mli('en', "out", 'https://asa.com/', "IYT", "", "icon")
+					+mli('en', "out", 'https://asa.com/', "ASA" , "American Sailing Association", "icon")
+			li Школы
+				ol
+					+mli('ru', "out", 'https://gosailing.ru', "gosailing.ru", "Яхтенная школа GoSailing", "icon")
+					+mli('ru', "out", 'https://www.go-og.ru', "www.go-og.ru", "Яхтенная школа Олега Гончаренко", "icon")
+					+mli('ru', "out", 'https://www.7winds.school', "www.7winds.school", "Семь ветров", "icon")
+					li: a(href='https://skippers.ru/') Skippers.ru - Все в одном
+					li: a(href='https://open-sail.ru') Яхтенная школа Open-Sail
+					li: a(href='https://sailingtime.ru') Яхтенная школа SailingTime					
+					li: a(href='https://www.ru-sailing.ru') Яхтенная школа, яхт-клуб Ru-Sailing					
+					
+			li Регаты
+				ol
+					li: a(href='https://firstbyfirst.ru/') FirstByFirst
+			li Магазины, аренда и т.п.
+				ol
+					li: a(href='https://www.spartak.ws') Яхт клуб Спартак (Москва)
+					li: a(href='https://www.gaetana-marine.com') Gaetana marine
+					li: a(href='https://sailband.com') SailBand.com - Аренда. Черногория (Бар).
+					li: a(href='https://simplesail.com') SimpleSail.com - Аренда. Черногория (Будва, Монтэнэгро).
+					li: a(href='https://www.atlas-yacht.ru') Яхтенное агентство «ATLAS»						
+			li Литература
+				ol
+					li 
+						a(href='https://rutracker.org/forum/viewtopic.php?t=4219689') Сборник
+						| RYA Competent Crew/Day Skipper/Yachtmaster/Motor Cruising [1991-2005, PDF, RUS/ENG]
+			li Тусовка
+				ol
+					li: a(href='https://mtelegraph.com') Ежедневные морские новости.
+					li: a(href='https://www.seaexpo.ru') SeaExpo
+					li: a(href='https://forum.katera.ru/') Форум журнала катера и яхты
+			li Теория
+				ol
+					li: strong: a(href='sailing_teory.html') конспект	
+		p.
+			Важно знать "Международные Правила Предупреждения Столкновений Судов в море", 1972 г.	
+			

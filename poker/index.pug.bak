@@ -11,6 +11,7 @@ block content
 					+mli("ru", "my", "teory.html", "", "Теория, чарты.", "")
 					+mli("ru", "my", "bubble_factor.html", "", "Bubble Factor в спортивном покере", "")
 					+mli("ru", "my", "casinos.html", "", "Казино для реальной турнирной игры", "")
+					+mli("ru", "my", "omaha8.html", "", "Omaha Hi/Lo. Теория. Ссылки. Практика.", "")
 					+mli("en", "out", "https://www.pokerstrategy.com/strategy/various-poker/texas-holdem-probabilities/", "pokerstrategy.com", "Вероятности разных покерных событий", "book")
 					+mli("en", "out", "https://en.wikipedia.org/wiki/Poker_probability", "", "Вероятности разных покерных событий", "wikipedia")
 					+mli("en", "out", "https://www.runitonce.com/nlhe/50-shades-of-flop-texture/", "", "Текстуры покерных флопов", "") 
@@ -24,34 +25,34 @@ block content
 					+mli("en", "out", "https://www.thepokerbank.com/strategy/basic/starting-hand-selection/sklansky-groups/", "", "David Skalinsky & Mason Malmuth, Starting hand groups", "")
 			li Сайты
 				ol
-					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "Есть бесплатные инструменты. Есть пробный период в 14 дней.", "")
-					+mli("en", "out", "https://www.gtowizard.com", "gtowizard.com", "", "")
-					+mli("en", "out", "https://simplepoker.com/", "simplepoker.com", "Есть видео. Есть теория. Много дорогого софта", "")
-					+mli("en", "out", "https://www.flopzilla.com/index.html", "FlopZilla", "Минимальная цена - $25", "")
-					+mli("en", "out", "https://www.pokerstrategy.com", "pokerstrategy.com", "", "")
-					+mli("en", "out", "https://piosolver.com/", "PioSolver", "GTO инструмент. Минимальная цена - $249", "")
-					+mli("en", "out", "https://www.pokersnowie.com/", "pokersnowie.com", "Минимальная $99/год. Есть бесплатный контент. И триал период.", "")
-					+mli("en", "out", "https://gtorangebuilder.com/", "GTOrangebuilder.com", "Есть бесплатный контент", "")
-					+mli("en", "out", "https://www.gtoplus.com/", "gtoplus.com", "GTO инструмент. Минимальная цена - $75", "")
+					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "HRC. $15/мес или $99/год. Есть бесплатные инструменты. Есть пробный период в 14 дней.", "icon")
+					+mli("en", "out", "https://www.gtowizard.com", "gtowizard.com", "", "icon")
+					+mli("en", "out", "https://simplepoker.com/", "simplepoker.com", "Есть видео. Есть теория. Много дорогого софта", "icon")
+					+mli("en", "out", "https://www.flopzilla.com/index.html", "FlopZilla", "Минимальная цена - $25", "icon")
+					+mli("en", "out", "https://www.pokerstrategy.com", "pokerstrategy.com", "", "icon")
+					+mli("en", "out", "https://piosolver.com/", "PioSolver", "GTO инструмент. Минимальная цена - $249", "icon")
+					+mli("en", "out", "https://www.pokersnowie.com/", "pokersnowie.com", "Минимальная $99/год. Есть бесплатный контент. И триал период.", "icon")
+					+mli("en", "out", "https://gtorangebuilder.com/", "GTOrangebuilder.com", "Есть бесплатный контент", "icon")
+					+mli("en", "out", "https://www.gtoplus.com/", "gtoplus.com", "GTO инструмент. Минимальная цена - $75", "icon")
 					HoldemResourses Calculator, PreflopSSS, ,
-					+mli("en", "out", "https://hyperschool.ru", "hyperschool.ru", "Пул для игроков Spin&Go & HU SNG. Программа Hypertracker. ", "")
-					+mli("en", "out", "https://ocw.mit.edu/courses/15-s50-poker-theory-and-analytics-january-iap-2015/", "MIT", "Poker Teory (2015)", "")
-					+mli("en", "out", "https://plogenius.com/", "plogenius.com", "PLO GTO Solver", "")
-					+mli("en", "out", "https://pokeit.co/", "pokeit.co", "HUD. $5-10/мес", "")
-					+mli("en", "out", "https://pokercopilot.com/", "pokercopilot.com", "HUD. Проигрыватель рук", "")
-					+mli("en", "out", "https://www.pokertube.com/", "PokerTube", "Видео. Текстовые новости.", "")
-					+mli("en", "out", "https://www.pokernow.club/", "pokernow.club", "Типа можно играть с друзьями ", "")
-					+mli("en", "out", "https://pokerbankrolltracker.net/", "pokerbankrolltracker", "19.9/год", "")
+					+mli("en", "out", "https://hyperschool.ru", "hyperschool.ru", "Пул для игроков Spin&Go & HU SNG. Программа Hypertracker. ", "icon")
+					+mli("en", "out", "https://ocw.mit.edu/courses/15-s50-poker-theory-and-analytics-january-iap-2015/", "MIT", "Poker Teory (2015)", "icon")
+					+mli("en", "out", "https://plogenius.com/", "plogenius.com", "PLO GTO Solver", "icon")
+					+mli("en", "out", "https://pokeit.co/", "pokeit.co", "HUD. $5-10/мес", "icon")
+					+mli("en", "out", "https://pokercopilot.com/", "pokercopilot.com", "HUD. Проигрыватель рук", "icon")
+					+mli("en", "out", "https://www.pokertube.com/", "PokerTube", "Видео. Текстовые новости.", "icon")
+					+mli("en", "out", "https://www.pokernow.club/", "pokernow.club", "Типа можно играть с друзьями ", "icon")
+					+mli("en", "out", "https://pokerbankrolltracker.net/", "pokerbankrolltracker", "19.9/год", "icon")
 					li Poker Income Ultimate
-					li https://www.poker-analytics.net/
-					li 
+					+mli("en", "out", "https://www.poker-analytics.net/", "poker-analytics.net", "Сохранение результатов живой игры. Банкрол менеджмент.", "") 
+					+mli("en", "out", "https://monkerware.com/index.html", "monkerware.com", "Solver $499 PLO. Есть триал версия. Программа работы с диапазонами.", "")
 			li Инструментарий. Бесплатный.
 				ol
-					+mli("en", "out", "https://openpokertools.com/", "OpenpokerTools.com", " ", "")
-					+mli("en", "out", "https://www.pokerhandrange.com/", "pokerhandrange.com", " ", "")
+					+mli("en", "out", "https://openpokertools.com/", "OpenpokerTools.com", " ", "icon")
+					+mli("en", "out", "https://www.pokerhandrange.com/", "pokerhandrange.com", " ", "icon")
 					+mli("en", "out", "https://replayer.winningpokerhud.com/", "pokerhandrange.com", " Replayer. Поддерживает PS, GGPoker", "")
-					+mli("en", "out", "https://winningpokerhud.com/", "winningpokerhud.com", " HUD PokerStars.", "")
-					+mli("en", "out", "https://www.primedope.com/pushbot-trainer/", "primedope.com", "Pushbot trainer.", "")
+					+mli("en", "out", "https://winningpokerhud.com/", "winningpokerhud.com", " HUD PokerStars.", "icon")
+					+mli("en", "out", "https://www.primedope.com/pushbot-trainer/", "primedope.com", "Pushbot trainer.", "icon")
 					
 					+mli("en", "out", "https://www.pokerstrategy.com/poker-software-tools/equilab-holdem/", "pokerstrategy.com", "EquiLab Holdem ", "")
 					+mli("en", "out", "https://www.pokerstrategy.com/poker-software-tools/equilab-omaha/", "pokerstrategy.com", "EquiLab Omaha ", "")
@@ -59,9 +60,12 @@ block content
 					+mli("en", "out", "https://pokerstove.informer.com/download/#downloading", "PokerStove", " ", "")
 					+mli("en", "out", "https://www.thepokerbank.com/tools/pokerbank/spoc/", "thepokerbank.com", "SPOC - Simple Pot Odds Calculator", "")
 					+mli("en", "out", "https://github.com/b-inary/desktop-postflop", "desktop-postflop", "Free Solver", "github")
-					+mli("en", "out", "https://freebetrange.com/ru", "freebetrange.com", "Менеджер префлоп чартов", "")
+					+mli("en", "out", "https://freebetrange.com/ru", "freebetrange.com", "Менеджер префлоп чартов", "icon")
 					+mli("en", "out", "https://wasm-postflop.pages.dev/", "postflop", "Solver", " ")
 					+mli("en", "out", "https://telegra.ph/Desktop-Postflop---GTO-solver-10-10", "postflop", "Help", " ")
+					+mli("en", "out", "http://www.propokertools.com/", "ProPokerTools.com", "Поддерживает Omaha8, Stud8", "")
+					+mli("en", "out", "https://actionflop.com/", "actionflop.com", "Игря HU NL с ботом ", "icon")
+
 			li YouTube
 				ol
 					+mli("en", "out", "https://www.youtube.com/@WowPoker/videos", "WowPoker", "", "youtube")
@@ -95,7 +99,7 @@ block content
 					+mli("en", "out", "https://github.com/brunoscopelliti/poker-holdem-engine", "brunoscopelliti", "Javascript. Poker holdem engine.", "")
 					+mli("en", "out", "https://hh-specs.handhistory.org/", "handhistory.org", "Спецификация на стандарт истории покерных рук. OHH(Open Hand History)", "") 
 					+mli("en", "out", "https://ts-specs.handhistory.org/", "handhistory.org", "Спецификация на стандарт истории покерных турниров. OTS(Open Tournament Summary)", "") 
-					
+					+mli("en", "out", "http://www.gambit-project.org/", "gambit-project.org", "Равновесие Нэша. Теория игр. Примеры.", "")
 			li Python библиотеки
 				ol
 					+mli("en", "out", "https://github.com/SirRender00/texasholdem", "SirRender00", "texasholdem", "github")

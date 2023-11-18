@@ -1,0 +1,38 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Omaha Hi/Lo"
+	
+block content
+	h2.font-effect-shadow-multiple Omaha Hi/Lo
+	article.grid-container
+		div.grid-x
+			div(class="cell small-6")
+				ol
+					+mli("en", "out", "https://forumserver.twoplustwo.com/44/omaha-8-a/", "twoplustwo.com", "Forum", "")
+
+					
+					li Статьи
+						ol
+							li Frank Jerome
+								ol
+									+mli("en", "out", "https://forumserver.twoplustwo.com/44/omaha-8-a/flops-i-reprint-september-2012-a-1340406/", "Flops I", "reprint from September 2012", "")
+									+mli("en", "out", "https://forumserver.twoplustwo.com/44/omaha-8-a/flops-ii-reprint-october-2012-a-1340407/", "Flops II", "reprint from October 2012", "")
+									+mli("en", "out", "https://forumserver.twoplustwo.com/44/omaha-8-a/flops-iii-reprint-november-2012-a-1340408/", "Flops III", "reprint from November 2012", "")
+									+mli("en", "out", "https://forumserver.twoplustwo.com/44/omaha-8-a/flops-iv-reprint-december-2012-a-1340409/", "Flops IV", "reprint from December 2012", "")
+									+mli("en", "out", "https://forumserver.twoplustwo.com/44/omaha-8-a/blind-defense-101-article-written-december-2008-2-2-line-magazine-1161815/", "101", "Omaha-8 Blind Defense 101", "")
+
+							li Daniel Wolcott
+								ol
+									+mli("en", "out", "https://franknagaijr.blogspot.com/2009/04/going-deep-in-online-plo8-tournament.html", "PLO8 Tournament Article I", "", "")
+									+mli("en", "out", "https://franknagaijr.blogspot.com/2009/06/article-2.html", "PLO8 Tournament Article II", "", "")
+									+mli("en", "out", "https://franknagaijr.blogspot.com/2009/12/part-3.html", "PLO8 Tournament Article III", "", "")
+							li PokerStrategy
+								ol
+									+mli("en", "out", "https://www.pokerstrategy.com/strategy/omaha-poker/plo-hi-lo-strategy-1/", "PLO8 Strategy I", "", "")
+									+mli("en", "out", "https://www.pokerstrategy.com/strategy/omaha-poker/plo-hi-lo-strategy-2/", "PLO8 Strategy II", "", "")
+									+mli("en", "out", "https://www.pokerstrategy.com/strategy/omaha-poker/plo-hi-lo-strategy-3/", "PLO8 Strategy III", "", "")
+
+
+			div(class="cell small-6")
+				img(src="omaha_hi_lo.jpeg" width=400)
