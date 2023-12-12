@@ -16,7 +16,10 @@ block content
 					+mli("en", "out", "https://en.wikipedia.org/wiki/Poker_probability", "", "Вероятности разных покерных событий", "wikipedia")
 					+mli("en", "out", "https://www.runitonce.com/nlhe/50-shades-of-flop-texture/", "", "Текстуры покерных флопов", "") 
 					+mli("en", "out", "https://dev.to/rainleander/create-a-simple-5-card-draw-poker-game-in-python-with-asyncio-2ifh", "dev.to", "Create a Simple 5-Card Draw Poker Game in Python with Asyncio", "") 
-					+mli("en", "out", "https://www.espn.com/espn/poker/columns/story?columnist=bluff_magazine&id=2817110", "", "G-Bucks", "")
+					+mli("en", "out", "https://www.espn.com/espn/poker/columns/story?columnist=bluff_magazine&id=2817110", "статья", "G-Bucks. Фил Гальфонд", "")
+					+mli("ru", "out", "https://www.pokermoscow.ru/articles/1415.htm", "перевод", "G-Bucks. Фил Гальфонд", "")
+					
+					
 					+mli("en", "out", "https://www.thepokerbank.com/strategy/mathematics/", "thepokerbank.com", "Mathematics", "")
 					+mli("en", "out", "https://www.thepokerbank.com/videos/wilcox/articles/4betting-mathematics/", "thepokerbank.com", "4betting mathematics", "")
 					//https://www.youtube.com/watch?v=PZLCOgubhEE
@@ -28,7 +31,7 @@ block content
 					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "HRC. $15/мес или $99/год. Есть бесплатные инструменты. Есть пробный период в 14 дней.", "icon")
 					+mli("en", "out", "https://www.gtowizard.com", "gtowizard.com", "", "icon")
 					+mli("en", "out", "https://simplepoker.com/", "simplepoker.com", "Есть видео. Есть теория. Много дорогого софта", "icon")
-					+mli("en", "out", "https://www.flopzilla.com/index.html", "FlopZilla", "Минимальная цена - $25", "icon")
+					//-+mli("en", "out", "https://www.flopzilla.com", "FlopZilla", "Минимальная цена - $25", "icon")
 					+mli("en", "out", "https://www.pokerstrategy.com", "pokerstrategy.com", "", "icon")
 					+mli("en", "out", "https://piosolver.com/", "PioSolver", "GTO инструмент. Минимальная цена - $249", "icon")
 					+mli("en", "out", "https://www.pokersnowie.com/", "pokersnowie.com", "Минимальная $99/год. Есть бесплатный контент. И триал период.", "icon")
@@ -44,8 +47,8 @@ block content
 					+mli("en", "out", "https://www.pokernow.club/", "pokernow.club", "Типа можно играть с друзьями ", "icon")
 					+mli("en", "out", "https://pokerbankrolltracker.net/", "pokerbankrolltracker", "19.9/год", "icon")
 					li Poker Income Ultimate
-					+mli("en", "out", "https://www.poker-analytics.net/", "poker-analytics.net", "Сохранение результатов живой игры. Банкрол менеджмент.", "") 
-					+mli("en", "out", "https://monkerware.com/index.html", "monkerware.com", "Solver $499 PLO. Есть триал версия. Программа работы с диапазонами.", "")
+					+mli("en", "out", "https://www.poker-analytics.net/", "poker-analytics.net", "Сохранение результатов живой игры. Банкрол менеджмент.", "icon") 
+					+mli("en", "out", "https://monkerware.com/index.html", "monkerware.com", "Solver $499 PLO. Есть триал версия. Программа работы с диапазонами.", "icon")
 			li Инструментарий. Бесплатный.
 				ol
 					+mli("en", "out", "https://openpokertools.com/", "OpenpokerTools.com", " ", "icon")
@@ -75,6 +78,7 @@ block content
 					+mli("en", "out", "https://www.youtube.com/@bcpoff/videos", "bcpoff", "Poker Replays", "youtube")
 					+mli("en", "out", "https://www.youtube.com/@DougPolkPoker/videos", "DougPolkPoker", "Разборы. Разоблачения.", "youtube")
 					+mli("ru", "out", "https://www.youtube.com/@GIPSYTEAM-poker/videos", "GIPSYTEAM", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/@GreenlinePoker", "GreenlinePoker", "Теория. Разборы. Стримы.", "youtube")
 					+mli("en", "out", "https://www.youtube.com/@HustlerCasinoLive/videos", "HustlerCasinoLive", "", "youtube")
 					// https://www.youtube.com/watch?v=TM_sMACxSzY
 	article.grid-container
@@ -102,6 +106,7 @@ block content
 					+mli("en", "out", "http://www.gambit-project.org/", "gambit-project.org", "Равновесие Нэша. Теория игр. Примеры.", "")
 			li Python библиотеки
 				ol
+					+mli("en", "out", "https://github.com/fedden/poker_ai", "fedden", "poker_ai", "github")
 					+mli("en", "out", "https://github.com/SirRender00/texasholdem", "SirRender00", "texasholdem", "github")
 					+mli("en", "out", "https://github.com/y0sh12/GatorHoldEm", "y0sh12", "GatorHoldEm. Используют AI. Используют HandRanks.dat", "github")
 					+mli("en", "out", "https://github.com/worldveil/deuces", "worldveil", "deuces", "github")
@@ -118,3 +123,5 @@ block content
 					+mli("en", "out", "https://github.com/petekanev/Bluffasaurus", "petekanev", "Bluffasaurus C#", "github")
 					+mli("en", "out", "https://github.com/glpcc/PokerPy", "glpcc", "PokerPy", "github")
 					+mli("en", "out", "https://github.com/ihendley/treys", "ihendley", "treys", "github")
+					+mli("en", "out", "https://github.com/HoldemPokerTools/HandMatrix", "HoldemPokerTools", "HandMatrix js", "github")
+

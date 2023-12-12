@@ -66,6 +66,6 @@ block content
 			| efstack="100BB"
 			| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
 			| actions = '[{"name":"Raise", "color":"#da57a4"},{"name":"Limp", "color":"#73a0bb"},{"name":"Fold", "color":"#a59fbe"}]'
-			| range = "KK+, 99-77, 55-33, 97s+, 87s, 53s+, 43s, ATo+, 97o+, 87o, 53o+; JJ; 22, 66">
+			| range = "KK+, 99-77, 55-33, 97s+, 87s, 53s+, 43s, ATo+, 97o+, 87o, 53o+, 43o; JJ; 22, 66">
 		</range-info>
 	script(src="../js/element.js" defer)

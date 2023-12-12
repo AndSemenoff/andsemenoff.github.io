@@ -1,0 +1,48 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Все о AI. Ссылки."
+
+block content
+	h2.font-effect-shadow-multiple Все о Stable Diffusion
+	article.grid-container
+		ol
+			li Основное
+				ol
+					+mli('en', "out", 'https://stability.ai/', 'stability.ai', ' Stable Diffusion, Stable Audio, Beluga', "icon")
+					
+					//-li Low-Rank Adaptation of Large Language Models (LoRA) 
+
+		ol
+			li Интерфейсы
+				ol
+					li AUTOMATIC1111
+						ol
+							+mli('en', "out", 'https://github.com/AUTOMATIC1111/stable-diffusion-webui', "AUTOMATIC1111", "официальный репозиторий", "github")
+					li ComfyUI
+						ol
+							+mli('en', "out", 'https://github.com/comfyanonymous/ComfyUI', "ComfyUI", "официальный репозиторий", "github")
+							li Ноды
+								ol
+									+mli('en', "out", 'https://github.com/ltdrdata/ComfyUI-Manager', "ComfyUI-Manager", "менеджер установки нод, обновлений и дополнений", "github")
+									+mli('en', "out", 'https://github.com/ltdrdata/ComfyUI-Impact-Pack', "ComfyUI-Impact-Pack", "", "github")
+									+mli('en', "out", 'https://github.com/jags111/efficiency-nodes-comfyui', "efficiency-nodes-comfyui", "", "github")
+
+									+mli('en', "out", 'https://github.com/cubiq/ComfyUI_IPAdapter_plus', "IPAdapter_plus", "официальный репозиторий", "github")
+
+					+mli('en', "out", 'https://github.com/Stability-AI/StableSwarmUI', "StableSwarmUI", "", "github")
+					
+		ol
+			li Статьи
+				ol
+					+mli('en', "out", 'https://minimaxir.com/', "Max Woolf's Blog", "", "icon")
+					+mli('en', "out", 'https://jalammar.github.io/illustrated-stable-diffusion/', "The Illustrated Stable Diffusion", "", "icon")
+					+mli('en', "out", 'https://strikingloo.github.io/stable-diffusion-vs-dalle-2', "Stable Diffusion: Prompt Guide and Examples", "", "icon")
+
+
+			li Видео
+				ol
+					+mli('en', "out", "https://www.youtube.com/watch?v=RT--PjAiu9Q", "Обучение. LoRA модели.", "", "youtube")
+					+mli('en', "out", "https://www.youtube.com/@sedetweiler", "Scott Detweiler", "", "youtube")
+					+mli('en', "out", "https://www.youtube.com/@OlivioSarikas", "Olivio Sarikas", "", "youtube")
+					+mli('en', "out", "https://www.youtube.com/@latentvision", "latent vision", "Канал от создателя IPAdapter_plus", "youtube")

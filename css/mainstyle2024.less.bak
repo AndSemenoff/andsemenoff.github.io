@@ -223,12 +223,8 @@ dd {
 	text-align:center;
 	background-size: 100% 100%;
 	
-	margin: 2px;
-	font-weight: bold;border:2px solid black;
+	.bordered();
   }
-
-
-
 
 .poker{
 	margin-left: auto;
@@ -239,6 +235,106 @@ dd {
 	/*border:1px solid black;*/
 	width: initial;
 }
+
+range-info{
+	background-color: @lightgreycolor;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: small;
+	border-width: 2px;
+	border-style: solid;
+	/*border:1px solid black;*/
+	width: initial;
+}
+range-info.poker:hover {
+		background-color: blue;
+}
+
+.poker {
+	td.g1{
+		background-color: @greendarkcolor; 
+		.bordered();
+	}
+	td.g2{
+		background-color: @greencolor; 
+		.bordered();
+	}
+	td.g3{
+		background-color: @greenlightcolor;
+		.bordered();
+	}
+	td.r1{
+	background-color: @reddackcolor;
+	.bordered();
+	}
+	td.r2{
+	background-color: @redcolor;
+	.bordered();
+	}
+	td.r3{
+	background-color: @redlightcolor; 
+	.bordered();
+	}
+	td.r1r3{
+		background:linear-gradient(to top, @reddackcolor 50%, @redlightcolor 50%);
+		background-position:top left;
+		text-align:center;
+		background-size: 100% 100%;
+		.bordered();
+	}
+	td.r1r2{
+		background:linear-gradient(to top, @reddackcolor 50%, @redcolor 50%);
+		background-position:top left;
+		text-align:center;
+		background-size: 100% 100%;
+		.bordered();
+	}
+	td.r3b4{
+		background:linear-gradient(to top, @redlightcolor 50%, @bluedarknesscolor 50%);
+		background-position:top left;
+		text-align:center;
+		background-size: 100% 100%;
+		.bordered();
+	}
+	td.b1{
+	background-color: @bluelightcolor; 
+	.bordered();
+	}
+	td.b2{
+	background-color: @bluecolor; 
+	.bordered();
+	}
+	td.b3{
+	background-color: @bluedarkcolor; 
+	.bordered();
+	}
+	td.b4{
+	background-color: @bluedarknesscolor; 
+	.bordered();
+	}
+	td.b5{
+	background-color: @bluedark5; 
+	.bordered();
+	}
+	td.b6{
+	background-color: @bluedark6; 
+	.bordered();
+	}
+	td.b7{
+	background-color: @bluedark7; 
+	.bordered();
+	}
+	td.b8{
+	background-color: @bluedark8; 
+	.bordered();
+	}
+	td.a{
+	background-color: #028f8e;
+	.bordered();
+	}
+
+}
+
 .poker {
 	td{
 		border:0px solid white;
@@ -333,6 +429,7 @@ dd {
 	}
 
 }
+
 
 .poker th{
 	border:1px solid black;

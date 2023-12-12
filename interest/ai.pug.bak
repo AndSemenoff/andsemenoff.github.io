@@ -9,8 +9,6 @@ block content
 		ol
 			li Текстовые генеративные сети
 				ol
-				
-					+mli('en', "out", 'https://lmstudio.ai/', 'lmstudio.ai', 'Оболочка, которая позволяет устанавливать текстовые сети локально. ', "icon")
 					+mli('en', "out", 'https://chat.openai.com/', 'chatGPT', 'Официальный сайт. ', "icon")
 					+mli('en', "out", 'https://bard.google.com/', 'bard', 'Официальный сайт. ', "icon")
 					

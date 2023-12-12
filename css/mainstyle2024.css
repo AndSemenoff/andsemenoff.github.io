@@ -265,6 +265,136 @@ dd {
   /*border:1px solid black;*/
   width: initial;
 }
+range-info {
+  background-color: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: small;
+  border-width: 2px;
+  border-style: solid;
+  /*border:1px solid black;*/
+  width: initial;
+}
+.poker td.g1 {
+  background-color: #148414;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.g2 {
+  background-color: #22dd22;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.g3 {
+  background-color: #7aeb7a;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.r1 {
+  background-color: #ff5a77;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.r2 {
+  background-color: #ff8da1;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.r3 {
+  background-color: pink;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.r1r3 {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #ff5a77), color-stop(50%, pink));
+  background: linear-gradient(to top, #ff5a77 50%, pink 50%);
+  background-position: top left;
+  text-align: center;
+  background-size: 100% 100%;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.r1r2 {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #ff5a77), color-stop(50%, #ff8da1));
+  background: linear-gradient(to top, #ff5a77 50%, #ff8da1 50%);
+  background-position: top left;
+  text-align: center;
+  background-size: 100% 100%;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.r3b4 {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, pink), color-stop(50%, #348fac));
+  background: linear-gradient(to top, pink 50%, #348fac 50%);
+  background-position: top left;
+  text-align: center;
+  background-size: 100% 100%;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b1 {
+  background-color: lightblue;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b2 {
+  background-color: #86c5da;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b3 {
+  background-color: #4baac8;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b4 {
+  background-color: #348fac;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b5 {
+  background-color: #296e85;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b6 {
+  background-color: #235e71;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b7 {
+  background-color: #1d4e5e;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.b8 {
+  background-color: #173e4a;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
+.poker td.a {
+  background-color: #028f8e;
+  border: 2px solid black;
+  margin: 2px;
+  font-weight: bold;
+}
 .poker td {
   border: 0px solid white;
   margin: 0;
