@@ -1,0 +1,26 @@
+//
+//https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+//
+const synth = window.speechSynthesis;
+var msg = "Hello my friend!";
+let voices = [];
+const utterThis = new SpeechSynthesisUtterance(msg);
+utterThis.pitch = 1;
+utterThis.rate = 1;
+utterThis.volume = 1;
+voices = synth.getVoices();
+for (const voice of voices) {
+	console.log(voice.name, voice.lang);
+}
+function myFunction() {
+	synth.speak(utterThis);
+}
+
+if ("webkitSpeechRecognition" in window) {
+
+  // Speech Recognition Stuff goes here
+
+} else {
+  console.log("Speech Recognition Not Available")
+}
+

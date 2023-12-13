@@ -1,0 +1,11 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Английский язык"
+
+block content
+	h2.font-effect-shadow-multiple Английский язык
+	article.grid-container
+		h3 Диалоги
+		<button onclick="myFunction()">Hello!</button>	
+	script(src="speech.js" defer)

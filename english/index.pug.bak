@@ -9,7 +9,6 @@ block content
 		h3 Общие вопросы
 		ul
 			+mli("ru", "my", "englishwithpeter.html", "", "English with Peter.", "")
-			+mli("ru", "my", "speech.html", "", "Диалоги. Учи диалоги с роботом", "")
 		h3 Сайты
 		ul 
 			+mli("ru", "out", "https://tuteng.ru/", "tuteng.ru", "Грамматика. Хороший сайт", "")
