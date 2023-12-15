@@ -1,0 +1,200 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Английский язык"
+
+block content
+	h2.font-effect-shadow-multiple Английский язык
+	article.grid-container
+		h3 Знаки международной фонетической транскрипции
+		h3 Гласные звуки
+		table.table-test
+			tr
+				th Звук
+				th Произношение
+			tr
+				td [i:]
+				td Близок протяжному <em><strong>и</strong></em> в слове <em><strong>и</strong>ва</em> (<a href="/tutorial/1-lesson.html" title="Урок 1. Lesson One">Урок 1</a>).
+			tr
+				td [ɪ]
+				td Близок краткому <em><strong>и</strong></em> в слове <em><strong>и</strong>гла</em> (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).
+			tr
+				td [e]
+				td Близок звуку <em><strong>э</strong></em> в слове <em><strong>э</strong>то</em> (<a href="/tutorial/1-lesson.html" title="Урок 1. Lesson One">Урок 1</a>).
+			tr
+				td [æ]
+				td Звук средний между <em><strong>а</strong></em> и <em><strong>э</strong></em>. 
+					<br>Откройте рот как для произнесения звука <em><strong>а</strong></em>, опустите нижнюю челюсть 
+					<br>и постарайтесь произнести <em><strong>э</strong></em>. Получится [æ]
+			tr
+				td [ɑ:]
+				td Долгий звук <em><strong>a-a</strong></em>: <em>д<strong>а-а</strong>й</em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				td [ɒ]
+				td Краткий звук <em><strong>о</strong></em> в слове <em>т<strong>о</strong>т</em> (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).</td>
+			tr
+				td [ɔ:]
+				td Напоминает протяжно произнесенное <em><strong>о</strong></em> в слове <em>п<strong>о</strong>лно</em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				td [ɜ:]
+				td Долгий звук, средний между <em><strong>о</strong></em> и <em><strong>э</strong></em>. Напоминает произношение <em><strong>ё</strong></em> в слове <em>Г<strong>ё</strong>те</em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				<td>[ə]</td>
+				<td>Короткий, неясный, неударный звук. В русском языке слышится в неударных слогах: пять <em>комн<strong>а</strong>т</em> [комнəт] (<a href="/tutorial/1-lesson.html" title="Урок 1. Lesson One">Урок 1</a>).</td>
+			tr
+				<td>[ʌ]</td>
+				<td>Близок неударному звуку <em><strong>а</strong></em> в слове <em>к<strong>а</strong>мыш</em>. В английском языке обычно находится под ударением (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).</td>
+			tr
+				<td>[ʊ]</td>
+				<td>Близок звуку <em><strong>у</strong></em> в слове <em>т<strong>у</strong>т</em> (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).</td>
+			tr
+				<td>[u:]</td>
+				<td>Близок звуку <em><strong>у</strong></em>, произнесенному протяжно: <em><strong>у-у</strong>мный</em> (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).</td>
+			tr
+				<td>[aɪ]</td>
+				<td>Близок русскому <em><strong>ай</strong></em> в слове <em>Б<strong>ай</strong>кал</em> (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).</td>
+			tr
+				<td>[eɪ]</td>
+				<td><em><strong>ей</strong></em> в слове <em>ш<strong>ей</strong>ка</em> (<a href="/tutorial/1-lesson.html" title="Урок 1. Lesson One">Урок 1</a>).</td>
+			tr
+				<td>[ɔɪ]</td>
+				<td><em><strong>ой</strong></em> в слове <em>б<strong>ой</strong>ня</em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				<td>[aʊ]</td>
+				<td><em><strong>ay</strong></em> в слове <em>п<strong>ау</strong>за</em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				<td>[əʊ]</td>
+				<td><em><strong>оу</strong></em> в слове <em>кл<strong>оу</strong>н</em> (<a href="/tutorial/2-lesson.html" title="Урок 2. Lesson Two">Урок 2</a>).</td>
+			tr
+				<td>[ɪə]</td>
+				<td>Сочетание [ɪ] и [ə] с ударением на [ɪ]. Приблизительно <em><strong>иэ</strong></em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				<td>[ʊə]</td>
+				<td>Сочетание [ʊ] и [ə] с ударением на [ʊ]. Приблизительно <em><strong>уэ</strong></em> (<a href="/tutorial/3-lesson.html" title="Урок 3. Lesson Three">Урок 3</a>).</td>
+			tr
+				td [eə]
+				td Первый элемент сочетания близок звуку <em><strong>э</strong></em> в слове <em><strong>э</strong>тот</em>. 
+					<br>За ним следует беглый звук [ə]. Сочетание примерно произносится <em><strong>эа</strong></em> 
+
+		h3 Согласные звуки
+		table.table-test
+			tr
+				th Звук
+				th Произношение
+			<tr>
+			<td>[p]</td>
+			<td>Соответствует русскому <em><strong>п</strong></em>
+			</tr>
+			<tr>
+			<td>[b]</td>
+			<td>Соответствует русскому <em><strong>б</strong></em>
+			</tr>
+			<tr>
+			<td>[m]</td>
+			<td>Соответствует русскому <em><strong>м</strong></em>
+			</tr>
+			<tr>
+			<td>[k]</td>
+			<td>Соответствует русскому <em><strong>к</strong></em>
+			</tr>
+			<tr>
+			<td>[ɡ]</td>
+			<td>Соответствует русскому <em><strong>г</strong></em>
+			</tr>
+			<tr>
+			<td>[f]</td>
+			<td>Соответствует русскому <em><strong>ф</strong></em>
+			</tr>
+			<tr>
+			<td>[v]</td>
+			<td>Соответствует русскому <em><strong>в</strong></em>
+			</tr>
+			<tr>
+			<td>[t]</td>
+			<td>Соответствует русскому <em><strong>т</strong></em>
+			</tr>
+			<tr>
+			<td>[d]</td>
+			<td>Соответствует русскому <em><strong>д</strong></em> 
+			</tr>
+			<tr>
+			<td>[n]</td>
+			<td>Соответствует русскому <em><strong>н</strong></em>
+			</tr>
+			<tr>
+			<td>[l]</td>
+			<td>Соответствует русскому <em><strong>л</strong></em>
+			</tr>
+			<tr>
+			<td>[ʃ]</td>
+			<td>Соответствует русскому <em><strong>ш</strong></em>
+			</tr>
+			<tr>
+			<td>[ʒ]</td>
+			<td>Соответствует русскому <em><strong>ж</strong></em>
+			</tr>
+			<tr>
+			<td>[ʧ]</td>
+			<td>Соответствует русскому <em><strong>ч</strong></em>
+			</tr>
+			<tr>
+			<td>[s]</td>
+			<td>Соответствует русскому <em><strong>с</strong></em> 
+			</tr>
+			<tr>
+			<td>[z]</td>
+			<td>Соответствует русскому <em><strong>з</strong></em> 
+			</tr>
+			<tr>
+			<td>[ʤ]</td>
+			<td>Соответствует русскому <em><strong>дж</strong></em> 
+			</tr>
+			<tr>
+			<td>[r]</td>
+			<td><em><strong>р</strong></em> как в слове <em>ж<strong>р</strong>ебий</em> 
+			</tr>
+			<tr>
+			<td>[h]</td>
+			<td>Выдох, напоминающий слабо произнесенный звук <em><strong>х</strong></em>
+			</tr>
+			<tr>
+			<td>[j]</td>
+				td Напоминает русский звук <em><strong>й</strong></em> перед гласными звуками: 
+					<br><em>Нью-<strong>Й</strong>орк</em>, <em>если</em> [йэсли]. Встречается в сочетании с гласными 
+			</tr>
+			<tr>
+			<td>[ju:]</td>
+			<td>Долгое <em><strong>ю</strong></em> в слове <em><strong>ю</strong>жный</em> 
+			</tr>
+			<tr>
+			<td>[je]</td>
+			<td><em><strong>е</strong></em> в слове <em><strong>е</strong>ль</em> 
+			</tr>
+			<tr>
+			<td>[jɒ]</td>
+			<td><em><strong>ё</strong></em> в слове <em><strong>ё</strong>лка</em> 
+			</tr>
+			<tr>
+			<td>[jʌ]</td>
+			<td><em><strong>я</strong></em> в слове <em><strong>я</strong>ма</em> 
+			</tr>
+			</table>
+		p Следующие согласные звуки не имеют даже приблизительных соответствий в русском языке:
+		table.table-simple
+			tr
+				th Звук
+				th Произношение
+			tr
+				td [w]
+				td Звук [w] произносится одними губами. Вытяните губы вперед, как для произнесения русского звука [у]. Приготовьтесь сказать [у], потом разомкните губы и произнесите русское <b>в</b>, не касаясь зубами нижней губы. 
+			tr
+				<td>[ŋ]</td>
+				<td>Приоткройте рот и произнесите <em><strong>н</strong></em>, не закрывая рта .
+			tr
+				<td>[θ]</td>
+				<td>Выдвиньте немного распластанный кончик языка между зубами и произнесите русское <em><strong>с</strong></em>
+			tr
+				<td>[ð]</td>
+				<td>Выдвиньте немного распластанный кончик языка между зубами и произнесите русское <em><strong>з</strong></em>
+
+

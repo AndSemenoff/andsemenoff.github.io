@@ -7,5 +7,22 @@ block content
 	h2.font-effect-shadow-multiple Английский язык
 	article.grid-container
 		h3 Диалоги
-		<button onclick="myFunction()">Hello!</button>	
+		div
+			span.speech
+				i.fa-solid.fa-volume-high
+				|&nbsp;object
+			|&nbsp;[ˈɒbʤɪkt]&nbsp;
+			button#start 
+				i.fa-solid.fa-microphone
+			|&nbsp;
+			<span id="final" class="text-light"></span>
+			<span id="interim" class="text-secondary"></span>
+			button#stop 
+				i.fa-solid.fa-microphone-slash
+		div 
+			span.speech geology
+			|&nbsp;[ʤɪˈɒləʤɪ]
+		div 
+			span.speech Nice to meet you!
 	script(src="speech.js" defer)
+	script(src="speechRecognition.js" defer)

@@ -9,6 +9,10 @@ block content
 		h3 Общие вопросы
 		ul
 			+mli("ru", "my", "englishwithpeter.html", "", "English with Peter.", "")
+			+mli("ru", "my", "pronunciation.html", "", "Произношение", "")
+			+mli("ru", "my", "speech.html", "", "Диалоги. Учи диалоги с роботом", "")
+			+mli("ru", "my", "transcription.html", "", "Знаки международной фонетической транскрипции", "")
+			
 		h3 Сайты
 		ul 
 			+mli("ru", "out", "https://tuteng.ru/", "tuteng.ru", "Грамматика. Хороший сайт", "")
@@ -19,6 +23,7 @@ block content
 			+mli("en", "out", "https://www.thefreedictionary.com/", "TheFreeDictionary", "Тесты. Теория", "")
 			+mli("en", "out", "https://eslyes.com/", "eslyes.com", "Простые озвученные тексты с упражнениями, кросвордами и т.п. Часть переведена на русский язык.", "")
 			+mli("en", "out", "https://elllo.org/", "elllo.org", "Тысячи коротких аудио и видео с текстом и заданиями по тексту.", "")
+			+mli("ru", "out", "https://wooordhunt.ru/", "wooordhunt", "Упражнения на запоминания слов. Разница между американским и британским произношением.", "")
 
 		h3 Обучение онлайн
 		ul 

@@ -1,0 +1,143 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Английский язык"
+
+block content
+	h2.font-effect-shadow-multiple Английский язык
+	article.grid-container
+		h3 Буква <strong>Q, q</strong>. Сочетание <strong>qu</strong>
+		p Буква <strong>Q, q</strong> употребляется только в сочетании <strong>qu</strong>, которое произносится [kw]. Буквосочетанию <strong>qu</strong> в аналогичных русских словах часто соответствует сочетание [кв]: quota <em>квота</em>, equivalent <em>эквивалент</em>.
+		blockquote
+			ul
+				li 
+					span.speech quick, 
+					span.speech quit, 
+					span.speech quite, 
+					span.speech queen, 
+					span.speech quiet 
+					| [ˈkwaɪət]
+
+		h3 Буква <strong>R, r</strong>. Звук [r]
+		p Буква <strong>R, r</strong> перед гласной изображает звук [r], близкий к русскому [р] в слове <em>жребий</em>. 
+		| Для правильного произнесения этого звука заверните кончик языка вверх. Запомните: кончик языка не должен касаться нёба и язык не должен вибрировать, как при произнесении русского [р]. 
+		| В остальных случаях она не читается в британском варианте, хотя и оказывает влияние на чтение предшествующей гласной. В американском варианте она читается. Важнейшие сочетания гласных букв с буквой <strong>R, r</strong> вы узнаете ниже.</p>
+		blockquote
+			ul
+				li 
+					span.speech red, 
+					span.speech bred, 
+					span.speech rock, 
+					span.speech room 
+					| [rʊm], 
+					span.speech green, 
+					span.speech try, 
+					span.speech rim, 
+					span.speech rib, 
+					span.speech trust, 
+					span.speech meter 
+					| [ˈmi:tə], 
+					span.speech ˈPeter, 
+					span.speech letter 
+					| [ˈletə]
+
+		h3 Буквосочетания ar, or, er, ur, ir. Звуки [ɑ:], [ɔ:], [ɜ:]
+		p Буква <strong>R, r</strong> в ударном слоге определяет произношение предшествующего гласного звука.
+		p Сочетание <strong>ar</strong> читается амер.[ɑ:r], брит. [ɑ:].
+		p [ɑ:] - долгий гласный звук, похожий на тот, которого от нас добивается врач при осмотре горла: [а-а...]. При произнесении звука [ɑ:] язык лежит плоско во рту и оттянут назад, а губы округлены.
+		p Сочетание <strong>or</strong> читается амер.[ɔ:r], брит. [ɔ:].</p>
+		p [ɔ:] - долгий звук, близкий к протяжно произнесенному [о] в слове <em>по-о-лно</em>. При произнесении [ɔ:] язык оттянут назад и приподнят больше, чем для [ɒ].
+		p Сочетания <strong>er</strong>, <strong>ur</strong>, <strong>ir</strong> в ударном слоге обычно читаются [ɜ:], а в неударном конечном слоге - [ə].
+		p [ɜ:] - долгий гласный звук, не имеющий соответствия в русском языке. Он является чем-то средним между [о] и [э] и несколько напоминает немецкий звук, изображаемый буквой <strong>ö</strong>: schön, böse. (Сравните с первым гласным звуком в фамилии <em>Гёте</em>.)
+		p Повторяем: такое чтение сочетания <strong>ar</strong>, <strong>or</strong>, <strong>er</strong>, <strong>ur</strong>, <strong>ir</strong> имеют в <em>ударных слогах</em>. В конце слов, при отсутствии ударения, буква <strong>R, r</strong> <em>не читается</em>. В американском английском r читается.
+		blockquote
+			ul
+				li <strong>ar</strong> [ɑ:] - 
+					span.speech car, 
+					span.speech bar, 
+					span.speech farm, 
+					span.speech barn, 
+					span.speech bard, 
+					span.speech card
+				li <strong>or</strong> [ɔ:] - 
+					span.speech port, 
+					span.speech sport, 
+					span.speech born, 
+					span.speech form, 
+					span.speech corn, 
+					span.speech ˈorbit 
+					
+				li <strong>er</strong>, <strong>ir</strong>, <strong>ur</strong> [ɜ:] - 
+					span.speech her, 
+					span.speech term, 
+					span.speech herd, 
+					span.speech fir, 
+					span.speech firm, 
+					span.speech circle, 
+					span.speech fur, 
+					span.speech burn, 
+					span.speech thirst 
+					| [θɜ:st]
+				li <strong>er</strong>, <strong>or</strong>, <strong>ar</strong> [ə] - 
+					span.speech ˈmaker, 
+					span.speech ˈkeeper, 
+					span.speech ˈletter, 
+					span.speech ˈbetter, 
+					span.speech ˈdoctor, 
+					span.speech ˈactor, 
+					span.speech professor 
+					| [prəˈfesə], 
+					span.speech ˈbeggar, 
+					span.speech ˈpopular
+		h3 Буквосочетания <strong>wor</strong>, <strong>war</strong>, <strong>wr</strong>, <strong>wh</strong>, <strong>wa</strong>
+		p Буквосочетание <strong>wor</strong> большей частью читается брит. [wɜ:], амер. [wɜ:r], а буквосочетание <strong>war</strong> читается брит. [wɔ:], амер. [wɔ:r]
+		p Перед буквой <strong>R, r</strong> буква <strong>W, w</strong> не читается, например: 
+			span.speech write 
+			| [raɪt] 
+			| <em>писать</em>.
+		p В буквосочетании <strong>wh</strong> одна из букв остается «немой»; перед буквой <strong>o</strong> это буквосочетание читается [h], а перед остальными буквами - [w].
+		p Буквосочетание <strong>wa</strong> обычно читается [wɒ].
+		blockquote
+			ul
+				li [wɜ:]: 
+					span.speech word, 
+					span.speech world, 
+					span.speech worker, 
+					span.speech worse
+				li [wɔ:]: 
+					span.speech war, 
+					span.speech ward, 
+					span.speech warm, 
+					span.speech swarm
+				li [h]: 
+					span.speech who 
+					| [hu:], 
+					span.speech whose 
+					| [hu:z], 
+					span.speech whole 
+					| [həʊl], 
+					span.speech whom 
+					| [hu:m]
+				li [w]: 
+					span.speech white, 
+					span.speech when, 
+					span.speech while, 
+					span.speech why 
+					| [waɪ]
+				li [wɒ]: 
+					span.speech wall, 
+					span.speech watch, 
+					span.speech wasp, 
+					span.speech want
+			</ul>
+		</blockquote>
+		button#start 
+			i.fa-solid.fa-microphone
+		|&nbsp;
+		span#final.text-light
+		<span id="interim" class="text-secondary"></span>
+		button#stop 
+			i.fa-solid.fa-microphone-slash
+			
+	script(src="speech.js" defer)
+	script(src="speechRecognition.js" defer)
