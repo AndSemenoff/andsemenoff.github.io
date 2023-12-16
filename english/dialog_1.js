@@ -1,6 +1,23 @@
 //
 //https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
 //
+const exceptions = [
+  ["i am", "i'm"],
+  ["there is", "there's"],
+	["6", "six"],
+	["6:00", "six o'clock"],
+	["do not", "don't"],
+	["that is", "that's"],
+	["we are", "we're"],
+];
+
+function repAll(msg){
+	for (let count = 0; count < exceptions.length; count++){
+		msg = msg.replaceAll(exceptions[count][0], exceptions[count][1]);
+	}
+	return msg;
+}
+
 function comparePhrases(phrase1, phrase2) {
   // Преобразуем строки в массивы слов
   const phrase1Words = phrase1.split(" ");
@@ -10,7 +27,11 @@ function comparePhrases(phrase1, phrase2) {
   const differences = [];
   for (let i = 0; i < phrase1Words.length; i++) {
     if (phrase1Words[i] !== phrase2Words[i]) {
-      differences.push(phrase2Words[i]);
+			// Проверяем, не входит ли пара слов в список исключений
+      const isException = exceptions.some((exception) => exception[0] === phrase1Words[i] && exception[1] === phrase2Words[i]);
+      if (!isException) {
+        differences.push(phrase2Words[i]);
+      }
     }
   }
 
@@ -66,6 +87,8 @@ function mySpeechRecognition(msg, id){
 				// If the result item is Final, add it to Final Transcript, Else add it to Interim transcript
 				if (event.results[i].isFinal) {
 					final_transcript += event.results[i][0].transcript;
+					final_transcript = final_transcript.toLowerCase();
+					final_transcript = repAll(final_transcript);
 					if (final_transcript == msg){
 						speechRecognition.stop();
 						//console.log("speech Recognition stop");
@@ -105,12 +128,12 @@ let mike = [
 	"I'll phone you tomorrow then. Give my regards to Joyce. Have a good evening. ",
 ]
 let mike_recognition = [
-	"hello Jack why the rush where are you going", 
+	"hello jack why the rush where are you going", 
 	"do you often go to the theater",
-	"yes but I don't often find time these days there are so many other things to do",
-	"listen perhaps Janet and I can arrange to meet you and Joyce one Saturday evening we can have dinner together and go on to a theater",
-	"all right I'm meeting Janet later this evening so I can make sure that she's free next Saturday I'll ring you tomorrow to confirm if we are coming",
-	"I'll phone you tomorrow then give my regards to Joyce have a good evening",
+	"yes but i don't often find time these days there are so many other things to do",
+	"listen perhaps janet and i can arrange to meet you and joyce one saturday evening we can have dinner together and go on to a theater",
+	"all right i'm meeting janet later this evening so i can make sure that she's free next saturday i'll ring you tomorrow to confirm if we're coming",
+	"i'll phone you tomorrow then give my regards to joyce have a good evening",
 ];
 
 let jack = [
@@ -123,11 +146,11 @@ let jack = [
 ]
 
 let jack_recognition = [
-	"hello Mike I'm on my way to meet Joyce at the station we're having dinner at a Chinese restaurant and then we're off to the theater",
-	"yes Joyce and I usually go at least once a fortnight sometimes more do you ever go",
+	"hello mike i'm on my way to meet joyce at the station we're having dinner at a chinese restaurant and then we're off to the theater",
+	"yes joyce and i usually go at least once a fortnight sometimes more do you ever go",
 	"true true",
-	"that's a good idea look I forget the name of the play but there's a good comedy on at the theater Royal next week if you like I can book four seats for next Saturday",
-	"fine I must fly now it's 6:00 already and Joyce's bus arrives at 10 past she hates waiting around and I don't want to spoil everything by upsetting her before we start our evening",
+	"that's a good idea look i forget the name of the play but there's a good comedy on at the theater royal next week if you like i can book four seats for next saturday",
+	"fine i must fly now it's 6:00 already and joyce's bus arrives at 10 past she hates waiting around and i don't want to spoil everything by upsetting her before we start our evening",
 	""
 ]
 
@@ -159,7 +182,6 @@ function iconVolume(){
 	const iconVolume = document.createElement("icon");
 	iconVolume.classList.add("fa-solid");
 	iconVolume.classList.add("fa-volume-high");
-	iconVolume.classList.add("speech");
 	return iconVolume;
 }
 
@@ -254,6 +276,3 @@ function dialogStart(){
 
 createDialog();
 createRecognition();
-
-
-
