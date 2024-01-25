@@ -11,6 +11,7 @@ block content
 			+mli("ru", "my", "englishwithpeter.html", "", "English with Peter.", "")
 			+mli("ru", "my", "pronunciation.html", "", "Произношение", "")
 			+mli("ru", "my", "speech.html", "", "Диалоги. Учи диалоги с роботом", "")
+			+mli("ru", "my", "dialog_date_for_the_theatre.html", "", "Диалог. Поход в театр", "")
 			+mli("ru", "my", "transcription.html", "", "Знаки международной фонетической транскрипции", "")
 			
 		h3 Сайты

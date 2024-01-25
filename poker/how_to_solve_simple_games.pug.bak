@@ -1,0 +1,18 @@
+extends ../layouts/code_layout.jade
+
+block content
+	script
+		|window.MathJax = {
+		|	tex: {
+		|		tags: 'ams'
+		|	}
+		|};
+	h2.font-effect-shadow-multiple Упрощенные игры
+	article.grid-container
+		div.grid-x
+			div(class="cell small-2")
+			
+			div(class="cell small-8")
+				h4 Ссылки по теме
+				ol
+					+mli("en", "out", "https://blog.gtowizard.com/how-to-solve-toy-games/", "blog.gtowizard.com", "How to solve toy games", "icon")

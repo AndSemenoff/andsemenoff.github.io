@@ -28,6 +28,8 @@ block content
 					+mli("en", "out", "https://www.thepokerbank.com/strategy/basic/starting-hand-selection/sklansky-groups/", "", "David Skalinsky & Mason Malmuth, Starting hand groups", "")
 			li Сайты
 				ol
+					+mli("ru", "out", "https://gamblingvo.ru/", "gamblingvo.ru", "", "Англо-русский словарь козиношных терминов", "icon")
+					+mli("ru", "out", "https://academypoker.ru/blogs/slovar-pokernykh-terminov.html", "", "Словарь покерных терминов", "icon")
 					+mli("en", "out", "https://www.holdemresources.net", "holdemresources.net", "HRC. $15/мес или $99/год. Есть бесплатные инструменты. Есть пробный период в 14 дней.", "icon")
 					+mli("en", "out", "https://www.gtowizard.com", "gtowizard.com", "", "icon")
 					+mli("en", "out", "https://simplepoker.com/", "simplepoker.com", "Есть видео. Есть теория. Много дорогого софта", "icon")
@@ -79,6 +81,8 @@ block content
 					+mli("en", "out", "https://www.youtube.com/@DougPolkPoker/videos", "DougPolkPoker", "Разборы. Разоблачения.", "youtube")
 					+mli("ru", "out", "https://www.youtube.com/@GIPSYTEAM-poker/videos", "GIPSYTEAM", "", "youtube")
 					+mli("ru", "out", "https://www.youtube.com/@GreenlinePoker", "GreenlinePoker", "Теория. Разборы. Стримы.", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/@svschool8242", "SV school", "Теория. Открытые уроки.", "youtube")
+					
 					+mli("en", "out", "https://www.youtube.com/@HustlerCasinoLive/videos", "HustlerCasinoLive", "", "youtube")
 					// https://www.youtube.com/watch?v=TM_sMACxSzY
 	article.grid-container

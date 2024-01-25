@@ -1,0 +1,135 @@
+extends ../layouts/poker_layout.pug
+
+block content
+	h2.font-effect-shadow-multiple Tournament, ChipEV, 100BB
+	article.grid-container
+		div.grid-x
+		table.poker
+			tr
+				td position
+				td UTG
+				td
+					a(href="#UTG1") UTG1
+				td
+					a(href="#LJ") LJ
+				td
+					a(href="#HJ") HJ
+				td
+					a(href="#CO") CO
+				td 
+					a(href="#BU") BU
+				td 
+					a(href="#SB") SB
+			tr
+				td GTOWizard, %
+				td 16
+				td 19
+				td 22
+				td 28
+				td 36
+				td 56
+				td -
+			tr
+				td My, %
+				td 17.65
+				td 19.16
+				td 21.27
+				td 27
+				td 34.84
+				td 54.45
+				td -
+		div.grid-x
+			h4(id="UTG") UTG
+			<range-info 
+				| size="100" 
+				| model="ChipEV" 
+				| position="UTG" 
+				| type="Tournament" 
+				| max="8max" 
+				| ante="12.5%" 
+				| efstack="100BB"
+				| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
+				| actions = '[{"name":"Raise 2.3", "color":"#da57a4"},{"name":"Fold", "color": ""}]'
+				| range = "22+, A4s+, K9s+, Q9s+, J9s+, T9s+, 98s, AJo+, KJo+, QJo+;">
+			</range-info>
+		hr
+		div.grid-x
+			h4(id="UTG1") UTG+1
+			<range-info 
+				| size="100" 
+				| model="ChipEV" 
+				| position="UTG+1" 
+				| type="Tournament" 
+				| max="8max" 
+				| ante="12.5%" 
+				| efstack="100BB"
+				| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
+				| actions = '[{"name":"Raise 2.3", "color":"#da57a4"},{"name":"Fold", "color": ""}]'
+				| range = "22+, A3s+, K9s+, Q9s+, J9s+, T9s+, 98s, 87s, ATo+, KJo+, QJo+;">
+			</range-info>
+		hr
+		div.grid-x
+			h4(id="LJ") LJ
+			<range-info 
+				| size="100" 
+				| model="ChipEV" 
+				| position="LJ" 
+				| type="Tournament" 
+				| max="8max" 
+				| ante="12.5%" 
+				| efstack="100BB"
+				| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
+				| actions = '[{"name":"Raise 2.3", "color":"#da57a4"},{"name":"Fold", "color": ""}]'
+				| range = "22+, A2s+, K7s+, Q9s+, J9s+, T9s+, 98s, 87s, 76s, ATo+, KTo+, QJo+;">
+			</range-info>
+		hr
+		div.grid-x
+			h4(id="HJ") HJ
+			<range-info 
+				| size="100" 
+				| model="ChipEV" 
+				| position="HJ" 
+				| type="Tournament" 
+				| max="8max" 
+				| ante="12.5%" 
+				| efstack="100BB"
+				| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
+				| actions = '[{"name":"Raise 2.3", "color":"#da57a4"},{"name":"Fold", "color": ""}]'
+				| range = "22+,A2s+,K4s+,Q8s+,J8s+,T8s+,97s+,86s+,76s,65s,54s,A9o+,KTo+,QTo+,JTo+;">
+			</range-info>
+		hr
+		div.grid-x
+			h4(id="CO") CO
+			<range-info 
+				| size="100" 
+				| model="ChipEV" 
+				| position="CO" 
+				| type="Tournament" 
+				| max="8max" 
+				| ante="12.5%" 
+				| efstack="100BB"
+				| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
+				| actions = '[{"name":"Raise 2.3", "color":"#da57a4"},{"name":"Fold", "color": ""}]'
+				| range = "22+,A2s+,K2s+,Q4s+,J6s+,T6s+,96s+,86s+,76s,65s,54s,A7o+,A5o,K9o+,QTo+,JTo+,T9o;">
+			</range-info>
+		hr
+		div.grid-x
+			h4(id="BU") BU
+			<range-info 
+				| size="100" 
+				| model="ChipEV" 
+				| position="BU" 
+				| type="Tournament" 
+				| max="8max" 
+				| ante="12.5%" 
+				| efstack="100BB"
+				| tags = '[{"author": "Absolem"}, {"creator": "human"}]'
+				| actions = '[{"name":"Raise 2.3", "color":"#da57a4"},{"name":"Fold", "color": ""}]'
+				| range = "22+,A2s+,K2s+,Q2s+,J2s+,T3s+,95s+,85s+,74s+,63s+,53s+,43s,A2o+,K5o+,Q7o+,J8o+,T8o+,98o,87o,;">
+			</range-info>
+		hr
+		div.grid-x
+			h4(id="SB") SB
+		hr
+		
+	script(src="../js/element.js" defer)

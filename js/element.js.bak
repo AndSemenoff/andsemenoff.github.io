@@ -108,7 +108,16 @@ class RangeInfo extends HTMLElement {
 			var row = document.createElement("tr");
 			var cell = document.createElement("th");
 			cell.setAttribute("colspan", "9");
-			cell.textContent = this.range[i];
+			console.log("Range length: ", this.range[i].length);
+			if (this.range[i].length > 60){
+				cell.textContent = this.range[i].substring(0, 60);
+				//cell.textContent += "<br>";
+				cell.textContent += this.range[i].substring(60, this.range[i].length);
+			}
+			else {
+				cell.textContent = this.range[i];
+			}
+
 			row.appendChild(cell);
 			var cell = document.createElement("th");
 			cell.setAttribute("colspan", "2");
@@ -117,7 +126,7 @@ class RangeInfo extends HTMLElement {
 			var cell = document.createElement("th");
 			cell.setAttribute("colspan", "2");
 			cell.textContent = this.statistic()[i] + "%";
-			cell.style.Color = "#e6e4e9";
+			cell.style.color = "#e6e4e9";
 			cell.style.backgroundColor = this.actions[i].color;
 			row.appendChild(cell);
 			tbl_head.appendChild(row);
@@ -132,7 +141,7 @@ class RangeInfo extends HTMLElement {
 		var cell = document.createElement("td");
 		cell.setAttribute("colspan", "13");
 		for (let i=0; i<this.tags.length; i++){
-			console.log("Tag:", this.tags[i]);
+			//console.log("Tag:", this.tags[i]);
 			cell.textContent += JSON.stringify(this.tags[i]) + "; ";
 		}
 		row.appendChild(cell);
@@ -241,6 +250,9 @@ class RangeInfo extends HTMLElement {
 		style.textContent = `
 			table {
 				border-collapse: collapse;
+				margin: 2px;
+				padding: 0.3em;
+				border: 0;
 			}
 			td, th{
 				background-color: lightgrey;

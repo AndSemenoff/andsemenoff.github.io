@@ -246,9 +246,7 @@ range-info{
 	/*border:1px solid black;*/
 	width: initial;
 }
-range-info.poker:hover {
-		background-color: blue;
-}
+
 
 .poker {
 	td.g1{

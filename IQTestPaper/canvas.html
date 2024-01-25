@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Binet IQ Test</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+</head>
+
+<body>
+	<h1>Binet IQ Test</h1>
+
+	<h4>Инструкция:</h4>
+	<div class="main">
+В этом тесте Вы должны представить себе процесс сгибания и разгибания листа бумаги. Сначала лист бумаги сгибается, а затем в нем проделываются одно или два небольших отверстия. Каждое отверстие проделывается сквозь весь лист бумаги.
+	</div>
+	<h4>Номер вопроса: <label id="count"></label></h4>
+	<div id="IQTest"></div>
+	<hr/>		
+	<table>
+		<tr><td rowspan="4"><span id="ans"></span></td></tr>
+		<tr><td colspan="2"><span class="result" id="result">&nbsp;</span></td></tr>
+		<tr><td colspan="2"><button class="button-answer" id="buttonAnswer">Submit Answer</button></td></tr>
+		<tr>
+				<td><button class="button-next" id="buttonPrev">Prev</button></td>
+				<td><button class="button-next" id="buttonNext">Next</button>
+				</td>
+		</tr>
+	</table>
+	<script src="js/binetTest.js"></script>
+</body>
+</html>

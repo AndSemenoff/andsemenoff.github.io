@@ -7,12 +7,10 @@ block content
 	h2.font-effect-shadow-multiple Английский язык
 	article.grid-container
 		h3 A date for the theatre
-		
 		div#dialog
-		
 		div#error
-
+		
+	script(src="data_for_dialog_1.js" defer)
 	script(src="dialog_1.js" defer)
-
 	script(src="speech.js" defer)
 

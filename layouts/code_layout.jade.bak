@@ -1,0 +1,19 @@
+extends ../layouts/html_layout.jade
+
+block scripts
+	// default.min.css"
+	link(rel="stylesheet" href="../css/vs.css")
+	//script(type="text/x-mathjax-config").
+		//MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+	script
+		|window.MathJax = {
+		|	tex: {
+		|		tags: 'ams'
+		|	}
+		|};
+
+	script(src="https://polyfill.io/v3/polyfill.min.js?features=es6")
+	script(id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js")
+block footer
+	script(src="../js/highlight.pack.js")
+	script hljs.initHighlightingOnLoad();

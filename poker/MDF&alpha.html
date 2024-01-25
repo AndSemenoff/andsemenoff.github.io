@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <script>
+      window.MathJax = {
+      	tex: {
+      		tags: 'ams'
+      	}
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="font-effect-shadow-multiple">MDF и Alpha</h2>
+    <article class="grid-container">
+      <div class="grid-x">
+        <div class="cell small-2"></div>
+        <div class="cell small-8">
+          <h4>Что значит показатель MDF?</h4>
+          <p>MDF(минимальная частота защиты) - это показатель, который говорит о том, как часто вам нужно делать колл, чтобы руки с 0% эквити оппонента были безразличны между блефом и чеком.</p>
+          <p>MDF просто гарантирует, что ваш оппонент не сможет выгодно блефовать с любыми двумя картами. Вам нужно защищаться с минимальной частотой, чтобы не попасть под тотальный блеф.</p>
+          <p>MDF - это расчет риска/вознаграждения, направленный на то, чтобы сделать блефы оппонента 0EV.</p>
+          <p>Формула для минимальной частоты защиты проста:</p>\begin{equation}
+          \bbox[5px, border: 2px solid grey]{ MDF = 1 - \frac{R}{R+B}}  \\
+          \label{eq:MDF}
+          \end{equation}
+          <ul>
+            <li>\(R\) - cумма, которой вы рискуете при блефе</li>
+            <li>\(B\) - сумма, которую вы получите, если соперник сбросит</li>
+          </ul>
+          <h4>Что значит показатель Alpha(α)?</h4>
+          <p>Alpha(α) показывает, как часто оппонент должен фолдить, чтобы ваши блефы с 0% эквити были хотя бы безубыточными.</p>\begin{equation}
+          \bbox[5px, border: 2px solid grey]{Alpha (α) = \frac{R}{R+B}}  \\
+          \label{eq:Alpha}
+          \end{equation}
+          <ul>
+            <li>\(R\) - cумма, которой вы рискуете при блефе</li>
+            <li>\(B\) - сумма, которую вы получите, если соперник сбросит</li>
+          </ul>\begin{equation}
+          Alpha = 1 – MDF 
+          \end{equation}
+          \begin{equation}
+          MDF = 1 – Alpha
+          \label{eq:MDF_Alpha}
+          \end{equation}
+          <p>Еще одна формула, которую вы можете использовать, учитывает размер ставки и банка. Эта формула не работает с повышением ставки, она работает только для начальной ставки.</p>\begin{equation}
+          MDF = \frac{pot}{bet+pot} \\	
+          \end{equation}
+          \begin{equation}
+          Alpha (α) = \frac{bet}{bet + pot} \\	
+          \end{equation}
+          <ul>
+            <li>\(pot\) - размер банка</li>
+            <li>\(bet\) - размер ставки</li>
+          </ul><br>
+          <h4>Пример расчета №1</h4>
+          <div>Вы поставили $60 в банк размером $100. Найдите Alpha (α) и MDF.</div>
+          <div>Риск(R) = $60 (Вы рискуете $60 на блефе).</div>
+          <div>Вознаграждение(B) = $100 (сумма, которую вы получите, если соперник сбросит).</div>
+          <div>
+            По формуле \(\eqref{eq:Alpha}\), получаем\begin{equation*}
+            Alpha (α) = \frac{$60}{$100 + $60} = 37,5\% \\	
+            \end{equation*}
+          </div>
+          <div>Чтобы ваш блеф был безубыточным, оппонент должен фолдить не менее 37,5% случаев.</div>
+          <div>По формуле \(\eqref{eq:MDF_Alpha}\), получаем MDF = 1 - 37,5%, что составляет 62,5%. Таким образом, соперник должен защищать как минимум 62,5% своего диапазона, чтобы ваш блеф стал безубыточным. Если он защищается реже, ваш блеф будет прибыльным, а если он защищается чаще, ваш блеф будет убыточным.</div><br>
+          <h4>Пример расчета №2</h4>
+          <div>Вы ставите $60 в банк размером $100, и ваш оппонент повышает до $200. Каковы ваше MDF и его Alpha?</div>
+          <div>Ваш оппонент рискнул $200, чтобы выиграть банк в размере ($100 + $60).</div>
+          <div>
+            По формуле \(\eqref{eq:Alpha}\), получаем\begin{equation*}
+            Alpha (α) = \frac{$200}{$200 + $160} = 55,5\% \\	
+            \end{equation*}
+          </div>
+          <div>По формуле \(\eqref{eq:MDF_Alpha}\), получаем MDF = 1 - 55,5%, что составляет 44,5%. </div>
+          <div>Таким образом, вам нужно защитить 44,5% своего диапазона ставок от повышения, чтобы не дать сопернику возможность выгодно блефовать с любыми двумя картами. И наоборот, сопернику нужно, чтобы вы сфолдили по крайней мере 55,5 % своего диапазона ставок, чтобы получить прибыльный чистый блеф.</div><br>
+          <h4>Расчеты ожидаемой стоимости</h4>
+          <div>MDF и Alpha ищут только точку безубыточности. Мы можем рассчитать фактическую прибыльность чистого блефа, используя простую формулу ожидаемой стоимости. Это также дает нам возможность оценить диапазон прибыльности в зависимости от того, насколько широким будет колл.</div>
+          <div>
+            Ожидаемая ценность чистого блефа может быть записана следующим образом:\begin{equation}
+            \bbox[10px, border: 2px solid grey]{EV (Bluff) = (Fold\% \times Pot)–(Call\% \times Bet)} \\	
+            \label{eq:EV}
+            \end{equation} 
+          </div>
+          <ul>
+            <li>\(Pot\) - размер банка</li>
+            <li>\(Bet\) - размер ставки</li>
+            <li>\(Fold\%\) - фолд в %</li>
+            <li>\(Call\%\) - колл в %</li>
+          </ul>
+          <div>Это работает, потому что банк - это то, сколько мы получаем, когда соперники фолдят, а наша ставка - то, сколько мы теряем, когда соперники коллируют. В этой формуле мы считаем, что наш блеф всегда проигрывает при колле.</div><br>
+          <h4>Пример расчета №3</h4>
+          <div>Мы овербетим 125% банка с чистым блефом на ривере. Наш оппонент коллирует 40% своего диапазона. Для расчета будем считать, что банк составляет $100.</div>
+          <div>По формуле \(\eqref{eq:EV}\), получаем EV (блеф) = (60% x $100) - (40% x $125) = $10</div>
+          <div>Таким образом, EV этого блефа составляет $10, потому что наш оппонент оверфолдит!</div>
+          <div>Так как часто соперники должны фолдить, чтобы наш блеф стоил $0?</div>
+          <div>По формуле \(\eqref{eq:Alpha}\), получаем  Alpha = 125/225 = 55,5%</div>
+          <div>Другими словами, если соперники будут защищать 44,5% своего диапазона, этот блеф с овербетом будет безубыточным. Но поскольку в нашем примере соперник оверфолдит, он становится прибыльным!</div><br>
+          <h4>Ограничения вышеописанной модели MDF</h4>
+          <div><strong>Предполагается, что чек в позиции не имеет стоимости(EV), что в реальной игре часто не так.</strong> </div><br>
+          <h4>Когда чек в позиции имеет стоимость(EV)</h4>
+          <div>Когда у руки которую игрок хочет превратить в блеф есть стоимость(EV) при игре чеком, то у защищающегося задача сделать свой колл индиферентным(безразличным) не к 0, как в раньше, а к стоимости чека!</div><br>
+          <h4>Пример расчета №4</h4>
+          <div>Соперник делает ставку в размере банка в позиции на ривере. Его блефы будут иметь 20% эквити в случае чека. Как широко вы должны защищаться, чтобы сделать его блефы безразличными?</div>
+          <div>Ваша цель - сделать EV блефа равным EV чека. Мы знаем, что EV чека составляет 20% банка.</div>
+          <div>EV блефа = 0,2 x (Pot) = (Fold% x Pot) - (Call% x Bet)</div>
+          <div>
+            заменим Fold% = 1 - Call%, и Bet = Pot (т.к. ставка в размере банка)\begin{equation*}
+            0,2 \times Pot = ((1 - Call\%) \times Pot) - (Call\% \times Pot) \\
+            \end{equation*}
+            \begin{equation*}
+            0,2 = \frac {((1 - Call\%) \times Pot) - (Call\% \times Pot)} {Pot} \\
+            \end{equation*}
+            \begin{equation*}
+            (1 - Call\%) - Call\% = 0,2\\
+            \end{equation*}
+            \begin{equation*}
+            Call\% = 0,4 = 40\% \\
+            \end{equation*}
+          </div>
+          <div>Если бы это был блеф с 0% эквити, мы бы коллировали 50%. Но поскольку их блефы имеют ценность, мы можем перефолдить и защищать только 40% MDF. Другими словами, мы можем дать соперникам прибыльный блеф, потому что их блефы имели эквити, как чек.</div>
+          <div>Наша цель - сделать так, чтобы их BluffEV = CheckEV</div>
+          <div>Check EV = 20% Pot</div>
+          <div>Bluff EV = 20% Pot (если мы недозащищаемся)</div><br>
+          <h4>Защита с большей частотой, чем MDF</h4><br>
+          <h4>Защита с меньшей частотой, чем MDF</h4><br>
+          <h4>Ссылки по теме</h4>
+          <ol>
+            <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://blog.gtowizard.com/mdf-alpha/"/><a href = https://blog.gtowizard.com/mdf-alpha/ target="_blank">&nbsp;blog.gtowizard.com&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;MDF &amp; Alpha&nbsp;
+            </li>
+            <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://upswingpoker.com/minimum-defense-frequency-vs-pot-odds/"/><a href = https://upswingpoker.com/minimum-defense-frequency-vs-pot-odds/ target="_blank">&nbsp;upswingpoker.com&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Minimum Defense Frequency vs Pot Odds&nbsp;
+            </li>
+            <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://upswingpoker.com/glossary/minimum-defense-frequency-mdf/"/><a href = https://upswingpoker.com/glossary/minimum-defense-frequency-mdf/ target="_blank">&nbsp;upswingpoker.com&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;определение MDF&nbsp;
+            </li>
+            <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://www.pokercode.com/blog/mdf-in-poker"/><a href = https://www.pokercode.com/blog/mdf-in-poker target="_blank">&nbsp;pokercode.com&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;MDF in poker&nbsp;
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2023</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script>$(document).foundation();</script>
+    </footer>
+  </body>
+</html>
