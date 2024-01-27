@@ -25,15 +25,21 @@ html(lang="ru")
 		div.grid-container.fluid.text-center
 			div.grid-x.grid-margin-x.small-up-1.medium-up-3.large-up-4
 				div.cell.small-4.callout.primary
+					a(href="/IQTestPaper/canvas.html") Головоломка на протыкание бумаги 
+					<span class="label success"><i class="fi-widget"></i>обновлено в 2024!</span>
+				div.cell.small-4.callout.primary
 					a(href="sportprogramming/programming_index.html") <i class="fas fa-code"></i> Программирование
 				div.cell.small-4.callout.primary
-					a(href="links.html") <i class="fas fa-link"></i> Ссылки
+					a(href="links.html") <i class="fas fa-link"></i> Ссылки 
+					<span class="label alert"><i class="fi-widget"></i>устарело!</span>
 				div.cell.small-4.callout.primary
-					a(href="robots/index.html") <i class="fas fa-robot"></i> Роботы
+					a(href="robots/index.html") <i class="fas fa-robot"></i> Роботы 
+					<span class="label alert"><i class="fi-widget"></i>устарело!</span>
 				div.cell.small-4.callout.primary
 					a(href="cooking/index.html") <i class="fas fa-mortar-pestle"></i> Информация по кулинарии
 				div.cell.small-4.callout.primary
-					a(href="cybersecurity/cybersecurity.html") <i class="fas fa-user-secret"></i> Информационная безопасность
+					a(href="cybersecurity/cybersecurity.html") <i class="fas fa-user-secret"></i> Информационная безопасность 
+					<span class="label alert"><i class="fi-widget"></i>устарело!</span>
 				//-div.cell.small-4.callout.primary
 					a(href="math/index.html") <i class="fas fa-graduation-cap"></i> Математика
 				div.cell.small-4.callout.primary
@@ -42,9 +48,13 @@ html(lang="ru")
 				//-div.cell.small-4.callout.primary
 					a(href="ipsc/index.html") <i class="fas fa-shield-alt"></i> Практическая стрельба
 				div.cell.small-4.callout.primary
-					a(href="entertainment/index.html") <i class="fas fa-gamepad"></i> Развлечения
+					a(href="entertainment/index.html") <i class="fas fa-gamepad"></i> Развлечения 
+					<span class="label success"><i class="fi-widget"></i>обновлено в 2024!</span>
+					//<span class="label alert"><i class="fi-widget"></i>устарело!</span>
 				//-div.cell.small-4.callout.primary
 					a(href="betting/index.html") <i class="far fa-money-bill-alt"></i> Ставки на спорт
+					<span class="label alert"><i class="fi-widget"></i>устарело!</span>
+
 				div.cell.small-4.callout.primary
 					a(href="useful/useful_index.html") <i class="fas fa-user-ninja"></i> Полезно
 				div.cell.small-4.callout.primary
@@ -64,7 +74,7 @@ html(lang="ru")
 					div.cell.small-4
 						a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/")
 							img(alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png")
-						p © 2001 - 2023
+						p © 2001 - 2024
 						div: small Это произведение, автор которого — 
 							a(href="about/about_main.html") Андрей Семенов
 						div: small Доступно на условиях 

@@ -4,15 +4,16 @@ block title
 	title= site_title + " Развлечения"
 
 block content
-	div.row: div.large-12.columns: h1 Развлечения
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Развлечения
+	article.grid-container
+		div.grid-x
 		ol
 			li
-				a(href="http://absolem.info/boardgames/index.html") Настольные игры 
+				a(href="../boardgames/index.html") Настольные игры 
 				| - главная страница.
 			li
 				a(href="resistance.html") Игра 
 				| Резистанс
 			li
 				a(href="monstercastle.html") Игра  
-				| MonsterCastle для андроид.</li>
+				| MonsterCastle для андроид. <span class="label alert"><i class="fi-widget"></i>устарело!</span>
