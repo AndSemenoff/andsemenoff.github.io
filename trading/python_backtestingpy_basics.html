@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Python backtasting.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <script>
+      window.MathJax = {
+      	tex: {
+      		tags: 'ams'
+      	}
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="text-center">Работа с библиотекой Backtesting.py.</h2>
+    <article class="grid-container">
+      <div class="grid-x"></div>
+      <h3>Общие вопросы</h3>
+      <ul>
+        <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://kernc.github.io/backtesting.py/"/><a href = https://kernc.github.io/backtesting.py/ target="_blank">&nbsp;Официальный сайт&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;библиотеки Backtesting.py&nbsp;
+        </li>
+      </ul>
+      <div>Пример простейшей реализации. Нужно, чтобы были установлены библиотеки 
+        <ul> 
+          <li>backtesting.py;</li>
+          <li>yfinance;</li>
+          <li>pandas_ta;</li>
+        </ul>
+      </div>
+      <div><a href="../python_source/backtestingpy_example_1.py">backtestingpy_example_1.py</a></div>
+      <pre><code class="python3">import datetime
+import pandas_ta as ta
+import pandas as pd
+import yfinance as yf
+
+from backtesting import Backtest
+from backtesting import Strategy
+from backtesting.lib import crossover
+
+class RsiOscillator(Strategy):
+
+    upper_bound = 70
+    lower_bound = 30
+    rsi_window = 14
+
+    # Do as much initial computation as possible
+    def init(self):
+        self.rsi = self.I(ta.rsi, pd.Series(self.data.Close), self.rsi_window)
+
+    # Step through bars one by one
+    # Note that multiple buys are a thing here
+    def next(self):
+        if crossover(self.rsi, self.upper_bound):
+            self.position.close()
+        elif crossover(self.lower_bound, self.rsi):
+            self.buy()
+            
+msft = yf.Ticker("MSFT")
+msft_historical = msft.history(start="2022-01-02", end="2024-02-07", interval="1d")
+
+bt = Backtest(msft_historical, RsiOscillator, cash=10_000, commission=.002)
+stats = bt.run()
+bt.plot()</code></pre>
+      <div>Стратегия будет использовать индикатор RSI. <a href="https://www.finam.ru/publications/item/rsi-indikator-luchshiiy-pomoshnik-v-pribylnom-treiydinge-20220903-143300/">Про индикатор RSI</a></div>
+      <div>Для реализации стратегии нам нужно создать класс, который будет наследовать от <b>backtesting.Strategy</b> и реализовать две обязательные функции init() и next().</div>
+      <div>Функция <b>init()</b> вызывается сразу после создания объекта и запускается только один раз. Мы должны указать здесь все, что можно заранее рассчитать перед тестированием на исторических данных, например любые технические индикаторы. У функции создания индикатора предопределенное имя self.I</div>
+      <div>Функция <b>next()</b> вызывается на каждой свече по ходу бэктеста.</div>
+      <div>
+        Функция <b>crossover</b> вспомагательная, которая возвращает True, если series1 только что стало больше series2. Т.е. <kbd>series1[-2] < series2[-2] and series1[-1] > series2[-1]</kbd>
+        <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://kernc.github.io/backtesting.py/doc/backtesting/lib.html#backtesting.lib.crossover"/><a href = https://kernc.github.io/backtesting.py/doc/backtesting/lib.html#backtesting.lib.crossover target="_blank">&nbsp;crossover()&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;документация&nbsp;
+        </li>
+      </div>
+      <div>Функция <b>buy()</b> по умолчанию покупает на все свободные средства целое число акций. 
+        <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://kernc.github.io/backtesting.py/doc/backtesting/backtesting.html#backtesting.backtesting.Strategy.buy"/><a href = https://kernc.github.io/backtesting.py/doc/backtesting/backtesting.html#backtesting.backtesting.Strategy.buy target="_blank">&nbsp;buy()&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;документация&nbsp;
+        </li>
+      </div>
+      <div>Такой файл откроется в броузере после выполнения скрипта <a href="RsiOscillator.html">RsiOscillator.html</a></div>
+      <div>Дополнительная информация по теме:
+        <ol>
+          <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://greyhoundanalytics.com/blog/backtestingpy-a-complete-quickstart-guide/"/><a href = https://greyhoundanalytics.com/blog/backtestingpy-a-complete-quickstart-guide/ target="_blank">&nbsp;backtestingpy guide&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Статья и видео.&nbsp;
+          </li>
+        </ol>
+      </div>
+    </article>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2024</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script>$(document).foundation();</script>
+    </footer>
+  </body>
+</html>

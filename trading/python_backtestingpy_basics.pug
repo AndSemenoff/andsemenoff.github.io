@@ -1,0 +1,42 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Python backtasting."
+
+block content
+	h2.text-center Работа с библиотекой Backtesting.py.
+	article.grid-container
+		div.grid-x
+		h3 Общие вопросы
+		ul
+			+mli("en", "out", "https://kernc.github.io/backtesting.py/", "Официальный сайт", "библиотеки Backtesting.py", "icon")
+		div Пример простейшей реализации. Нужно, чтобы были установлены библиотеки 
+			ul 
+				li backtesting.py;
+				li yfinance;
+				li pandas_ta;
+
+		
+		div
+			a(href="../python_source/backtestingpy_example_1.py") backtestingpy_example_1.py
+		pre
+			code.python3
+				include ../python_source/backtestingpy_example_1.py
+		
+		div Стратегия будет использовать индикатор RSI. 
+			a(href="https://www.finam.ru/publications/item/rsi-indikator-luchshiiy-pomoshnik-v-pribylnom-treiydinge-20220903-143300/") Про индикатор RSI
+		div Для реализации стратегии нам нужно создать класс, который будет наследовать от <b>backtesting.Strategy</b> и реализовать две обязательные функции init() и next().
+		div Функция <b>init()</b> вызывается сразу после создания объекта и запускается только один раз. Мы должны указать здесь все, что можно заранее рассчитать перед тестированием на исторических данных, например любые технические индикаторы. У функции создания индикатора предопределенное имя self.I
+		div Функция <b>next()</b> вызывается на каждой свече по ходу бэктеста.
+		div Функция <b>crossover</b> вспомагательная, которая возвращает True, если series1 только что стало больше series2. Т.е. 
+			<kbd>series1[-2] < series2[-2] and series1[-1] > series2[-1]</kbd>
+			+mli("en", "out", "https://kernc.github.io/backtesting.py/doc/backtesting/lib.html#backtesting.lib.crossover", "crossover()", "документация", "icon")
+		div Функция <b>buy()</b> по умолчанию покупает на все свободные средства целое число акций. 
+			+mli("en", "out", "https://kernc.github.io/backtesting.py/doc/backtesting/backtesting.html#backtesting.backtesting.Strategy.buy", "buy()", "документация", "icon")
+
+		div Такой файл откроется в броузере после выполнения скрипта 
+			a(href="RsiOscillator.html") RsiOscillator.html
+			
+		div Дополнительная информация по теме:
+			ol
+				+mli("en", "out", "https://greyhoundanalytics.com/blog/backtestingpy-a-complete-quickstart-guide/", "backtestingpy guide", "Статья и видео.", "icon")
