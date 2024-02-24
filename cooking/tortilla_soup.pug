@@ -1,0 +1,27 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		h3 Суп Тортилья.
+		div Рецепт:
+		table.table-test
+			tr
+				td 1
+				td сахар
+				td 286 гр.
+				
+		li Суп Тортилья
+			ol
+				li 3 луковицы белого лука
+				li чуть-чуть порея
+				li красный перец
+				li 1 головка чеснока
+				li 500 г. помидоров без кожицы в собственном соку
+				li Тортилья                        
+				li Зира (кумин) молотая
+				li Оригано сушенный
+		+mli("ru", "out", "https://www.youtube.com/watch?v=VnR1ZUypmQ4", "Суп Тортилья", "Еда. Лазерсон.", "youtube")
+
+			iframe(width="560" height="315" src="//www.youtube.com/embed/VnR1ZUypmQ4" frameborder="0" allowfullscreen)
