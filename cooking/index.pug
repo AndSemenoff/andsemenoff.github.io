@@ -4,34 +4,39 @@ block content
 	h2.font-effect-shadow-multiple Информация по кулинарии
 	article.grid-container
 		div.grid-x
-		div На странице собраны рецепты, которые были мной приготовлены и оставили хорошее впечатление.
+		h3 Общие вопросы
 		ol
-			+mli("ru", "my", "oladi.html", "Оладьи", "русские оладьи", "")
-			+mli("ru", "my", "waffles.html", "Вафли", "тонкие, твердые. Для электро-вафельницы.", "")
-			+mli("ru", "my", "crepes.html", "Блины", "тонкие, бездрожжевые.", "")
-			+mli("ru", "my", "orange_mousse.html", "Апельсиновый мусс", "на манной крупе.", "")
-			+mli("ru", "my", "pistachio_muffins.html", "Фисташковые кексы", "", "")
-			+mli("ru", "my", "tiramisu.html", "Тирамису", "", "")
-			+mli("ru", "my", "tortilla_soup.html", "Суп Тортилья", "", "")
+			+mli("ru", "my", "my_recipes.html", "Сборник моих рецептов", "те, что мной проверены на практике", "")
 			
-			+mli("ru", "my", "сarrot_salad.html", "Морковный салат", "", "")
-			+mli("ru", "my", "pashmak.html", "Пашмак. Восточная сладость", "", "")
-			+mli("ru", "out", "https://youtu.be/JHPP3MOpB_8", "Макароны с фаршем в духовке.", "", "youtube")
-			+mli("ru", "out", "https://www.youtube.com/watch?v=9WWOBBPjQfA", "Жареные пирожки с мясом", "", "youtube")
-			+mli("ru", "out", "https://www.youtube.com/watch?v=_uMkXs33VL0", "Блины ржаные.", "", "youtube")
-			+mli("ru", "out", "https://www.youtube.com/watch?v=48UnHgEZNXg", "Песочное печенье 'Курабье Бакинское'", "", "youtube")
-			+mli("ru", "out", "https://www.youtube.com/watch?v=OGniEBkteok", "Еда на любой вкус", "Хачапури.", "youtube") 
-			+mli("ru", "out", "https://www.youtube.com/watch?v=Ke0_iHHCzi4", "Кондитер. Iulia Portugalia.", "Банановый пирог.", "youtube") 
-			+mli("ru", "out", "https://www.youtube.com/watch?v=t2nvXbegCDI", "Alina FooDee.", "сырный соус.", "youtube")
-			+mli("ru", "out", "https://www.youtube.com/watch?v=yUYR7WK8ik0", "Alina FooDee", "Печенье с джемом в виде сердечек.", "youtube")
-			 
-			li Хлеб
+		div  25 г свежих дрожжей;
+		div  ½ ч. л. соли;
+		div  1 ч. л. сахара;
+		div  220 мл воды;
+		div  1 ст. л. оливкового масла;
+		div  450 г муки;
+		div  150 г сыра
+		div Вода теплая 40°С. Сыр натираем на мелкой терке.
+		div Время отстойки 45-60 минут
+			li Видео рецепты
 				ol
-					+mli("ru", "out", "https://youtu.be/YUZm9yRgyTA", "Еда на любой вкус", "Батон дрожжевой.", "youtube")
-					+mli("ru", "out", "https://www.youtube.com/watch?v=2pMXg0J1_To", "Priprava Club - Кулинарный канал с перчинкой", "Французский сырный хлеб.", "youtube")
+					+mli("ru", "out", "https://youtu.be/JHPP3MOpB_8", "Макароны с фаршем в духовке.", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=9WWOBBPjQfA", "Жареные пирожки с мясом", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=_uMkXs33VL0", "Блины ржаные.", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=48UnHgEZNXg", "Песочное печенье 'Курабье Бакинское'", "", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=OGniEBkteok", "Еда на любой вкус", "Хачапури.", "youtube") 
+					+mli("ru", "out", "https://www.youtube.com/watch?v=Ke0_iHHCzi4", "Кондитер. Iulia Portugalia.", "Банановый пирог.", "youtube") 
+					+mli("ru", "out", "https://www.youtube.com/watch?v=t2nvXbegCDI", "Alina FooDee.", "сырный соус.", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=OlNMrByAXRI", "Еда на любой вкус", "Пончики.", "youtube") 
 
-			li Украинский борщ
-			a(href="http://www.tveda.ru/recepty/ukrainskiy-borsch/") Едаtv
+					+mli("ru", "out", "https://www.youtube.com/watch?v=onSfNDD2aWY", "Alina FooDee", "Сахарные булочки. Ушки", "youtube")
+					+mli("ru", "out", "https://www.youtube.com/watch?v=_QaWr39FHmw", "Надежда Баклыкова", "Хворост на кефире. Кребли.", "youtube")
+					+mli("ru", "out", "http://www.tveda.ru/recepty/ukrainskiy-borsch/", "Едаtv", "Украинский борщ.", "icon")
+
+					li Хлеб
+						ol
+							+mli("ru", "out", "https://youtu.be/YUZm9yRgyTA", "Еда на любой вкус", "Батон дрожжевой.", "youtube")
+							+mli("ru", "out", "https://www.youtube.com/watch?v=2pMXg0J1_To", "Priprava Club - Кулинарный канал с перчинкой", "Французский сырный хлеб.", "youtube")
+
 		div разрыхлитель - polvo para hornear
 			li Сырники
 				ol
@@ -43,14 +48,6 @@ block content
 
 				div Перетираем творог через сито. Всё смешиваем. Жарим.
 
-
-		div Сливочное масло - 90 г
-		div Сахар - 40 г
-		div Ванильный сахар - 1 ч.л.
-		div Соль - щепотка
-		div Мука - 140 г
-		div Желток - 1 шт.
-		div 
 		ol
 			+mli("ru", "out", "https://www.tiendainglesa.com.uy/supermercado/azucar-impalpable-vainillada-la-abundancia-200g.producto?8939", "ванильный сахар.", "", "")
 			+mli("ru", "out", "https://www.tiendainglesa.com.uy/supermercado/crema-de-leche-conaprole-ultra-sachet-500-ml.producto?13657", "сливки 38%.", "", "")

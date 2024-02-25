@@ -1,0 +1,18 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div На странице собраны рецепты, которые были мной приготовлены и оставили хорошее впечатление.
+		ol
+			+mli("ru", "my", "oladi.html", "Оладьи", "русские оладьи", "")
+			+mli("ru", "my", "sugar_cookies.html", "Сахарное печенье", "может быть любой формы и сверху с начинкой", "")
+			+mli("ru", "my", "crepes.html", "Блины", "тонкие, бездрожжевые.", "")
+			+mli("ru", "my", "pashmak.html", "Пашмак. Восточная сладость", "", "")
+			+mli("ru", "my", "сarrot_salad.html", "Морковный салат", "", "")
+			+mli("ru", "my", "orange_mousse.html", "Апельсиновый мусс", "на манной крупе.", "")
+			+mli("ru", "my", "waffles.html", "Вафли", "тонкие, твердые. Для электро-вафельницы.", "")
+			+mli("ru", "my", "pistachio_muffins.html", "Фисташковые кексы", "", "")
+			+mli("ru", "my", "tiramisu.html", "Тирамису", "", "")
+			+mli("ru", "my", "tortilla_soup.html", "Суп Тортилья", "", "")
