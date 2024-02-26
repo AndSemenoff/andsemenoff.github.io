@@ -1,0 +1,83 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		h3 Французский сырный хлеб.
+		div Рецепт:
+		table.table-test
+			thead
+				tr 
+					td №
+					td ингредиент
+					td кол-во
+					td ед.изм.
+					td цена
+			tbody
+				tr
+					td 1
+					td свежие дрожжи
+					td 25
+					td гр.
+					td 
+						span(id = "yeast") 25
+				tr
+					td 2
+					td соль
+					td 1
+					td ч. л.
+					td 
+						span(id = "salt") 3
+				tr
+					td 3
+					td сахар
+					td 1 
+					td ч. л.
+					td 
+						span(id = "sugar") 3
+				tr
+					td 4
+					td вода
+					td 220 
+					td мл.
+					td 0
+				tr
+					td 5
+					td оливковое масло
+					td 1 
+					td ст. л
+					td 
+						span(id = "olive_oil") 8
+				tr
+					td 6
+					td мука
+					td 450
+					td гр.
+					td
+						span(id = "flour") 450
+				tr
+					td 7
+					td сыр
+					td 150 
+					td гр.
+					td
+						span(id = "cheese") 150
+				tr
+					td 
+					td итого
+					td  
+					td 
+					td
+						span(id = "sum")
+		div Процесс приготовления:
+		div Вода теплая 40°С. Сыр натираем на мелкой терке.
+		div Время отстойки 45-60 минут
+		div Выпекать в духовке при режиме "верх и низ" при температуре 200°С около 25 минут.
+				
+		div Ссылки по теме:
+		ol
+			+mli("ru", "out", "https://www.youtube.com/watch?v=2pMXg0J1_To", "Priprava Club - Кулинарный канал с перчинкой", "Французский сырный хлеб.", "youtube")
+
+block footer
+	script(src="price_of_ingredients.js")

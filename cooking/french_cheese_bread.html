@@ -35,42 +35,84 @@
     <h2 class="font-effect-shadow-multiple">Информация по кулинарии</h2>
     <article class="grid-container">
       <div class="grid-x"></div>
-      <h3>Пашмак. Восточная сладость.</h3>
+      <h3>Французский сырный хлеб.</h3>
       <div>Рецепт:</div>
       <table class="table-test">
-        <tr>
-          <td>1</td>
-          <td>сахар</td>
-          <td>220 гр.</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>вода</td>
-          <td>150 гр.</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>лимонная кислота</td>
-          <td>щепотка</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>мука</td>
-          <td>100-150 гр.</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>сливочное масло</td>
-          <td>30-50г</td>
-        </tr>
+        <thead>
+          <tr> 
+            <td>№</td>
+            <td>ингредиент</td>
+            <td>кол-во</td>
+            <td>ед.изм.</td>
+            <td>цена</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>свежие дрожжи</td>
+            <td>25</td>
+            <td>гр.</td>
+            <td> <span id="yeast">25</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>соль</td>
+            <td>1</td>
+            <td>ч. л.</td>
+            <td> <span id="salt">3</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>сахар</td>
+            <td>1 </td>
+            <td>ч. л.</td>
+            <td> <span id="sugar">3</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>вода</td>
+            <td>220 </td>
+            <td>мл.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>оливковое масло</td>
+            <td>1 </td>
+            <td>ст. л</td>
+            <td> <span id="olive_oil">8</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>мука</td>
+            <td>450</td>
+            <td>гр.</td>
+            <td><span id="flour">450</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>сыр</td>
+            <td>150 </td>
+            <td>гр.</td>
+            <td><span id="cheese">150</span></td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td>итого</td>
+            <td> </td>
+            <td> </td>
+            <td><span id="sum"></span></td>
+          </tr>
+        </tbody>
       </table>
       <div>Процесс приготовления:</div>
-      <div></div>
+      <div>Вода теплая 40°С. Сыр натираем на мелкой терке.</div>
+      <div>Время отстойки 45-60 минут</div>
+      <div>Выпекать в духовке при режиме "верх и низ" при температуре 200°С около 25 минут.</div>
       <div>Ссылки по теме:</div>
       <ol>
-        <li><span class= 'flag_ru'></span>&nbsp;<a href = https://youtu.be/6fIDnSf0UBw target="_blank">&nbsp;Вода+Сахар+Мука. Пашмак. Восточная сладость&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;&nbsp;<i class="fab fa-youtube"></i>
-        </li>
-        <li><span class= 'flag_ru'></span>&nbsp;<a href = https://www.youtube.com/watch?v=KO2x71x5UTI target="_blank">&nbsp;Украсить стол своими руками&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Пашмак или Пишмание в домашних условиях&nbsp;<i class="fab fa-youtube"></i>
+        <li><span class= 'flag_ru'></span>&nbsp;<a href = https://www.youtube.com/watch?v=2pMXg0J1_To target="_blank">&nbsp;Priprava Club - Кулинарный канал с перчинкой&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Французский сырный хлеб.&nbsp;<i class="fab fa-youtube"></i>
         </li>
       </ol>
     </article>
@@ -87,6 +129,7 @@
           <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
         </div>
       </div>
+      <script src="price_of_ingredients.js"></script>
       <script>$(document).foundation();</script>
     </footer>
   </body>
