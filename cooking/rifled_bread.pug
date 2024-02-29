@@ -1,0 +1,47 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div(id="recipe")
+		h3 Батон 'Нарезной'.
+		div Рецепт:
+		div Для опары:
+		table.table-test
+			tr
+				td 1
+				td пшеничная мука в/с
+				td 225-230
+				td гр.
+			tr
+				td 2
+				td вода(30-35°С)
+				td 125-150
+				td гр.
+			tr
+				td 3
+				td прессованных (живых) дрожжей
+				td 5 
+				td гр.
+		div Время брожения опары 3-4 часа:
+		div Для теста:
+		div вся опара,
+		div 100-110 мл воды  (30 - 35 °),
+		div 7,5 гр соли, 
+		div 30 гр сахара,
+
+		div 17-18 гр  маргарина или сливочного масла (82 %),
+		div 270 гр муки,
+		div Общее время подъема теста 1,5 - 2 часа. Обминка через 50 минут.
+		
+		div время выпечки 28-30 мин,
+		div температура 190 градусов.
+
+		div Ссылки по теме:
+		ol
+			+mli("ru", "out", "https://www.youtube.com/watch?v=66J0YVaZ8ts", "Кулинарные практики", "Батон 'Нарезной'.", "youtube")
+			+mli("ru", "out", "https://www.youtube.com/watch?v=kAf39XjK6oQ", "Выпечка и кулинария", "Батон 'Нарезной' по ГОСТу.", "youtube")
+block footer
+	script(src="price_of_ingredients.js")
+	script(src="recipe_rifled_bread.js")

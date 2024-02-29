@@ -1,69 +1,103 @@
-let milk = 45;
-let flour = 45;
-let yeast = 30;
-let salt = 60;
-let sugar = 60;
-let cheese = 330;
-let sum = 0;
-let olive_oil = 500;
-
-let summa = Intl.NumberFormat("en-IN", {
-  style: "currency",
-  currency: "UYU",
-  maximumSignificantDigits: 2,
-});
-try {
-	let my_flour = document.getElementById("flour");
-	my_flour.textContent = Number(my_flour.textContent)/1000*flour;
-	sum += Number(my_flour.textContent);
-} catch (error) {
-	console.log(error);
+class IName{
+	constructor(name, nameRU = "", nameES = ""){
+		this.name = name;
+		this.nameRU = nameRU;
+		this.nameES = nameES;
+	}
+	getName(local="US"){
+		if (local=="US") return this.name;
+		else if (local=="RU") return this.nameRU;
+		else if (local=="ES") return this.nameES;
+	}
 }
-try {
-	let my_milk = document.getElementById("milk");
-	my_milk.textContent = Number(my_milk.textContent)/1000*milk;
-	sum += Number(my_milk.textContent);
-} catch (error) {
-	console.log(error);
-}
-
-try {
-	let my_yeast = document.getElementById("yeast");
-	my_yeast.textContent = Number(my_yeast.textContent)/30*yeast;
-	sum += Number(my_yeast.textContent);
-} catch (error) {
-	console.log(error);
-}
-
-try {
-	let my_cheese = document.getElementById("cheese");
-	my_cheese.textContent = Number(my_cheese.textContent)/1000*cheese;
-	sum += Number(my_cheese.textContent);
-} catch (error) {
-	console.log(error);
-}
-
-try {
-	let my_sugar = document.getElementById("sugar");
-	my_sugar.textContent = Number(my_sugar.textContent)/1000*sugar;
-	sum += Number(my_sugar.textContent);
-} catch (error) {
-	console.log(error);
-}
-try {
-	let my_salt = document.getElementById("salt");
-	my_salt.textContent = Number(my_salt.textContent)/1000*salt;
-	sum += Number(my_salt.textContent);
-} catch (error) {
-	console.log(error);
-}
-try {
-	let my_olive_oil = document.getElementById("olive_oil");
-	my_olive_oil.textContent = Number(my_olive_oil.textContent)/1000*olive_oil;
-	sum += Number(my_olive_oil.textContent);
-} catch (error) {
-	console.log(error);
+class Ingredient{
+	constructor(name, price, unit, currency){
+		this.name = name;
+		this.amount = 0;
+		this.price = price; 
+		this.unit = unit;
+		this.currency = currency;
+	}
+	
+	getPrice(format){
+		
+		let summa = Intl.NumberFormat("en-IN", {
+			style: "currency",
+			currency: this.currency,
+			maximumSignificantDigits: 4,
+		});
+		let sum = 0;
+		if (this.unit == 'gr' || this.unit == 'ml')	{
+			sum = this.price * this.amount / 1000;
+		}
+		else if (this.unit == 'piece')	{
+			sum = this.price * this.amount;
+		}
+		if (format) return summa.format(sum);
+		return sum;
+	}
+	
+	toTableRow(){
+		return `<td>${this.name.getName("RU")}(${this.name.getName()})</td><td>${this.amount}</td><td>${this.unit}</td><td>${this.getPrice(true)}</td>`;
+	}
+	toString() {
+    return `${this.name} ${this.amount} ${this.unit}`;
+  }
 }
 
-let my_sum = document.getElementById("sum");
-my_sum.textContent = summa.format(sum);
+class Recipe {
+  constructor(name, description, ingredients, instructions) {
+    this.name = name;
+    this.description = description;
+    this.ingredients = ingredients;
+    this.instructions = instructions;
+  }
+
+  getIngredients() {
+    return this.ingredients.map(ingredient => `<tr>${ingredient.toTableRow()}</tr>`).join('');
+  }
+
+  getInstructions() {
+    return this.instructions.map(step => `<li>${step}</li>`).join('');;
+  }
+	
+	getPrice(){
+		let summa = Intl.NumberFormat("en-IN", {
+			style: "currency",
+			currency: this.ingredients[0].currency,
+			maximumSignificantDigits: 5,
+		});
+		let sum = 0;
+		this.ingredients.forEach((element) => sum += element.getPrice());
+		return summa.format(sum);
+	}
+
+  toString() {
+    return `<h3> ${this.name}</h3>
+<div> ${this.description} </div> 
+<div>Рецепт:</div>
+<table class='table-test'>
+<thead><tr><td>ингредиент</td><td>кол-во</td><td>ед.изм.</td><td>цена</td></tr></thead>
+${this.getIngredients()}
+</table>
+<div>Общая стоимость блюда: ${this.getPrice()}</div>
+<div> Процес приготовления:
+	<ol>${this.getInstructions()}</ol>
+</div>`;
+  }
+}
+let milk = new Ingredient(new IName("milk", "молоко"), 45, "ml", "UYU");
+let water = new Ingredient(new IName("water", "вода"), 0, "ml", "UYU");
+let flour = new Ingredient(new IName("flour", "мука"), 45, "gr", "UYU");
+let liveYeast = new Ingredient(new IName("live yeast", "живые дрожжи"), 1000, "gr", "UYU");
+let yeast = new Ingredient(new IName("yeast", "cухие дрожжи"), 1000, "gr", "UYU");
+let salt = new Ingredient(new IName("salt", "соль"), 60, "gr", "UYU");
+let sugar = new Ingredient(new IName("sugar", "сахар"), 60, "gr", "UYU");
+let vanillaSugar = new Ingredient(new IName("vanilla sugar", "ванильный сахар"), 600, "gr", "UYU");
+let cheese = new Ingredient(new IName("cheese", "сыр"), 330, "gr", "UYU");
+let olive_oil = new Ingredient(new IName("olive oil", "оливковое масло"), 500, "ml", "UYU");
+let vegetableOil = new Ingredient(new IName("vegetable oil", "растительное масло"), 160, "ml", "UYU");
+let egg = new Ingredient(new IName("egg", "яйцо куриное"), 11, "piece", "UYU"); 
+
+
+
