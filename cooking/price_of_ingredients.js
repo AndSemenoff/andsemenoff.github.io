@@ -88,7 +88,9 @@ ${this.getIngredients()}
 }
 let milk = new Ingredient(new IName("milk", "молоко"), 45, "ml", "UYU");
 let water = new Ingredient(new IName("water", "вода"), 0, "ml", "UYU");
-let flour = new Ingredient(new IName("flour", "мука"), 45, "gr", "UYU");
+let flour = new Ingredient(new IName("flour", "мука пшеничная"), 45, "gr", "UYU");
+let wholeWheatFlour = new Ingredient(new IName("whole wheat flour", "мука пшеничная цельнозерновая"), 100, "gr", "UYU");
+let wholeWheatRyeFlour = new Ingredient(new IName("whole wheat rye flour", "мука рженая цельнозерновая"), 250, "gr", "UYU");
 let liveYeast = new Ingredient(new IName("live yeast", "живые дрожжи"), 1000, "gr", "UYU");
 let yeast = new Ingredient(new IName("yeast", "cухие дрожжи"), 1000, "gr", "UYU");
 let salt = new Ingredient(new IName("salt", "соль"), 60, "gr", "UYU");
