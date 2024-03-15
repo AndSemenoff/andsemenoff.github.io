@@ -1,0 +1,16 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div(id="recipe") 
+		div Ссылки по теме:
+			ol
+				+mli("ru", "out", "https://www.youtube.com/watch?v=ITcsmyw5WfA", "Кухня неУмелой хозяйки", "Мягкие, пышные кексы на молоке!", "youtube")
+				+mli("ru", "out", "https://www.youtube.com/watch?v=pF8r39w7zpY", "CookingTime", "МАФФИНЫ (Muffins)", "youtube")
+				+mli("ru", "out", "https://www.youtube.com/watch?v=eVNvrZA1bmE", "Елена Семерикова. РЕЦЕПТЫ", "домашние кексы на молоке.", "youtube")
+
+block footer
+	script(src="price_of_ingredients.js")
+	script(src="basic_muffins.js")

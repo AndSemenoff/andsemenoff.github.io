@@ -96,10 +96,11 @@ let yeast = new Ingredient(new IName("yeast", "cухие дрожжи"), 1000, "
 let salt = new Ingredient(new IName("salt", "соль"), 60, "gr", "UYU");
 let sugar = new Ingredient(new IName("sugar", "сахар"), 60, "gr", "UYU");
 let vanillaSugar = new Ingredient(new IName("vanilla sugar", "ванильный сахар"), 600, "gr", "UYU");
+let vanillaExtract = new Ingredient(new IName("vanilla extract", "ванильный экстракт"), 1300, "ml", "UYU");
 let cheese = new Ingredient(new IName("cheese", "сыр"), 330, "gr", "UYU");
 let olive_oil = new Ingredient(new IName("olive oil", "оливковое масло"), 500, "ml", "UYU");
 let vegetableOil = new Ingredient(new IName("vegetable oil", "растительное масло"), 160, "ml", "UYU");
-let egg = new Ingredient(new IName("egg", "яйцо куриное"), 11, "piece", "UYU"); 
-
+let egg = new Ingredient(new IName("egg", "яйцо куриное"), 12, "piece", "UYU"); 
+let bakingРowder = new Ingredient(new IName("baking powder", "разрыхлитель"), 500, "gr", "UYU"); 
 
 
