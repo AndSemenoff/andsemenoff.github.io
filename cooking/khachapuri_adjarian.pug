@@ -1,0 +1,17 @@
+extends ../layouts/html_layout.jade
+block title
+	title= site_title + " Хачапури по аджарски."
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div(id="recipe") 
+		div Ссылки по теме:
+			ol
+				+mli("ru", "out", "https://www.youtube.com/watch?v=OGniEBkteok", "Еда на любой вкус", "Хачапури по-аджарски", "youtube")
+				+mli("ru", "out", "https://www.youtube.com/watch?v=xzgpfSOMDDk", "Makarevich Kitchen", "Хачапури по-аджарски", "youtube")
+				+mli("ru", "out", "https://www.youtube.com/watch?v=9YXwdqFsNb4", "Шеф-повар Отар êzid", "Хачапури по-аджарски", "youtube")
+
+block footer
+	script(src="price_of_ingredients.js")
+	script(src="khachapuri_adjarian.js")
