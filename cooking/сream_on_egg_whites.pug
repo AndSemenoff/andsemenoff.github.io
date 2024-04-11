@@ -1,0 +1,14 @@
+extends ../layouts/html_layout.jade
+block title
+	title= site_title + " Крем белково-заварной."
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div(id="recipe") 
+		div Ссылки по теме:
+		ol
+			+mli("ru", "out", "https://www.youtube.com/watch?v=BCAnP-RjJG8", "Выпечка и кулинария.", "Крем белково-заварной, для наполнения и украшения", "youtube")
+block footer
+	script(src="price_of_ingredients.js")
+	script(src="сream_on_egg_whites.js")

@@ -59,6 +59,32 @@
           <li>pandas_ta;</li>
         </ul>
       </div>
+      <div>Простейший шаблон использования библиотеки будет выглядеть так: </div>
+      <div><a href="../python_source/backtestingpy_template.py">backtestingpy_template.py</a></div>
+      <pre><code class="python3"># file backtestingpy_template.py
+import datetime
+import pandas_ta as ta
+import pandas as pd
+import yfinance as yf
+import backtesting as bt
+
+class myStrategy(bt.Strategy):
+
+    def init(self):
+        pass
+
+    def next(self):
+        pass
+          
+assets = yf.Ticker("MSFT")
+today = str(datetime.datetime.today()).split()[0]
+
+assets_historical = assets.history(start="2022-01-02", end=today, interval="1d")
+
+btest = bt.Backtest(assets_historical, myStrategy, cash=10_000, commission=.002)
+stats = btest.run()
+print(stats)
+</code></pre>
       <div><a href="../python_source/backtestingpy_example_1.py">backtestingpy_example_1.py</a></div>
       <pre><code class="python3">import datetime
 import pandas_ta as ta

@@ -1,0 +1,14 @@
+extends ../layouts/html_layout.jade
+block title
+	title= site_title + " Сгущеное молоко с сахаром."
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div(id="recipe") 
+		div Ссылки по теме:
+		ol
+			+mli("ru", "out", "https://www.youtube.com/watch?v=PKT3ud-qSNc", "Хочу ТОРТ!", "Домашнее сгущенное молоко с сахаром.", "youtube")
+block footer
+	script(src="price_of_ingredients.js")
+	script(src="condensed_milk_with_sugar.js")

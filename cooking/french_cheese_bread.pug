@@ -1,5 +1,6 @@
 extends ../layouts/html_layout.jade
-
+block title
+	title= site_title + " Сырный хлеб."
 block content
 	h2.font-effect-shadow-multiple Информация по кулинарии
 	article.grid-container
@@ -10,4 +11,4 @@ block content
 			+mli("ru", "out", "https://www.youtube.com/watch?v=2pMXg0J1_To", "Priprava Club - Кулинарный канал с перчинкой", "Французский сырный хлеб.", "youtube")
 block footer
 	script(src="price_of_ingredients.js")
-	script(src="recipe_french_cheese_bread.js")
+	script(src="french_cheese_bread.js")

@@ -1,5 +1,5 @@
 const ingredients = [yeast, salt, sugar, water, flour, olive_oil, cheese,];
-yeast.amount=25;
+yeast.amount=8;
 salt.amount=3;
 sugar.amount=3;
 water.amount=220;

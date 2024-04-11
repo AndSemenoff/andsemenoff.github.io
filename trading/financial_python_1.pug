@@ -106,7 +106,11 @@ block content
 					+mli("ru", "my", "quantconnect_Buy_and_Hold.html", "", "Стратегия 'Купи и держи'.")
 					+mli("ru", "my", "quantconnect_Buy_and_Hold_with_TrailingStop.html", "", "Стратегия 'Купи и держи' со скользящим стопом.")
 			+mli("ru", "my", "python_backtesting_bt.html", "Пример кода", "Работа с библиотекой BT.", "")
-			+mli("ru", "my", "python_backtestingpy_basics.html", "Пример кода", "Работа с библиотекой Backtesting.py.", "")
+			li Backtesting.py
+				ol
+					+mli("ru", "my", "python_backtestingpy_basics.html", "Пример кода", "Введение в Backtesting.py.", "")
+					+mli("ru", "my", "python_backtestingpy_indicator.html", "Пример кода", "Индикатор в Backtesting.py.", "")
+
 			+mli("ru", "my", "../pandas/pandas_1.html", "", "Работа с Pandas", "")
 			+mli("ru", "my", "pandas_index.html", "", "Работа с Pandas еще", "")
 			+mli("ru", "my", "numpy_index.html", "", "Работа с NumPy", "")
@@ -340,18 +344,10 @@ block content
 		
 		h3(id="articles2") Статьи для детального изучения
 		ul
-			li 
-				span.flag_en &nbsp;
-				| wrighters.io
-				a(href="https://www.wrighters.io/analyzing-intraday-and-overnight-stock-returns-with-pandas/" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Analyzing intraday and overnight stock returns with pandas
-			li 
-				span.flag_en &nbsp;
-				| decodingmarkets.com
-				a(href="https://decodingmarkets.com/follow-the-leader-to-make-money-in-stocks/" target="_blank") 
-					i.fas.fa-external-link-alt &nbsp;
-				| Follow The Leader To Make Money In Stocks
+			+mli("en", "out", "https://www.wrighters.io/analyzing-intraday-and-overnight-stock-returns-with-pandas/", "wrighters.io", "Analyzing intraday and overnight stock returns with pandas", "icon")
+			+mli("en", "out", "https://decodingmarkets.com/follow-the-leader-to-make-money-in-stocks/", "decodingmarkets.com", "Follow The Leader To Make Money In Stocks", "icon")
+			+mli("en", "out", "https://blog.jetbrains.com/datalore/2024/04/05/backtesting-a-trading-strategy-in-python-with-datalore-and-ai-assistant/", "blog.jetbrains.com", "Backtesting a Trading Strategy in Python With Datalore and AI Assistant", "icon")
+			+mli("en", "out", "https://blog.jetbrains.com/datalore/2024/01/26/portfolio-optimization-in-python-with-datalore-and-ai-assistant/", "blog.jetbrains.com", "Portfolio Optimization in Python With Datalore and AI Assistant", "icon")
 				
 		h3(id="notations") Обозначения
 		div Разъясним обозначения, которые можно встретить на сайте:
