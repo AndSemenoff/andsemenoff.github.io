@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <title>ABSOLEM.INFO | Python backtasting.py</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
@@ -19,6 +20,17 @@
     <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+    <!-- default.min.css"-->
+    <link rel="stylesheet" href="../css/vs.css">
+    <script>
+      window.MathJax = {
+      	tex: {
+      		tags: 'ams'
+      	}
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <div class="top-bar">
@@ -32,86 +44,53 @@
         </ul>
       </div>
     </div>
-    <h2 class="font-effect-shadow-multiple">Информация по кулинарии</h2>
+    <h2 class="text-center">Работа с библиотекой Backtesting.py.</h2>
     <article class="grid-container">
       <div class="grid-x"></div>
-      <div id="recipe"></div>
-      <div>Для опары:</div>
-      <table class="table-test">
-        <tr>
-          <td>1</td>
-          <td>пшеничная мука в/с</td>
-          <td>230</td>
-          <td>гр.</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>вода(30-35°С)</td>
-          <td>150 </td>
-          <td>гр.</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>cухие дрожжи(yeast)</td>
-          <td>2 </td>
-          <td>гр.</td>
-        </tr>
-      </table>
-      <div>Оставляем для брожения. Время брожения опары 3-4 часа.</div>
-      <div>Для теста:
-        <table class="table-test">
-          <tr>
-            <td>1</td>
-            <td>вся опара</td>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>вода(30-35°С)</td>
-            <td>100</td>
-            <td>мл</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>пшеничная мука в/с</td>
-            <td>270</td>
-            <td>гр.</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>соль</td>
-            <td>5 </td>
-            <td>гр.</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>сахар</td>
-            <td>30 </td>
-            <td>гр.</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>сливочное масло</td>
-            <td>20 </td>
-            <td>гр.</td>
-          </tr>
-        </table>
+      <h3>Свой индикатор</h3>
+      <div>Простейший шаблон будет выглядеть так: </div>
+      <div><a href="../python_source/backtestingpy_signal_template.py">backtestingpy_signal_template.py</a></div>
+      <pre><code class="python3"># file backtestingpy_signal_template.py
+import datetime
+import pandas_ta as ta
+import pandas as pd
+import yfinance as yf
+import backtesting as bt
+import numpy as np
+
+class myStrategy(bt.Strategy):
+
+    def init(self):
+        pass
+
+    def next(self):
+        current_signal = self.data.Signal[-1];
+        #print(current_signal)
+        if current_signal==1:
+            if not self.position:
+                self.buy()
+        elif current_signal==-1:
+            if self.position:
+                self.position.close()                
+          
+assets = yf.Ticker("MSFT")
+today = str(datetime.datetime.today()).split()[0]
+
+assets_historical = assets.history(start="2022-01-02", end=today, interval="1d")
+assets_historical["Signal"] = np.random.randint(-1, 2, len(assets_historical))
+
+btest = bt.Backtest(assets_historical, myStrategy, cash=10_000, commission=.002)
+stats = btest.run()
+print(stats)
+</code></pre>
+      <div>Мы добавляем поле Signal в наши исторические данные. Это поле может формироваться любым способом, возможно на основе других данных и библиотек.</div>
+      <div>Далее в стратегии в функции next мы можем использовать это поле.</div>
+      <div>Дополнительная информация по теме:
+        <ol>
+          <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://greyhoundanalytics.com/blog/custom-indicators-in-backtestingpy/"/><a href = https://greyhoundanalytics.com/blog/custom-indicators-in-backtestingpy/ target="_blank">&nbsp;Custom Indicators in Backtesting.py&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Статья и видео.&nbsp;
+          </li>
+        </ol>
       </div>
-      <div>Общее время подъема теста 1,5 - 2 часа. Обминка через 50 минут.</div>
-      <div>Формируем два батона.</div>
-      <div>Время отстойки в форме - минимум 2 часа.</div>
-      <div>Верх батонов смазываем водой. Делаем надрезы.</div>
-      <div>В начале выпекания на нижний прогретый протвень вылеваем полстакана воды.</div>
-      <div>Время выпечки 28-30 мин,</div>
-      <div>Режим духовки 'верх и низ' температура 190 °С.</div>
-      <div>Ссылки по теме:</div>
-      <ol>
-        <li><span class= 'flag_ru'></span>&nbsp;<a href = https://www.youtube.com/watch?v=66J0YVaZ8ts target="_blank">&nbsp;Кулинарные практики&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Батон 'Нарезной'.&nbsp;<i class="fab fa-youtube"></i>
-        </li>
-        <li><span class= 'flag_ru'></span>&nbsp;<a href = https://www.youtube.com/watch?v=kAf39XjK6oQ target="_blank">&nbsp;Выпечка и кулинария&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Батон 'Нарезной' по ГОСТу.&nbsp;<i class="fab fa-youtube"></i>
-        </li>
-      </ol>
     </article>
     <footer>
       <hr>
@@ -126,8 +105,8 @@
           <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
         </div>
       </div>
-      <script src="price_of_ingredients.js"></script>
-      <script src="rifled_bread.js"></script>
+      <script src="../js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
       <script>$(document).foundation();</script>
     </footer>
   </body>

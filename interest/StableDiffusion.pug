@@ -1,7 +1,7 @@
 extends ../layouts/html_layout.jade
 
 block title
-	title= site_title + " Все о AI. Ссылки."
+	title= site_title + " Все о Stable Diffusion"
 
 block content
 	h2.font-effect-shadow-multiple Все о Stable Diffusion
@@ -10,7 +10,10 @@ block content
 			li Основное
 				ol
 					+mli('en', "out", 'https://stability.ai/', 'stability.ai', ' Stable Diffusion, Stable Audio, Beluga', "icon")
-					
+					+mli('en', "out", 'https://stable-diffusion-art.com/', 'stable-diffusion-art', ' Stable Diffusion tutorial', "icon")
+					+mli('en', "out", 'https://deliberate.pro/', 'deliberate', 'Модель для Stable Diffusion от Христ', "icon")
+
+
 					//-li Low-Rank Adaptation of Large Language Models (LoRA) 
 
 		ol
@@ -29,7 +32,10 @@ block content
 									+mli('en', "out", 'https://github.com/jags111/efficiency-nodes-comfyui', "efficiency-nodes-comfyui", "", "github")
 
 									+mli('en', "out", 'https://github.com/cubiq/ComfyUI_IPAdapter_plus', "IPAdapter_plus", "официальный репозиторий", "github")
-
+					li Forge
+						ol
+							+mli('en', "out", 'https://github.com/lllyasviel/stable-diffusion-webui-forge', "ForgeUI", "официальный репозиторий", "github")
+					li Next
 					+mli('en', "out", 'https://github.com/Stability-AI/StableSwarmUI', "StableSwarmUI", "", "github")
 					
 		ol
@@ -46,3 +52,4 @@ block content
 					+mli('en', "out", "https://www.youtube.com/@sedetweiler", "Scott Detweiler", "", "youtube")
 					+mli('en', "out", "https://www.youtube.com/@OlivioSarikas", "Olivio Sarikas", "", "youtube")
 					+mli('en', "out", "https://www.youtube.com/@latentvision", "latent vision", "Канал от создателя IPAdapter_plus", "youtube")
+					+mli('ru', "out", "https://www.youtube.com/@StableDiff/videos", "StableDif | Stable Diffusion | Automatic 1111", "", "youtube")

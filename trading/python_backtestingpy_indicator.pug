@@ -1,0 +1,24 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Python backtasting.py"
+
+block content
+	h2.text-center Работа с библиотекой Backtesting.py.
+	article.grid-container
+		div.grid-x
+		h3 Свой индикатор
+
+		div Простейший шаблон будет выглядеть так: 
+		div
+			a(href="../python_source/backtestingpy_signal_template.py") backtestingpy_signal_template.py
+		pre
+			code.python3
+				include ../python_source/backtestingpy_signal_template.py
+				
+		div Мы добавляем поле Signal в наши исторические данные. Это поле может формироваться любым способом, возможно на основе других данных и библиотек.
+		div Далее в стратегии в функции next мы можем использовать это поле.
+		
+		div Дополнительная информация по теме:
+			ol
+				+mli("en", "out", "https://greyhoundanalytics.com/blog/custom-indicators-in-backtestingpy/", "Custom Indicators in Backtesting.py", "Статья и видео.", "icon")
