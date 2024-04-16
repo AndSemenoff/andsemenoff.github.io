@@ -94,7 +94,7 @@ let wholeWheatRyeFlour = new Ingredient(new IName("whole wheat rye flour", "му
 let liveYeast = new Ingredient(new IName("live yeast", "живые дрожжи"), 1000, "gr", "UYU");
 let yeast = new Ingredient(new IName("yeast", "cухие дрожжи"), 1000, "gr", "UYU");
 let salt = new Ingredient(new IName("salt", "соль"), 60, "gr", "UYU");
-let sugar = new Ingredient(new IName("sugar", "сахар"), 60, "gr", "UYU");
+let sugar = new Ingredient(new IName("sugar", "сахар"), 65, "gr", "UYU");
 let vanillaSugar = new Ingredient(new IName("vanilla sugar", "ванильный сахар"), 600, "gr", "UYU");
 let vanillaExtract = new Ingredient(new IName("vanilla extract", "ванильный экстракт"), 1300, "ml", "UYU");
 let cheese = new Ingredient(new IName("cheese", "сыр"), 400, "gr", "UYU");
@@ -103,5 +103,6 @@ let butter = new Ingredient(new IName("butter", "сливочное масло")
 let vegetableOil = new Ingredient(new IName("vegetable oil", "растительное масло"), 160, "ml", "UYU");
 let egg = new Ingredient(new IName("egg", "яйцо куриное"), 12, "piece", "UYU"); 
 let bakingРowder = new Ingredient(new IName("baking powder", "разрыхлитель"), 500, "gr", "UYU"); 
+let apple = new Ingredient(new IName("apple", "яблоки"), 90, "gr", "UYU"); 
 
 

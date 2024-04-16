@@ -1,0 +1,18 @@
+extends ../layouts/html_layout.jade
+block title
+	title= site_title + " Французский багет."
+	
+block content
+	h2.font-effect-shadow-multiple Информация по кулинарии
+	article.grid-container
+		div.grid-x
+		div(id="recipe")
+
+
+		div Ссылки по теме:
+		ol
+			+mli("ru", "out", "https://www.youtube.com/watch?v=W1Dxlpe2AXk", "WOW! КУХНЯ", "Французский багет.", "youtube")
+			+mli("ru", "out", "https://www.youtube.com/watch?v=i1vzoBHjoVg", "Рецепты Бабушки Эммы", "Настоящий французский багет - Классический рецепт багета", "youtube")
+block footer
+	script(src="price_of_ingredients.js")
+	script(src="french_baguette.js")
