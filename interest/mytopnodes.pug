@@ -1,0 +1,15 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " ComfyUI"
+
+block content
+	h2.font-effect-shadow-multiple ComfyUI ноды, которые я использую
+	article.grid-container
+		div.grid-x
+		h4 pythongosssss|Checkpoint Loder
+		p Add Node->Loders-><kbd>Checkpoint Loder</kbd> 
+		p Add Node->essentials-><kbd>🔧 Draw Text</kbd>
+		p <kbd>ImageCompositeMasked</kbd> использую совместно с 🔧 Draw Text
+		p Add Node->mask-><kbd>Convert Mask to Image</kbd> - для визуализации маски совместно с Preview Image
+		p Add Node->image-><kbd>Preview Image</kbd>

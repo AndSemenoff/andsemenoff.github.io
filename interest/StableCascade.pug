@@ -1,0 +1,20 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " ComfyUI и Stable Cascade"
+
+block content
+	h2.font-effect-shadow-multiple ComfyUI и Stable Cascade
+	article.grid-container
+		div.grid-x
+		h4 Установка
+		ol
+			li Скачать c <a href="https://huggingface.co/stabilityai/stable-cascade/tree/main/comfyui_checkpoints">huggingface.co</a>
+				ol
+					li stable_cascade_stage_c.safetensors
+					li stable_cascade_stage_b.safetensors
+			li Сохранить их папку <kbd>ComfyUI/models/checkpoints</kbd>
+		h4 Workflow
+		h4 Ссылки
+		ol
+			+mli('en', "out", 'https://github.com/Stability-AI/StableCascade', "Stable Cascade", "официальный репозиторий", "github")

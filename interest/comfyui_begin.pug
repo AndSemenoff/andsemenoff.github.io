@@ -1,0 +1,61 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Все о ComfyUI"
+
+block content
+	h2.font-effect-shadow-multiple Все о ComfyUI
+	article.grid-container
+		ol
+			li Основное
+				ol
+					+mli('en', "out", 'https://github.com/comfyanonymous/ComfyUI', "ComfyUI", "официальный репозиторий", "github")
+					+mli('en', "out", 'https://github.com/wyrde/wyrde-comfyui-workflows', "wyrde", "Workflows and other General Information", "github")
+					+mli('en', "out", 'https://openart.ai/workflows/', "openart.ai", "workflows, video, tutorial", "site")
+					+mli('en', "out", 'https://stable-diffusion-art.com/comfyui/', "stable-diffusion-art.com", "comfyui for begining", "site")
+					+mli('en', "out", 'https://comfyworkflows.com/', "comfyworkflows.com", "workflows", "site")
+					+mli('en', "out", 'https://github.com/atlasunified/Templates-ComfyUI-', "atlasunified", "workflows", "github")
+					+mli('en', "out", '', "", "", "")
+					+mli('ru', "my", 'mytopnodes.html', "Ноды", "которые я использую", "icon")
+					+mli('ru', "my", 'StableCascade.html', "Stable Cascade", "Установка. Использование.", "icon")
+					+mli('ru', "my", 'InterestingPrompts.html', "промты", "", "icon")
+					li Ноды
+						ol
+							+mli('en', "out", 'https://github.com/ltdrdata/ComfyUI-Manager', "ltdrdata", "ComfyUI-Manager - менеджер установки нод, обновлений и дополнений", "github")
+							+mli('en', "out", 'https://github.com/ltdrdata/ComfyUI-Impact-Pack', "ltdrdata", "ComfyUI-Impact-Pack", "github")
+							+mli('en', "out", 'https://github.com/jags111/efficiency-nodes-comfyui', "efficiency-nodes-comfyui", "", "github")
+							+mli('en', "out", 'https://github.com/cubiq/ComfyUI_essentials', "cubiq", "ComfyUI_essentials", "github")
+							+mli('en', "out", 'https://github.com/cubiq/ComfyUI_InstantID', "cubiq", "ComfyUI_InstantID", "github")
+							+mli('en', "out", 'https://github.com/twri/sdxl_prompt_styler', "twri", "sdxl_prompt_styler", "github")
+							+mli('en', "out", 'https://github.com/pythongosssss/ComfyUI-Custom-Scripts', "pythongosssss", "ComfyUI-Custom-Scripts", "github")
+							+mli('en', "out", 'https://github.com/cubiq/ComfyUI_IPAdapter_plus', "IPAdapter_plus", "официальный репозиторий", "github")
+
+
+					li Лоры
+						ol
+							+mli('en', "out", 'https://civitai.com/models/299559?modelVersionId=452477', "hyperkraximalism", "hyperkraximalism", "icon")
+
+
+			li Примеры workflow
+				ol
+					+mli('en', "out", 'https://github.com/cubiq/ComfyUI_InstantID/tree/main/examples', "ComfyUI_InstantID", "примеры workflow", "github")
+					+mli('en', "out", 'https://alienate.de/', "alienate.de", "примеры workflow", "icon")
+
+
+			li Обучение
+				ol
+
+				
+					+mli('en', "out", 'https://github.com/ltdrdata/ComfyUI-extension-tutorials/blob/Main/README.md', "comfyUI-extension-tutorials", "", "github")
+					+mli('en', "out", 'https://github.com/ltdrdata/ComfyUI-extension-tutorials/blob/Main/ComfyUI-Impact-Pack/tutorial/ImpactWildcard.md', "ComfyUI-Impact-Pack", "ImpactWildcard", "icon")
+					+mli('en', "out", 'https://www.andreszsogon.com/change-output-file-names-in-comfyui/', "change-output-file-names-in-comfyui", "", "icon")
+					+mli('en', "out", "https://www.youtube.com/watch?v=_C7kR2TFIX0", "Latent Vision", "ComfyUI: Advanced Understanding (Part 1)", "youtube")
+					+mli('en', "out", "https://www.youtube.com/watch?v=ijqXnW_9gzc", "Latent Vision", "ComfyUI: Advanced understanding Part 2", "youtube")
+					
+			li Статьи
+				ol
+					+mli('en', "out", 'https://minimaxir.com/', "Max Woolf's Blog", "", "icon")
+
+			li Видео
+				ol
+					+mli('en', "out", "https://www.youtube.com/@robadams2451/videos", ".", "", "youtube")
