@@ -1,0 +1,34 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " тренировка LoRA"
+
+block content
+	h2.font-effect-shadow-multiple Тренировка LoRA
+	article.grid-container
+		div.grid-x
+		h4 Варианты тренировки. С помощью:
+		ol
+			+mli('en', "out", 'https://github.com/bmaltais/kohya_ss', "bmaltais", "Kohya", "github")
+			+mli('en', "out", 'https://github.com/Nerogar/OneTrainer', "Nerogar", "OneTrainer", "github")
+
+		h4 Workflow
+		ol
+
+		h4 Ссылки
+		ol
+			+mli('en', "out", 'https://civitai.com/articles/3105/essential-to-advanced-guide-to-training-a-lora', "civitai.com", "Essential to Advanced Guide to training a LoRA.", "icon")
+			+mli('en', "out", 'https://github.com/bmaltais/kohya_ss/wiki/LoRA-training-parameters', "bmaltais", "Explaining LoRA Learning Settings Using Kohya_ss for Stable Diffusion Understanding by everyone.", "github")
+
+
+		
+			+mli('en', "out", 'https://myaiforce.com/real-life-lora-training/', "myaiforce.com", "Kohya. Real life lora training.", "icon")
+			+mli('en', "out", 'https://creatixai.com/how-to-train-lora-locally-kohya-tutorial-sdxl/', "creatixai.com", "How to Train Lora Locally: Kohya Tutorial – SDXL.", "icon")
+
+			li Инструментарий онлайн
+				ol
+					+mli('en', "out", 'https://www.photopea.com/', "www.photopea.com", "Бесплатный сервис, по фонкционалу, как фотошоп.", "icon")
+
+
+					+mli('en', "out", 'https://www.birme.net/?target_width=1024&target_height=1024', "www.birme.net", "Обрезка фотографий онлайн.", "icon")
+

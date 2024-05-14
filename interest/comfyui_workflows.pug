@@ -1,0 +1,29 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Workflows"
+
+block content
+	h2.font-effect-shadow-multiple Workflows
+	article.grid-container
+		div.grid-x
+			table
+				thead
+					tr
+						td название
+						td версия
+						td json
+						td изображение
+				tbody
+					tr
+						td Обычное.
+							| <br> <kbd>Eff. Loader SDXL</kbd>
+							| <br> <kbd>KSampler SDXL (Eff.)</kbd>
+							| <br> <kbd>LoRA Stacker</kbd>
+							| <br> <kbd>ImpactWildcardProcessor</kbd>
+							| <br> <kbd>HighRes-Fix Script</kbd>
+							| <br> <kbd>Image Save</kbd>
+						td 
+						td
+						td
+							img(src="workflows/comfiui_workfow_default_v1.png" width="200" height="200")

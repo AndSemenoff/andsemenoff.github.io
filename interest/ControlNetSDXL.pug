@@ -1,0 +1,23 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " ComfyUI и ControlNet SDXL"
+
+block content
+	h2.font-effect-shadow-multiple ComfyUI и ControlNet SDXL
+	article.grid-container
+		div.grid-x
+		h4 Установка
+		ol
+			li Скачать c <a href="https://huggingface.co/lllyasviel/sd_control_collection/tree/main">huggingface.co</a>
+				ol
+					li ??
+					li ??
+			li Сохранить их папку <kbd>ComfyUI/ComfyUI/models/controlnet</kbd>
+		h4 Workflow
+		ol
+			+mli('en', "out", 'https://huggingface.co/ByteDance/Hyper-SD/tree/main/comfyui', "huggingface.co", "официальный репозиторий", "github")
+
+		h4 Ссылки
+		ol
+			+mli('en', "out", 'https://posemy.art/', "posemy.art", "Задать, скачать позу человека. Официальный сайт. Бесплатно.", "icon")

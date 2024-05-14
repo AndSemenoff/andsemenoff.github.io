@@ -1,0 +1,37 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Модели"
+
+block content
+	h2.font-effect-shadow-multiple Модели, которые я использую
+	article.grid-container
+		div.grid-x
+			table
+				thead
+					tr
+						td название
+						td версия
+						td ссылка
+				tbody
+					tr
+						td _CHEYENNE_
+						td v1.6
+
+						td
+							a(href="https://civitai.com/models/198051/cheyenne") civitai.com
+					tr
+						td("colspan"=3) Для иллюстраций. A massive update of styles and flexibility (this involves better management of the CFG, which now plays an essential role! From 1.5 (rougher, sketchy) to 4-5 (good medium mix) to 7-8 (more contrast, flatter, outline)... and also more realism (so comics, or graphic novels illustration are the basic keywords for using <em>Cheyenne</em>1.6)
+							| <br>- Able to go from a painting style to flat colour, with or without outline, all the usual keywords are present: painting, comics, outline, ink, drawing, etc...
+							| <br>More influence on the style of European comics: Hergé, Spirou, Franquin, Uderzo, Gibrat, Moebius, etc. are now recognisable. There's a bit of Manga, but very little: Ghibli, Junjo Ito, Makoto Shinkai, etc. )
+							| <br>Тригерные слова: GRAPHIC NOVELS ILLUSTRATION, COMICS, OUTLINE, SKETCH
+							
+					tr
+						td AlbedoBase XL
+						td v2.1
+
+						td
+							a(href="https://civitai.com/models/140737/albedobase-xl") civitai.com
+					tr
+						td("colspan"=3) The refiner is unnecessary, and VAE is included.
+							| <br>- Leaving the negative prompt empty generally brings about the best quality.
