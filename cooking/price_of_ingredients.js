@@ -86,7 +86,8 @@ ${this.getIngredients()}
 </div>`;
   }
 }
-let milk = new Ingredient(new IName("milk", "молоко"), 45, "ml", "UYU");
+//let milk = new Ingredient(new IName("milk", "молоко"), 45, "ml", "UYU");
+let milk = new Ingredient(new IName("milk", "молоко"), 2, "ml", "USD");
 let water = new Ingredient(new IName("water", "вода"), 0, "ml", "UYU");
 let flour = new Ingredient(new IName("flour", "мука пшеничная"), 45, "gr", "UYU");
 let wholeWheatFlour = new Ingredient(new IName("whole wheat flour", "мука пшеничная цельнозерновая"), 100, "gr", "UYU");
