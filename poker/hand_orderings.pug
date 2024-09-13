@@ -1,0 +1,63 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Ранжированные по силе покерные руки"
+	
+block content
+	h2.font-effect-shadow-multiple Ранжированные по силе покерные руки
+	article.grid-container
+		div.grid-x
+			<p>Text files containing the hand orderings can be downloaded below:
+			ol
+				li Omaha Hi
+					ol
+						li 
+							<a href="orderings/ohordering.txt">10-handed</a>
+						li 
+							<a href="orderings/oh6maxordering.txt">6-handed</a>
+						li 
+							<a href="orderings/oh3maxordering.txt">3-handed</a>
+						li
+							<a href="orderings/ohvsrandomordering.txt">vs random hand</a>
+				li Omaha Hi/Lo
+					ol
+						li
+							<a href="orderings/o8ordering.txt">10-handed</a>
+						li
+							<a href="orderings/o86maxordering.txt">6-handed</a>
+						li
+							<a href="orderings/o83maxordering.txt">3-handed</a>
+						li 
+							<a href="orderings/o8vsrandomordering.txt">vs random hand</a>
+				li Hold'em
+					ol
+						li 
+							<a href="orderings/heordering.txt">10-handed</a>
+						li
+							<a href="orderings/he6maxordering.txt">6-handed</a>
+						li 
+							<a href="orderings/he3maxordering.txt">3-handed</a>
+						li
+							<a href="orderings/hevsrandomordering.txt">vs random hand</a>
+						li 
+							<a href="orderings/heequitysquaredordering.txt">equity squared</a>
+							
+				li Five Card Omaha
+					ol
+						li
+							<a href="orderings/oh5ordering.txt">9-handed</a>
+						li
+							<a href="orderings/oh56maxordering.txt">6-handed</a>
+						li
+							<a href="orderings/oh5vsrandomordering.txt">vs random hand</a>
+				li Five Card Omaha Hi/Lo
+					ol
+						li
+							<a href="orderings/o85ordering.txt">9-handed</a>
+						li 
+							<a href="orderings/o856maxordering.txt">6-handed</a>
+						li
+							<a href="/orderings/o85vsrandomordering.txt">vs random hand</a>
+				p If you are curious about how these orderings were created, you can check out these blog posts:<ul>
+				p <a href="http://pokercoder.blogspot.com/2006/07/towards-meaningful-ordering-of-hands.html">Toward a Meaningful Ordering of Hands</a>
+				p <a href="http://pokercoder.blogspot.com/2012/03/6-handed-hand-orderings.html">6-Handed Hand Orderings</a>

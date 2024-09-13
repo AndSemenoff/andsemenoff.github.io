@@ -1,0 +1,13 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Английский язык"
+
+block content
+	h2.font-effect-shadow-multiple Английский язык. Грамматика
+	article.grid-container
+		h3 Общие вопросы
+		ul
+			+mli("ru", "my", "verb_main_table.html", "", "сводная таблица времен глагола.", "")
+			
+			

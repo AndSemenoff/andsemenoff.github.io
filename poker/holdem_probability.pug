@@ -1,0 +1,79 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Вероятности в Texas Holdem"
+	
+block content
+	h2.font-effect-shadow-multiple Вероятности в Texas Holdem
+	article.grid-container
+		div.grid-x
+			p В следующей таблице представлена точная информация о том, с какой вероятностью какие стартовые руки мы можем получить.
+			table.table-test
+				tbody
+					tr
+						th &nbsp;Стартовая рука
+						th ВР в %
+						th Оддсы
+					tr
+						td Определённая карманная пара (к примеру, AA, KK...)
+						td 0,453
+						td 220:1
+				
+					tr
+						<td>Карманные пары QQ+</td>
+						<td>1,36</td>
+						<td>72,66:1</td>
+					tr
+						<td>Карманные пары JJ+</td>
+						<td>1,81</td>
+						<td>54,25:1</td>
+					tr
+						<td>Карманные пары TT+</td>
+						<td>2,24</td>
+						<td>43,2:1</td>
+					tr
+						<td>Все карманные пары</td>
+						<td>5,88</td>
+						<td>16:1</td>
+					tr
+						<td>Определённая непарная рука (к примеру, AK, KQ&hellip;)</td>
+						<td>1,21</td>
+						<td>81,875:1</td>
+					tr
+						<td>Определённые одномастные карты (к примеру, Aks, AQs&hellip;)</td>
+						<td>0,302</td>
+						<td>330,5:1</td>
+					tr
+						<td>Одномастные карты</td>
+						<td>23,53</td>
+						<td>3,25:1</td>
+					tr
+						<td>Одномастные коннекторы</td>
+						<td>3,92</td>
+						<td>24,5:1</td>
+					tr
+						<td>Одномастные карты от Т и старше</td>
+						<td>3,02</td>
+						<td>32,11:1</td>
+					tr
+						<td>Коннекторы</td>
+						<td>15,7</td>
+						<td>5,37:1</td>
+					tr
+						<td>Коннекторы от Т и лучше</td>
+						<td>4,83</td>
+						<td>19,7:1</td>
+					tr
+						<td>Любые две Q+ (к примеру, AQ, KQ...)</td>
+						<td>4,98</td>
+						<td>19,08:1</td>
+					tr
+						<td>Любые две J+ (к примеру, QJ, AJ, KJ...)</td>
+						<td>9,05</td>
+						<td>10,04:1</td>
+					tr
+						<td>Любые две T+ (к примеру, AT, QT, KT...)</td>
+						<td>14,3</td>
+						<td>5,99:1</td>
+
+

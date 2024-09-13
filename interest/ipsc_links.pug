@@ -7,7 +7,15 @@ block content
 	h2.font-effect-shadow-multiple Спортивная стрельба. Ссылки
 	article.grid-container
 		ol
-			li Федерации, клубы
+			li Федерации, клубы США
+				ol
+					+mli('en', "out", "https://uspsa.org/", "uspsa.org", "The United States Practical Shooting Association", "icon")
+					+mli('en', "out", "https://prairiestatetactical.com/", "prairiestatetactical.com", "", "icon")
+					+mli('en', "out", "https://www.accuracyfirearms.com/", "accuracyfirearms.com", "", "icon")
+					+mli('en', "out", "https://www.aptacademy.com/", "www.aptacademy.com", "", "icon")
+					//+mli('en', "out", "", "", "", "icon")
+		ol
+			li Федерации, клубы России
 				ol
 					+mli('ru', "out", "https://ipsc.ru", "ipsc.ru", "Федерация практической стрельбы России", "icon")
 					+mli('ru', "out", "https://ipsc-msk.ru/index.php", "ipsc-msk.ru", "I.P.S.C. Москва", "icon")
