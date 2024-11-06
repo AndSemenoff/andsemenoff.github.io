@@ -1,0 +1,184 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Limit Omaha Hi/Lo"
+	
+block content
+	h2.font-effect-shadow-multiple Limit Omaha Hi/Lo
+	article.grid-container
+		h3 Flopped nut straight against flash draw.
+		div.grid-x
+			h1(style="font-size:5vw")  <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+			table
+				thead
+					tr
+						th №
+						th Рука
+						th EV
+						th EV(BB)
+				tbody
+					tr
+						td 1
+						td 
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;
+						td 0.37
+						td 0.33
+					tr
+						td 2
+						td
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> &#x1F0AE; <small> * *<small>
+						td 0.63
+						td 2.67
+			table
+				thead
+					th №
+					th 
+					th preFlop
+					th Flop
+					th Tern
+					th Hand №
+					th Tern Result
+					th River
+					th River Result
+				tbody
+					tr
+						td(rowspan=2) 1
+						td(rowspan=2) Pot(BB) 1-vs-1
+						td(rowspan=2) 2
+						td(rowspan=2) 4
+						td(rowspan=2) 8
+						td 1
+						td -0.04
+					tr
+						td 2
+						td 2.04
+					tr
+						td(rowspan=2) 2
+						td(rowspan=2) Pot(BB) 1-vs-1 BB folds preflop
+						td(rowspan=2) 3
+						td(rowspan=2) 5
+						td(rowspan=2) 9
+						td 1
+						td 0.33
+					tr
+						td 2
+						td 2.67
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;
+						td Ac 2c 7d 8s
+						td 0.306
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> &#x1F0AE; <small>*&clubs; *&clubs;</small>
+						td Ad Ks *c *c
+						td 0.694
+			p Comments: 
+			hr
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;
+						td A&clubs; 2&clubs; 7&diams; 8&spades;
+						td Ac 2c 7d 8s
+						td 0.346
+					tr
+						td 2
+						td 
+						td A&diams; K&spades; *&clubs; *
+						td Ad Ks *c *
+						td 0.654
+		hr
+		h4 Flopped nut straight against top set
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td 0.405
+					tr
+						td 2
+						td A&diams; K&spades; * *
+						td 0.595
+			table.table-test
+				thead
+					tr
+						td
+						td(colspan=3) Flop: J&clubs; Q&clubs; T&hearts;
+					tr
+						th №
+						th Рука
+						th EV
+				tbody
+					tr
+						td 1
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td 0.40
+					tr
+						td 2
+						td A&diams; K&spades; * *
+						td 0.481
+					tr
+						td 3
+						td 25%
+						td 0.119
+						
+			table.table-test
+				thead
+					tr
+						td
+						td(colspan=3) Flop: J&clubs; Q&clubs; T&hearts;
+					tr
+						th №
+						th Рука
+						th EV
+				tbody
+					tr
+						td 1
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td 0.401
+					tr
+						td 2
+						td A&diams; K&spades; * *
+						td 0.389
+					tr
+						td 3
+						td 25%
+						td 0.105
+					tr
+						td 3
+						td 25%
+						td 0.105

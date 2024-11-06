@@ -1,0 +1,176 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Limit Omaha Hi/Lo"
+	
+block content
+	h2.font-effect-shadow-multiple Limit Omaha Hi/Lo
+	article.grid-container
+		h3 Flush draw, two low cards.
+		p case 22| 1 Nut flash draw and nut low draw
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD; &#x1F0A8; &#x1F0D5;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw")  &#x1F0D1; &#x1F0D2; <span class="colorred">&#x1F0C7; &#x1F0B8; </span> 
+						td A&clubs; 2&clubs; 7&diams; 8&hearts;
+						td Ac 2c 7d 8h
+						td 0.699
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span><small>* * *</small></span> 
+						td A&diams; * * *
+						td Ad * * *
+						td 0.301
+		p Comments: This is very nice situation: Nut flash draw and middle pair with nut low draw.
+		
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD; &#x1F0A8; &#x1F0D5;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; &#x1F0B8; </span> 
+						td A&clubs; 2&clubs; 7&diams; 8&hearts;
+						td Ac 2c 7d 8h
+						td 0.49
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> <small>* * *</small></span> 
+						td A&diams; * * *
+						td Ad * * *
+						td 0.16
+					tr
+						td 3
+						td 25%
+						td 25%
+						td 25%
+						td 0.175
+					tr
+						td 4
+						td 25%
+						td 25%
+						td 25%
+						td 0.175
+		p Comments:
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD; &#x1F0A8; &#x1F0D5;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; &#x1F0B4; </span> 
+						td A&clubs; 2&clubs; 7&diams; 4&hearts;
+						td Ac 2c 7d 4h
+						td 0.617
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> <small>* * *</small></span> 
+						td A&diams; * * *
+						td Ad * * *
+						td 0.383
+		p Comments: 
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD; &#x1F0A8; &#x1F0D5;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; &#x1F0B4; </span> 
+						td A&clubs; 2&clubs; 7&diams; 4&hearts;
+						td Ac 2c 7d 4h
+						td 0.53
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> <small>* * *</small></span> 
+						td A&diams; * * *
+						td Ad * * *
+						td 0.233
+					tr
+						td 3
+						td 25%
+						td 25%
+						td 25%
+						td 0.237
+		p Comments: 
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD; &#x1F0A8; &#x1F0D5;
+		div.grid-x
+			table
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; &#x1F0B4; </span> 
+						td A&clubs; 2&clubs; 7&diams; 4&hearts;
+						td Ac 2c 7d 4h
+						td 0.478
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> <small>* * *</small></span> 
+						td A&diams; * * *
+						td Ad * * *
+						td 0.168
+					tr
+						td 3
+						td 25%
+						td 25%
+						td 25%
+						td 0.177
+					tr
+						td 4
+						td 25%
+						td 25%
+						td 25%
+						td 0.177
+		p Comments: 
+		hr

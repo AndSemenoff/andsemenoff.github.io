@@ -1,3 +1,6 @@
+- var site_title_name = "ABSOLEM.INFO";
+- var site_title = "ABSOLEM.INFO |";
+- var site_url = "http://absolem.info";
 include mixin_mli.pug
 mixin poker_head(stack, antes, position)
 	tr
@@ -44,7 +47,7 @@ html(lang="ru")
 		link( rel="shortcut icon" href="../caterpillar.png" )
 		link( rel="stylesheet" href="../css/normalize.css" media="all")
 		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all" )
-		link( rel="stylesheet" href="../css/mainstyle2024.css" type="text/css" media="all" )
+		link( rel="stylesheet" href="../css/poker.css" type="text/css" media="all" )
 		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
 		link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css")
 		script(src="../js/jquery.3.2.1.min.js")
@@ -60,10 +63,16 @@ html(lang="ru")
 			div.top-bar-left 
 				ul.menu
 					li
-						a(href="/") 
+						a(href= site_url) 
 							i.fas.fa-home
 							| &nbsp;
 							= site_title_name
+					li 
+						a(href="index.html") Main 
+					li 
+						a(href="Omaha8.html") Omaha8
+					li 
+						a(href="casinos.html") Casinos
 		block navigation
 		block content
 		footer

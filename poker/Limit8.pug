@@ -1,0 +1,250 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Limit Omaha Hi/Lo"
+	
+block content
+	h2.font-effect-shadow-multiple Limit Omaha Hi/Lo
+	article.grid-container
+		h3 Ranges
+		div.grid-x
+			table
+				thead
+					th Range
+					th Amount
+					th %
+				tbody
+					tr
+						td Всего возможных стартовых рук в Omaha8:
+						td 270725
+						td 100
+					tr
+						td A2$nt
+						td 17284
+						td 6.38
+					tr
+						td A[2,3]!8!9$nt
+						td 21352
+						td 7.88
+					tr
+						td A[2,3]$nt
+						td 31720
+						td 11.71
+					tr
+						td A[2,3]!8!9$nt, 23!8!9$nt, AA$nt, [A-T][A-T][A-T][A-T]$nt
+						td 39724
+						td 14.67
+					tr
+						td A[2,3]!8!9$nt, Ax[2,3,4]x!8!9$nt, 23!8!9$nt, [A-T][A-T][A-T][A-T]$nt, AA$nt, KK$nt
+						td 48544
+						td 17.93
+					tr
+						td A[2,3]!8!9$nt, Ax[2,3,4,5]x!8!9$nt, 23!8!9$nt, [A-9][A-9][A-9][A-9]$nt, AA$nt, KK$nt, QQ$nt, JJ$nt, TT$nt, 99$nt
+						td 77192
+						td 28.51
+					tr
+						td 
+						td 
+						td 
+		p Without regard for the cards in your own hand, there are <strong>22,100</strong> possible flops, which may be grouped into <strong>20</strong> cases as follows:
+		ul
+			li case 10, rainbow, no low cards, 240 flops, (1.09%),
+			li case P10, high pair, rainbow, no low cards, 240 flops (1.09%),
+			li case T10, high trips, no low cards, 20 flops (0.09%),
+			li case 11, rainbow, one low card, 1,920 flops (8.69%),
+			li case P11, pair, rainbow, one low rank, 960 flops (4.34%),
+			li case T11, low trips, one low rank, 32 flops (0.14%),
+			li case 12, rainbow, two low cards, 3,360 flops (15.20%), 
+			li case P12, pair, rainbow, two low ranks, 672 flops (3.04%),
+			li case 13, rainbow, three low cards, 1,344 flops (6.08%),
+			li case 20, flush draw, no low cards, 360 flops (1.63%),
+				ul
+					li case 20 | 1 - 
+						a(href="limit8_case201.html") Flopped nut straight against flash draw.
+					li case 20 | 2 - 
+						a(href="limit8_case202.html") Flopped nut straight against set.
+			li case P20, high pair, flush draw, no low cards, 240 flops (1.09%),
+			li case 21, flush draw, one low card, 2,880 flops (13.03%),
+			li case P21, pair, flush draw, one low rank, 960 flops (4.34%),
+			li case 22, flush draw, two low cards, 5,040 flops (22.81%),
+				a(href="limit8_case22.html") flush draw, two low cards.
+			li case P22, pair, flush draw, two low ranks, 672 flops (3.04%),
+			li case 23, flush draw, three low cards, 2,016 flops (9.12%),
+			li case 30, flush, no low cards, 40 flops (0.18%),
+			li case 31, flush, one low card, 320 flops (1.45%),
+			li case 32, flush, two low cards, 560 flops (2.53%),
+			li case 33, flush, three low cards, 224 flops (1.01%).
+		p The three most common cases:
+		ul
+			li case 22, flush draw, two low cards, 5,040 flops (22.81%),
+			li case 12, rainbow, two low cards, 3,360 flops (15.20%),
+			li case 21, flush draw, one low card, 2,880 flops (13.03%),
+
+				
+		h3 Разбор частых ситуаций 
+		h4 Flopped nut straight against flash draw
+		div.grid-x
+			h1(style="font-size:5vw")  <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+			table
+				thead
+					tr
+						th №
+						th Рука
+						th EV
+						th EV(BB)
+				tbody
+					tr
+						td 1
+						td 
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;
+						td 0.37
+						td 0.33
+					tr
+						td 2
+						td
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> &#x1F0AE; *&clubs; *&clubs;
+						td 0.63
+						td 2.67
+			table
+				thead
+					th №
+					th 
+					th preFlop
+					th Flop
+					th Tern
+					th Hand №
+					th Tern Result
+					th River
+					th River Result
+				tbody
+					tr
+						td(rowspan=2) 1
+						td(rowspan=2) Pot(BB) 1-vs-1
+						td(rowspan=2) 2
+						td(rowspan=2) 4
+						td(rowspan=2) 8
+						td 1
+						td -0.04
+					tr
+						td 2
+						td 2.04
+					tr
+						td(rowspan=2) 2
+						td(rowspan=2) Pot(BB) 1-vs-1 BB folds preflop
+						td(rowspan=2) 3
+						td(rowspan=2) 5
+						td(rowspan=2) 9
+						td 1
+						td 0.33
+					tr
+						td 2
+						td 2.67
+			h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;
+						td Ac 2c 7d 8s
+						td 0.306
+					tr
+						td 2
+						td 
+							span(style="font-size:5vw") <span class="colorred"> &#x1F0C1; </span> &#x1F0AE; *&clubs; *&clubs;
+						td Ad Ks * *
+						td 0.694
+			h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+			table.table-test
+				thead
+					tr
+						th №
+						th Рука
+						th EV
+				tbody
+					tr
+						td 1
+						td
+							span(style="font-size:5vw") &#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;
+						td A&clubs; 2&clubs; 7&diams; 8&spades;
+						td 0.346
+					tr
+						td 2
+						td A&diams; K&spades; *&clubs; *
+						td 0.654
+
+		h4 Flopped nut straight against top set
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						td
+						td(colspan=3) Flop: J&clubs; Q&clubs; T&hearts;
+					tr
+						th №
+						th Рука
+						th EV
+				tbody
+					tr
+						td 1
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td 0.405
+					tr
+						td 2
+						td A&diams; K&spades; * *
+						td 0.595
+			table.table-test
+				thead
+					tr
+						td
+						td(colspan=3) Flop: J&clubs; Q&clubs; T&hearts;
+					tr
+						th №
+						th Рука
+						th EV
+				tbody
+					tr
+						td 1
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td 0.40
+					tr
+						td 2
+						td A&diams; K&spades; * *
+						td 0.481
+					tr
+						td 3
+						td 25%
+						td 0.119
+						
+			table.table-test
+				thead
+					tr
+						td
+						td(colspan=3) Flop: J&clubs; Q&clubs; T&hearts;
+					tr
+						th №
+						th Рука
+						th EV
+				tbody
+					tr
+						td 1
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td 0.401
+					tr
+						td 2
+						td A&diams; K&spades; * *
+						td 0.389
+					tr
+						td 3
+						td 25%
+						td 0.105
+					tr
+						td 3
+						td 25%
+						td 0.105

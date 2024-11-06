@@ -1,0 +1,148 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Limit Omaha Hi/Lo"
+	
+block content
+	h2.font-effect-shadow-multiple Limit Omaha Hi/Lo
+	article.grid-container
+		h3 Flopped nut straight against top set
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+						td A&clubs; 2&hearts; Q&diams; Q&spades;
+						td Ac 2h Qd Qs
+						td 0.405
+					tr
+						td 2
+						td 
+						td A&diams; K&spades; * *
+						td Ad Ks * *
+						td 0.595
+		p Comments:
+		hr
+		h3 Flopped nut straight against top set and nut flash draw
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td Ac 2c Qd Qs
+						td 0.634
+					tr
+						td 2
+						td 
+						td A&diams; K&spades; * *
+						td Ad Ks * *
+						td 0.366
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB; <small>Tern:</small> <span class="colorred"> &#x1F0B2; </span>
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+						td A&clubs; 2&clubs; Q&diams; Q&spades;
+						td Ac 2c Qd Qs
+						td 0.428
+					tr
+						td 2
+						td 
+						td A&diams; K&spades; * *
+						td Ad Ks * *
+						td 0.572
+		p Comments:
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+						td A&clubs; 2&hearts; Q&diams; Q&spades;
+						td Ac 2h Qd Qs
+						td 0.40
+					tr
+						td 2
+						td 
+						td A&diams; K&spades; * *
+						td Ad Ks * *
+						td 0.481
+					tr
+						td 3
+						td 25%
+						td 25%
+						td 25%
+						td 0.119
+		hr
+		h1(style="font-size:5vw") <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;
+		div.grid-x
+			table.table-test
+				thead
+					tr
+						th №
+						th Hand(card)
+						th Hand(symbol)
+						th Hand(text)
+						th EV
+				tbody
+					tr
+						td 1
+						td 
+						td A&clubs; 2&hearts; Q&diams; Q&spades;
+						td Ac 2c Qd Qs
+						td 0.401
+					tr
+						td 2
+						td 
+						td A&diams; K&spades; * *
+						td Ad Ks * *
+						td 0.389
+					tr
+						td 3
+						td 25%
+						td 25%
+						td 25%
+						td 0.105
+					tr
+						td 3
+						td 25%
+						td 25%
+						td 25%
+						td 0.105
