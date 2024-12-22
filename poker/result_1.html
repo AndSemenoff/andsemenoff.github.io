@@ -1,0 +1,93 @@
+<span class='pptheader' style='font-size:1.2em;'><a class='pptlink' href='http://propokertools.com/odds_oracle'>ProPokerTools Odds Oracle Results (2.3 Professional)</a></span><br/>
+<div class='pptsection'>
+144549 trials (randomized)
+</div>
+<div class='pptdivider' style='width: auto; background: #676767;height: 5px; margin-bottom: 5px; margin-top: 5px;'></div>
+
+
+<div class='pptsection'>
+<span class='pptheader' style='font-size:1.2em;'>All-in Equity</span><br/>
+<img class='pptimage' src='http://chart.apis.google.com/chart?chxl=2%3A|Percent|0%3A|40%25|25%25|20%25|15%25&chxt=y%2Cx%2Cx&chxp=2%2C50&chco=00aa00&chbh=a&chm=N%2A%2A%25%2C000000%2C0%2C%2D1%2C12%2C0%2Cr&chds=0%2C28&chxr=1%2C0%2C28&chs=600x215&cht=bhs&chd=t%3A27%2E6254%2C25%2E9409%2C24%2E6904%2C21%2E7432&chma=|10' alt='chart' />
+<br/>
+<table class='ppttable'>
+<tr><th></th><th>Equity %</th><th>Wins Hi %</th><th>Ties Hi %</th><th>Wins Lo %</th><th>Ties Lo %</th><th>Scoops %</th><th>Wins Hi Count</th><th>Ties Hi Count</th><th>Wins Lo Count</th><th>Ties Lo Count</th><th>Scoops Count</th></tr>
+<tr><td>15%</td><td>27.6254%</td><td>25.9912%</td><td>1.3214%</td><td>4.3266%</td><td>10.0997%</td><td>20.3391%</td><td>37570</td><td>1910</td><td>6254</td><td>14599</td><td>29400</td></tr>
+<tr><td>20%</td><td>25.9409%</td><td>24.9389%</td><td>1.2854%</td><td>3.2335%</td><td>8.8800%</td><td>19.4218%</td><td>36049</td><td>1858</td><td>4674</td><td>12836</td><td>28074</td></tr>
+<tr><td>25%</td><td>24.6904%</td><td>24.3205%</td><td>1.2688%</td><td>2.3860%</td><td>7.4390%</td><td>18.8573%</td><td>35155</td><td>1834</td><td>3449</td><td>10753</td><td>27258</td></tr>
+<tr><td>40%</td><td>21.7432%</td><td>22.4837%</td><td>0.9623%</td><td>1.2044%</td><td>3.5386%</td><td>17.6895%</td><td>32500</td><td>1391</td><td>1741</td><td>5115</td><td>25570</td></tr>
+</table>
+
+</div>
+<div class='pptdivider' style='width: auto; background: #676767;height: 5px; margin-bottom: 5px; margin-top: 5px;'></div>
+
+
+<div class='pptsection'>
+<span class='pptheader' style='font-size:1.2em;'>How many players flop hand category is flush</span><br/>
+<img class='pptimage' src='http://chart.apis.google.com/chart?chxl=2%3A|Percent|0%3A|4%20PLAYER%28S%29|3%20PLAYER%28S%29|2%20PLAYER%28S%29|1%20PLAYER%28S%29|0%20PLAYER%28S%29&chxt=y%2Cx%2Cx&chxp=2%2C50&chco=00aa00&chbh=a&chm=N%2A%2A%25%2C000000%2C0%2C%2D1%2C12%2C0%2Cr&chds=0%2C50&chxr=1%2C0%2C50&chs=600x260&cht=bhs&chd=t%3A14%2E0561%2C49%2E9450%2C31%2E5976%2C4%2E3134%2C0%2E0879&chma=|10' alt='chart' />
+<br/>
+<table class='ppttable'>
+<tr><th></th><th>Percent</th><th>Count</th></tr>
+<tr><td>0 PLAYER(S)</td><td>14.0561%</td><td>20318</td></tr>
+<tr><td>1 PLAYER(S)</td><td>49.9450%</td><td>72195</td></tr>
+<tr><td>2 PLAYER(S)</td><td>31.5976%</td><td>45674</td></tr>
+<tr><td>3 PLAYER(S)</td><td>4.3134%</td><td>6235</td></tr>
+<tr><td>4 PLAYER(S)</td><td>0.0879%</td><td>127</td></tr>
+</table>
+
+</div>
+<div class='pptdivider' style='width: auto; background: #676767;height: 5px; margin-bottom: 5px; margin-top: 5px;'></div>
+
+
+<span class='pptheader' style='font-size:1.2em;'>PQL</span><br/>
+<pre>
+select count(true) as trials,
+/* Start equity stats */
+avg(riverEquity(PLAYER_1)) as PLAYER_1_equity1,
+       count(winsHi(PLAYER_1)) as PLAYER_1_winsHi1,
+       count(tiesHi(PLAYER_1)) as PLAYER_1_tiesHi1,
+       count(scoops(PLAYER_1)) as PLAYER_1_scoops1,
+       count(winsLo(PLAYER_1)) as PLAYER_1_winsLo1,
+       count(tiesLo(PLAYER_1)) as PLAYER_1_tiesLo1,
+       avg(riverEquity(PLAYER_2)) as PLAYER_2_equity1,
+       count(winsHi(PLAYER_2)) as PLAYER_2_winsHi1,
+       count(tiesHi(PLAYER_2)) as PLAYER_2_tiesHi1,
+       count(scoops(PLAYER_2)) as PLAYER_2_scoops1,
+       count(winsLo(PLAYER_2)) as PLAYER_2_winsLo1,
+       count(tiesLo(PLAYER_2)) as PLAYER_2_tiesLo1,
+       avg(riverEquity(PLAYER_3)) as PLAYER_3_equity1,
+       count(winsHi(PLAYER_3)) as PLAYER_3_winsHi1,
+       count(tiesHi(PLAYER_3)) as PLAYER_3_tiesHi1,
+       count(scoops(PLAYER_3)) as PLAYER_3_scoops1,
+       count(winsLo(PLAYER_3)) as PLAYER_3_winsLo1,
+       count(tiesLo(PLAYER_3)) as PLAYER_3_tiesLo1,
+       avg(riverEquity(PLAYER_4)) as PLAYER_4_equity1,
+       count(winsHi(PLAYER_4)) as PLAYER_4_winsHi1,
+       count(tiesHi(PLAYER_4)) as PLAYER_4_tiesHi1,
+       count(scoops(PLAYER_4)) as PLAYER_4_scoops1,
+       count(winsLo(PLAYER_4)) as PLAYER_4_winsLo1,
+       count(tiesLo(PLAYER_4)) as PLAYER_4_tiesLo1
+/* End equity stats */,
+histogram(toString(
+  (case when
+  exactFlopHandCategory(PLAYER_1,FLOPFLUSH)
+  then 1 else 0 end)
+  +
+  (case when
+  exactFlopHandCategory(PLAYER_2,FLOPFLUSH)
+  then 1 else 0 end)
+  +
+  (case when
+  exactFlopHandCategory(PLAYER_3,FLOPFLUSH)
+  then 1 else 0 end)
+  +
+  (case when
+  exactFlopHandCategory(PLAYER_4,FLOPFLUSH)
+  then 1 else 0 end)
+) || ' player(s)') /* How many flop hand category is flush */ as HMP3 
+from game='omaha85', syntax='Generic',
+     board='Ts Ks 5s',
+     PLAYER_1='15%',
+     PLAYER_2='20%',
+     PLAYER_3='25%',
+     PLAYER_4='40%'
+</pql>

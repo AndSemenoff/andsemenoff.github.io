@@ -1,0 +1,32 @@
+extends ../layouts/poker_layout.pug
+	
+block title
+	title= site_title + " Limit Stud Hi/Lo"
+	
+block content
+	h2.font-effect-shadow-multiple Limit Stud Hi/Lo
+	article.grid-container
+		div.grid-x
+			div(class="cell small-6")
+				ol
+					+mli("en", "out", "https://forumserver.twoplustwo.com/20/stud/", "twoplustwo.com", "Forum", "icon")
+					+mli("en", "out", "https://www.pokerstrategy.com/forum/board.php?boardid=1498", "pokerstrategy.com", "Forum", "icon")
+					
+					li My Teory
+						ol
+							+mli("en", "my", "LimitStud8Teory.html", "", "Limit Stud Hi/Lo. Cash and tournament.", "site")
+					li Статьи
+						ol
+							li Brian Alspach
+								ol
+									+mli("en", "out", "http://people.math.sfu.ca/~alspach/pokerdigest.html", "Pokerdigest", "articles", "icon")
+							li PokerStrategy
+								ol
+									+mli("en", "out", "https://www.pokerstrategy.com/strategy/7-card-stud/seven-card-stud-hi-lo-rules/", "The rules of Seven Card Stud Hi/Lo", "", "")
+									+mli("en", "out", "https://www.pokerstrategy.com/strategy/7-card-stud/seven-card-stud-hi-lo-introduction/", "Introduction to Seven Card Stud Hi/Lo", "", "")
+
+			div(class="cell small-6")
+				img(src="omaha_hi_lo.jpeg" width=400)
+			li Реплеи
+				ol
+					+mli("en", "out", "https://www.youtube.com/watch?v=gyi1Vkjiz_Q", "SCOOP 2019 | $2,100 NLO8 Event 16-H with shaundeeb/Old Time Gin/jutrack", "", "youtube")

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Limit Omaha Hi/Lo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Poker. Tournament Poker, MTT">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/poker.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <script src="../js/jquery.3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><a href="http://absolem.info"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
+          <li> <a href="index.html">Main </a></li>
+          <li> <a href="Omaha8.html">Omaha8</a></li>
+          <li> <a href="casinos.html">Casinos</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="font-effect-shadow-multiple">4-Card Limit Omaha Hi/Lo</h2>
+    <article class="grid-container">
+      <h3>Ranges</h3>
+      <div class="grid-x">
+        <table>
+          <thead>
+            <th>Range</th>
+            <th>Amount</th>
+            <th>%</th>
+            <th>Amount</th>
+            <th>%</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Всего возможных стартовых рук в Omaha8:</td>
+              <td>270725</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>A2$nt</td>
+              <td>17284</td>
+              <td>6.38</td>
+            </tr>
+            <tr>
+              <td>A[2,3]!8!9$nt</td>
+              <td>21352</td>
+              <td>7.88</td>
+            </tr>
+            <tr>
+              <td>A[2,3]$nt</td>
+              <td>31720</td>
+              <td>11.71</td>
+            </tr>
+            <tr>
+              <td>A[2,3]!8!9$nt, 23!8!9$nt, AA$nt, [A-T][A-T][A-T][A-T]$nt</td>
+              <td>39724</td>
+              <td>14.67</td>
+            </tr>
+            <tr>
+              <td>A[2,3]!8!9$nt, Ax[2,3,4]x!8!9$nt, 23!8!9$nt, [A-T][A-T][A-T][A-T]$nt, AA$nt, KK$nt</td>
+              <td>48544</td>
+              <td>17.93</td>
+            </tr>
+            <tr>
+              <td>A[2,3]!8!9$nt, Ax[2,3,4,5]x!8!9$nt, 23!8!9$nt, [A-9][A-9][A-9][A-9]$nt, AA$nt, KK$nt, QQ$nt, JJ$nt, TT$nt, 99$nt</td>
+              <td>77192</td>
+              <td>28.51</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Without regard for the cards in your own hand, there are <strong>22,100</strong> possible flops, which may be grouped into <strong>20</strong> cases as follows:</p>
+      <ul>
+        <li>case 10, rainbow, no low cards, 240 flops, (1.09%),</li>
+        <li>case P10, high pair, rainbow, no low cards, 240 flops (1.09%),</li>
+        <li>case T10, high trips, no low cards, 20 flops (0.09%),</li>
+        <li>case 11, rainbow, one low card, 1,920 flops (8.69%),</li>
+        <li>case P11, pair, rainbow, one low rank, 960 flops (4.34%),</li>
+        <li>case T11, low trips, one low rank, 32 flops (0.14%),</li>
+        <li>case 12, rainbow, two low cards, 3,360 flops (15.20%), </li>
+        <li>case P12, pair, rainbow, two low ranks, 672 flops (3.04%),</li>
+        <li>case 13, rainbow, three low cards, 1,344 flops (6.08%),</li>
+        <li>case 20, flush draw, no low cards, 360 flops (1.63%),
+          <ul>
+            <li>case 20 | 1 - <a href="limit8_case201.html">Flopped nut straight against flash draw.</a></li>
+            <li>case 20 | 2 - <a href="limit8_case202.html">Flopped nut straight against set.</a></li>
+          </ul>
+        </li>
+        <li>case P20, high pair, flush draw, no low cards, 240 flops (1.09%),</li>
+        <li>case 21, flush draw, one low card, 2,880 flops (13.03%),</li>
+        <li>case P21, pair, flush draw, one low rank, 960 flops (4.34%),</li>
+        <li>case 22, flush draw, two low cards, 5,040 flops (22.81%),<a href="limit8_case22.html">flush draw, two low cards.</a></li>
+        <li>case P22, pair, flush draw, two low ranks, 672 flops (3.04%),</li>
+        <li>case 23, flush draw, three low cards, 2,016 flops (9.12%),</li>
+        <li>case 30, flush, no low cards, 40 flops (0.18%),</li>
+        <li>case 31, flush, one low card, 320 flops (1.45%),</li>
+        <li>case 32, flush, two low cards, 560 flops (2.53%),</li>
+        <li>case 33, flush, three low cards, 224 flops (1.01%).</li>
+      </ul>
+      <p>The three most common cases:</p>
+      <ul>
+        <li>case 22, flush draw, two low cards, 5,040 flops (22.81%),</li>
+        <li>case 12, rainbow, two low cards, 3,360 flops (15.20%),</li>
+        <li>case 21, flush draw, one low card, 2,880 flops (13.03%),</li>
+      </ul>
+      <h3>Разбор частых ситуаций </h3>
+      <h4>Flopped nut straight against flash draw</h4>
+      <div class="grid-x">
+        <h1 style="font-size:5vw"> <small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Рука</th>
+              <th>EV</th>
+              <th>EV(BB)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td> <span style="font-size:5vw">&#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;</span></td>
+              <td>0.37</td>
+              <td>0.33</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><span style="font-size:5vw"><span class="colorred"> &#x1F0C1; </span> &#x1F0AE; *&clubs; *&clubs;</span></td>
+              <td>0.63</td>
+              <td>2.67</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <th>№</th>
+            <th> </th>
+            <th>preFlop</th>
+            <th>Flop</th>
+            <th>Tern</th>
+            <th>Hand №</th>
+            <th>Tern Result</th>
+            <th>River</th>
+            <th>River Result</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">1</td>
+              <td rowspan="2">Pot(BB) 1-vs-1</td>
+              <td rowspan="2">2</td>
+              <td rowspan="2">4</td>
+              <td rowspan="2">8</td>
+              <td>1</td>
+              <td>-0.04</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2.04</td>
+            </tr>
+            <tr>
+              <td rowspan="2">2</td>
+              <td rowspan="2">Pot(BB) 1-vs-1 BB folds preflop</td>
+              <td rowspan="2">3</td>
+              <td rowspan="2">5</td>
+              <td rowspan="2">9</td>
+              <td>1</td>
+              <td>0.33</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2.67</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1 style="font-size:5vw"><small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;</h1>
+        <table class="table-test">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Hand</th>
+              <th>Hand(text)</th>
+              <th>EV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td> <span style="font-size:5vw">&#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;</span></td>
+              <td>Ac 2c 7d 8s</td>
+              <td>0.306</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td> <span style="font-size:5vw"><span class="colorred"> &#x1F0C1; </span> &#x1F0AE; *&clubs; *&clubs;</span></td>
+              <td>Ad Ks * *</td>
+              <td>0.694</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1 style="font-size:5vw"><small>Flop:</small> &#x1F0DD;  &#x1F0AA; &#x1F0DB;</h1>
+        <table class="table-test">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Рука</th>
+              <th>EV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><span style="font-size:5vw">&#x1F0D1; &#x1F0D2; <span class="colorred"> &#x1F0C7; </span> &#x1F0A8;</span></td>
+              <td>A&clubs; 2&clubs; 7&diams; 8&spades;</td>
+              <td>0.346</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>A&diams; K&spades; *&clubs; *</td>
+              <td>0.654</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Flopped nut straight against top set</h4>
+      <div class="grid-x">
+        <table class="table-test">
+          <thead>
+            <tr>
+              <td></td>
+              <td colspan="3">Flop: J&clubs; Q&clubs; T&hearts;</td>
+            </tr>
+            <tr>
+              <th>№</th>
+              <th>Рука</th>
+              <th>EV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>A&clubs; 2&clubs; Q&diams; Q&spades;</td>
+              <td>0.405</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>A&diams; K&spades; * *</td>
+              <td>0.595</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table-test">
+          <thead>
+            <tr>
+              <td></td>
+              <td colspan="3">Flop: J&clubs; Q&clubs; T&hearts;</td>
+            </tr>
+            <tr>
+              <th>№</th>
+              <th>Рука</th>
+              <th>EV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>A&clubs; 2&clubs; Q&diams; Q&spades;</td>
+              <td>0.40</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>A&diams; K&spades; * *</td>
+              <td>0.481</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>25%</td>
+              <td>0.119</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table-test">
+          <thead>
+            <tr>
+              <td></td>
+              <td colspan="3">Flop: J&clubs; Q&clubs; T&hearts;</td>
+            </tr>
+            <tr>
+              <th>№</th>
+              <th>Рука</th>
+              <th>EV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>A&clubs; 2&clubs; Q&diams; Q&spades;</td>
+              <td>0.401</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>A&diams; K&spades; * *</td>
+              <td>0.389</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>25%</td>
+              <td>0.105</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>25%</td>
+              <td>0.105</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2024</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <!--div.row
+      div.large-12.columns
+      	block footer_scripts
+      	div#logo5HTML
+      		a(href="https://validator.w3.org/check?uri=referer")
+      			img(src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics")
+      -->
+      <script>$(document).foundation();</script>
+    </footer>
+  </body>
+</html>
