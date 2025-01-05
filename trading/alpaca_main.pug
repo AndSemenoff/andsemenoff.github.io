@@ -1,0 +1,38 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Python backtasting.py"
+
+block content
+	h2.font-effect-shadow-multiple Работа с сайтом Alpaca.markets.
+	article.grid-container
+		h3 Объектная модель
+		div 
+			ul
+				li Broker API: 
+					ol
+						li BrokerClient
+				li Trading API:
+					ol
+						li TradingClient
+				li Market Data API: 
+					ol
+						li StockHistoricalDataClient, 
+						li CryptoHistoricalDataClient, 
+						li NewsClient, 
+						li OptionHistoricalDataClient, 
+						li CryptoDataStream, 
+						li StockDataStream, 
+						li NewsDataStream, 
+						li OptionDataStream
+		div.grid-x
+			ol
+				+mli("en", "out", "https://github.com/alpacahq/alpaca-py", "alpaca-py", "Официальный репозиторий.", "github")
+				+mli("en", "out", "https://github.com/alpacahq/alpaca-py/blob/master/examples/options-trading-basic.ipynb", "alpaca-py", "Официальный пример. Работа с опционами.", "github")
+				+mli("en", "out", "https://github.com/alpacahq/alpaca-py/blob/master/examples/stocks-trading-basic.ipynb", "alpaca-py", "Официальный пример. Работа с акциями.", "github")
+				+mli("en", "out", "https://alpaca.markets/sdks/python/index.html", "alpaca-py", "Официальная документация", "github")
+				+mli("en", "out", "https://www.optionseducation.org/referencelibrary/expiration-calendar", "Expiration calendar", "Официальная документация", "icon")
+				
+
+				
+				
