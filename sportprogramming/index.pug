@@ -1,8 +1,8 @@
 extends ../layouts/html_layout.jade
 
 block content
-	div.row: div.large-12.columns: h1: strong Тренировки и обучение
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Тренировки и обучение
+	article.grid-container
 		ol
 			li
 				| Алгоритмы и структуры данных
@@ -11,7 +11,7 @@ block content
 					li: a(href='math_theory.html') Теория: стек, очередь, куча.
 					li: a(href='prime_number.html') Простые числа
 					li: a(href='p1_sort.html') Алгоритмы сортировки
-					li: a(href='p2_sort.html') Стандартые функции сортировки в питоне
+					li: a(href='p2_sort.html') Стандартные функции сортировки в питоне
 					li: a(href='binarysearch.html') Бинарный поиск
 					li: a(href='Segment_tree.html') Дерево отрезков
 					li: a(href='bruteforce.html') Перебор
@@ -29,10 +29,9 @@ block content
 						| Стек
 					li
 						strong: a(href='binary_heap.html') Двоичная куча (binary heap)
-			li
-				strong: a(href='links.html') Ссылки
-			li
-				strong: a(href='faq.html') FAQ
+			+mli("ru", "my", "links.html", "Ссылки", "", "icon")
+
+			+mli("ru", "my", "faq.html", "FAQ", "устарело", "icon")
 			li
 				| Разбор задач
 				ol
@@ -47,5 +46,3 @@ block content
 				a(href='https://github.com/sagemathinc/smc/wiki/Teaching') Ссылки на обучающие курсы, которые используют сервис sagemath.com
 			li
 				a(href='https://iqbotan.blogspot.com') Сокращение кода на Python и С++ для acmp.ru
-			
-					

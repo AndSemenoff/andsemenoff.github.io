@@ -1,116 +1,55 @@
 extends ../layouts/html_layout.jade
 
-block footer
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js")
-	script.
-		$(document).foundation();
-
 block content
 	h2.font-effect-shadow-multiple Ссылки
 	article.grid-container
 
-		ul.tabs.vertical(data-tab)
-			li.tab-title.active: a(href="#panel11") Новости
-			li.tab-title: a(href="#panel21") Соревнования
-			li.tab-title: a(href="#panel31") Обучение
-			li.tab-title: a(href="#panel41") Хостинг
-			li.tab-title: a(href="#panel51") IDE
-			li.tab-title: a(href="#panel61") LaTex
+		ul
+			li: a(href="#panel11") Новости
+			li: a(href="#panel21") Соревнования
+			li: a(href="#panel31") Обучение
+			li: a(href="#panel41") Хостинг
+			li: a(href="#panel51") IDE
+			li: a(href="#panel61") LaTex
 		
-		div.tabs-content
-			div#panel11.content.active
-				| <strong>Новости</strong>
-				ul
-					li: a(href="http://www.clist.by/") Общий календарь всех контестов с разных площадок.
-					li
-						a(href='http://snarknews.info/index.cgi?data=newstape&announce=a') Новости, анонсы соревнований
-					li
-						a(href='http://pythondigest.ru/feed/') Дайджест 
-						| новостей из мира Python на русском.
-					li
-						a(href='http://www.reddit.com/r/Python/top/') Дайджест 
-						| популярных новостей с ключевым словом Python на reddit.com.
-					li
-						a(href='http://pyvideo.org') pyvideo.org 
-						| видио с различных конференций по питону.
-			div#panel21.content
-				| Сайты на которых можно соревноваться
-				ul
-					li
-						a(href='http://codeforces.ru') Codeforces.ru 
-						| | 
-						a(href='http://codeforces.com') Codeforces.com
-					li 
-						a(href="http://ww2.codechef.com") CodeChef.com
-					li 
-						a(href="http://acm.timus.ru") ACM.timus.ru    
-					li
-						a(href="http://code.google.com/codejam") Google Code Jam  
-					li
-						a(href="http://uva.onlinejudge.org") uva.onlinejudge.org 
-					li
-						a(href="http://www.e-olimp.com") e-olimp.com
-					li
-						a(href="http://www.spoj.com/") spoj.com 
-					li
-						a(href="http://topcoder.com") topcoder.com
-					li
-						a(href="https://www.codeeval.com") CodeEval.com
-					li
-						a(href="https://codefights.com") CodeFights 
-						| Соревнование один на один по нахождению ошибок в коде.
-					li
-						a(href="https://www.hackerrank.com/") HackerRank.com
-					li
-						a(href="http://www.checkio.org/") checkio.org
-					li
-						a(href="http://www.codewars.com/") codewars.com
-					li
-						a(href="https://leetcode.com") LeetCode.com 
-						| Соревнования. Задачи. Примеры собеседований. Много платного контента.
-					li 
-						a(href="https://www.codingame.com/") codingame.com 
-						| Соревнование по ИИ. Оптимизация. Короткий код. Задачи. Рейтинг. Работа.
-						ul
-							li: a(href="codingame.html") <strong>мои решения</strong> 
-							li: a(href="https://github.com/vadim-job-hg/Codingame") vadim 
-								a(href="https://github.com/kadary/codingame") kadary 
-								a(href="https://github.com/pathosDev/CodinGame-Solutions") pathosDev 
-								a(href="https://github.com/denvash/codingame-puzzles-solutions") denvash 
-								a(href="https://github.com/e1r0nd/codingame") (e1r0nd js + video) 
-								a(href="https://github.com/joand/codingame") (joand java) 
-								a(href="https://ethiery.github.io/codingame/index.html") (ethiery py3) 
-								a(href="https://www.xarg.org/puzzles/") (xarg C++ js)
-								a(href="https://github.com/charlesfranciscodev/codingame") (charlesfranciscodev py3 js c++ ...)
-								a(href="https://github.com/adrian-nesonson/Codingame") (adrian-nesonson java)
-								a(href="https://github.com/CodingameAlgeriaChallenge/codin-game") CodingameAlgeriaChallenge 
-								a(href="https://github.com/aethersg/codingame-puzzle") (aethersg py3) 
-								a(href="https://github.com/javadev/codingame-traning") (javadev dart js ...)
-								a(href="https://github.com/inoryy/csb-ai-starter") (Code strike back c++)
-								
-							li: a(href="https://github.com/texus/codingame") разбор от texus 
-							
-					li
-						a(href="https://pyweek.org") PyWeek 
-						| не частые соревнования по написанию игр
-					li: a(href="http://www.mysterytwisterc3.org/en/") Соревнования по криптографии
-					li 
-						a(href="http://theaigames.com") theAIGames 
-						| Написание ботов для игры в покер и тетрис 
-					li 
-						a(href="http://haskell98.blogspot.ru") Фонд Поддержки Функционального Программирования. 
-						| Соревнования проходят раз в два месяца по функциональному программированию.
-				| Ежегодные соревнования
-				ul
-					li 
-						a(href="http://algorithm.contest.yandex.ru/") Яндекс.Алгоритм
-					li 
-						a(href="https://code.google.com/codejam") Google Code Jam 
-					li 
-						a(href="https://www.facebook.com/hackercup") Facebook Hacker Cup 
-					li 
-						a(href="http://russiancodecup.ru/") Russian Code Cup 																		
+		h3#panel11 Новости
+		ul
+			+mli("en", "out", "https://clist.by/", "clist", " Общий календарь всех контестов с разных площадок", "icon")
+			+mli("ru", "out", "https://pythondigest.ru/", "Дайджест", " новостей из мира Python", "icon")
+			+mli("en", "out", "https://pyvideo.org", "pyvideo.org", " видио с различных конференций по питону.", "icon")
+			+mli("en", "out", "https://www.reddit.com/r/Python/top/", "Дайджест", " популярных новостей с ключевым словом Python на reddit.com.", "icon")
+
+		h3#panel21 Сайты на которых можно соревноваться
+		ul
+			li
+				a(href='http://codeforces.ru') Codeforces.ru 
+				| | 
+				a(href='http://codeforces.com') Codeforces.com
+			+mli("en", "out", "https://codechef.com", "CodeChef.com", " Соревнования еженедельно", "icon")
+			+mli("ru", "out", "https://acm.timus.ru", "acm.timus.ru", " Работает, компиляторы обновляются", "icon")
+    
+			li
+				a(href="https://www.e-olimp.com") e-olimp.com
+			+mli("en", "out", "https://onlinejudge.org", "onlinejudge.org", " что-то работает ...", "icon")
+			+mli("en", "out", "https://www.spoj.com/", "www.spoj.com", " пока работает ...", "icon")
+			+mli("en", "out", "https://topcoder.com", "topcoder.com", " превратился в огромный портал...", "icon")
+			li
+				a(href="https://codefights.com") CodeFights 
+				| Соревнование один на один по нахождению ошибок в коде.
+			+mli("en", "out", "https://www.hackerrank.com/", "HackerRank.com", "не понятно", "icon")
+			+mli("en", "out", "http://www.checkio.org/", "checkio.org", "Сайт с заданиями и решениями", "icon")
+			+mli("en", "out", "https://www.codewars.com/", "codewars.com", "", "icon")
+			+mli("en", "out", "https://leetcode.com", "LeetCode.com", "Соревнования. Задачи. Примеры собеседований. Много платного контента.", "icon")
+			+mli("en", "out", "https://www.codingame.com/", "codingame.com", "Соревнование по ИИ. Оптимизация. Короткий код. Задачи. Рейтинг. Работа.", "icon")
+			+mli("ru", "my", "codingame.html", "codingame", "Решения, шаблоны, описания", "icon")
+			+mli("en", "out", "https://pyweek.org", "PyWeek", "не частые соревнования по написанию игр", "icon")
+			+mli("en", "out", "https://mysterytwister.org/", "mysterytwister.org", "Соревнования по криптографии", "icon")
+			+mli("ru", "out", "http://haskell98.blogspot.ru", "haskell98.blogspot.ru", "Фонд Поддержки Функционального Программирования. Соревнования НЕ проходят.", "icon")
+
+		| Ежегодные соревнования
+		ul
+			+mli("ru", "out", "https://contest.yandex.ru/", "contest.yandex.ru", "Яндекс.Кон­тест", "icon") 
+			+mli("en", "out", "https://www.facebook.com/hackercup", "Facebook", "Facebook Hacker Cup", "icon") 
 
 			div#panel31.content
 				| Курсы и обучающие сайты
@@ -324,7 +263,7 @@ block content
 					li
 						a(href="http://www.drdobbs.com/testing/unit-testing-with-python/240165163") Основы unit тестирования.
 					li
-						a(href="homework.html") тесты					
+						a(href="homework.html") тесты
 			
 			li
 				| Разбор задач
@@ -338,15 +277,17 @@ block content
 						a(href="http://habrahabr.ru/company/mailru/blog/179807/") 2-го | 
 						a(href="http://habrahabr.ru/company/mailru/blog/177171/") 1-го | 
 						| квалификационного раунда
+					+mli("ru", "out", "https://github.com/hhru/school-tasks-tester", "hhru", "Задачи с решениями в школу HH", "github")
 					li 
 						a(href="http://habrahabr.ru/company/abbyy/blog/155831/") Разбор задачи с IOI2012
 					li
 						a(href="http://habrahabr.ru/post/155015/") Разбор задач 1 тура школы программистов HeadHunter
 					li
-						a(href="http://chasolimp.de/practic_oder_unterricht.htm") Разборы олимпиадных задач от А.Чигиринского</li>
+						a(href="https://chasolimp.de/practic_oder_unterricht.htm") Разборы олимпиадных задач от А.Чигиринского</li>
 					li
 						a(href="http://rutracker.org/forum/viewtopic.php?t=1456250") Книга Гуровица В.М. с решениями
-					
+					+mli("en", "out", "https://github.com/keon/algorithms", "keon", "algorithms на python", "github")
+					+mli("en", "out", "https://github.com/TheAlgorithms/Python", "TheAlgorithms", "algorithms на python", "github")
 			li
 				| Блоги на русском
 				ol
@@ -417,4 +358,9 @@ block content
 						| мытищинской школы программистов.
 					li
 						a(href="http://мшп.рф/") МШП 
-						| - московская школа программистов.													
+						| - московская школа программистов.
+	block footer
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js")
+		script.
+			$(document).foundation();

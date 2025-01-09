@@ -1,8 +1,8 @@
 extends ../layouts/code_layout.jade
 
 block content
-	div.row: div.large-12.columns: h3 Динамическое программирование
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Динамическое программирование
+	article.grid-container
 		h3 Задача о рюкзаке
 		p.text-justify 
 			| Дано N предметов массой m<sub>1</sub>, …, m<sub>N</sub> и стоимостью c<sub>1</sub>, …, c<sub>N</sub> соответственно.
@@ -192,35 +192,33 @@ block content
 			</pre>
 			<p class="text-justify">Если нам нужно вывести еще и сами номиналы банкнот, как это можно сделать? Рассмотрим все номиналы банкнот и значения n - a<sub>1</sub>, n - a<sub>2</sub>, ..., n - a<sub>k</sub>. Если для какого-то i окажется, что F(n - a<sub>i</sub>) = F(n) - 1, значит, мы можем выдать банкноту в a<sub>i</sub> рублей и после этого свести задачу к выдаче суммы n - a<sub>i</sub>, и так будем продолжать этот процесс, пока величина выдаваемой суммы не станет равна 0.</p>
 		h3 Ссылки на материалы по теме
-			ul
-				li: a(href="http://comp-science.narod.ru/WebPage/lesson2.htm") Динамическое программирование
-				li Codeforces тег dp. 
-					a(href="http://codeforces.ru/problemset/tags/dp") дп
-				li: a(href="http://habrahabr.ru/post/191498/") Статья на Хабре
-				li informatics.mccme.ru Тема: 
-					a(href="http://informatics.mccme.ru/course/view.php?id=9") динамическое программирование
-
-			</ul>   
+		ul
+			li: a(href="https://comp-science.narod.ru/WebPage/lesson2.htm") Динамическое программирование
+			li Codeforces тег dp. 
+				a(href="https://codeforces.ru/problemset/tags/dp") дп
+			li: a(href="https://habrahabr.ru/post/191498/") Статья на Хабре
+			li informatics.mccme.ru Тема: 
+				a(href="https://informatics.msk.ru/course/view.php?id=9") динамическое программирование
+  
 		h3 Задачи
-			ul
-				li 
-					small informatics.mccme.ru Задача №3086. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3086#") Разложение в сумму кубов
-				li
-					small informatics.mccme.ru Задача №3087. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3087#1") Банкомат
-				li  
-					small informatics.mccme.ru Задача №1120. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=1120#1") Рюкзак. Точный вес
-				li
-					small informatics.mccme.ru Задача №1119. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=1119#1") Рюкзак. Наибольший вес
-				li
-					small informatics.mccme.ru Задача №3089. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3089#1") Рюкзак
-				li
-					small informatics.mccme.ru Задача №3090. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3090#1") Рюкзак с восстановлением ответа
-				li
-					small informatics.mccme.ru Задача №3091. 
-					a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3091#1") Рюкзак. Минимум предметов
+		ul
+			+mli("ru", "out", "http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3086#", "small informatics.mccme.ru", "Задача №3086. Разложение в сумму кубов", "icon")
+
+			li
+				small informatics.msk.ru Задача №3087. 
+				a(href="https://informatics.msk.ru/mod/statements/view3.php?id=813&chapterid=3087#1") Банкомат
+			li  
+				small informatics.mccme.ru Задача №1120. 
+				a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=1120#1") Рюкзак. Точный вес
+			li
+				small informatics.mccme.ru Задача №1119. 
+				a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=1119#1") Рюкзак. Наибольший вес
+			li
+				small informatics.mccme.ru Задача №3089. 
+				a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3089#1") Рюкзак
+			li
+				small informatics.mccme.ru Задача №3090. 
+				a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3090#1") Рюкзак с восстановлением ответа
+			li
+				small informatics.mccme.ru Задача №3091. 
+				a(href="http://informatics.mccme.ru/mod/statements/view3.php?id=813&chapterid=3091#1") Рюкзак. Минимум предметов
