@@ -3,16 +3,24 @@ extends ../layouts/code_layout.jade
 block content
 	h2.font-effect-shadow-multiple Codingame
 	article.grid-container
+		h4 Мои разборы и решения
 		ul
-			+mli("en", "out", "aethersg.html", "codingame", "Решения от aethersg", "icon")
+			li <u>Connect4</u>
+				ul
+					+mli("ru", "my", "connect4_page1.html", "connect4", "Описание игры.", "icon")
+		ul
+			+mli("en", "my", "aethersg.html", "codingame", "Решения от aethersg", "icon")
 
+		h4 Разное
+		ul
+			+mli("en", "out", "https://github.com/Agade09", "Agade09", "Участвовал во многих соревнованиях. Есть много Referee на С++", "github")
 			li: a(href="https://github.com/vadim-job-hg/Codingame") vadim 
 			li: a(href="https://github.com/kadary/codingame") kadary 
 			li: a(href="https://github.com/pathosDev/CodinGame-Solutions") pathosDev 
 			li: a(href="https://github.com/denvash/codingame-puzzles-solutions") denvash 
 			li: a(href="https://github.com/e1r0nd/codingame") (e1r0nd js + video) 
 			li: a(href="https://github.com/joand/codingame") (joand java) 
-			li: a(href="https://ethiery.github.io/codingame/index.html") (ethiery py3) 
+			+mli("en", "out", "https://ethiery.github.io/codingame/index.html", "ethiery", "Решения. Минимальные объяснения. Питона мало", "icon")
 			li: a(href="https://www.xarg.org/puzzles/") (xarg C++ js)
 			li: a(href="https://github.com/charlesfranciscodev/codingame") (charlesfranciscodev py3 js c++ ...)
 			li: a(href="https://github.com/adrian-nesonson/Codingame") (adrian-nesonson java)
@@ -24,10 +32,12 @@ block content
 			li: a(href="https://github.com/hardcoded/CodinGame") разбор от hardcoded
 			li: a(href="https://github.com/SpiritusSancti5/codinGame") разбор от SpiritusSancti5
 			li: a(href="https://github.com/xavierfeltin/codinggame") разбор от xavierfeltin <strong>legend version</strong>
+			+mli("en", "out", "https://github.com/Doelia/codingame-fall-challenge-2023", "Doelia", "Fall challenge 2023. Type Scrypt", "github")
 			
 			li: a(href="https://github.com/JakubDotPy/codingame_bot_programming") разбор от JakubDotPy bot_programming python
-			li: a(href="https://github.com/MatePocs/codingame") разбор от JakubDotPy bot_programming python
+			li: a(href="https://github.com/MatePocs/codingame") разбор от MatePocs bot, puzzle python
 			li: a(href="https://github.com/koduma/CodinGame") разбор от koduma bot_programming C++ <strong>all legend version</strong>
+			li: a(href="https://github.com/tanvir362/codingame") разбор от tanvir362, bot, puzzle python
 			
 		h4 Code vs Zombies
 		ul
@@ -38,3 +48,30 @@ block content
 			+mli("en", "out", "https://github.com/AlexKesselProNI/code_vs_zombies", "AlexKesselProNI", "Python. Использует DBSCAN из scikit", "github")
 			+mli("en", "out", "https://github.com/DLeirer/CG_Optimisation_CvZ", "DLeirer", "Python решение и симуляция", "github")
 			+mli("en", "out", "https://github.com/manuelseeger/zombie-sim", "manuelseeger", "Python решение и симуляция в OpenAI", "github")
+			
+		h4 Code Royal
+		ul
+			+mli("en", "out", "https://github.com/JakubPluciennik/CodeRoyale", "JakubPluciennik", "java - Ничего особенного", "github")
+			+mli("en", "out", "https://github.com/olmobuining/code-royale", "olmobuining", "Go", "github")
+			+mli("en", "out", "https://github.com/jimmyleray/CodeRoyale", "jimmyleray", "Type Script", "github")
+		
+		h4 Coders strike back (Mad Pod Racing)
+		ul
+			+mli("en", "out", "https://www.codingame.com/playgrounds/36476/smitsimax", "Article", "Smitsimax", "github")
+			+mli("en", "out", "https://github.com/pb4git/Nash-DQN-CSB-Article", "pb4git", "Article", "github")
+			+mli("en", "out", "https://github.com/iansedano/coders_strike_back", "iansedano", "python", "github")
+			+mli("en", "out", "https://tcourreges.github.io/coders-strike-back", "tcourreges", "python to legend, notes not code", "github")
+			+mli("en", "out", "https://github.com/AlexandreSajus/Coders-Strike-Back", "AlexandreSajus", "python code", "github")
+			+mli("en", "out", "https://www.codingame.com/forum/t/mad-pod-racing-puzzle-discussion/1833", "forum", "", "icon")
+			
+		h4 Crystal Rush (Unleash The Geek)
+		ul
+			+mli("en", "out", "https://github.com/gr0mph/UnleashTheGeek", "gr0mph", "python. Интересно, через состояния.", "github")
+			+mli("en", "out", "https://github.com/Qnouro/UnleashTheGeek", "Qnouro", "python. Интересно, есть описание стратегии.", "github")
+			+mli("en", "out", "https://github.com/oscarnava/cg-unleash-the-geek", "oscarnava", "Ruby. ", "github")
+			+mli("en", "out", "https://github.com/tchamelot/unleash_the_geek", "tchamelot", "Python.  350 строк. Gold. NB!", "github")
+			+mli("en", "out", "https://github.com/panxman/unleash_the_geek", "panxman", "Python.", "github")
+			
+		h4 Winter Fall 2024
+		ul
+			https://github.com/PlumbusAndFleebs/UnleashTheGeek24
