@@ -34,37 +34,33 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Работа с Pandas</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <p>Основной <a href="http://pandas.pydata.org/"> официальный сайт pandas</a>. Официальная <a href="http://pandas.pydata.org/pandas-docs/stable/"> документация</a>. </p>
-        <p>Основными структурами данных в pandas являются Series и DataFrame.</p>
-        <h3>Полезные функции</h3>
-        <p>Как правило нам нужно импортировать:
-          <pre class="python"><code>import pandas as pd
+    <h2 class="font-effect-shadow-multiple">Работа с Pandas</h2>
+    <article class="grid-container">
+      <div class="grid-x"></div>
+      <p>Основной <a href="http://pandas.pydata.org/"> официальный сайт pandas</a>. Официальная <a href="http://pandas.pydata.org/pandas-docs/stable/"> документация</a>. </p>
+      <p>Основными структурами данных в pandas являются Series и DataFrame.</p>
+      <h3>Полезные функции</h3>
+      <p>Как правило нам нужно импортировать:
+        <pre class="python"><code>import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt</code></pre>
-        </p>
-        <h2>Примеры применения
-          <ol>
-            <li><a href="begin_page_1.html">Пример. </a>Считывание данных csv. Подготовка данных.</li>
-            <li><a href="../trading/financial_python_example_1.html">Пример. </a>Линейный график курса рубля.</li>
-            <li><a href="../trading/financial_python_example_2.html">Пример. </a>Различные стандартные отклонения для курса рубля.	</li>
-          </ol>
-        </h2>
-        <p>For the Series object (let's call it s), pandas offers three types of addressing.</p>
-        <ol> 
-          <li>s.iloc[] -- for integer position addressing;</li>
-          <li>s.loc[] -- for index label addressing; and</li>
-          <li>s.ix[] -- for a hybrid of integer position and label addressing.</li>
-          <The>pandas object also performs ix addressing directly.</The>
+      </p>
+      <h2>Примеры применения
+        <ol>
+          <li><a href="begin_page_1.html">Пример. </a>Считывание данных csv. Подготовка данных.</li>
+          <li><a href="../trading/financial_python_example_1.html">Пример. </a>Линейный график курса рубля.</li>
+          <li><a href="../trading/financial_python_example_2.html">Пример. </a>Различные стандартные отклонения для курса рубля.	</li>
         </ol>
-        <div>Приведу пример.</div>
-        <pre class="python"><code>import pandas as pd
+      </h2>
+      <p>For the Series object (let's call it s), pandas offers three types of addressing.</p>
+      <ol> 
+        <li>s.iloc[] -- for integer position addressing;</li>
+        <li>s.loc[] -- for index label addressing; and</li>
+        <li>s.ix[] -- for a hybrid of integer position and label addressing.</li>
+        <The>pandas object also performs ix addressing directly.</The>
+      </ol>
+      <div>Приведу пример.</div>
+      <pre class="python"><code>import pandas as pd
 import string
 idx = [i for i in string.uppercase] # A, B, C .. Z
 t = pd.Series(range(26), index=idx) # 0, 1, 2 .. 25			
@@ -78,16 +74,15 @@ t.loc['Z']&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# --> 25
 t.loc[['A','Z']]&nbsp;&nbsp;# --> [0, 25]
 t.ix['A':'C']&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# --> [0, 1, 2]
 t.ix[0:2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# --> [0, 1]			</code></pre>
-        <h2>Ссылки по теме pandas</h2>
-        <ol>
-          <li><a href="http://pandas.pydata.org/">Официальный сайт </a>pandas и страничка <a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">уроков</a></li>
-          <li>Habr. <a href="http://habrahabr.ru/post/196980/">Введение в анализ данных с помощью Pandas</a></li>
-          <li><a href="http://vimeo.com/channels/pydata/videos">PyData video</a></li>
-          <li>Youtube.com <a href="http://www.youtube.com/watch?v=eRpFC2CKvao&amp;list=PLyBBc46Y6aAz54aOUgKXXyTcEmpMisAq3">Python Pandas Cookbook </a>Alfred Essa </li>
-          <li>ENG. <a href="http://nbviewer.jupyter.org/github/twiecki/financial-analysis-python-tutorial/tree/master/">Финансовый анализ с pandas.</a></li>
-        </ol>
-      </div>
-    </div>
+      <h2>Ссылки по теме pandas</h2>
+      <ol>
+        <li><a href="http://pandas.pydata.org/">Официальный сайт </a>pandas и страничка <a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">уроков</a></li>
+        <li>Habr. <a href="http://habrahabr.ru/post/196980/">Введение в анализ данных с помощью Pandas</a></li>
+        <li><a href="http://vimeo.com/channels/pydata/videos">PyData video</a></li>
+        <li>Youtube.com <a href="http://www.youtube.com/watch?v=eRpFC2CKvao&amp;list=PLyBBc46Y6aAz54aOUgKXXyTcEmpMisAq3">Python Pandas Cookbook </a>Alfred Essa </li>
+        <li>ENG. <a href="http://nbviewer.jupyter.org/github/twiecki/financial-analysis-python-tutorial/tree/master/">Финансовый анализ с pandas.</a></li>
+      </ol>
+    </article>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">

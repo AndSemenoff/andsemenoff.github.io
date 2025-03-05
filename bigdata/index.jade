@@ -4,20 +4,15 @@ block title
 	title= site_title + " Анализ больших массивов данных"
 
 block content
-	div.row: div.large-12.columns: h1: strong Анализ больших массивов данных
-	div.row: div.large-12.columns
+	h2.font-effect-shadow-multiple Анализ больших массивов данных
+	article.grid-container
+		div.grid-x
 		ol
 			li
 				strong: a(href="../pandas/pandas_1.html") Работа с Pandas 
-			li
-				| Персональные страницы, блоги и т.п.
+			li Агрегаторы, издания
 				ol
-					li 
-						a(href="http://igorsubbotin.blogspot.ru/") Блог 
-						| Игоря Субботина с еженедельными обзорами наиболее интересных материалов по анализу данных и машинному обучению
-					li: a(href="http://alexanderdyakonov.narod.ru/index.htm") Александр Дьяков
-					li: a(href="http://mech.math.msu.su/~efimov/indexe.php") Дмитрий Ефимов
-
+					+mli("en","out", "https://towardsdatascience.com", "TDS", "Платят за статьи!")
 			li Открытые(бесплатные) онлайн курсы
 				ol
 					li
@@ -62,20 +57,13 @@ block content
 						| решения задачи множественной регрессии с помощью Python											
 
 
-			li Matplotlib
+			li Библиотеки построения графики
 				ol
-					li: a(href="http://pyviy.blogspot.ru/2009/09/matplotlib.html") Пакет matplotlib. Наводим красивости
-					li: a(href="http://pyviy.blogspot.ru/2009/06/matplotlib.html") Пакет matplotlib. Установка, проверка, настройка
-					li: a(href="http://pyviy.blogspot.ru/2009/08/matplotlib.html") Пакет matplotlib. Строим банальный график
 					li: a(href="http://ru.wikiversity.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B0_%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5_Python/%C2%A79") Программирование и научные вычисления на языке Python
-					li: a(href="http://jenyay.net/Matplotlib/Matplotlib") Использование библиотеки Matplotlib
-					li Анализ данных при помощи Python. 
-						a(href="http://playittodeath.ru/%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D0%B8-python-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8-%D0%B2-pandas/") Графики в pandas и matplotlib.
-					li Библиотека 
-						a(href="http://web.stanford.edu/~mwaskom/software/seaborn/index.html") Seaborn
-					li
-						a(href="http://wiki.scipy.org/Cookbook/Matplotlib/") Cookbook
-						| [ENG]
+					+mli("ru","out", "https://jenyay.net/Matplotlib/Matplotlib", "jenyay.net", "Использование библиотеки Matplotlib")
+					+mli("en","out", "https://seaborn.pydata.org/index.html", "Seaborn", "библиотека")
+					+mli("en","out", "https://scipy-cookbook.readthedocs.io/", "SciPy", " Cookbook")
+					+mli("en","out", "https://bokeh.org/", "bokeh", "")
 			li R
 				ol    
 					li

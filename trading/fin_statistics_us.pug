@@ -4,27 +4,23 @@ block title
 	title= site_title + " Финансовая статистика по США"
 
 block content
-	h2.text-center Финансовая статистика по США
+	h2.font-effect-shadow-multiple Финансовая статистика по США
 	article.grid-container
-		div.
-			Открытые данные по экономически значимым показателям США
+		h4 Открытые данные по экономически значимым показателям США
+		h4 Открытые данные
 		ol
-			li
-				span.flag_en &nbsp;
-				| CPI (Consumer Price Index) &nbsp;
-				a(href='https://www.bls.gov/cpi/news.htm') &nbsp;
-					i.fas.fa-external-link-alt &nbsp;
-				| Публикуется ежемесячно.
-
-		div.
-			Важные индексы
+			+mli("en","out", "https://archive.ics.uci.edu/ml/index.php", "архив", "UCI Irvine Machine Learning Repository", "icon")
+			+mli("en","out", "https://data.gov/", "data", "US Government", "icon")
+			+mli("en","out", "https://data.worldbank.org/", "worldbank", "World Bank Open Data", "icon")
+			+mli("en","out", "https://opendata.cern.ch/", "CERN", "", "icon")
+			+mli("en","out", "https://data.nasa.gov/", "NASA", "", "icon")
+			+mli("en","out", "https://data.fivethirtyeight.com/", "fivethirtyeight", "", "icon")
+			
+			
+		h4 Важные индексы
 		ol
-			li
-				span.flag_ru &nbsp;
-				| VIX &nbsp;
-				a(href='vix_main.html' target='_blank') 
-					i.far.fa-eye &nbsp;
-				| Индекс и его производные. Теория. Практика
+			+mli("ru","my", "vix_main.html", "VIX", "Индекс и его производные. Теория. Практика")
+			+mli("en","out", "https://www.bls.gov/cpi/news.htm", "CPI (Consumer Price Index)", "Публикуется ежемесячно.")
 			li 
 				span.flag_en &nbsp;
 				| Индекс Consumer Sentiment Мичиганского университета &nbsp;
