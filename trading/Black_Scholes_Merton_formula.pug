@@ -4,11 +4,12 @@ block title
 	title= site_title + " Формула Блэка-Шоулза."
 
 block content
-	h2.text-center Формула Блэка-Шоулза.
+	h2.font-effect-shadow-multiple Формула Блэка-Шоулза.
+		span.h4.subheader Обновлено: март 2025.
 	article.grid-container
 		|\begin{equation}
 		| C(S,T) = SN(d_1) - K e^{-rT} N(d_2)) \\	
-
+		|\\
 		| d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} \\
 
 		| d_2 = \frac{\ln(\frac{S}{K}) + (r - \frac {\sigma^2}{2})T}{\sigma\sqrt{T}} = d_1 - \sigma\sqrt{T} 
@@ -85,5 +86,9 @@ block content
 		|\[ {для&nbsp;пута&nbsp;}\theta = - \frac{ CN(d_1) \sigma}{2\sqrt{T}} + rKe^{-rT}N(-d_2) \]
 		h3 Ро (Rho)
 
-		a(href="http://habrahabr.ru/post/248949/") Хабр
-
+		ol
+			+mli("ru", "out", "https://habr.com/ru/articles/552194/", "Хабр", "Математика опционов или модель Блэка-Шоулза", "")
+			+mli("ru", "out", "https://habr.com/ru/articles/549202/", "Хабр", "Лемма Ито", "")
+			+mli("ru", "out", "https://habrahabr.ru/post/248949/", "Хабр", "Финансы в Excel+VBA. Калькулятор опционов по модели Блэка-Шоулза", "")
+			+mli("en", "out", "https://www.macroption.com/black-scholes-formula/", "macroption.com", "Black-Scholes Formulas", "icon")
+			+mli("en", "out", "https://www.investopedia.com/terms/b/blackscholes.asp", "investopedia.com", "Black-Scholes Model: What It Is, How It Works, and Options Formula", "icon")
