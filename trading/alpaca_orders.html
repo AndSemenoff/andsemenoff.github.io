@@ -46,49 +46,34 @@
     </div>
     <h2 class="font-effect-shadow-multiple">Работа с сайтом Alpaca.markets.</h2>
     <article class="grid-container">
-      <h3>Объектная модель</h3>
-      <div> 
-        <ul>
-          <li>Broker API: 
-            <ol>
-              <li>BrokerClient</li>
-            </ol>
-          </li>
-          <li>Trading API:
-            <ol>
-              <li>TradingClient</li>
-            </ol>
-          </li>
-          <li>Market Data API: 
-            <ol>
-              <li>StockHistoricalDataClient, </li>
-              <li>CryptoHistoricalDataClient, </li>
-              <li>NewsClient, </li>
-              <li>OptionHistoricalDataClient, </li>
-              <li>CryptoDataStream, </li>
-              <li>StockDataStream, </li>
-              <li>NewsDataStream, </li>
-              <li>OptionDataStream</li>
-            </ol>
-          </li>
-        </ul>
-      </div>
-      <div class="grid-x">
-        <ol>
-          <li><span class= 'flag_en'></span>&nbsp;<a href = https://github.com/alpacahq/alpaca-py target="_blank">&nbsp;alpaca-py&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Официальный репозиторий.&nbsp;<i class="fab fa-github"></i> 
-          </li>
-          <li><span class= 'flag_en'></span>&nbsp;<a href = https://github.com/alpacahq/alpaca-py/blob/master/examples/options/README.md target="_blank">&nbsp;alpaca-py&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Официальные примеры. Работа с опционами.&nbsp;<i class="fab fa-github"></i> 
-          </li>
-          <li><span class= 'flag_en'></span>&nbsp;<a href = https://github.com/alpacahq/alpaca-py/blob/master/examples/stocks-trading-basic.ipynb target="_blank">&nbsp;alpaca-py&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Официальный пример. Работа с акциями.&nbsp;<i class="fab fa-github"></i> 
-          </li>
-          <li><span class= 'flag_en'></span>&nbsp;<a href = https://alpaca.markets/sdks/python/index.html target="_blank">&nbsp;alpaca-py&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Официальная документация&nbsp;<i class="fab fa-github"></i> 
-          </li>
-          <li><span class= 'flag_en'></span>&nbsp;<img alt="image" src="https://www.google.com/s2/favicons?domain=https://www.optionseducation.org/referencelibrary/expiration-calendar"/><a href = https://www.optionseducation.org/referencelibrary/expiration-calendar target="_blank">&nbsp;Expiration calendar&nbsp;<i class="fas fa-external-link-alt"></i></a>&nbsp;-&nbsp;Официальная документация&nbsp;
-          </li>
-          <li><span class= 'flag_ru'></span>&nbsp;<a href = alpaca_orders.html target="_blank">&nbsp;&nbsp;<i class='far fa-eye'></i></a>&nbsp;-&nbsp;Ордера для опционов.&nbsp;
-          </li>
-        </ol>
-      </div>
+      <h3>Какие опционные ордера можно выставлять</h3>
+      <div>Поддерживаемые платформой и библиотекой alpaca-py ордера для <u>одиночных</u> опционов:</div>
+      <ol>
+        <li>Рыночный</li>
+        <li>Лимитный</li>
+      </ol>
+      <div>Для выставления ордера мы сначала должны сформировать его параметры посредством функции LimitOrderRequest.</div>
+      <div>Пример:</div>
+      <pre class="python"><code>from alpaca.trading.client import TradingClient
+from alpaca.data.requests import LimitOrderRequest
+option_symbol = "SPY250221C00580000"
+req = <b>LimitOrderRequest</b>(
+&nbsp;&nbsp;&nbsp;&nbsp;symbol = option_symbol,
+&nbsp;&nbsp;&nbsp;&nbsp;qty = 1,
+&nbsp;&nbsp;&nbsp;&nbsp;imit_price = 0.20,
+&nbsp;&nbsp;&nbsp;&nbsp;side = alpaca.trading.enums.OrderSide.SELL,
+&nbsp;&nbsp;&nbsp;&nbsp;type = alpaca.trading.enums.OrderType.LIMIT,
+&nbsp;&nbsp;&nbsp;&nbsp;time_in_force = alpaca.trading.enums.TimeInForce.DAY,
+)</code></pre>
+      <div>Далее отправляем ордер:</div>
+      <pre class="python"><code>trade_client = TradingClient(api_key=API_KEY, secret_key=API_SECRET, paper=PAPER, url_override=BASE_URL) 
+res = trade_client.submit_order(req)
+print(res)</code></pre>
+      <div class="small">Примечание. Про ключи(API_KEY и т.п.) смотри <a href="alpaca_preparing.html">подготовка</a></div><br>
+      <div>Поддерживаемые платформой и библиотекой alpaca-py ордера для <u>нескольких</u> опционов:</div>
+      <ol>
+        <li>Рыночный</li>
+      </ol>
     </article>
     <footer>
       <hr>

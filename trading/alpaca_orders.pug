@@ -1,0 +1,38 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Alpaca"
+
+block content
+	h2.font-effect-shadow-multiple Работа с сайтом Alpaca.markets.
+	article.grid-container
+		h3 Какие опционные ордера можно выставлять
+		div Поддерживаемые платформой и библиотекой alpaca-py ордера для <u>одиночных</u> опционов:
+		ol
+			li Рыночный
+			li Лимитный
+			
+		div Для выставления ордера мы сначала должны сформировать его параметры посредством функции LimitOrderRequest.
+		div Пример:
+		pre.python: code
+			|from alpaca.trading.client import TradingClient
+			|from alpaca.data.requests import LimitOrderRequest
+			|option_symbol = "SPY250221C00580000"
+			|req = <b>LimitOrderRequest</b>(
+			|&nbsp;&nbsp;&nbsp;&nbsp;symbol = option_symbol,
+			|&nbsp;&nbsp;&nbsp;&nbsp;qty = 1,
+			|&nbsp;&nbsp;&nbsp;&nbsp;imit_price = 0.20,
+			|&nbsp;&nbsp;&nbsp;&nbsp;side = alpaca.trading.enums.OrderSide.SELL,
+			|&nbsp;&nbsp;&nbsp;&nbsp;type = alpaca.trading.enums.OrderType.LIMIT,
+			|&nbsp;&nbsp;&nbsp;&nbsp;time_in_force = alpaca.trading.enums.TimeInForce.DAY,
+			| )
+		div Далее отправляем ордер:
+		pre.python: code
+			| trade_client = TradingClient(api_key=API_KEY, secret_key=API_SECRET, paper=PAPER, url_override=BASE_URL) 
+			| res = trade_client.submit_order(req)
+			| print(res)
+		div.small Примечание. Про ключи(API_KEY и т.п.) смотри <a href="alpaca_preparing.html">подготовка</a>
+		br 
+		div Поддерживаемые платформой и библиотекой alpaca-py ордера для <u>нескольких</u> опционов:
+		ol
+			li Рыночный

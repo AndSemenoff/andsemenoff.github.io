@@ -1,0 +1,18 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Alpaca Preparing"
+
+block content
+	h2.font-effect-shadow-multiple Подготовка.
+	article.grid-container
+		div Импортируем библиотеку и считываем все необходимые ключи.
+		pre.python: code
+			|import configparser
+			|import alpaca
+			|
+			|config = configparser.ConfigParser()
+			|config.read('alpaca.ini')
+			|API_KEY = config["DEFAULT"]["API_KEY"]
+			|API_SECRET = config["DEFAULT"]["API_SECRET"]
+			|BASE_URL = None 

@@ -1,7 +1,7 @@
 extends ../layouts/code_layout.jade
 
 block title
-	title= site_title + " Python backtasting.py"
+	title= site_title + " Alpaca"
 
 block content
 	h2.font-effect-shadow-multiple Работа с сайтом Alpaca.markets.
@@ -28,11 +28,9 @@ block content
 		div.grid-x
 			ol
 				+mli("en", "out", "https://github.com/alpacahq/alpaca-py", "alpaca-py", "Официальный репозиторий.", "github")
-				+mli("en", "out", "https://github.com/alpacahq/alpaca-py/blob/master/examples/options-trading-basic.ipynb", "alpaca-py", "Официальный пример. Работа с опционами.", "github")
+				+mli("en", "out", "https://github.com/alpacahq/alpaca-py/blob/master/examples/options/README.md", "alpaca-py", "Официальные примеры. Работа с опционами.", "github")
 				+mli("en", "out", "https://github.com/alpacahq/alpaca-py/blob/master/examples/stocks-trading-basic.ipynb", "alpaca-py", "Официальный пример. Работа с акциями.", "github")
 				+mli("en", "out", "https://alpaca.markets/sdks/python/index.html", "alpaca-py", "Официальная документация", "github")
 				+mli("en", "out", "https://www.optionseducation.org/referencelibrary/expiration-calendar", "Expiration calendar", "Официальная документация", "icon")
-				
+				+mli("ru", "my", "alpaca_orders.html", "", "Ордера для опционов.")
 
-				
-				

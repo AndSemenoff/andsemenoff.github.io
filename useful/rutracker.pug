@@ -38,10 +38,11 @@ mixin test(num)
 	ul
 		while n < num
 			li= n++
+			
 
 block content
-	- var tracker = "maintracker.org";
-	- var tracker = "rutracker.net";
+	//- var tracker = "maintracker.org";
+	- const tracker = "rutracker.org";
 	h2.font-effect-shadow-multiple Трекер помощник
 	article.grid-container
 		div.grid-x
@@ -50,27 +51,27 @@ block content
 			a(href="https://rutracker.net/forum/tracker.php?nm=python") python
 		div.grid-x
 			
-			+seach("rutracker.net", 252, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2023")
-			+seach("rutracker.net", 1950, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2021-2022")
-			+seach("rutracker.net", 2200, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2016-2020")
-			+seach("rutracker.net", 2093, 3, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2011-2015")
-			+seach("rutracker.net", 2459, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Короткий метр")
-			+seach("rutracker.net", 635, 7, "Игры", "Игры для Windows", "Горячие новинки")
-			+seach("rutracker.net", 1565, 7, "Видеоуроки и обучающие интерактивные DVD", "", "Программирование")
-			+seach("rutracker.net", 1654, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Фотошоп-Уроки")
-			+seach("rutracker.net", 1552, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Видео- и фотосъёмка")
-			+seach("rutracker.net", 1568, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Кулинария")
-			+seach("rutracker.net", 1260, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Психология")
-			+seach("rutracker.net", 2210, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Пикап")
-			+seach("rutracker.net", 1426, 7, "Книги и журналы", "Компьютерная литература", "Программирование")
-			+seach("rutracker.net", 2149, 7, "", "Мобильные устройства", "Игры для Android")
-			+seach("rutracker.net", 2154, 7, "", "Мобильные устройства", "Приложения для Android")
-			+seach("rutracker.net", 1531, 7, "", "Зарубежные сериалы", "Испанские сериалы")
-			+seach("rutracker.net", 325, 7, "", "Зарубежные сериалы", "Сериалы Аргентины")
-			+seach("rutracker.net", 607, 7, "", "Зарубежные сериалы", "Сериалы Колумбии")
-			+seach("rutracker.net", 1574, 7, "", "Зарубежные сериалы", "Сериалы Аргентины папками")
-			+seach("rutracker.net", 1539, 7, "", "Зарубежные сериалы", "Сериалы Аргентины субтиры")
-			+seach("rutracker.net", 1358, 7, "Обучение иностранным языкам", "Для взрослых", "Испанский язык")
+			+seach(tracker, 252, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2023")
+			+seach(tracker, 1950, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2021-2022")
+			+seach(tracker, 2200, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2016-2020")
+			+seach(tracker, 2093, 3, "Кино, Видео и ТВ", "Зарубежное кино", "Фильмы 2011-2015")
+			+seach(tracker, 2459, 7, "Кино, Видео и ТВ", "Зарубежное кино", "Короткий метр")
+			+seach(tracker, 635, 7, "Игры", "Игры для Windows", "Горячие новинки")
+			+seach(tracker, 1565, 7, "Видеоуроки и обучающие интерактивные DVD", "", "Программирование")
+			+seach(tracker, 1654, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Фотошоп-Уроки")
+			+seach(tracker, 1552, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Видео- и фотосъёмка")
+			+seach(tracker, 1568, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Кулинария")
+			+seach(tracker, 1260, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Психология")
+			+seach(tracker, 2210, 7, "", "Видеоуроки и обучающие интерактивные DVD", "Пикап")
+			+seach(tracker, 1426, 7, "Книги и журналы", "Компьютерная литература", "Программирование")
+			+seach(tracker, 2149, 7, "", "Мобильные устройства", "Игры для Android")
+			+seach(tracker, 2154, 7, "", "Мобильные устройства", "Приложения для Android")
+			+seach(tracker, 1531, 7, "", "Зарубежные сериалы", "Испанские сериалы")
+			+seach(tracker, 325, 7, "", "Зарубежные сериалы", "Сериалы Аргентины")
+			+seach(tracker, 607, 7, "", "Зарубежные сериалы", "Сериалы Колумбии")
+			+seach(tracker, 1574, 7, "", "Зарубежные сериалы", "Сериалы Аргентины папками")
+			+seach(tracker, 1539, 7, "", "Зарубежные сериалы", "Сериалы Аргентины субтиры")
+			+seach(tracker, 1358, 7, "Обучение иностранным языкам", "Для взрослых", "Испанский язык")
 
 			ul.breadcrumbs
 				li: a(href="http://booktracker.org/") BookTracker.org
@@ -96,17 +97,17 @@ block content
 
 			ul: li Книги и журналы » Компьютерная литература » 
 				ul
-					+one_line_seach("rutracker.net", 1422, "Программы от Microsoft")
-					+one_line_seach("rutracker.net", 1423, "Другие программы")
-					+one_line_seach("rutracker.net", 1424, "* NIX")
-					+one_line_seach("rutracker.net", 1445, "СУБД")
-					+one_line_seach("rutracker.net", 1425, "Веб-дизайн и программирование")
-					+one_line_seach("rutracker.net", 1426, "Программирование")
-					+one_line_seach("rutracker.net", 1428, "Графика и обработка видео")
-					+one_line_seach("rutracker.net", 1429, "Сети")
-					+one_line_seach("rutracker.net", 1430, "Хакинг и безопасность")
-					+one_line_seach("rutracker.net", 1431, "Железо")
-					+one_line_seach("rutracker.net", 1433, "Инженерные и научные программы")
-					+one_line_seach("rutracker.net", 1432, "Журналы")
+					+one_line_seach(tracker, 1422, "Программы от Microsoft")
+					+one_line_seach(tracker, 1423, "Другие программы")
+					+one_line_seach(tracker, 1424, "* NIX")
+					+one_line_seach(tracker, 1445, "СУБД")
+					+one_line_seach(tracker, 1425, "Веб-дизайн и программирование")
+					+one_line_seach(tracker, 1426, "Программирование")
+					+one_line_seach(tracker, 1428, "Графика и обработка видео")
+					+one_line_seach(tracker, 1429, "Сети")
+					+one_line_seach(tracker, 1430, "Хакинг и безопасность")
+					+one_line_seach(tracker, 1431, "Железо")
+					+one_line_seach(tracker, 1433, "Инженерные и научные программы")
+					+one_line_seach(tracker, 1432, "Журналы")
 					li: strong: a(href="http://" + tracker + "/forum/tracker.php?&f=1422,1423,1424,1425,1426,1428,1429,1430,1431,1432,1433,1445&tm=7&o=1")  Всё вместе
 												
