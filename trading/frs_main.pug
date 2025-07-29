@@ -1,0 +1,14 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " ФРС"
+
+block content
+	h2.font-effect-shadow-multiple ФРС
+	article.grid-container
+		h3 Основные моменты
+		ol
+			+mli("en","out", "https://www.federalreserve.gov/", "FRS", "Официальный сайт. Календарь событий. Баланс.", "icon")
+			+mli("en","out", "https://www.federalreserve.gov/releases/H41/", "Баланс", "Официальный сайт.", "icon")
+			
+			

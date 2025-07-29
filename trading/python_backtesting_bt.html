@@ -44,48 +44,61 @@
         </ul>
       </div>
     </div>
-    <h2 class="text-center">Backtesting. Работа с библиотекой BT.</h2>
-    <article class="grid-container">
-      <div class="grid-x"></div>
-      <h3>Общие вопросы</h3>
-      <div><span class="flag_en">&nbsp;</span><a href="http://pmorissette.github.io/bt/"> <i class="fas fa-external-link-alt">&nbsp;</i>Официальный сайт </a>библиотеки BT</div>
-      <ol>
-        <li>Рекомендации по установке</li>
-        <li>Загрузка котировок</li>
-        <li>Простейшая стратегия</li>
-      </ol>
-      <h3>Рекомендации по установке</h3>
-      <div>
-         Для установки на Anaconda3 мне потребовалось в Anaconda3 Promt выполнить команду: 
-        <kbd>conda install -c conda-forge bt</kbd>
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Backtesting. Работа с библиотекой BT.</h2>
       </div>
-      <h3>Загрузка котировок</h3>
-      <div></div>Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
-      <div><a href="../python_source/bt_example_1.p">bt_example_1.py</a></div>
-      <pre><code class="python3">import bt
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Общие вопросы</h3>
+        <div><a href="http://pmorissette.github.io/bt/">Официальный сайт </a>библиотеки BT</div>
+        <ol>
+          <li>Рекомендации по установке</li>
+          <li>Загрузка котировок</li>
+          <li>Простейшая стратегия</li>
+        </ol>
+        <h3>Рекомендации по установке</h3>
+        <div>
+          Для установки пакета bt в системе должен быть установлен компилятор с С++. 			<a href="http://matthew-brett.github.io/pydagogue/python_msvc.html"> Объяснение на английском </a> для разных версий питона. (http://stackoverflow.com/questions/29909330/microsoft-visual-c-compiler-for-python-3-4)</div>
+        <div>Для установки на Anaconda2 под Windows7 мне потребовалось скачать и установить пакет <a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266"> Microsoft Visual C++ Compiler for Python 2.7 </a>. </div>
+        <div>
+           А для установки на Anaconda3 мне потребовалось
+          сначала произвести апргрейд утилиты setuptools минимальная версия 24.0
+          <kbd>pip install --upgrade setuptools</kbd>
+          потом скачиваем и устанавливаем 
+          пакет <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"> Visual CPP Build Tools </a>. При установке ставил галочку только для Windows 8.1 SDK.
+        </div>
+        <h3>Загрузка котировок</h3>
+        <div></div>Котировки можно загрузить командой <kbd>bt.get('идентификатор', start, end)</kbd>. По умолчанию загружается скорректированная цена закрытия(adjusted close). Далее пишем дату начала и конца периода для загрузки в формате гггг-мм-чч.
+        <div class="large-2 columns right"><a href="../python_source/bt_example_1.p">bt_example_1.py			</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code>import bt
 data = bt.get('RUB=X', start='2016-01-01', end='2016-08-01')
 print(data.head())</code></pre>
-      <div class="clearfix"></div>
-      <div>
-        Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
-        Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
-      </div>
-      <pre class="python"><code>s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
+        </div>
+        <div class="clearfix"></div>
+        <div>
+          Для наших дальнейших экспериментов вместо рубля возьмем котировки акций Газпрома(OGZPY) и Сбербанка(SBRCY).
+          Создадим простейшую стратегию. Для этого создадим экземпляр класса Strategy и в нем зададим нужную комбинацию алгоритмов.
+        </div>
+        <pre class="python"><code>s1 = bt.Strategy('s1', [bt.algos.RunMonthly(),  # Выполняем ежемесячно;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.SelectAll(),    # выбираем все бумаги;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.WeighEqually(), # в равной пропорции;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bt.algos.Rebalance()])   # выполняем ребалансировку согласно выбранной пропорции</code></pre>
-      <div></div>Теперь можем протестировать нашу стратегию. Напишем код.
-      <pre class="python"><code># тестируем нашу стратегию
+        <div></div>Теперь можем протестировать нашу стратегию. Напишем код.
+        <pre class="python"><code># тестируем нашу стратегию
 test = bt.Backtest(s, data)
 res = bt.run(test)</code></pre>
-      <div></div>Можем вывести график результата и статистические параметры работы стратегии.
-      <pre class="python"><code># выводим график средств
+        <div></div>Можем вывести график результата и статистические параметры работы стратегии.
+        <pre class="python"><code># выводим график средств
 res.plot()
 # выводим статистические коэффициенты
 res.display()</code></pre>
-      <div>В итоге все вместе у нас будет выглядеть так.</div>
-      <div><a href="../python_source/bt_example_2.py">bt_example_2.py</a></div>
-      <pre><code class="python3"># -*- coding: utf-8 -*-
+        <div></div>В итоге все вместе у нас будет выглядеть так.
+        <div class="large-2 columns right"><a href="../python_source/bt_example_2.p">bt_example_2.py			</a></div>
+        <div class="large-12 columns">
+          <pre class="python"><code># -*- coding: utf-8 -*-
 import bt
 data = bt.get('OGZPY, SBRCY', start='2016-01-01', end='2016-08-01')
 print(data.tail())
@@ -106,29 +119,18 @@ res.display()
 res.plot_histogram()
 # выводим график весов акций в портфеле
 res.plot_security_weights()</code></pre>
-      <div></div>Теперь попробуем модифицировать стратегию.
-    </article>
+        </div>
+        <div class="clearfix"></div>
+        <div></div>Теперь попробуем модифицировать стратегию.
+      </div>
+    </div>
     <footer>
       <hr>
       <div class="grid-container fluid text-center">
         <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
           <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
           <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2024</p>
-            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
-            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
-          </div>
-          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
-        </div>
-      </div>
-      <script src="../js/highlight.pack.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script>
-      <script>$(document).foundation();</script>
-    </footer>
-  </body>
-</html>" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
-          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-            <p><i class="far fa-copyright"></i> 2001 - 2024</p>
+            <p><i class="far fa-copyright"></i> 2001 - 2025</p>
             <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
             <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
           </div>

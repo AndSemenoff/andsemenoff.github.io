@@ -16,12 +16,12 @@ block content
 		div Пример:
 		pre.python: code
 			|from alpaca.trading.client import TradingClient
-			|from alpaca.data.requests import LimitOrderRequest
-			|option_symbol = "SPY250221C00580000"
+			|from alpaca.trading.requests import LimitOrderRequest
+			|option_symbol = "SPY250625C00605000"
 			|req = <b>LimitOrderRequest</b>(
 			|&nbsp;&nbsp;&nbsp;&nbsp;symbol = option_symbol,
 			|&nbsp;&nbsp;&nbsp;&nbsp;qty = 1,
-			|&nbsp;&nbsp;&nbsp;&nbsp;imit_price = 0.20,
+			|&nbsp;&nbsp;&nbsp;&nbsp;limit_price = 0.20,
 			|&nbsp;&nbsp;&nbsp;&nbsp;side = alpaca.trading.enums.OrderSide.SELL,
 			|&nbsp;&nbsp;&nbsp;&nbsp;type = alpaca.trading.enums.OrderType.LIMIT,
 			|&nbsp;&nbsp;&nbsp;&nbsp;time_in_force = alpaca.trading.enums.TimeInForce.DAY,

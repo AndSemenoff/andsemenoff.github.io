@@ -4,7 +4,7 @@ block title
 	title= site_title + " VIX индекс"
 
 block content
-	h2.text-center VIX индекс
+	h2.font-effect-shadow-multiple VIX индекс
 	article.grid-container
 		h3 Основные моменты
 		ol
@@ -34,29 +34,18 @@ block content
 				a(href="https://www.cboe.com/us/futures/market_statistics/settlement/" target='_blank') 
 					i.fas.fa-external-link-alt &nbsp;
 				| VIX официальные цены закрытия 
-			li
-				span.flag_en &nbsp;
-				| cboe.com 
-				a(href="https://www.cboe.com/tradable_products/vix/vix_historical_data/" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| VIX официальные исторические данные 
-			li
-				span.flag_en &nbsp;
-				| investopedia.com 
-				a(href="https://www.investopedia.com/terms/v/vix.asp" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| VIX
-			li
-				span.flag_en &nbsp;
-				| vixcentral.com 
-				a(href="http://vixcentral.com/" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| графики VIX. Ссылки на теорию
-			li
-				span.flag_ru &nbsp;
-				a(href="vix_write_to_file.html" target='_blank') 
-					i.far.fa-eye &nbsp;
-				| Сохранение исторических данных с официального сайта в файл.
+
+			+mli("en", "out", "https://www.cboe.com/tradable_products/vix/vix_historical_data/", "cboe.com", "VIX официальные исторические данные.", "icon")
+			+mli("en", "out", "https://www.investopedia.com/terms/v/vix.asp", "investopedia.com", "VIX.", "icon")
+			+mli("en", "out", "http://vixcentral.com/", "vixcentral.com", "графики VIX. Ссылки на теорию", "icon")
+			+mli("ru", "my", "vix_write_to_file.html", "", "Сохранение исторических данных с официального сайта в файл.")
+			+mli("en", "out", "https://github.com/meixler/vix", "meixler", "VIX. Реализация на python", "github")
+			+mli("en", "out", "https://github.com/khrapovs/vix", "khrapovs", "VIX. Notebook на python c пошаговым примером", "github")
+			+mli("en", "out", "https://github.com/dougransom/vix_utils", "dougransom", "vix_utils", "github")
+			+mli("en", "out", "https://github.com/AlextheYounga/vix-vol-calculator", "AlextheYounga", "VIX. Реализация на python", "github", "old")
+
+
+
 		h3 Статьи
 		ol
 			li
