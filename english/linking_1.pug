@@ -1,0 +1,25 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Английский язык"
+
+block content
+	h2.font-effect-shadow-multiple Английский язык. Объединение 
+	article.grid-container
+		h3 [ t ]+[ y ] = [ t͡ʃ ]
+		div Когда одно слово заканчивается на согласный звук [ t ], например, ge<b>t</b>, 
+		div а следующее слово начинается на [ y ], например, <b>y</b>ou, то мы можем соединить одно слово с другим и произнести, как [ t͡ʃ ]
+		div Мы говорим именно о последнем звуке, например: wro<b>t</b>e <b>y</b>ou произносим, как [ 'row-t͡ʃyə ]
+
+
+		h3 consonant sound + same consonant sound
+
+		h3 [ d ] + [ y ] = [ d͡ʒ ]
+
+		div <b>Youtube</b>
+		ul
+			+mli("en", "out", "https://www.youtube.com/watch?v=Hy8nvXr0qa0", "Linking: /t/ + /y/ = /t͡ʃ/", "Eva Easton's American English Pronunciation", "youtube")
+
+			
+	script(src="speech.js" defer)
+	script(src="speechRecognition.js" defer)
