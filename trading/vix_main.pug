@@ -8,44 +8,21 @@ block content
 	article.grid-container
 		h3 Основные моменты
 		ol
-			li
-				span.flag_en &nbsp;
-				| cboe.com 
-				a(href="https://www.cboe.com/tradable_products/vix/faqs/" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| Cboe VIX FAQ
-			li
-				span.flag_en &nbsp;
-				i.far.fa-file-pdf &nbsp;
-				| cboe.com 
-				a(href="https://cdn.cboe.com/api/global/us_indices/governance/Cboe_Volatility_Index_Mathematics_Methodology.pdf" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| VIX вычислительная методология
-			li
-				span.flag_en &nbsp;
-				i.far.fa-file-pdf &nbsp;
-				| cboe.com 
-				a(href="https://cdn.cboe.com/api/global/us_indices/governance/Volatility_Index_Methodology_Cboe_Volatility_Index.pdf" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| VIX общая методология
-			li
-				span.flag_en &nbsp;
-				| cboe.com 
-				a(href="https://www.cboe.com/us/futures/market_statistics/settlement/" target='_blank') 
-					i.fas.fa-external-link-alt &nbsp;
-				| VIX официальные цены закрытия 
-
+			+mli("en", "out", "https://www.cboe.com/tradable_products/vix/faqs/", "cboe.com", "Cboe VIX FAQ.", "icon")
+			+mli("en", "out", "https://cdn.cboe.com/api/global/us_indices/governance/Cboe_Volatility_Index_Mathematics_Methodology.pdf", "cboe.com", "VIX вычислительная методология.", "pdf") 
+			+mli("en", "out", "https://cdn.cboe.com/api/global/us_indices/governance/Volatility_Index_Methodology_Cboe_Volatility_Index.pdf", "cboe.com", "VIX общая методология.", "pdf") 
+			+mli("en", "out", "https://www.cboe.com/us/futures/market_statistics/settlement/", "cboe.com", "VIX официальные цены закрытия.", "icon")
 			+mli("en", "out", "https://www.cboe.com/tradable_products/vix/vix_historical_data/", "cboe.com", "VIX официальные исторические данные.", "icon")
 			+mli("en", "out", "https://www.investopedia.com/terms/v/vix.asp", "investopedia.com", "VIX.", "icon")
+			+mli("en", "out", "https://www.cboe.com/tradable_products/vix/vix_futures/specifications/", "Спецификация", "Фьючерсы на VIX.", "icon")
+			+mli("en", "out", "https://www.cboe.com/tradable_products/vix/vix_options/specifications/", "Спецификация", "Опционы на фьючерсы на VIX.", "icon")
+			+mli("en", "out", "https://www.cboe.com/us/futures/market_statistics/final_settlement_prices/2023/", "Рассчетные цены", "Фьючерсы на VIX. 2023", "icon")
 			+mli("en", "out", "http://vixcentral.com/", "vixcentral.com", "графики VIX. Ссылки на теорию", "icon")
 			+mli("ru", "my", "vix_write_to_file.html", "", "Сохранение исторических данных с официального сайта в файл.")
 			+mli("en", "out", "https://github.com/meixler/vix", "meixler", "VIX. Реализация на python", "github")
 			+mli("en", "out", "https://github.com/khrapovs/vix", "khrapovs", "VIX. Notebook на python c пошаговым примером", "github")
 			+mli("en", "out", "https://github.com/dougransom/vix_utils", "dougransom", "vix_utils", "github")
 			+mli("en", "out", "https://github.com/AlextheYounga/vix-vol-calculator", "AlextheYounga", "VIX. Реализация на python", "github", "old")
-
-
-
 		h3 Статьи
 		ol
 			li
@@ -88,4 +65,28 @@ block content
 				a(href="SSRN-id2972979.pdf") 
 					i.far.fa-eye &nbsp;
 				| Manipulation in the VIX?
-			
+				
+		p Брокеры предоставляющие доступ к торговле <strong>опционами</strong> на VIX:
+			ul
+				+mli("en", "out", "https://www.schwab.com/", "Schwab (thinkorswim)", "есть API", "icon")
+				li IneractiveBrokers есть API
+				+mli("en", "out", "https://tradier.com/", "Traider", "есть API", "icon")
+				+mli("en", "out", "https://tastytrade.com/", "Tastytrade", "нет API", "icon")
+				+mli("en", "out", "https://fidelity.com/", "Fidelity", "нет API", "icon")
+		p Брокеры предоставляющие доступ к торговле <strong>фьчерсами</strong> на VIX:
+			ul
+				li Tastytrade
+				
+		div Futures Monthly Codes:
+				li F January
+				li G February
+				li H March
+				li J April
+				li K May
+				li M June
+				li N July
+				li Q August
+				li U September
+				li V October
+				li X November
+				li Z December

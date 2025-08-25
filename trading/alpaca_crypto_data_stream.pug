@@ -1,0 +1,11 @@
+extends ../layouts/code_layout.jade
+
+block title
+	title= site_title + " Alpaca"
+
+block content
+	h2.font-effect-shadow-multiple Работа с сайтом Alpaca.markets.
+	article.grid-container
+		h3 Получение текущих котировок с крипто рынка.
+		pre.python: code
+			include code/live_crypto_data.py

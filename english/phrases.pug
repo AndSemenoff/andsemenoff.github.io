@@ -1,0 +1,74 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Английский язык"
+
+block content
+	h2.font-effect-shadow-multiple Английский язык. Редуцированное произношение фраз
+	article.grid-container
+		table.table-test 
+			thead
+				tr 
+					td Фраза
+					td Транскрипция
+					td Редуцированная
+					td Произношение
+					td Перевод
+			tbody
+				tr
+					td What are you doing?
+					td [wɒt ɑr ju ˈduːɪŋ]
+					td [wʌtəjə ˈduːɪn] wha-da-ya doin'?
+					td 
+					td Что ты делаешь?
+				tr
+					td Why can't you?
+					td 
+					td why can-chew
+					td 
+					td Почему ты не можешь?
+				tr
+					td Don't you realize what you're doing?
+					td
+					td don-chew realize wha-chir doin?
+					td 
+					td Ты не понимаешь, что ты делаешь?
+				tr
+					td How did it go?
+					td
+					td How dih go?
+					td 
+					td Как все прошло?
+				tr
+					td 
+					td
+					td 
+					td 
+					td 
+				tr
+					td 
+					td
+					td 
+					td 
+					td 
+				tr
+					td 
+					td
+					td 
+					td 
+					td 
+				tr
+					td 
+					td
+					td 
+					td 
+					td 
+				tr
+					td 
+					td
+					td 
+					td 
+					td 
+			
+	script(src="speech.js" defer)
+	script(src="speechRecognition.js" defer)
