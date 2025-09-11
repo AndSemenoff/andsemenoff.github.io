@@ -1,0 +1,26 @@
+extends ../layouts/html_layout.jade
+
+block content
+	h2.font-effect-shadow-multiple Rust
+	article.grid-container
+		h2 Ссылки
+		ul
+
+			+mli("en", "out", "https://this-week-in-rust.org/", "This week in Rust", "Еженедельные новости и ссылки на ресурсы по Rust.", "icon")
+			+mli("en", "out", "https://www.arewewebyet.org/", "Are we web yet?", "Ссылки на ресурсы по веб программированию на Rust.", "icon")
+			+mli("en", "out", "https://www.arewelearningyet.com/", "Are we learning yet?", "Ссылки на ресурсы по машинному обучению на Rust.", "icon")
+			+mli("en", "out", "https://arewegameyet.rs/", "Are we game yet?", " Ссылки на ресурсы по игровым движкам на Rust", "icon")
+
+			+mli("en", "out", "https://www.getzola.org/", "Zola", "Статический генератор сайтов на Rust.", "icon")
+			+mli("en", "out", "https://github.com/jieiku/abridge/", "abridge", "Тема для Zola.", "github")
+			
+			+mli("en", "out", "https://bevy.org/", "bevy", "Игровой движок на Rust.", "icon")
+			+mli("en", "out", "https://en.wikipedia.org/wiki/Rust_(programming_language)", "Wiki", "Rust_(programming_language).", "icon")
+			+mli("en", "out", "https://lychee.cli.rs/", "lychee", "A fast, async link checker written in Rust.", "icon")
+			+mli("en", "out", "https://github.com/MathieuSoysal/CG-Bundler", "CG-Bundler", "Утилита для Codingame.com, для программирования ботов на Rust.", "github")
+			li <b>Книги</b>
+				ul
+					+mli("en", "out", "https://doc.rust-lang.org/cargo/index.html", "Cargo book", "Cargo.", "icon")
+					+mli("en", "out", "https://doc.rust-lang.org/book/title-page.html", "The Rust Programming Language", "Официальная книга по Rust.", "icon")
+					
+					+mli("ru", "out", "https://doc.rust-lang.ru/book/title-page.html", "Книга", "Язык программирования Rust.", "icon")
