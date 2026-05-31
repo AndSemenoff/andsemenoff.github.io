@@ -43,6 +43,12 @@ block content
 				a(href="https://vixandmore.blogspot.com/" target='_blank') 
 					i.fas.fa-external-link-alt &nbsp;
 				| blog
+			li
+				span.flag_en &nbsp;
+				| blogs.cfainstitute.org 
+				a(href="https://blogs.cfainstitute.org/investor/2024/07/31/how-well-does-the-market-predict-volatility/" target='_blank') 
+					i.fas.fa-external-link-alt &nbsp;
+				| How Well Does the Market Predict Volatility? 2024
 			li 
 				| https://link.springer.com/article/10.1057/s41260-018-00102-4
 		h3 Книги, эссе
@@ -65,28 +71,65 @@ block content
 				a(href="SSRN-id2972979.pdf") 
 					i.far.fa-eye &nbsp;
 				| Manipulation in the VIX?
-				
-		p Брокеры предоставляющие доступ к торговле <strong>опционами</strong> на VIX:
-			ul
-				+mli("en", "out", "https://www.schwab.com/", "Schwab (thinkorswim)", "есть API", "icon")
-				li IneractiveBrokers есть API
-				+mli("en", "out", "https://tradier.com/", "Traider", "есть API", "icon")
-				+mli("en", "out", "https://tastytrade.com/", "Tastytrade", "нет API", "icon")
-				+mli("en", "out", "https://fidelity.com/", "Fidelity", "нет API", "icon")
-		p Брокеры предоставляющие доступ к торговле <strong>фьчерсами</strong> на VIX:
-			ul
-				li Tastytrade
+			li
+				span.flag_en &nbsp;
+				i.far.fa-file-pdf &nbsp;
+				a(href="rfbr-moran-vix-volatility.pdf") 
+					i.far.fa-eye &nbsp;
+				| The VIX Index and Volatility-Based Global Indexes and Trading Instruments, 2020
+		h4 Брокеры предоставляющие доступ к торговле <strong>опционами</strong> на VIX:
+		ul
+			+mli("en", "out", "https://www.schwab.com/", "Schwab (thinkorswim)", "есть API", "icon")
+			li IneractiveBrokers есть API
+			+mli("en", "out", "https://tradier.com/", "Traider", "есть API", "icon")
+			+mli("en", "out", "https://tastytrade.com/", "Tastytrade", "есть API", "icon")
+			+mli("en", "out", "https://fidelity.com/", "Fidelity", "нет API", "icon")
+		
+		h4 Брокеры предоставляющие доступ к торговле <strong>фьючерсами</strong> на VIX:
+		ul
+			li Tastytrade
+			+mli("en", "out", "https://www.schwab.com/", "Schwab (thinkorswim)", "есть API", "icon")
+			+mli("en", "out", "https://us.etrade.com/", "E*Trade", "есть API", "icon")
+			li Специализированные фьючерсные брокеры:
+				ul
+					+mli("en", "out", "https://optimusfutures.com/", "Optimus Futures", "нет API", "icon")
 				
 		div Futures Monthly Codes:
-				li F January
-				li G February
-				li H March
-				li J April
-				li K May
-				li M June
-				li N July
-				li Q August
-				li U September
-				li V October
-				li X November
-				li Z December
+			table
+				tbody
+					tr
+						td F 
+						td January
+					tr
+						td G 
+						td February
+					tr
+						td H 
+						td March
+					tr 
+						td J 
+						td April
+					tr 
+						td K 
+						td May
+					tr
+						td M 
+						td June
+					tr
+						td N
+						td July
+					tr 
+						td Q 
+						td August
+					tr 
+						td U 
+						td September
+					tr 
+						td V 
+						td October
+					tr 
+						td X 
+						td November
+					tr 
+						td Z 
+						td December
