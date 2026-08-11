@@ -1,0 +1,19 @@
+extends ../layouts/music_layout.pug
+
+block title
+	title= site_title + " Блюз. Урок 2"
+
+block scripts
+	script(src="https://cdn.jsdelivr.net/npm/nexusui@2.1.5/dist/NexusUI.min.js")
+	script(src="../js/div.prod.js" defer)
+	
+block content
+	h2.font-effect-shadow-multiple Блюз. Урок 2
+	article.grid-container
+		div(class = "vextab-auto" width=680 scale=1.1 editor="false" editor-width=680 editor-height=330)
+			| options space=20
+			| tabstave notation=true clef=treble time=4/4 tablature=false
+			| notes :h C/4 E@/4 F/4 G@/4 Gn/4 B@/4 C/5 B@/4 G/4 G@/4 F/4 E@/4 C/4 =|=                     
+			| options space=20
+//- -E@-F-G@/4 Gn/4 B@/4 C/5 B@/4 G/4 G@/4 F/4 E@/4 C/4 =|=
+
