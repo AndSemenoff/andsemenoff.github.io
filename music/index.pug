@@ -1,0 +1,11 @@
+extends ../layouts/html_layout.jade
+
+block title
+	title= site_title + " Музыка"
+
+block content
+	h2.font-effect-shadow-multiple Музыка
+	article.grid-container
+		h3 Общие вопросы
+		ul
+			+mli("ru", "my", "blues_lesson_1.html", "", "Блюз. Урок 1.", "")

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ABSOLEM.INFO | Блюз. Урок 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Семенова Андрей Вячеславович. Личный сайт">
+    <meta name="author" content="Семенова Андрей Вячеславович">
+    <meta name="keywords" content="Absolem,HTML5,CSS3,Робототехника,Python">
+    <meta name="copyright" content="Семенова Андрей Вячеславович">
+    <link rel="shortcut icon" href="../caterpillar.png">
+    <link rel="stylesheet" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/mainstyle.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;effect=shadow-multiple|vintage&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/nexusui@2.1.5/dist/NexusUI.min.js"></script>
+    <script src="../js/div.prod.js" defer></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left"> 
+        <ul class="menu">
+          <li><a href="/"> <i class="fas fa-home"></i>&nbsp;ABSOLEM.INFO</a></li>
+          <li><a href="http://absolem.info/sportprogramming/programming_index.html"><i class="fas fa-code"></i> Программирование</a></li>
+          <li><a href="http://absolem.info/trading/index.html"><i class="fas fa-chart-line"></i> Инвестирование</a></li>
+          <li><a href="http://absolem.info/bigdata/index.html"><i class="fas fa-database"></i> Анализ данных</a></li>
+          <li><a href="http://absolem.info/useful/useful_index.html"><i class="fas fa-user-ninja"></i> Полезное</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="font-effect-shadow-multiple">Блюз. Урок 1</h2>
+    <article class="grid-container">
+      <div class="vextab-auto" width="680" scale="1" editor="false" editor-width="680" editor-height="330">
+        options space=20
+        tabstave clef = bass notation=true key=C time=4/4 tablature=false
+        notes :h (B@/3.E/3.D/4) $.top.$ $.Arial-20-bold.C7$ | (D/4.A/3.E@/3) $.top.$ $.Arial-20-bold.F7$| (D/4.B@/3.E/3) $.top.$ $.Arial-20-bold.C7$| (D/4.B@/3.E/3) $.top.$ $.Arial-20-bold.C7$|
+        options space=20
+        tabstave clef = bass time=4/4 notation=true tablature=false
+        notes :h (A/3.E@/3.D/4) $.top.$ $.Arial-20-bold.F7$ | (D/4.A/3.E@/3) $.top.$ $.Arial-20-bold.F7$ | (D/4.B@/3.E/3) $.top.$ $.Arial-20-bold.C7$ | (D/4.B@/3.E/3) $.top.$ $.Arial-20-bold.C7$ |
+        options space=20
+        tabstave clef = bass time=4/4 notation=true tablature=false
+        notes :h (B/3.F/3.E/4) $.top.$ $.Arial-20-bold.G7$ | (D/4.A/3.E@/3) $.top.$ $.Arial-20-bold.F7$ | (D/4.B@/3.E/3) $.top.$ $.Arial-20-bold.C7$ | (D/4.B@/3.E/3) $.top.$ $.Arial-20-bold.C7$ =|=
+        options space=25
+      </div>
+      <hr>
+      <h3>C<sup>7</sup> (E<sub>3</sub>, Bb<sub>3</sub>, D<sub>4</sub>)</h3>
+      <div id="piano1"></div>
+      <script>
+        const piano1 = new Nexus.Piano('#piano1', {
+        'size': [600, 150],
+        'mode': 'button',
+        'lowNote': 48, // Начинаем с ноты C3 (MIDI 48)
+        'highNote': 72 // Заканчиваем на ноте C5 (MIDI 72)
+        });
+        const chordC7 = [52, 58, 62];
+        chordC7.forEach(note => {
+        const keyIndex = note - 48; 
+        piano1.toggleIndex(keyIndex, true);
+        });
+      </script>
+      <hr>
+      <h3>F<sup>7</sup> (Eb<sub>3</sub>, A<sub>3</sub>, D<sub>4</sub>)</h3>
+      <div id="piano2"></div><script>const piano2 = new Nexus.Piano('#piano2', {
+      	'size': [600, 150],
+      	'mode': 'button',
+      	'lowNote': 48, // Начинаем с ноты C3 (MIDI 48)
+      	'highNote': 72 // Заканчиваем на ноте C5 (MIDI 72)
+      });
+      // D4 = 62, A3 = 57, E3b = 53
+             const chordF7 = [51, 62, 57];
+      
+             // Программно нажимаем нужные клавиши
+             chordF7.forEach(note => {
+                 // NexusUI требует индекс клавиши относительно lowNote
+                const keyIndex = note - 48; 
+                 piano2.toggleIndex(keyIndex, true);
+             });</script>
+      <hr>
+      <h3>G<sup>7</sup> (F<sub>3</sub>, B<sub>3</sub>, E<sub>4</sub>)</h3>
+      <div id="piano3"></div><script>       // Инициализация клавиатуры с использованием глобального объекта Nexus
+             const piano3 = new Nexus.Piano('#piano3', {
+                 'size': [600, 150],
+                 'mode': 'button',
+                 'lowNote': 48, // Начинаем с ноты C3 (MIDI 48)
+                 'highNote': 72 // Заканчиваем на ноте C5 (MIDI 72)
+             });
+      		//  B3 = 59, F3 = 53, E4 = 64
+             const chordG7 = [59, 53, 64];
+            // Программно нажимаем нужные клавиши
+             chordG7.forEach(note => {
+                 // NexusUI требует индекс клавиши относительно lowNote
+                const keyIndex = note - 48; 
+                 piano3.toggleIndex(keyIndex, true);
+             });</script>
+    </article>
+    <footer>
+      <hr>
+      <div class="grid-container fluid text-center">
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3 large-up-3">
+          <div class="cell small-4"><a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></div>
+          <div class="cell small-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+            <p><i class="far fa-copyright"></i> 2001 - 2025</p>
+            <div><small>Это произведение, автор которого — <a href="../about/about_main.html">Андрей Семенов</a></small></div>
+            <div><small>Доступно на условиях <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">лицензии </a>Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 4.0 Всемирная.</small></div>
+          </div>
+          <div class="cell small-4"><a rel="license" href="http://freedomdefined.org"><img alt="freedomdefined" style="border-width:0" src="../images/seal.png"></a></div>
+        </div>
+      </div>
+      <script>$(document).foundation();</script>
+    </footer>
+  </body>
+</html>
