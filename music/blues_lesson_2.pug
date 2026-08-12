@@ -9,11 +9,39 @@ block scripts
 	
 block content
 	h2.font-effect-shadow-multiple Блюз. Урок 2
+	h3 Минорная блюзовая гамма (Minor Blues Scale)
 	article.grid-container
-		div(class = "vextab-auto" width=900 scale=1.0 editor="false" editor-width=680 editor-height=330)
+		div.grid-x
+			div(class = "vextab-auto" width=900 scale=1.0 editor="false" editor-width=680 editor-height=330)
+				| options space=20
+				| tabstave notation=true clef=treble time=4/4 tablature=false
+				| notes :q C/4  E@/4  F/4  G@/4  Gn/4 B@/4 C/5 B@/4 G/4 G@/4 F/4 E@/4 C/4 =|=                     
+				| options space=25
+		h3 C-Eb-F-Gb-G-Bb-C-Bb-G-Gb-F-Eb-C
+		
+		h4 Riff 0
+		div(class = "vextab-auto" width=600 scale=1.0 editor="false")
 			| options space=20
 			| tabstave notation=true clef=treble time=4/4 tablature=false
-			| notes :q C/4 E@/4 F/4 G@/4 Gn/4 B@/4 C/5 B@/4 G/4 G@/4 F/4 E@/4 C/4 =|=                     
+			| notes :8 G/5 E@/5 F/5 E/5 ^4^ :h C/5=|=                     
+			| options space=25
+		h3 G-Eb-F-E-C
+		
+		h4 Riff 1
+		div(class = "vextab-auto" width=600 scale=1.0 editor="false")
 			| options space=20
-//- -E@-F-G@/4 Gn/4 B@/4 C/5 B@/4 G/4 G@/4 F/4 E@/4 C/4 =|=
+			| tabstave notation=true clef=treble time=4/4 tablature=false
+			| notes :q G/4 :8 E@/4 C/4 E/4 C/4 :q bC/4=|=                     
+			| options space=25
+		h3 G-Eb-C-E-C-C
+		h4 Riff 2
+		div(class = "vextab-auto" width=600 scale=1.0 editor="false")
+			| options space=20
+			| tabstave notation=true clef=treble time=4/4 tablature=false
+			| notes :q :8 G@-F-E@-C/4 ^4^ :h hC/4 =|=                     
+			| options space=25
+		h3 G-F-Eb-C-C
+//- F/4 E@/4 C/4 :q hC/4 =|= 
+
+	
 
